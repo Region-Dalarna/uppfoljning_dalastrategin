@@ -1304,7 +1304,6 @@ del1 <- SkapaStapelDiagram(skickad_df = deltagande %>%
                            manual_y_axis_title = "procent",
                            #procent_0_100_10intervaller = TRUE,
                            x_axis_lutning = 45,
-                           stodlinjer_avrunda_fem = TRUE,
                            manual_x_axis_text_hjust = 1,
                            manual_x_axis_text_vjust = 1,
                            lagg_pa_logga = FALSE,
@@ -1616,15 +1615,4 @@ halsa1
 <br>
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 halsa2
-```
-
-```{r, include = FALSE}
-
-# kopiera html-filen till 
-file.copy(from = "uppfoljning_dalastrategin.html", to = "docs/index.html", overwrite = TRUE)
-file.copy(from = "uppfoljning_dalastrategin.Rmd", to = "docs/index.Rmd", overwrite = TRUE)
-
-# ska vi ta bort html-filen i projektmappen eller ha dubbelt, både där och i docs-mappen?
-#file.remove("uppfoljning_dalastrategin.html")
-
 ```
