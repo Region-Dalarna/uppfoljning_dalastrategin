@@ -31,6 +31,6 @@ chefspositioner <- chefspositioner %>%
 
 chefspositioner$bakgrundsvariabel<-ifelse(chefspositioner$bakgrundsvariabel=="födelseregion: Sverige","Inrikes född","Utrikes född")
 
-write.csv(chefspositioner,"Data/chefsrepresentation_ny.csv", fileEncoding="UTF-8", row.names = FALSE)
+write.csv(chefspositioner,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/chefsrepresentation_ny.csv", fileEncoding="UTF-8", row.names = FALSE)
 
 #chefspositioner <- pivot_wider(chefspositioner, names_from=bakgrundsvariabel, values_from=`Andel i chefsposition, procent`)

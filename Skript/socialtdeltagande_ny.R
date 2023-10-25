@@ -24,4 +24,4 @@ px_data <-
 deltagande <- as.data.frame(px_data, column.name.type = "text", variable.value.type = "text") %>%
   rename("Andel"=`Sociala relationer efter region, kön och år`)
 
-write.csv(deltagande,"Data/deltagande_ny.csv", fileEncoding="UTF-8", row.names = FALSE)
+write.csv(deltagande,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/deltagande_ny.csv", fileEncoding="UTF-8", row.names = FALSE)

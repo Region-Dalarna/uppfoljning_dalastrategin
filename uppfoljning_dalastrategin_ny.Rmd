@@ -1,23 +1,16 @@
 ---
-header-includes:
-- \colorlet{mycolor}{red}
-- \usepackage{tcolorbox}
-- \renewtcolorbox{quote}{}
-output:
+title: ""
+author: ""
+date: ""
+output: 
   html_document:
+    includes:
+      in_header: hero_image.html
     toc: yes
     toc_float: yes
     toc_depth: 6
-  theme: haddock
-  pdf_document: default
-  word_document:
-    toc: yes
-    toc_depth: '6'
+    css: "styles_hero.css"
 ---
-
-<center>
-![](G:/skript/projekt/uppfoljning_rus/Bilder/dalaheader.png)
-</center>
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
@@ -43,77 +36,77 @@ options(dplyr.summarise.inform = FALSE)
 
 source("G:/skript/func/func_SkapaDiagram.R", encoding="UTF-8")
 
-indikatorer <- read_excel("Data/indikatorer.xlsx")
+indikatorer <- read_excel("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/indikatorer.xlsx")
 
-resande <- read.csv("Data/resande.csv",encoding="UTF-8")
+resande <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/resande.csv",encoding="UTF-8")
 
-vaxthusgaser <- read.csv("Data/vaxthusgaser.csv",encoding="UTF-8")
+vaxthusgaser <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/vaxthusgaser.csv",encoding="UTF-8")
 
-elproduktion <- read.csv("Data/elproduktion.csv",encoding="UTF-8")
+elproduktion <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/elproduktion.csv",encoding="UTF-8")
 
-livsmedel <- read.csv("Data/livsmedel.csv",encoding="UTF-8")
+livsmedel <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/livsmedel.csv",encoding="UTF-8")
 
-avfall <- read.csv("Data/avfall.csv",encoding="UTF-8")
+avfall <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/avfall.csv",encoding="UTF-8")
 
-effektivitet <- read.csv("Data/effektivitet.csv",encoding="UTF-8")
+effektivitet <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/effektivitet.csv",encoding="UTF-8")
 
-avfallbrp <- read.csv("Data/avfallbrp.csv",encoding="UTF-8")
+avfallbrp <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/avfallbrp.csv",encoding="UTF-8")
 
-el <- read.csv("Data/el.csv",encoding="UTF-8")
+el <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/el.csv",encoding="UTF-8")
 
-skogsmark <- read.csv("Data/skogsmark.csv",encoding="UTF-8")
+skogsmark <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/skogsmark.csv",encoding="UTF-8")
 
-betesmark <- read.csv("Data/betesmark.csv",encoding="UTF-8")
+betesmark <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/betesmark.csv",encoding="UTF-8")
 
-gini <- read.csv("Data/gini.csv",encoding="UTF-8")
+gini <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/gini.csv",encoding="UTF-8")
 
-matchning <- read.csv("Data/matchning.csv",encoding="UTF-8")
+matchning <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/matchning.csv",encoding="UTF-8")
 
-sysselsatt <- read.csv("Data/sysselsatt.csv",encoding="UTF-8")
+sysselsatt <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/sysselsatt.csv",encoding="UTF-8")
 
-arbets <- read.csv("Data/arbetsloshet.csv",encoding="UTF-8")
+arbets <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/arbetsloshet.csv",encoding="UTF-8")
 
-gymnasie <- read.csv("Data/gymnasie.csv",encoding="UTF-8")
+gymnasie <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/gymnasie.csv",encoding="UTF-8")
 
-eftergym <- read.csv("Data/eftergym.csv",encoding="UTF-8")
+eftergym <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/eftergym.csv",encoding="UTF-8")
 
-etablering <- read.csv("Data/etablering.csv",encoding="UTF-8")
+etablering <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/etablering.csv",encoding="UTF-8")
 
-forskning <- read.csv("Data/forskning.csv",encoding="UTF-8")
+forskning <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/forskning.csv",encoding="UTF-8")
 
-nystartade <- read_excel("Data/NystartadeFöretag2023Uppd.xlsx")
+nystartade <- read_excel("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/NystartadeFöretag2023Uppd.xlsx")
 
-trang <- read.csv("Data/trang.csv",encoding="UTF-8")
+trang <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/trang.csv",encoding="UTF-8")
 
-boende <- read.csv("Data/boendetyper.csv",encoding="UTF-8")
+boende <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/boendetyper.csv",encoding="UTF-8")
 
 #chefsrepresentation <- read_csv("Data/chefsrepresentation.csv")
 
-chefsrepresentation <- read_csv("Data/chefsrepresentation_ny.csv")
+chefsrepresentation <- read_csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/chefsrepresentation_ny.csv")
 
-bredband <- read.csv("Data/bredband.csv", encoding="UTF-8")
+bredband <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/bredband.csv", encoding="UTF-8")
 
-valdeltagande <- read.csv("Data/valdeltagande.csv", encoding="UTF-8")
+valdeltagande <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/valdeltagande.csv", encoding="UTF-8")
 
-tillit <- read.csv("Data/tillit_ny.csv", encoding="UTF-8")
+tillit <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/tillit_ny.csv", encoding="UTF-8")
 
-utsatt <- read.csv("Data/utsatthet.csv", encoding="UTF-8")
+utsatt <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/utsatthet.csv", encoding="UTF-8")
 
-deltagande <- read.csv("Data/deltagande_ny.csv", encoding="UTF-8")
+deltagande <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/deltagande_ny.csv", encoding="UTF-8")
 
-service <- read.csv("Data/service.csv", encoding="UTF-8")
+service <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/service.csv", encoding="UTF-8")
 
 # Nedan har jag lagt till encoding="latin1" på alla csv (encoding saknades tidigare) Jon, 230313
 
-ungadel <- read.csv("Data/LUPP/ungadel.csv",encoding="latin1")
+ungadel <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/LUPP/ungadel.csv",encoding="latin1")
 
-export <- read.csv("Data/Export/exportperinv.csv",encoding="latin1")
+export <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/Export/exportperinv.csv",encoding="latin1")
 
-hlv <- read_excel("Data/HLV_Dalarna_ 2014_2018_2021.xlsx")
+hlv <- read_excel("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/HLV_Dalarna_ 2014_2018_2021.xlsx")
 
-intindex <- read_excel("Data/tillväxtanalys/totalindex 2020.xlsx")
+intindex <- read_excel("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/tillväxtanalys/totalindex 2020.xlsx")
 
-intindex2 <- read_excel("Data/tillväxtanalys/totalindex 2020.xlsx", sheet = 2)
+intindex2 <- read_excel("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/tillväxtanalys/totalindex 2020.xlsx", sheet = 2)
 
 ```
 
@@ -854,25 +847,25 @@ Denna indikator mäter andelen gymnasieelever i Dalarna som har fullföljt en ut
 #                 mutate(Andel = (Examen/Totalt)*100)
 
 
-gym1 <- SkapaStapelDiagram(skickad_df = gymnasie %>% 
-                             mutate(Ar = Ar %>% as.character()),
-                    skickad_x_var = "Ar",
-                    skickad_y_var = "Andel.elever",
-                    diagram_titel = "Andel med fullföljd gymnasieutbildning inom fyra år",
-                    diagram_capt = "Källa: Skolverket\nBearbetning: Samhällsanalys, Region Dalarna",
-                    x_axis_lutning = 0,
-                    manual_color = diagramfarger("rus_sex")[1],
-                    manual_y_axis_title = "procent",
-                    manual_x_axis_title = "år då gymnasieutbildningen påbörjades",
-                    procent_0_100_10intervaller = TRUE,
-                    output_mapp = "Diagram/",
-                    filnamn_diagram = "gymnasie.png")
+# gym1 <- SkapaStapelDiagram(skickad_df = gymnasie %>% 
+#                                mutate(r = År %>% as.character()),
+#                     skickad_x_var = "Ar",
+#                     skickad_y_var = "Andel.elever",
+#                     diagram_titel = "Andel med fullföljd gymnasieutbildning inom fyra år",
+#                     diagram_capt = "Källa: Skolverket\nBearbetning: Samhällsanalys, Region Dalarna",
+#                     x_axis_lutning = 0,
+#                     manual_color = diagramfarger("rus_sex")[1],
+#                     manual_y_axis_title = "procent",
+#                     manual_x_axis_title = "år då gymnasieutbildningen påbörjades",
+#                     procent_0_100_10intervaller = TRUE,
+#                     output_mapp = "Diagram/",
+#                     filnamn_diagram = "gymnasie.png")
 
 ```
 <br>
 <br>
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gym1
+#gym1
 ```
 
 ## Andel högskoleutbildade i befolkningen
@@ -1322,23 +1315,23 @@ Tillgång till en snabb och robust digital infrastruktur är en grundförutsätt
 I Dalarna har andelen av befolkningen med tillgång, eller möjlighet att ansluta, till bredband om minst 1 Gbit/s ökat från ca 75 procent 2017 till ca 94 procent 2021. Det kan jämföras med riksgenomsnittet som år 2021 var 96,5 procent. 
 
 ```{r, include = FALSE}
-bred1 <- SkapaStapelDiagram(skickad_df = bredband %>% mutate(year = as.character(year)),
-                    skickad_x_var = "year",
-                    skickad_y_var =  "andel_bredband",
-                    diagram_titel = paste0("Tillgång till bredband i Dalarna"),
-                    output_mapp = "Diagram/",
-                    filnamn_diagram = "bredband.png",
-                    diagram_capt = "Källa:  Post- och telestyrelsen, PTS (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Hushåll med tillgång till eller möjlighet att ansluta till bredband om minst 1 Gbit/s, andel (%), så kallade homes passed",
-                    manual_color = diagramfarger("rus_sex")[1],
-                    manual_y_axis_title = "procent",
-                    procent_0_100_10intervaller = TRUE,
-                    x_axis_lutning = 0,
-                    lagg_pa_logga = FALSE)
+# bred1 <- SkapaStapelDiagram(skickad_df = bredband %>% mutate(year = as.character(year)),
+#                     skickad_x_var = "year",
+#                     skickad_y_var =  "andel_bredband",
+#                     diagram_titel = paste0("Tillgång till bredband i Dalarna"),
+#                     output_mapp = "Diagram/",
+#                     filnamn_diagram = "bredband.png",
+#                     diagram_capt = "Källa:  Post- och telestyrelsen, PTS (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Hushåll med tillgång till eller möjlighet att ansluta till bredband om minst 1 Gbit/s, andel (%), så kallade homes passed",
+#                     manual_color = diagramfarger("rus_sex")[1],
+#                     manual_y_axis_title = "procent",
+#                     procent_0_100_10intervaller = TRUE,
+#                     x_axis_lutning = 0,
+#                     lagg_pa_logga = FALSE)
 
 ```
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-bred1
+# bred1
 ```
 
 ## Valdeltagande
@@ -1616,15 +1609,4 @@ halsa1
 <br>
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 halsa2
-```
-
-```{r, include = FALSE}
-
-# kopiera html-filen till 
-file.copy(from = "uppfoljning_dalastrategin.html", to = "docs/index.html", overwrite = TRUE)
-file.copy(from = "uppfoljning_dalastrategin.Rmd", to = "docs/index.Rmd", overwrite = TRUE)
-
-# ska vi ta bort html-filen i projektmappen eller ha dubbelt, både där och i docs-mappen?
-#file.remove("uppfoljning_dalastrategin.html")
-
 ```
