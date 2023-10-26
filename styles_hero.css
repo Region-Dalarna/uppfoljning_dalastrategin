@@ -38,22 +38,22 @@ h1,h2,h3{
 }
 
 h1 { /* Header 1 */
-  margin-top: 0rem;
-  font-weight: bold;
-  font-size: 2.4rem;
-  color: #000000;
-}
-
-h2 { /* Header 2 */
   margin-top: 2rem;
   font-weight: bold;
   font-size: 1.6rem;
   color: #000000;
 }
-h3 { /* Header 3 */
+
+h2 { /* Header 2 */
+  margin-top: 1.5rem;
   font-size: 1.4rem;
   color: #000000;
 }
+
+/*h3 { 
+  font-size: 1.4rem;
+  color: #000000;
+}*/
 
 ul {
   font-size: 0.9rem;
@@ -126,24 +126,18 @@ details{
      
 .hero-image{
     position: relative;
-    margin-bottom: 0.5em;
+    margin-bottom: 2em;
     /* liner gradient tints the image darker for readability*/
     background-image: url(Bilder/dalaheader.png); 
-    height: 400px;
+    height: 270px;
     max-width: 1200px;
+    margin: 0 auto;
     background-size: cover;
     background-color: #141c25f2;
     background-position: center center;
-    display: flex; /* Change to `display: none` for no hero image */
+    /*display: flex;
     justify-content: center;
-    align-items: center;
-}
-
-@media (min-width: 1400px){
-  .hero-image{
-  margin-left: 18%;
-  margin-right: 18%;
-  }
+    align-items: center;*/
 }
 
 .top-text {
@@ -192,6 +186,15 @@ details{
     font-size: 2em;
 }
    
+}
+
+p.intro {
+background-color: #f1f1f1;
+padding: 10px;
+border: 1px solid black;
+margin-left: 25px;
+border-radius: 5px;
+font-style: italic;
 }
 
 

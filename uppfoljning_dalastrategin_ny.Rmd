@@ -10,6 +10,7 @@ output:
     toc_float: yes
     toc_depth: 6
     css: "styles_hero.css"
+    number_sections: true
 ---
 
 ```{r setup, include=FALSE}
@@ -110,7 +111,7 @@ intindex2 <- read_excel("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/t
 
 ```
 
-# Tillsammans för ett hållbart Dalarna
+# Introduktion {-}
 
 Dalarna står tillsammans med övriga Sverige, Europa och världen inför stora samhällsutmaningar. För att skapa en hållbar framtid för Dalarna antog Regionfullmäktige i juni 2021 en ny regional utvecklingsstrategi, "Dalastrategin - Tillsammans för ett hållbart Dalarna". 
 
@@ -126,10 +127,10 @@ En princip för genomförandet av Dalastrategin är ett kunskapsbaserat arbetss�
 
 
 ```{r echo = FALSE, results='asis'}
-customGreen0 = "#93CEC1"
-customGreen = "#93CEC1"
-customRed = "#f8aab6"
-customYellow="#ffec9f"
+customGreen0 = "#409D53"
+customGreen = "#409D53"
+customRed = "#FA5346"
+customYellow="#facf36"
 
 
 indikatorer[is.na(indikatorer)] <- ""
@@ -150,7 +151,7 @@ indikatorer[is.na(indikatorer)] <- ""
 
 <style>
 p.klimatsmart {
-background-color: #93CEC1;
+background-color: #f1f1f1;
 padding: 10px;
 border: 1px solid black;
 margin-left: 25px;
@@ -159,7 +160,7 @@ font-style: italic;
 }
 </style>
 
-<p class="klimatsmart">
+<p class="intro">
 Ett klimatsmart Dalarna är ett resurseffektivt Dalarna utan
 klimatpåverkande utsläpp. Resande sker på ett enkelt och
 miljömässigt hållbart sätt. I ett klimatsmart Dalarna är samhällets
@@ -347,7 +348,7 @@ avfalldiag
 ```
 
 
-## Avfall/BRP
+### Avfall/BRP
 
 ```{r, include = FALSE}
 
@@ -565,13 +566,14 @@ font-style: italic;
 }
 </style>
 
-<p class="konkurrens">
+<p class="intro">
 I ett konkurrenskraftigt Dalarna är näringslivet livskraftigt och bidrar till hållbar tillväxt. En väl utvecklad och hållbar infrastruktur skapar värden för näringsliv, boende och besökare. Det är ett Dalarna där allas kunskaper och kompetenser tas till vara och där individer, näringsliv, offentlig sektor och civilsamhälle utvecklas tillsammans och i samspel med omvärlden. Det är också ett nyskapande Dalarna där utmaningsdriven innovation bidrar till ett gott samhälle och hållbar tillväxt.
 </p>
 
 Den ekonomiska dimensionen av hållbarhet i det regionala utvecklingsarbetet handlar om att använda, hushålla med och förädla idéer och resurser på ett miljömässigt och socialt hållbart sätt och ta vara på möjligheterna att därigenom skapa konkurrenskraft och sysselsättning. Med ett cirkulärt system där resurser och värden kan återbrukas främjas en ekonomiskt hållbar utveckling.
 
 ## Representation i chefspositioner
+
 ```{r, include = FALSE}
 
 
@@ -1144,7 +1146,7 @@ font-style: italic;
 }
 </style>
 
-<p class="samman">
+<p class="intro">
 I ett sammanhållet Dalarna finns goda livsmiljöer
 som skapar en känsla av närhet. Det är ett
 Dalarna fyllt av engagemang, där människor upplever
