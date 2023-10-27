@@ -43,6 +43,8 @@ options(dplyr.summarise.inform = FALSE)
 
 source("G:/skript/func/func_SkapaDiagram.R", encoding="UTF-8")
 
+uppdatera_hemsida = FALSE
+
 indikatorer <- read_excel("Data/indikatorer.xlsx")
 
 resande <- read.csv("Data/resande.csv",encoding="UTF-8")
@@ -1620,11 +1622,13 @@ halsa2
 
 ```{r, include = FALSE}
 
+if(uppdatera_hemsida == TRUE){
 # kopiera html-filen till 
 file.copy(from = "uppfoljning_dalastrategin.html", to = "docs/index.html", overwrite = TRUE)
 file.copy(from = "uppfoljning_dalastrategin.Rmd", to = "docs/index.Rmd", overwrite = TRUE)
 
 # ska vi ta bort html-filen i projektmappen eller ha dubbelt, både där och i docs-mappen?
 #file.remove("uppfoljning_dalastrategin.html")
+}
 
 ```
