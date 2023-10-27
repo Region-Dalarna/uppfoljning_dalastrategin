@@ -71,17 +71,10 @@ colnames(utslapp) <- c("Region", "År", "Utsläpp")
 energieffektivitet <- merge(utslapp, brp, by=c("Region", "År"))
 
 ### Räkna ut energieffektiviteten och pivotera data
-#energieffektivitet$effektivitet <- energieffektivitet$BRP/energieffektivitet$Utsläpp
 
 energieffektivitet <- energieffektivitet %>% 
   mutate(effektivitet = BRP/Utsläpp) %>% 
     select(1,2,5) %>% 
       pivot_longer(cols=3,names_to = "variabel",values_to = "value")
-
-#Pivotera data
-### Beräknar övrig produktion. Detta är enklare om data först görs om till wide
-elproduktion <- pivot_wider(elproduktion, names_from=kpi, values_from=value) %>% 
-  mutate(Övrigt = Totalt - Vindkraft - Vattenkraft) %>% 
-    pivot_longer(cols=2:5,names_to = "kpi",values_to = "value")
 
 write.csv(energieffektivitet,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/effektivitet.csv", fileEncoding="UTF-8", row.names = FALSE)
