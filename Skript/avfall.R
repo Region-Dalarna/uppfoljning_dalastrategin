@@ -42,4 +42,4 @@ avfall[avfall=="N01951"] <- "Invånare totalt, antal"
 ### Gör datan wide istället för long
 avfall <- pivot_wider(avfall, names_from=kpi, values_from=value)
 
-write.csv(avfall,"Data/avfall.csv", fileEncoding="UTF-8", row.names = FALSE)
+write.csv(avfall,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/avfall.csv", fileEncoding="UTF-8", row.names = FALSE)

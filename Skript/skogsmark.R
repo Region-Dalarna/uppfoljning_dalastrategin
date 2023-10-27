@@ -31,4 +31,4 @@ skyddadproduktivskogsmark$Former <- NULL
 skyddadproduktivskogsmark$`Överlapp mellan former` <- NULL
 skyddadproduktivskogsmark$`Typ av skogsmark` <- NULL
 
-write.csv(skyddadproduktivskogsmark,"Data/skogsmark.csv", fileEncoding="UTF-8", row.names = FALSE)
+write.csv(skyddadproduktivskogsmark,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/skogsmark.csv", fileEncoding="UTF-8", row.names = FALSE)

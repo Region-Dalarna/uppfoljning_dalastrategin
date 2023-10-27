@@ -19,4 +19,4 @@ bredband <- pivot_wider(bredband, names_from=kpi, values_from=value)
 bredband<-bredband %>% 
   rename("andel_bredband"=N07918)
 
-write.csv(bredband,"Data/bredband.csv", fileEncoding="UTF-8", row.names = FALSE)
+write.csv(bredband,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/bredband.csv", fileEncoding="UTF-8", row.names = FALSE)

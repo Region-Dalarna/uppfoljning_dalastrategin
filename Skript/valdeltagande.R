@@ -18,4 +18,4 @@ valdeltagande[valdeltagande=="N05403"] <- "Valdeltagande i senaste riksdagsvalet
 
 valdeltagande <- pivot_wider(valdeltagande, names_from=kpi, values_from=value)
 
-write.csv(valdeltagande,"Data/valdeltagande.csv", fileEncoding="UTF-8", row.names = FALSE)
+write.csv(valdeltagande,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/valdeltagande.csv", fileEncoding="UTF-8", row.names = FALSE)

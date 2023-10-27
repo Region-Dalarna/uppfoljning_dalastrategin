@@ -15,4 +15,4 @@ långtidsarbetslöshet[långtidsarbetslöshet=="N03926"] <- "Långtidsarbetslös
 
 långtidsarbetslöshet <- pivot_wider(långtidsarbetslöshet, names_from=kpi, values_from=value)
 
-write.csv(långtidsarbetslöshet,"Data/arbetsloshet.csv", fileEncoding="UTF-8", row.names = FALSE)
+write.csv(långtidsarbetslöshet,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/arbetsloshet.csv", fileEncoding="UTF-8", row.names = FALSE)

@@ -16,4 +16,4 @@ px_data_frame <- as.data.frame(px_data, column.name.type = "text", variable.valu
 
 matchning <- pivot_wider(px_data_frame, names_from=`ålder/födelselandgrupp`, values_from=`Matchningsgrad, procent `)
 
-write.csv(matchning,"Data/matchning.csv", fileEncoding="UTF-8", row.names = FALSE)
+write.csv(matchning,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/matchning.csv", fileEncoding="UTF-8", row.names = FALSE)

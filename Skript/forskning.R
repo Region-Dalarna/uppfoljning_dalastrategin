@@ -44,4 +44,4 @@ forskning$municipality[forskning$municipality=="Region Norrbotten"] = "Norrbotte
 
 #write.csv(forskning,"G:/Uppföljning och Utvärdering/Analys/RUS-Indikatorer/Data/forskning.csv", fileEncoding="UTF-8", row.names = FALSE)
 
-write.csv(forskning,"Data/forskning.csv", fileEncoding="UTF-8", row.names = FALSE)
+write.csv(forskning,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/forskning.csv", fileEncoding="UTF-8", row.names = FALSE)

@@ -23,7 +23,7 @@ brp$region <- NULL
 colnames(brp) <- c("year","BRP")
 
 ### Läs in Avfallsdata
-avfall <- read.csv("Data/avfall.csv",encoding="UTF-8")
+avfall <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/avfall.csv",encoding="UTF-8")
 
 ### Slå ihop avfall och BRP-data
 avfallbrp <- merge(avfall, brp, by="year")
@@ -35,4 +35,4 @@ avfallbrp$insamlatavfalltotalt <- avfallbrp$Insamlat.kommunalt.avfall.totalt..kg
 avfallbrp$avfallbrp <- (avfallbrp$insamlatavfalltotalt/avfallbrp$BRP)
 
 ### Skriv ut filen
-write.csv(avfallbrp,"Data/avfallbrp.csv", fileEncoding="UTF-8", row.names = FALSE)
+write.csv(avfallbrp,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/avfallbrp.csv", fileEncoding="UTF-8", row.names = FALSE)

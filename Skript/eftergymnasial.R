@@ -15,4 +15,4 @@ eftergymnasial[eftergymnasial=="N01982"] <- "eftergymnasial 25-64 år, årsmedel
 
 eftergymnasial <- pivot_wider(eftergymnasial, names_from=kpi, values_from=value)
 
-write.csv(eftergymnasial,"Data/eftergym.csv", fileEncoding="UTF-8", row.names = FALSE)
+write.csv(eftergymnasial,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/eftergym.csv", fileEncoding="UTF-8", row.names = FALSE)

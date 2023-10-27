@@ -28,4 +28,4 @@ betesmark[betesmark=="N00750"] <- "Total betesmark, hektar"
 
 #colnames(betesmark) <- c("Kategori", "Ar", "Producerat", "Region")
 
-write.csv(betesmark,"Data/betesmark.csv", fileEncoding="UTF-8", row.names = FALSE)
+write.csv(betesmark,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/betesmark.csv", fileEncoding="UTF-8", row.names = FALSE)

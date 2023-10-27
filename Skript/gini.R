@@ -16,4 +16,4 @@ gini[gini=="N00997"] <- "Ginikoefficient – hushållens disponibla inkomster, i
 
 gini <- pivot_wider(gini, names_from=kpi, values_from=value)
 
-write.csv(gini,"Data/gini.csv", fileEncoding="UTF-8", row.names = FALSE)
+write.csv(gini,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/gini.csv", fileEncoding="UTF-8", row.names = FALSE)

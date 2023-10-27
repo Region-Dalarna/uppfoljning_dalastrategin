@@ -13,10 +13,11 @@
 ### Contentscode = vilken variabel vi vill ha ut
 ### Tid = åren vi vill ha
 
-pxweb_query_list <- 
-  list("Region"=c("00","01","03","04","05","06","07","08","09","10","12","13","14","17","18","19","20","21","22","23","24","25","RIKS1","RIKS2","RIKS3","RIKS4","RIKS5","RIKS6","RIKS7","RIKS8","90"),
+pxweb_query_list <-
+  list("Region"=hamtaAllaLan(tamedriket=FALSE),
        "ContentsCode"=c("NR0105AH"),
        "Tid"=c("*"))
+
 
 ### Sen använder vi listan som vi har skapat för att dra ner datan från SCB
 px_data <- 
@@ -37,8 +38,10 @@ colnames(brp) <- c("Region", "År", "BRP")
 ### Contentscode = vilken variabel vi vill ha ut
 ### Tid = åren vi vill ha
 
+source("https://raw.githubusercontent.com/FaluPeppe/func/main/func_API.R")
+
 pxweb_query_list <- 
-  list("Region"=c("01","03","04","05","06","07","08","09","10","12","13","14","17","18","19","20","21","22","23","24","25"),
+  list("Region"=hamtaAllaLan(tamedriket=FALSE),
        "SNI2007"=c("A01-F43","G45-T98"),
        "AmneMiljo"=c("GHG"),
        "ContentsCode"=c("0000015P"),
@@ -67,7 +70,18 @@ colnames(utslapp) <- c("Region", "År", "Utsläpp")
 ### Slår ihop utsläpp och brp
 energieffektivitet <- merge(utslapp, brp, by=c("Region", "År"))
 
-### Räkna ut energieffektiviteten
-energieffektivitet$effektivitet <- energieffektivitet$BRP/energieffektivitet$Utsläpp
+### Räkna ut energieffektiviteten och pivotera data
+#energieffektivitet$effektivitet <- energieffektivitet$BRP/energieffektivitet$Utsläpp
 
-write.csv(energieffektivitet,"Data/effektivitet.csv", fileEncoding="UTF-8", row.names = FALSE)
+energieffektivitet <- energieffektivitet %>% 
+  mutate(effektivitet = BRP/Utsläpp) %>% 
+    select(1,2,5) %>% 
+      pivot_longer(cols=3,names_to = "variabel",values_to = "value")
+
+#Pivotera data
+### Beräknar övrig produktion. Detta är enklare om data först görs om till wide
+elproduktion <- pivot_wider(elproduktion, names_from=kpi, values_from=value) %>% 
+  mutate(Övrigt = Totalt - Vindkraft - Vattenkraft) %>% 
+    pivot_longer(cols=2:5,names_to = "kpi",values_to = "value")
+
+write.csv(energieffektivitet,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/effektivitet.csv", fileEncoding="UTF-8", row.names = FALSE)

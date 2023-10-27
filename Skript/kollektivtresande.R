@@ -31,4 +31,4 @@ names(resande)[names(resande) == 'municipality'] <- 'Region'
 resande$Region[resande$Region=="Region Dalarna"] <- "Dalarnas län"
 
 ### Skriv ut filen
-write.csv(resande,"Data/resande.csv", fileEncoding="UTF-8", row.names = FALSE)
+write.csv(resande,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/resande.csv", fileEncoding="UTF-8", row.names = FALSE)

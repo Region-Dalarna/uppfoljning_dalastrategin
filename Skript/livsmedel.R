@@ -8,6 +8,6 @@ colnames(livsmedel) <- c("Produkt",2016:2020)
 
 livsmedel <- gather(livsmedel, År, Andel, as.character(2016:2020), factor_key=TRUE)
 
-write.csv(livsmedel,"Data/livsmedel.csv", fileEncoding="UTF-8", row.names = FALSE)
+write.csv(livsmedel,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/livsmedel.csv", fileEncoding="UTF-8", row.names = FALSE)
 
 

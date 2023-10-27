@@ -17,4 +17,4 @@ service[service=="N07531"] <- "Invånare 0-16 år med tillgång till grundskola 
 
 #service <- pivot_wider(service, names_from=kpi, values_from=value)
 
-write.csv(service,"Data/service.csv", fileEncoding="UTF-8", row.names = FALSE)
+write.csv(service,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/service.csv", fileEncoding="UTF-8", row.names = FALSE)

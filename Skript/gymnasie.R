@@ -29,4 +29,4 @@ library(tidyverse)
 source("G:/skript/peter/func_hamta_slutfort_3_4_5_ar_gymn_skolverket.R", encoding = "utf-8")
 gymnasie <- hamta_skolverket_gymn_genomstromning(vald_region = "20")
 
-write.csv(gymnasie,"Data/gymnasie.csv", fileEncoding="UTF-8", row.names = FALSE)
+write.csv(gymnasie,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/gymnasie.csv", fileEncoding="UTF-8", row.names = FALSE)

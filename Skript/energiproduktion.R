@@ -14,20 +14,17 @@ elproduktion <- get_values(
   period = 2012:2100
 )
 
-### Ta bort kolumner som vi inte behöver
-elproduktion$municipality_id <- NULL
-elproduktion$gender <- NULL
-elproduktion$count <- NULL
-elproduktion$municipality_type <- NULL
+# Väljer bort variabler och ger mer rimliga namn.
+elproduktion <- elproduktion %>% 
+  select(-c(gender,count,municipality_type,municipality_id)) %>% 
+    mutate(kpi = case_when(
+      kpi == "N45926" ~ "Totalt",
+      kpi == "N45904" ~ "Vindkraft",
+      kpi == "N45927" ~ "Vattenkraft"))
 
-### Byter namn från kpi/kolada-koder till mer beskrivande namn
-elproduktion[elproduktion=="N45926"] <- "Elproduktion totalt inom det geografiska området, MWh"
-elproduktion[elproduktion=="N45904"] <- "Elproduktion av vindkraft inom det geografiska området, MWh"
-elproduktion[elproduktion=="N45927"] <- "Elproduktion av vattenkraft inom det geografiska området, MWh"
+### Beräknar övrig produktion. Detta är enklare om data först görs om till wide
+elproduktion <- pivot_wider(elproduktion, names_from=kpi, values_from=value) %>% 
+  mutate(Övrigt = Totalt - Vindkraft - Vattenkraft) %>% 
+    pivot_longer(cols=3:6,names_to = "kpi",values_to = "value")
 
-### Gör datan wide istället för long
-#elproduktion <- pivot_wider(elproduktion, names_from=kpi, values_from=value)
-
-colnames(elproduktion) <- c("Kategori", "Ar", "Producerat", "Region")
-
-write.csv(elproduktion,"Data/elproduktion.csv", fileEncoding="UTF-8", row.names = FALSE)
+write.csv(elproduktion,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/elproduktion.csv", fileEncoding="UTF-8", row.names = FALSE)

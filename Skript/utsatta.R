@@ -18,4 +18,4 @@ utsatta[utsatta=="N02904"] <- "Invånare 0-19 år i ekonomiskt utsatta hushåll,
 
 #utsatta <- pivot_wider(utsatta, names_from=kpi, values_from=value)
 
-write.csv(utsatta,"Data/utsatthet.csv", fileEncoding="UTF-8", row.names = FALSE)
+write.csv(utsatta,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/utsatthet.csv", fileEncoding="UTF-8", row.names = FALSE)

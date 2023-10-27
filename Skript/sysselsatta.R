@@ -16,4 +16,4 @@ sysselsatta[sysselsatta=="N00914"] <- "Förvärvsarbetande invånare 20-64 år, 
 sysselsatta <- pivot_wider(sysselsatta, names_from=kpi, values_from=value)
 
 #write.csv(sysselsatta,"G:/Uppföljning och Utvärdering/Analys/RUS-Indikatorer/Data/sysselsatt.csv", fileEncoding="UTF-8", row.names = FALSE)
-write.csv(sysselsatta,"Data/sysselsatt.csv", fileEncoding="UTF-8", row.names = FALSE)
+write.csv(sysselsatta,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/sysselsatt.csv", fileEncoding="UTF-8", row.names = FALSE)

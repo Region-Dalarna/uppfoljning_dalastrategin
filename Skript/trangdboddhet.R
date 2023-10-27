@@ -15,4 +15,4 @@ px_data <-
 # Convert to data.frame 
 trångdboddhet <- as.data.frame(px_data, column.name.type = "text", variable.value.type = "text")
 
-write.csv(trångdboddhet,"Data/trang.csv", fileEncoding="UTF-8", row.names = FALSE)
+write.csv(trångdboddhet,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/trang.csv", fileEncoding="UTF-8", row.names = FALSE)

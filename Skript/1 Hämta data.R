@@ -3,17 +3,17 @@
 ########################
 #### Ladda in paket ####
 ########################
-pacman::p_load(httr,purrr,tidyr,tidyverse,rKolada,pxweb,askpass,readxl,data.table,keyring)
-# library(httr)
-# library(purrr)
-# library(tidyr)
-# library(tidyverse)
-# library(rKolada)
-# library(pxweb)
-# library(askpass)
-# library(readxl)
-# library(data.table)
-# library(keyring)
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(httr,
+               purrr,
+               tidyr,
+               tidyverse,
+               rKolada,
+               pxweb,
+               askpass,
+               readxl,
+               data.table,
+               keyring)
 
 ##############
 ## Gateway ###
@@ -167,3 +167,4 @@ source("Skript/utsatta.R", encoding="UTF-8")
 ## Valdeltagande ##
 ###################
 source("Skript/valdeltagande.R", encoding="UTF-8")
+

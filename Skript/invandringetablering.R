@@ -22,4 +22,4 @@ etablering <- as.data.frame(etablering, column.name.type = "text", variable.valu
 etablering<-etablering %>% 
   filter(år%in%c(as.character(2010:max(etablering$år))))
 
-write.csv(etablering,"Data/etablering.csv", fileEncoding="UTF-8", row.names = FALSE)
+write.csv(etablering,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/etablering.csv", fileEncoding="UTF-8", row.names = FALSE)

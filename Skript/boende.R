@@ -17,4 +17,4 @@ px_data_frame <- as.data.frame(px_data, column.name.type = "text", variable.valu
 # Wide istället för longb
 boende <- pivot_wider(px_data_frame, names_from=boendeform, values_from='Antal hushåll')
 
-write.csv(boende,"Data/boendetyper.csv", fileEncoding="UTF-8", row.names = FALSE)
+write.csv(boende,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/boendetyper.csv", fileEncoding="UTF-8", row.names = FALSE)

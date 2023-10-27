@@ -36,7 +36,7 @@ colnames(elkonsumtion) <- c("Ar", "Region", "Elkonsumtion (MWh)")
 
 #elproduktion <- read.csv("G:/Uppföljning och Utvärdering/Analys/RUS-Indikatorer/Data/elproduktion.csv",encoding="UTF-8")
 
-elproduktion <- read.csv("Data/elproduktion.csv",encoding="UTF-8")
+elproduktion <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/elproduktion.csv",encoding="UTF-8")
 
 elproduktion <- pivot_wider(elproduktion, names_from=Kategori, values_from=Producerat)
 
@@ -49,4 +49,4 @@ el <- merge(el, elkonsumtion, by=c("Region", "Ar"))
 el$elgrad <- el$`Elproduktion totalt inom det geografiska området, MWh`/el$`Elkonsumtion (MWh)`
 
 #write.csv(el,"G:/Uppföljning och Utvärdering/Analys/RUS-Indikatorer/Data/el.csv", fileEncoding="UTF-8", row.names = FALSE)
-write.csv(el,"Data/el.csv", fileEncoding="UTF-8", row.names = FALSE)
+write.csv(el,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/el.csv", fileEncoding="UTF-8", row.names = FALSE)
