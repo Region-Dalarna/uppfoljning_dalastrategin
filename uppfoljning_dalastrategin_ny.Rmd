@@ -346,11 +346,11 @@ effektivitet3
 ## Insamlat kommunalt avfall (kg/person)
 ```{r, include = FALSE}
 
-avfalldiag <- SkapaStapelDiagram(skickad_df = avfall %>%
-                     filter(!(is.na(Insamlat.kommunalt.avfall.totalt..kg.invånare..justerat.))) %>%             
-                     mutate(year = year %>% as.character()),
+avfalldiag <- SkapaStapelDiagram(skickad_df = avfall %>% 
+                                  mutate(year = year %>% as.character()) %>% 
+                                   filter(!(is.na(Avfall_totalt_invanare))),
                    skickad_x_var = "year",
-                   skickad_y_var = "Insamlat.kommunalt.avfall.totalt..kg.invånare..justerat.",
+                   skickad_y_var = "Avfall_totalt_invanare",
                    diagram_titel = paste0("Insamlat avfall i Dalarna"),
                    output_mapp = "Diagram/",
                    filnamn_diagram = "avfall.png",
@@ -361,7 +361,7 @@ avfalldiag <- SkapaStapelDiagram(skickad_df = avfall %>%
                    manual_y_axis_title = "Kg per invånare",
                    lagg_pa_logga = FALSE)
 ```
-En av prioriteringarna i Dalastrategin är att öka resurseffektiviteten i länet. Ett mått på resursförbrukning är mängden insamlat kommunalt avfall som ett mått på invånarnas resursförbrukning. I det kommunala avfallet ingår det mesta avfall som ett hushåll producerar, så som mat- och restavfall, grov- och trädgårdsavfall och farligt avfall. Även förpackningar och batterier etc. som ingår i producentansvaret ingår i beräkningen. I sammanställningen nedan visas insamlat kommunalt avfall per person och år i Dalarna från 2013 till 2021. År 2013 samlades det in 497 kg avfall per person i Dalarna, att jämföra med 478 kg per person år 2021. En lägre mängd per person signalerar en lägre resursanvändning. I en nationell jämförelse ses att Uppsalas och Stockholms län ligger bäst till med ca 400kg per person och år, medan Kalmar och Kronoberg ligger sämst till med ca 565 kg per person och år.
+En av prioriteringarna i Dalastrategin är att öka resurseffektiviteten i länet. Ett mått på resursförbrukning är mängden insamlat kommunalt avfall som ett mått på invånarnas resursförbrukning. I det kommunala avfallet ingår det mesta avfall som ett hushåll producerar, så som mat- och restavfall, grov- och trädgårdsavfall och farligt avfall. Även förpackningar och batterier etc. som ingår i producentansvaret ingår i beräkningen. I sammanställningen nedan visas insamlat kommunalt avfall per person och år i Dalarna från 2013 till 2021. År `r min(avfall$year)` samlades det in `r avfall %>% filter(year == min(year)) %>% .$Avfall_totalt_invanare` kg avfall per person i Dalarna, att jämföra med `r avfall %>% filter(!(is.na(Avfall_totalt_invanare))) %>% filter(year == max(year)) %>% .$Avfall_totalt_invanare` kg per person år `r avfall %>% filter(!(is.na(Avfall_totalt_invanare))) %>% filter(year == max(year)) %>% .$year`. En lägre mängd per person signalerar en lägre resursanvändning. I en nationell jämförelse ses att Uppsalas och Stockholms län ligger bäst till med ca 400kg per person och år, medan Kalmar och Kronoberg ligger sämst till med ca 565 kg per person och år (ej uppdaterat automatiskt).
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 avfalldiag
@@ -387,7 +387,7 @@ avfallbrpdiag <- SkapaStapelDiagram(skickad_df = avfallbrp %>%
                     lagg_pa_logga = FALSE)
 ```
 
-Ytterligare en indikator på resurseffektivitet är kopplingen mellan mängden insamlat avfall (förbrukade resurser) och den ekonomiska aktiviteten i regionen, mätt genom bruttoregionalprodukten (BRP). Indikatorn uppvisar en positiv trend av att mängden avfall minskar per producerat ekonomiskt värde över perioden från 2013 till 2021. 2013 samlades det in knappt 1 500 kg avfall för varje miljon kronor av Dalarnas BRP under samma år. 2021 hade motsvarande mängd avfall sjunkit till drygt 1 150 kg avfall. Det kan främst förklaras med att BRP har ökat under perioden.
+Ytterligare en indikator på resurseffektivitet är kopplingen mellan mängden insamlat avfall (förbrukade resurser) och den ekonomiska aktiviteten i regionen, mätt genom bruttoregionalprodukten (BRP). Indikatorn uppvisar en positiv trend av att mängden avfall minskar per producerat ekonomiskt värde över perioden från `r min(avfallbrp$year)` till `r max(avfallbrp$year)`. `r min(avfallbrp$year)` samlades det in knappt `r format(plyr::round_any(avfallbrp %>% filter(year == min(year)) %>%  .$avfallbrp,10),big.mark = " ")` kg avfall för varje miljon kronor av Dalarnas BRP under samma år. `r max(avfallbrp$year)` hade motsvarande mängd avfall sjunkit till drygt `r format(plyr::round_any(avfallbrp %>% filter(year == max(year)) %>%  .$avfallbrp,10),big.mark = " ")` kg avfall. Det kan främst förklaras med att BRP har ökat under perioden.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 avfallbrpdiag

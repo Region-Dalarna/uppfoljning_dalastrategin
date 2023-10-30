@@ -36,3 +36,4 @@ avfallbrp$avfallbrp <- (avfallbrp$insamlatavfalltotalt/avfallbrp$BRP)
 
 ### Skriv ut filen
 write.csv(avfallbrp,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/avfallbrp.csv", fileEncoding="UTF-8", row.names = FALSE)
+
