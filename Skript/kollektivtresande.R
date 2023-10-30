@@ -13,22 +13,13 @@ resande <- get_values(
   period = 2010:2100
 )
 
-### Ta bort kolumner som vi inte behöver
-resande$municipality_id <- NULL
-resande$gender <- NULL
-resande$count <- NULL
-resande$municipality_type <- NULL
-
-### Byter namn från kpi/kolada-koder till mer beskrivande namn
-resande[resande=="U85427"] <- "Marknadsandel för kollektivtrafik, andel (%)"
-resande[resande=="N60404"] <- "Resor med kollektivtrafik, resor/inv"
-
-### Gör datan wide istället för long
-resande <- pivot_wider(resande, names_from=kpi, values_from=value)
-
-names(resande)[names(resande) == 'year'] <- 'År'
-names(resande)[names(resande) == 'municipality'] <- 'Region'
-resande$Region[resande$Region=="Region Dalarna"] <- "Dalarnas län"
+# Väljer bort variabler och ger mer rimliga namn.
+resande <- resande %>% 
+  filter(gender == "T") %>% 
+    select(-c(gender,count,municipality_type,municipality_id)) %>% 
+      mutate(kpi = case_when(
+        kpi == "U85427" ~ "Marknadsandel_procent",
+        kpi == "N60404" ~ "Resor_per_invanare"))
 
 ### Skriv ut filen
 write.csv(resande,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/resande.csv", fileEncoding="UTF-8", row.names = FALSE)

@@ -397,9 +397,10 @@ avfallbrpdiag
 ```{r, include = FALSE}
 
 resande1alt <- SkapaStapelDiagram(skickad_df = resande %>% 
-                                    mutate(År = År %>% as.character()),
-                    skickad_x_var = "År",
-                    skickad_y_var = "Resor.med.kollektivtrafik..resor.inv",
+                                    filter(kpi == "Resor_per_invanare") %>% 
+                                    mutate(year = year %>% as.character()),
+                    skickad_x_var = "year",
+                    skickad_y_var = "value",
                     diagram_titel = paste0("Resor per invånare med kollektivtrafik i Dalarna"),
                     output_mapp = "Diagram/",
                     filnamn_diagram = "resande1.png",
@@ -413,12 +414,12 @@ resande1alt <- SkapaStapelDiagram(skickad_df = resande %>%
 # Skapar en separat df eftersom tidsserier är olika långa
 
 resande2alt <- SkapaLinjeDiagram(skickad_df = resande %>% 
-                                    filter(Marknadsandel.för.kollektivtrafik..andel....!="NA") %>% 
-                                    mutate(År = År %>% as.character()),
-                    skickad_x_var = "År",
-                    skickad_y_var = "Marknadsandel.för.kollektivtrafik..andel....",
+                                    filter(kpi == "Marknadsandel_procent") %>% 
+                                      mutate(year = year %>% as.character()),
+                    skickad_x_var = "year",
+                    skickad_y_var = "value",
                     diagram_titel = paste0("Marknadsandel för kollektivtrafik i Dalarna"),
-                    skickad_x_grupp = "Region",
+                    skickad_x_grupp = "municipality",
                     diagram_capt = "Källa: Kollektivtrafikbarometern (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nAndelen resor med Kollektivtrafik (linjelagd buss, spårvagn, tunnelbana, pendeltåg, tåg och båt) och taxi\nav det totala antalet resor med Kollektivtrafik, taxi, bil (förare och passagerare) samt moped/MC.",
                     x_axis_lutning = 0,
                     manual_color = diagramfarger("rus_sex")[1],
@@ -430,7 +431,7 @@ resande2alt <- SkapaLinjeDiagram(skickad_df = resande %>%
 ```
 På grund av sin utsträckta och relativt glesbefolkade geografi har Dalarna en utmaning i att skapa en hållbar transportinfrastruktur. För att nå klimat- och energimålen krävs kraftfull teknisk utveckling i kombination med beteendeförändringar. Kollektivt resande spelar en central roll för utvecklandet av en klimatsmart och resurseffektiv, men också mer jämställd och jämlik, mobilitet. Kollektivtrafik är förenat med höga kostnader, samtidigt som det finns samhällsekonomiska vinster. För att klara omställningen krävs mod att ställa olika kostnader mot varandra. För att vi ska lyckas öka det kollektiva resandet behöver den traditionella kollektivtrafiken sannolikt kompletteras med nya mobilitetslösningar och tjänster, särskilt för länets mest glesbefolkade områden.
 
-Diagrammen redovisar indikatorer för kollektivt resande i Dalarna: resor per invånare samt marknadsandel för kollektivtrafik i länet. För antal resor per invånare syns att det kollektiva resandet har legat på en stabil nivå på omkring 35 resor per person och år från 2013 fram till utbrottet av Covid-19 våren 2020. I det som förmodligen är en konsekvens av pandemin syns en nedgång i det kollektiva resandet under 2020 till 28 resor per person och år och 2021 till 25 resor. I en nationell jämförelse år 2021 framgår att det i glesbygdslänen i Sverige som mest görs 40 resor per person. Medan det görs betydligt fler i storstadsregionerna, så som Skåne med i snitt 71 resor per person och år och i Stockholm där flest resor görs, sker 230 resor per person och år.
+Diagrammen redovisar indikatorer för kollektivt resande i Dalarna: resor per invånare samt marknadsandel för kollektivtrafik i länet. För antal resor per invånare syns att det kollektiva resandet har minskat avsevärt i Dalarna g 35 resor per person och år från 2013 fram till utbrottet av Covid-19 våren 2020. I det som förmodligen är en konsekvens av pandemin syns en nedgång i det kollektiva resandet under 2020 till 28 resor per person och år och 2021 till 25 resor. I en nationell jämförelse år 2021 framgår att det i glesbygdslänen i Sverige som mest görs 40 resor per person. Medan det görs betydligt fler i storstadsregionerna, så som Skåne med i snitt 71 resor per person och år och i Stockholm där flest resor görs, sker 230 resor per person och år.
 
 Marknadsandelen för kollektivtrafik beräknas som andelen resor med kollektivtrafik (linjelagd buss, spårvagn, tunnelbana, pendeltåg, tåg och båt) och taxi av det totala antalet resor, dvs kollektivtrafik, taxi, bil (förare och passagerare) samt moped/MC. Även här bryts uppgången i en förmodad pandemieffekt efter ett antal år av ökande marknadsandel för kollektivtrafiken.
 
