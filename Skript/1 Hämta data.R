@@ -89,6 +89,7 @@ source("Skript/energikonsumtion.R", encoding="UTF-8")
 ## Chefsrepresentation ##
 #########################
 source("Skript/chefspositioner.R", encoding="UTF-8")
+hamta_data_chefrepresentation(outputmapp = outputmapp)
 
 #####################
 ## Ginikoefficient ##

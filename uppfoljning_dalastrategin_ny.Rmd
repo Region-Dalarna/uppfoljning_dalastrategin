@@ -596,6 +596,8 @@ Den ekonomiska dimensionen av hållbarhet i det regionala utvecklingsarbetet han
 
 ## Representation i chefspositioner
 
+Kvinnors och mäns jämställda medverkan och inflytande i näringslivet, på arbetsmarknaden och i innovationsarbete är och blir en alltmer kritisk tillväxtfaktor. Konkurrenskraften stärks när kompetenser från olika grupper oavsett ålder, kön eller bakgrund tas till vara. En viktig indikator inom detta område är representationen på arbetsplatserna, och speciellt i chefspositioner. År `r max(chefsrepresentation$år)` var det vanligare att män hade en chefsposition än kvinnor, i jämförelse med deras respektive representation bland de förvärvsarbetande. Oavsett kön är det också vanligare att inrikes födda har chefspositioner i jämförelse med utrikes födda.
+
 ```{r, include = FALSE}
 
 
@@ -643,7 +645,6 @@ chef4 <- SkapaStapelDiagram(skickad_df = chefsrepresentation %>%
                     lagg_pa_logga = FALSE)
 
 ```
-Kvinnors och mäns jämställda medverkan och inflytande i näringslivet, på arbetsmarknaden och i innovationsarbete är och blir en alltmer kritisk tillväxtfaktor. Konkurrenskraften stärks när kompetenser från olika grupper oavsett ålder, kön eller bakgrund tas till vara. En viktig indikator inom detta område är representationen på arbetsplatserna, och speciellt i chefspositioner. År 2020 var det vanligare att män hade en chefsposition än kvinnor, i jämförelse med deras respektive representation bland de förvärvsarbetande. Oavsett kön är det också vanligare att inrikes födda har chefspositioner i jämförelse med utrikes födda.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 chef4

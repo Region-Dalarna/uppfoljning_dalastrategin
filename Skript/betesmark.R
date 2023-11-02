@@ -8,6 +8,11 @@ hamta_data_betesmark = function(region = "0020",
   ### Betesmark ###
   #################
   
+  if (!require("pacman")) install.packages("pacman")
+  pacman::p_load(tidyverse,
+                 rKolada,
+                 readxl)
+  
   #### Dra hem variablerna från Kolada
   betesmark <- get_values(
     kpi = cont_code,
