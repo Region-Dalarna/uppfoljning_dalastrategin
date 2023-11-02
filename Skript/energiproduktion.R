@@ -7,6 +7,11 @@
 #### N45904 - Elproduktion av vindkraft inom det geografiska området, MWh
 #### N45927 - Elproduktion av vattenkraft inom det geografiska området, MWh
 
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse,
+               rKolada,
+               readxl)
+
 #### Dra hem variablerna från Kolada
 elproduktion <- get_values(
   kpi = c("N45926","N45904", "N45927"),

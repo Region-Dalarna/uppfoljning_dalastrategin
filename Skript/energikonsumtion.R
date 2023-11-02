@@ -4,8 +4,11 @@
 
 #### Lista på variabler och koder 
 #### N45926 - Elproduktion totalt inom det geografiska området, MWh
-#### N45904 - Elproduktion av vindkraft inom det geografiska området, MWh
-#### N45927 - Elproduktion av vattenkraft inom det geografiska området, MWh
+
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse,
+               rKolada,
+               readxl)
 
 #### Dra hem variablerna från Kolada
 elkonsumtion <- get_values(
@@ -14,39 +17,26 @@ elkonsumtion <- get_values(
   period = 2016:2100
 )
 
-### Ta bort kolumner som vi inte behöver
-elkonsumtion$municipality_id <- NULL
-elkonsumtion$count <- NULL
-elkonsumtion$municipality_type <- NULL
+# Väljer bort variabler och ger mer rimliga namn.
+elkonsumtion <- elkonsumtion %>% 
+  filter(gender == "T") %>% 
+    select(-c(gender,count,municipality_type,municipality_id)) %>% 
+      mutate(kpi = case_when(
+        kpi == "N45906" ~ "Slutanvändning av el inom det geografiska området, MWh/inv",
+        kpi == "N01951" ~ "Invånare totalt, antal"))
 
-### Byter namn från kpi/kolada-koder till mer beskrivande namn
-elkonsumtion[elkonsumtion=="N45906"] <- "Slutanvändning av el inom det geografiska området, MWh/inv"
-elkonsumtion[elkonsumtion=="N01951"] <- "Invånare totalt, antal"
+# Beräknar total konsumtion av el. Detta är enklare om data först görs om till wide
+elkonsumtion <- pivot_wider(elkonsumtion, names_from=kpi, values_from=value) %>% 
+  mutate(konsumtion = `Invånare totalt, antal`*`Slutanvändning av el inom det geografiska området, MWh/inv`) %>%
+    select(-c(`Invånare totalt, antal`,`Slutanvändning av el inom det geografiska området, MWh/inv`)) 
 
-### Gör datan wide istället för long
-elkonsumtion <- elkonsumtion %>% filter(gender=="T") %>%  pivot_wider(names_from=kpi, values_from=value) %>% unchop(everything())
+# Läser in data för produktionen av el i Dalarna och relaterar denna till total produktion. Detta ger en självförsörjningsgrad för el 
+el <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/elproduktion.csv",encoding="UTF-8") %>% 
+  rename(produktion = value) %>% 
+    filter(kpi == "Totalt")  %>% 
+      right_join(elkonsumtion,c("year","municipality")) %>% 
+        mutate(elgrad = (produktion/konsumtion)*100) %>% 
+          filter(!(is.na(elgrad))) %>% 
+            select(year,municipality,elgrad)
 
-elkonsumtion$konsumtion <- elkonsumtion$`Invånare totalt, antal`*elkonsumtion$`Slutanvändning av el inom det geografiska området, MWh/inv`
-
-elkonsumtion$`Invånare totalt, antal` <- NULL
-elkonsumtion$`Slutanvändning av el inom det geografiska området, MWh/inv` <- NULL
-elkonsumtion$gender <- NULL
-
-colnames(elkonsumtion) <- c("Ar", "Region", "Elkonsumtion (MWh)")
-
-#elproduktion <- read.csv("G:/Uppföljning och Utvärdering/Analys/RUS-Indikatorer/Data/elproduktion.csv",encoding="UTF-8")
-
-elproduktion <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/elproduktion.csv",encoding="UTF-8")
-
-elproduktion <- pivot_wider(elproduktion, names_from=Kategori, values_from=Producerat)
-
-el <- elproduktion %>%  filter(Region=="Region Dalarna") %>% select(Ar, Region, 'Elproduktion totalt inom det geografiska området, MWh')
-
-### Slår ihop konsumtion och produktion
-el <- merge(el, elkonsumtion, by=c("Region", "Ar"))
-
-### Räkna ut självförsörjningsgraden av el
-el$elgrad <- el$`Elproduktion totalt inom det geografiska området, MWh`/el$`Elkonsumtion (MWh)`
-
-#write.csv(el,"G:/Uppföljning och Utvärdering/Analys/RUS-Indikatorer/Data/el.csv", fileEncoding="UTF-8", row.names = FALSE)
 write.csv(el,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/el.csv", fileEncoding="UTF-8", row.names = FALSE)

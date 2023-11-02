@@ -23,6 +23,8 @@ set_config(config(ssl_verifypeer = 0L))
 # Skriv in det lösenord som används vid inloggning
 #key_set("rd")
 
+outputmapp = "G:/skript/projekt/data/uppfoljning_dalastrategin/Data/"
+
 ###########################
 ### Klimatsmart Dalarna ###
 ###########################
@@ -31,6 +33,7 @@ set_config(config(ssl_verifypeer = 0L))
 ### Utsläpp ### 
 ###############
 source("Skript/utslapp.R", encoding="UTF-8")
+hamta_data_utslapp(outputmapp = outputmapp)
 
 ##############
 ### Avfall ### 
@@ -53,11 +56,14 @@ source("Skript/energieffektivitet.R", encoding="UTF-8")
 ### Skogsmark ### 
 #################
 source("Skript/skogsmark.R", encoding="UTF-8")
+hamta_data_skogsmark(outputmapp = outputmapp)
 
 #################
 ### Betesmark ### 
 #################
 source("Skript/betesmark.R", encoding="UTF-8")
+hamta_data_betesmark(region = c("0000","0020"),
+                     outputmapp = outputmapp)
 
 ##########################
 ### Kollektivt resande ### 

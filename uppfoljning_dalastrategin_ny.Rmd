@@ -431,7 +431,7 @@ resande2alt <- SkapaLinjeDiagram(skickad_df = resande %>%
 ```
 På grund av sin utsträckta och relativt glesbefolkade geografi har Dalarna en utmaning i att skapa en hållbar transportinfrastruktur. För att nå klimat- och energimålen krävs kraftfull teknisk utveckling i kombination med beteendeförändringar. Kollektivt resande spelar en central roll för utvecklandet av en klimatsmart och resurseffektiv, men också mer jämställd och jämlik, mobilitet. Kollektivtrafik är förenat med höga kostnader, samtidigt som det finns samhällsekonomiska vinster. För att klara omställningen krävs mod att ställa olika kostnader mot varandra. För att vi ska lyckas öka det kollektiva resandet behöver den traditionella kollektivtrafiken sannolikt kompletteras med nya mobilitetslösningar och tjänster, särskilt för länets mest glesbefolkade områden.
 
-Diagrammen redovisar indikatorer för kollektivt resande i Dalarna: resor per invånare samt marknadsandel för kollektivtrafik i länet. För antal resor per invånare syns att det kollektiva resandet har minskat avsevärt i Dalarna, från  `r resande %>% filter(kpi == "Resor_per_invanare") %>% filter(year == min(year)) %>% .$value `resor per person och år från `r min(resande$year)` till `r round(resande %>% filter(kpi == "Resor_per_invanare") %>% filter(year == max(year)) %>% .$value,0) ` år `r max(resande$year)`. Nedgången kan delvis förklaras av pandemin - det sker en tydlig minskning mellan 2019 och 2020 - men även mellan 2012 och 2013 minskade antalet resor per invånare avsevärt i Dalarna (OKLART VAD DENNA MINSKNING BEROR PÅ). I en nationell jämförelse år 2021 framgår att det i glesbygdslänen i Sverige som mest görs 40 resor per person. Medan det görs betydligt fler i storstadsregionerna, så som Skåne med i snitt 71 resor per person och år och i Stockholm där flest resor görs, sker 230 resor per person och år (det sista stycket uppdateras inte automatiskt).
+Diagrammen redovisar indikatorer för kollektivt resande i Dalarna: resor per invånare samt marknadsandel för kollektivtrafik i länet. För antal resor per invånare syns att det kollektiva resandet har minskat avsevärt i Dalarna, från  `r resande %>% filter(kpi == "Resor_per_invanare") %>% filter(year == min(year)) %>% .$value ` resor per person och år från `r min(resande$year)` till `r round(resande %>% filter(kpi == "Resor_per_invanare") %>% filter(year == max(year)) %>% .$value,0) ` år `r max(resande$year)`. Nedgången kan delvis förklaras av pandemin - det sker en tydlig minskning mellan 2019 och 2020 - men även mellan 2012 och 2013 minskade antalet resor per invånare avsevärt i Dalarna (OKLART VAD DENNA MINSKNING BEROR PÅ). I en nationell jämförelse år 2021 framgår att det i glesbygdslänen i Sverige som mest görs 40 resor per person. Medan det görs betydligt fler i storstadsregionerna, så som Skåne med i snitt 71 resor per person och år och i Stockholm där flest resor görs, sker 230 resor per person och år (det sista stycket uppdateras inte automatiskt).
 
 Marknadsandelen för kollektivtrafik beräknas som andelen resor med kollektivtrafik (linjelagd buss, spårvagn, tunnelbana, pendeltåg, tåg och båt) och taxi av det totala antalet resor, dvs kollektivtrafik, taxi, bil (förare och passagerare) samt moped/MC. Här bryts uppgången i en förmodad pandemieffekt efter ett antal år av ökande marknadsandel för kollektivtrafiken.
 
@@ -445,6 +445,13 @@ resande2alt
 ```
 
 ## Skattad självförsörjningsgrad av energi och livsmedel
+
+Klimatförändringarna medför lokalt förändrade mönster för nederbörd, torka, vind, insekts- och svampangrepp på grödor och skog, höga temperaturer, med mera. Här spelar god samhällsplanering på regional och kommunal nivå en viktig roll. Ett sätt att förbättra beredskapen i Dalarna är att ha en tillräckligt omfattande lokal och hållbar livsmedelsproduktion. En ökad självförsörjningsgrad är en trygghet på flera sätt och gynnar även miljöns motståndskraft genom en ökad biologisk mångfald.
+
+Det första diagrammet visar andelen livsmedel inom fem kategorier (fårkött, griskött, matpotatis, mjölkprodukter samt nötkött) som producerats i Dalarna i relation till den mängd livsmedel i varje kategori som konsumerats i länet. Med undantag för matpotatis år 2016 och år 2019, som vi i princip är självförsörjande på, konsumerar befolkningen i Dalarna idag betydligt mer inom samtliga kategorier jämfört med den mängd som produceras i länet.
+
+Det andra diagrammet visar ett teroretiskt mått på självförsörjning av energi i Dalarna där den totala elproduktionen i länet visas som andel av den total elförbrukningen. Diagrammet visar en positiv trend för självförsörjningsgraden av energi, vilket beror på att förbrukningen av el har minskat i länet sedan 2016, samtidigt som produktionen av el har ökat under samma tidsperiod.
+
 ```{r, include = FALSE}
 #livsmedel1  <- ggplot(livsmedel, aes(fill=as.character(År), y=Andel, x=Produkt))+
 #      geom_bar(position="dodge", stat="identity")+
@@ -471,9 +478,8 @@ livsmedel1alt <- SkapaStapelDiagram(skickad_df = livsmedel %>%
 
 
 elgrad <- SkapaStapelDiagram(skickad_df = el %>% 
-                               mutate(elgrad = elgrad * 100) %>% 
-                                mutate(Ar=as.character(Ar)),
-                    skickad_x_var = "Ar",
+                                mutate(year=as.character(year)),
+                    skickad_x_var = "year",
                     skickad_y_var = "elgrad",
                     diagram_titel = "Teoretisk självförsörjning av energi i Dalarna",
                     output_mapp = "Diagram/",
@@ -487,11 +493,6 @@ elgrad <- SkapaStapelDiagram(skickad_df = el %>%
                     procent_0_100_10intervaller = TRUE)
 
 ```
-Klimatförändringarna medför lokalt förändrade mönster för nederbörd, torka, vind, insekts- och svampangrepp på grödor och skog, höga temperaturer, med mera. Här spelar god samhällsplanering på regional och kommunal nivå en viktig roll. Ett sätt att förbättra beredskapen i Dalarna är att ha en tillräckligt omfattande lokal och hållbar livsmedelsproduktion. En ökad självförsörjningsgrad är en trygghet på flera sätt och gynnar även miljöns motståndskraft genom en ökad biologisk mångfald.
-
-Det första diagrammet visar andelen livsmedel inom fem kategorier (fårkött, griskött, matpotatis, mjölkprodukter samt nötkött) som producerats i Dalarna i relation till den mängd livsmedel i varje kategori som konsumerats i länet. Med undantag för matpotatis år 2016 och år 2019, som vi i princip är självförsörjande på, konsumerar befolkningen i Dalarna idag betydligt mer inom samtliga kategorier jämfört med den mängd som produceras i länet.
-
-Det andra diagrammet visar ett teroretiskt mått på självförsörjning av energi i Dalarna där den totala elproduktionen i länet visas som andel av den total elförbrukningen. Diagrammet visar en positiv trend för självförsörjningsgraden av energi, även om vi bör vara försikta med slutsatser om år 2020, då elkonsumtionen minskade på grund av pandemin. Förbättringen kan både härröras till att den regionala energiproduktionen har ökat sedan 2016, och att elkonsumtionen har minskat.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 livsmedel1alt
@@ -504,10 +505,15 @@ elgrad
 
 ## Andel hektar formellt skyddad produktiv skogsmark
 
+År 2018 beslutade dåvarande regering om Sveriges första nationella skogsprogram med fokus på skogsbrukets roll för en hållbar utveckling. I Dalastrategin omnämns skogsbruket som en av länets viktigare näringar. Skogsbruket påverkar och påverkas av klimatförändringarna och skötsel och brukande behöver anpassas därefter. 
+
+I diagrammen nedan redovisas utvecklingen för skyddad produktiv skogsmark i Dalarnas län mellan `r as.character(min(skogsmark$År))` och `r as.character(max(skogsmark$År))`. Arealen skyddad skogsmark i länet har ökat över tidsperioden, från `r format(skogsmark %>% filter(År==min(År)) %>% .$area_hektar,big.mark=" ")` hektar år `r as.character(min(skogsmark$År))` till `r format(skogsmark %>% filter(År==max(År)) %>% .$area_hektar,big.mark=" ")` hektar år `r as.character(max(skogsmark$År))`. Procentuellt var `r skogsmark %>% filter(År==min(År)) %>% .$area_procent` procent av den produktiva skogsmarken i Dalarnas län skyddad år `r as.character(min(skogsmark$År))` och samma siffra för `r as.character(max(skogsmark$År))` var `r skogsmark %>% filter(År==max(År)) %>% .$area_procent` procent. Det betyder att den totala arealen skogsmark har ökat något under perioden.
+
 ```{r, include = FALSE}
-skogsmark1 <- SkapaStapelDiagram(skickad_df = skogsmark %>% mutate("Area.i.hektar"=Area.i.hektar/1000),
+skogsmark1 <- SkapaStapelDiagram(skickad_df = skogsmark %>%
+                                   mutate(area_hektar=area_hektar/1000),
                     skickad_x_var = "År",
-                    skickad_y_var = "Area.i.hektar",
+                    skickad_y_var = "area_hektar",
                     diagram_titel = paste0("Areal skyddad produktiv skogsmark i Dalarna"),
                     output_mapp = "Diagram/",
                     filnamn_diagram = "skogsmark.png",
@@ -519,7 +525,7 @@ skogsmark1 <- SkapaStapelDiagram(skickad_df = skogsmark %>% mutate("Area.i.hekta
 
 skogsmark2 <- SkapaStapelDiagram(skickad_df = skogsmark,
                     skickad_x_var = "År",
-                    skickad_y_var = "Andel.i.procent",
+                    skickad_y_var = "area_procent",
                     diagram_titel = paste0("Andel skyddad produktiv skogsmark i Dalarna"),
                     output_mapp = "Diagram/",
                     filnamn_diagram = "skogsmark2.png",
@@ -530,11 +536,6 @@ skogsmark2 <- SkapaStapelDiagram(skickad_df = skogsmark,
                     lagg_pa_logga = FALSE)
 
 ```
-
-År 2018 beslutade dåvarande regering om Sveriges första nationella skogsprogram med fokus på skogsbrukets roll för en hållbar utveckling, I Dalastrategin omnämns skogsbruket som en av länets viktigare näringar. Skogsbruket påverkar och påverkas av klimatförändringarna och skötsel och brukande behöver anpassas därefter. 
-
-I diagrammen nedan redovisas utvecklingen för skyddad produktiv skogsmark i Dalarnas län mellan 2018 och 2021. Arealen skyddad skogsmark i länet är i princip densamma över tidsperioden, 116 500 hektar respektive 116 700 hektar. Procentuellt var 6,1 procent av den produktiva skogsmarken i Dalarnas län skyddad 2018 och samma siffra för 2021 var 6 procent. Det betyder att den totala arealen skogsmark har ökat något under perioden.
-
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 skogsmark1
@@ -548,13 +549,13 @@ skogsmark2
 ## Arealen betesmark och areal med särskilt höga biologiska värden
 Biologisk mångfald och väl fungerande ekosystem är en förutsättning för allt liv på jorden. Det är också en bas för goda livsmiljöer för både Dalarnas invånare och för Dalarnas näringsliv. Den gröna infrastrukturen är ekologiskt funktionella nätverk av livsmiljöer och naturområden som utformas, brukas och förvaltas så att den biologiska mångfalden bevaras och därmed främjar de för samhället så centrala ekosystemtjänster som exempelvis vattenrening och livskraftiga jordbruksmarker etc. Samhället har allt att vinna på ett hållbart bruk av ekosystemen och att förvalta ett mångfunktionellt landskap där natur- och kulturvärden tillvaratas.
 
-I diagrammet nedan redovisas utvecklingen för arealen betesmark i Dalarnas län mellan 2011 och 2021. Arealen har under denna period minskat från 11 908 till 10 458 hektar. Denna negativa trend går också emot den nationella trenden, där arealen betesmark har ökat något i riket som helhet. Slåtteräng är en delmängd av betesmarken som har särskilt höga biologiska värden, och därmed särskilt stor betydelse för biologisk mångfald. I Dalarna är andelen slåtteräng 1,6 procent av betesmarken.
+I diagrammet nedan redovisas utvecklingen för arealen betesmark i Dalarnas län mellan `r as.character(min(betesmark$year))` och `r as.character(max(betesmark$year))`. Arealen har under denna period minskat från `r format(betesmark %>% filter(municipality_id == 20,year == min(year)) %>% .$value,big.mark=" ")` till `r format(betesmark %>% filter(municipality_id == 20,year == max(year)) %>% .$value,big.mark=" ")` hektar. Denna negativa trend går också emot den nationella trenden, där arealen betesmark har ökat något i riket som helhet. Slåtteräng är en delmängd av betesmarken som har särskilt höga biologiska värden, och därmed särskilt stor betydelse för biologisk mångfald. I Dalarna är andelen slåtteräng 1,6 procent av betesmarken (LITE OKLART VAR DENNA INFO KOMMER IFRÅN - TA BORT?).
 
 ```{r, include = FALSE}
-betesmark$year <- as.character(betesmark$year)
 
 betesmark <- SkapaStapelDiagram(skickad_df = betesmark %>% 
-                                  mutate(year = year %>% as.character()),
+                                  mutate(year = year %>% as.character()) %>% 
+                                    filter(municipality_id == 20),
                     skickad_x_var = "year",
                     skickad_y_var = "value",
                     diagram_titel = paste0("Arealen betesmark i Dalarna"),

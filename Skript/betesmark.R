@@ -1,31 +1,25 @@
-#################
-### Betesmark ###
-#################
 
-#### Lista på variabler och koder 
-#### N45926 - Elproduktion totalt inom det geografiska området, MWh
-#### N45904 - Elproduktion av vindkraft inom det geografiska området, MWh
-#### N45927 - Elproduktion av vattenkraft inom det geografiska området, MWh
+hamta_data_betesmark = function(region = "0020",
+                                cont_code = c("N00750"),
+                                outputmapp = "G:/skript/projekt/data/uppfoljning_dalastrategin/Data/",
+                                filnamn = "betesmark.csv"){
 
-#### Dra hem variablerna från Kolada
-betesmark <- get_values(
-  kpi = c("N00750"),
-  municipality = c("0020"),
-  period = 2011:2100
-)
-
-### Ta bort kolumner som vi inte behöver
-betesmark$municipality_id <- NULL
-betesmark$gender <- NULL
-betesmark$count <- NULL
-betesmark$municipality_type <- NULL
-
-### Byter namn från kpi/kolada-koder till mer beskrivande namn
-betesmark[betesmark=="N00750"] <- "Total betesmark, hektar"
-
-### Gör datan wide istället för long
-#elproduktion <- pivot_wider(elproduktion, names_from=kpi, values_from=value)
-
-#colnames(betesmark) <- c("Kategori", "Ar", "Producerat", "Region")
-
-write.csv(betesmark,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/betesmark.csv", fileEncoding="UTF-8", row.names = FALSE)
+  #################
+  ### Betesmark ###
+  #################
+  
+  #### Dra hem variablerna från Kolada
+  betesmark <- get_values(
+    kpi = cont_code,
+    municipality = region,
+    period = 2011:2100
+  )
+  
+  # Byter namn på variabel och tar bort de vi inte behöver
+  betesmark <- betesmark %>% 
+    select(-c(gender,count,municipality_type)) %>%
+      mutate(kpi = case_when(
+        kpi == "N00750" ~ "Total_betesmark"))
+  
+  write.csv(betesmark, paste0(outputmapp,filnamn), fileEncoding="UTF-8", row.names = FALSE)
+}
