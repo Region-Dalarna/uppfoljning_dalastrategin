@@ -38,9 +38,11 @@ hamta_data_utslapp(outputmapp = outputmapp)
 ##############
 ### Avfall ### 
 ##############
-source("Skript/avfall.R", encoding="UTF-8")
-
-source("Skript/avfall2.R", encoding="UTF-8")
+# source("Skript/avfall.R", encoding="UTF-8")
+# 
+# source("Skript/avfall2.R", encoding="UTF-8")
+source("Skript/avfall_ny.R", encoding="UTF-8")
+hamta_data_avfall(outputmapp = outputmapp)
 
 ########################
 ### Energiproduktion ### 
