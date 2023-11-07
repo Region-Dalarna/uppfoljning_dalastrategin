@@ -45,11 +45,13 @@ hamta_data_avfall(outputmapp = outputmapp)
 ### Energiproduktion ### 
 ########################
 source("Skript/energiproduktion.R", encoding="UTF-8")
+hamta_data_energiproduktion(outputmapp = outputmapp)
 
 ##########################
 ### Energieffektivitet ### 
 ##########################
 source("Skript/energieffektivitet.R", encoding="UTF-8")
+hamta_data_energieffektivitet(outputmapp = outputmapp)
 
 #################
 ### Skogsmark ### 
