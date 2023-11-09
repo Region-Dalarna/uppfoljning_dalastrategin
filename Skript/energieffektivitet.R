@@ -31,8 +31,14 @@ hamta_data_energieffektivitet = function(region = "Alla", # Alla ger alla län, 
     region = c("00",region)
   }
   
+  # Två uttag, där utsläpp (tid_1) normalt har mer "lagg". Testar därför om de är samma, annars sätts senaste år till utsläppens år
   if (tid == "senaste"){
     tid = max(hamta_giltiga_varden_fran_tabell("https://api.scb.se/OV0104/v1/doris/sv/ssd/NR/NR0105/NR0105A/NR0105ENS2010T01A", "tid"))
+    tid_1 = max(hamta_giltiga_varden_fran_tabell("https://api.scb.se/OV0104/v1/doris/sv/ssd/MI/MI1301/MI1301B/UtslappLan", "tid"))
+    
+    if(tid != tid_1){ 
+      tid = tid_1
+      }
   }
   
   pxweb_query_list <-

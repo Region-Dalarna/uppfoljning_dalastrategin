@@ -3,8 +3,9 @@ hamta_data_avfall = function(region_Kolada = "0020",
                              region_SCB = "20",
                              outputmapp = "G:/skript/projekt/data/uppfoljning_dalastrategin/Data/",
                              filnamn = c("avfall.csv","avfallbrp.csv"), # Två utdatafiler
+                             senaste_ar = TRUE, # Om man bara vill ha senaste år
                              tid_kolada = 2013:2100, # Välj ett högt värde som sista värde om alla år skall vara med
-                             tid_SCB = c("*")){ # c(*) om alla år tillgängliga år skall väljas
+                             tid_SCB = c("*")){ # c(*) om alla tillgängliga år skall väljas
 
   ###################################################################
   ### Indikator 4 och 5 - Insamlat hushållsavfall samt avfall/brp ###
@@ -17,7 +18,17 @@ hamta_data_avfall = function(region_Kolada = "0020",
   #### U07484 - Insamlat grovavfall, kg/person
   #### U07482 - Insamlat mat- och restavfall, kg/person
   
+  api_scb = "https://api.scb.se/OV0104/v1/doris/sv/ssd/NR/NR0105/NR0105A/NR0105ENS2010T01A"
+  
   source("https://raw.githubusercontent.com/FaluPeppe/func/main/func_API.R")
+  
+  # Väljer senaste år
+  if(senaste_ar == TRUE){
+  tid_kolada <- max(unique(hamta_kolada_giltiga_ar("U07801",vald_region = region)))
+  tid_SCB = max(hamta_giltiga_varden_fran_tabell(api_scb, "tid"))
+  }
+  # Då data kommer från två källor finns risk att sista år från Kolada är senare än sista år från SCB
+  if(tid_kolada != tid_SCB) tid_kolada = tid_SCB
   
   if (!require("pacman")) install.packages("pacman")
   pacman::p_load(tidyverse,

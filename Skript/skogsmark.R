@@ -3,7 +3,7 @@
 
 
 hamta_data_skogsmark <- function(region = "20",
-                                 tid = c("*"),
+                                 tid = c("*"),# c("*") ger alla år, för enbart senaste år, skriv "senaste"
                                  cont_code = c("0000021D", "0000024O"),
                                  outputmapp = "G:/skript/projekt/data/uppfoljning_dalastrategin/Data/",
                                  filnamn = "skogsmark.csv"){
@@ -17,11 +17,17 @@ hamta_data_skogsmark <- function(region = "20",
 ############################################
 # Länk SCB
 # https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__MI__MI0605/SkyddSkogFrivillig/
+  
+source("https://raw.githubusercontent.com/FaluPeppe/func/main/func_API.R")
 
 if (!require("pacman")) install.packages("pacman")
   pacman::p_load(tidyverse,
                  pxweb,
                  readxl)
+  
+  if (tid == "senaste"){
+    tid = max(hamta_giltiga_varden_fran_tabell("https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__MI__MI0605/SkyddSkogFrivillig/", "tid"))
+  }
   
   pxweb_query_list <- 
     list("Region"=region,

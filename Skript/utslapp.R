@@ -2,12 +2,10 @@
 
 hamta_data_utslapp <- function(region = c("0020", "0000"),
                                outputmapp = "G:/skript/projekt/data/uppfoljning_dalastrategin/Data/",
-                               filnamn = "vaxthusgaser.csv"){
+                               filnamn = "vaxthusgaser.csv",
+                               tid = 1900:2100){# Om flera år, välj ett sent startår så tas sista år med automatiskt. Om man enbart vill ha senaste år, skriv "senaste år"
   
-  if (!require("pacman")) install.packages("pacman")
-  pacman::p_load(tidyverse,
-                 rKolada,
-                 readxl)
+  # Skript som hämtar data för utsläpp från Kolada
   
   #### N07702 - Utsläpp till luft av växthusgaser totalt, ton CO2-ekv 
   #### N00401 - Utsläpp till luft av växthusgaser totalt, ton CO2-ekv/inv 
@@ -19,11 +17,20 @@ hamta_data_utslapp <- function(region = c("0020", "0000"),
   #### N85533 - Utsläpp till luft av växthusgaser, transporter, ton CO2e
   #### N85534 - Utsläpp till luft av växthusgaser, utrikes transporter, ton CO2e 
   
+  if (!require("pacman")) install.packages("pacman")
+  pacman::p_load(tidyverse,
+                 rKolada,
+                 readxl)
+  
+  source("https://raw.githubusercontent.com/FaluPeppe/func/main/func_API.R")
+  
+  if(tid == "senaste år") tid <- max(unique(hamta_kolada_giltiga_ar("N07702",vald_region = region)))
+  
   ### Dra hem variablerna från Kolada
   vaxthusgaser <- get_values(
     kpi = c("N85533", "N85534", "N85538", "N85537", "N85536", "N85532", "N85535", "N07702", "N00401"),
     municipality = region,
-    period = 1900:2100
+    period = tid
   )
   
   # Döper om variabler till mer passande namn (enligt mall ovan)
