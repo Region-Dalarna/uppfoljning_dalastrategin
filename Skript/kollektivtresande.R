@@ -1,7 +1,7 @@
-hamta_data_kollektivtresande = function(region = c("0020", "0000"),
+hamta_data_kollektivtresande = function(region = c("0020"),
                                        outputmapp = "G:/skript/projekt/data/uppfoljning_dalastrategin/Data/",
                                        filnamn = "resande.csv", 
-                                       tid = 2010:2100){ # Välj ett högt värde som sista värde om alla år skall vara med. "senaste år" ger senaste år
+                                       tid = 2010:2100){ # Välj ett högt värde som sista värde om alla år skall vara med.
 
   #######################################
   ### Indikator 7 - Kollektiv Resande ###
@@ -19,8 +19,8 @@ hamta_data_kollektivtresande = function(region = c("0020", "0000"),
   #### Dra hem variablerna från Kolada
   resande <- get_values(
     kpi = c("U85427", "N60404"),
-    municipality = c("0020"),
-    period = 2010:2100
+    municipality = region,
+    tid = tid
   )
   
   # Väljer bort variabler och ger mer rimliga namn.

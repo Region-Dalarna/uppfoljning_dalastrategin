@@ -1,9 +1,7 @@
 
-
-
-
 hamta_data_skogsmark <- function(region = "20",
-                                 tid = c("*"),# c("*") ger alla år, för enbart senaste år, skriv "senaste"
+                                 senaste_ar = FALSE, # Om man bara vill ha senaste år
+                                 tid = c("*"),# c("*") ger alla år
                                  cont_code = c("0000021D", "0000024O"),
                                  outputmapp = "G:/skript/projekt/data/uppfoljning_dalastrategin/Data/",
                                  filnamn = "skogsmark.csv"){
@@ -25,7 +23,7 @@ if (!require("pacman")) install.packages("pacman")
                  pxweb,
                  readxl)
   
-  if (tid == "senaste"){
+  if (senaste_ar == TRUE){
     tid = max(hamta_giltiga_varden_fran_tabell("https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__MI__MI0605/SkyddSkogFrivillig/", "tid"))
   }
   

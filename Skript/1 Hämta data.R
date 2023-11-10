@@ -70,6 +70,7 @@ hamta_data_betesmark(region = c("0000","0020"),
 ### Kollektivt resande ### 
 ##########################
 source("Skript/kollektivtresande.R", encoding="UTF-8")
+hamta_data_kollektivtresande(outputmapp = outputmapp)
 
 ##########################
 ### Livsmedel          ### 
@@ -82,6 +83,8 @@ hamta_data_livsmedel(outputmapp = outputmapp)
 ### Självförsörjning energi ###
 ###############################
 source("Skript/energikonsumtion.R", encoding="UTF-8")
+hamta_data_energikonsumtion(outputmapp = outputmapp)
+
 
 ##################################
 ### Konkurrenskraftigt Dalarna ###
@@ -97,11 +100,13 @@ hamta_data_chefrepresentation(outputmapp = outputmapp)
 ## Ginikoefficient ##
 #####################
 source("Skript/gini.R", encoding="UTF-8")
+hamta_data_gini(outputmapp = outputmapp)
 
 ##########################
 ## Långtidsarbetslöshet ##
 ##########################
 source("Skript/långtidsarbetslöshet.R", encoding="UTF-8")
+hamta_data_langtidsarb(outputmapp = outputmapp)
 
 ###############################
 ## Eftergymnasial utbildning ##

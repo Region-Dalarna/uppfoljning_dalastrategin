@@ -1,8 +1,10 @@
 hamta_data_energieffektivitet = function(region = "Alla", # Alla ger alla län, annars väljer man baserat på kod, exempelivs 20 för Dalarna
+                                         alla_regioner = TRUE, # Om man vill ha alla regioner
                                          ta_med_riket = FALSE, 
                                          outputmapp = "G:/skript/projekt/data/uppfoljning_dalastrategin/Data/",
                                          filnamn = "effektivitet.csv", 
-                                         tid = c("*")){ # c("*") ger alla år, för enbart senaste år, skriv "senaste")
+                                         senaste_ar = FALSE, # True om man enbart vill ha senaste år
+                                         tid = c("*")){ # c("*") ger alla år
 
 
   #####################################################################
@@ -23,8 +25,8 @@ hamta_data_energieffektivitet = function(region = "Alla", # Alla ger alla län, 
                  pxweb,
                  readxl) 
   
-  if(region == "Alla"){
-    region = hamtaAllaLan(tamedriket=FALSE)
+  if(alla_regioner == TRUE){
+    region = hamtaAllaLan(tamedriket = FALSE)
   }
   
   if(ta_med_riket == TRUE){
@@ -32,7 +34,7 @@ hamta_data_energieffektivitet = function(region = "Alla", # Alla ger alla län, 
   }
   
   # Två uttag, där utsläpp (tid_1) normalt har mer "lagg". Testar därför om de är samma, annars sätts senaste år till utsläppens år
-  if (tid == "senaste"){
+  if (senaste_ar == TRUE){
     tid = max(hamta_giltiga_varden_fran_tabell("https://api.scb.se/OV0104/v1/doris/sv/ssd/NR/NR0105/NR0105A/NR0105ENS2010T01A", "tid"))
     tid_1 = max(hamta_giltiga_varden_fran_tabell("https://api.scb.se/OV0104/v1/doris/sv/ssd/MI/MI1301/MI1301B/UtslappLan", "tid"))
     

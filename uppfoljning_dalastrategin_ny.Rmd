@@ -651,6 +651,9 @@ chef4
 ```
 
 ## Ginikoefficient
+I Dalastrategin lyfts ekonomiska klyftor som en framtidsutmaning för länet. För att redovisa ojämlikheten i inkomstfördelningen används gini-koefficienten. Ett högt värde på koefficienten visar på större inkomstskillnader och därmed större ojämlikhet. Här redovisas ginikoefficienten beräknad genom disponibel inkomst per "konsumtionsenhet". Med konsumtionsenhet menas att det i beräkningen av en individs tillgängliga ekonomiska resurser tas hänsyn till hur hushållet är sammansatt som individen bor i. Det betyder att beakta om personen är ensamboende eller sammanboende och om den har ansvar för minderåriga barn eller inte etc, faktorer som kan minska eller öka individens disponibla inkomst.
+
+För Dalarnas räkning har ginikoefficienten ökat något från 2011 till `r max(gini$year)`, vilket visar på en ökad ekonomisk ojämlikhet i länet, med en toppnotering 2019. Ginikoefficienten för länet ligger under koefficienten för riket, det vill säga i Dalarna lever befolkningen mindre ojämlikt, för samtliga år förutom 2019. 2019 avviker dock så skarpt från den generella trenden att det årets notering bör betraktas med försiktighet. Ökningen från 2011 och framåt är dock tydlig oavsett inverkan från år 2019. 
 
 ```{r, include = FALSE}
 
@@ -658,7 +661,7 @@ gini1 <- SkapaLinjeDiagram(skickad_df = gini %>%
                              mutate(year = year %>% as.character(),
                                     municipality = ifelse(municipality == "Region Dalarna", "Dalarna", municipality)),
                     skickad_x_var = "year",
-                    skickad_y_var = "Ginikoefficient...hushållens.disponibla.inkomster..index",
+                    skickad_y_var = "value",
                     diagram_titel = paste0("Ginikoefficient"),
                     skickad_x_grupp = "municipality",
                     diagram_capt = "Källa: SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: För att redovisa ojämnheten i inkomstfördelningen används gini-koefficienten.\nKoefficienten kan anta ett värde mellan 0 och 1.\nEtt högt värde på koefficienten visar på större ojämnhet än ett lågt värde",
@@ -670,9 +673,6 @@ gini1 <- SkapaLinjeDiagram(skickad_df = gini %>%
                     filnamn_diagram = "gini.png")
 
 ```
-I Dalastrategin lyfts ekonomiska klyftor som en framtidsutmaning för länet. För att redovisa ojämlikheten i inkomstfördelningen används gini-koefficienten. Ett högt värde på koefficienten visar på större inkomstskillnader och därmed större ojämlikhet. Här redovisas ginikoefficienten beräknad genom disponibel inkomst per "konsumtionsenhet". Med konsumtionsenhet menas att det i beräkningen av en individs tillgängliga ekonomiska resurser tas hänsyn till hur hushållet är sammansatt som individen bor i. Det betyder att beakta om personen är ensamboende eller sammanboende och om den har ansvar för minderåriga barn eller inte etc, faktorer som kan minska eller öka individens disponibla inkomst.
-
-För Dalarnas räkning har ginikoefficienten ökat något från 2011 till 2020, vilket visar på en ökad ekonomisk ojämlikhet i länet, med en toppnotering 2019. Ginikoefficienten för länet ligger under koefficienten för riket, det vill säga i Dalarna lever befolkningen mindre ojämlikt, för samtliga år förutom 2019. 2019 avviker dock så skarpt från den generella trenden att det årets notering bör betraktas med försiktighet. Ökningen från 2011 och framåt är dock tydlig oavsett inverkan från år 2019. 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gini1
@@ -829,6 +829,7 @@ syss1
 ```
 
 ## Långtidsarbetslöshet
+AVVAKTA DATA FÖR 2023. VISAR SANNOLIKT EN YTTERLIGARE SÄNKNING SOM EVENTUELLT MEDFÖR ATT TEXTEN BEHÖVER SKRIVAS OM DELVIS
 En annan indikator för att följa sysselsättningsutvecklingen i länet är andelen långtidsarbetslösa. Om utvecklingen för andelen förvärsarbetande kan beskrivas som positiv i rätt riktning så kan inte samma sak sägas om långtidsarbetslösheten. Som långtidsarbetslös räknas den som har varit öppet arbetslös eller i program med aktivitetsstöd i minst sex månader. År 2011 noterades 2,9 procent av länets befolkning som långtidsarbetslösa, till år 2021 hade den stigit till 3,9 procent, för att sedan sjunka till 3,4 procent år 2022. År 2021 var det relativt stor skillnad mellan kvinnor (3,7 procent) och män (4,0 procent), medan skillnaden knappt är märkbar år 2022. Riksgenomsnittet för långtidsarbetslösheten år 2022 är 3,8 procent, och Dalarna ligger därmed under riksgenomsnittet. En generell orsak till långtidsarbetslöshet är strukturarbetslöshet som innebär att de arbetssökande saknar rätt kompetens för de arbeten som det finns efterfrågan på.
 
 ```{r, include = FALSE}
@@ -839,12 +840,12 @@ arb1 <- SkapaStapelDiagram(skickad_df = arbets %>%
                                      gender = case_when(gender == "K" ~ "Kvinnor",
                                                         gender == "M" ~ "Män")),
                     skickad_x_var = "year",
-                    skickad_y_var = "Långtidsarbetslöshet.25.64.år..årsmedelvärde..andel.....av.bef.",
+                    skickad_y_var = "value",
                     skickad_x_grupp = "gender",
                     diagram_titel = paste0("Långtidsarbetslöshet 25-64 år i Dalarna"),
                     output_mapp = "Diagram/",
                     filnamn_diagram = "arbets.png",
-                    diagram_capt = "Källa: Arbetsförmedlingen (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Som långtidsarbetslös räknas den som har varit öppet arbetslösa eller i program med aktivitetsstöd i minst sex månader",
+                    diagram_capt = "Källa: Arbetsförmedlingen (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Som långtidsarbetslös räknas den som har varit öppet arbetslös\n eller i program med aktivitetsstöd i minst sex månader",
                     manual_y_axis_title = "procent",
                     x_axis_lutning = 0,
                     manual_color=diagramfarger("kon"),

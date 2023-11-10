@@ -3,7 +3,8 @@ hamta_data_betesmark = function(region = "0020",
                                 cont_code = c("N00750"),
                                 outputmapp = "G:/skript/projekt/data/uppfoljning_dalastrategin/Data/",
                                 filnamn = "betesmark.csv",
-                                tid = 2011:2100 ){# Om flera år, välj ett sent startår så tas sista år med automatiskt. Om man enbart vill ha senaste år, skriv "senaste år"
+                                senaste_ar = FALSE, # om man enbart vill ha senaste år
+                                tid = 2011:2100 ){# Om flera år, välj ett sent startår så tas sista år med automatiskt.
 
   #################
   ### Betesmark ###
@@ -16,7 +17,7 @@ hamta_data_betesmark = function(region = "0020",
   
   source("https://raw.githubusercontent.com/FaluPeppe/func/main/func_API.R")
   
-  if(tid == "senaste år") tid <- max(unique(hamta_kolada_giltiga_ar("N00750",vald_region = region)))
+  if(senaste_ar == TRUE) tid <- max(unique(hamta_kolada_giltiga_ar("N00750",vald_region = region)))
   
   #### Dra hem variablerna från Kolada
   betesmark <- get_values(
