@@ -76,6 +76,8 @@ etablering <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/et
 
 forskning <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/forskning.csv",encoding="UTF-8")
 
+# Ej uppdaterat. Också Excelfil från tillväxtanalys? Kolla upp
+
 nystartade <- read_excel("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/NystartadeFöretag2023Uppd.xlsx")
 
 trang <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/trang.csv",encoding="UTF-8")
@@ -105,6 +107,8 @@ ungadel <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/LUPP/
 export <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/Export/exportperinv.csv",encoding="latin1")
 
 hlv <- read_excel("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/HLV_Dalarna_ 2014_2018_2021.xlsx")
+
+# Ej uppdaterade (Excelfil från tillväxtanalys?)
 
 intindex <- read_excel("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/tillväxtanalys/totalindex 2020.xlsx")
 
@@ -721,6 +725,8 @@ inter2 <- SkapaStapelDiagram(skickad_df = intindex2 %>%
                     x_axis_sort_value = TRUE,
                     manual_color = diagramfarger("rus_tva_fokus"))
 ```
+
+EJ UPPDATERAT. VÄNTA MED ATT HÄMTA HEM DATA (EJ API)
 Internationellt kunskapsutbyte och handel är viktiga faktorer för att möta samhällsutmaningar och för att ta vara på möjligheter till import, investeringar och export av varor och tjänster. I vårt län finns världsledande företag i olika storlek som deltar i globala värdekedjor, varav en del av de mindre företagen i värdekedjorna därmed spelar på den globala marknaden trots att de bara eller främst levererar till sin regionala storkund.
 
 En indikator som används för att följa utvecklingen inom detta område är internationalisering. Internationalisering är ett komplext koncept och kan bestå av flera olika delar. I denna uppföljning används Tillväxtverkets regionala internationaliseringsindex för att illustrera internationalisering, det består av ett antal variabler om handel (export), arbetsmarknad (internationella företags betydelse för regionen) och turism (utländska gästnätter), indikator. Indexet gör det möjligt att följa hur internationaliseringen utvecklas över tid i olika regioner (län).
@@ -760,6 +766,7 @@ nystart1 <- SkapaStapelDiagram(skickad_df = nystartade %>%
                     lagg_pa_logga = FALSE)
 ```
 
+EJ UPPDATERAD. VÄNTA TILLS SENARE MED ATT UPPDATERA DATA (EJ API)
 För ekonomins och samhällets förnyelse är entreprenörskap en avgörande faktor. Dalarna behöver fler, och olika typer av entreprenörer och en av prioriteringarna i Dalastrategin är att främja entreprenörskap och företagande. Denna indikator mäter antalet nystartade företag i geografin. Antalet nystartade företag per år i Dalarna har ökat över tid där toppnoteringen nåddes 2021 med 1 748 stycken. År 2007 gjordes en större förändring i statistiken över nystartade företag vilket kan förklara den skarpa förändringen från 2006 till 2007.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}

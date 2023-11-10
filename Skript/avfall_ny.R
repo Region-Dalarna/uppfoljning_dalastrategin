@@ -24,7 +24,7 @@ hamta_data_avfall = function(region_Kolada = "0020",
   
   # Väljer senaste år
   if(senaste_ar == TRUE){
-  tid_kolada <- max(unique(hamta_kolada_giltiga_ar("U07801",vald_region = region)))
+  tid_kolada <- max(unique(hamta_kolada_giltiga_ar("U07801",vald_region = region_Kolada)))
   tid_SCB = max(hamta_giltiga_varden_fran_tabell(api_scb, "tid"))
   }
   # Då data kommer från två källor finns risk att sista år från Kolada är senare än sista år från SCB

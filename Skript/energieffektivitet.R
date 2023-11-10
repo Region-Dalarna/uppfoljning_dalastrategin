@@ -1,5 +1,5 @@
-hamta_data_energieffektivitet = function(region = "Alla", # Alla ger alla län, annars väljer man baserat på kod, exempelivs 20 för Dalarna
-                                         alla_regioner = TRUE, # Om man vill ha alla regioner
+hamta_data_energieffektivitet = function(region = "20", 
+                                         alla_regioner = TRUE, # True om man vill ha alla regioner
                                          ta_med_riket = FALSE, 
                                          outputmapp = "G:/skript/projekt/data/uppfoljning_dalastrategin/Data/",
                                          filnamn = "effektivitet.csv", 

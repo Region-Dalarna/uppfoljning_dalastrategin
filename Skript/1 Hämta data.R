@@ -122,6 +122,7 @@ source("Skript/gymnasie.R", encoding="UTF-8")
 ## Matchning ##
 ###############
 source("Skript/matchning.R", encoding="UTF-8")
+hamta_data_matchning(outputmapp = outputmapp)
 
 ###############
 ## Sysselsatta ##
