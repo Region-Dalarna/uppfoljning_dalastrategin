@@ -124,10 +124,11 @@ source("Skript/gymnasie.R", encoding="UTF-8")
 source("Skript/matchning.R", encoding="UTF-8")
 hamta_data_matchning(outputmapp = outputmapp)
 
-###############
+#################
 ## Sysselsatta ##
-###############
+#################
 source("Skript/sysselsatta.R", encoding="UTF-8")
+hamta_data_sysselsatta(outputmapp = outputmapp)
 
 ####################
 ## Etableringstid ##

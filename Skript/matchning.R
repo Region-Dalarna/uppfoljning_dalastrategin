@@ -40,7 +40,9 @@ hamta_data_matchning = function(region = "20", # Alla ger alla län, annars väl
               query = pxweb_query_list)
   
   # Convert to data.frame 
-  matchning <- as.data.frame(px_data, column.name.type = "text", variable.value.type = "text")
+  matchning <- as.data.frame(px_data, column.name.type = "text", variable.value.type = "text") %>% 
+    rename(alder_grupp = `ålder/födelselandgrupp`,
+           matchningsgrad =`Matchningsgrad, procent `)
   
   #matchning <- pivot_wider(px_data_frame, names_from=`ålder/födelselandgrupp`, values_from=`Matchningsgrad, procent `)
   
