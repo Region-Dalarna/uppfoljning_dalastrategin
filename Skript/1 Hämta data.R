@@ -85,7 +85,6 @@ hamta_data_livsmedel(outputmapp = outputmapp)
 source("Skript/energikonsumtion.R", encoding="UTF-8")
 hamta_data_energikonsumtion(outputmapp = outputmapp)
 
-
 ##################################
 ### Konkurrenskraftigt Dalarna ###
 ##################################
@@ -112,6 +111,7 @@ hamta_data_langtidsarb(outputmapp = outputmapp)
 ## Eftergymnasial utbildning ##
 ###############################
 source("Skript/eftergymnasial.R", encoding="UTF-8")
+hamta_data_eftergymnasial(outputmapp = outputmapp)
 
 ###############################
 ## Gymnasial genomströmmning ##
@@ -134,6 +134,8 @@ hamta_data_sysselsatta(outputmapp = outputmapp)
 ## Etableringstid ##
 ####################
 source("Skript/invandringetablering.R", encoding="UTF-8")
+hamta_data_invandringsetablering(outputmapp = outputmapp,
+                                 start_ar = "2010")
 
 ####################
 ## Forskning ##

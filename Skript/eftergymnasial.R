@@ -1,18 +1,29 @@
-#### Dra hem variablerna från Kolada
-eftergymnasial <- get_values(
-  kpi = c("N01982"),
-  municipality = c("0020"),
-  period = 2013:2100
-)
+hamta_data_eftergymnasial = function(region = c("0020"),
+                                    outputmapp = "G:/skript/projekt/data/uppfoljning_dalastrategin/Data/",
+                                    filnamn = "eftergym.csv", 
+                                    senaste_ar = FALSE, # Om man enbart vill ha senaste år
+                                    tid = 2013:2100){ # Välj ett högt värde som sista värde om alla år skall vara med.
 
-## Ta bort kolumner som inte är relevanta
-eftergymnasial$count <- NULL
-eftergymnasial$municipality_type <- NULL
-eftergymnasial$municipality_id <- NULL
-
-## Döp om variabler till mer begripliga namn
-eftergymnasial[eftergymnasial=="N01982"] <- "eftergymnasial 25-64 år, årsmedelvärde, andel (%) av bef."
-
-eftergymnasial <- pivot_wider(eftergymnasial, names_from=kpi, values_from=value)
-
-write.csv(eftergymnasial,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/eftergym.csv", fileEncoding="UTF-8", row.names = FALSE)
+ 
+  if (!require("pacman")) install.packages("pacman")
+  pacman::p_load(tidyverse,
+                 rKolada,
+                 readxl)
+  
+  source("https://raw.githubusercontent.com/FaluPeppe/func/main/func_API.R")
+  
+  if(senaste_ar == TRUE) tid <- max(unique(hamta_kolada_giltiga_ar("N01982",vald_region = region)))
+  
+  #### Dra hem variablerna från Kolada
+  eftergymnasial <- get_values(
+    kpi = c("N01982"),
+    municipality = region,
+    period = tid
+  )
+  
+  eftergymnasial <- eftergymnasial %>% 
+    select(-c("count","municipality_type","municipality_id")) %>% 
+      mutate(kpi = ifelse(kpi == "N01982","andel_eftergym",kpi))
+  
+  write.csv(eftergymnasial,paste0(outputmapp,filnamn), fileEncoding="UTF-8", row.names = FALSE)
+}
