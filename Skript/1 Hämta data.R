@@ -18,7 +18,7 @@ pacman::p_load(httr,
 ##############
 ## Gateway ###
 ##############
-set_config(use_proxy(url = "http://mwg.ltdalarna.se", port = 9090, username = Sys.info()[["user"]], password = askpass(prompt = "Please enter your password: ")))
+set_config(use_proxy(url = "http://mwg.ltdalarna.se", port = 9090, username = Sys.info()[["user"]], password = key_get("rd")))
 set_config(config(ssl_verifypeer = 0L))
 # Skriv in det lösenord som används vid inloggning
 #key_set("rd")
