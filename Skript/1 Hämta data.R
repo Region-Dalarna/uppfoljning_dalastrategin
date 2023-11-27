@@ -151,6 +151,8 @@ hamta_data_forskning(outputmapp = outputmapp)
 ## Boendeformer ##
 ##################
 source("Skript/boende.R", encoding="UTF-8")
+hamta_data_boende(outputmapp = outputmapp,
+                  Boendeform = c("SMAG","SMBO","FBBO","FBHY0"))
 
 ##############
 ## Bredband ##
@@ -176,6 +178,10 @@ source("Skript/tillit_ny.R", encoding="UTF-8")
 ## Trångboddhet ##
 ##################
 source("Skript/trangdboddhet.R", encoding="UTF-8")
+hamta_data_trangboddhet(outputmapp = outputmapp,
+                        fodelseregion = "200",
+                        Alder = "totalt",
+                        Kon = "TOT2")
 
 ###############
 ## Utsatthet ##

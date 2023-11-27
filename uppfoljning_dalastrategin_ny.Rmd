@@ -1148,15 +1148,10 @@ som känner sig delaktiga, desto mer utveckling kan
 ## Trångboddhet
 Goda livsmiljöer som upplevs som trygga och inkluderande är en förutsättning för att människor ska må bra. Olika platser i Dalarna har olika utmaningar och möjligheter att möta dessa behov, bland annat beroende på om det är platser med växande eller krympande befolkningsunderlag. Indikatorn trångboddhet relaterar bland annat till prioriteringen i Dalastrategin om diversifierade boendeformer som i sin tur ska motverka segregation och polarisering.
 
-Antalet trångbodda i Dalarna har ökat under perioden från 2012 till 2021. I början på perioden räknades cirka 8 800 individer i Dalarna som trångbodda enligt norm 2. Nio år senare har denna siffra ökat till 14 500 personer. Norm 2 innebär att de boende räknas som trångbodda om de bor fler personer än två per rum i alla rum som inte räknas som kök eller vardagsrum.
+Antalet trångbodda i Dalarna har ökat under perioden från `r min(trang$år)` till `r max(trang$år)`. I början på perioden räknades cirka `r format(plyr::round_any(trang %>% filter(år == min(år)) %>% .$Samtliga.i.populationen,100),big.mark = " ")` individer i Dalarna som trångbodda enligt norm 2. År `r max(trang$år)` senare har denna siffra ökat till`r format(plyr::round_any(trang %>% filter(år == max(år)) %>% .$Samtliga.i.populationen,100),big.mark = " ")` personer. Norm 2 innebär att de boende räknas som trångbodda om de bor fler personer än två per rum i alla rum som inte räknas som kök eller vardagsrum.
 
 ```{r, include = FALSE}
-bodd1 <- SkapaStapelDiagram(skickad_df = trang %>% 
-                          filter(trångboddhet =="trångbodda enligt norm 2", 
-                                 födelseregion == "totalt", 
-                                 region == "Dalarnas län",
-                                 kön == "totalt", 
-                                 ålder == "totalt") %>% 
+bodd1 <- SkapaStapelDiagram(skickad_df = trang  %>% 
                           select(region, Samtliga.i.populationen, år) %>% 
                           mutate(år= år %>% as.character(),
                                  Samtliga.i.populationen = Samtliga.i.populationen/1000),
@@ -1178,21 +1173,15 @@ bodd1
 ```
 
 ## Boendetyper
-En indikator som är relaterad till samma område är vilka typer av boenden som finns inom länet. I Dalarna är småhus den dominerande boendeformen med 77 100 hushåll 2021, en ökning med 2 800 småhus år 2012. Vidare finns det ca 33 000 hyresrätter i flerbostadshus, ca 15 700 bostadsrätter i flerbostadshus, samt 1 700 bostadsrätter i formen småhus.
+En indikator som är relaterad till samma område är vilka typer av boenden som finns inom länet. I Dalarna är småhus den dominerande boendeformen med ungefär `r format(plyr::round_any(boende %>% filter(boendeform == "småhus, äganderätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` hushåll `r max(boende$år)`, en ökning med `r format(plyr::round_any(boende %>% filter(boendeform == "småhus, äganderätt",år == max(år)) %>% .$Antal.hushåll-boende %>% filter(boendeform == "småhus, äganderätt",år == min(år)) %>% .$Antal.hushåll,100),big.mark=" ")` småhus sedan år `r min(boende$år)`. Vidare fanns det år `r max(boende$år)` ca `r format(plyr::round_any(boende %>% filter(boendeform == "flerbostadshus, hyresrätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` hyresrätter i flerbostadshus, ca `r format(plyr::round_any(boende %>% filter(boendeform == "flerbostadshus, bostadsrätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` bostadsrätter i flerbostadshus, samt `r format(plyr::round_any(boende %>% filter(boendeform == "småhus, bostadsrätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` bostadsrätter i formen småhus.
 
 ```{r, include = FALSE}
 
-boende1 <- SkapaStapelDiagram(skickad_df = boende %>%
-                          select("år","flerbostadshus..hyresrätt", "flerbostadshus..bostadsrätt", "småhus..äganderätt", "småhus..bostadsrätt",
-                          "småhus..äganderätt") %>%
-                            rename("Flerbostadshus: hyresrätt"="flerbostadshus..hyresrätt",
-                                   "Flerbostadshus: bostadsrätt"="flerbostadshus..bostadsrätt",
-                                   "Småhus: äganderätt"="småhus..äganderätt",
-                                   "Småhus: bostadsrätt"="småhus..bostadsrätt") %>% 
-                              pivot_longer(cols=c("Flerbostadshus: hyresrätt", "Flerbostadshus: bostadsrätt", 
-                              "Småhus: äganderätt", "Småhus: bostadsrätt"), names_to="Kategori", values_to="Antal") %>% 
-                            mutate(Kategori = Kategori %>% str_wrap(15) %>% str_replace(":", ",")),
-                    skickad_x_var = "Kategori",
+boende1 <- SkapaStapelDiagram(skickad_df = boende  %>% 
+                                rename("Antal" = `Antal.hushåll`) %>% 
+                                mutate(boendeform = str_to_sentence(boendeform),
+                                       boendeform = boendeform %>% str_wrap(15)),
+                    skickad_x_var = "boendeform",
                     skickad_y_var = "Antal",
                     skickad_x_grupp = "år",
                     diagram_titel = paste0("Boendetyper i Dalarna"),
@@ -1214,14 +1203,16 @@ boende1
 ## Tillgång till service och tjänster
 Olika platser i Dalarna har olika utmaningar och möjligheter att möta de förändrade behoven, bland annat beroende på om det är platser med växande eller krympande befolkningsunderlag. En princip för genomförandet av Dalastrategin är att allt utvecklingsarbete ska vara platsbaserat med målsättningen att sammanhållningen ska stärkas och olika platsers förutsättningar och resurser ska tas till vara på ett bra sätt. För utvecklingskraft i hela länet är det viktigt att säkra tillgången till service, vård, fritidsaktiviteter och kultur i alla delar av länet. Människor behöver ha en god tillgänglighet till såväl statlig som regional och kommunal service. Tillgången till service påverkar människors levnadsvillkor och är viktig för platsens attraktivitet och för möjligheten att skapa arbetstillfällen på platsen.
 
-Den här indikatorn presenterar två olika mått på tillgång till service; tillgång till grundskola samt tillgång till dagligvarubutik. Tillgång till grundskola har förbättras under perioden från 2010 till 2021. I början på perioden hade drygt 69,5 procent av alla invånare mellan 0-16 år en grundskola inom 2 km från bostaden. 2021 hade motsvarande siffra ökat till 73,7 procent. Samma trend ses inte för tillgång till dagligvarubutiker. Under samma period har andelen med en dagligvarubutik inom 2 km från bostaden minskat från 66,3 procent till 64,7 procent.
+Den här indikatorn presenterar två olika mått på tillgång till service; tillgång till grundskola samt tillgång till dagligvarubutik. Tillgång till grundskola har minskat något under perioden från `r min(service %>% filter(!(is.na(value))) %>% .$year)` till `r max(service %>% filter(!(is.na(value))) %>% .$year)`. I början på perioden hade drygt `r round(service %>% filter(!(is.na(value)),kpi == "Invånare 0-16 år med tillgång till grundskola inom 2 km, andel (%)") %>% filter(year == min(year)) %>%  .$value,1)` procent av alla invånare mellan 0-16 år en grundskola inom 2 km från bostaden. `r max(service %>% filter(!(is.na(value))) %>% .$year)` hade motsvarande siffra ökat till `r round(service %>% filter(!(is.na(value)),kpi == "Invånare 0-16 år med tillgång till grundskola inom 2 km, andel (%)") %>% filter(year == max(year)) %>%  .$value,1)` procent. Samma trend ses även för tillgång till dagligvarubutiker. Under samma period har andelen med en dagligvarubutik inom 2 km från bostaden minskat från `r round(service %>% filter(!(is.na(value)),kpi == "Invånare med tillgång till dagligvarubutik inom 2 km, andel (%)") %>% filter(year == min(year)) %>%  .$value,1)` procent till `r round(service %>% filter(!(is.na(value)),kpi == "Invånare med tillgång till dagligvarubutik inom 2 km, andel (%)") %>% filter(year == max(year)) %>%  .$value,1)` procent.
 
 ```{r, include = FALSE}
 
 till1 <- SkapaStapelDiagram(skickad_df = service %>% 
+                              filter(!(is.na(value))) %>% 
                               mutate(year = year %>% as.character(),
-                                     kpi = case_when(kpi=="Invånare med tillgång till dagligvarubutik inom 2 km, andel (%)" ~ "Dagligvarubutik inom 2km",
-                                                     kpi=="Invånare 0-16 år med tillgång till grundskola inom 2 km, andel (%)" ~ "Grundskola inom 2km")),
+                                     kpi = case_when(
+                                           kpi=="Invånare med tillgång till dagligvarubutik inom 2 km, andel (%)" ~ "Dagligvarubutik inom 2km",
+                                           kpi=="Invånare 0-16 år med tillgång till grundskola inom 2 km, andel (%)" ~ "Grundskola inom 2km")),
                     skickad_x_var = "year",
                     skickad_y_var = "value",
                     skickad_x_grupp = "kpi",
