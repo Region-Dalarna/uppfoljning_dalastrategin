@@ -141,6 +141,7 @@ hamta_data_invandringsetablering(outputmapp = outputmapp,
 ## Forskning ##
 ####################
 source("Skript/forskning.R", encoding="UTF-8")
+hamta_data_forskning(outputmapp = outputmapp)
 
 #####################################
 ######### Sammanhållet Dalarna ######

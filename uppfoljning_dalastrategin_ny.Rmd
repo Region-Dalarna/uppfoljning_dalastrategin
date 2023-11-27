@@ -84,8 +84,6 @@ trang <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/trang.c
 
 boende <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/boendetyper.csv",encoding="UTF-8")
 
-#chefsrepresentation <- read_csv("Data/chefsrepresentation.csv")
-
 chefsrepresentation <- read_csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/chefsrepresentation_ny.csv")
 
 bredband <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/bredband.csv", encoding="UTF-8")
@@ -954,7 +952,7 @@ etab1 <- SkapaStapelDiagram(skickad_df = etablering %>%
                                 mutate(år = år %>% as.character(),
                                        bakgrundsvariabel = bakgrundsvariabel %>% str_remove("vistelsetid ")),
                             skickad_x_var = "bakgrundsvariabel",
-                            skickad_y_var = "Andel.förvärvsarbetande..ny.definition.från.och.med.2019.",
+                            skickad_y_var = "Andel_forvarvsarbetande",
                             skickad_x_grupp = "år",
                             diagram_titel = str_wrap(paste0("Etablering på arbetsmarknaden efter vistelsetid för nyanlända i Dalarna"),50),
                             diagram_capt = " Källa: SCB\n Bearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andelen etablerade på arbetsmarknaden efter vistelsetid i landet",
@@ -970,53 +968,6 @@ etab1 <- SkapaStapelDiagram(skickad_df = etablering %>%
                             vand_sortering = TRUE,
                             lagg_pa_logga = FALSE)
 
-# etab2 <- SkapaStapelDiagram(skickad_df = etablering %>% 
-#                               filter(region == "Dalarnas län", år%in%c(valda_ar,max(ar)), kön=="kvinnor") %>% 
-#                               mutate(år = as.character(år)),
-#                     skickad_x_var = "bakgrundsvariabel",
-#                     skickad_y_var = "Andel.förvärvsarbetande..ny.definition.från.och.med.2019.",
-#                     skickad_x_grupp = "år",
-#                     diagram_titel = str_wrap(paste0("Etablering på arbetsmarknaden efter vistelsetid för nyanlända kvinnor i Dalarna"),50),
-#                     diagram_capt = " Källa: SCB\n Bearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andelen etablerade på arbetsmarknaden efter vistelsetid i landet",
-#                     #skickad_filter_OR_vect = NA,
-#                     #skickad_filter_OR_var = "Marknadsandel.för.kollektivtrafik..andel....",
-#                     #diagram_facet = FALSE,
-#                     #berakna_index = TRUE,
-#                     #berakna_index = TRUE,
-#                     manual_x_axis_text_vjust = 0.6,
-#                     manual_x_axis_text_hjust = 0.6,
-#                     x_axis_lutning = 0,
-#                     #manual_color = stapelfarg_gron[c(1,3)],
-#                     manual_y_axis_title = "procent",
-#                     procent_0_100_10intervaller = TRUE,
-#                     output_mapp = "Diagram/",
-#                     filnamn_diagram = "etablering2.png",
-#                     x_axis_sort_value = TRUE,
-#                     lagg_pa_logga = FALSE)
-# 
-# etab3 <- SkapaStapelDiagram(skickad_df = etablering %>% 
-#                               filter(region == "Dalarnas län", år%in%c(valda_ar,max(ar)), kön=="män") %>% 
-#                               mutate(år = as.character(år)),
-#                     skickad_x_var = "bakgrundsvariabel",
-#                     skickad_y_var = "Andel.förvärvsarbetande..ny.definition.från.och.med.2019.",
-#                     skickad_x_grupp = "år",
-#                     diagram_titel = str_wrap(paste0("Etablering på arbetsmarknaden efter vistelsetid för nyanlända män i Dalarna "),50),
-#                     diagram_capt = " Källa: SCB\n Bearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andelen etablerade på arbetsmarknaden efter vistelsetid i landet",
-#                     #skickad_filter_OR_vect = NA,
-#                     #skickad_filter_OR_var = "Marknadsandel.för.kollektivtrafik..andel....",
-#                     #diagram_facet = FALSE,
-#                     #berakna_index = TRUE,
-#                     #berakna_index = TRUE,
-#                     manual_x_axis_text_vjust = 0.6,
-#                     manual_x_axis_text_hjust = 0.6,
-#                     x_axis_lutning = 0,
-#                     #manual_color = stapelfarg_gron[c(1,3)],
-#                     manual_y_axis_title = "procent",
-#                     procent_0_100_10intervaller = TRUE,
-#                     output_mapp = "Diagram/",
-#                     filnamn_diagram = "etablering3.png",
-#                     x_axis_sort_value = TRUE,
-#                     lagg_pa_logga = FALSE)
 
 etab_alt <- SkapaStapelDiagram(skickad_df = etablering %>% 
                               filter(region == "Dalarnas län", 
@@ -1026,7 +977,7 @@ etab_alt <- SkapaStapelDiagram(skickad_df = etablering %>%
                                        bakgrundsvariabel = bakgrundsvariabel %>% str_remove("vistelsetid "),
                                      kön = str_to_title(kön)),
                     skickad_x_var = "bakgrundsvariabel",
-                    skickad_y_var = "Andel.förvärvsarbetande..ny.definition.från.och.med.2019.",
+                    skickad_y_var = "Andel_forvarvsarbetande",
                     skickad_x_grupp = "år",
                     legend_rader = 2,
                     legend_byrow = TRUE,
@@ -1054,7 +1005,7 @@ etab4 <- SkapaStapelDiagram(skickad_df = etablering %>%
                                      kön=="män och kvinnor", 
                                      bakgrundsvariabel == "10- år"),
                     skickad_x_var = "region",
-                    skickad_y_var = "Andel.förvärvsarbetande..ny.definition.från.och.med.2019.",
+                    skickad_y_var = "Andel_forvarvsarbetande",
                     diagram_titel = str_wrap(paste0("Arbetsmarknadsetablering efter minst 10 års vistelsetid i Sverige ",max(etablering$år)),50),
                     diagram_capt = " Källa: SCB\n Bearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andelen etablerade på arbetsmarknaden efter minst 10 års vistelsetid i landet",
                     manual_x_axis_text_vjust = 1,
@@ -1074,9 +1025,6 @@ etab4 <- SkapaStapelDiagram(skickad_df = etablering %>%
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 etab1
-# etab2
-# etab3
-
 ```
 <br>
 <br>
@@ -1090,16 +1038,16 @@ etab4
 ```
 
 ## Investeringar i FoU
-För att lösa dagens och morgondagens samhällsutmaningar och för att skapa utveckling och konkurrenskraft krävs ökad innovationskraft. Individers, företags, organisationers och offentlig sektors innovationsförmåga påverkar platsers utvecklingskraft och möjligheter till omställning. Denna indikator mäter investeringar i forskning och utveckling i länet. Det bör dock påpekas att innovation och forskning är ett synnerligen svårt område att mäta och att denna indikator främst ger en övergripande bild av vilka resurser som investeras i länet.
-
-Under tidsperioden från 2011 till 2019 ses en stadig ökning i investeringar mätt i kronor per invånare i länet, från drygt 4 900 kronor till drygt 5 200 kronor per invånare. Efter 2019 skedde dock en stor förändring, och investeringarna minskade avsevärt till drygt 3 200 kroner per invånare år 2021. Den stor andelen investeringar sker i företagen, medan den offentliga sektorn och universitet- och högskolesektorn står för en mindre andel. Minskningen i investeringar mellan 2019 och 2021 förklaras av att företagens och offentlig sektorns investeringar minskade, inom högskolesektorn ökade istället investeringarna under samma period. En trolig orsak till detta är Coronapandemin som fick betydande effekter på många delar av samhället. I ett nationellt perspektiv ser vi att Dalarna hamnar på den nedre halvan. Västa Götaland, som hade den högsta noteringen för investeringar i forskning och utveckling år 2021, hade ett drygt nio gånger högre värde per invånare jämfört med Dalarna.
 
 ```{r, include = FALSE}
 
-forsk1 <- SkapaStapelDiagram(skickad_df = forskning %>% 
-                               mutate(year = year %>% as.character()) %>% 
-                                group_by(year, municipality) %>% 
-                                summarise(utgiftertotalt = sum(value, na.rm=TRUE)) %>% 
+# I vissa av diagrammen används den totala forskningen (dvs summan av de olika komponenterna). Därför skapas variabeln nedan.
+forskning_totalt <- forskning %>% 
+  group_by(year, municipality) %>% 
+    summarise(utgiftertotalt = sum(value, na.rm=TRUE))
+
+forsk1 <- SkapaStapelDiagram(skickad_df = forskning_totalt %>% 
+                               mutate(year = year %>% as.character()) %>%
                                 filter(municipality=="Dalarnas län"),
                     skickad_x_var = "year",
                     skickad_y_var = "utgiftertotalt",
@@ -1131,10 +1079,8 @@ forsk2 <- SkapaStapelDiagram(skickad_df = forskning %>%
                     stodlinjer_avrunda_fem = TRUE,
                     lagg_pa_logga = FALSE)
 
-forsk3 <- SkapaStapelDiagram(skickad_df = forskning %>%
-                               filter(year == max(year)) %>% 
-                                group_by(year, municipality) %>% 
-                                summarise(utgiftertotalt = sum(value, na.rm=TRUE)) %>% 
+forsk3 <- SkapaStapelDiagram(skickad_df = forskning_totalt %>%
+                               filter(year == max(year)) %>%
                                 mutate(fokus = ifelse(municipality == "Dalarnas län", "1", "0")),
                     skickad_x_var = "municipality",
                     skickad_y_var = "utgiftertotalt",
@@ -1150,6 +1096,10 @@ forsk3 <- SkapaStapelDiagram(skickad_df = forskning %>%
                     x_var_fokus = "fokus",
                     manual_color = diagramfarger("rus_tva_fokus"))
 ```
+
+För att lösa dagens och morgondagens samhällsutmaningar och för att skapa utveckling och konkurrenskraft krävs ökad innovationskraft. Individers, företags, organisationers och offentlig sektors innovationsförmåga påverkar platsers utvecklingskraft och möjligheter till omställning. Denna indikator mäter investeringar i forskning och utveckling i länet. Det bör dock påpekas att innovation och forskning är ett synnerligen svårt område att mäta och att denna indikator främst ger en övergripande bild av vilka resurser som investeras i länet.
+
+Under tidsperioden från 2011 till 2019 ses en viss ökning i investeringar mätt i kronor per invånare i länet, från drygt `r format(round(forskning_totalt %>% filter(year == min(.$year),municipality == "Dalarnas län") %>% .$utgiftertotalt,0),big.mark = " ")` kronor till drygt `r format(round(forskning_totalt %>% filter(year == 2019,municipality == "Dalarnas län") %>% .$utgiftertotalt,0),big.mark = " ")` kronor per invånare. Efter 2019 skedde dock en stor förändring, och investeringarna minskade avsevärt till `r format(round(forskning_totalt %>% filter(year == max(.$year),municipality == "Dalarnas län") %>% .$utgiftertotalt,0),big.mark = " ")` kronor per invånare år `r max(forskning_totalt$year)`. Den stor andelen investeringar sker i företagen, medan den offentliga sektorn och universitet- och högskolesektorn står för en mindre andel. Minskningen i investeringar mellan 2019 och 2021 förklaras av att företagens och offentlig sektorns investeringar minskade, inom högskolesektorn ökade istället investeringarna under samma period. En trolig orsak till detta är Coronapandemin som fick betydande effekter på många delar av samhället. I ett nationellt perspektiv ser vi att Dalarna hamnar på den nedre halvan. `r forskning_totalt %>% filter(year == max(.$year)) %>% filter(utgiftertotalt == max(utgiftertotalt)) %>% .$municipality`, som hade den högsta noteringen för investeringar i forskning och utveckling år `r max(forskning_totalt$year)`, hade ett drygt `r plyr::round_any(forskning_totalt %>% filter(year == max(.$year)) %>% filter(utgiftertotalt == max(utgiftertotalt)) %>% .$utgiftertotalt/forskning_totalt %>% filter(year == max(.$year)) %>% filter(municipality == "Dalarnas län") %>% .$utgiftertotalt,1)` gånger högre värde per invånare jämfört med Dalarna.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 forsk1

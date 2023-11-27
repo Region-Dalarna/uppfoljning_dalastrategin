@@ -1,4 +1,4 @@
-hamta_data_matchning = function(region = "20", # Alla ger alla län, annars väljer man baserat på kod, exempelivs 20 för Dalarna
+hamta_data_matchning = function(region = "20", # Spelar enbart roll om man vill ha ett några län. Sätt annars alla regioner till TRUE.
                                 alla_regioner = FALSE, 
                                 ta_med_riket = FALSE,
                                 alder_fodelseland = "totalt", # Alternativ "20-64","20-39","Sverige","Norden/EU","Afrika","Asien","Övriga_världen","totalt"
