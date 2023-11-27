@@ -3,7 +3,7 @@ hamta_data_avfall = function(region_Kolada = "0020",
                              region_SCB = "20",
                              outputmapp = "G:/skript/projekt/data/uppfoljning_dalastrategin/Data/",
                              filnamn = c("avfall.csv","avfallbrp.csv"), # Två utdatafiler
-                             senaste_ar = TRUE, # Om man bara vill ha senaste år
+                             senaste_ar = FALSE, # Om man bara vill ha senaste år
                              tid_kolada = 2013:2100, # Välj ett högt värde som sista värde om alla år skall vara med
                              tid_SCB = c("*")){ # c(*) om alla tillgängliga år skall väljas
 
@@ -14,7 +14,7 @@ hamta_data_avfall = function(region_Kolada = "0020",
   #### Lista på variabler och koder 
   #### U07801 - Insamlat hush?llsavfall totalt, kg/person
   #### U07485 - Insamlat farligt avfall (inkl. elavfall och batterier), kg/person
-  #### U07483 - Insamlat f?rpackningar och returpapper, kg/person
+  #### U07483 - Insamlat förpackningar och returpapper, kg/person
   #### U07484 - Insamlat grovavfall, kg/person
   #### U07482 - Insamlat mat- och restavfall, kg/person
   
@@ -27,9 +27,7 @@ hamta_data_avfall = function(region_Kolada = "0020",
   tid_kolada <- max(unique(hamta_kolada_giltiga_ar("U07801",vald_region = region_Kolada)))
   tid_SCB = max(hamta_giltiga_varden_fran_tabell(api_scb, "tid"))
   }
-  # Då data kommer från två källor finns risk att sista år från Kolada är senare än sista år från SCB
-  if(tid_kolada != tid_SCB) tid_kolada = tid_SCB
-  
+
   if (!require("pacman")) install.packages("pacman")
   pacman::p_load(tidyverse,
                  rKolada,
@@ -61,9 +59,9 @@ hamta_data_avfall = function(region_Kolada = "0020",
   ### BRP-data från SCB för Dalarna. Används för att beräkna avfall/BRP
   ### Först skapar vi en lista på det vi vill ha
   pxweb_query_list <- 
-    list("Region"=region_SCB,
-         "ContentsCode"=c("NR0105AH"),
-         "Tid"=c("*"))
+    list("Region" = region_SCB,
+         "ContentsCode" = c("NR0105AH"),
+         "Tid" = tid_SCB)
   
   # Stod 2012-2019 tidigare
   
