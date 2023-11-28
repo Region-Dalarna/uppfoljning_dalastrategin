@@ -9,7 +9,7 @@ hamta_data_forskning = function(region = "0020", # Används bara om man vill ha 
 
 
   # Hämta data för data kopplat till forskning
-  source("https://raw.githubusercontent.com/FaluPeppe/func/main/func_API.R")
+  source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R")
   
   if (!require("pacman")) install.packages("pacman")
   pacman::p_load(tidyverse,

@@ -20,8 +20,6 @@ pacman::p_load(httr,
 ##############
 set_config(use_proxy(url = "http://mwg.ltdalarna.se", port = 9090, username = Sys.info()[["user"]], password = key_get("rd")))
 set_config(config(ssl_verifypeer = 0L))
-# Skriv in det lösenord som används vid inloggning
-#key_set("rd")
 
 outputmapp = "G:/skript/projekt/data/uppfoljning_dalastrategin/Data/"
 
@@ -158,16 +156,19 @@ hamta_data_boende(outputmapp = outputmapp,
 ## Bredband ##
 ##############
 source("Skript/bredband.R", encoding="UTF-8")
+hamta_data_bredband(outputmapp = outputmapp)
 
 ##############
 ## Service ##
 ##############
 source("Skript/service.R", encoding="UTF-8")
+hamta_data_service(outputmapp = outputmapp)
 
 ########################
 ## Socialt deltagande ##
 ########################
 source("Skript/socialtdeltagande_ny.R", encoding="UTF-8")
+hamta_data_socialtdeltagande(outputmapp = outputmapp)
 
 ############
 ## Tillit ##

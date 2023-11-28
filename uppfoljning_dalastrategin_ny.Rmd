@@ -36,7 +36,7 @@ p_load(httr,
 
 options(dplyr.summarise.inform = FALSE)
 
-source("https://raw.githubusercontent.com/FaluPeppe/func/main/func_SkapaDiagram.R")
+source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_SkapaDiagram.R")
 
 indikatorer <- read_excel("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/indikatorer.xlsx")
 
@@ -1237,27 +1237,9 @@ Att stärka sammanhållningen och med det den sociala hållbarheten, är viktigt
 
 Denna indikator visar andelen (%) invånare 16-84 år som angett att de deltagit i högst en social aktivitet de senaste 12 månaderna, beräknat genom ett medelvärde över en fyraårsperiod. Med social aktivitet menas en mängd olika former av sätt att interagera med människor som inte tillhör den närmsta familjen. Exempel är studiecirkeldeltagande, besökt scenkonstföreställning, besökt fackligt eller religiöst möte, deltagit på privat fest eller tagit aktiv del av sociala medier. Att under 12 månader inte ha deltagit i mer än en social sammankomst tolkas som att personen har ett lågt socialt deltagande.
 
-Perioden från 2007 till 2022 i Dalarna uppvisar ett antal olika trender och mönster. Från början på perioden fram till 2016 ökade andelen invånare mellan 16-84 år som uppgav att de deltagit i högst en aktivitet totalt sett, ökningen utgörs i praktiken enbart av att en större andel män uppger sig vara mindre socialt aktiva. Under perioden 2015 till 2020 minskar andelen socialt inaktiva män betydligt, från som högst ca 29 procent till som lägst 21 procent, under perioden 2015-2018. Även andelen kvinnor minskar, från som mest ca 24,5 procent till 19 procent under perioden 2015-2018. I samband med, och efter, pandemin verkar dock invånarna ha blivit allt mer isolerade. Det är en markant ökning upp till ca 33 procent när åren 2021 och 2022 läggs till intervallen. Från att ungefär var femte invånare i Dalarna angett att de deltagit i max en aktivitet de senaste 12 månaderna till att var tredje invånare i Dalarna anger detsamma.
+Perioden från 2007 till 2022 i Dalarna uppvisar ett antal olika trender och mönster. Från början på perioden fram till 2016 ökade andelen invånare mellan 16-84 år som uppgav att de deltagit i högst en aktivitet totalt sett, ökningen utgörs i praktiken enbart av att en större andel män uppger sig vara mindre socialt aktiva. Under perioden 2015 till 2020 minskar andelen socialt inaktiva män betydligt, från som högst ca 29 procent till som lägst 21 procent, under perioden 2015-2018. Även andelen kvinnor minskar, från som mest ca 24,5 procent till 19 procent under perioden 2015-2018. I samband med, och efter, pandemin verkar dock invånarna ha blivit allt mer isolerade. Det är en markant ökning upp till ca `r round(last(deltagande %>% filter(Kön == "Totalt") %>% .$Andel),0)` procent när åren 2021 och 2022 läggs till intervallen. Från att ungefär var femte invånare i Dalarna angett att de deltagit i max en aktivitet de senaste 12 månaderna till att var tredje invånare i Dalarna anger detsamma.
 
 ```{r, include = FALSE}
-
-# del1 <- SkapaStapelDiagram(skickad_df = deltagande %>% 
-#                              filter(gender != "T") %>% 
-#                              mutate(year = year %>% as.character(),
-#                                     gender = case_when(gender == "K" ~ "Kvinnor",
-#                                                        gender == "M" ~ "Män")),
-#                     skickad_x_var = "year",
-#                     skickad_y_var = "value",
-#                     skickad_x_grupp = "gender",
-#                     diagram_titel = paste0("Lågt socialt deltagande i Dalarna"),
-#                     output_mapp = "Diagram/",
-#                     filnamn_diagram = "deltagande1.png",
-#                     diagram_capt = " Källa: Nationella folkhälsoenkäten - Hälsa på lika villkor\n Bearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andelen (%) invånare 16-84 år med lågt socialt deltagande,\ndet vill säga de som deltagit i högst en aktivitet de senaste 12 månaderna.",
-#                     manual_y_axis_title = "procent",
-#                     stodlinjer_avrunda_fem = TRUE,
-#                     x_axis_lutning = 0,
-#                     lagg_pa_logga = FALSE,
-#                     manual_color = diagramfarger("kon"))
 
 del1 <- SkapaStapelDiagram(skickad_df = deltagande %>% 
                              filter(Kön!="Totalt"),
@@ -1287,21 +1269,23 @@ del1
 ## Andel av hushåll som har tillgång till bredband
 Tillgång till en snabb och robust digital infrastruktur är en grundförutsättning för att bo och verka i hela Dalarna. Fysiska och digitala mötesplatser gör att vi når både varandra och omvärlden. En av utmaningarna för Dalarna är en ojämnt fördelad digital infrastruktur. Att stärka och tillgängliggöra den digitala infrastrukturen för hela Dalarnas befolkning, oavsett plats, är avgörande för en lyckad digitalisering av samhället.
 
-I Dalarna har andelen av befolkningen med tillgång, eller möjlighet att ansluta, till bredband om minst 1 Gbit/s ökat från ca 75 procent 2017 till ca 94 procent 2021. Det kan jämföras med riksgenomsnittet som år 2021 var 96,5 procent. 
+I Dalarna har andelen av befolkningen med tillgång, eller möjlighet att ansluta, till bredband om minst 1 Gbit/s ökat från ca `r round(bredband %>% filter(municipality == "Region Dalarna",year == min(year)) %>% .$value,0)` procent `r min(bredband$year)` till ca `r round(bredband %>% filter(municipality == "Region Dalarna",year == max(year)) %>% .$value,0)` procent `r max(bredband$year)`. Det kan jämföras med riksgenomsnittet som år `r max(bredband$year)` var `r round(bredband %>% filter(municipality == "Riket",year == max(year)) %>% .$value,0)` procent. 
 
 ```{r, include = FALSE}
-# bred1 <- SkapaStapelDiagram(skickad_df = bredband %>% mutate(year = as.character(year)),
-#                     skickad_x_var = "year",
-#                     skickad_y_var =  "andel_bredband",
-#                     diagram_titel = paste0("Tillgång till bredband i Dalarna"),
-#                     output_mapp = "Diagram/",
-#                     filnamn_diagram = "bredband.png",
-#                     diagram_capt = "Källa:  Post- och telestyrelsen, PTS (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Hushåll med tillgång till eller möjlighet att ansluta till bredband om minst 1 Gbit/s, andel (%), så kallade homes passed",
-#                     manual_color = diagramfarger("rus_sex")[1],
-#                     manual_y_axis_title = "procent",
-#                     procent_0_100_10intervaller = TRUE,
-#                     x_axis_lutning = 0,
-#                     lagg_pa_logga = FALSE)
+bred1 <- SkapaStapelDiagram(skickad_df = bredband %>%
+                              filter(municipality == "Region Dalarna") %>% 
+                                mutate(year = as.character(year)),
+                    skickad_x_var = "year",
+                    skickad_y_var =  "value",
+                    diagram_titel = paste0("Tillgång till bredband i Dalarna"),
+                    output_mapp = "Diagram/",
+                    filnamn_diagram = "bredband.png",
+                    diagram_capt = "Källa:  Post- och telestyrelsen, PTS (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Hushåll med tillgång till eller möjlighet att ansluta till bredband om minst 1 Gbit/s, andel (%), så kallade homes passed",
+                    manual_color = diagramfarger("rus_sex")[1],
+                    manual_y_axis_title = "procent",
+                    procent_0_100_10intervaller = TRUE,
+                    x_axis_lutning = 0,
+                    lagg_pa_logga = FALSE)
 
 ```
 

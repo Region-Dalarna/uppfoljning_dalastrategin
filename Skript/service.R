@@ -12,7 +12,7 @@ hamta_data_service = function(region = c("0020"),
   
   
   # ===========================================================================================================
-  
+  # Hämtar data för information om närheten till service
   # Parametrar som skickas med (= variabler i Kolada-tabellen) är:
   # - region: Vald region
   # - alla_regioner: Välj om man vill ha alla regioner. Om den är satt till True så skriver den över region ovan.
@@ -27,6 +27,14 @@ hamta_data_service = function(region = c("0020"),
   
   # ===========================================================================================================
 
+  # Hämta data för data kopplat till forskning
+  source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R")
+  
+  if (!require("pacman")) install.packages("pacman")
+  pacman::p_load(tidyverse,
+                 rKolada,
+                 readxl)
+  
   if(alla_regioner == TRUE){
     region = hamtaAllaLan(tamedriket = FALSE) 
     region = paste0("00",region)
