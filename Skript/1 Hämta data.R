@@ -173,7 +173,8 @@ hamta_data_socialtdeltagande(outputmapp = outputmapp)
 ############
 ## Tillit ##
 ############
-source("Skript/tillit_ny.R", encoding="UTF-8")
+# Data ingår i uttag för socialt deltagande (ovan)
+#source("Skript/tillit_ny.R", encoding="UTF-8")
 
 ##################
 ## Trångboddhet ##
@@ -188,6 +189,7 @@ hamta_data_trangboddhet(outputmapp = outputmapp,
 ## Utsatthet ##
 ###############
 source("Skript/utsatta.R", encoding="UTF-8")
+hamta_data_utsatta(outputmapp = outputmapp)
 
 ###################
 ## Valdeltagande ##

@@ -90,9 +90,7 @@ bredband <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/bred
 
 valdeltagande <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/valdeltagande.csv", encoding="UTF-8")
 
-tillit <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/tillit_ny.csv", encoding="UTF-8")
-
-utsatt <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/utsatthet.csv", encoding="UTF-8")
+utsatt <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/utsatthet_ny.csv", encoding="UTF-8")
 
 deltagande <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/deltagande_ny.csv", encoding="UTF-8")
 
@@ -1237,12 +1235,13 @@ Att stärka sammanhållningen och med det den sociala hållbarheten, är viktigt
 
 Denna indikator visar andelen (%) invånare 16-84 år som angett att de deltagit i högst en social aktivitet de senaste 12 månaderna, beräknat genom ett medelvärde över en fyraårsperiod. Med social aktivitet menas en mängd olika former av sätt att interagera med människor som inte tillhör den närmsta familjen. Exempel är studiecirkeldeltagande, besökt scenkonstföreställning, besökt fackligt eller religiöst möte, deltagit på privat fest eller tagit aktiv del av sociala medier. Att under 12 månader inte ha deltagit i mer än en social sammankomst tolkas som att personen har ett lågt socialt deltagande.
 
-Perioden från 2007 till 2022 i Dalarna uppvisar ett antal olika trender och mönster. Från början på perioden fram till 2016 ökade andelen invånare mellan 16-84 år som uppgav att de deltagit i högst en aktivitet totalt sett, ökningen utgörs i praktiken enbart av att en större andel män uppger sig vara mindre socialt aktiva. Under perioden 2015 till 2020 minskar andelen socialt inaktiva män betydligt, från som högst ca 29 procent till som lägst 21 procent, under perioden 2015-2018. Även andelen kvinnor minskar, från som mest ca 24,5 procent till 19 procent under perioden 2015-2018. I samband med, och efter, pandemin verkar dock invånarna ha blivit allt mer isolerade. Det är en markant ökning upp till ca `r round(last(deltagande %>% filter(Kön == "Totalt") %>% .$Andel),0)` procent när åren 2021 och 2022 läggs till intervallen. Från att ungefär var femte invånare i Dalarna angett att de deltagit i max en aktivitet de senaste 12 månaderna till att var tredje invånare i Dalarna anger detsamma.
+Perioden från 2007 till 2022 i Dalarna uppvisar ett antal olika trender och mönster. Från början på perioden fram till 2016 ökade andelen invånare mellan 16-84 år som uppgav att de deltagit i högst en aktivitet totalt sett, ökningen utgörs i praktiken enbart av att en större andel män uppger sig vara mindre socialt aktiva. Under perioden 2015 till 2020 minskar andelen socialt inaktiva män betydligt, från som högst ca 29 procent till som lägst 21 procent, under perioden 2015-2018. Även andelen kvinnor minskar, från som mest ca 24,5 procent till 19 procent under perioden 2015-2018. I samband med, och efter, pandemin verkar dock invånarna ha blivit allt mer isolerade. Det är en markant ökning upp till ca `r round(last(deltagande %>% filter(Sociala_relationer == "Lågt socialt deltagande",Kön == "Totalt") %>% .$Andel),0)` procent när åren 2021 och 2022 läggs till intervallen. Från att ungefär var femte invånare i Dalarna angett att de deltagit i max en aktivitet de senaste 12 månaderna till att var tredje invånare i Dalarna anger detsamma.
 
 ```{r, include = FALSE}
 
 del1 <- SkapaStapelDiagram(skickad_df = deltagande %>% 
-                             filter(Kön!="Totalt"),
+                             filter(Kön!="Totalt",
+                                    Sociala_relationer == "Lågt socialt deltagande"),
                            skickad_x_var = "År",
                            skickad_y_var = "Andel",
                            skickad_x_grupp = "Kön",
@@ -1374,29 +1373,10 @@ Indikatorn för tillit mäter andel (%) invånare 16-84 år som har uppgett att 
 Andelen som säger sig sakna tillit utgör ungefär 25 procent av invånarna, samtidigt som det framkommer i folkhälsoenkäten att ca 20 procent av invånarna aldrig eller väldigt sällan deltog i sociala sammankomster före pandemin, och att andelen har ökat till ca 35 procent av invånarna efter pandemin år 2022. Att delta i olika typer av sociala sammankomster är en byggsten för att skapa sammanhang och i förlängningen tillit.
 
 ```{r, include = FALSE}
-# tillit$gender[tillit$gender=="K"] <- "Kvinnor"
-# tillit$gender[tillit$gender=="M"] <- "Män"
-# tillit$gender[tillit$gender=="T"] <- "Totalt"
-# 
-# till1 <- SkapaStapelDiagram(skickad_df = tillit %>% 
-#                               filter(gender != "T") %>% 
-#                               mutate(year = year %>% as.character(),
-#                                      gender = case_when(gender == "K" ~ "Kvinnor",
-#                                                         gender == "M" ~ "Män")),
-#                     skickad_x_var = "year",
-#                     skickad_y_var = "Invånare.16.84.år.med.avsaknad.av.tillit.till.andra..andel....",
-#                     skickad_x_grupp = "gender",
-#                     diagram_titel = "Avsaknad av tillit till andra i Dalarna",
-#                     output_mapp = "Diagram/",
-#                     diagram_capt = " Källa: Kolada\n Bearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring:  Andel (%) invånare 16-84 år med avsaknad av tillit till andra",
-#                     filnamn_diagram = "tillit1.png",
-#                     manual_y_axis_title = "procent",
-#                     procent_0_100_10intervaller = TRUE,
-#                     x_axis_lutning = 0,
-#                     lagg_pa_logga = FALSE,
-#                     manual_color = diagramfarger("kon"))
-till1 <- SkapaStapelDiagram(skickad_df = tillit %>% 
-                             filter(Kön!="Totalt"),
+
+till1 <- SkapaStapelDiagram(skickad_df = deltagande %>% 
+                             filter(Kön != "Totalt",
+                                    Sociala_relationer == "Svårt att lita på andra"),
                            skickad_x_var = "År",
                            skickad_y_var = "Andel",
                            skickad_x_grupp = "Kön",
@@ -1412,65 +1392,71 @@ till1 <- SkapaStapelDiagram(skickad_df = tillit %>%
                            manual_x_axis_text_vjust = 1,
                            lagg_pa_logga = FALSE,
                            manual_color = diagramfarger("kon"))
+
 ```
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 till1
 ```
 
-## Andel barn och unga i ekonomiskt utsatta hushåll
+## Andel barn och unga som lever i hushåll med låg ekonomisk standard
+TIDIGARE VARIABEL FÖR UTSATTA HUSHÅLL HAR UTGÅTT OCH ERSATTS MED LÅG EKONOMISK STANDARD. JAG BYTER TILL DEN. Text behöver sannolikt uppdateras
+
 Ekonomiska klyftor mellan olika grupper i samhället är en utmaning för både Sverige och Dalarna. Om de socioekonomiska klyftorna blir alltför stora riskerar de att motverka sammanhållning, tillit och trygghet. Det riskerar i sin tur att försvaga demokratin, exempelvis genom systematiska skillnader i valdeltagande, faktiskt eller upplevt inflytande samt delaktighet och engagemang. 
 
 Andel barn som lever i ekonomiskt utsatta hushåll är ett mått på levnadsstandard som speglar möjligheterna för en av de mest utsatta grupperna i samhället. Med ekonomiskt utsatta avses hushåll med låg inkomst eller ekonomiskt bistånd (tidigare kallat socialbidrag). Med låg inkomst avses lägsta utgiftsnivå baserad på den socialbidragsnorm, som fastställdes på 1980-talet (med inflationsuppräkningar) och en norm för boendeutgifter. Om inkomsterna understiger dessa normer definieras detta som låg inkomst.
 
-I diagrammet nedan kan vi notera att andelen unga (0-19 år) i ekonomiskt utsatta hushåll i Dalarnas län minskat något över mätperioden, vilket är positivt, från 12,4 procent år 2010 till drygt 11 procent 2020. Lägsta noteringen i tidsspannet var 2016 på 10,6 procent. I ett nationellt perspektiv ser vi att endast tre andra län har en högre andel ekonomiskt utsatta unga än vad Dalarna har.
+I diagrammet nedan kan vi notera att andelen unga (0-19 år) som lever i hushåll med låg ekonomisk standard i Dalarnas län har ökat över mätperioden, vilket är negativt, från `r utsatt %>% filter(municipality_id == 20, year == min(year)) %>% .$value` procent år `r min(utsatt$year)` till drygt `r utsatt %>% filter(municipality_id == 20, year == max(year)) %>% .$value` procent `r max(utsatt$year)`. I ett nationellt perspektiv ser vi att endast fyra andra län har en högre andel unga som lever i hushåll med låg ekonomisk standard än vad Dalarna har.
 
 ```{r, include = FALSE}
 
-# ut1 <- SkapaStapelDiagram(skickad_df = utsatt %>% 
-#                      mutate(year = year %>% as.character(),
-#                             municipality = municipality %>% str_remove("Region ")) %>% 
-#                      filter(municipality == "Dalarna"),
-#                    skickad_x_var = "year",
-#                    skickad_y_var = "value",
-#                    diagram_titel = "Andel invånare 0-19 år i ekonomiskt utsatta hushåll i Dalarna",
-#                    output_mapp = "Diagram/",
-#                    filnamn_diagram = "utsatt1.png",
-#                    diagram_capt = " Källa: Kolada\n Bearbetning: Samhällsanalys, Region Dalarna",
-#                    manual_color = diagramfarger("rus_sex")[1],
-#                    manual_y_axis_title = "procent",
-#                    x_axis_lutning = 0,
-#                    lagg_pa_logga = FALSE)
-# 
-# ut2 <- SkapaStapelDiagram(skickad_df = utsatt %>% 
-#                             mutate(year = year %>% as.character(),
-#                                    municipality = municipality %>% str_remove("Region "),
-#                                    fokus = ifelse( municipality == "Dalarna", "1", "0" )) %>% 
-#                             filter(year == max(year)),
-#                     skickad_x_var = "municipality",
-#                     skickad_y_var = "value",
-#                     diagram_titel = paste0("Andel invånare 0-19 år i ekonomiskt utsatta hushåll i Sverige ",max(utsatt$year)),
-#                     output_mapp = "Diagram/",
-#                     filnamn_diagram = "utsatt2.png",
-#                     diagram_capt = " Källa: Kolada\n Bearbetning: Samhällsanalys, Region Dalarna",
-#                     manual_y_axis_title = "procent",
-#                     manual_color = diagramfarger("rus_tva_fokus"),
-#                     x_axis_lutning = 45,
-#                     x_var_fokus="fokus",
-#                     manual_x_axis_text_hjust = 1,
-#                     manual_x_axis_text_vjust = 1,
-#                     lagg_pa_logga = FALSE,
-#                     x_axis_sort_value = TRUE)
+ut1 <- SkapaStapelDiagram(skickad_df = utsatt %>%
+                            filter(municipality_id == 20) %>% 
+                              mutate(year = year %>% as.character()),
+                         skickad_x_var = "year",
+                         skickad_y_var = "value",
+                         diagram_titel = "Andel invånare 0-19 år med låg ekonomisk standard i Dalarna",
+                         output_mapp = "Diagram/",
+                         filnamn_diagram = "utsatt1.png",
+                         diagram_capt = " Källa: Kolada\n Bearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Låg ekonomisk standard avser andelen personer som lever i hushåll vars ekonomiska standard är mindre än 60 procent av medianvärdet för riket.",
+                         manual_color = diagramfarger("rus_sex")[1],
+                         manual_y_axis_title = "procent",
+                         x_axis_lutning = 0,
+                         lagg_pa_logga = FALSE)
+
+ut2 <- SkapaStapelDiagram(skickad_df = utsatt %>%
+                            mutate(year = year %>% as.character(),
+                                   municipality = municipality %>% str_remove("Region "),
+                                   municipality = ifelse(municipality == "Västra Götalandsregionen","Västra Götaland",
+                                                         ifelse(municipality == "Jämtland Härjedalen","Jämtland",
+                                                                ifelse(municipality == "Jönköpings län","Jönköping",
+                                                                       ifelse(municipality == "Örebro län","Örebro",municipality)))),
+                                   fokus = ifelse( municipality == "Dalarna", "1", "0" )) %>%
+                            filter(year == max(year)),
+                    skickad_x_var = "municipality",
+                    skickad_y_var = "value",
+                    diagram_titel = paste0("Andel invånare 0-19 år med låg ekonomisk standard ",max(utsatt$year)),
+                    output_mapp = "Diagram/",
+                    filnamn_diagram = "utsatt2.png",
+                    diagram_capt = "Källa: Kolada\n Bearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Låg ekonomisk standard avser andelen personer som lever i hushåll vars ekonomiska standard är mindre än 60 procent av medianvärdet för riket.",
+                    manual_y_axis_title = "procent",
+                    manual_color = diagramfarger("rus_tva_fokus"),
+                    x_axis_lutning = 45,
+                    x_var_fokus="fokus",
+                    manual_x_axis_text_hjust = 1,
+                    manual_x_axis_text_vjust = 1,
+                    lagg_pa_logga = FALSE,
+                    x_axis_sort_value = TRUE)
 
 ```
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-#ut1
+ut1
 ```
 <br>
 <br>
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-#ut2
+ut2
 ```
 
 ## Andel unga som upplever att de är delaktiga i sin kommun
