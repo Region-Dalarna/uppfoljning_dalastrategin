@@ -193,4 +193,4 @@ source("Skript/utsatta.R", encoding="UTF-8")
 ## Valdeltagande ##
 ###################
 source("Skript/valdeltagande.R", encoding="UTF-8")
-
+hamta_data_valdeltagande(outputmapp = outputmapp)

@@ -1296,21 +1296,18 @@ bred1 <- SkapaStapelDiagram(skickad_df = bredband %>%
 ## Valdeltagande
 I Dalastrategin belyses att en levande demokrati grundar sig i människors tillit till att de demokratiskt valda representativa institutionerna fungerar, såsom kommuner, region och myndigheter. Valdeltagande är därmed en viktig indikator på invånarnas vilja och tro på de demokratiska institutionerna i länet.
 
-I Dalarna har valdeltagandet i samtliga val ökat mellan valen 1998 och 2018. Exempelvis i kommunvalet valde år 1998 drygt 78,4 procent av invånarna i Dalarna att lägga en röst, medan andelen som röstade år 2018 ökat till drygt 85,4 procent, en ökning med 7 procentenheter. 
+I Dalarna har valdeltagandet i samtliga val ökat mellan valen 1998 och 2018. Exempelvis i kommunvalet valde år `r min(valdeltagande$year)` drygt `r round(valdeltagande %>% filter(kpi == "Valdeltagande_kommun",year == min(year),gender == "T") %>% .$value,1)` procent av invånarna i Dalarna att lägga en röst, medan andelen som röstade år 2018 ökat till drygt `r round(valdeltagande %>% filter(kpi == "Valdeltagande_kommun",year == 2018,gender == "T") %>% .$value,1)` procent, en ökning med nästan 7 procentenheter. 
 
-För 2022 finns siffror för valdeltagandet i region- och riksdagsval men ännu inte för kommunvalet. Resultatet visar på en minskning i valdeltagandet i Dalarna, på båda nivåerna i det senaste valet år 2022.
+I valet 2022 minskade valdeltagandet i såväl region-, som kommun- och riksdagsval.
 
 ```{r, include = FALSE}
 
-valar <- c("1998", "2002", "2006", "2010", "2014", "2018","2022")
-
 val1 <- SkapaStapelDiagram(skickad_df = valdeltagande %>% 
-                             select(-municipality) %>%
-                             mutate(year = year %>% as.character()) %>%
-                              filter(year %in% valar) %>% 
-                                filter(!(is.na(Valdeltagande.i.senaste.kommunalvalet..andel....))),
+                             filter(kpi == "Valdeltagande_kommun",gender == "T") %>% 
+                               mutate(year = year %>% as.character()) %>%
+                                  filter(!(is.na(value))),
                     skickad_x_var = "year",
-                    skickad_y_var = "Valdeltagande.i.senaste.kommunalvalet..andel....",
+                    skickad_y_var = "value",
                     diagram_titel = paste0("Valdeltagande i kommunval i Dalarna"),
                     output_mapp = "Diagram/",
                     filnamn_diagram = "valdeltagande1.png",
@@ -1322,12 +1319,11 @@ val1 <- SkapaStapelDiagram(skickad_df = valdeltagande %>%
                     lagg_pa_logga = FALSE)
 
 val2 <- SkapaStapelDiagram(skickad_df = valdeltagande %>% 
-                             select(-municipality) %>% 
-                             mutate(year = year %>% as.character()) %>% 
-                              filter(year %in% valar) %>% 
-                                filter(!(is.na(Valdeltagande.i.senaste.regionvalet..andel....))),
+                             filter(kpi == "Valdeltagande_region",gender == "T") %>% 
+                               mutate(year = year %>% as.character()) %>%
+                                  filter(!(is.na(value))),
                     skickad_x_var = "year",
-                    skickad_y_var = "Valdeltagande.i.senaste.regionvalet..andel....",
+                    skickad_y_var = "value",
                     diagram_titel = paste0("Valdeltagande i regionval i Dalarna"),
                     output_mapp = "Diagram/",
                     filnamn_diagram = "valdeltagande2.png",
@@ -1339,12 +1335,11 @@ val2 <- SkapaStapelDiagram(skickad_df = valdeltagande %>%
                     lagg_pa_logga = FALSE)
 
 val3 <- SkapaStapelDiagram(skickad_df = valdeltagande %>% 
-                             select(-municipality) %>% 
-                             mutate(year = as.character(year)) %>% 
-                              filter(year %in% valar) %>% 
-                                filter(!(is.na(Valdeltagande.i.senaste.riksdagsvalet..andel....))),
+                             filter(kpi == "Valdeltagande_riksdag",gender == "T") %>% 
+                               mutate(year = year %>% as.character()) %>%
+                                  filter(!(is.na(value))),
                     skickad_x_var = "year",
-                    skickad_y_var = "Valdeltagande.i.senaste.riksdagsvalet..andel....",
+                    skickad_y_var = "value",
                     diagram_titel = paste0("Valdeltagande i riksdagsval i Dalarna"),
                     output_mapp = "Diagram/",
                     filnamn_diagram = "valdeltagande3.png",
