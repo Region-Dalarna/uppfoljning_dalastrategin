@@ -2,9 +2,11 @@
 hamta_data_avfall = function(region_Kolada = "0020",
                              region_SCB = "20",
                              outputmapp = "G:/skript/projekt/data/uppfoljning_dalastrategin/Data/",
-                             filnamn = c("avfall.csv","avfallbrp.csv"), # Två utdatafiler
+                             filnamn = c("avfall.csv"), 
                              kpi = c("U07801","U07485", "U07483", "U07484", "U07482", "N01951"),
-                             senaste_ar = FALSE, # Om man bara vill ha senaste år
+                             returnera_data = FALSE,
+                             spara_data = TRUE,
+                             senaste_ar = FALSE, # 
                              tid_kolada = 2013:2100, # Välj ett högt värde som sista värde om alla år skall vara med
                              tid_SCB = c("*")){ # c(*) om alla tillgängliga år skall väljas
 
@@ -32,7 +34,7 @@ hamta_data_avfall = function(region_Kolada = "0020",
 
   api_scb = "https://api.scb.se/OV0104/v1/doris/sv/ssd/NR/NR0105/NR0105A/NR0105ENS2010T01A"
   
-  source("https://raw.githubusercontent.com/FaluPeppe/func/main/func_API.R")
+  source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R")
   
   # Väljer senaste år
   if(senaste_ar == TRUE){
@@ -91,27 +93,34 @@ hamta_data_avfall = function(region_Kolada = "0020",
   colnames(brp) <- c("year","BRP")
   
   ### Slå ihop avfall och BRP-data
-  avfall <- merge(avfall, brp, by="year")
+  avfallbrp <- merge(avfall, brp, by="year")
   
   ### Räkna ut totalt insamlat avfall
-  avfall$insamlat_avfall_totalt <- avfall$`Insamlat kommunalt avfall totalt, kg/invånare (justerat)`*avfall$`Invånare totalt, antal`
+  avfallbrp$insamlat_avfall_totalt <- avfallbrp$`Insamlat kommunalt avfall totalt, kg/invånare (justerat)`*avfallbrp$`Invånare totalt, antal`
   
   ### Räkna ut avfall/BRP
-  avfall$avfallbrp <- (avfall$insamlat_avfall_totalt/avfall$BRP)
+  avfallbrp$avfallbrp <- (avfallbrp$insamlat_avfall_totalt/avfallbrp$BRP)
   
   ### Pivoterar data igen för att få det i long-format
   avfall <- avfall %>% 
     pivot_longer(3:length(names(avfall)))
-  
-  ### All data behövs inte. Dessutom ett onödigt långt namn
-  avfall <- avfall %>% 
-    select(year,`Insamlat kommunalt avfall totalt, kg/invånare (justerat)`) %>% 
-      rename(Avfall_totalt_invanare = `Insamlat kommunalt avfall totalt, kg/invånare (justerat)`)
-  
-  avfallbrp <- avfallbrp %>% 
+ 
+  ### Väljer ut data som behövs för avfall/brp
+  avfallbrp <- avfallbrp %>%
     select(year,avfallbrp)
   
-  write.csv(avfall,paste0(outputmapp,filnamn[1]), fileEncoding="UTF-8", row.names = FALSE)
-  write.csv(avfallbrp,paste0(outputmapp,filnamn[2]), fileEncoding="UTF-8", row.names = FALSE)
-  #write.csv(avfall_region,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/avfall_region.csv", fileEncoding="UTF-8", row.names = FALSE)
+  # Sparar till Excel om användaren vill det
+  if (spara_data == TRUE){
+    write.csv(avfall,paste0(outputmapp,filnamn[1]), fileEncoding="UTF-8", row.names = FALSE)
+    write.csv(avfallbrp,paste0(outputmapp,filnamn[2]), fileEncoding="UTF-8", row.names = FALSE)
+    
+  } 
+  
+  # Data returneras som en DF om användaren vill det
+  if(returnera_data == TRUE){
+    retur_lista = lst(avfall,avfallbrp)
+    return(retur_lista)
+  } 
+  
+
 }

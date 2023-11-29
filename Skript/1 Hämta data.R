@@ -15,7 +15,8 @@ if (!require("pacman")) install.packages("pacman")
 #                data.table,
 #                keyring)
 
-p_load(keyring)
+p_load(httr,
+       keyring)
 
 ##############
 ## Gateway ###
