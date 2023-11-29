@@ -3,21 +3,33 @@ hamta_data_avfall = function(region_Kolada = "0020",
                              region_SCB = "20",
                              outputmapp = "G:/skript/projekt/data/uppfoljning_dalastrategin/Data/",
                              filnamn = c("avfall.csv","avfallbrp.csv"), # Två utdatafiler
+                             kpi = c("U07801","U07485", "U07483", "U07484", "U07482", "N01951"),
                              senaste_ar = FALSE, # Om man bara vill ha senaste år
                              tid_kolada = 2013:2100, # Välj ett högt värde som sista värde om alla år skall vara med
                              tid_SCB = c("*")){ # c(*) om alla tillgängliga år skall väljas
 
-  ###################################################################
-  ### Indikator 4 och 5 - Insamlat hushållsavfall samt avfall/brp ###
-  ###################################################################
+  # ===========================================================================================================
+  # 
+  # Skript som hämtar data för avfall från Kolada och BRP från SCB. Denna används sedan för att beräkna bland annat BRP/capita
+  # Parametrar som skickas med (= variabler i Kolada-tabellen) är:
+  # - region_Kolada: Vald region. Måste vara samma som region SCB. Max 1 åt gången för tillfället
+  # - region_SCB: Måste vara samma som region Kolada. Max 1 åt gången för tillfället
+  # - alla_regioner: Välj om man vill ha alla regioner. Om den är satt till True så skriver den över region ovan.
+  # - ta_med_riket: TRUE om man vill ta med riket också
+  # - kpi:  
+  # - U07801 - Insamlat hushållsavfall totalt, kg/person
+  # - U07485 - Insamlat farligt avfall (inkl. elavfall och batterier), kg/person
+  # - U07483 - Insamlat förpackningar och returpapper, kg/person
+  # _ U07484 - Insamlat grovavfall, kg/person
+  # _ U07482 - Insamlat mat- och restavfall, kg/person
+  # - filnamn : Vad skall filen heta
+  # - senaste_ar: Sätts till TRUE om man bara vill ha data för senaste år
+  # - tid: Vilka år vill man ha? Välj ett högt senaste år om man vill ha alla
+  # - returnera_data: TRUE om data skall returneras som en df
+  # - spara_data: TRUE om data skall sparas till Excel
   
-  #### Lista på variabler och koder 
-  #### U07801 - Insamlat hush?llsavfall totalt, kg/person
-  #### U07485 - Insamlat farligt avfall (inkl. elavfall och batterier), kg/person
-  #### U07483 - Insamlat förpackningar och returpapper, kg/person
-  #### U07484 - Insamlat grovavfall, kg/person
-  #### U07482 - Insamlat mat- och restavfall, kg/person
-  
+  # ===========================================================================================================
+
   api_scb = "https://api.scb.se/OV0104/v1/doris/sv/ssd/NR/NR0105/NR0105A/NR0105ENS2010T01A"
   
   source("https://raw.githubusercontent.com/FaluPeppe/func/main/func_API.R")
@@ -36,7 +48,7 @@ hamta_data_avfall = function(region_Kolada = "0020",
   
   #### Dra hem variablerna från Kolada
   avfall <- get_values(
-    kpi = c("U07801","U07485", "U07483", "U07484", "U07482", "N01951"),
+    kpi = kpi,
     municipality = region_Kolada,
     period = tid_kolada
   )
@@ -53,7 +65,7 @@ hamta_data_avfall = function(region_Kolada = "0020",
           kpi == "U07482" ~ "Insamlat mat- och restavfall, kg/person",
           kpi == "N01951" ~ "Invånare totalt, antal"))
   
-  ### Gör datan wide istället för long
+  ### Gör datan wide istället för long. Detta för att enklare kunna beräkna avfall relaterat till BNO
   avfall <- pivot_wider(avfall, names_from=kpi, values_from=value)
   
   ### BRP-data från SCB för Dalarna. Används för att beräkna avfall/BRP
@@ -63,8 +75,7 @@ hamta_data_avfall = function(region_Kolada = "0020",
          "ContentsCode" = c("NR0105AH"),
          "Tid" = tid_SCB)
   
-  # Stod 2012-2019 tidigare
-  
+
   ### Sen använder vi den listan för att ta ut det vi vill ha från SCB
   px_data <- 
     pxweb_get(url = "https://api.scb.se/OV0104/v1/doris/sv/ssd/NR/NR0105/NR0105A/NR0105ENS2010T01A",
@@ -80,13 +91,17 @@ hamta_data_avfall = function(region_Kolada = "0020",
   colnames(brp) <- c("year","BRP")
   
   ### Slå ihop avfall och BRP-data
-  avfallbrp <- merge(avfall, brp, by="year")
+  avfall <- merge(avfall, brp, by="year")
   
   ### Räkna ut totalt insamlat avfall
-  avfallbrp$insamlat_avfall_totalt <- avfallbrp$`Insamlat kommunalt avfall totalt, kg/invånare (justerat)`*avfallbrp$`Invånare totalt, antal`
+  avfall$insamlat_avfall_totalt <- avfall$`Insamlat kommunalt avfall totalt, kg/invånare (justerat)`*avfall$`Invånare totalt, antal`
   
   ### Räkna ut avfall/BRP
-  avfallbrp$avfallbrp <- (avfallbrp$insamlat_avfall_totalt/avfallbrp$BRP)
+  avfall$avfallbrp <- (avfall$insamlat_avfall_totalt/avfall$BRP)
+  
+  ### Pivoterar data igen för att få det i long-format
+  avfall <- avfall %>% 
+    pivot_longer(3:length(names(avfall)))
   
   ### All data behövs inte. Dessutom ett onödigt långt namn
   avfall <- avfall %>% 

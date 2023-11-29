@@ -4,16 +4,18 @@
 #### Ladda in paket ####
 ########################
 if (!require("pacman")) install.packages("pacman")
-pacman::p_load(httr,
-               purrr,
-               tidyr,
-               tidyverse,
-               rKolada,
-               pxweb,
-               askpass,
-               readxl,
-               data.table,
-               keyring)
+# pacman::p_load(httr,
+#                purrr,
+#                tidyr,
+#                tidyverse,
+#                rKolada,
+#                pxweb,
+#                askpass,
+#                readxl,
+#                data.table,
+#                keyring)
+
+p_load(keyring)
 
 ##############
 ## Gateway ###

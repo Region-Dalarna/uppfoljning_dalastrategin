@@ -2,21 +2,28 @@ hamta_data_energieffektivitet = function(region = "20",
                                          alla_regioner = TRUE, # True om man vill ha alla regioner
                                          ta_med_riket = FALSE, 
                                          outputmapp = "G:/skript/projekt/data/uppfoljning_dalastrategin/Data/",
-                                         filnamn = "effektivitet.csv", 
+                                         filnamn = "effektivitet.csv",
                                          senaste_ar = FALSE, # True om man enbart vill ha senaste år
+                                         spara_data = TRUE,
+                                         returnera_data = FALSE,
                                          tid = c("*")){ # c("*") ger alla år
 
-
-  #####################################################################
-  ################ Indikator 3 - Energieffektivitet ###################
-  #####################################################################
+  # ===========================================================================================================
+  # 
+  # Skript som hämtar data och beräknar energieffektivitet (SCB)
+  # Energieffektivitet mäts som förädlingsvärde per ton koldioxekvivalenter från ett produktionsperspektiv.
+  # Data hämtas därför för båda dessa parametrar från PXweb
+  # Parametrar som skickas med är:
+  # - region: Vald region
+  # - alla_regioner: Välj om man vill ha alla regioner. Om den är satt till True så skriver den över region ovan.
+  # - ta_med_riket: TRUE om man vill ta med riket också
+  # - filnamn : Vad skall filen heta
+  # - senaste_ar: Sätts till TRUE om man bara vill ha data för senaste år
+  # - tid: Vilka år vill man ha? Välj ett högt senaste år om man vill ha alla
+  # - returnera_data: TRUE om data skall returneras som en df
+  # - spara_data: TRUE om data skall sparas till Excel  
   
-  ### Energieffektivitet mäts som förädlingsvärde per ton koldioxekvivalenter från ett produktionsperspektiv.
-  
-  ##################################################################################
-  ######### BRP-data från SCB för Dalarna för åren 2012-2019 #######################
-  ### Använder PX Web API för att skapa en lista på variablerna vi vill ha #########
-  ##################################################################################
+  # ===========================================================================================================
   
   source("https://raw.githubusercontent.com/FaluPeppe/func/main/func_API.R")
   
@@ -62,11 +69,7 @@ hamta_data_energieffektivitet = function(region = "20",
   ########################
   ### Data för utsläpp ###
   ########################
-  
-  ### Region = geografierna som ska ingå
-  ### Contentscode = vilken variabel vi vill ha ut
-  ### Tid = åren vi vill ha
-  
+ 
   pxweb_query_list <- 
     list("Region"=region,
          "SNI2007"=c("A01-F43","G45-T98"),
@@ -81,11 +84,7 @@ hamta_data_energieffektivitet = function(region = "20",
   
   ### Lägger datan i en dataframe och ger den ett namn
   utslapp <- as.data.frame(px_data, column.name.type = "text", variable.value.type = "text")
-  
-  ### Tar bort dataframes som vi inte behöver
-  # px_data <- NULL
-  # pxweb_query_list <- NULL
-  
+
   ### Slår ihop utsläppen för varje år och region
   utslapp <-  utslapp %>% 
               group_by(region, år) %>% 
@@ -103,5 +102,9 @@ hamta_data_energieffektivitet = function(region = "20",
       select(1,2,5) %>% 
         pivot_longer(cols=3,names_to = "variabel",values_to = "value")
   
-  write.csv(energieffektivitet,paste0(outputmapp,filnamn), fileEncoding="UTF-8", row.names = FALSE)
+  # Sparar till CSV om användaren vill det
+  if (spara_data == TRUE) write.csv(energieffektivitet, paste0(outputmapp,filnamn), fileEncoding="UTF-8", row.names = FALSE)
+  
+  # Data returneras som en DF om användaren vill det
+  if(returnera_data == TRUE) return(energieffektivitet)
 }
