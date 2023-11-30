@@ -19,7 +19,8 @@ hamta_data_langtidsarb = function(region = c("0020"),
   # - alla_kommuner: Välj om man vill ha alla kommuner. 
   # - ta_med_riket: TRUE om man vill ta med riket också
   # - kpi:  
-  # - N03926",Långtidsarbetslöshet_25_64
+  # - N03926 - Antal invånare 25-64 år (årsmedelvärde år T) som varit öppet arbetslösa eller i program med aktivitetsstöd i minst sex månader, dividerat med antal invånare 25-64 år den 31/12 år T-1.
+  # - N03923 - Antal invånare 15-74 år som varit öppet arbetslösa eller i program med aktivitetsstöd i minst sex månader, dividerat med totalt antal invånare 15-74 år som är öppet arbetslösa eller i program med aktivitetsstöd.
   # - filnamn : Vad skall filen heta
   # - senaste_ar: Sätts till TRUE om man bara vill ha data för senaste år
   # - tid: Vilka år vill man ha? Välj ett högt senaste år om man vill ha alla
@@ -60,7 +61,8 @@ hamta_data_langtidsarb = function(region = c("0020"),
   
   långtidsarbetslöshet <- långtidsarbetslöshet %>% 
     select(-c("count","municipality_type","municipality_id")) %>% 
-      mutate(kpi = ifelse(kpi == "N03926","Långtidsarbetslöshet_25_64",kpi))
+      mutate(kpi = ifelse(kpi == "N03926","Långtidsarbetslöshet_25_64",
+                          ifelse(kpi == "N03923","Långtidsarbetslöshet_15_74",kpi)))
 
   # Sparar till CSV om användaren vill det
   if (spara_data == TRUE) write.csv(långtidsarbetslöshet, paste0(outputmapp,filnamn), fileEncoding="UTF-8", row.names = FALSE)
