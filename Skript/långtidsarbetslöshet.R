@@ -1,4 +1,4 @@
-hamta_data_langtidsarb = function(region = c("0020","0021"),
+hamta_data_langtidsarb = function(region = c("0020"),
                                   alla_regioner = FALSE,
                                   alla_kommuner = FALSE, # Enbart om alla_regioner är false och man enbart har valt en region
                                   ta_med_riket = FALSE,
