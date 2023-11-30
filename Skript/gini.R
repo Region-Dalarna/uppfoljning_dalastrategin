@@ -1,5 +1,5 @@
 hamta_data_gini = function(region = c("0020", "0000"),
-                           alla_regioner = TRUE,
+                           alla_regioner = FALSE,
                            ta_med_riket = FALSE,
                            outputmapp = "G:/skript/projekt/data/uppfoljning_dalastrategin/Data/",
                            filnamn = "gini.csv", 
