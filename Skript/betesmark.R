@@ -30,11 +30,7 @@ hamta_data_betesmark = function(region = "0020",
   pacman::p_load(tidyverse,
                  rKolada,
                  readxl)
-  
-  if (!require("pacman")) install.packages("pacman")
-  pacman::p_load(tidyverse,
-                 rKolada,
-                 readxl)
+  source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R")
   
   if(alla_regioner == TRUE){
     region = hamtaAllaLan(tamedriket = FALSE) 
@@ -44,8 +40,6 @@ hamta_data_betesmark = function(region = "0020",
   if(ta_med_riket == TRUE){
     region = c("0000",region)
   }  
-
-  source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R")
   
   if(senaste_ar == TRUE) tid <- max(unique(hamta_kolada_giltiga_ar("N00750",vald_region = region)))
   

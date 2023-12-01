@@ -1,10 +1,14 @@
 
 hamta_data_chefrepresentation <- function(region = "20",
+                                          alla_regioner = FALSE,
+                                          ta_med_riket = FALSE,
                                           kon = c("1","2"),
-                                          cont_code = c("0000001Y"),
-                                          utb_niva = c("000"),
+                                          utb_niva = c("000"), #Enbart en i taget för tillfället
                                           bakgrund = c("SE","INTTOT"),
                                           tid = c("*"), 
+                                          senaste_ar = FALSE,
+                                          spara_data = TRUE,
+                                          returnera_data = FALSE,
                                           outputmapp = "G:/skript/projekt/data/uppfoljning_dalastrategin/Data/",
                                           filnamn = "chefsrepresentation_ny.csv"){
 
@@ -13,15 +17,14 @@ hamta_data_chefrepresentation <- function(region = "20",
   # Skript för att hämta data från SCB för chefsrepresentation. 
   # 
   # För att få en djupare förklaring av vad som de olika kategorierna under varje variabel betyder, använd: 
-  # pxvardelist("https://api.scb.se/OV0104/v1/doris/sv/ssd/AA/AA0003/AA0003B/IntGr1LanKonUtb", "ContentsCode"), 
-  # där man byter ContentsCode mot den variabel man är intresserad av.
+  # pxvardelist("https://api.scb.se/OV0104/v1/doris/sv/ssd/AA/AA0003/AA0003B/IntGr1LanKonUtb", "UtbNiv"), 
+  # där man byter till den variabel man är intresserad av
   # 
   # Generellt gäller c("*) om man vill ha alla variabler
   # Parametrar som skickas med (= variabler i SCB-tabellen) är:
   # - region: Vald region
   # - alla_regioner: Välj om man vill ha alla regioner. Om den är satt till True så skriver den över region ovan.
-  # - cont_code: Se ovan (pxvardelist)
-  # - utb_niva: ""
+  # - utb_niva: Se ovan (pxvardelist)
   # - bakgrund: ""
   # - kon: ""
   # - outputmapp: Vart skall data sparas
@@ -29,7 +32,7 @@ hamta_data_chefrepresentation <- function(region = "20",
   # - senaste_ar: Sätts till TRUE om man bara vill ha data för senaste år
   # - tid: Vilka år vill man ha? Normalt c("*"), men går även att sätta ett intervall.
   # - returnera_data: True om data skall returneras som en df
-  # - spara_till_excel: True om data skall sparas till Excel  
+  # - spara_data: True om data skall sparas till Excel  
   # ===========================================================================================================
   
 if (!require("pacman")) install.packages("pacman")
@@ -55,7 +58,7 @@ if(ta_med_riket == TRUE){
   region = c("00",region)
 }
 
-if (tid == "senaste"){
+if (senaste_ar == TRUE){
   tid = max(hamta_giltiga_varden_fran_tabell("https://api.scb.se/OV0104/v1/doris/sv/ssd/AA/AA0003/AA0003B/IntGr1LanKonUtb", "tid"))
 }
 
@@ -65,7 +68,7 @@ pxweb_query_list <-
        "Kon" = kon,
        "UtbNiv" = utb_niva,
        "BakgrVar" = bakgrund,
-       "ContentsCode" = cont_code,
+       "ContentsCode" = c("0000001Y"),
        "Tid" = tid)
 
 # Download data 
@@ -82,7 +85,7 @@ chefspositioner <- chefspositioner %>%
       filter(!(is.na(`Andel i chefsposition, procent`)))
 
 # Sparar till Excel om användaren vill det
-if (spara_till_excel == TRUE) write.csv(chefspositioner, paste0(outputmapp,filnamn), fileEncoding="UTF-8", row.names = FALSE)
+if (spara_data == TRUE) write.csv(chefspositioner, paste0(outputmapp,filnamn), fileEncoding="UTF-8", row.names = FALSE)
 
 # Data returneras som en DF om användaren vill det
 if(returnera_data == TRUE) return(chefspositioner)
