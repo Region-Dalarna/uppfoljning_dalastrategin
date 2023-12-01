@@ -2,13 +2,34 @@
 hamta_data_forskning = function(region = "0020", # Används bara om man vill ha en eller några regioner
                                 alla_regioner = TRUE, # True om man vill ha alla regioner
                                 ta_med_riket = FALSE, 
+                                kpi = c("N85085", "N85086", "N85087"),
+                                returnera_data = FALSE,
+                                spara_data = TRUE,
                                 outputmapp = "G:/skript/projekt/data/uppfoljning_dalastrategin/Data/",
                                 filnamn = "forskning.csv", 
                                 senaste_ar = FALSE, # Om man enbart vill ha senaste år
                                 tid = 2011:2100){ # Välj ett högt värde som sista värde om alla år skall vara med.
 
 
-  # Hämta data för data kopplat till forskning
+  # ===========================================================================================================
+  # 
+  # Skript som hämtar data kopplat till forskning
+  # Parametrar som skickas med (= variabler i Kolada-tabellen) är:
+  # - region: Vald region
+  # - alla_regioner: Välj om man vill ha alla regioner. Om den är satt till TRUE så skriver den över region ovan.
+  # - alla_kommuner: Välj om man vill ha alla kommuner. 
+  # - ta_med_riket: TRUE om man vill ta med riket också
+  # - kpi:  
+  # - N85085 - Företagens utgifter i kronor för egen Forskning och utveckling dividerat med befolkning (31/12) respektive år
+  # - N85086 - Offentliga sektorns utgifter i kronor för Forskning och utveckling dividerat med befolkningen (31/12) respektive år
+  # - N85087 - Universitets- och högskolesektorns utgifter i kronor för Forskning och utveckling dividerat med befolkningen (31/12) respektive år.
+  # - filnamn : Vad skall filen heta
+  # - senaste_ar: Sätts till TRUE om man bara vill ha data för senaste år
+  # - tid: Vilka år vill man ha? Välj ett högt senaste år om man vill ha alla
+  # - returnera_data: TRUE om data skall returneras som en df
+  # - spara_data: TRUE om data skall sparas till Excel  
+  
+  # ===========================================================================================================
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R")
   
   if (!require("pacman")) install.packages("pacman")
@@ -66,5 +87,9 @@ hamta_data_forskning = function(region = "0020", # Används bara om man vill ha 
   forskning$municipality[forskning$municipality=="Region Västerbotten"] = "Västerbottens län"
   forskning$municipality[forskning$municipality=="Region Norrbotten"] = "Norrbottens län"
 
-  write.csv(forskning, paste0(outputmapp,filnamn), fileEncoding="UTF-8", row.names = FALSE)
+  # Sparar till CSV om användaren vill det
+  if (spara_data == TRUE) write.csv(forskning, paste0(outputmapp,filnamn), fileEncoding="UTF-8", row.names = FALSE)
+  
+  # Data returneras som en DF om användaren vill det
+  if(returnera_data == TRUE) return(forskning)
 }

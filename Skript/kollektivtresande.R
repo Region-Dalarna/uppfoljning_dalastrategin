@@ -27,6 +27,8 @@ hamta_data_kollektivtresande = function(region = c("0020"),
   
   # ===========================================================================================================
 
+  source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R")
+  
   if (!require("pacman")) install.packages("pacman")
   pacman::p_load(tidyverse,
                  rKolada,
