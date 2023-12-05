@@ -63,6 +63,29 @@ hamta_data_langtidsarb = function(region = c("0020"),
     select(-c("count","municipality_type","municipality_id")) %>% 
       mutate(kpi = ifelse(kpi == "N03926","Långtidsarbetslöshet_25_64",
                           ifelse(kpi == "N03923","Långtidsarbetslöshet_15_74",kpi)))
+  
+  # Skall egentligen göras med en case_when, men låter vara tillsvidare då det funkar
+  forskning$municipality[forskning$municipality=="Region Stockholm"] = "Stockholms län"
+  forskning$municipality[forskning$municipality=="Region Uppsala"] = "Uppsala län"             
+  forskning$municipality[forskning$municipality=="Region Sörmland"] = "Södermanlands län"            
+  forskning$municipality[forskning$municipality=="Region Östergötland"] = "Östergötlands län"
+  forskning$municipality[forskning$municipality=="Region Jönköpings län"] = "Jönköpings län"
+  forskning$municipality[forskning$municipality=="Region Kronoberg"] = "Kronobergs län"
+  forskning$municipality[forskning$municipality=="Region Kalmar"] = "Kalmar län"
+  forskning$municipality[forskning$municipality=="Region Gotland"] = "Gotlands län"
+  forskning$municipality[forskning$municipality=="Region Blekinge"] = "Blekinge län"
+  forskning$municipality[forskning$municipality=="Region Skåne"] = "Skåne län"
+  forskning$municipality[forskning$municipality=="Region Halland"] = "Hallands län"
+  forskning$municipality[forskning$municipality=="Västra Götalandsregionen"] = "Västra Götalands län"
+  forskning$municipality[forskning$municipality=="Region Värmland"] = "Värmlands län"
+  forskning$municipality[forskning$municipality=="Region Örebro län"] = "Örebro län"
+  forskning$municipality[forskning$municipality=="Region Västmanland"] = "Västmanlands län"
+  forskning$municipality[forskning$municipality=="Region Dalarna"] = "Dalarnas län"
+  forskning$municipality[forskning$municipality=="Region Gävleborg"] = "Gävleborgs län"
+  forskning$municipality[forskning$municipality=="Region Västernorrland"] = "Västernorrlands län"
+  forskning$municipality[forskning$municipality=="Region Jämtland Härjedalen"] = "Jämtlands län"
+  forskning$municipality[forskning$municipality=="Region Västerbotten"] = "Västerbottens län"
+  forskning$municipality[forskning$municipality=="Region Norrbotten"] = "Norrbottens län"
 
   # Sparar till CSV om användaren vill det
   if (spara_data == TRUE) write.csv(långtidsarbetslöshet, paste0(outputmapp,filnamn), fileEncoding="UTF-8", row.names = FALSE)
