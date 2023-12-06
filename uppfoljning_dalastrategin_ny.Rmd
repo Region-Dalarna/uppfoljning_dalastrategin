@@ -244,6 +244,7 @@ utslapp3 <- SkapaStapelDiagram(skickad_df = vaxthusgaser %>%
 utslapp1
 
 ```
+
 <br>
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 utslapp2
