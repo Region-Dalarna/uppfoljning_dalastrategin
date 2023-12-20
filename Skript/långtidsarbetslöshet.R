@@ -10,14 +10,10 @@ hamta_data_langtidsarb = function(region = c("00","20"), # Använd med fördel e
   # 
   # Skript som hämtar data för långtidsarbetslöshet
   # Parametrar som skickas med (= variabler i Kolada-tabellen) är:
-  # - region: Vald region
   # - kpi:  
   # - N03926 - Antal invånare 25-64 år (årsmedelvärde år T) som varit öppet arbetslösa eller i program med aktivitetsstöd i minst sex månader, dividerat med antal invånare 25-64 år den 31/12 år T-1.
   # - N03923 - Antal invånare 15-74 år som varit öppet arbetslösa eller i program med aktivitetsstöd i minst sex månader, dividerat med totalt antal invånare 15-74 år som är öppet arbetslösa eller i program med aktivitetsstöd.
-  # - filnamn : Vad skall filen heta
-  # - tid: Vilka år vill man ha? Välj ett högt senaste år om man vill ha alla
-  # - returnera_data: TRUE om data skall returneras som en df
-  # - spara_data: TRUE om data skall sparas till Excel  
+
   
   # ===========================================================================================================
   
