@@ -41,7 +41,7 @@ hamta_data_langtidsarb = function(region = c("00","20"), # Använd med fördel e
              municipality = byt_namn_lan_kolada(municipality))
 
   # Sparar till CSV om användaren vill det
-  if (!is.na(output_mapp) & !is.na(filnamn)) write.csv(långtidsarbetslöshet, paste0(outputmapp,filnamn), fileEncoding="UTF-8", row.names = FALSE)
+  if (!is.na(output_mapp) & !is.na(filnamn)) write.csv(långtidsarbetslöshet, paste0(output_mapp,filnamn), fileEncoding="UTF-8", row.names = FALSE)
   
   # Data returneras som en DF om användaren vill det
   if(returnera_data == TRUE) return(långtidsarbetslöshet)
