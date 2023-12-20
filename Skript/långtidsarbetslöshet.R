@@ -13,8 +13,6 @@ hamta_data_langtidsarb = function(region = c("00","20"), # Använd med fördel e
   # - kpi:  
   # - N03926 - Antal invånare 25-64 år (årsmedelvärde år T) som varit öppet arbetslösa eller i program med aktivitetsstöd i minst sex månader, dividerat med antal invånare 25-64 år den 31/12 år T-1.
   # - N03923 - Antal invånare 15-74 år som varit öppet arbetslösa eller i program med aktivitetsstöd i minst sex månader, dividerat med totalt antal invånare 15-74 år som är öppet arbetslösa eller i program med aktivitetsstöd.
-
-  
   # ===========================================================================================================
   
   if (!require("pacman")) install.packages("pacman")
