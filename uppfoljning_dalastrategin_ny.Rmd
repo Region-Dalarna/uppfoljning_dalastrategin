@@ -172,91 +172,77 @@ robusthet och resiliens vid klimatförändringar god.
 
 Den miljömässiga dimensionen i regional utveckling handlar bland annat om att säkerställa att ekosystemen fortsätter att leverera de tjänster som människor och samhällen är beroende av. Genom att gå före i en miljömässigt hållbar omställning gynnas innovationer och regionalt företagande, med målsättningen att regionala lösningar bidrar till att lösa globala problem. Det är också vägen fram till goda livsmiljöer och levnadsvillkor.
 
-## Utsläpp av klimatpåverkande växthusgaser
-År 2017 antog Sverige ett långsiktigt nationellt mål om att landet ska vara klimatneutralt år 2045. Detta innebär en minskning av växthusgasutsläpp med minst 85 procent inom landets gränser i jämförelse med utsläppen år 1990. Målet innebär i princip att alla sektorer och verksamheter behöver vara fossilfria år 2045. Sveriges nationella mål är i linje med det europeiska målet om ett klimatneutralt EU till år 2050 och det internationella Parisavtalet som innebär att jordens länder strävar efter att ökningen av den globala genomsnittstemperaturen inte blir mer än 1,5°C till år 2050 i förhållande till den förindustriella nivån, samt att den i vilket fall inte överstiger 2°C.
+## Andel hektar formellt skyddad produktiv skogsmark
 
-De klimatpåverkande växthusgaserna innefattar fler ämnen än koldioxid. Ett exempel är metangas, som därtill är betydligt skadligare per enhet än koldioxid (1 ton metangas motsvarar utsläpp av ca 28 ton koldioxid). För att utsläppen som sker i Dalarna ska vara jämförbara med andra regioners utsläpp omsätts därför samtliga gasers utsläpp till så kallade koldioxidekvivalenter, det vill säga den mängd som varje ämne släpper ut omräknat i termer av koldioxid.
+År 2018 beslutade dåvarande regering om Sveriges första nationella skogsprogram med fokus på skogsbrukets roll för en hållbar utveckling. I Dalastrategin omnämns skogsbruket som en av länets viktigare näringar. Skogsbruket påverkar och påverkas av klimatförändringarna och skötsel och brukande behöver anpassas därefter. 
 
-FÖRSLAG - Gör om den andra figuren till ett stapeldiagram som börjar 1990. Detta ger möjlighet att jämföra Dalarnas utlsäpp med målet (och kommentera detta). Som det är nu tycker jag inte att stycket nedan säger så mycket. Hur vet man att vi behöver en snabbare omställning när det inte finns någon relation till 1990? Hur mycket har vi minskat och vad innebär detta i årstakt?
-
-I Dalarna går utvecklingen i positiv riktning, med minskande utsläpp av växthusgaser under det senast decenniet. Det är  industri- och transportsektorn som står för den volymmässigt största minskningen samtidigt som dessa sektorer, i likhet med i övriga Sverige, står för den största andelen utsläpp av växthusgaser totalt sett i länet. Sett till utsläpp per person ligger Dalarna högre än riksgenomsnittet, trots en minskning från knappt 7,5 till drygt 5,5 ton/invånare. Även om vi ser en utveckling i rätt riktning kommer det att krävas en ännu snabbare minskningstakt för att uppnå våra ambitioner i Dalarnastrategin och för att bli klimatneutrala till 2045 enligt den nationella målsättningen.
+I diagrammen nedan redovisas utvecklingen för skyddad produktiv skogsmark i Dalarnas län mellan `r as.character(min(skogsmark$År))` och `r as.character(max(skogsmark$År))`. Arealen skyddad skogsmark i länet har ökat över tidsperioden, från `r format(skogsmark %>% filter(År==min(År)) %>% .$area_hektar,big.mark=" ")` hektar år `r as.character(min(skogsmark$År))` till `r format(skogsmark %>% filter(År==max(År)) %>% .$area_hektar,big.mark=" ")` hektar år `r as.character(max(skogsmark$År))`. Procentuellt var `r skogsmark %>% filter(År==min(År)) %>% .$area_procent` procent av den produktiva skogsmarken i Dalarnas län skyddad år `r as.character(min(skogsmark$År))` och samma siffra för `r as.character(max(skogsmark$År))` var `r skogsmark %>% filter(År==max(År)) %>% .$area_procent` procent. Det betyder att den totala arealen skogsmark har ökat något under perioden.
 
 ```{r, include = FALSE}
-#colnames(vaxthusgaser) <- c("Id", "Ar", "Geografi", "Utsläpp per invånare", "Totalt Utsläpp", "Uppvärmning", "Transporter", "Arbetsmaskiner", "El/Fjärrvärme", "Industri", "Jordbruk")
-
-utslapp1 <- SkapaStapelDiagram(skickad_df = vaxthusgaser %>%
-                                 filter(municipality_id == 20,
-                                        year%in%c(2005,2010,2015:last(year)),
-                                        !(kpi %in% c("Utsläpp per invånare","Totalt Utsläpp"))) %>%
-                                  rename("Ton" = value) %>%
-                                     mutate("Ton"=Ton/1000,
-                                            year = year %>% as.character()),
-                               skickad_x_var = "year",
-                               skickad_y_var = "Ton",
-                               skickad_x_grupp ="kpi",
-                               #skriv_till_diagramfil = FALSE,
-                               diagram_titel = paste0("Klimatpåverkande utsläpp i Dalarna per källa"),
-                               output_mapp = "Diagram/",
-                               filnamn_diagram = "utslapp3.png",
-                               diagram_capt = "Källa:  RKA (Kolada) har beräknat utsläpp med data från den Nationella emissionsdatabasen\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Utsläpp av växthusgaser inom det geografiska området i ton CO2-ekvivalenter.",
-                               geom_position_stack = TRUE,
-                               legend_vand_ordning = TRUE,
-                               stodlinjer_avrunda_fem = TRUE,
-                               x_axis_lutning = 0,
-                               lagg_pa_logga = FALSE,
-                               manual_y_axis_title = "Ton CO2 (tusental)",
-                               manual_color = diagramfarger("rus_sex"))
-
-utslapp2 <- SkapaLinjeDiagram(skickad_df = vaxthusgaser %>% 
-                                filter(kpi == "Utsläpp per invånare",
-                                       year>2014) %>% 
-                                  mutate(year = as.character(year)),
-                    skickad_x_var = "year",
-                    skickad_y_var = "value",
-                    diagram_titel = paste0("Utsläpp per invånare"),
-                    skickad_x_grupp = "municipality",
-                    diagram_capt = "Källa:  RKA (Kolada) har beräknat utsläpp med data från den Nationella emissionsdatabasen\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Utsläpp av växthusgaser inom det geografiska området delat med invånare i ton CO2-ekvivalenter.",
-                    x_axis_lutning = 0,
-                    manual_color = diagramfarger("rus_sex"),
+skogsmark1 <- SkapaStapelDiagram(skickad_df = skogsmark %>%
+                                   mutate(area_hektar=area_hektar/1000),
+                    skickad_x_var = "År",
+                    skickad_y_var = "area_hektar",
+                    diagram_titel = paste0("Areal skyddad produktiv skogsmark i Dalarna"),
                     output_mapp = "Diagram/",
-                    filnamn_diagram = "utslapp2.png",
-                    manual_y_axis_title = "Ton CO2/invånare")
-
-utslapp3 <- SkapaStapelDiagram(skickad_df = vaxthusgaser %>% 
-                                filter(kpi == "Utsläpp per invånare",
-                                       year%in%c(1990,2000,2005,2010,2015:last(year))) %>% 
-                                  mutate(year = as.character(year)),
-                    skickad_x_var = "year",
-                    skickad_y_var = "value",
-                    diagram_titel = paste0("Utsläpp per invånare"),
-                    skickad_x_grupp = "municipality",
-                    diagram_capt = "Källa:  RKA (Kolada) har beräknat utsläpp med data från den Nationella emissionsdatabasen\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Utsläpp av växthusgaser inom det geografiska området delat med invånare i ton CO2-ekvivalenter.",
+                    filnamn_diagram = "skogsmark.png",
+                    diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna",
                     x_axis_lutning = 0,
-                    manual_color = diagramfarger("rus_sex"),
+                    manual_color = diagramfarger("rus_sex")[1],
+                    manual_y_axis_title = "Hektar (tusental)",
+                    lagg_pa_logga = FALSE)
+
+skogsmark2 <- SkapaStapelDiagram(skickad_df = skogsmark,
+                    skickad_x_var = "År",
+                    skickad_y_var = "area_procent",
+                    diagram_titel = paste0("Andel skyddad produktiv skogsmark i Dalarna"),
                     output_mapp = "Diagram/",
-                    filnamn_diagram = "utslapp2.png",
-                    manual_y_axis_title = "Ton CO2/invånare")
+                    filnamn_diagram = "skogsmark2.png",
+                    diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna",
+                    x_axis_lutning = 0,
+                    manual_color = diagramfarger("rus_sex")[1],
+                    manual_y_axis_title = "Hektar (%)",
+                    lagg_pa_logga = FALSE)
 
 ```
 
-<center>
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-utslapp1
-
-```
-
-<br>
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-utslapp2
+skogsmark1
 ```
 <br>
+<br>
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-utslapp3
+skogsmark2
 ```
 
-</center>
+## Arealen betesmark och areal med särskilt höga biologiska värden
+Biologisk mångfald och väl fungerande ekosystem är en förutsättning för allt liv på jorden. Det är också en bas för goda livsmiljöer för både Dalarnas invånare och för Dalarnas näringsliv. Den gröna infrastrukturen är ekologiskt funktionella nätverk av livsmiljöer och naturområden som utformas, brukas och förvaltas så att den biologiska mångfalden bevaras och därmed främjar de för samhället så centrala ekosystemtjänster som exempelvis vattenrening och livskraftiga jordbruksmarker etc. Samhället har allt att vinna på ett hållbart bruk av ekosystemen och att förvalta ett mångfunktionellt landskap där natur- och kulturvärden tillvaratas.
 
-\newpage
+I diagrammet nedan redovisas utvecklingen för arealen betesmark i Dalarnas län mellan `r as.character(min(betesmark$year))` och `r as.character(max(betesmark$year))`. Arealen har under denna period minskat från `r format(betesmark %>% filter(municipality_id == 20,year == min(year)) %>% .$value,big.mark=" ")` till `r format(betesmark %>% filter(municipality_id == 20,year == max(year)) %>% .$value,big.mark=" ")` hektar. Denna negativa trend går också emot den nationella trenden, där arealen betesmark har ökat något i riket som helhet. Slåtteräng är en delmängd av betesmarken som har särskilt höga biologiska värden, och därmed särskilt stor betydelse för biologisk mångfald. I Dalarna är andelen slåtteräng 1,6 procent av betesmarken (LITE OKLART VAR DENNA INFO KOMMER IFRÅN - TA BORT?).
+
+```{r, include = FALSE}
+
+betesmark <- SkapaStapelDiagram(skickad_df = betesmark %>% 
+                                  mutate(year = year %>% as.character()) %>% 
+                                    filter(municipality_id == 20),
+                    skickad_x_var = "year",
+                    skickad_y_var = "value",
+                    diagram_titel = paste0("Arealen betesmark i Dalarna"),
+                    output_mapp = "Diagram/",
+                    filnamn_diagram = "betesmark.png",
+                    diagram_capt = "Källa: Jordbruksverket\nBearbetning: Samhällsanalys, Region Dalarna",
+                    manual_y_axis_title = "Hektar",
+                    x_axis_lutning = 0,
+                    manual_color = diagramfarger("rus_sex")[1],
+                    stodlinjer_avrunda_fem = TRUE,
+                    lagg_pa_logga = FALSE)
+
+```
+<br>
+<br>
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+betesmark
+```
 
 ## Energiproduktion
 En god tillgång till hållbar energi är avgörande för näringslivets och hela samhällets omställningsförmåga. En ökad regional produktion av förnybar energi bidrar till såväl minskade utsläpp som ökad självförsörjning och resiliens för Dalarna.
@@ -346,6 +332,7 @@ effektivitet1alt
 effektivitet3
 ```
 
+
 ## Insamlat kommunalt avfall (kg/person)
 ```{r, include = FALSE}
 
@@ -395,6 +382,92 @@ Ytterligare en indikator på resurseffektivitet är kopplingen mellan mängden i
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 avfallbrpdiag
 ```
+
+## Utsläpp av klimatpåverkande växthusgaser
+År 2017 antog Sverige ett långsiktigt nationellt mål om att landet ska vara klimatneutralt år 2045. Detta innebär en minskning av växthusgasutsläpp med minst 85 procent inom landets gränser i jämförelse med utsläppen år 1990. Målet innebär i princip att alla sektorer och verksamheter behöver vara fossilfria år 2045. Sveriges nationella mål är i linje med det europeiska målet om ett klimatneutralt EU till år 2050 och det internationella Parisavtalet som innebär att jordens länder strävar efter att ökningen av den globala genomsnittstemperaturen inte blir mer än 1,5°C till år 2050 i förhållande till den förindustriella nivån, samt att den i vilket fall inte överstiger 2°C.
+
+De klimatpåverkande växthusgaserna innefattar fler ämnen än koldioxid. Ett exempel är metangas, som därtill är betydligt skadligare per enhet än koldioxid (1 ton metangas motsvarar utsläpp av ca 28 ton koldioxid). För att utsläppen som sker i Dalarna ska vara jämförbara med andra regioners utsläpp omsätts därför samtliga gasers utsläpp till så kallade koldioxidekvivalenter, det vill säga den mängd som varje ämne släpper ut omräknat i termer av koldioxid.
+
+FÖRSLAG - Gör om den andra figuren till ett stapeldiagram som börjar 1990. Detta ger möjlighet att jämföra Dalarnas utlsäpp med målet (och kommentera detta). Som det är nu tycker jag inte att stycket nedan säger så mycket. Hur vet man att vi behöver en snabbare omställning när det inte finns någon relation till 1990? Hur mycket har vi minskat och vad innebär detta i årstakt?
+
+I Dalarna går utvecklingen i positiv riktning, med minskande utsläpp av växthusgaser under det senast decenniet. Det är  industri- och transportsektorn som står för den volymmässigt största minskningen samtidigt som dessa sektorer, i likhet med i övriga Sverige, står för den största andelen utsläpp av växthusgaser totalt sett i länet. Sett till utsläpp per person ligger Dalarna högre än riksgenomsnittet, trots en minskning från knappt 7,5 till drygt 5,5 ton/invånare. Även om vi ser en utveckling i rätt riktning kommer det att krävas en ännu snabbare minskningstakt för att uppnå våra ambitioner i Dalarnastrategin och för att bli klimatneutrala till 2045 enligt den nationella målsättningen.
+
+```{r, include = FALSE}
+#colnames(vaxthusgaser) <- c("Id", "Ar", "Geografi", "Utsläpp per invånare", "Totalt Utsläpp", "Uppvärmning", "Transporter", "Arbetsmaskiner", "El/Fjärrvärme", "Industri", "Jordbruk")
+
+utslapp1 <- SkapaStapelDiagram(skickad_df = vaxthusgaser %>%
+                                 filter(municipality_id == 20,
+                                        year%in%c(2005,2010,2015:last(year)),
+                                        !(kpi %in% c("Utsläpp per invånare","Totalt Utsläpp"))) %>%
+                                  rename("Ton" = value) %>%
+                                     mutate("Ton"=Ton/1000,
+                                            year = year %>% as.character()),
+                               skickad_x_var = "year",
+                               skickad_y_var = "Ton",
+                               skickad_x_grupp ="kpi",
+                               #skriv_till_diagramfil = FALSE,
+                               diagram_titel = paste0("Klimatpåverkande utsläpp i Dalarna per källa"),
+                               output_mapp = "Diagram/",
+                               filnamn_diagram = "utslapp3.png",
+                               diagram_capt = "Källa:  RKA (Kolada) har beräknat utsläpp med data från den Nationella emissionsdatabasen\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Utsläpp av växthusgaser inom det geografiska området i ton CO2-ekvivalenter.",
+                               geom_position_stack = TRUE,
+                               legend_vand_ordning = TRUE,
+                               stodlinjer_avrunda_fem = TRUE,
+                               x_axis_lutning = 0,
+                               lagg_pa_logga = FALSE,
+                               manual_y_axis_title = "Ton CO2 (tusental)",
+                               manual_color = diagramfarger("rus_sex"))
+
+utslapp2 <- SkapaLinjeDiagram(skickad_df = vaxthusgaser %>% 
+                                filter(kpi == "Utsläpp per invånare",
+                                       year>2014) %>% 
+                                  mutate(year = as.character(year)),
+                    skickad_x_var = "year",
+                    skickad_y_var = "value",
+                    diagram_titel = paste0("Utsläpp per invånare"),
+                    skickad_x_grupp = "municipality",
+                    diagram_capt = "Källa:  RKA (Kolada) har beräknat utsläpp med data från den Nationella emissionsdatabasen\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Utsläpp av växthusgaser inom det geografiska området delat med invånare i ton CO2-ekvivalenter.",
+                    x_axis_lutning = 0,
+                    manual_color = diagramfarger("rus_sex"),
+                    output_mapp = "Diagram/",
+                    filnamn_diagram = "utslapp2.png",
+                    manual_y_axis_title = "Ton CO2/invånare")
+
+utslapp3 <- SkapaStapelDiagram(skickad_df = vaxthusgaser %>% 
+                                filter(kpi == "Utsläpp per invånare",
+                                       year%in%c(1990,2000,2005,2010,2015:last(year))) %>% 
+                                  mutate(year = as.character(year)),
+                    skickad_x_var = "year",
+                    skickad_y_var = "value",
+                    diagram_titel = paste0("Utsläpp per invånare"),
+                    skickad_x_grupp = "municipality",
+                    diagram_capt = "Källa:  RKA (Kolada) har beräknat utsläpp med data från den Nationella emissionsdatabasen\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Utsläpp av växthusgaser inom det geografiska området delat med invånare i ton CO2-ekvivalenter.",
+                    x_axis_lutning = 0,
+                    manual_color = diagramfarger("rus_sex"),
+                    output_mapp = "Diagram/",
+                    filnamn_diagram = "utslapp2.png",
+                    manual_y_axis_title = "Ton CO2/invånare")
+
+```
+
+<center>
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+utslapp1
+
+```
+
+<br>
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+utslapp2
+```
+<br>
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+utslapp3
+```
+
+</center>
+
+\newpage
 
 ## Andel kollektivt resande
 ```{r, include = FALSE}
@@ -506,77 +579,6 @@ livsmedel1alt
 elgrad
 ```
 
-## Andel hektar formellt skyddad produktiv skogsmark
-
-År 2018 beslutade dåvarande regering om Sveriges första nationella skogsprogram med fokus på skogsbrukets roll för en hållbar utveckling. I Dalastrategin omnämns skogsbruket som en av länets viktigare näringar. Skogsbruket påverkar och påverkas av klimatförändringarna och skötsel och brukande behöver anpassas därefter. 
-
-I diagrammen nedan redovisas utvecklingen för skyddad produktiv skogsmark i Dalarnas län mellan `r as.character(min(skogsmark$År))` och `r as.character(max(skogsmark$År))`. Arealen skyddad skogsmark i länet har ökat över tidsperioden, från `r format(skogsmark %>% filter(År==min(År)) %>% .$area_hektar,big.mark=" ")` hektar år `r as.character(min(skogsmark$År))` till `r format(skogsmark %>% filter(År==max(År)) %>% .$area_hektar,big.mark=" ")` hektar år `r as.character(max(skogsmark$År))`. Procentuellt var `r skogsmark %>% filter(År==min(År)) %>% .$area_procent` procent av den produktiva skogsmarken i Dalarnas län skyddad år `r as.character(min(skogsmark$År))` och samma siffra för `r as.character(max(skogsmark$År))` var `r skogsmark %>% filter(År==max(År)) %>% .$area_procent` procent. Det betyder att den totala arealen skogsmark har ökat något under perioden.
-
-```{r, include = FALSE}
-skogsmark1 <- SkapaStapelDiagram(skickad_df = skogsmark %>%
-                                   mutate(area_hektar=area_hektar/1000),
-                    skickad_x_var = "År",
-                    skickad_y_var = "area_hektar",
-                    diagram_titel = paste0("Areal skyddad produktiv skogsmark i Dalarna"),
-                    output_mapp = "Diagram/",
-                    filnamn_diagram = "skogsmark.png",
-                    diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna",
-                    x_axis_lutning = 0,
-                    manual_color = diagramfarger("rus_sex")[1],
-                    manual_y_axis_title = "Hektar (tusental)",
-                    lagg_pa_logga = FALSE)
-
-skogsmark2 <- SkapaStapelDiagram(skickad_df = skogsmark,
-                    skickad_x_var = "År",
-                    skickad_y_var = "area_procent",
-                    diagram_titel = paste0("Andel skyddad produktiv skogsmark i Dalarna"),
-                    output_mapp = "Diagram/",
-                    filnamn_diagram = "skogsmark2.png",
-                    diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna",
-                    x_axis_lutning = 0,
-                    manual_color = diagramfarger("rus_sex")[1],
-                    manual_y_axis_title = "Hektar (%)",
-                    lagg_pa_logga = FALSE)
-
-```
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-skogsmark1
-```
-<br>
-<br>
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-skogsmark2
-```
-
-## Arealen betesmark och areal med särskilt höga biologiska värden
-Biologisk mångfald och väl fungerande ekosystem är en förutsättning för allt liv på jorden. Det är också en bas för goda livsmiljöer för både Dalarnas invånare och för Dalarnas näringsliv. Den gröna infrastrukturen är ekologiskt funktionella nätverk av livsmiljöer och naturområden som utformas, brukas och förvaltas så att den biologiska mångfalden bevaras och därmed främjar de för samhället så centrala ekosystemtjänster som exempelvis vattenrening och livskraftiga jordbruksmarker etc. Samhället har allt att vinna på ett hållbart bruk av ekosystemen och att förvalta ett mångfunktionellt landskap där natur- och kulturvärden tillvaratas.
-
-I diagrammet nedan redovisas utvecklingen för arealen betesmark i Dalarnas län mellan `r as.character(min(betesmark$year))` och `r as.character(max(betesmark$year))`. Arealen har under denna period minskat från `r format(betesmark %>% filter(municipality_id == 20,year == min(year)) %>% .$value,big.mark=" ")` till `r format(betesmark %>% filter(municipality_id == 20,year == max(year)) %>% .$value,big.mark=" ")` hektar. Denna negativa trend går också emot den nationella trenden, där arealen betesmark har ökat något i riket som helhet. Slåtteräng är en delmängd av betesmarken som har särskilt höga biologiska värden, och därmed särskilt stor betydelse för biologisk mångfald. I Dalarna är andelen slåtteräng 1,6 procent av betesmarken (LITE OKLART VAR DENNA INFO KOMMER IFRÅN - TA BORT?).
-
-```{r, include = FALSE}
-
-betesmark <- SkapaStapelDiagram(skickad_df = betesmark %>% 
-                                  mutate(year = year %>% as.character()) %>% 
-                                    filter(municipality_id == 20),
-                    skickad_x_var = "year",
-                    skickad_y_var = "value",
-                    diagram_titel = paste0("Arealen betesmark i Dalarna"),
-                    output_mapp = "Diagram/",
-                    filnamn_diagram = "betesmark.png",
-                    diagram_capt = "Källa: Jordbruksverket\nBearbetning: Samhällsanalys, Region Dalarna",
-                    manual_y_axis_title = "Hektar",
-                    x_axis_lutning = 0,
-                    manual_color = diagramfarger("rus_sex")[1],
-                    stodlinjer_avrunda_fem = TRUE,
-                    lagg_pa_logga = FALSE)
-
-```
-<br>
-<br>
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-betesmark
-```
 
 # Ett konkurrenskraftigt Dalarna
 
@@ -597,89 +599,128 @@ I ett konkurrenskraftigt Dalarna är näringslivet livskraftigt och bidrar till 
 
 Den ekonomiska dimensionen av hållbarhet i det regionala utvecklingsarbetet handlar om att använda, hushålla med och förädla idéer och resurser på ett miljömässigt och socialt hållbart sätt och ta vara på möjligheterna att därigenom skapa konkurrenskraft och sysselsättning. Med ett cirkulärt system där resurser och värden kan återbrukas främjas en ekonomiskt hållbar utveckling.
 
-## Representation i chefspositioner
 
-Kvinnors och mäns jämställda medverkan och inflytande i näringslivet, på arbetsmarknaden och i innovationsarbete är och blir en alltmer kritisk tillväxtfaktor. Konkurrenskraften stärks när kompetenser från olika grupper oavsett ålder, kön eller bakgrund tas till vara. En viktig indikator inom detta område är representationen på arbetsplatserna, och speciellt i chefspositioner. År `r max(chefsrepresentation$år)` var det vanligare att män hade en chefsposition än kvinnor, i jämförelse med deras respektive representation bland de förvärvsarbetande. Oavsett kön är det också vanligare att inrikes födda har chefspositioner i jämförelse med utrikes födda.
+## Infrastrukturinvesteringar
+
+Detta är en indikator, vad har vi för data för denna?
+
+
+## Investeringar i FoU
 
 ```{r, include = FALSE}
 
+# I vissa av diagrammen används den totala forskningen (dvs summan av de olika komponenterna). Därför skapas variabeln nedan.
+forskning_totalt <- forskning %>% 
+  group_by(year, municipality) %>% 
+    summarise(utgiftertotalt = sum(value, na.rm=TRUE))
 
-# Tidigare kod som är lite oklar. Thomas hämtade data från någon okänd källa (NMS?). Jag byter till PXweb via API (Jon, 2023 - se kod ovan)
-# chefsrepresentation <- read_csv("Data/chefsrepresentation.csv")
-# chefsrepresentation$X1<-NULL
-# 
-# chefsrep <- chefsrepresentation %>% 
-#                           filter(Ar==2019) %>% 
-#                           select(c("Ar","AndelKvinnor", "AndelMan","AndelInv", "AndelKvinnligaChef", "AndelManligaChef", "AndelInvChef"))
-# 
-# chefsrep <- chefsrep %>%  pivot_longer(!Ar, names_to="Grupp", values_to="Andel") %>% 
-#                           mutate(Andel=Andel*100)
-# 
-# chefsrep$grupp2[chefsrep$Grupp=="AndelKvinnor"] <- "Kvinnor"
-# chefsrep$grupp2[chefsrep$Grupp=="AndelKvinnligaChef"] <- "Kvinnor"
-# 
-# chefsrep$grupp2[chefsrep$Grupp=="AndelMan"] <- "Män"
-# chefsrep$grupp2[chefsrep$Grupp=="AndelManligaChef"] <- "Män"
-# 
-# chefsrep$grupp2[chefsrep$Grupp=="AndelInv"] <- "Utrikes födda"
-# chefsrep$grupp2[chefsrep$Grupp=="AndelInvChef"] <- "Utrikes födda"
-# 
-# chefsrep$grupp[chefsrep$Grupp=="AndelKvinnligaChef"] <- "Andel chefer"
-# chefsrep$grupp[chefsrep$Grupp=="AndelManligaChef"] <- "Andel chefer"
-# chefsrep$grupp[chefsrep$Grupp=="AndelInvChef"] <- "Andel chefer"
-# 
-# chefsrep$grupp[chefsrep$Grupp=="AndelKvinnor"] <- "Andel förvärvsarbetande"
-# chefsrep$grupp[chefsrep$Grupp=="AndelMan"] <- "Andel förvärvsarbetande"
-# chefsrep$grupp[chefsrep$Grupp=="AndelInv"] <- "Andel förvärvsarbetande"
-
-chef4 <- SkapaStapelDiagram(skickad_df = chefsrepresentation %>% 
-                              filter(år==max(år)) %>% 
-                                mutate(kön = str_to_title(kön)),
-                    skickad_x_var = "bakgrundsvariabel",
-                    skickad_y_var = "Andel i chefsposition, procent",
-                    skickad_x_grupp = "kön",
-                    diagram_titel = paste0("Chefsrepresentation i Dalarna ",max(chefsrepresentation$år)),
+forsk1 <- SkapaStapelDiagram(skickad_df = forskning_totalt %>% 
+                               mutate(year = year %>% as.character()) %>%
+                                filter(municipality=="Dalarnas län"),
+                    skickad_x_var = "year",
+                    skickad_y_var = "utgiftertotalt",
+                    diagram_titel = paste0("Investeringar i FoU i Dalarna"),
+                    manual_color = diagramfarger("rus_sex")[1],
                     output_mapp = "Diagram/",
-                    filnamn_diagram = "chefsrep.png",
-                    diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring:Andel chefer av sysselsatta med ett klassificerat yrke (20-64 år).",
-                    manual_color=diagramfarger("kon"),
+                    filnamn_diagram = "forskning1.png",
+                    diagram_capt = "Källa: SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Investeringar inkluderar företagens utgifter för egen FoU, offentliga sektorns utgifter\nför FoU samt universitet och högskolesektorns utgifter för FoU.",
+                    manual_y_axis_title = "Kronor/invånare",
                     x_axis_lutning = 0,
-                    manual_y_axis_title = "procent",
                     lagg_pa_logga = FALSE)
 
+forsk2 <- SkapaStapelDiagram(skickad_df = forskning %>%
+                                filter(municipality=="Dalarnas län") %>% 
+                                mutate(year = year %>% as.character(),
+                                       kpi = case_when(kpi == "Företagens utgifter för egen FoU" ~ "Företagens utgifter",
+                                                       kpi == "Offentliga sektorns utgifter för FoU" ~ "Offentliga sektorns utgifter",
+                                                       kpi == "Universitets- och högskolesektorns utgifter för FoU" ~ "Universitets- och högskolesektorns utgifter")),
+                    skickad_x_var = "year",
+                    skickad_y_var = "value",
+                    skickad_x_grupp = "kpi",
+                    diagram_titel = paste0("Investeringar i FoU i Dalarna"),
+                    output_mapp = "Diagram/",
+                    filnamn_diagram = "forskning2.png",
+                    diagram_capt = "Källa: SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Investeringar inkluderar företagens utgifter för egen FoU, offentliga sektorns utgifter för FoU samt universitets- och högskolesektorns utgifter för FoU.",
+                    manual_y_axis_title = "Kronor/invånare",
+                    x_axis_lutning = 0,
+                    manual_color = diagramfarger("rus_sex"),
+                    stodlinjer_avrunda_fem = TRUE,
+                    lagg_pa_logga = FALSE)
+
+forsk3 <- SkapaStapelDiagram(skickad_df = forskning_totalt %>%
+                               filter(year == max(year)) %>%
+                                mutate(fokus = ifelse(municipality == "Dalarnas län", "1", "0")),
+                    skickad_x_var = "municipality",
+                    skickad_y_var = "utgiftertotalt",
+                    diagram_titel = paste0("FoU-investeringar i Sverige år ",max(forskning$year)),
+                    output_mapp = "Diagram/",
+                    filnamn_diagram = "forskning3.png",
+                    diagram_capt = "Källa: SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Investeringar inkluderar företagens utgifter för egen FoU, offentliga sektorns utgifter för FoU samt universitets- och högskolesektorns utgifter för FOU.",
+                    x_axis_sort_value = TRUE,
+                    diagram_liggande = TRUE,
+                    x_axis_lutning = 0,
+                    manual_y_axis_title = "\nKronor/invånare",
+                    lagg_pa_logga = FALSE,
+                    x_var_fokus = "fokus",
+                    manual_color = diagramfarger("rus_tva_fokus"))
 ```
+
+För att lösa dagens och morgondagens samhällsutmaningar och för att skapa utveckling och konkurrenskraft krävs ökad innovationskraft. Individers, företags, organisationers och offentlig sektors innovationsförmåga påverkar platsers utvecklingskraft och möjligheter till omställning. Denna indikator mäter investeringar i forskning och utveckling i länet. Det bör dock påpekas att innovation och forskning är ett synnerligen svårt område att mäta och att denna indikator främst ger en övergripande bild av vilka resurser som investeras i länet.
+
+Under tidsperioden från 2011 till 2019 ses en viss ökning i investeringar mätt i kronor per invånare i länet, från drygt `r format(round(forskning_totalt %>% filter(year == min(.$year),municipality == "Dalarnas län") %>% .$utgiftertotalt,0),big.mark = " ")` kronor till drygt `r format(round(forskning_totalt %>% filter(year == 2019,municipality == "Dalarnas län") %>% .$utgiftertotalt,0),big.mark = " ")` kronor per invånare. Efter 2019 skedde dock en stor förändring, och investeringarna minskade avsevärt till `r format(round(forskning_totalt %>% filter(year == max(.$year),municipality == "Dalarnas län") %>% .$utgiftertotalt,0),big.mark = " ")` kronor per invånare år `r max(forskning_totalt$year)`. Den stor andelen investeringar sker i företagen, medan den offentliga sektorn och universitet- och högskolesektorn står för en mindre andel. Minskningen i investeringar mellan 2019 och 2021 förklaras av att företagens och offentlig sektorns investeringar minskade, inom högskolesektorn ökade istället investeringarna under samma period. En trolig orsak till detta är Coronapandemin som fick betydande effekter på många delar av samhället. I ett nationellt perspektiv ser vi att Dalarna hamnar på den nedre halvan. `r forskning_totalt %>% filter(year == max(.$year)) %>% filter(utgiftertotalt == max(utgiftertotalt)) %>% .$municipality`, som hade den högsta noteringen för investeringar i forskning och utveckling år `r max(forskning_totalt$year)`, hade ett drygt `r plyr::round_any(forskning_totalt %>% filter(year == max(.$year)) %>% filter(utgiftertotalt == max(utgiftertotalt)) %>% .$utgiftertotalt/forskning_totalt %>% filter(year == max(.$year)) %>% filter(municipality == "Dalarnas län") %>% .$utgiftertotalt,1)` gånger högre värde per invånare jämfört med Dalarna.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-chef4
+forsk1
+```
+<br>
+<br>
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+forsk2
+```
+<br>
+<br>
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+forsk3
 ```
 
-## Ginikoefficient
-I Dalastrategin lyfts ekonomiska klyftor som en framtidsutmaning för länet. För att redovisa ojämlikheten i inkomstfördelningen används gini-koefficienten. Ett högt värde på koefficienten visar på större inkomstskillnader och därmed större ojämlikhet. Här redovisas ginikoefficienten beräknad genom disponibel inkomst per "konsumtionsenhet". Med konsumtionsenhet menas att det i beräkningen av en individs tillgängliga ekonomiska resurser tas hänsyn till hur hushållet är sammansatt som individen bor i. Det betyder att beakta om personen är ensamboende eller sammanboende och om den har ansvar för minderåriga barn eller inte etc, faktorer som kan minska eller öka individens disponibla inkomst.
+## Branschbredd
 
-För Dalarnas räkning har ginikoefficienten ökat något från 2011 till `r max(gini$year)`, vilket visar på en ökad ekonomisk ojämlikhet i länet, med en toppnotering 2019. Ginikoefficienten för länet ligger under koefficienten för riket, det vill säga i Dalarna lever befolkningen mindre ojämlikt, för samtliga år förutom 2019. 2019 avviker dock så skarpt från den generella trenden att det årets notering bör betraktas med försiktighet. Ökningen från 2011 och framåt är dock tydlig oavsett inverkan från år 2019. 
+
+## Branschstruktur
+
+
+
+## Nyföretagande
 
 ```{r, include = FALSE}
 
-gini1 <- SkapaLinjeDiagram(skickad_df = gini %>% 
-                             mutate(year = year %>% as.character(),
-                                    municipality = ifelse(municipality == "Region Dalarna", "Dalarna", municipality)),
-                    skickad_x_var = "year",
-                    skickad_y_var = "value",
-                    diagram_titel = paste0("Ginikoefficient"),
-                    skickad_x_grupp = "municipality",
-                    diagram_capt = "Källa: SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: För att redovisa ojämnheten i inkomstfördelningen används gini-koefficienten.\nKoefficienten kan anta ett värde mellan 0 och 1.\nEtt högt värde på koefficienten visar på större ojämnhet än ett lågt värde",
-                    x_axis_lutning = 0,
-                    manual_color = diagramfarger("rus_tva_fokus"),
-                    stodlinjer_avrunda_fem = TRUE,
-                    manual_y_axis_title = "Ginikoefficient",
+nystart1 <- SkapaStapelDiagram(skickad_df = nystartade %>% 
+                filter(Län =="Dalarnas län") %>% 
+                pivot_longer(!Län, names_to="År", values_to="Antal") %>% 
+                  mutate(År = str_sub(År, 1,4)) %>% 
+                  slice(-17),                      # dublett på år 2010 tas bort med radnummer
+                    skickad_x_var = "År",
+                    skickad_y_var = "Antal",
+                    diagram_titel = paste0("Antal nystartade företag i Dalarna"),
                     output_mapp = "Diagram/",
-                    filnamn_diagram = "gini.png")
-
+                    filnamn_diagram = "nystartade1.png",
+                    diagram_capt = "Källa: Tillväxtanalys\nBearbetning: Samhällsanalys, Region Dalarna",
+                    x_axis_lutning = 45,
+                    manual_x_axis_text_vjust = 1,
+                    manual_x_axis_text_hjust = 1,
+                    manual_color = diagramfarger("rus_sex")[1],
+                    stodlinjer_avrunda_fem = TRUE,
+                    manual_y_axis_title = "Antal nystartade företag",
+                    lagg_pa_logga = FALSE)
 ```
+
+EJ UPPDATERAD. VÄNTA TILLS SENARE MED ATT UPPDATERA DATA (EJ API)
+För ekonomins och samhällets förnyelse är entreprenörskap en avgörande faktor. Dalarna behöver fler, och olika typer av entreprenörer och en av prioriteringarna i Dalastrategin är att främja entreprenörskap och företagande. Denna indikator mäter antalet nystartade företag i geografin. Antalet nystartade företag per år i Dalarna har ökat över tid där toppnoteringen nåddes 2021 med 1 748 stycken. År 2007 gjordes en större förändring i statistiken över nystartade företag vilket kan förklara den skarpa förändringen från 2006 till 2007.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gini1
+nystart1
 ```
+
 
 ## Internationaliseringsgrad
 
@@ -741,67 +782,139 @@ inter1
 inter2
 ```
 
-## Nyföretagande
+## Representation i chefspositioner
+
+Kvinnors och mäns jämställda medverkan och inflytande i näringslivet, på arbetsmarknaden och i innovationsarbete är och blir en alltmer kritisk tillväxtfaktor. Konkurrenskraften stärks när kompetenser från olika grupper oavsett ålder, kön eller bakgrund tas till vara. En viktig indikator inom detta område är representationen på arbetsplatserna, och speciellt i chefspositioner. År `r max(chefsrepresentation$år)` var det vanligare att män hade en chefsposition än kvinnor, i jämförelse med deras respektive representation bland de förvärvsarbetande. Oavsett kön är det också vanligare att inrikes födda har chefspositioner i jämförelse med utrikes födda.
 
 ```{r, include = FALSE}
 
-nystart1 <- SkapaStapelDiagram(skickad_df = nystartade %>% 
-                filter(Län =="Dalarnas län") %>% 
-                pivot_longer(!Län, names_to="År", values_to="Antal") %>% 
-                  mutate(År = str_sub(År, 1,4)) %>% 
-                  slice(-17),                      # dublett på år 2010 tas bort med radnummer
-                    skickad_x_var = "År",
-                    skickad_y_var = "Antal",
-                    diagram_titel = paste0("Antal nystartade företag i Dalarna"),
+
+# Tidigare kod som är lite oklar. Thomas hämtade data från någon okänd källa (NMS?). Jag byter till PXweb via API (Jon, 2023 - se kod ovan)
+# chefsrepresentation <- read_csv("Data/chefsrepresentation.csv")
+# chefsrepresentation$X1<-NULL
+# 
+# chefsrep <- chefsrepresentation %>% 
+#                           filter(Ar==2019) %>% 
+#                           select(c("Ar","AndelKvinnor", "AndelMan","AndelInv", "AndelKvinnligaChef", "AndelManligaChef", "AndelInvChef"))
+# 
+# chefsrep <- chefsrep %>%  pivot_longer(!Ar, names_to="Grupp", values_to="Andel") %>% 
+#                           mutate(Andel=Andel*100)
+# 
+# chefsrep$grupp2[chefsrep$Grupp=="AndelKvinnor"] <- "Kvinnor"
+# chefsrep$grupp2[chefsrep$Grupp=="AndelKvinnligaChef"] <- "Kvinnor"
+# 
+# chefsrep$grupp2[chefsrep$Grupp=="AndelMan"] <- "Män"
+# chefsrep$grupp2[chefsrep$Grupp=="AndelManligaChef"] <- "Män"
+# 
+# chefsrep$grupp2[chefsrep$Grupp=="AndelInv"] <- "Utrikes födda"
+# chefsrep$grupp2[chefsrep$Grupp=="AndelInvChef"] <- "Utrikes födda"
+# 
+# chefsrep$grupp[chefsrep$Grupp=="AndelKvinnligaChef"] <- "Andel chefer"
+# chefsrep$grupp[chefsrep$Grupp=="AndelManligaChef"] <- "Andel chefer"
+# chefsrep$grupp[chefsrep$Grupp=="AndelInvChef"] <- "Andel chefer"
+# 
+# chefsrep$grupp[chefsrep$Grupp=="AndelKvinnor"] <- "Andel förvärvsarbetande"
+# chefsrep$grupp[chefsrep$Grupp=="AndelMan"] <- "Andel förvärvsarbetande"
+# chefsrep$grupp[chefsrep$Grupp=="AndelInv"] <- "Andel förvärvsarbetande"
+
+chef4 <- SkapaStapelDiagram(skickad_df = chefsrepresentation %>% 
+                              filter(år==max(år)) %>% 
+                                mutate(kön = str_to_title(kön)),
+                    skickad_x_var = "bakgrundsvariabel",
+                    skickad_y_var = "Andel i chefsposition, procent",
+                    skickad_x_grupp = "kön",
+                    diagram_titel = paste0("Chefsrepresentation i Dalarna ",max(chefsrepresentation$år)),
                     output_mapp = "Diagram/",
-                    filnamn_diagram = "nystartade1.png",
-                    diagram_capt = "Källa: Tillväxtanalys\nBearbetning: Samhällsanalys, Region Dalarna",
-                    x_axis_lutning = 45,
-                    manual_x_axis_text_vjust = 1,
-                    manual_x_axis_text_hjust = 1,
-                    manual_color = diagramfarger("rus_sex")[1],
-                    stodlinjer_avrunda_fem = TRUE,
-                    manual_y_axis_title = "Antal nystartade företag",
-                    lagg_pa_logga = FALSE)
-```
-
-EJ UPPDATERAD. VÄNTA TILLS SENARE MED ATT UPPDATERA DATA (EJ API)
-För ekonomins och samhällets förnyelse är entreprenörskap en avgörande faktor. Dalarna behöver fler, och olika typer av entreprenörer och en av prioriteringarna i Dalastrategin är att främja entreprenörskap och företagande. Denna indikator mäter antalet nystartade företag i geografin. Antalet nystartade företag per år i Dalarna har ökat över tid där toppnoteringen nåddes 2021 med 1 748 stycken. År 2007 gjordes en större förändring i statistiken över nystartade företag vilket kan förklara den skarpa förändringen från 2006 till 2007.
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-nystart1
-```
-
-## Matchningsgrad
-En förbättrad matchning mellan arbetsmarknadens behov och arbetskraftens kompetens bidrar till ett bättre nyttjande av samhällets resurser. Det handlar både om att de utbildningar som ges är efterfrågade på arbetsmarknaden och att arbetsgivare har kunskap att välja rätt kompetens. För att lyckas med detta krävs också en bättre samverkan mellan utbildningsanordnare, näringsliv, civilsamhälle och myndigheter samt en bättre dialog över kommun- och länsgränser.
-
-I diagrammet visas matchningsgraden i form av andelen anställda som arbetar i yrken som stämmer väl överens med deras utbildning. För att detta ska gälla ska det dels finnas en stark överensstämmelse mellan utbildningens och yrkets ämnesinriktning (t.ex. teknikutbildning – teknikyrke) och dels ska utbildningsnivån vara rätt i förhållande till vad yrket kräver. 
-
-Matchningsgraden i Dalarna är något högre för kvinnor än för män, ett mönster som är återkommande över hela Sverige. För kvinnor låg matchningsgraden år `r max(matchning$år)` på  `r matchning %>% filter(kön == "kvinnor",år == max(år)) %>% .$matchningsgrad` procent. För män var motsvarande mått `r matchning %>% filter(kön == "män",år == max(år)) %>% .$matchningsgrad` procent. Den sammantagna matchningsgraden har sjunkit något under perioden 2015-`r max(matchning$år)` och låg det sista året för mätningen på `r matchning %>% filter(kön == "samtliga anställda",år == max(år)) %>% .$matchningsgrad` procent. Nivån på matchningsgraden är snarlik över hela Sverige.
-
-```{r, include = FALSE}
-
-matchning1 <- SkapaStapelDiagram(skickad_df = matchning %>%
-                                   filter(region == "Dalarnas län") %>% 
-                                   mutate(kön = paste0(toupper(str_sub(kön, 1,1)), tolower(str_sub(kön, 2, nchar(kön)))),
-                                          år = år %>% as.character()),
-                    skickad_x_var = "kön",
-                    skickad_y_var = "matchningsgrad",
-                    skickad_x_grupp = "år",
-                    diagram_titel = paste0("Matchningsgrad i Dalarna"),
-                    output_mapp = "Diagram/",
-                    filnamn_diagram = "matchning.png",
-                    diagram_capt = "Källa: SCB, Regionala matchningsindikatorer\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andelen anställda som arbetar i yrken som stämmer väl överens med deras utbildning",
-                    manual_y_axis_title = "procent",
+                    filnamn_diagram = "chefsrep.png",
+                    diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring:Andel chefer av sysselsatta med ett klassificerat yrke (20-64 år).",
+                    manual_color=diagramfarger("kon"),
                     x_axis_lutning = 0,
-                    manual_color = diagramfarger("rus_gradient"),
-                    lagg_pa_logga = FALSE,
-                    procent_0_100_10intervaller = TRUE)
+                    manual_y_axis_title = "procent",
+                    lagg_pa_logga = FALSE)
 
 ```
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-matchning1
+chef4
+```
+
+## Andel av transporter via olika trafikslag
+
+Kan vi använda samma data som för marknadsandelar för kollektivtrafiken?
+
+## Tillgänglighet (restid) till arbetsplatser/skolor
+
+Finns data för detta nu?
+
+
+## Andel unga som inom fyra år fullföljer gymnasieutbildning
+BEHÖVER UPPDATERAS. NY KOD?
+Kunskap ger människor möjlighet att växa och påverka sin livssituation. Tillgång till bildning, kunskap och kompetens är avgörande för såväl utvecklingen av samhället, som god välfärd och tillväxt i näringslivet. När arbetsgivare inte hittar rätt kompetens hämmas den ekonomiska utvecklingen. Samtidigt försvagas den sociala hållbarheten när människor ställs utanför arbetsmarknaden. Befolkningens låga utbildningsnivåer är en utmaning i stora delar av Dalarna. Ambitionen i Dalastrategin är att fler ska klara en gymnasieexamen för att därmed få bättre förutsättningar att etablera sig på arbetsmarknaden.
+
+Denna indikator mäter andelen gymnasieelever i Dalarna som har fullföljt en utbildning inom fyra år efter att de påbörjat gymnasiet. Det finns ingen tydlig trend över tidsperioden 2011 till 2018 utan andelen fluktuerar över åren. Av eleverna som började läsa på gymnasiet i Dalarna år 2011 var det 72,6 procent som inom fyra år fullföljde sin utbildning med examen. Den lägsta andelen avklarade examen om 70 procent uppmättes för dem som påbörjade gymnasiet år 2017 (möjligen en pandemieffekt) samtidigt som den högsta andelen avklarade examen finns bland de elever som påbörjade gymnasiet år 2018, 74,3 procent av dem har tagit ut examen inom fyra år.
+
+```{r, include = FALSE}
+# gymnasie <- gymnasie %>% 
+#                 select(Totalt.antal, Antal.med.examen, År) %>%
+#                 mutate(Totalt.antal = as.numeric(Totalt.antal),
+#                        Antal.med.examen = as.numeric(Antal.med.examen)) %>% 
+#                 group_by(År) %>% 
+#                 summarise(Totalt = sum(Totalt.antal, na.rm = T),
+#                           Examen = sum(Antal.med.examen, na.rm = T)) %>% 
+#                 mutate(Andel = (Examen/Totalt)*100)
+
+
+# gym1 <- SkapaStapelDiagram(skickad_df = gymnasie %>% 
+#                                mutate(r = År %>% as.character()),
+#                     skickad_x_var = "Ar",
+#                     skickad_y_var = "Andel.elever",
+#                     diagram_titel = "Andel med fullföljd gymnasieutbildning inom fyra år",
+#                     diagram_capt = "Källa: Skolverket\nBearbetning: Samhällsanalys, Region Dalarna",
+#                     x_axis_lutning = 0,
+#                     manual_color = diagramfarger("rus_sex")[1],
+#                     manual_y_axis_title = "procent",
+#                     manual_x_axis_title = "år då gymnasieutbildningen påbörjades",
+#                     procent_0_100_10intervaller = TRUE,
+#                     output_mapp = "Diagram/",
+#                     filnamn_diagram = "gymnasie.png")
+
+```
+<br>
+<br>
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+#gym1
+```
+
+## Andel högskoleutbildade i befolkningen
+Med ett alltmer kunskapsintensivt samhälle och en arbetsmarknad som ställer högre krav på kompetens ökar också behovet av eftergymnasialt utbildade. I Dalastrategin poängteras betydelsen av en stark regional högskola med närvaro i hela länet. Även andra utbildningsformer såsom folkhögskolor, yrkesvux och yrkeshögskolor bidrar till att stärka kompetensförsörjningen i länet i form av såväl bredd som spets. Denna indikator mäter andelen invånare med eftergymnasial utbildning i åldersspannet 25 till 64 år. Med eftergymnasial utbildning avses både eftergymnasial utbildning kortare än tre år, längre än tre år och forskarutbildning.
+
+Andelen högskoleutbildade i länet ökar över tid (Vi behöver byta diagram, indikatorn är högskoleutbildade. STÄMMER INTE MED STYCKET FÖRE - EFTERGYMNASIAL UTBILDNING KORTARE ÄN 3 ÅR BEHÖVER INTE VARA HÖGSKOLA). Från `r round(eftergym %>% filter(gender == "T",year == min(year)) %>% .$value,0)` procent år `r min(eftergym$year)` till `r round(eftergym %>% filter(gender == "T",year == max(year)) %>% .$value,0)` procent `r max(eftergym$year)`. Skillnaden mellan kvinnors och mäns utbildningsnivå är tydlig, år `r max(eftergym$year)` hade `r round(eftergym %>% filter(gender == "K",year == max(year)) %>% .$value,0)` procent av kvinnorna i Dalarna någon form av eftergymnasial utbildning, medan motsvarande siffra för männen i Dalarna var avsevärt lägre, `r round(eftergym %>% filter(gender == "M",year == max(year)) %>% .$value,0)` procent. Det är även tydligt att skillnaden har ökat över tidsperioden.
+
+```{r, include = FALSE}
+
+eftergym1 <- SkapaStapelDiagram(skickad_df = eftergym %>% 
+                              filter(gender!="T") %>% 
+                              mutate(year = year %>% as.character(),
+                                     gender = case_when(gender == "K" ~ "Kvinnor",
+                                                        gender == "M" ~ "Män")),
+                    skickad_x_var = "year",
+                    skickad_y_var = "value",
+                    skickad_x_grupp = "gender",
+                    diagram_titel = paste0("Andel invånare 25-64 år med eftergymnasial utbildning i Dalarna"),
+                    output_mapp = "Diagram/",
+                    filnamn_diagram = "eftergym.png",
+                    diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Eftergymnasial avser eftergymnasial utbildning kortare än 3 år, längre än 3 år samt forskarutbildning.",
+                    manual_color = diagramfarger("kon"),
+                    x_axis_lutning = 0,
+                    procent_0_100_10intervaller = TRUE,
+                    lagg_pa_logga = FALSE,
+                    manual_y_axis_title = "procent")
+                    
+```
+<br>
+<br>
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+eftergym1
 ```
 
 ## Andel sysselsatta
@@ -861,76 +974,6 @@ arb1 <- SkapaStapelDiagram(skickad_df = arbets %>%
 <br>
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 arb1
-```
-
-## Andel unga som inom fyra år fullföljer gymnasieutbildning
-BEHÖVER UPPDATERAS. NY KOD?
-Kunskap ger människor möjlighet att växa och påverka sin livssituation. Tillgång till bildning, kunskap och kompetens är avgörande för såväl utvecklingen av samhället, som god välfärd och tillväxt i näringslivet. När arbetsgivare inte hittar rätt kompetens hämmas den ekonomiska utvecklingen. Samtidigt försvagas den sociala hållbarheten när människor ställs utanför arbetsmarknaden. Befolkningens låga utbildningsnivåer är en utmaning i stora delar av Dalarna. Ambitionen i Dalastrategin är att fler ska klara en gymnasieexamen för att därmed få bättre förutsättningar att etablera sig på arbetsmarknaden.
-
-Denna indikator mäter andelen gymnasieelever i Dalarna som har fullföljt en utbildning inom fyra år efter att de påbörjat gymnasiet. Det finns ingen tydlig trend över tidsperioden 2011 till 2018 utan andelen fluktuerar över åren. Av eleverna som började läsa på gymnasiet i Dalarna år 2011 var det 72,6 procent som inom fyra år fullföljde sin utbildning med examen. Den lägsta andelen avklarade examen om 70 procent uppmättes för dem som påbörjade gymnasiet år 2017 (möjligen en pandemieffekt) samtidigt som den högsta andelen avklarade examen finns bland de elever som påbörjade gymnasiet år 2018, 74,3 procent av dem har tagit ut examen inom fyra år.
-
-```{r, include = FALSE}
-# gymnasie <- gymnasie %>% 
-#                 select(Totalt.antal, Antal.med.examen, År) %>%
-#                 mutate(Totalt.antal = as.numeric(Totalt.antal),
-#                        Antal.med.examen = as.numeric(Antal.med.examen)) %>% 
-#                 group_by(År) %>% 
-#                 summarise(Totalt = sum(Totalt.antal, na.rm = T),
-#                           Examen = sum(Antal.med.examen, na.rm = T)) %>% 
-#                 mutate(Andel = (Examen/Totalt)*100)
-
-
-# gym1 <- SkapaStapelDiagram(skickad_df = gymnasie %>% 
-#                                mutate(r = År %>% as.character()),
-#                     skickad_x_var = "Ar",
-#                     skickad_y_var = "Andel.elever",
-#                     diagram_titel = "Andel med fullföljd gymnasieutbildning inom fyra år",
-#                     diagram_capt = "Källa: Skolverket\nBearbetning: Samhällsanalys, Region Dalarna",
-#                     x_axis_lutning = 0,
-#                     manual_color = diagramfarger("rus_sex")[1],
-#                     manual_y_axis_title = "procent",
-#                     manual_x_axis_title = "år då gymnasieutbildningen påbörjades",
-#                     procent_0_100_10intervaller = TRUE,
-#                     output_mapp = "Diagram/",
-#                     filnamn_diagram = "gymnasie.png")
-
-```
-<br>
-<br>
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-#gym1
-```
-
-## Andel högskoleutbildade i befolkningen
-Med ett alltmer kunskapsintensivt samhälle och en arbetsmarknad som ställer högre krav på kompetens ökar också behovet av eftergymnasialt utbildade. I Dalastrategin poängteras betydelsen av en stark regional högskola med närvaro i hela länet. Även andra utbildningsformer såsom folkhögskolor, yrkesvux och yrkeshögskolor bidrar till att stärka kompetensförsörjningen i länet i form av såväl bredd som spets. Denna indikator mäter andelen invånare med eftergymnasial utbildning i åldersspannet 25 till 64 år. Med eftergymnasial utbildning avses både eftergymnasial utbildning kortare än tre år, längre än tre år och forskarutbildning.
-
-Andelen högskoleutbildade i länet ökar över tid (STÄMMER INTE MED STYCKET FÖRE - EFTERGYMNASIAL UTBILDNING KORTARE ÄN 3 ÅR BEHÖVER INTE VARA HÖGSKOLA). Från `r round(eftergym %>% filter(gender == "T",year == min(year)) %>% .$value,0)` procent år `r min(eftergym$year)` till `r round(eftergym %>% filter(gender == "T",year == max(year)) %>% .$value,0)` procent `r max(eftergym$year)`. Skillnaden mellan kvinnors och mäns utbildningsnivå är tydlig, år `r max(eftergym$year)` hade `r round(eftergym %>% filter(gender == "K",year == max(year)) %>% .$value,0)` procent av kvinnorna i Dalarna någon form av eftergymnasial utbildning, medan motsvarande siffra för männen i Dalarna var avsevärt lägre, `r round(eftergym %>% filter(gender == "M",year == max(year)) %>% .$value,0)` procent. Det är även tydligt att skillnaden har ökat över tidsperioden.
-
-```{r, include = FALSE}
-
-eftergym1 <- SkapaStapelDiagram(skickad_df = eftergym %>% 
-                              filter(gender!="T") %>% 
-                              mutate(year = year %>% as.character(),
-                                     gender = case_when(gender == "K" ~ "Kvinnor",
-                                                        gender == "M" ~ "Män")),
-                    skickad_x_var = "year",
-                    skickad_y_var = "value",
-                    skickad_x_grupp = "gender",
-                    diagram_titel = paste0("Andel invånare 25-64 år med eftergymnasial utbildning i Dalarna"),
-                    output_mapp = "Diagram/",
-                    filnamn_diagram = "eftergym.png",
-                    diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Eftergymnasial avser eftergymnasial utbildning kortare än 3 år, längre än 3 år samt forskarutbildning.",
-                    manual_color = diagramfarger("kon"),
-                    x_axis_lutning = 0,
-                    procent_0_100_10intervaller = TRUE,
-                    lagg_pa_logga = FALSE,
-                    manual_y_axis_title = "procent")
-                    
-```
-<br>
-<br>
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-eftergym1
 ```
 
 ## Etableringstid för nyanlända
@@ -1038,84 +1081,67 @@ etab_alt
 etab4
 ```
 
-## Investeringar i FoU
+
+## Matchningsgrad
+En förbättrad matchning mellan arbetsmarknadens behov och arbetskraftens kompetens bidrar till ett bättre nyttjande av samhällets resurser. Det handlar både om att de utbildningar som ges är efterfrågade på arbetsmarknaden och att arbetsgivare har kunskap att välja rätt kompetens. För att lyckas med detta krävs också en bättre samverkan mellan utbildningsanordnare, näringsliv, civilsamhälle och myndigheter samt en bättre dialog över kommun- och länsgränser.
+
+I diagrammet visas matchningsgraden i form av andelen anställda som arbetar i yrken som stämmer väl överens med deras utbildning. För att detta ska gälla ska det dels finnas en stark överensstämmelse mellan utbildningens och yrkets ämnesinriktning (t.ex. teknikutbildning – teknikyrke) och dels ska utbildningsnivån vara rätt i förhållande till vad yrket kräver. 
+
+Matchningsgraden i Dalarna är något högre för kvinnor än för män, ett mönster som är återkommande över hela Sverige. För kvinnor låg matchningsgraden år `r max(matchning$år)` på  `r matchning %>% filter(kön == "kvinnor",år == max(år)) %>% .$matchningsgrad` procent. För män var motsvarande mått `r matchning %>% filter(kön == "män",år == max(år)) %>% .$matchningsgrad` procent. Den sammantagna matchningsgraden har sjunkit något under perioden 2015-`r max(matchning$år)` och låg det sista året för mätningen på `r matchning %>% filter(kön == "samtliga anställda",år == max(år)) %>% .$matchningsgrad` procent. Nivån på matchningsgraden är snarlik över hela Sverige.
 
 ```{r, include = FALSE}
 
-# I vissa av diagrammen används den totala forskningen (dvs summan av de olika komponenterna). Därför skapas variabeln nedan.
-forskning_totalt <- forskning %>% 
-  group_by(year, municipality) %>% 
-    summarise(utgiftertotalt = sum(value, na.rm=TRUE))
-
-forsk1 <- SkapaStapelDiagram(skickad_df = forskning_totalt %>% 
-                               mutate(year = year %>% as.character()) %>%
-                                filter(municipality=="Dalarnas län"),
-                    skickad_x_var = "year",
-                    skickad_y_var = "utgiftertotalt",
-                    diagram_titel = paste0("Investeringar i FoU i Dalarna"),
-                    manual_color = diagramfarger("rus_sex")[1],
+matchning1 <- SkapaStapelDiagram(skickad_df = matchning %>%
+                                   filter(region == "Dalarnas län") %>% 
+                                   mutate(kön = paste0(toupper(str_sub(kön, 1,1)), tolower(str_sub(kön, 2, nchar(kön)))),
+                                          år = år %>% as.character()),
+                    skickad_x_var = "kön",
+                    skickad_y_var = "matchningsgrad",
+                    skickad_x_grupp = "år",
+                    diagram_titel = paste0("Matchningsgrad i Dalarna"),
                     output_mapp = "Diagram/",
-                    filnamn_diagram = "forskning1.png",
-                    diagram_capt = "Källa: SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Investeringar inkluderar företagens utgifter för egen FoU, offentliga sektorns utgifter\nför FoU samt universitet och högskolesektorns utgifter för FoU.",
-                    manual_y_axis_title = "Kronor/invånare",
+                    filnamn_diagram = "matchning.png",
+                    diagram_capt = "Källa: SCB, Regionala matchningsindikatorer\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andelen anställda som arbetar i yrken som stämmer väl överens med deras utbildning",
+                    manual_y_axis_title = "procent",
                     x_axis_lutning = 0,
-                    lagg_pa_logga = FALSE)
+                    manual_color = diagramfarger("rus_gradient"),
+                    lagg_pa_logga = FALSE,
+                    procent_0_100_10intervaller = TRUE)
 
-forsk2 <- SkapaStapelDiagram(skickad_df = forskning %>%
-                                filter(municipality=="Dalarnas län") %>% 
-                                mutate(year = year %>% as.character(),
-                                       kpi = case_when(kpi == "Företagens utgifter för egen FoU" ~ "Företagens utgifter",
-                                                       kpi == "Offentliga sektorns utgifter för FoU" ~ "Offentliga sektorns utgifter",
-                                                       kpi == "Universitets- och högskolesektorns utgifter för FoU" ~ "Universitets- och högskolesektorns utgifter")),
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+matchning1
+```
+
+
+## Ginikoefficient
+I Dalastrategin lyfts ekonomiska klyftor som en framtidsutmaning för länet. För att redovisa ojämlikheten i inkomstfördelningen används gini-koefficienten. Ett högt värde på koefficienten visar på större inkomstskillnader och därmed större ojämlikhet. Här redovisas ginikoefficienten beräknad genom disponibel inkomst per "konsumtionsenhet". Med konsumtionsenhet menas att det i beräkningen av en individs tillgängliga ekonomiska resurser tas hänsyn till hur hushållet är sammansatt som individen bor i. Det betyder att beakta om personen är ensamboende eller sammanboende och om den har ansvar för minderåriga barn eller inte etc, faktorer som kan minska eller öka individens disponibla inkomst.
+
+För Dalarnas räkning har ginikoefficienten ökat något från 2011 till `r max(gini$year)`, vilket visar på en ökad ekonomisk ojämlikhet i länet, med en toppnotering 2019. Ginikoefficienten för länet ligger under koefficienten för riket, det vill säga i Dalarna lever befolkningen mindre ojämlikt, för samtliga år förutom 2019. 2019 avviker dock så skarpt från den generella trenden att det årets notering bör betraktas med försiktighet. Ökningen från 2011 och framåt är dock tydlig oavsett inverkan från år 2019. 
+
+```{r, include = FALSE}
+
+gini1 <- SkapaLinjeDiagram(skickad_df = gini %>% 
+                             mutate(year = year %>% as.character(),
+                                    municipality = ifelse(municipality == "Region Dalarna", "Dalarna", municipality)),
                     skickad_x_var = "year",
                     skickad_y_var = "value",
-                    skickad_x_grupp = "kpi",
-                    diagram_titel = paste0("Investeringar i FoU i Dalarna"),
-                    output_mapp = "Diagram/",
-                    filnamn_diagram = "forskning2.png",
-                    diagram_capt = "Källa: SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Investeringar inkluderar företagens utgifter för egen FoU, offentliga sektorns utgifter för FoU samt universitets- och högskolesektorns utgifter för FoU.",
-                    manual_y_axis_title = "Kronor/invånare",
+                    diagram_titel = paste0("Ginikoefficient"),
+                    skickad_x_grupp = "municipality",
+                    diagram_capt = "Källa: SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: För att redovisa ojämnheten i inkomstfördelningen används gini-koefficienten.\nKoefficienten kan anta ett värde mellan 0 och 1.\nEtt högt värde på koefficienten visar på större ojämnhet än ett lågt värde",
                     x_axis_lutning = 0,
-                    manual_color = diagramfarger("rus_sex"),
+                    manual_color = diagramfarger("rus_tva_fokus"),
                     stodlinjer_avrunda_fem = TRUE,
-                    lagg_pa_logga = FALSE)
-
-forsk3 <- SkapaStapelDiagram(skickad_df = forskning_totalt %>%
-                               filter(year == max(year)) %>%
-                                mutate(fokus = ifelse(municipality == "Dalarnas län", "1", "0")),
-                    skickad_x_var = "municipality",
-                    skickad_y_var = "utgiftertotalt",
-                    diagram_titel = paste0("FoU-investeringar i Sverige år ",max(forskning$year)),
+                    manual_y_axis_title = "Ginikoefficient",
                     output_mapp = "Diagram/",
-                    filnamn_diagram = "forskning3.png",
-                    diagram_capt = "Källa: SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Investeringar inkluderar företagens utgifter för egen FoU, offentliga sektorns utgifter för FoU samt universitets- och högskolesektorns utgifter för FOU.",
-                    x_axis_sort_value = TRUE,
-                    diagram_liggande = TRUE,
-                    x_axis_lutning = 0,
-                    manual_y_axis_title = "\nKronor/invånare",
-                    lagg_pa_logga = FALSE,
-                    x_var_fokus = "fokus",
-                    manual_color = diagramfarger("rus_tva_fokus"))
+                    filnamn_diagram = "gini.png")
+
 ```
-
-För att lösa dagens och morgondagens samhällsutmaningar och för att skapa utveckling och konkurrenskraft krävs ökad innovationskraft. Individers, företags, organisationers och offentlig sektors innovationsförmåga påverkar platsers utvecklingskraft och möjligheter till omställning. Denna indikator mäter investeringar i forskning och utveckling i länet. Det bör dock påpekas att innovation och forskning är ett synnerligen svårt område att mäta och att denna indikator främst ger en övergripande bild av vilka resurser som investeras i länet.
-
-Under tidsperioden från 2011 till 2019 ses en viss ökning i investeringar mätt i kronor per invånare i länet, från drygt `r format(round(forskning_totalt %>% filter(year == min(.$year),municipality == "Dalarnas län") %>% .$utgiftertotalt,0),big.mark = " ")` kronor till drygt `r format(round(forskning_totalt %>% filter(year == 2019,municipality == "Dalarnas län") %>% .$utgiftertotalt,0),big.mark = " ")` kronor per invånare. Efter 2019 skedde dock en stor förändring, och investeringarna minskade avsevärt till `r format(round(forskning_totalt %>% filter(year == max(.$year),municipality == "Dalarnas län") %>% .$utgiftertotalt,0),big.mark = " ")` kronor per invånare år `r max(forskning_totalt$year)`. Den stor andelen investeringar sker i företagen, medan den offentliga sektorn och universitet- och högskolesektorn står för en mindre andel. Minskningen i investeringar mellan 2019 och 2021 förklaras av att företagens och offentlig sektorns investeringar minskade, inom högskolesektorn ökade istället investeringarna under samma period. En trolig orsak till detta är Coronapandemin som fick betydande effekter på många delar av samhället. I ett nationellt perspektiv ser vi att Dalarna hamnar på den nedre halvan. `r forskning_totalt %>% filter(year == max(.$year)) %>% filter(utgiftertotalt == max(utgiftertotalt)) %>% .$municipality`, som hade den högsta noteringen för investeringar i forskning och utveckling år `r max(forskning_totalt$year)`, hade ett drygt `r plyr::round_any(forskning_totalt %>% filter(year == max(.$year)) %>% filter(utgiftertotalt == max(utgiftertotalt)) %>% .$utgiftertotalt/forskning_totalt %>% filter(year == max(.$year)) %>% filter(municipality == "Dalarnas län") %>% .$utgiftertotalt,1)` gånger högre värde per invånare jämfört med Dalarna.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-forsk1
+gini1
 ```
-<br>
-<br>
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-forsk2
-```
-<br>
-<br>
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-forsk3
-```
-
 # Ett sammanhållet Dalarna
 
 <style>
@@ -1146,60 +1172,6 @@ möjligheter att delta i samhällsutvecklingen. Ju fler
 som känner sig delaktiga, desto mer utveckling kan
 åstadkommas.
 
-## Trångboddhet
-Goda livsmiljöer som upplevs som trygga och inkluderande är en förutsättning för att människor ska må bra. Olika platser i Dalarna har olika utmaningar och möjligheter att möta dessa behov, bland annat beroende på om det är platser med växande eller krympande befolkningsunderlag. Indikatorn trångboddhet relaterar bland annat till prioriteringen i Dalastrategin om diversifierade boendeformer som i sin tur ska motverka segregation och polarisering.
-
-Antalet trångbodda i Dalarna har ökat under perioden från `r min(trang$år)` till `r max(trang$år)`. I början på perioden räknades cirka `r format(plyr::round_any(trang %>% filter(år == min(år)) %>% .$Samtliga.i.populationen,100),big.mark = " ")` individer i Dalarna som trångbodda enligt norm 2. År `r max(trang$år)` senare har denna siffra ökat till`r format(plyr::round_any(trang %>% filter(år == max(år)) %>% .$Samtliga.i.populationen,100),big.mark = " ")` personer. Norm 2 innebär att de boende räknas som trångbodda om de bor fler personer än två per rum i alla rum som inte räknas som kök eller vardagsrum.
-
-```{r, include = FALSE}
-bodd1 <- SkapaStapelDiagram(skickad_df = trang  %>% 
-                          select(region, Samtliga.i.populationen, år) %>% 
-                          mutate(år= år %>% as.character(),
-                                 Samtliga.i.populationen = Samtliga.i.populationen/1000),
-                    skickad_x_var = "år",
-                    skickad_y_var = "Samtliga.i.populationen",
-                    diagram_titel = paste0("Antal trångbodda i Dalarna"),
-                    output_mapp = "Diagram/",
-                    filnamn_diagram = "bodd1.png",
-                    diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Antal personer boende i flerbostadshus exklusive specialbostäder trångbodda enligt norm 2,\ndividerat med antal personer boende i flerbostadshus exklusive specialbostäder, multiplicerat med 100 för redovisning i procent.\nSpecialbostäder avser studentbostäder, bostäder för äldre/funktionshindrade och övriga specialbostäder.\nNorm 2, skapades 1965. Hushållet räknas som trångbott om det bor mer än två personer per rum (kök och vardagsrum oräknade).\nPersoner i ensamhushåll räknas inte som trångbodda.",
-                    manual_color = diagramfarger("rus_sex")[1],
-                    manual_y_axis_title = "Antal trångbodda (tusental)",
-                    x_axis_lutning = 0,
-                    lagg_pa_logga = FALSE)
-
-```
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-bodd1
-```
-
-## Boendetyper
-En indikator som är relaterad till samma område är vilka typer av boenden som finns inom länet. I Dalarna är småhus den dominerande boendeformen med ungefär `r format(plyr::round_any(boende %>% filter(boendeform == "småhus, äganderätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` hushåll `r max(boende$år)`, en ökning med `r format(plyr::round_any(boende %>% filter(boendeform == "småhus, äganderätt",år == max(år)) %>% .$Antal.hushåll-boende %>% filter(boendeform == "småhus, äganderätt",år == min(år)) %>% .$Antal.hushåll,100),big.mark=" ")` småhus sedan år `r min(boende$år)`. Vidare fanns det år `r max(boende$år)` ca `r format(plyr::round_any(boende %>% filter(boendeform == "flerbostadshus, hyresrätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` hyresrätter i flerbostadshus, ca `r format(plyr::round_any(boende %>% filter(boendeform == "flerbostadshus, bostadsrätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` bostadsrätter i flerbostadshus, samt `r format(plyr::round_any(boende %>% filter(boendeform == "småhus, bostadsrätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` bostadsrätter i formen småhus.
-
-```{r, include = FALSE}
-
-boende1 <- SkapaStapelDiagram(skickad_df = boende  %>% 
-                                rename("Antal" = `Antal.hushåll`) %>% 
-                                mutate(boendeform = str_to_sentence(boendeform),
-                                       boendeform = boendeform %>% str_wrap(15)),
-                    skickad_x_var = "boendeform",
-                    skickad_y_var = "Antal",
-                    skickad_x_grupp = "år",
-                    diagram_titel = paste0("Boendetyper i Dalarna"),
-                    output_mapp = "Diagram/",
-                    filnamn_diagram = "boende1.png",
-                    diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna",
-                    manual_color = diagramfarger("rus_gradient"),
-                    manual_y_axis_title = "Antal hushåll",
-                    x_axis_lutning = 0,
-                    legend_byrow = TRUE,
-                    lagg_pa_logga = FALSE)
-
-```
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-boende1
-```
 
 ## Tillgång till service och tjänster
 Olika platser i Dalarna har olika utmaningar och möjligheter att möta de förändrade behoven, bland annat beroende på om det är platser med växande eller krympande befolkningsunderlag. En princip för genomförandet av Dalastrategin är att allt utvecklingsarbete ska vara platsbaserat med målsättningen att sammanhållningen ska stärkas och olika platsers förutsättningar och resurser ska tas till vara på ett bra sätt. För utvecklingskraft i hela länet är det viktigt att säkra tillgången till service, vård, fritidsaktiviteter och kultur i alla delar av länet. Människor behöver ha en god tillgänglighet till såväl statlig som regional och kommunal service. Tillgången till service påverkar människors levnadsvillkor och är viktig för platsens attraktivitet och för möjligheten att skapa arbetstillfällen på platsen.
@@ -1232,41 +1204,9 @@ till1 <- SkapaStapelDiagram(skickad_df = service %>%
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 till1
 ```
+## Tillgång till vård
 
-## Deltagande i det civila samhället
-Att stärka sammanhållningen och med det den sociala hållbarheten, är viktigt för Dalarnas utveckling. Ett socialt hållbart samhälle tål påfrestningar, är anpassningsbart och resilient. Det är människorna i Dalarna som är regionens främsta resurs – som individer och del av familjer, andra gemenskaper, organisationer och företag. Människors känsla av sammanhang och delaktighet är centrala delar i det vanligtvis benämns socialt kapital. 
-
-Denna indikator visar andelen (%) invånare 16-84 år som angett att de deltagit i högst en social aktivitet de senaste 12 månaderna, beräknat genom ett medelvärde över en fyraårsperiod. Med social aktivitet menas en mängd olika former av sätt att interagera med människor som inte tillhör den närmsta familjen. Exempel är studiecirkeldeltagande, besökt scenkonstföreställning, besökt fackligt eller religiöst möte, deltagit på privat fest eller tagit aktiv del av sociala medier. Att under 12 månader inte ha deltagit i mer än en social sammankomst tolkas som att personen har ett lågt socialt deltagande.
-
-Perioden från 2007 till 2022 i Dalarna uppvisar ett antal olika trender och mönster. Från början på perioden fram till 2016 ökade andelen invånare mellan 16-84 år som uppgav att de deltagit i högst en aktivitet totalt sett, ökningen utgörs i praktiken enbart av att en större andel män uppger sig vara mindre socialt aktiva. Under perioden 2015 till 2020 minskar andelen socialt inaktiva män betydligt, från som högst ca 29 procent till som lägst 21 procent, under perioden 2015-2018. Även andelen kvinnor minskar, från som mest ca 24,5 procent till 19 procent under perioden 2015-2018. I samband med, och efter, pandemin verkar dock invånarna ha blivit allt mer isolerade. Det är en markant ökning upp till ca `r round(last(deltagande %>% filter(Sociala_relationer == "Lågt socialt deltagande",Kön == "Totalt") %>% .$Andel),0)` procent när åren 2021 och 2022 läggs till intervallen. Från att ungefär var femte invånare i Dalarna angett att de deltagit i max en aktivitet de senaste 12 månaderna till att var tredje invånare i Dalarna anger detsamma.
-
-```{r, include = FALSE}
-
-del1 <- SkapaStapelDiagram(skickad_df = deltagande %>% 
-                             filter(Kön!="Totalt",
-                                    Sociala_relationer == "Lågt socialt deltagande"),
-                           skickad_x_var = "År",
-                           skickad_y_var = "Andel",
-                           skickad_x_grupp = "Kön",
-                           diagram_titel = paste0("Lågt socialt deltagande i Dalarna"),
-                           output_mapp = "Diagram/",
-                           filnamn_diagram = "deltagande1.png",
-                           diagram_capt = " Källa: Nationella folkhälsoenkäten - Hälsa på lika villkor (Folkhälsomyndigheten)\n Bearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andelen (%) invånare 16-84 år med lågt socialt deltagande,\ndet vill säga de som deltagit i högst en aktivitet de senaste 12 månaderna.",
-                           #diagram_liggande = TRUE,
-                           manual_y_axis_title = "procent",
-                           #procent_0_100_10intervaller = TRUE,
-                           x_axis_lutning = 45,
-                           stodlinjer_avrunda_fem = TRUE,
-                           manual_x_axis_text_hjust = 1,
-                           manual_x_axis_text_vjust = 1,
-                           lagg_pa_logga = FALSE,
-                           manual_color = diagramfarger("kon"))
-
-```
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-del1
-```
+Har vi data på detta nu?
 
 ## Andel av hushåll som har tillgång till bredband
 Tillgång till en snabb och robust digital infrastruktur är en grundförutsättning för att bo och verka i hela Dalarna. Fysiska och digitala mötesplatser gör att vi når både varandra och omvärlden. En av utmaningarna för Dalarna är en ojämnt fördelad digital infrastruktur. Att stärka och tillgängliggöra den digitala infrastrukturen för hela Dalarnas befolkning, oavsett plats, är avgörande för en lyckad digitalisering av samhället.
@@ -1293,6 +1233,35 @@ bred1 <- SkapaStapelDiagram(skickad_df = bredband %>%
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 # bred1
+```
+
+
+## Boendetyper
+En indikator som är relaterad till samma område är vilka typer av boenden som finns inom länet. I Dalarna är småhus den dominerande boendeformen med ungefär `r format(plyr::round_any(boende %>% filter(boendeform == "småhus, äganderätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` hushåll `r max(boende$år)`, en ökning med `r format(plyr::round_any(boende %>% filter(boendeform == "småhus, äganderätt",år == max(år)) %>% .$Antal.hushåll-boende %>% filter(boendeform == "småhus, äganderätt",år == min(år)) %>% .$Antal.hushåll,100),big.mark=" ")` småhus sedan år `r min(boende$år)`. Vidare fanns det år `r max(boende$år)` ca `r format(plyr::round_any(boende %>% filter(boendeform == "flerbostadshus, hyresrätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` hyresrätter i flerbostadshus, ca `r format(plyr::round_any(boende %>% filter(boendeform == "flerbostadshus, bostadsrätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` bostadsrätter i flerbostadshus, samt `r format(plyr::round_any(boende %>% filter(boendeform == "småhus, bostadsrätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` bostadsrätter i formen småhus.
+
+```{r, include = FALSE}
+
+boende1 <- SkapaStapelDiagram(skickad_df = boende  %>% 
+                                rename("Antal" = `Antal.hushåll`) %>% 
+                                mutate(boendeform = str_to_sentence(boendeform),
+                                       boendeform = boendeform %>% str_wrap(15)),
+                    skickad_x_var = "boendeform",
+                    skickad_y_var = "Antal",
+                    skickad_x_grupp = "år",
+                    diagram_titel = paste0("Boendetyper i Dalarna"),
+                    output_mapp = "Diagram/",
+                    filnamn_diagram = "boende1.png",
+                    diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna",
+                    manual_color = diagramfarger("rus_gradient"),
+                    manual_y_axis_title = "Antal hushåll",
+                    x_axis_lutning = 0,
+                    legend_byrow = TRUE,
+                    lagg_pa_logga = FALSE)
+
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+boende1
 ```
 
 ## Valdeltagande
@@ -1368,6 +1337,72 @@ val2
 val3
 ```
 
+
+## Deltagande i det civila samhället
+Att stärka sammanhållningen och med det den sociala hållbarheten, är viktigt för Dalarnas utveckling. Ett socialt hållbart samhälle tål påfrestningar, är anpassningsbart och resilient. Det är människorna i Dalarna som är regionens främsta resurs – som individer och del av familjer, andra gemenskaper, organisationer och företag. Människors känsla av sammanhang och delaktighet är centrala delar i det vanligtvis benämns socialt kapital. 
+
+Denna indikator visar andelen (%) invånare 16-84 år som angett att de deltagit i högst en social aktivitet de senaste 12 månaderna, beräknat genom ett medelvärde över en fyraårsperiod. Med social aktivitet menas en mängd olika former av sätt att interagera med människor som inte tillhör den närmsta familjen. Exempel är studiecirkeldeltagande, besökt scenkonstföreställning, besökt fackligt eller religiöst möte, deltagit på privat fest eller tagit aktiv del av sociala medier. Att under 12 månader inte ha deltagit i mer än en social sammankomst tolkas som att personen har ett lågt socialt deltagande.
+
+Perioden från 2007 till 2022 i Dalarna uppvisar ett antal olika trender och mönster. Från början på perioden fram till 2016 ökade andelen invånare mellan 16-84 år som uppgav att de deltagit i högst en aktivitet totalt sett, ökningen utgörs i praktiken enbart av att en större andel män uppger sig vara mindre socialt aktiva. Under perioden 2015 till 2020 minskar andelen socialt inaktiva män betydligt, från som högst ca 29 procent till som lägst 21 procent, under perioden 2015-2018. Även andelen kvinnor minskar, från som mest ca 24,5 procent till 19 procent under perioden 2015-2018. I samband med, och efter, pandemin verkar dock invånarna ha blivit allt mer isolerade. Det är en markant ökning upp till ca `r round(last(deltagande %>% filter(Sociala_relationer == "Lågt socialt deltagande",Kön == "Totalt") %>% .$Andel),0)` procent när åren 2021 och 2022 läggs till intervallen. Från att ungefär var femte invånare i Dalarna angett att de deltagit i max en aktivitet de senaste 12 månaderna till att var tredje invånare i Dalarna anger detsamma.
+
+```{r, include = FALSE}
+
+del1 <- SkapaStapelDiagram(skickad_df = deltagande %>% 
+                             filter(Kön!="Totalt",
+                                    Sociala_relationer == "Lågt socialt deltagande"),
+                           skickad_x_var = "År",
+                           skickad_y_var = "Andel",
+                           skickad_x_grupp = "Kön",
+                           diagram_titel = paste0("Lågt socialt deltagande i Dalarna"),
+                           output_mapp = "Diagram/",
+                           filnamn_diagram = "deltagande1.png",
+                           diagram_capt = " Källa: Nationella folkhälsoenkäten - Hälsa på lika villkor (Folkhälsomyndigheten)\n Bearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andelen (%) invånare 16-84 år med lågt socialt deltagande,\ndet vill säga de som deltagit i högst en aktivitet de senaste 12 månaderna.",
+                           #diagram_liggande = TRUE,
+                           manual_y_axis_title = "procent",
+                           #procent_0_100_10intervaller = TRUE,
+                           x_axis_lutning = 45,
+                           stodlinjer_avrunda_fem = TRUE,
+                           manual_x_axis_text_hjust = 1,
+                           manual_x_axis_text_vjust = 1,
+                           lagg_pa_logga = FALSE,
+                           manual_color = diagramfarger("kon"))
+
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+del1
+```
+
+
+## Andel unga som upplever att de är delaktiga i sin kommun
+
+Att skapa en hållbar utveckling kräver förståelse för och kunskap om framtida generationers utmaningar och behov. FN:s konvention om barns rättigheter, eller barnkonventionen som den ofta kallas, är svensk lag och syftar till att ge barn oavsett bakgrund rätt att behandlas med respekt och att få komma till tals. Barn och unga i Dalarna måste ges möjlighet att ta en aktiv del i samhällsutvecklingen för att målen i Dalastrategin ska kunna uppnås.
+
+För att kunna följa utvecklingen på det här området har en indikator för ungas delaktighet inkluderats i Dalastrategin. Data för indikatorn hämtas från ungdomsenkäten LUPP som genomförs vart tredje år. Här redovisas andelen unga som har angett att de upplever att de har "ganska eller mycket stora möjligheter" att föra fram sina åsikter till dem som bestämmer i kommunen. 
+
+Utvecklingen för denna indikator är sammantaget negativ. På gymnasienivå är andelen som har svarat att de anser sig ha möjligheter till delaktighet ungefär lika stor år `r min(ungadel$År)` som år `r max(ungadel$År)`, `r ungadel %>% filter(År == min(År),Undersökning == "Gymnasiet",Boendekommun=="Dalarna") %>% .$andel` respektive `r ungadel %>% filter(År == max(År),Undersökning == "Gymnasiet",Boendekommun=="Dalarna") %>% .$andel` procent. En tydligare negativ trend ses bland högstadieungdomar där andelen som anger att de har möjlighet till delaktighet har sjunkit från `r ungadel %>% filter(År == min(År),Undersökning == "Högstadiet",Boendekommun=="Dalarna") %>% .$andel` till `r ungadel %>% filter(År == max(År),Undersökning == "Högstadiet",Boendekommun=="Dalarna") %>% .$andel` procent. 
+
+```{r, include = FALSE}
+unga1 <- SkapaStapelDiagram(skickad_df = ungadel %>% 
+                     filter(Boendekommun=="Dalarna") %>% 
+                     mutate(År = År %>% as.character()),
+                   skickad_x_var = "År",
+                   skickad_y_var = "andel",
+                   skickad_x_grupp = "Undersökning",
+                   diagram_titel = paste0("Ungas delaktighet i Dalarna"),
+                   output_mapp = "Diagram/",
+                   filnamn_diagram = "ungadel1.png",
+                   diagram_capt = " Källa: Ungdomsenkäten Lupp i Dalarna\n Bearbetning: Samhällsanalys, Region Dalarna",
+                   manual_y_axis_title = "procent",
+                   procent_0_100_10intervaller = TRUE,
+                   x_axis_lutning = 0,
+                   manual_color = diagramfarger("rus_sex"),
+                   lagg_pa_logga = FALSE)
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+unga1
+```
 ## Tillit till andra människor
 Det är människorna i Dalarna som skapar regionen – alla enskilda individer boende i länet, som också är del av familjer och av andra gemenskaper, organisationer och företag. Människors känsla av sammanhang och delaktighet är centralt för att skapa ett väl fungerande samhälle. För att skapa sammanhang och delaktighet behövs tillit mellan dem som ingår i gemenskapen, och det behövs sätt att hantera osäkerhet som kan uppstå när nya medlemmar inkluderas i en gemenskap. Socialt kapital beskriver det kitt som uppstår när en grupp människor enas kring gemensamma värden, normer och värderingar, det får människor att ha tillit till sina medmänniskor och till det gemensamma. Att den representativa demokratins institutioner, såsom kommuner, region och myndigheter, är väl fungerande och att invånarna har förtroende för dem är centralt för en levande demokrati. En stark tillit till andra underlättar samarbetet mellan människor och viljan och förmågan att bidra till samhällsutvecklingen med nya idéer. Ett samhälle med ett starkt socialt kapital är bättre rustat för att möta förändringar och eventuella kriser.
 
@@ -1400,6 +1435,38 @@ till1 <- SkapaStapelDiagram(skickad_df = deltagande %>%
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 till1
+```
+
+## Digitalt deltagande
+
+Har vi data för detta?
+
+
+## Trångboddhet
+Goda livsmiljöer som upplevs som trygga och inkluderande är en förutsättning för att människor ska må bra. Olika platser i Dalarna har olika utmaningar och möjligheter att möta dessa behov, bland annat beroende på om det är platser med växande eller krympande befolkningsunderlag. Indikatorn trångboddhet relaterar bland annat till prioriteringen i Dalastrategin om diversifierade boendeformer som i sin tur ska motverka segregation och polarisering.
+
+Antalet trångbodda i Dalarna har ökat under perioden från `r min(trang$år)` till `r max(trang$år)`. I början på perioden räknades cirka `r format(plyr::round_any(trang %>% filter(år == min(år)) %>% .$Samtliga.i.populationen,100),big.mark = " ")` individer i Dalarna som trångbodda enligt norm 2. År `r max(trang$år)` senare har denna siffra ökat till`r format(plyr::round_any(trang %>% filter(år == max(år)) %>% .$Samtliga.i.populationen,100),big.mark = " ")` personer. Norm 2 innebär att de boende räknas som trångbodda om de bor fler personer än två per rum i alla rum som inte räknas som kök eller vardagsrum.
+
+```{r, include = FALSE}
+bodd1 <- SkapaStapelDiagram(skickad_df = trang  %>% 
+                          select(region, Samtliga.i.populationen, år) %>% 
+                          mutate(år= år %>% as.character(),
+                                 Samtliga.i.populationen = Samtliga.i.populationen/1000),
+                    skickad_x_var = "år",
+                    skickad_y_var = "Samtliga.i.populationen",
+                    diagram_titel = paste0("Antal trångbodda i Dalarna"),
+                    output_mapp = "Diagram/",
+                    filnamn_diagram = "bodd1.png",
+                    diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Antal personer boende i flerbostadshus exklusive specialbostäder trångbodda enligt norm 2,\ndividerat med antal personer boende i flerbostadshus exklusive specialbostäder, multiplicerat med 100 för redovisning i procent.\nSpecialbostäder avser studentbostäder, bostäder för äldre/funktionshindrade och övriga specialbostäder.\nNorm 2, skapades 1965. Hushållet räknas som trångbott om det bor mer än två personer per rum (kök och vardagsrum oräknade).\nPersoner i ensamhushåll räknas inte som trångbodda.",
+                    manual_color = diagramfarger("rus_sex")[1],
+                    manual_y_axis_title = "Antal trångbodda (tusental)",
+                    x_axis_lutning = 0,
+                    lagg_pa_logga = FALSE)
+
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+bodd1
 ```
 
 ## Andel barn och unga som lever i hushåll med låg ekonomisk standard
@@ -1460,36 +1527,6 @@ ut1
 <br>
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 ut2
-```
-
-## Andel unga som upplever att de är delaktiga i sin kommun
-
-Att skapa en hållbar utveckling kräver förståelse för och kunskap om framtida generationers utmaningar och behov. FN:s konvention om barns rättigheter, eller barnkonventionen som den ofta kallas, är svensk lag och syftar till att ge barn oavsett bakgrund rätt att behandlas med respekt och att få komma till tals. Barn och unga i Dalarna måste ges möjlighet att ta en aktiv del i samhällsutvecklingen för att målen i Dalastrategin ska kunna uppnås.
-
-För att kunna följa utvecklingen på det här området har en indikator för ungas delaktighet inkluderats i Dalastrategin. Data för indikatorn hämtas från ungdomsenkäten LUPP som genomförs vart tredje år. Här redovisas andelen unga som har angett att de upplever att de har "ganska eller mycket stora möjligheter" att föra fram sina åsikter till dem som bestämmer i kommunen. 
-
-Utvecklingen för denna indikator är sammantaget negativ. På gymnasienivå är andelen som har svarat att de anser sig ha möjligheter till delaktighet ungefär lika stor år `r min(ungadel$År)` som år `r max(ungadel$År)`, `r ungadel %>% filter(År == min(År),Undersökning == "Gymnasiet",Boendekommun=="Dalarna") %>% .$andel` respektive `r ungadel %>% filter(År == max(År),Undersökning == "Gymnasiet",Boendekommun=="Dalarna") %>% .$andel` procent. En tydligare negativ trend ses bland högstadieungdomar där andelen som anger att de har möjlighet till delaktighet har sjunkit från `r ungadel %>% filter(År == min(År),Undersökning == "Högstadiet",Boendekommun=="Dalarna") %>% .$andel` till `r ungadel %>% filter(År == max(År),Undersökning == "Högstadiet",Boendekommun=="Dalarna") %>% .$andel` procent. 
-
-```{r, include = FALSE}
-unga1 <- SkapaStapelDiagram(skickad_df = ungadel %>% 
-                     filter(Boendekommun=="Dalarna") %>% 
-                     mutate(År = År %>% as.character()),
-                   skickad_x_var = "År",
-                   skickad_y_var = "andel",
-                   skickad_x_grupp = "Undersökning",
-                   diagram_titel = paste0("Ungas delaktighet i Dalarna"),
-                   output_mapp = "Diagram/",
-                   filnamn_diagram = "ungadel1.png",
-                   diagram_capt = " Källa: Ungdomsenkäten Lupp i Dalarna\n Bearbetning: Samhällsanalys, Region Dalarna",
-                   manual_y_axis_title = "procent",
-                   procent_0_100_10intervaller = TRUE,
-                   x_axis_lutning = 0,
-                   manual_color = diagramfarger("rus_sex"),
-                   lagg_pa_logga = FALSE)
-```
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-unga1
 ```
 
 ## Självskattad hälsa
