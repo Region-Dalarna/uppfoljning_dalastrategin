@@ -358,7 +358,7 @@ En av prioriteringarna i Dalastrategin är att öka resurseffektiviteten i läne
 avfalldiag
 ```
 
-### Avfall/BRP
+## Avfall/BRP
 
 ```{r, include = FALSE}
 
@@ -519,6 +519,11 @@ resande1alt
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 resande2alt
 ```
+
+## Laddinfrastruktur för fordon
+
+Fråga strategerna och Henrik om hur vi kan skapa denna indikator.
+
 
 ## Skattad självförsörjningsgrad av energi och livsmedel
 
@@ -848,6 +853,7 @@ Finns data för detta nu?
 
 
 ## Andel unga som inom fyra år fullföljer gymnasieutbildning
+
 BEHÖVER UPPDATERAS. NY KOD?
 Kunskap ger människor möjlighet att växa och påverka sin livssituation. Tillgång till bildning, kunskap och kompetens är avgörande för såväl utvecklingen av samhället, som god välfärd och tillväxt i näringslivet. När arbetsgivare inte hittar rätt kompetens hämmas den ekonomiska utvecklingen. Samtidigt försvagas den sociala hållbarheten när människor ställs utanför arbetsmarknaden. Befolkningens låga utbildningsnivåer är en utmaning i stora delar av Dalarna. Ambitionen i Dalastrategin är att fler ska klara en gymnasieexamen för att därmed få bättre förutsättningar att etablera sig på arbetsmarknaden.
 
@@ -1142,6 +1148,7 @@ gini1 <- SkapaLinjeDiagram(skickad_df = gini %>%
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gini1
 ```
+
 # Ett sammanhållet Dalarna
 
 <style>
@@ -1204,6 +1211,7 @@ till1 <- SkapaStapelDiagram(skickad_df = service %>%
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 till1
 ```
+
 ## Tillgång till vård
 
 Har vi data på detta nu?
@@ -1403,7 +1411,9 @@ unga1 <- SkapaStapelDiagram(skickad_df = ungadel %>%
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 unga1
 ```
+
 ## Tillit till andra människor
+
 Det är människorna i Dalarna som skapar regionen – alla enskilda individer boende i länet, som också är del av familjer och av andra gemenskaper, organisationer och företag. Människors känsla av sammanhang och delaktighet är centralt för att skapa ett väl fungerande samhälle. För att skapa sammanhang och delaktighet behövs tillit mellan dem som ingår i gemenskapen, och det behövs sätt att hantera osäkerhet som kan uppstå när nya medlemmar inkluderas i en gemenskap. Socialt kapital beskriver det kitt som uppstår när en grupp människor enas kring gemensamma värden, normer och värderingar, det får människor att ha tillit till sina medmänniskor och till det gemensamma. Att den representativa demokratins institutioner, såsom kommuner, region och myndigheter, är väl fungerande och att invånarna har förtroende för dem är centralt för en levande demokrati. En stark tillit till andra underlättar samarbetet mellan människor och viljan och förmågan att bidra till samhällsutvecklingen med nya idéer. Ett samhälle med ett starkt socialt kapital är bättre rustat för att möta förändringar och eventuella kriser.
 
 Indikatorn för tillit mäter andel (%) invånare 16-84 år som har uppgett att de anser sig sakna tillit till andra. Värdet är beräknat som medelvärdet över en fyraårsperiod. Mellan tidsperioden 2004-2007 och 2019-2022 visar det sig att andelen som anser sig sakna tillit är ungefär densamma, ca 28 procent. Under intervallet har däremot andelen under perioden 2007 till 2015 varit lägre mellan 23 och 25 procent. Andelen kvinnor som saknar tillit till andra har varit högre än andelen män som saknar tillit till andra fram till ungefär år 2015. Sedan år 2015 är mönstret inte längre entydigt, och det senaste året 2022 uppgav en större andel män, än kvinnor, att de saknade tillit till andra.
