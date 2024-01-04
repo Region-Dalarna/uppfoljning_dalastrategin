@@ -170,19 +170,18 @@ miljömässigt hållbart sätt. I ett klimatsmart Dalarna är samhällets
 robusthet och resiliens vid klimatförändringar god.
 </p>
 
-Den miljömässiga dimensionen i regional utveckling handlar bland annat om att säkerställa att ekosystemen fortsätter att leverera de tjänster som människor och samhällen är beroende av. Genom att gå före i en miljömässigt hållbar omställning gynnas innovationer och regionalt företagande, med målsättningen att regionala lösningar bidrar till att lösa globala problem. Det är också vägen fram till goda livsmiljöer och levnadsvillkor.
+Den miljömässiga dimensionen i regional utveckling handlar bland annat om att säkerställa att ekosystemen bibehålls och vårdas så att de fortsätter att leverera de tjänster som människor och samhällen är beroende av. Genom att gå före i en miljömässigt hållbar omställning gynnas innovationer och regionalt företagande, och regionala lösningar kan bidra till att lösa globala problem. Det är också vägen fram till goda livsmiljöer och levnadsvillkor.
 
-Dalarna är rikt på naturresurser, och om vi brukar dem rätt ger de mångfalt tillbaka, därför följer vi upp hur stora andelar av marken som brukas utifrån hållbara metoder, så som formellt skyddad skogsmark och betesmark och slåtteräng. I Dalarna utgörs samtidigt en stor del av näringslivet av tillverkande industri som relativt sett förbrukar stora mängder energi. Det är en fråga om avvägning mellan nytta och miljöpåverkan i varje produktionsbeslut, men kan vi säkerställa att våra produktionssätt är de med minst miljöpåverkan globalt sett, så bör det vara motiverat att just vi bedriver denna produktion.
+Dalarna är rikt på naturresurser och om vi brukar dem rätt ger de mångfalt tillbaka. Indikatorer som följs upp är därför bland annat hur resurser som vatten och vind, skog och jordbruksmark används. I Dalarna utgörs samtidigt en stor del av näringslivet av tillverkande industri som förbrukar relativt sett  stora mängder energi, och driver därigenom upp mängden energi förbrukad per invånare. Det är därför en viktig avvägning mellan nytta och miljöpåverkan huruvida vi kan säkerställa att våra företags produktionssätt har den minsta miljöpåverkan i global jämförelse, så att det kan vara motiverat att just företagen i Dalarna bedriver denna produktion.
 
 
 ## Formellt skyddad produktiv skogsmark
 
 År 2018 beslutade dåvarande regering om Sveriges första nationella skogsprogram med fokus på skogsbrukets roll för en hållbar utveckling. I Dalastrategin omnämns skogsbruket som en av länets viktigare näringar. Skogsbruket påverkar och påverkas av klimatförändringarna, och därför behöver skötsel och brukande anpassas utifrån rådande kunskap om vad som har minst miljöpåverkan.
 
-Dalarna utgörs till 79 procent av skog, vilket gör Dalarna till det femte mest skogstäta länet i landet.^1 [SCB, https://www.scb.se/hitta-statistik/sverige-i-siffror/miljo/marken-i-sverige/]  All skogsmark är inte produktiv (ex. myrar bergsytor etc. ytor som producerar mindre än en kubikmeter virke per hektar och år), dessa områden utgör 11,3 procent av skogsmarken, varav ca 1,5 procent är formellt skyddad icke produktiv skogsmark.  77,7 procent av skogsmarken brukas konventionellt, och är inte skyddad eller omfattar frivilliga avsättningar.^2 [SCB, https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__MI__MI0605/SkyddSkogFrivillig/table/tableViewLayout1/]
- 
+Dalarnas yta utgörs till 79 procent av skog vilket gör Dalarna till det femte mest skogstäta länet i landet.^1 [SCB, https://www.scb.se/hitta-statistik/sverige-i-siffror/miljo/marken-i-sverige/]  All skogsmark är inte produktiv (ex. myrar och bergsytor etc. som producerar mindre än en kubikmeter virke per hektar och år). Dessa områden utgör 11,3 procent av skogsmarken och av dessa är ca 1,5 procentenheter formellt skyddad men icke produktiv skogsmark. Den konventionellt brukade skogsmarken utgör 77,7 procent av skogsmarken.^2 [SCB, https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__MI__MI0605/SkyddSkogFrivillig/table/tableViewLayout1/]
 
-I diagrammen nedan redovisas utvecklingen för skyddad produktiv skogsmark i Dalarnas län mellan `r as.character(min(skogsmark$År))` och `r as.character(max(skogsmark$År))`. Arealen skyddad skogsmark i länet har ökat över tidsperioden, från `r format(skogsmark %>% filter(År==min(År)) %>% .$area_hektar,big.mark=" ")` hektar år `r as.character(min(skogsmark$År))` till `r format(skogsmark %>% filter(År==max(År)) %>% .$area_hektar,big.mark=" ")` hektar år `r as.character(max(skogsmark$År))`. Procentuellt var `r skogsmark %>% filter(År==min(År)) %>% .$area_procent` procent av den produktiva skogsmarken i Dalarnas län skyddad år `r as.character(min(skogsmark$År))` och samma siffra för `r as.character(max(skogsmark$År))` var `r skogsmark %>% filter(År==max(År)) %>% .$area_procent` procent. Det betyder att den totala arealen skogsmark har ökat något under perioden.
+Skyddad produktiv skog, tillsammans med frivilliga avsättningar av produktiv skog utgör andelen som brukas på ett hållbart sätt. I diagrammen nedan redovisas hur andelen skyddad produktiv skogsmark i Dalarnas län utvecklats mellan `r as.character(min(skogsmark$År))` och `r as.character(max(skogsmark$År))`. Arealen skyddad skogsmark i länet har ökat över tidsperioden, från `r format(skogsmark %>% filter(År==min(År)) %>% .$area_hektar,big.mark=" ")` hektar år `r as.character(min(skogsmark$År))` till `r format(skogsmark %>% filter(År==max(År)) %>% .$area_hektar,big.mark=" ")` hektar år `r as.character(max(skogsmark$År))`. Procentuellt var `r skogsmark %>% filter(År==min(År)) %>% .$area_procent` procent av den produktiva skogsmarken i Dalarnas län skyddad år `r as.character(min(skogsmark$År))` och samma siffra för `r as.character(max(skogsmark$År))` var `r skogsmark %>% filter(År==max(År)) %>% .$area_procent` procent. Det betyder att den totala arealen skogsmark har ökat något under perioden.
 
 ```{r, include = FALSE}
 skogsmark1 <- SkapaStapelDiagram(skickad_df = skogsmark %>%
@@ -221,15 +220,15 @@ skogsmark1
 skogsmark2
 ```
 
-## Arealen betesmark och areal med särskilt höga biologiska värden
+## Betesmark och slåtteräng
 
-betesmark, varav x produktiv skogsmark och y formellt skyddad produktiv skogsmark.
-Av Dalar as markyta utgör x andel åkermark, och x andel betesmark, y andel med särskilt höga biologiska värden, även kallad slåtteräng.
-Naturresurser för energiproduktion, vatten, vind, sol, skog…
+-> Ändra i diagrammet så att det visar hektar betesmark, varav arealen slåtteräng så att det går att följa upp om den totala ytan förändras.
 
 Biologisk mångfald och väl fungerande ekosystem är en förutsättning för allt liv på jorden. Det är också en bas för goda livsmiljöer för både Dalarnas invånare och för Dalarnas näringsliv. Den gröna infrastrukturen är ekologiskt funktionella nätverk av livsmiljöer och naturområden som utformas, brukas och förvaltas så att den biologiska mångfalden bevaras och därmed främjar de för samhället så centrala ekosystemtjänster som exempelvis vattenrening och livskraftiga jordbruksmarker etc. Samhället har allt att vinna på ett hållbart bruk av ekosystemen och att förvalta ett mångfunktionellt landskap där natur- och kulturvärden tillvaratas.
 
-I diagrammet nedan redovisas utvecklingen för arealen betesmark i Dalarnas län mellan `r as.character(min(betesmark$year))` och `r as.character(max(betesmark$year))`. Arealen har under denna period minskat från `r format(betesmark %>% filter(municipality_id == 20,year == min(year)) %>% .$value,big.mark=" ")` till `r format(betesmark %>% filter(municipality_id == 20,year == max(year)) %>% .$value,big.mark=" ")` hektar. Denna negativa trend går också emot den nationella trenden, där arealen betesmark har ökat något i riket som helhet. Slåtteräng är en delmängd av betesmarken som har särskilt höga biologiska värden, och därmed särskilt stor betydelse för biologisk mångfald. I Dalarna är andelen slåtteräng 1,6 procent av betesmarken (LITE OKLART VAR DENNA INFO KOMMER IFRÅN - TA BORT?).
+Betesmark tillsammans med åkermark utgör jordbruksmark. Åkermarken kan brukas för djurfoder och livsmedel, medan betesmarken och betande djur i hög grad bidrar till att upprätthålla artrikedomen. En delmängd av betesmarken är slåtterängar, och dessa har särskilt höga biologiska värden.
+
+I diagrammet nedan redovisas hur arealen betesmark i Dalarnas län har utvecklats mellan `r as.character(min(betesmark$year))` och `r as.character(max(betesmark$year))`. Arealen har under denna period minskat från `r format(betesmark %>% filter(municipality_id == 20,year == min(year)) %>% .$value,big.mark=" ")` till `r format(betesmark %>% filter(municipality_id == 20,year == max(year)) %>% .$value,big.mark=" ")` hektar. Minskningen motsvarar ungefär samma areal som den formellt skyddade skogsmarken har ökat med (FINNS SAMBAND?). Den negativa trenden som ses för Dalarna går i motsatt riktning mot den nationella trenden. I riket har arealen betesmark istället ökat något. Slåtteräng är en delmängd av betesmarken som har särskilt höga biologiska värden och därmed särskilt stor betydelse för biologisk mångfald. I Dalarna är andelen slåtteräng 1,6 procent av betesmarken.^3[Kolada]
 
 ```{r, include = FALSE}
 
@@ -344,7 +343,7 @@ effektivitet3
 ```
 
 
-## Insamlat kommunalt avfall (kg/person)
+## Insamlat kommunalt avfall
 ```{r, include = FALSE}
 
 avfalldiag <- SkapaStapelDiagram(skickad_df = avfall %>% 
@@ -363,7 +362,7 @@ avfalldiag <- SkapaStapelDiagram(skickad_df = avfall %>%
                    lagg_pa_logga = FALSE)
 ```
 
-En av prioriteringarna i Dalastrategin är att öka resurseffektiviteten i länet. Ett mått på resursförbrukning är mängden insamlat kommunalt avfall som ett mått på invånarnas resursförbrukning. I det kommunala avfallet ingår det mesta avfall som ett hushåll producerar, så som mat- och restavfall, grov- och trädgårdsavfall och farligt avfall. Även förpackningar och batterier etc. som ingår i producentansvaret ingår i beräkningen. I sammanställningen nedan visas insamlat kommunalt avfall per person och år i Dalarna från 2013 till 2021. År `r min(avfall$year)` samlades det in `r avfall %>% filter(year == min(year),name == "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$value` kg avfall per person i Dalarna, att jämföra med `r avfall %>% filter(year == max(year),name == "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$value` kg per person år `r max(avfall$year)`. En lägre mängd per person signalerar en lägre resursanvändning. I en nationell jämförelse ses att Uppsalas och Stockholms län ligger bäst till med ca 400kg per person och år, medan Kalmar och Kronoberg ligger sämst till med ca 565 kg per person och år (EJ UPPDATERAT AUTOMATISKT, TA BORT?).
+En av prioriteringarna i Dalastrategin är att öka resurseffektiviteten i länet. Ett mått på resursförbrukning är mängden insamlat kommunalt avfall som ett mått på invånarnas resursförbrukning. I det kommunala avfallet ingår det mesta avfall som ett hushåll producerar, så som mat- och restavfall, grov- och trädgårdsavfall och farligt avfall. Även förpackningar och batterier etc. som ingår i producentansvaret ingår i beräkningen. I sammanställningen nedan visas insamlat kommunalt avfall per person och år i Dalarna från 2013 till 2021. År `r min(avfall$year)` samlades det in `r avfall %>% filter(year == min(year),name == "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$value` kg avfall per person i Dalarna, att jämföra med `r avfall %>% filter(year == max(year),name == "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$value` kg per person år `r max(avfall$year)`. En lägre mängd per person signalerar en lägre resursanvändning. I en nationell jämförelse ses att Uppsalas och Stockholms län ligger bäst till med ca 400 kg per person och år, medan Kalmar och Kronoberg ligger sämst till med ca 565 kg per person och år (EJ UPPDATERAT AUTOMATISKT, TA BORT?).
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 avfalldiag
@@ -388,20 +387,21 @@ avfallbrpdiag <- SkapaStapelDiagram(skickad_df = avfallbrp %>%
                     lagg_pa_logga = FALSE)
 ```
 
-Ytterligare en indikator på resurseffektivitet är kopplingen mellan mängden insamlat avfall (förbrukade resurser) och den ekonomiska aktiviteten i regionen, mätt genom bruttoregionalprodukten (BRP). Indikatorn uppvisar en positiv trend av att mängden avfall minskar per producerat ekonomiskt värde över perioden från `r min(avfallbrp$year)` till `r max(avfallbrp$year)`. `r min(avfallbrp$year)` samlades det in knappt `r format(plyr::round_any(avfallbrp %>% filter(year == min(year)) %>%  .$avfallbrp,10),big.mark = " ")` kg avfall för varje miljon kronor av Dalarnas BRP under samma år. `r max(avfallbrp$year)` hade motsvarande mängd avfall sjunkit till drygt `r format(plyr::round_any(avfallbrp %>% filter(year == max(year)) %>%  .$avfallbrp,10),big.mark = " ")` kg avfall. Det kan främst förklaras med att BRP har ökat under perioden.
+Ytterligare en indikator på resurseffektivitet är kopplingen mellan mängden insamlat avfall (förbrukade resurser) och den ekonomiska aktiviteten i regionen, mätt genom bruttoregionalprodukten (BRP). Indikatorns värde uppvisar en positiv trend av att mängden avfall minskar per producerat ekonomiskt värde över perioden från `r min(avfallbrp$year)` till `r max(avfallbrp$year)`. `r min(avfallbrp$year)` samlades det in knappt `r format(plyr::round_any(avfallbrp %>% filter(year == min(year)) %>%  .$avfallbrp,10),big.mark = " ")` kg avfall för varje miljon kronor av Dalarnas BRP under samma år. `r max(avfallbrp$year)` hade motsvarande mängd avfall sjunkit till drygt `r format(plyr::round_any(avfallbrp %>% filter(year == max(year)) %>%  .$avfallbrp,10),big.mark = " ")` kg avfall. Det kan främst förklaras med att BRP har ökat under perioden.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 avfallbrpdiag
 ```
 
 ## Utsläpp av klimatpåverkande växthusgaser
+
 År 2017 antog Sverige ett långsiktigt nationellt mål om att landet ska vara klimatneutralt år 2045. Detta innebär en minskning av växthusgasutsläpp med minst 85 procent inom landets gränser i jämförelse med utsläppen år 1990. Målet innebär i princip att alla sektorer och verksamheter behöver vara fossilfria år 2045. Sveriges nationella mål är i linje med det europeiska målet om ett klimatneutralt EU till år 2050 och det internationella Parisavtalet som innebär att jordens länder strävar efter att ökningen av den globala genomsnittstemperaturen inte blir mer än 1,5°C till år 2050 i förhållande till den förindustriella nivån, samt att den i vilket fall inte överstiger 2°C.
 
 De klimatpåverkande växthusgaserna innefattar fler ämnen än koldioxid. Ett exempel är metangas, som därtill är betydligt skadligare per enhet än koldioxid (1 ton metangas motsvarar utsläpp av ca 28 ton koldioxid). För att utsläppen som sker i Dalarna ska vara jämförbara med andra regioners utsläpp omsätts därför samtliga gasers utsläpp till så kallade koldioxidekvivalenter, det vill säga den mängd som varje ämne släpper ut omräknat i termer av koldioxid.
 
 FÖRSLAG - Gör om den andra figuren till ett stapeldiagram som börjar 1990. Detta ger möjlighet att jämföra Dalarnas utlsäpp med målet (och kommentera detta). Som det är nu tycker jag inte att stycket nedan säger så mycket. Hur vet man att vi behöver en snabbare omställning när det inte finns någon relation till 1990? Hur mycket har vi minskat och vad innebär detta i årstakt?
 
-I Dalarna går utvecklingen i positiv riktning, med minskande utsläpp av växthusgaser under det senast decenniet. Det är  industri- och transportsektorn som står för den volymmässigt största minskningen samtidigt som dessa sektorer, i likhet med i övriga Sverige, står för den största andelen utsläpp av växthusgaser totalt sett i länet. Sett till utsläpp per person ligger Dalarna högre än riksgenomsnittet, trots en minskning från knappt 7,5 till drygt 5,5 ton/invånare. Även om vi ser en utveckling i rätt riktning kommer det att krävas en ännu snabbare minskningstakt för att uppnå våra ambitioner i Dalarnastrategin och för att bli klimatneutrala till 2045 enligt den nationella målsättningen.
+I Dalarna går utvecklingen i positiv riktning med minskande utsläpp av växthusgaser under det senast decenniet. Det är  industri- och transportsektorn som står för den volymmässigt största minskningen samtidigt som dessa sektorer, i likhet med övriga Sverige, står för den största andelen utsläpp av växthusgaser totalt sett i länet. Sett till utsläpp per person ligger Dalarna högre än riksgenomsnittet, trots en minskning från knappt 7,5 till drygt 5,5 ton/invånare (i jämförelse med 1990 års nivå skulle de behöva minska till ca 1,25 ton/invånare). Även om vi ser en utveckling i rätt riktning kommer det därför att krävas en ännu snabbare minskningstakt för att uppnå våra ambitioner i Dalarnastrategin och bli klimatneutrala till 2045 enligt den nationella målsättningen.
 
 ```{r, include = FALSE}
 #colnames(vaxthusgaser) <- c("Id", "Ar", "Geografi", "Utsläpp per invånare", "Totalt Utsläpp", "Uppvärmning", "Transporter", "Arbetsmaskiner", "El/Fjärrvärme", "Industri", "Jordbruk")
@@ -480,7 +480,7 @@ utslapp3
 
 \newpage
 
-## Andel kollektivt resande
+## Kollektivt resande
 ```{r, include = FALSE}
 
 resande1alt <- SkapaStapelDiagram(skickad_df = resande %>% 
@@ -516,9 +516,9 @@ resande2alt <- SkapaLinjeDiagram(skickad_df = resande %>%
                     y_axis_100proc = TRUE)
 
 ```
-På grund av sin utsträckta och relativt glesbefolkade geografi har Dalarna en utmaning i att skapa en hållbar transportinfrastruktur. För att nå klimat- och energimålen krävs kraftfull teknisk utveckling i kombination med beteendeförändringar. Kollektivt resande spelar en central roll för utvecklandet av en klimatsmart och resurseffektiv, men också mer jämställd och jämlik, mobilitet. Kollektivtrafik är förenat med höga kostnader, samtidigt som det finns samhällsekonomiska vinster. För att klara omställningen krävs mod att ställa olika kostnader mot varandra. För att vi ska lyckas öka det kollektiva resandet behöver den traditionella kollektivtrafiken sannolikt kompletteras med nya mobilitetslösningar och tjänster, särskilt för länets mest glesbefolkade områden.
+På grund av den utsträckta och relativt glesbefolkade geografin har Dalarna en utmaning i att skapa en hållbar transportinfrastruktur. För att nå klimat- och energimålen krävs kraftfull teknisk utveckling i kombination med beteendeförändringar. Kollektivt resande spelar en central roll för utvecklandet av en klimatsmart och resurseffektiv, men också mer jämställd och jämlik, mobilitet. Kollektivtrafik är förenat med höga kostnader, samtidigt som det finns samhällsekonomiska vinster. För att klara omställningen krävs mod att ställa olika kostnader mot varandra. För att vi ska lyckas öka det kollektiva resandet behöver den traditionella kollektivtrafiken sannolikt kompletteras med nya mobilitetslösningar och tjänster, särskilt för länets mest glesbefolkade områden.
 
-Diagrammen redovisar indikatorer för kollektivt resande i Dalarna: resor per invånare samt marknadsandel för kollektivtrafik i länet. För antal resor per invånare syns att det kollektiva resandet har minskat avsevärt i Dalarna, från  `r resande %>% filter(kpi == "Resor_per_invanare") %>% filter(year == min(year)) %>% .$value ` resor per person och år från `r min(resande$year)` till `r round(resande %>% filter(kpi == "Resor_per_invanare") %>% filter(year == max(year)) %>% .$value,0) ` år `r max(resande$year)`. Nedgången kan delvis förklaras av pandemin - det sker en tydlig minskning mellan 2019 och 2020 - men även mellan 2012 och 2013 minskade antalet resor per invånare avsevärt i Dalarna (OKLART VAD DENNA MINSKNING BEROR PÅ). I en nationell jämförelse år 2021 framgår att det i glesbygdslänen i Sverige som mest görs 40 resor per person. Medan det görs betydligt fler i storstadsregionerna, så som Skåne med i snitt 71 resor per person och år och i Stockholm där flest resor görs, sker 230 resor per person och år (det sista stycket uppdateras inte automatiskt).
+Diagrammen redovisar indikatorer för kollektivt resande i Dalarna: kollektivtrafiksresor per invånare samt marknadsandel för kollektivtrafik i länet. För antal resor per invånare syns att det kollektiva resandet har minskat avsevärt i Dalarna, från  `r resande %>% filter(kpi == "Resor_per_invanare") %>% filter(year == min(year)) %>% .$value ` resor per person och år från `r min(resande$year)` till `r round(resande %>% filter(kpi == "Resor_per_invanare") %>% filter(year == max(year)) %>% .$value,0) ` år `r max(resande$year)`. Nedgången kan delvis förklaras av pandemin - det sker en tydlig minskning mellan 2019 och 2020 - men även mellan 2012 och 2013 minskade antalet resor per invånare avsevärt i Dalarna (OKLART VAD DENNA MINSKNING BEROR PÅ). I en nationell jämförelse år 2021 framgår att det i glesbygdslänen i Sverige som mest görs 40 resor per person. Medan det görs betydligt fler i storstadsregionerna, så som Skåne med i snitt 71 resor per person och år och i Stockholm där flest resor görs, sker 230 resor per person och år (det sista stycket uppdateras inte automatiskt).
 
 Marknadsandelen för kollektivtrafik beräknas som andelen resor med kollektivtrafik (linjelagd buss, spårvagn, tunnelbana, pendeltåg, tåg och båt) och taxi av det totala antalet resor, dvs kollektivtrafik, taxi, bil (förare och passagerare) samt moped/MC. Här bryts uppgången i en förmodad pandemieffekt efter ett antal år av ökande marknadsandel för kollektivtrafiken.
 
@@ -533,16 +533,16 @@ resande2alt
 
 ## Laddinfrastruktur för fordon
 
-Fråga strategerna och Henrik om hur vi kan skapa denna indikator.
+Anna frågar strategerna och Henrik om hur vi kan skapa denna indikator. 
 
 
 ## Skattad självförsörjningsgrad av energi och livsmedel
 
-Klimatförändringarna medför lokalt förändrade mönster för nederbörd, torka, vind, insekts- och svampangrepp på grödor och skog, höga temperaturer, med mera. Här spelar god samhällsplanering på regional och kommunal nivå en viktig roll. Ett sätt att förbättra beredskapen i Dalarna är att ha en tillräckligt omfattande lokal och hållbar livsmedelsproduktion. En ökad självförsörjningsgrad är en trygghet på flera sätt och gynnar även miljöns motståndskraft genom en ökad biologisk mångfald.
+Klimatförändringarna medför lokalt förändrade mönster för nederbörd, torka och vind men även insekts- och svampangrepp på grödor och skog, höga temperaturer, med mera. Här spelar god samhällsplanering på regional och kommunal nivå en viktig roll. Ett sätt att förbättra beredskapen i Dalarna är att ha en tillräckligt omfattande lokal och hållbar livsmedelsproduktion. En ökad självförsörjningsgrad är en trygghet på flera sätt och gynnar även miljöns motståndskraft genom en ökad biologisk mångfald.
 
 Det första diagrammet visar andelen livsmedel inom fem kategorier (fårkött, griskött, matpotatis, mjölkprodukter samt nötkött) som producerats i Dalarna i relation till den mängd livsmedel i varje kategori som konsumerats i länet. Med undantag för matpotatis år 2016 och år 2019, som vi i princip är självförsörjande på, konsumerar befolkningen i Dalarna idag betydligt mer inom samtliga kategorier jämfört med den mängd som produceras i länet.
 
-Det andra diagrammet visar ett teroretiskt mått på självförsörjning av energi i Dalarna där den totala elproduktionen i länet visas som andel av den total elförbrukningen. Diagrammet visar en positiv trend för självförsörjningsgraden av energi, vilket beror på att förbrukningen av el har minskat i länet sedan 2016, samtidigt som produktionen av el har ökat under samma tidsperiod.
+Det andra diagrammet visar ett teroretiskt mått på självförsörjning av energi i Dalarna där den totala elproduktionen i länet visas som andel av den total elförbrukningen. Diagrammet visar en positiv trend för självförsörjningsgraden av energi, vilket beror på att förbrukningen av el har minskat i länet sedan 2016 samtidigt som produktionen av el har ökat under samma tidsperiod.
 
 ```{r, include = FALSE}
 #livsmedel1  <- ggplot(livsmedel, aes(fill=as.character(År), y=Andel, x=Produkt))+
@@ -681,9 +681,11 @@ forsk3 <- SkapaStapelDiagram(skickad_df = forskning_totalt %>%
                     manual_color = diagramfarger("rus_tva_fokus"))
 ```
 
-För att lösa dagens och morgondagens samhällsutmaningar och för att skapa utveckling och konkurrenskraft krävs ökad innovationskraft. Individers, företags, organisationers och offentlig sektors innovationsförmåga påverkar platsers utvecklingskraft och möjligheter till omställning. Denna indikator mäter investeringar i forskning och utveckling i länet. Det bör dock påpekas att innovation och forskning är ett synnerligen svårt område att mäta och att denna indikator främst ger en övergripande bild av vilka resurser som investeras i länet.
+För att lösa dagens och morgondagens samhällsutmaningar och för att skapa utveckling och konkurrenskraft krävs ökad innovationskraft. Individers, företags, organisationers och offentlig sektors innovationsförmåga påverkar platsers utvecklingskraft och möjligheter till omställning. Denna indikator mäter investeringar i forskning och utveckling i länet. Det bör dock påpekas att resurser som använts till innovation och forskning är synnerligen svåra att mäta, så denna indikators värden bör främst tolkas utifrån de förändringar som skett, och inte som ett exakt värde.
 
-Under tidsperioden från 2011 till 2019 ses en viss ökning i investeringar mätt i kronor per invånare i länet, från drygt `r format(round(forskning_totalt %>% filter(year == min(.$year),municipality == "Dalarnas län") %>% .$utgiftertotalt,0),big.mark = " ")` kronor till drygt `r format(round(forskning_totalt %>% filter(year == 2019,municipality == "Dalarnas län") %>% .$utgiftertotalt,0),big.mark = " ")` kronor per invånare. Efter 2019 skedde dock en stor förändring, och investeringarna minskade avsevärt till `r format(round(forskning_totalt %>% filter(year == max(.$year),municipality == "Dalarnas län") %>% .$utgiftertotalt,0),big.mark = " ")` kronor per invånare år `r max(forskning_totalt$year)`. Den stor andelen investeringar sker i företagen, medan den offentliga sektorn och universitet- och högskolesektorn står för en mindre andel. Minskningen i investeringar mellan 2019 och 2021 förklaras av att företagens och offentlig sektorns investeringar minskade, inom högskolesektorn ökade istället investeringarna under samma period. En trolig orsak till detta är Coronapandemin som fick betydande effekter på många delar av samhället. I ett nationellt perspektiv ser vi att Dalarna hamnar på den nedre halvan. `r forskning_totalt %>% filter(year == max(.$year)) %>% filter(utgiftertotalt == max(utgiftertotalt)) %>% .$municipality`, som hade den högsta noteringen för investeringar i forskning och utveckling år `r max(forskning_totalt$year)`, hade ett drygt `r plyr::round_any(forskning_totalt %>% filter(year == max(.$year)) %>% filter(utgiftertotalt == max(utgiftertotalt)) %>% .$utgiftertotalt/forskning_totalt %>% filter(year == max(.$year)) %>% filter(municipality == "Dalarnas län") %>% .$utgiftertotalt,1)` gånger högre värde per invånare jämfört med Dalarna.
+Under tidsperioden från 2011 till 2019 ses en viss ökning i investeringar mätt i kronor per invånare i länet, från drygt `r format(round(forskning_totalt %>% filter(year == min(.$year),municipality == "Dalarnas län") %>% .$utgiftertotalt,0),big.mark = " ")` kronor till drygt `r format(round(forskning_totalt %>% filter(year == 2019,municipality == "Dalarnas län") %>% .$utgiftertotalt,0),big.mark = " ")` kronor per invånare. Efter 2019 skedde dock en stor förändring, och investeringarna minskade avsevärt till `r format(round(forskning_totalt %>% filter(year == max(.$year),municipality == "Dalarnas län") %>% .$utgiftertotalt,0),big.mark = " ")` kronor per invånare år `r max(forskning_totalt$year)`. Den stor andelen investeringar sker i företagen, medan den offentliga sektorn och universitets- och högskolesektorn står för en mindre andel. Minskningen i investeringar mellan 2019 och 2021 förklaras av att företagens och offentlig sektors investeringar minskade, inom högskolesektorn ökade istället investeringarna under samma period. En trolig orsak till detta är Coronapandemin som fick betydande effekter på många delar av samhället. 
+
+I ett nationellt perspektiv ser vi att Dalarna hamnar på den nedre halvan. `r forskning_totalt %>% filter(year == max(.$year)) %>% filter(utgiftertotalt == max(utgiftertotalt)) %>% .$municipality`, som hade den högsta noteringen för investeringar i forskning och utveckling år `r max(forskning_totalt$year)`, hade ett drygt `r plyr::round_any(forskning_totalt %>% filter(year == max(.$year)) %>% filter(utgiftertotalt == max(utgiftertotalt)) %>% .$utgiftertotalt/forskning_totalt %>% filter(year == max(.$year)) %>% filter(municipality == "Dalarnas län") %>% .$utgiftertotalt,1)` gånger högre värde per invånare jämfört med Dalarna.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 forsk1
@@ -701,8 +703,12 @@ forsk3
 
 ## Branschbredd
 
+Jon hämtar från sårbarhetsanalysen.
+
 
 ## Branschstruktur
+
+Jon hämtar från sårbarhetsanalysen.
 
 
 
@@ -783,9 +789,9 @@ inter2 <- SkapaStapelDiagram(skickad_df = intindex2 %>%
 ```
 
 EJ UPPDATERAT. VÄNTA MED ATT HÄMTA HEM DATA (EJ API)
-Internationellt kunskapsutbyte och handel är viktiga faktorer för att möta samhällsutmaningar och för att ta vara på möjligheter till import, investeringar och export av varor och tjänster. I vårt län finns världsledande företag i olika storlek som deltar i globala värdekedjor, varav en del av de mindre företagen i värdekedjorna därmed spelar på den globala marknaden trots att de bara eller främst levererar till sin regionala storkund.
+Internationellt kunskapsutbyte och handel är viktiga faktorer för att möta samhällsutmaningar och för att ta vara på möjligheter till import, investeringar och export av varor och tjänster. I vårt län finns världsledande företag varierande storlekar som deltar i globala värdekedjor, varav en del av de mindre företagen i värdekedjorna därmed spelar på den globala marknaden trots att de bara eller främst levererar till sin regionala storkund.
 
-En indikator som används för att följa utvecklingen inom detta område är internationalisering. Internationalisering är ett komplext koncept och kan bestå av flera olika delar. I denna uppföljning används Tillväxtverkets regionala internationaliseringsindex för att illustrera internationalisering, det består av ett antal variabler om handel (export), arbetsmarknad (internationella företags betydelse för regionen) och turism (utländska gästnätter), indikator. Indexet gör det möjligt att följa hur internationaliseringen utvecklas över tid i olika regioner (län).
+En indikator som används för att följa utvecklingen inom detta område är internationalisering. Internationalisering är ett komplext koncept och kan bestå av flera olika delar. I denna uppföljning används Tillväxtverkets regionala internationaliseringsindex för att illustrera internationalisering. Det består av ett antal variabler som innefattar handel (export), arbetsmarknad (internationella företags betydelse för regionen) och turism (utländska gästnätter). Indexet gör det möjligt att följa hur internationaliseringen utvecklas över tid i olika regioner (län).
 
 För 2020 ligger Dalarna i mittenskiktet bland de svenska regionerna. Den region som presterar bäst är Västra Götalandsregionen med ett index-värde på 78,6 medan värdet för Dalarna är 49,1. Dalarna presterar bättre än de andra regionerna i Norra Mellansverige (Gävleborg 25,8 och Värmland 47,2). Resultatet för Dalarna har förbättras sedan 2016 tack vare en ökning av antalet utländska gästnätter. År 2020 var länet på en tredje plats i en nationell jämförelse av utländska gästnätter per invånare, bakom Norrbotten och Jämtland.
 
@@ -798,9 +804,9 @@ inter1
 inter2
 ```
 
-## Representation i chefspositioner
+## Kvinnor och män på chefspositioner
 
-Kvinnors och mäns jämställda medverkan och inflytande i näringslivet, på arbetsmarknaden och i innovationsarbete är och blir en alltmer kritisk tillväxtfaktor. Konkurrenskraften stärks när kompetenser från olika grupper oavsett ålder, kön eller bakgrund tas till vara. En viktig indikator inom detta område är representationen på arbetsplatserna, och speciellt i chefspositioner. År `r max(chefsrepresentation$år)` var det vanligare att män hade en chefsposition än kvinnor, i jämförelse med deras respektive representation bland de förvärvsarbetande. Oavsett kön är det också vanligare att inrikes födda har chefspositioner i jämförelse med utrikes födda.
+Kvinnors och mäns jämställda medverkan och inflytande i näringslivet, på arbetsmarknaden och i innovationsarbete är och blir en alltmer kritisk tillväxtfaktor. Konkurrenskraften stärks när kompetenser från olika grupper oavsett ålder, kön eller bakgrund tas till vara. En viktig indikator inom detta område är representationen på arbetsplatserna, och speciellt på chefspositioner. I Dalarna år `r max(chefsrepresentation$år)` var det vanligare att män hade en chefsposition än kvinnor med hänsyn tagen till deras respektive representation bland de förvärvsarbetande. Oavsett kön är det också vanligare att inrikes födda har chefspositioner i jämförelse med utrikes födda.
 
 ```{r, include = FALSE}
 
@@ -854,7 +860,7 @@ chef4 <- SkapaStapelDiagram(skickad_df = chefsrepresentation %>%
 chef4
 ```
 
-## Andel av transporter via olika trafikslag
+## Transporter via olika trafikslag
 
 Kan vi använda samma data som för marknadsandelar för kollektivtrafiken?
 
@@ -863,12 +869,12 @@ Kan vi använda samma data som för marknadsandelar för kollektivtrafiken?
 Finns data för detta nu?
 
 
-## Andel unga som inom fyra år fullföljer gymnasieutbildning
+## Unga som fullföljer gymnasiet
 
 BEHÖVER UPPDATERAS. NY KOD?
 Kunskap ger människor möjlighet att växa och påverka sin livssituation. Tillgång till bildning, kunskap och kompetens är avgörande för såväl utvecklingen av samhället, som god välfärd och tillväxt i näringslivet. När arbetsgivare inte hittar rätt kompetens hämmas den ekonomiska utvecklingen. Samtidigt försvagas den sociala hållbarheten när människor ställs utanför arbetsmarknaden. Befolkningens låga utbildningsnivåer är en utmaning i stora delar av Dalarna. Ambitionen i Dalastrategin är att fler ska klara en gymnasieexamen för att därmed få bättre förutsättningar att etablera sig på arbetsmarknaden.
 
-Denna indikator mäter andelen gymnasieelever i Dalarna som har fullföljt en utbildning inom fyra år efter att de påbörjat gymnasiet. Det finns ingen tydlig trend över tidsperioden 2011 till 2018 utan andelen fluktuerar över åren. Av eleverna som började läsa på gymnasiet i Dalarna år 2011 var det 72,6 procent som inom fyra år fullföljde sin utbildning med examen. Den lägsta andelen avklarade examen om 70 procent uppmättes för dem som påbörjade gymnasiet år 2017 (möjligen en pandemieffekt) samtidigt som den högsta andelen avklarade examen finns bland de elever som påbörjade gymnasiet år 2018, 74,3 procent av dem har tagit ut examen inom fyra år.
+Denna indikator mäter andelen gymnasieelever i Dalarna som har fullföljt en utbildning inom fyra år efter att de påbörjat gymnasiet. Det finns ingen tydlig trend över tidsperioden 2011 till 2018 utan andelen fluktuerar mellan åren. Av eleverna som började läsa på gymnasiet i Dalarna år 2011 var det 72,6 procent som inom fyra år fullföljde sin utbildning med examen. Den lägsta andelen avklarade examen om 70 procent uppmättes för dem som påbörjade gymnasiet år 2017 (möjligen en pandemieffekt) samtidigt som den högsta andelen avklarade examen finns bland de elever som påbörjade gymnasiet år 2018, 74,3 procent av dem har tagit ut examen inom fyra år.
 
 ```{r, include = FALSE}
 # gymnasie <- gymnasie %>% 
@@ -934,7 +940,7 @@ eftergym1 <- SkapaStapelDiagram(skickad_df = eftergym %>%
 eftergym1
 ```
 
-## Andel sysselsatta
+## Sysselsatta i arbetför ålder
 I Dalastrategin sätts ambitiösa mål, både om en ökad sysselsättningsgrad i länet i allmänhet och att skillnader som finns mellan olika gruppers sysselsättningsgrad ska minska. Detta mäts genom en indikator för andelen förvärvsarbetande (personer med inkomst från anställning eller näringsverksamhet) i arbetsför ålder i länet. År `r min(sysselsatt$year)` beräknades sysselsättningsgraden till `r round(sysselsatt %>% filter(gender == "T",year == min(year)) %>% .$value,1)` procent av arbetsför befolkning. Bland kvinnorna var `r round(sysselsatt %>% filter(gender == "K",year == min(year)) %>% .$value,1)` procent förvärvsarbetande, och av männen räknades `r round(sysselsatt %>% filter(gender == "M",year == min(year)) %>% .$value,1)` procent som förvärvsarbetande. Gapet mellan kvinnor och män var därmed knappt `r round(sysselsatt %>% filter(gender == "M",year == min(year)) %>% .$value - sysselsatt %>% filter(gender == "K",year == min(year)) %>% .$value,0)` procentenheter. Utvecklingen inom båda grupperna har sedan dess varit positiv. År `r max(sysselsatt$year)`  hade andelen förvärvsarbetande ökat till `r round(sysselsatt %>% filter(gender == "T",year == max(year)) %>% .$value,1)` procent, varav den ökat till `r round(sysselsatt %>% filter(gender == "K",year == max(year)) %>% .$value,1)` procent bland kvinnorna och till `r round(sysselsatt %>% filter(gender == "M",year == max(year)) %>% .$value,1)` procent bland männen. Gapet mellan grupperna har således krympt till drygt `r round(sysselsatt %>% filter(gender == "M",year == max(year)) %>% .$value - sysselsatt %>% filter(gender == "K",year == max(year)) %>% .$value,0)` procentenheter.
 
 ```{r, include = FALSE}
@@ -994,7 +1000,7 @@ arb1
 ```
 
 ## Etableringstid för nyanlända
-Invandring är en del av lösningen för att möta en ökad efterfrågan på arbetskraft och rätt kompetens. Dalarna har haft en relativt stor inflyttning av utomeuropeiskt födda under senare år. Många invandrade är i arbetsför ålder och blir därför ett viktigt tillskott till arbetskraften. Denna indikator är ett mått på i vilken takt och utsträckning som nyanlända etablerar sig på arbetsmarknaden i Dalarna. Med etablering menas att personen är förvärvsarbetande helt utan stöd från a-kassa eller arbetsmarknadsåtgärd, eller dylikt.
+Invandring är en del av lösningen för att möta en ökad efterfrågan på arbetskraft och rätt kompetens i Dalarna och Sverige. Dalarna har haft en relativt stor inflyttning av utomeuropeiskt födda under senare år. Många invandrade är i arbetsför ålder och blir därför ett viktigt tillskott till arbetskraften. Denna indikator är ett mått på i vilken takt och utsträckning som nyanlända etablerar sig på arbetsmarknaden i Dalarna. Med etablering menas att personen är förvärvsarbetande helt utan stöd från a-kassa eller arbetsmarknadsåtgärd, eller dylikt.
 
 Diagrammet visar tydligt hur andelen etablerade på arbetsmarknaden i arbetsför ålder ökar efter vistelsetid i landet. För det senaste året i period, `r max(etablering$år)`, hade drygt `r round(etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 0-1 år",år == max(år)) %>% .$Andel_forvarvsarbetande,0)` procent av invandrade med vistelsetid under ett år etablerat sig på arbetsmarknaden. Andelen etablerade på arbetsmarknaden ökar sedan alltmer efter vistelsetid och för samma år var det ca `r round(etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år", år == max(år)) %>% .$Andel_forvarvsarbetande,0)` procent i gruppen som vistats i Sverige i tio år eller mer som var etablerade på arbetsmarknaden.
 
@@ -1100,9 +1106,9 @@ etab4
 
 
 ## Matchningsgrad
-En förbättrad matchning mellan arbetsmarknadens behov och arbetskraftens kompetens bidrar till ett bättre nyttjande av samhällets resurser. Det handlar både om att de utbildningar som ges är efterfrågade på arbetsmarknaden och att arbetsgivare har kunskap att välja rätt kompetens. För att lyckas med detta krävs också en bättre samverkan mellan utbildningsanordnare, näringsliv, civilsamhälle och myndigheter samt en bättre dialog över kommun- och länsgränser.
+En förbättrad matchning mellan arbetsmarknadens behov och arbetskraftens kompetens bidrar till ett bättre nyttjande av samhällets resurser. Det handlar både om att de utbildningar som ges är efterfrågade på arbetsmarknaden och att arbetsgivare har kunskap att välja rätt kompetens. För att lyckas med detta krävs också en god samverkan mellan utbildningsanordnare, näringsliv, civilsamhälle och myndigheter samt en god dialog över kommun- och länsgränser.
 
-I diagrammet visas matchningsgraden i form av andelen anställda som arbetar i yrken som stämmer väl överens med deras utbildning. För att detta ska gälla ska det dels finnas en stark överensstämmelse mellan utbildningens och yrkets ämnesinriktning (t.ex. teknikutbildning – teknikyrke) och dels ska utbildningsnivån vara rätt i förhållande till vad yrket kräver. 
+I diagrammet visas matchningsgraden i form av andelen anställda som arbetar i yrken som stämmer väl överens med deras utbildning. För att detta ska gälla ska det dels finnas en stark överensstämmelse mellan utbildningens och yrkets ämnesinriktning (t.ex. teknikutbildning – teknikyrke) och dels ska utbildningsnivån vara rätt i förhållande till vad yrket kräver. Yrken som kräver legitimation har generellt den högsta matchningsgraden. 
 
 Matchningsgraden i Dalarna är något högre för kvinnor än för män, ett mönster som är återkommande över hela Sverige. För kvinnor låg matchningsgraden år `r max(matchning$år)` på  `r matchning %>% filter(kön == "kvinnor",år == max(år)) %>% .$matchningsgrad` procent. För män var motsvarande mått `r matchning %>% filter(kön == "män",år == max(år)) %>% .$matchningsgrad` procent. Den sammantagna matchningsgraden har sjunkit något under perioden 2015-`r max(matchning$år)` och låg det sista året för mätningen på `r matchning %>% filter(kön == "samtliga anställda",år == max(år)) %>% .$matchningsgrad` procent. Nivån på matchningsgraden är snarlik över hela Sverige.
 
@@ -1135,7 +1141,7 @@ matchning1
 ## Ginikoefficient
 I Dalastrategin lyfts ekonomiska klyftor som en framtidsutmaning för länet. För att redovisa ojämlikheten i inkomstfördelningen används gini-koefficienten. Ett högt värde på koefficienten visar på större inkomstskillnader och därmed större ojämlikhet. Här redovisas ginikoefficienten beräknad genom disponibel inkomst per "konsumtionsenhet". Med konsumtionsenhet menas att det i beräkningen av en individs tillgängliga ekonomiska resurser tas hänsyn till hur hushållet är sammansatt som individen bor i. Det betyder att beakta om personen är ensamboende eller sammanboende och om den har ansvar för minderåriga barn eller inte etc, faktorer som kan minska eller öka individens disponibla inkomst.
 
-För Dalarnas räkning har ginikoefficienten ökat något från 2011 till `r max(gini$year)`, vilket visar på en ökad ekonomisk ojämlikhet i länet, med en toppnotering 2019. Ginikoefficienten för länet ligger under koefficienten för riket, det vill säga i Dalarna lever befolkningen mindre ojämlikt, för samtliga år förutom 2019. 2019 avviker dock så skarpt från den generella trenden att det årets notering bör betraktas med försiktighet. Ökningen från 2011 och framåt är dock tydlig oavsett inverkan från år 2019. 
+För Dalarnas räkning har ginikoefficienten ökat något från 2011 till `r max(gini$year)`, vilket visar på en ökad ekonomisk ojämlikhet i länet, med en toppnotering 2019. Ginikoefficienten för länet ligger under koefficienten för riket för samtliga år förutom 2019, det vill säga i Dalarna lever befolkningen mindre ojämlikt. År 2019 avviker så skarpt från den generella trenden att det årets notering bör betraktas med försiktighet. Ökningen i ojämlikhet från 2011 och framåt är dock tydlig oavsett inverkan från år 2019. 
 
 ```{r, include = FALSE}
 
@@ -1194,7 +1200,7 @@ som känner sig delaktiga, desto mer utveckling kan
 ## Tillgång till service och tjänster
 Olika platser i Dalarna har olika utmaningar och möjligheter att möta de förändrade behoven, bland annat beroende på om det är platser med växande eller krympande befolkningsunderlag. En princip för genomförandet av Dalastrategin är att allt utvecklingsarbete ska vara platsbaserat med målsättningen att sammanhållningen ska stärkas och olika platsers förutsättningar och resurser ska tas till vara på ett bra sätt. För utvecklingskraft i hela länet är det viktigt att säkra tillgången till service, vård, fritidsaktiviteter och kultur i alla delar av länet. Människor behöver ha en god tillgänglighet till såväl statlig som regional och kommunal service. Tillgången till service påverkar människors levnadsvillkor och är viktig för platsens attraktivitet och för möjligheten att skapa arbetstillfällen på platsen.
 
-Den här indikatorn presenterar två olika mått på tillgång till service; tillgång till grundskola samt tillgång till dagligvarubutik. Tillgång till grundskola har minskat något under perioden från `r min(service %>% filter(!(is.na(value))) %>% .$year)` till `r max(service %>% filter(!(is.na(value))) %>% .$year)`. I början på perioden hade drygt `r round(service %>% filter(!(is.na(value)),kpi == "Invånare 0-16 år med tillgång till grundskola inom 2 km, andel (%)") %>% filter(year == min(year)) %>%  .$value,1)` procent av alla invånare mellan 0-16 år en grundskola inom 2 km från bostaden. `r max(service %>% filter(!(is.na(value))) %>% .$year)` hade motsvarande siffra minskat till `r round(service %>% filter(!(is.na(value)),kpi == "Invånare 0-16 år med tillgång till grundskola inom 2 km, andel (%)") %>% filter(year == max(year)) %>%  .$value,1)` procent. Samma trend ses även för tillgång till dagligvarubutiker. Under samma period har andelen med en dagligvarubutik inom 2 km från bostaden minskat från `r round(service %>% filter(!(is.na(value)),kpi == "Invånare med tillgång till dagligvarubutik inom 2 km, andel (%)") %>% filter(year == min(year)) %>%  .$value,1)` procent till `r round(service %>% filter(!(is.na(value)),kpi == "Invånare med tillgång till dagligvarubutik inom 2 km, andel (%)") %>% filter(year == max(year)) %>%  .$value,1)` procent.
+Den här indikatorn presenterar två olika mått på tillgång till service; tillgång till grundskola samt tillgång till dagligvarubutik. Resultatet visar att tillgång till grundskola har minskat något under perioden från `r min(service %>% filter(!(is.na(value))) %>% .$year)` till `r max(service %>% filter(!(is.na(value))) %>% .$year)`. I början på perioden hade drygt `r round(service %>% filter(!(is.na(value)),kpi == "Invånare 0-16 år med tillgång till grundskola inom 2 km, andel (%)") %>% filter(year == min(year)) %>%  .$value,1)` procent av alla invånare mellan 0-16 år en grundskola inom 2 km från bostaden. `r max(service %>% filter(!(is.na(value))) %>% .$year)` hade motsvarande siffra minskat till `r round(service %>% filter(!(is.na(value)),kpi == "Invånare 0-16 år med tillgång till grundskola inom 2 km, andel (%)") %>% filter(year == max(year)) %>%  .$value,1)` procent. Samma trend ses även för tillgång till dagligvarubutiker. Under samma period har andelen med en dagligvarubutik inom 2 km från bostaden minskat från `r round(service %>% filter(!(is.na(value)),kpi == "Invånare med tillgång till dagligvarubutik inom 2 km, andel (%)") %>% filter(year == min(year)) %>%  .$value,1)` procent till `r round(service %>% filter(!(is.na(value)),kpi == "Invånare med tillgång till dagligvarubutik inom 2 km, andel (%)") %>% filter(year == max(year)) %>%  .$value,1)` procent.
 
 ```{r, include = FALSE}
 
@@ -1227,10 +1233,10 @@ till1
 
 Har vi data på detta nu?
 
-## Andel av hushåll som har tillgång till bredband
+## Hushåll med tillgång till bredband
 Tillgång till en snabb och robust digital infrastruktur är en grundförutsättning för att bo och verka i hela Dalarna. Fysiska och digitala mötesplatser gör att vi når både varandra och omvärlden. En av utmaningarna för Dalarna är en ojämnt fördelad digital infrastruktur. Att stärka och tillgängliggöra den digitala infrastrukturen för hela Dalarnas befolkning, oavsett plats, är avgörande för en lyckad digitalisering av samhället.
 
-I Dalarna har andelen av befolkningen med tillgång, eller möjlighet att ansluta, till bredband om minst 1 Gbit/s ökat från ca `r round(bredband %>% filter(municipality == "Region Dalarna",year == min(year)) %>% .$value,0)` procent `r min(bredband$year)` till ca `r round(bredband %>% filter(municipality == "Region Dalarna",year == max(year)) %>% .$value,0)` procent `r max(bredband$year)`. Det kan jämföras med riksgenomsnittet som år `r max(bredband$year)` var `r round(bredband %>% filter(municipality == "Riket",year == max(year)) %>% .$value,0)` procent. 
+I Dalarna har andelen av befolkningen med tillgång till, eller möjlighet att ansluta till, bredband om minst 1 Gbit/s ökat från ca `r round(bredband %>% filter(municipality == "Region Dalarna",year == min(year)) %>% .$value,0)` procent `r min(bredband$year)` till ca `r round(bredband %>% filter(municipality == "Region Dalarna",year == max(year)) %>% .$value,0)` procent `r max(bredband$year)`. Det kan jämföras med riksgenomsnittet som år `r max(bredband$year)` var `r round(bredband %>% filter(municipality == "Riket",year == max(year)) %>% .$value,0)` procent. 
 
 ```{r, include = FALSE}
 bred1 <- SkapaStapelDiagram(skickad_df = bredband %>%
@@ -1256,7 +1262,7 @@ bred1 <- SkapaStapelDiagram(skickad_df = bredband %>%
 
 
 ## Boendetyper
-En indikator som är relaterad till samma område är vilka typer av boenden som finns inom länet. I Dalarna är småhus den dominerande boendeformen med ungefär `r format(plyr::round_any(boende %>% filter(boendeform == "småhus, äganderätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` hushåll `r max(boende$år)`, en ökning med `r format(plyr::round_any(boende %>% filter(boendeform == "småhus, äganderätt",år == max(år)) %>% .$Antal.hushåll-boende %>% filter(boendeform == "småhus, äganderätt",år == min(år)) %>% .$Antal.hushåll,100),big.mark=" ")` småhus sedan år `r min(boende$år)`. Vidare fanns det år `r max(boende$år)` ca `r format(plyr::round_any(boende %>% filter(boendeform == "flerbostadshus, hyresrätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` hyresrätter i flerbostadshus, ca `r format(plyr::round_any(boende %>% filter(boendeform == "flerbostadshus, bostadsrätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` bostadsrätter i flerbostadshus, samt `r format(plyr::round_any(boende %>% filter(boendeform == "småhus, bostadsrätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` bostadsrätter i formen småhus.
+Diversifierade boendeformer bidrar till flexibilitet på bostadsmarknaden och möjligheten till en god livskvalitet under alla skeden i livet. I Dalarna är småhus den dominerande boendeformen med ungefär `r format(plyr::round_any(boende %>% filter(boendeform == "småhus, äganderätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` hushåll `r max(boende$år)`, en ökning med `r format(plyr::round_any(boende %>% filter(boendeform == "småhus, äganderätt",år == max(år)) %>% .$Antal.hushåll-boende %>% filter(boendeform == "småhus, äganderätt",år == min(år)) %>% .$Antal.hushåll,100),big.mark=" ")` småhus sedan år `r min(boende$år)`. Vidare fanns det år `r max(boende$år)` ca `r format(plyr::round_any(boende %>% filter(boendeform == "flerbostadshus, hyresrätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` hyresrätter i flerbostadshus, ca `r format(plyr::round_any(boende %>% filter(boendeform == "flerbostadshus, bostadsrätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` bostadsrätter i flerbostadshus, samt `r format(plyr::round_any(boende %>% filter(boendeform == "småhus, bostadsrätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` bostadsrätter i formen småhus.
 
 ```{r, include = FALSE}
 
@@ -1284,7 +1290,7 @@ boende1
 ```
 
 ## Valdeltagande
-I Dalastrategin belyses att en levande demokrati grundar sig i människors tillit till att de demokratiskt valda representativa institutionerna fungerar, såsom kommuner, region och myndigheter. Valdeltagande är därmed en viktig indikator på invånarnas vilja och tro på de demokratiska institutionerna i länet.
+En levande demokrati grundar sig i människors tillit till att de demokratiskt valda representativa institutionerna fungerar, såsom kommuner, region och myndigheter. Valdeltagande är därmed en viktig indikator på invånarnas vilja och tro på de demokratiska institutionerna i länet.
 
 I Dalarna har valdeltagandet i samtliga val ökat mellan valen 1998 och 2018. Exempelvis i kommunvalet valde år `r min(valdeltagande$year)` drygt `r round(valdeltagande %>% filter(kpi == "Valdeltagande_kommun",year == min(year),gender == "T") %>% .$value,1)` procent av invånarna i Dalarna att lägga en röst, medan andelen som röstade år 2018 ökat till drygt `r round(valdeltagande %>% filter(kpi == "Valdeltagande_kommun",year == 2018,gender == "T") %>% .$value,1)` procent, en ökning med nästan 7 procentenheter. 
 
@@ -1358,11 +1364,11 @@ val3
 
 
 ## Deltagande i det civila samhället
-Att stärka sammanhållningen och med det den sociala hållbarheten, är viktigt för Dalarnas utveckling. Ett socialt hållbart samhälle tål påfrestningar, är anpassningsbart och resilient. Det är människorna i Dalarna som är regionens främsta resurs – som individer och del av familjer, andra gemenskaper, organisationer och företag. Människors känsla av sammanhang och delaktighet är centrala delar i det vanligtvis benämns socialt kapital. 
+Att stärka sammanhållningen och med det den sociala hållbarheten, är viktigt för Dalarnas utveckling. Ett socialt hållbart samhälle tål påfrestningar, är anpassningsbart och resilient. Det är människorna i Dalarna som är regionens främsta resurs – som individer och del av familjer, andra gemenskaper, organisationer och företag. Människors känsla av sammanhang och delaktighet är centrala delar i ett begrepp som vanligtvis benämns socialt kapital, och som är en byggsten i att skapa tillit.
 
 Denna indikator visar andelen (%) invånare 16-84 år som angett att de deltagit i högst en social aktivitet de senaste 12 månaderna, beräknat genom ett medelvärde över en fyraårsperiod. Med social aktivitet menas en mängd olika former av sätt att interagera med människor som inte tillhör den närmsta familjen. Exempel är studiecirkeldeltagande, besökt scenkonstföreställning, besökt fackligt eller religiöst möte, deltagit på privat fest eller tagit aktiv del av sociala medier. Att under 12 månader inte ha deltagit i mer än en social sammankomst tolkas som att personen har ett lågt socialt deltagande.
 
-Perioden från 2007 till 2022 i Dalarna uppvisar ett antal olika trender och mönster. Från början på perioden fram till 2016 ökade andelen invånare mellan 16-84 år som uppgav att de deltagit i högst en aktivitet totalt sett, ökningen utgörs i praktiken enbart av att en större andel män uppger sig vara mindre socialt aktiva. Under perioden 2015 till 2020 minskar andelen socialt inaktiva män betydligt, från som högst ca 29 procent till som lägst 21 procent, under perioden 2015-2018. Även andelen kvinnor minskar, från som mest ca 24,5 procent till 19 procent under perioden 2015-2018. I samband med, och efter, pandemin verkar dock invånarna ha blivit allt mer isolerade. Det är en markant ökning upp till ca `r round(last(deltagande %>% filter(Sociala_relationer == "Lågt socialt deltagande",Kön == "Totalt") %>% .$Andel),0)` procent när åren 2021 och 2022 läggs till intervallen. Från att ungefär var femte invånare i Dalarna angett att de deltagit i max en aktivitet de senaste 12 månaderna till att var tredje invånare i Dalarna anger detsamma.
+Perioden från 2007 till 2022 i Dalarna uppvisar ett antal olika trender och mönster. I början på perioden fram till 2016 ökade andelen invånare mellan 16-84 år som uppgav att de deltagit i högst en aktivitet totalt sett, ökningen utgörs i praktiken enbart av att en större andel män uppger sig vara mindre socialt aktiva. Under perioden 2015 till 2020 minskar andelen socialt inaktiva män betydligt, från som högst ca 29 procent till som lägst 21 procent, under perioden 2015-2018. Även andelen kvinnor minskar, från som mest ca 24,5 procent till 19 procent under perioden 2015-2018. I samband med, och efter, pandemin verkar dock invånarna ha blivit allt mer isolerade. Det är en markant ökning upp till ca `r round(last(deltagande %>% filter(Sociala_relationer == "Lågt socialt deltagande",Kön == "Totalt") %>% .$Andel),0)` procent när åren 2021 och 2022 läggs till intervallen. Från att ungefär var femte invånare i Dalarna angett att de deltagit i max en aktivitet de senaste 12 månaderna till att var tredje invånare i Dalarna anger detsamma.
 
 ```{r, include = FALSE}
 
@@ -1393,7 +1399,7 @@ del1
 ```
 
 
-## Andel unga som upplever att de är delaktiga i sin kommun
+## Ungas upplevelse av delaktighet i sin kommun
 
 Att skapa en hållbar utveckling kräver förståelse för och kunskap om framtida generationers utmaningar och behov. FN:s konvention om barns rättigheter, eller barnkonventionen som den ofta kallas, är svensk lag och syftar till att ge barn oavsett bakgrund rätt att behandlas med respekt och att få komma till tals. Barn och unga i Dalarna måste ges möjlighet att ta en aktiv del i samhällsutvecklingen för att målen i Dalastrategin ska kunna uppnås.
 
@@ -1425,7 +1431,7 @@ unga1
 
 ## Tillit till andra människor
 
-Det är människorna i Dalarna som skapar regionen – alla enskilda individer boende i länet, som också är del av familjer och av andra gemenskaper, organisationer och företag. Människors känsla av sammanhang och delaktighet är centralt för att skapa ett väl fungerande samhälle. För att skapa sammanhang och delaktighet behövs tillit mellan dem som ingår i gemenskapen, och det behövs sätt att hantera osäkerhet som kan uppstå när nya medlemmar inkluderas i en gemenskap. Socialt kapital beskriver det kitt som uppstår när en grupp människor enas kring gemensamma värden, normer och värderingar, det får människor att ha tillit till sina medmänniskor och till det gemensamma. Att den representativa demokratins institutioner, såsom kommuner, region och myndigheter, är väl fungerande och att invånarna har förtroende för dem är centralt för en levande demokrati. En stark tillit till andra underlättar samarbetet mellan människor och viljan och förmågan att bidra till samhällsutvecklingen med nya idéer. Ett samhälle med ett starkt socialt kapital är bättre rustat för att möta förändringar och eventuella kriser.
+Det är människorna i Dalarna som skapar regionen – alla enskilda individer boende i länet, som också är del av familjer och av andra gemenskaper, organisationer och företag. Människors känsla av sammanhang och delaktighet är centralt för att skapa ett väl fungerande samhälle. För att skapa sammanhang och delaktighet behövs tillit mellan dem som ingår i gemenskapen, och det behövs sätt att hantera osäkerhet som kan uppstå när nya medlemmar inkluderas i en gemenskap. Socialt kapital beskriver det kitt som uppstår när en grupp människor enas kring gemensamma värden, normer och värderingar, det får människor att ha tillit till sina medmänniskor och till det gemensamma. Att den representativa demokratins institutioner, såsom kommuner, region och myndigheter, är väl fungerande och att invånarna har förtroende för dem är centralt för en levande demokrati. En stark tillit till andra underlättar samarbetet mellan människor och viljan och förmågan att bidra med nya idéer till samhällsutvecklingen. Ett samhälle med ett starkt socialt kapital är bättre rustat för att möta förändringar och eventuella kriser.
 
 Indikatorn för tillit mäter andel (%) invånare 16-84 år som har uppgett att de anser sig sakna tillit till andra. Värdet är beräknat som medelvärdet över en fyraårsperiod. Mellan tidsperioden 2004-2007 och 2019-2022 visar det sig att andelen som anser sig sakna tillit är ungefär densamma, ca 28 procent. Under intervallet har däremot andelen under perioden 2007 till 2015 varit lägre mellan 23 och 25 procent. Andelen kvinnor som saknar tillit till andra har varit högre än andelen män som saknar tillit till andra fram till ungefär år 2015. Sedan år 2015 är mönstret inte längre entydigt, och det senaste året 2022 uppgav en större andel män, än kvinnor, att de saknade tillit till andra.
 
@@ -1460,11 +1466,11 @@ till1
 
 ## Digitalt deltagande
 
-Har vi data för detta?
+Har vi data för detta nu?
 
 
 ## Trångboddhet
-Goda livsmiljöer som upplevs som trygga och inkluderande är en förutsättning för att människor ska må bra. Olika platser i Dalarna har olika utmaningar och möjligheter att möta dessa behov, bland annat beroende på om det är platser med växande eller krympande befolkningsunderlag. Indikatorn trångboddhet relaterar bland annat till prioriteringen i Dalastrategin om diversifierade boendeformer som i sin tur ska motverka segregation och polarisering.
+Goda livsmiljöer som upplevs trygga och inkluderande är en förutsättning för att människor ska må bra. Olika platser i Dalarna har olika utmaningar och möjligheter att möta dessa behov, bland annat beroende på om det är platser med växande eller krympande befolkningsunderlag. Indikatorn trångboddhet relaterar bland annat till prioriteringen i Dalastrategin om diversifierade boendeformer som i sin tur ska motverka segregation och polarisering.
 
 Antalet trångbodda i Dalarna har ökat under perioden från `r min(trang$år)` till `r max(trang$år)`. I början på perioden räknades cirka `r format(plyr::round_any(trang %>% filter(år == min(år)) %>% .$Samtliga.i.populationen,100),big.mark = " ")` individer i Dalarna som trångbodda enligt norm 2. År `r max(trang$år)` senare har denna siffra ökat till`r format(plyr::round_any(trang %>% filter(år == max(år)) %>% .$Samtliga.i.populationen,100),big.mark = " ")` personer. Norm 2 innebär att de boende räknas som trångbodda om de bor fler personer än två per rum i alla rum som inte räknas som kök eller vardagsrum.
 
@@ -1490,12 +1496,11 @@ bodd1 <- SkapaStapelDiagram(skickad_df = trang  %>%
 bodd1
 ```
 
-## Andel barn och unga som lever i hushåll med låg ekonomisk standard
-TIDIGARE VARIABEL FÖR UTSATTA HUSHÅLL HAR UTGÅTT OCH ERSATTS MED LÅG EKONOMISK STANDARD. JAG BYTER TILL DEN. Text behöver sannolikt uppdateras
+## Barn och unga som lever i hushåll med låg ekonomisk standard
 
 Ekonomiska klyftor mellan olika grupper i samhället är en utmaning för både Sverige och Dalarna. Om de socioekonomiska klyftorna blir alltför stora riskerar de att motverka sammanhållning, tillit och trygghet. Det riskerar i sin tur att försvaga demokratin, exempelvis genom systematiska skillnader i valdeltagande, faktiskt eller upplevt inflytande samt delaktighet och engagemang. 
 
-Andel barn som lever i ekonomiskt utsatta hushåll är ett mått på levnadsstandard som speglar möjligheterna för en av de mest utsatta grupperna i samhället. Med ekonomiskt utsatta avses hushåll med låg inkomst eller ekonomiskt bistånd (tidigare kallat socialbidrag). Med låg inkomst avses lägsta utgiftsnivå baserad på den socialbidragsnorm, som fastställdes på 1980-talet (med inflationsuppräkningar) och en norm för boendeutgifter. Om inkomsterna understiger dessa normer definieras detta som låg inkomst.
+Med låg ekonomisk standard menas de hushåll som har en årsinkomst under 60 procent av medianvärdet för hushållens årliga inkomster i Sverige. Andel barn som lever i hushåll med låg ekonomisk standard blir därför ett mått på barns ekonomiska utsatthet i samhället. 
 
 I diagrammet nedan kan vi notera att andelen unga (0-19 år) som lever i hushåll med låg ekonomisk standard i Dalarnas län har ökat över mätperioden, vilket är negativt, från `r utsatt %>% filter(municipality_id == 20, year == min(year)) %>% .$value` procent år `r min(utsatt$year)` till drygt `r utsatt %>% filter(municipality_id == 20, year == max(year)) %>% .$value` procent `r max(utsatt$year)`. I ett nationellt perspektiv ser vi att endast fyra andra län har en högre andel unga som lever i hushåll med låg ekonomisk standard än vad Dalarna har.
 
