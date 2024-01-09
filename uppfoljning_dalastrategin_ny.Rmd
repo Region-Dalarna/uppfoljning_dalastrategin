@@ -134,10 +134,10 @@ En princip för genomförandet av Dalastrategin är ett kunskapsbaserat arbetss�
 
 
 ```{r echo = FALSE, results='asis'}
-customGreen0 = "#409D53"
-customGreen = "#409D53"
-customRed = "#FA5346"
-customYellow="#facf36"
+customGreen0 = "#93CEC1"
+customGreen = "#93CEC1"
+customRed = "#f8aab6"
+customYellow="#ffec9f"
 
 
 indikatorer[is.na(indikatorer)] <- ""
@@ -707,16 +707,30 @@ forsk3
 
 ## Branschbredd
 
-Jon hämtar från sårbarhetsanalysen.
+Ett annat sätt att mäta beroende av enskilda branscher är genom den så kallade branschbredden, ett mått som jämför antalet branscher som finns representerade i exempelvis en kommun med det totala antalet branscher i Sverige. I Dalarna som helhet fanns företag inom ca `r round(branschbredd %>% filter(municipality =="Dalarnas län",year == max(year)) %>% .$Branschbredd,0)` procent av alla Sveriges branscher år `r max(branschbredd$year)`. Bland Dalarnas kommuner hade de med högst befolkning, Falun och Borlänge, också störst branschbredd, med drygt `r round(branschbredd %>% filter(municipality =="Falun",year == max(year)) %>% .$Branschbredd,0)` respektive `r round(branschbredd %>% filter(municipality =="Borlänge",year == max(year)) %>% .$Branschbredd,0)` procent av branscherna representerade `r max(branschbredd$year)`. Lägst branschbredd hade `r branschbredd %>% filter(year == max(year)) %>% filter(Branschbredd == min(Branschbredd)) %>% .$municipality`, med ca `r round(branschbredd %>% filter(year == max(year)) %>% filter(Branschbredd == min(Branschbredd)) %>% .$Branschbredd,0)` procent av branscherna representerade år 2021. 
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_branschbredd$branschbredd
+```
 
 
 ## Branschstruktur
 
-Jon hämtar från sårbarhetsanalysen.
+Traditionellt anses Dalarna vara ett så kallat tillverkande län, med många företag inom tillverkning och utvinning. Denna bild bekräftas delvis av figuren nedan, som visar hur stor andel av de förvärvsarbetande som arbetar i olika branscher i Dalarna och Sverige. I Dalarna arbetar drygt `r round(andel_forvarvsarbetande_bransch %>% filter(region == "Dalarna",bransch == "Tillverkning och utvinning") %>% .$andel,0)` procent av de sysselsatta inom tillverkning och utvinning, att jämföra med strax under `r round(andel_forvarvsarbetande_bransch %>% filter(region == "Sverige",bransch == "Tillverkning och utvinning") %>% .$andel,0)` procent i Sverige som helhet. Mer än var femte förvärvsarbetande i Dalarna arbetar dock inom vård och omsorg, vilket gör branschen till Dalarnas viktigaste vad gäller sysselsättning. Som jämförelse arbetar bara ungefär `r round(andel_forvarvsarbetande_bransch %>% filter(region == "Sverige",bransch == "Vård och omsorg") %>% .$andel,0)` procent av de förvärvsarbetande i Sverige inom vård och omsorg.
 
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_andel_forv$andel_per_bransch
+```
 
 
 ## Nyföretagande
+
+När det gäller nystartade företag har `r Nystartade %>% filter(substr(year,1,1) != "m") %>% filter(year == max(year)) %>% filter(nystartade_ftg == max(nystartade_ftg)) %>% .$municipality` kommun flest, med ungefär `r round(Nystartade %>% filter(substr(year,1,1) != "m") %>% filter(year == max(year)) %>% filter(nystartade_ftg == max(nystartade_ftg)) %>% .$nystartade_ftg,0)` nystartade företag per 1000 invånare `r max(Nystartade %>% filter(substr(year,1,1) != "m") %>% .$year)`. Även Malung-Sälen och Falun hade fler nystartade företag (per 1000 invånare) än Sverige `r max(Nystartade %>% filter(substr(year,1,1) != "m") %>% .$year)`. Glädjande är att antalet nystartade företag har ökat i en majoritet av Dalarnas kommuner om år `r max(Nystartade %>% filter(substr(year,1,1) != "m") %>% .$year)` jämförs med medelvärdet 2015-2020.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_nyst_konk$nystartade
+```
+
 
 ```{r, include = FALSE}
 
