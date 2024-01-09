@@ -12,6 +12,10 @@ output:
     css: "styles_hero.css"
     number_sections: true
 ---
+<br>
+<center>
+![](Bilder/dalaheader.png)
+</center>
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
