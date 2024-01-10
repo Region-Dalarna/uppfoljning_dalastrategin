@@ -2,7 +2,7 @@
 hamta_data_betesmark = function(region = "0020",
                                 alla_regioner = FALSE,
                                 ta_med_riket = FALSE,
-                                cont_code = c("N00750"),
+                                cont_code = c("N00750","N00751"),
                                 outputmapp = "G:/skript/projekt/data/uppfoljning_dalastrategin/Data/",
                                 filnamn = "betesmark.csv",
                                 senaste_ar = FALSE, # om man enbart vill ha senaste år
@@ -53,7 +53,13 @@ hamta_data_betesmark = function(region = "0020",
   betesmark <- betesmark %>% 
     select(-c(gender,count,municipality_type)) %>%
       mutate(kpi = case_when(
-        kpi == "N00750" ~ "Total_betesmark"))
+        kpi == "N00750" ~ "Total betesmark",
+        kpi == "N00751" ~ "Slåtteräng"))
+  
+  # Delar upp total betesmark i övrig betesmark och slåtteräng
+  betesmark <- pivot_wider(betesmark, names_from=kpi, values_from=value) %>% 
+    mutate("Övrig betesmark" = `Total betesmark`-`Slåtteräng`)%>% 
+      pivot_longer(cols=4:6,names_to = "kpi",values_to = "value")
   
   # Sparar till Excel om användaren vill det
   if (spara_data == TRUE) write.csv(betesmark, paste0(outputmapp,filnamn), fileEncoding="UTF-8", row.names = FALSE)
