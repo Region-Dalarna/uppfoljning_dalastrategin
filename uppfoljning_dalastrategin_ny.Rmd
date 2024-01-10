@@ -1381,7 +1381,6 @@ val2
 val3
 ```
 
-
 ## Deltagande i det civila samhället
 Att stärka sammanhållningen och med det den sociala hållbarheten, är viktigt för Dalarnas utveckling. Ett socialt hållbart samhälle tål påfrestningar, är anpassningsbart och resilient. Det är människorna i Dalarna som är regionens främsta resurs – som individer och del av familjer, andra gemenskaper, organisationer och företag. Människors känsla av sammanhang och delaktighet är centrala delar i ett begrepp som vanligtvis benämns socialt kapital, och som är en byggsten i att skapa tillit.
 
@@ -1416,7 +1415,6 @@ del1 <- SkapaStapelDiagram(skickad_df = deltagande %>%
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 del1
 ```
-
 
 ## Ungas upplevelse av delaktighet i sin kommun
 
