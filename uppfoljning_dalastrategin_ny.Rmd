@@ -100,6 +100,8 @@ utsatt <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/utsatt
 
 deltagande <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/deltagande_ny.csv", encoding="UTF-8")
 
+vard <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/vard.csv", encoding="UTF-8")
+
 service <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/service.csv", encoding="UTF-8")
 
 # Nedan har jag lagt till encoding="latin1" på alla csv (encoding saknades tidigare) Jon, 230313
@@ -230,7 +232,7 @@ Biologisk mångfald och väl fungerande ekosystem är en förutsättning för al
 
 Betesmark tillsammans med åkermark utgör jordbruksmark. Åkermarken kan brukas för djurfoder och livsmedel, medan betesmarken och betande djur i hög grad bidrar till att upprätthålla artrikedomen. En delmängd av betesmarken är slåtterängar, och dessa har särskilt höga biologiska värden.
 
-I diagrammet nedan redovisas hur arealen betesmark i Dalarnas län har utvecklats mellan `r as.character(min(betesmark$year))` och `r as.character(max(betesmark$year))`. Arealen har under denna period minskat från `r format(betesmark %>% filter(municipality_id == 20,year == min(year),kpi == "Total betesmark") %>% .$value,big.mark=" ")` till `r format(betesmark %>% filter(municipality_id == 20,year == max(year),kpi == "Total betesmark") %>% .$value,big.mark=" ")` hektar. Minskningen motsvarar ungefär samma areal som den formellt skyddade skogsmarken har ökat med. Den negativa trenden som ses för Dalarna går i motsatt riktning mot den nationella trenden. I riket har arealen betesmark istället ökat något. Slåtteräng är en delmängd av betesmarken som har särskilt höga biologiska värden och därmed särskilt stor betydelse för biologisk mångfald. I Dalarna är andelen slåtteräng ökat från `r round((betesmark %>% filter(municipality_id == 20,year == min(year),kpi == "Slåtteräng") %>% .$value/betesmark %>% filter(municipality_id == 20,year == min(year),kpi == "Total betesmark") %>% .$value)*100,1)` procent av betesmarken år `r as.character(min(betesmark$year))` till `r round((betesmark %>% filter(municipality_id == 20,year == max(year),kpi == "Slåtteräng") %>% .$value/betesmark %>% filter(municipality_id == 20,year == max(year),kpi == "Total betesmark") %>% .$value)*100,1)` procent av betesmarken år `r as.character(max(betesmark$year))`.
+I diagrammet nedan redovisas hur arealen betesmark i Dalarnas län har utvecklats mellan `r as.character(min(betesmark$year))` och `r as.character(max(betesmark$year))`. I diagrammet är den totala betesmarken uppdelad på slåtteräng och alla annan betesmark, benämnd övrig betesmark. Den totala arealen betesmarkd har under denna period minskat från `r format(betesmark %>% filter(municipality_id == 20,year == min(year),kpi == "Total betesmark") %>% .$value,big.mark=" ")` till `r format(betesmark %>% filter(municipality_id == 20,year == max(year),kpi == "Total betesmark") %>% .$value,big.mark=" ")` hektar. Minskningen motsvarar ungefär samma areal som den formellt skyddade skogsmarken har ökat med. Den negativa trenden som ses för Dalarna går i motsatt riktning mot den nationella trenden. I riket har arealen betesmark istället ökat något. Slåtteräng är en delmängd av betesmarken som har särskilt höga biologiska värden och därmed särskilt stor betydelse för biologisk mångfald. I Dalarna är andelen slåtteräng ökat från `r round((betesmark %>% filter(municipality_id == 20,year == min(year),kpi == "Slåtteräng") %>% .$value/betesmark %>% filter(municipality_id == 20,year == min(year),kpi == "Total betesmark") %>% .$value)*100,1)` procent av betesmarken år `r as.character(min(betesmark$year))` till `r round((betesmark %>% filter(municipality_id == 20,year == max(year),kpi == "Slåtteräng") %>% .$value/betesmark %>% filter(municipality_id == 20,year == max(year),kpi == "Total betesmark") %>% .$value)*100,1)` procent av betesmarken år `r as.character(max(betesmark$year))`.
 
 ```{r, include = FALSE}
 
@@ -253,8 +255,7 @@ Betesmark <- SkapaStapelDiagram(skickad_df = betesmark %>%
                     lagg_pa_logga = FALSE)
 
 ```
-<br>
-<br>
+
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 Betesmark
 ```
@@ -959,6 +960,12 @@ eftergym1 <- SkapaStapelDiagram(skickad_df = eftergym %>%
 eftergym1
 ```
 
+ALTERNATIV FIGUR. FÖR LÅNG TIDSSERIE?
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_utbniva_85$hogutb_andel_ar20_1985_2022
+```
+
 ## Sysselsatta i arbetför ålder
 I Dalastrategin sätts ambitiösa mål, både om en ökad sysselsättningsgrad i länet i allmänhet och att skillnader som finns mellan olika gruppers sysselsättningsgrad ska minska. Detta mäts genom en indikator för andelen förvärvsarbetande (personer med inkomst från anställning eller näringsverksamhet) i arbetsför ålder i länet. År `r min(sysselsatt$year)` beräknades sysselsättningsgraden till `r round(sysselsatt %>% filter(gender == "T",year == min(year)) %>% .$value,1)` procent av arbetsför befolkning. Bland kvinnorna var `r round(sysselsatt %>% filter(gender == "K",year == min(year)) %>% .$value,1)` procent förvärvsarbetande, och av männen räknades `r round(sysselsatt %>% filter(gender == "M",year == min(year)) %>% .$value,1)` procent som förvärvsarbetande. Gapet mellan kvinnor och män var därmed knappt `r round(sysselsatt %>% filter(gender == "M",year == min(year)) %>% .$value - sysselsatt %>% filter(gender == "K",year == min(year)) %>% .$value,0)` procentenheter. Utvecklingen inom båda grupperna har sedan dess varit positiv. År `r max(sysselsatt$year)`  hade andelen förvärvsarbetande ökat till `r round(sysselsatt %>% filter(gender == "T",year == max(year)) %>% .$value,1)` procent, varav den ökat till `r round(sysselsatt %>% filter(gender == "K",year == max(year)) %>% .$value,1)` procent bland kvinnorna och till `r round(sysselsatt %>% filter(gender == "M",year == max(year)) %>% .$value,1)` procent bland männen. Gapet mellan grupperna har således krympt till drygt `r round(sysselsatt %>% filter(gender == "M",year == max(year)) %>% .$value - sysselsatt %>% filter(gender == "K",year == max(year)) %>% .$value,0)` procentenheter.
 
@@ -983,8 +990,7 @@ syss1 <- SkapaStapelDiagram(skickad_df = sysselsatt %>%
                     procent_0_100_10intervaller = TRUE)
 
 ```                    
-<br>
-<br>
+
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 syss1
 ```
@@ -1012,8 +1018,7 @@ arb1 <- SkapaStapelDiagram(skickad_df = arbets %>%
                     manual_color=diagramfarger("kon"),
                     lagg_pa_logga = FALSE)
 ```
-<br>
-<br>
+
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 arb1
 ```
@@ -1250,7 +1255,33 @@ till1
 
 ## Tillgång till vård
 
-Har vi data på detta nu?
+Den här indikatorn visar hur stor andel av Dalarnas befolkning som anser att de har tillgång den hälso och sjukvård som de behöver. 
+
+```{r, include = FALSE}
+
+tillgang_vard <- SkapaStapelDiagram(skickad_df = vard %>% 
+                                      filter(gender != "Totalt") %>% 
+                                       mutate(year = year %>% as.character(),
+                                              municipality = ifelse(municipality == "Region Dalarna", "Dalarna", municipality)),
+                    skickad_x_var = "year",
+                    skickad_y_var = "value",
+                    skickad_x_grupp = "gender",
+                    diagram_titel = paste0("Tillgång till vård i Dalarna"),
+                    diagram_capt = "Källa: Hälso och sjukvårdsbarometern (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Antal invånare som har svarat att de instämmer helt eller delvis\ni påståendet om att de har tillgång till den hälso- och sjukvård som de behöver\ndividerat med totalt antal svarande det aktuella året.",
+                    x_axis_lutning = 0,
+                    manual_color = diagramfarger("kon"),
+                    stodlinjer_avrunda_fem = TRUE,
+                    manual_y_axis_title = "procent",
+                    output_mapp = "Diagram/",
+                    filnamn_diagram = "vard.png")
+
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+tillgang_vard
+```
+
+
 
 ## Hushåll med tillgång till bredband
 Tillgång till en snabb och robust digital infrastruktur är en grundförutsättning för att bo och verka i hela Dalarna. Fysiska och digitala mötesplatser gör att vi når både varandra och omvärlden. En av utmaningarna för Dalarna är en ojämnt fördelad digital infrastruktur. Att stärka och tillgängliggöra den digitala infrastrukturen för hela Dalarnas befolkning, oavsett plats, är avgörande för en lyckad digitalisering av samhället.

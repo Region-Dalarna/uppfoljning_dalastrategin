@@ -168,6 +168,12 @@ source("Skript/service.R", encoding="UTF-8")
 hamta_data_service(outputmapp = outputmapp)
 
 ########################
+## Tillgång till vård ##
+########################
+source("Skript/vard.R", encoding="UTF-8")
+hamta_data_vard(outputmapp = outputmapp)
+
+########################
 ## Socialt deltagande ##
 ########################
 source("Skript/socialtdeltagande_ny.R", encoding="UTF-8")
