@@ -893,7 +893,7 @@ Detta ska gå att få fram, får göras under februari.
 BEHÖVER UPPDATERAS. NY KOD?
 Kunskap ger människor möjlighet att växa och påverka sin livssituation. Tillgång till bildning, kunskap och kompetens är avgörande för såväl utvecklingen av samhället, som god välfärd och tillväxt i näringslivet. När arbetsgivare inte hittar rätt kompetens hämmas den ekonomiska utvecklingen. Samtidigt försvagas den sociala hållbarheten när människor ställs utanför arbetsmarknaden. Befolkningens låga utbildningsnivåer är en utmaning i stora delar av Dalarna. Ambitionen i Dalastrategin är att fler ska klara en gymnasieexamen för att därmed få bättre förutsättningar att etablera sig på arbetsmarknaden.
 
-Denna indikator mäter andelen gymnasieelever i Dalarna som har fullföljt en utbildning inom fyra år efter att de påbörjat gymnasiet. Det finns ingen tydlig trend över tidsperioden 2011 till 2018 utan andelen fluktuerar mellan åren. Av eleverna som började läsa på gymnasiet i Dalarna år 2011 var det 72,6 procent som inom fyra år fullföljde sin utbildning med examen. Den lägsta andelen avklarade examen om 70 procent uppmättes för dem som påbörjade gymnasiet år 2017 (möjligen en pandemieffekt) samtidigt som den högsta andelen avklarade examen finns bland de elever som påbörjade gymnasiet år 2018, 74,3 procent av dem har tagit ut examen inom fyra år.
+Denna indikator mäter andelen gymnasieelever i Dalarna som har fullföljt en utbildning inom fyra år efter att de påbörjat gymnasiet. Det finns ingen tydlig trend över tidsperioden `r gymnasie %>% filter(läsår == min(läsår)) %>% .$läsår` till `r gymnasie %>% filter(läsår == max(läsår)) %>% .$läsår` utan andelen fluktuerar mellan åren. Av eleverna som började läsa på gymnasiet i Dalarna läsåret `r gymnasie %>% filter(läsår == min(läsår)) %>% .$läsår` var det `r gsub("\\.",",",gymnasie %>% filter(läsår == min(läsår)) %>% .$andel)` procent som inom fyra år fullföljde sin utbildning med examen. Den lägsta andelen avklarade examen om `r gymnasie %>% filter(andel == min(andel)) %>% .$andel` procent uppmättes för dem som påbörjade gymnasiet läsåret `r gymnasie %>% filter(andel == min(andel)) %>% .$läsår` (möjligen en pandemieffekt) samtidigt som den högsta andelen avklarade examen finns bland de elever som påbörjade gymnasiet läsåret `r gymnasie %>% filter(andel == max(andel)) %>% .$läsår`, `r gymnasie %>% filter(andel == max(andel)) %>% .$andel` procent av dem har tagit ut examen inom fyra år.
 
 ```{r, include = FALSE}
 # gymnasie <- gymnasie %>% 
@@ -906,25 +906,25 @@ Denna indikator mäter andelen gymnasieelever i Dalarna som har fullföljt en ut
 #                 mutate(Andel = (Examen/Totalt)*100)
 
 
-# gym1 <- SkapaStapelDiagram(skickad_df = gymnasie %>% 
-#                                mutate(r = År %>% as.character()),
-#                     skickad_x_var = "Ar",
-#                     skickad_y_var = "Andel.elever",
-#                     diagram_titel = "Andel med fullföljd gymnasieutbildning inom fyra år",
-#                     diagram_capt = "Källa: Skolverket\nBearbetning: Samhällsanalys, Region Dalarna",
-#                     x_axis_lutning = 0,
-#                     manual_color = diagramfarger("rus_sex")[1],
-#                     manual_y_axis_title = "procent",
-#                     manual_x_axis_title = "år då gymnasieutbildningen påbörjades",
-#                     procent_0_100_10intervaller = TRUE,
-#                     output_mapp = "Diagram/",
-#                     filnamn_diagram = "gymnasie.png")
+gym1 <- SkapaStapelDiagram(skickad_df = gymnasie %>% 
+                             mutate(andel = as.numeric(andel)),
+                    skickad_x_var = "läsår",
+                    skickad_y_var = "andel",
+                    diagram_titel = "Andel i Dalarna med fullföljd gymnasieutbildning inom fyra år",
+                    diagram_capt = "Källa: Skolverket\nBearbetning: Samhällsanalys, Region Dalarna",
+                    x_axis_lutning = 0,
+                    manual_color = diagramfarger("rus_sex")[1],
+                    manual_y_axis_title = "procent",
+                    manual_x_axis_title = "Läsår då gymnasieutbildningen påbörjades",
+                    procent_0_100_10intervaller = TRUE,
+                    output_mapp = "Diagram/",
+                    filnamn_diagram = "gymnasie.png")
 
 ```
 <br>
 <br>
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-#gym1
+gym1
 ```
 
 ## Andel högskoleutbildade i befolkningen
@@ -1306,7 +1306,7 @@ bred1 <- SkapaStapelDiagram(skickad_df = bredband %>%
 ```
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-# bred1
+bred1
 ```
 
 
