@@ -6,6 +6,10 @@ html {
 
 }
 
+.title{
+  display:none;
+}
+
 body {
   border-top: 5px solid #158daf;
   margin: 0;
