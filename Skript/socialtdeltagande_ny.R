@@ -7,7 +7,7 @@ hamta_data_socialtdeltagande = function(region = "20",
                                        outputmapp = "G:/skript/projekt/data/uppfoljning_dalastrategin/Data/",
                                        filnamn = "deltagande_ny.csv", 
                                        senaste_ar = FALSE, 
-                                       tid = c("*"), # OBS! Tidsintervall
+                                       tid = c("*"), # OBS! Tidsintervall (3-år)
                                        returnera_data = FALSE,
                                        spara_till_excel = TRUE){ 
   
