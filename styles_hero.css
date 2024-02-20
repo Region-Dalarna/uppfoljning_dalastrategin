@@ -54,10 +54,11 @@ h2 { /* Header 2 */
   color: #000000;
 }
 
-/*h3 { 
-  font-size: 1.4rem;
+h3 { 
+  margin-top: 1.2rem;
+  font-size: 1.2rem;
   color: #000000;
-}*/
+}
 
 /* Liten speciallösning som gör att brödtexten inte blir så bred*/
 .toc-content.col-xs-12.col-sm-8.col-md-9{
