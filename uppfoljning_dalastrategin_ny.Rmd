@@ -205,7 +205,7 @@ skogsmark2 <- SkapaStapelDiagram(skickad_df = skogsmark,
                     diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna",
                     x_axis_lutning = 0,
                     manual_color = diagramfarger("rus_sex")[1],
-                    manual_y_axis_title = "Hektar (%)",
+                    manual_y_axis_title = "procent",
                     lagg_pa_logga = FALSE)
 
 ```
@@ -491,7 +491,7 @@ resande1alt <- SkapaStapelDiagram(skickad_df = resande %>%
                     x_axis_lutning = 0,
                     manual_color = diagramfarger("rus_sex")[1],
                     stodlinjer_avrunda_fem = TRUE,
-                    manual_y_axis_title = "Resor per invånare",
+                    manual_y_axis_title = "",
                     lagg_pa_logga = FALSE)
 
 # Skapar en separat df eftersom tidsserier är olika långa
