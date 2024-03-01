@@ -106,7 +106,7 @@ hamta_data_gini(outputmapp = outputmapp)
 ## Långtidsarbetslöshet ##
 ##########################
 source("Skript/långtidsarbetslöshet.R", encoding="UTF-8")
-hamta_data_langtidsarb(outputmapp = outputmapp)
+hamta_data_langtidsarb(output_mapp = outputmapp)
 
 ###############################
 ## Eftergymnasial utbildning ##

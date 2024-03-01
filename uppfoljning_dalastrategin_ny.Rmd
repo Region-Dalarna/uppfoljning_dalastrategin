@@ -114,7 +114,7 @@ hlv <- read_excel("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/HLV_Dal
 
 # Ej uppdaterade (Excelfil från tillväxtanalys?)
 
-# Källa: Senast kontrollerad 2024-01-29 - Senaste år är 2020
+# Källa: Senast kontrollerad 2024-03-01 - Senaste år är 2020
 # https://tillvaxtverket.se/tillvaxtverket/statistikochanalys/statistikomregionalutveckling/regionaltinternationaliseringsindex.1791.html
 
 intindex <- read_excel("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/tillväxtanalys/totalindex 2020.xlsx")
@@ -174,7 +174,6 @@ Dalarna är rikt på naturresurser och om vi brukar dem rätt ger de mångfalt t
 
 
 ## Formellt skyddad produktiv skogsmark
-(Data längre tillbaka i tiden i diagrammen?)
 
 År 2018 beslutade dåvarande regering om Sveriges första nationella skogsprogram med fokus på skogsbrukets roll för en hållbar utveckling. I Dalastrategin omnämns skogsbruket som en av länets viktigare näringar. Skogsbruket påverkar och påverkas av klimatförändringarna, och därför behöver skötsel och brukande anpassas utifrån rådande kunskap om vad som har minst miljöpåverkan.
 
@@ -476,7 +475,8 @@ utslapp3
 
 \newpage
 
-## Kollektivt resande
+## Resande
+### Kollektivt resande
 ```{r, include = FALSE}
 
 resande1alt <- SkapaStapelDiagram(skickad_df = resande %>% 
@@ -514,7 +514,7 @@ resande2alt <- SkapaLinjeDiagram(skickad_df = resande %>%
 ```
 På grund av den utsträckta och relativt glesbefolkade geografin har Dalarna en utmaning i att skapa en hållbar transportinfrastruktur. För att nå klimat- och energimålen krävs kraftfull teknisk utveckling i kombination med beteendeförändringar. Kollektivt resande spelar en central roll för utvecklandet av en klimatsmart och resurseffektiv, men också mer jämställd och jämlik, mobilitet. Kollektivtrafik är förenat med höga kostnader, samtidigt som det finns samhällsekonomiska vinster. För att klara omställningen krävs mod att ställa olika kostnader mot varandra. För att vi ska lyckas öka det kollektiva resandet behöver den traditionella kollektivtrafiken sannolikt kompletteras med nya mobilitetslösningar och tjänster, särskilt för länets mest glesbefolkade områden.
 
-Diagrammen redovisar indikatorer för kollektivt resande i Dalarna: kollektivtrafiksresor per invånare samt marknadsandel för kollektivtrafik i länet. För antal resor per invånare syns att det kollektiva resandet har minskat avsevärt i Dalarna, från  `r resande %>% filter(kpi == "Resor_per_invanare") %>% filter(year == min(year)) %>% .$value ` resor per person och år från `r min(resande$year)` till `r round(resande %>% filter(kpi == "Resor_per_invanare") %>% filter(year == max(year)) %>% .$value,0) ` år `r max(resande$year)`. Nedgången kan delvis förklaras av pandemin - det sker en tydlig minskning mellan 2019 och 2020 - men även mellan 2012 och 2013 minskade antalet resor per invånare avsevärt i Dalarna (OKLART VAD DENNA MINSKNING BEROR PÅ). I en nationell jämförelse år 2021 framgår att det i glesbygdslänen i Sverige som mest görs 40 resor per person. Medan det görs betydligt fler i storstadsregionerna, så som Skåne med i snitt 71 resor per person och år och i Stockholm där flest resor görs, sker 230 resor per person och år (det sista stycket uppdateras inte automatiskt).
+Diagrammen redovisar indikatorer för kollektivt resande i Dalarna: kollektivtrafiksresor per invånare samt marknadsandel för kollektivtrafik i länet. För antal resor per invånare syns att det kollektiva resandet har minskat avsevärt i Dalarna, från  `r resande %>% filter(kpi == "Resor_per_invanare") %>% filter(year == min(year)) %>% .$value ` resor per person och år från `r min(resande$year)` till `r round(resande %>% filter(kpi == "Resor_per_invanare") %>% filter(year == max(year)) %>% .$value,0) ` år `r max(resande$year)`. Nedgången kan delvis förklaras av pandemin - det sker en tydlig minskning mellan 2019 och 2020 - men även mellan 2012 och 2013 minskade antalet resor per invånare avsevärt i Dalarna. I en nationell jämförelse år 2021 framgår att det i glesbygdslänen i Sverige som mest görs 40 resor per person. Medan det görs betydligt fler i storstadsregionerna, så som Skåne med i snitt 71 resor per person och år och i Stockholm där flest resor görs, sker 230 resor per person och år (det sista stycket uppdateras inte automatiskt).
 
 Marknadsandelen för kollektivtrafik beräknas som andelen resor med kollektivtrafik (linjelagd buss, spårvagn, tunnelbana, pendeltåg, tåg och båt) och taxi av det totala antalet resor, dvs kollektivtrafik, taxi, bil (förare och passagerare) samt moped/MC. Här bryts uppgången i en förmodad pandemieffekt efter ett antal år av ökande marknadsandel för kollektivtrafiken.
 
@@ -527,7 +527,7 @@ resande1alt
 resande2alt
 ```
 
-## Laddinfrastruktur för fordon
+### Laddinfrastruktur för fordon
 
 Eu har tagit fram ett regelverk för alternativa bränslen och ställer minimikrav på tillgänglig effekt per registrerad bil i en kommun. Regelverket förkortas AFIR (Alternative Fuels Infrastructure Regulation) och följs upp på den nationella plattformen drivmedla.se[https://drivmedla.se/kartor-och-statistik/afir-kartan] 
 Kravet gör gällande att det måste finnas en effekt på 1,3 kW i offentligt tillgänglig laddningsinfrastruktur för varje elfordon och 0,8 kW för varje Laddhybrid. Ev. karta här. 
@@ -984,13 +984,13 @@ syss1
 ```
 
 ## Långtidsarbetslöshet
-AVVAKTA DATA FÖR 2023. VISAR SANNOLIKT EN YTTERLIGARE SÄNKNING SOM EVENTUELLT MEDFÖR ATT TEXTEN BEHÖVER SKRIVAS OM DELVIS
-En annan indikator för att följa sysselsättningsutvecklingen i länet är andelen långtidsarbetslösa. Om utvecklingen för andelen förvärsarbetande kan beskrivas som positiv i rätt riktning så kan inte samma sak sägas om långtidsarbetslösheten. Som långtidsarbetslös räknas den som har varit öppet arbetslös eller i program med aktivitetsstöd i minst sex månader. År 2011 noterades 2,9 procent av länets befolkning som långtidsarbetslösa, till år 2021 hade den stigit till 3,9 procent, för att sedan sjunka till 3,4 procent år 2022. År 2021 var det relativt stor skillnad mellan kvinnor (3,7 procent) och män (4,0 procent), medan skillnaden knappt är märkbar år 2022. Riksgenomsnittet för långtidsarbetslösheten år 2022 är 3,8 procent, och Dalarna ligger därmed under riksgenomsnittet. En generell orsak till långtidsarbetslöshet är strukturarbetslöshet som innebär att de arbetssökande saknar rätt kompetens för de arbeten som det finns efterfrågan på.
+
+En annan indikator för att följa sysselsättningsutvecklingen i länet är andelen långtidsarbetslösa. Som långtidsarbetslös räknas den som har varit öppet arbetslös eller i program med aktivitetsstöd i minst sex månader. År `r min(arbets$year)` noterades `r gsub("\\.",",",round(arbets %>% filter(year == min(year),gender == "K",municipality == "Dalarnas län") %>% .$value,1))` procent av länets kvinnor i åldern 25-64 år som långtidsarbetslösa, medan motsvarande siffra för männen var `r gsub("\\.",",",round(arbets %>% filter(year == min(year),gender == "M",municipality == "Dalarnas län") %>% .$value,1))` procent.  Under 2010 talet gick långtidsarbetslösheten såväl upp som ned, innan den nådde sin topp i samband med pandemin 2020-2021. På senare år har långtidsarbetslösheten minskat tydligt och var år 2023 i Dalarna på ungefär samma nivå som 2011 för såväl kvinnor som män. Långtidsarbetslösheten i Sverige är högre än i Dalarna för båda könen. En generell orsak till långtidsarbetslöshet är strukturarbetslöshet som innebär att de arbetssökande saknar rätt kompetens för de arbeten som det finns efterfrågan på.
 
 ```{r, include = FALSE}
 
 arb1 <- SkapaStapelDiagram(skickad_df = arbets %>% 
-                              filter(gender!="T") %>% 
+                              filter(gender!="T",municipality =="Dalarnas län") %>% 
                               mutate(year = year %>% as.character(),
                                      gender = case_when(gender == "K" ~ "Kvinnor",
                                                         gender == "M" ~ "Män")),
