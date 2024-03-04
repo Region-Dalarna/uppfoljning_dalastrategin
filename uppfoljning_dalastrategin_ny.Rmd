@@ -41,6 +41,7 @@ p_load(httr,
 options(dplyr.summarise.inform = FALSE)
 
 source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_SkapaDiagram.R")
+source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R")
 
 indikatorer <- read_excel("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/indikatorer.xlsx")
 
@@ -317,7 +318,8 @@ effektivitet1alt <- SkapaStapelDiagram(skickad_df = effektivitet %>%
 effektivitet3 <- SkapaStapelDiagram(skickad_df = effektivitet  %>% 
                      filter(År == max(År)) %>%
                      mutate(fokus = ifelse(Region == "Dalarnas län", "1", "0" ),
-                            År = År %>% as.character()),
+                            År = År %>% as.character(),
+                            Region = skapa_kortnamn_lan(Region,byt_ut_riket_mot_sverige = TRUE)),
                    skickad_x_var = "Region",
                    skickad_y_var = "value",
                    diagram_titel = paste0("Energieffektivitet i Sverige år ", max(effektivitet$År)),
@@ -653,7 +655,8 @@ forsk2 <- SkapaStapelDiagram(skickad_df = forskning %>%
 
 forsk3 <- SkapaStapelDiagram(skickad_df = forskning_totalt %>%
                                filter(year == max(year)) %>%
-                                mutate(fokus = ifelse(municipality == "Dalarnas län", "1", "0")),
+                                mutate(fokus = ifelse(municipality == "Dalarnas län", "1", "0"),
+                                       municipality = skapa_kortnamn_lan(municipality)),
                     skickad_x_var = "municipality",
                     skickad_y_var = "utgiftertotalt",
                     diagram_titel = paste0("FoU-investeringar i Sverige år ",max(forskning$year)),
@@ -1079,7 +1082,8 @@ etab_alt <- SkapaStapelDiagram(skickad_df = etablering %>%
 etab4 <- SkapaStapelDiagram(skickad_df = etablering %>% 
                               mutate( fokus = ifelse( region == "Dalarnas län", "1", "0"),
                                         år = år %>% as.character(),
-                                      bakgrundsvariabel = bakgrundsvariabel %>% str_remove("vistelsetid ")) %>%
+                                      bakgrundsvariabel = bakgrundsvariabel %>% str_remove("vistelsetid "),
+                                      region = skapa_kortnamn_lan(region)) %>%
                               filter(år==max(år), 
                                      kön=="män och kvinnor", 
                                      bakgrundsvariabel == "10- år"),
