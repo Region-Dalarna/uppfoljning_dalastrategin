@@ -8,8 +8,7 @@ hamta_data_sysselsatta = function(region = c("0020"),
                                   tid = 2010:2100){ # Välj ett högt värde som sista värde om alla år skall vara med.
 
   # ===========================================================================================================
-  # 
-  # Skript som hämtar data för energiproduktion från Kolada
+  #  
   # Parametrar som skickas med (= variabler i Kolada-tabellen) är:
   # - region: Vald region
   # - alla_regioner: Välj om man vill ha alla regioner. Om den är satt till True så skriver den över region ovan.

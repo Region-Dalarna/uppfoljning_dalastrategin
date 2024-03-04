@@ -913,8 +913,7 @@ gym1 <- SkapaStapelDiagram(skickad_df = gymnasie %>%
                     filnamn_diagram = "gymnasie.png")
 
 ```
-<br>
-<br>
+
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gym1
 ```
@@ -945,8 +944,7 @@ eftergym1 <- SkapaStapelDiagram(skickad_df = eftergym %>%
                     manual_y_axis_title = "procent")
                     
 ```
-<br>
-<br>
+
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 eftergym1
 ```
@@ -1105,16 +1103,16 @@ etab4 <- SkapaStapelDiagram(skickad_df = etablering %>%
 
 ```
 
-
+<br>
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 etab1
 ```
-<br>
+
 <br>
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 etab_alt
 ```
-<br>
+
 <br>
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 etab4

@@ -35,6 +35,14 @@ gg_utbniva_85 <- diag_utbniva_lang_tidserie(region_vekt = c("20"),
                                             diag_andel_alla_utbnivaer = FALSE,
                                             diag_andel_eftergymn_jmfr_lan = FALSE)
 
+source("https://raw.githubusercontent.com/Region-Dalarna/diagram/main/diagram_arbetsmarknadsstatus_senastear.R")
+gg_arbetsmaknadsstatus <- diagram_arbetsmarknadsstatus(output_mapp_figur = output_mapp_figur,
+                                                      spara_figur = FALSE,
+                                                      diag_arbetslosthet = FALSE,
+                                                      diag_arbetskraftsdeltagande = FALSE,
+                                                      returnera_figur = TRUE,
+                                                      returnera_data = TRUE)
+
 rmarkdown::render(
   input = 'uppfoljning_dalastrategin_ny.Rmd',
   output_file = 'uppfoljning_dalastrategin_ny.html',
