@@ -956,22 +956,22 @@ gg_utbniva_85$hogutb_andel_ar20_1985_2022
 ```
 
 ## Sysselsatta i arbetför ålder
-I Dalastrategin sätts ambitiösa mål, både om en ökad sysselsättningsgrad i länet i allmänhet och att skillnader som finns mellan olika gruppers sysselsättningsgrad ska minska. Detta mäts genom en indikator för andelen förvärvsarbetande (personer med inkomst från anställning eller näringsverksamhet) i arbetsför ålder i länet. År `r min(sysselsatt$year)` beräknades sysselsättningsgraden till `r round(sysselsatt %>% filter(gender == "T",year == min(year)) %>% .$value,1)` procent av arbetsför befolkning. Bland kvinnorna var `r round(sysselsatt %>% filter(gender == "K",year == min(year)) %>% .$value,1)` procent förvärvsarbetande, och av männen räknades `r round(sysselsatt %>% filter(gender == "M",year == min(year)) %>% .$value,1)` procent som förvärvsarbetande. Gapet mellan kvinnor och män var därmed knappt `r round(sysselsatt %>% filter(gender == "M",year == min(year)) %>% .$value - sysselsatt %>% filter(gender == "K",year == min(year)) %>% .$value,0)` procentenheter. Utvecklingen inom båda grupperna har sedan dess varit positiv. År `r max(sysselsatt$year)`  hade andelen förvärvsarbetande ökat till `r round(sysselsatt %>% filter(gender == "T",year == max(year)) %>% .$value,1)` procent, varav den ökat till `r round(sysselsatt %>% filter(gender == "K",year == max(year)) %>% .$value,1)` procent bland kvinnorna och till `r round(sysselsatt %>% filter(gender == "M",year == max(year)) %>% .$value,1)` procent bland männen. Gapet mellan grupperna har således krympt till drygt `r round(sysselsatt %>% filter(gender == "M",year == max(year)) %>% .$value - sysselsatt %>% filter(gender == "K",year == max(year)) %>% .$value,0)` procentenheter.
+I Dalastrategin sätts ambitiösa mål, både om en ökad sysselsättningsgrad i länet i allmänhet och att skillnader som finns mellan olika gruppers sysselsättningsgrad ska minska. Detta mäts genom en indikator för andelen förvärvsarbetande (personer med inkomst från anställning eller näringsverksamhet) i arbetsför ålder i länet. År `r min(sysselsatt$år)` beräknades sysselsättningsgraden till `r round(sysselsatt %>% filter(kön == "totalt",år == min(år)) %>% .$sysselsättningsgrad,1)` procent av arbetsför befolkning. Bland kvinnorna var `r round(sysselsatt %>% filter(kön == "kvinnor",år == min(år)) %>% .$sysselsättningsgrad,1)` procent förvärvsarbetande, och av männen räknades `r round(sysselsatt %>% filter(kön == "män",år == min(år)) %>% .$sysselsättningsgrad,1)` procent som förvärvsarbetande. Gapet mellan kvinnor och män var därmed knappt `r round(sysselsatt %>% filter(kön == "män",år == min(år)) %>% .$sysselsättningsgrad - sysselsatt %>% filter(kön == "kvinnor",år == min(år)) %>% .$sysselsättningsgrad,0)` procentenheter. Utvecklingen inom båda grupperna har sedan dess varit positiv. År `r max(sysselsatt$år)`  hade andelen förvärvsarbetande ökat till `r round(sysselsatt %>% filter(kön == "totalt",år == max(år)) %>% .$sysselsättningsgrad,1)` procent, varav den ökat till `r round(sysselsatt %>% filter(kön == "kvinnor",år == max(år)) %>% .$sysselsättningsgrad,1)` procent bland kvinnorna och till `r round(sysselsatt %>% filter(kön == "män",år == max(år)) %>% .$sysselsättningsgrad,1)` procent bland männen. Gapet mellan grupperna har således krympt till drygt `r round(sysselsatt %>% filter(kön == "män",år == max(år)) %>% .$sysselsättningsgrad - sysselsatt %>% filter(kön == "kvinnor",år == max(år)) %>% .$sysselsättningsgrad,0)` procentenheter.
 
 ```{r, include = FALSE}
 
 syss1 <- SkapaStapelDiagram(skickad_df = sysselsatt %>% 
-                              filter(gender!="T") %>% 
-                              mutate(year = year %>% as.character(),
-                                     gender = case_when(gender == "K" ~ "Kvinnor",
-                                                        gender == "M" ~ "Män")),
-                    skickad_x_var = "year",
-                    skickad_y_var = "value",
-                    skickad_x_grupp = "gender",
+                              filter(kön!="totalt") %>% 
+                              mutate(år = år %>% as.character(),
+                                     kön = case_when(kön == "kvinnor" ~ "Kvinnor",
+                                                        kön == "män" ~ "Män")),
+                    skickad_x_var = "år",
+                    skickad_y_var = "sysselsättningsgrad",
+                    skickad_x_grupp = "kön",
                     diagram_titel = paste0("Andel förvärvsarbetande 20-64 år i Dalarna"),
                     output_mapp = "Diagram/",
                     filnamn_diagram = "syss.png",
-                    diagram_capt = "Källa: SCB, RAMS (via Koalada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andel av befolkningen 20-64 år som förvärvsarbetar",
+                    diagram_capt = "Källa: SCB, RAMS och BAS\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andel av befolkningen 20-64 år. som förvärvsarbetar",
                     x_axis_lutning = 0,
                     manual_color=diagramfarger("kon"),
                     lagg_pa_logga = FALSE,

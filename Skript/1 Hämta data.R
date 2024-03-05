@@ -128,8 +128,11 @@ hamta_data_matchning(outputmapp = outputmapp)
 #################
 ## Sysselsatta ##
 #################
-source("Skript/sysselsatta.R", encoding="UTF-8")
-hamta_data_sysselsatta(outputmapp = outputmapp)
+# source("Skript/sysselsatta.R", encoding="UTF-8")
+# hamta_data_sysselsatta(outputmapp = outputmapp)
+
+source("Skript/sysselsatta_ny.R", encoding="UTF-8")
+hamta_data_sysselsatta_ny(outputmapp = outputmapp)
 
 ####################
 ## Etableringstid ##
