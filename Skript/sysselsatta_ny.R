@@ -48,7 +48,7 @@ hamta_data_sysselsatta_ny = function(region = c("0020"),
   
   if(senaste_ar == TRUE) tid <- max(unique(hamta_kolada_giltiga_ar("N00914",vald_region = region)))
   
-  #### Dra hem variablerna från Kolada
+  #### Dra hem variablerna från Kolada (data fram till 2021 när Rams försvinner)
   sysselsatta <- get_values(
     kpi = c("N00914"),
     municipality = region,
@@ -66,19 +66,29 @@ hamta_data_sysselsatta_ny = function(region = c("0020"),
                                      ifelse(kön == "K","kvinnor","totalt")),
                         region = ifelse(region == "Region Dalarna","Dalarnas län",region))
   
-  region_scb <- substr(region,3,4)
+
+  # Slutgiltig statistik från BAS
+  source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/main/hamta_data_arbetsmarknadsstatus_bas_ar_slutgiltig.R")
+  sysselsatta_bas_slutgiltig = hamta_arbetsmarknadsstatus_bas_ar_slutgiltig(region = substr(region,3,4),
+                                                                           kon_klartext = c("*"),
+                                                                           fodelseregion_klartext = c("totalt"),
+                                                                           cont_klartext = "sysselsättningsgrad",
+                                                                           alder_klartext = "20-64 år") %>% 
+                    select(-c("regionkoder","ålder","födelseregion"))
+  
+  # Preliminär statistik från BAS
   
   source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/main/hamta_data_arbetsmarknadsstatus_bas_ar_prel.R")
-  sysselsatta_bas = hamta_arbetsmarknadsstatus_bas_ar_prel(region = substr(region,3,4),
-                                                           kon_klartext = c("*"),
-                                                           fodelseregion_klartext = c("totalt"),
-                                                           cont_klartext = "sysselsättningsgrad",
-                                                           alder_klartext = "20-64 år") %>% 
-    select(-c("regionkoder","ålder","födelseregion"))
+  sysselsatta_bas_preliminär = hamta_arbetsmarknadsstatus_bas_ar_prel(region = substr(region,3,4),
+                                                                     kon_klartext = c("*"),
+                                                                     fodelseregion_klartext = c("totalt"),
+                                                                     cont_klartext = "sysselsättningsgrad",
+                                                                     alder_klartext = "20-64 år") %>% 
+              select(-c("regionkoder","ålder","födelseregion"))
   
   
-  
-  sysselsatta_ut = rbind(sysselsatta,sysselsatta_bas %>% filter(!(år%in%unique(sysselsatta$år)))) %>% 
+  # Slår ihop allt till en DF. Väljer enbart år från preliminär och slutgiltig bas-data som inte finns i RAMS (dvs. efter 2021)
+  sysselsatta_ut = rbind(sysselsatta,test = sysselsatta_bas_slutgiltig%>% filter(!(år%in%unique(sysselsatta$år))),sysselsatta_bas_preliminär %>% filter(!(år%in%unique(sysselsatta$år))) %>%filter(!(år%in%unique(sysselsatta_bas_slutgiltig$år))) ) %>% 
     filter(region != "Riket")
 
   # Sparar till CSV om användaren vill det
