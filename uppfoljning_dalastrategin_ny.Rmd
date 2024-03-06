@@ -97,6 +97,8 @@ bredband <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/bred
 
 valdeltagande <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/valdeltagande.csv", encoding="UTF-8")
 
+valdeltagande_EU <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/valdeltagande_EU.csv", encoding="UTF-8")
+
 utsatt <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/utsatthet_ny.csv", encoding="UTF-8")
 
 deltagande <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/deltagande_ny.csv", encoding="UTF-8")
@@ -1321,9 +1323,9 @@ boende1
 ## Valdeltagande
 En levande demokrati grundar sig i människors tillit till att de demokratiskt valda representativa institutionerna fungerar, såsom kommuner, region och myndigheter. Valdeltagande är därmed en viktig indikator på invånarnas vilja och tro på de demokratiska institutionerna i länet.
 
-I Dalarna har valdeltagandet i samtliga val ökat mellan valen 1998 och 2018. Exempelvis i kommunvalet valde år `r min(valdeltagande$year)` drygt `r round(valdeltagande %>% filter(kpi == "Valdeltagande_kommun",year == min(year),gender == "T") %>% .$value,1)` procent av invånarna i Dalarna att lägga en röst, medan andelen som röstade år 2018 ökat till drygt `r round(valdeltagande %>% filter(kpi == "Valdeltagande_kommun",year == 2018,gender == "T") %>% .$value,1)` procent, en ökning med nästan 7 procentenheter. 
+I Dalarna har valdeltagandet i kommun-, region- och riksdagsval ökat mellan valen 1998 och 2018. Exempelvis i kommunvalet valde år `r min(valdeltagande$year)` drygt `r round(valdeltagande %>% filter(kpi == "Valdeltagande_kommun",year == min(year),gender == "T") %>% .$value,1)` procent av invånarna i Dalarna att lägga en röst, medan andelen som röstade år 2018 ökat till drygt `r round(valdeltagande %>% filter(kpi == "Valdeltagande_kommun",year == 2018,gender == "T") %>% .$value,1)` procent, en ökning med nästan 7 procentenheter. I valet 2022 minskade valdeltagandet i såväl region-, som kommun- och riksdagsval dock.
 
-I valet 2022 minskade valdeltagandet i såväl region-, som kommun- och riksdagsval.
+Valdeltagandet i valet till EU-parlamentet har ökat sedan valet 2004, då blott `r round(valdeltagande_EU %>% filter(valår == 2004) %>% .$valdeltagande,0)` procent av de röstberättigade invånarna i Dalarna röstade. I valet 2019 hade andelen ökat till `r round(valdeltagande_EU %>% filter(valår == 2019) %>% .$valdeltagande,0)` procent. Värt att notera är att valdeltagandet i EU-valet är avsevärt mycket lägre än i de nationella valen.
 
 ```{r, include = FALSE}
 
@@ -1375,6 +1377,22 @@ val3 <- SkapaStapelDiagram(skickad_df = valdeltagande %>%
                     x_axis_lutning = 0,
                     lagg_pa_logga = FALSE)
 
+val4 <- SkapaStapelDiagram(skickad_df = valdeltagande_EU %>% 
+                               mutate(valår = valår %>% as.character()),
+                    skickad_x_var = "valår",
+                    skickad_y_var = "valdeltagande",
+                    diagram_titel = paste0("Valdeltagande i EU-val i Dalarna"),
+                    output_mapp = "Diagram/",
+                    filnamn_diagram = "valdeltagande4.png",
+                    diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna",
+                    manual_color = diagramfarger("rus_sex")[1],
+                    manual_y_axis_title = "procent",
+                    procent_0_100_10intervaller = TRUE,
+                    x_axis_lutning = 0,
+                    lagg_pa_logga = FALSE)
+
+
+
 ```
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
@@ -1389,6 +1407,11 @@ val2
 <br>
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 val3
+```
+<br>
+<br>
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+val4
 ```
 
 ## Deltagande i det civila samhället

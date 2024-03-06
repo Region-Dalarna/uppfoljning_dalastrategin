@@ -208,3 +208,6 @@ hamta_data_utsatta(outputmapp = outputmapp)
 ###################
 source("Skript/valdeltagande.R", encoding="UTF-8")
 hamta_data_valdeltagande(outputmapp = outputmapp)
+
+source("Skript/valdeltagande_EU.R", encoding="UTF-8")
+berakna_valdeltagande_SCB(outputmapp = outputmapp)
