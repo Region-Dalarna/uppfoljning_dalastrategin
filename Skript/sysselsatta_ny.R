@@ -88,7 +88,7 @@ hamta_data_sysselsatta_ny = function(region = c("0020"),
   
   
   # Slår ihop allt till en DF. Väljer enbart år från preliminär och slutgiltig bas-data som inte finns i RAMS (dvs. efter 2021)
-  sysselsatta_ut = rbind(sysselsatta,test = sysselsatta_bas_slutgiltig%>% filter(!(år%in%unique(sysselsatta$år))),sysselsatta_bas_preliminär %>% filter(!(år%in%unique(sysselsatta$år))) %>%filter(!(år%in%unique(sysselsatta_bas_slutgiltig$år))) ) %>% 
+  sysselsatta_ut = rbind(sysselsatta,sysselsatta_bas_slutgiltig%>% filter(!(år%in%unique(sysselsatta$år))),sysselsatta_bas_preliminär %>% filter(!(år%in%unique(sysselsatta$år))) %>% filter(!(år%in%unique(sysselsatta_bas_slutgiltig$år))) ) %>% 
     filter(region != "Riket")
 
   # Sparar till CSV om användaren vill det
