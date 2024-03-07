@@ -95,7 +95,7 @@ chefsrepresentation <- read_csv("G:/skript/projekt/data/uppfoljning_dalastrategi
 
 bredband <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/bredband.csv", encoding="UTF-8")
 
-valdeltagande <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/valdeltagande.csv", encoding="UTF-8")
+valdeltagande <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/valdeltagande_nationellt.csv", encoding="UTF-8")
 
 valdeltagande_EU <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/valdeltagande_EU.csv", encoding="UTF-8")
 
@@ -1323,22 +1323,21 @@ boende1
 ## Valdeltagande
 En levande demokrati grundar sig i människors tillit till att de demokratiskt valda representativa institutionerna fungerar, såsom kommuner, region och myndigheter. Valdeltagande är därmed en viktig indikator på invånarnas vilja och tro på de demokratiska institutionerna i länet.
 
-I Dalarna har valdeltagandet i kommun-, region- och riksdagsval ökat mellan valen 1998 och 2018. Exempelvis i kommunvalet valde år `r min(valdeltagande$year)` drygt `r round(valdeltagande %>% filter(kpi == "Valdeltagande_kommun",year == min(year),gender == "T") %>% .$value,1)` procent av invånarna i Dalarna att lägga en röst, medan andelen som röstade år 2018 ökat till drygt `r round(valdeltagande %>% filter(kpi == "Valdeltagande_kommun",year == 2018,gender == "T") %>% .$value,1)` procent, en ökning med nästan 7 procentenheter. I valet 2022 minskade valdeltagandet i såväl region-, som kommun- och riksdagsval dock.
+I Dalarna har valdeltagande varierat över tid. I riksdagsvalet valde år `r min(valdeltagande$valår)` drygt `r round(valdeltagande %>% filter(valår == min(valår)) %>% .$valdeltagande_riksdag,0)` procent att rösta. I valet 2002 hade valdeltagandet minskat avsevärt och bara ungefär `r round(valdeltagande %>% filter(valår == "2002") %>% .$valdeltagande_riksdag,0)` procent valde att rösta i riksdagsvalet. Därefter ökade valdeltagandet stadigt i de nationella valen fram till 2018, då `r round(valdeltagande %>% filter(valår == 2018) %>% .$valdeltagande_riksdag,0)` procent av invånarna i Dalarna röstade i riksdagsvalet. I valet 2022 minskade valdeltagandet dock tydligt. Generellt är valdeltagandet ungefär lika högt i såväl riksdags-, som region- och kommunval.
 
 Valdeltagandet i valet till EU-parlamentet har ökat sedan valet 2004, då blott `r round(valdeltagande_EU %>% filter(valår == 2004) %>% .$valdeltagande,0)` procent av de röstberättigade invånarna i Dalarna röstade. I valet 2019 hade andelen ökat till `r round(valdeltagande_EU %>% filter(valår == 2019) %>% .$valdeltagande,0)` procent. Värt att notera är att valdeltagandet i EU-valet är avsevärt mycket lägre än i de nationella valen.
 
 ```{r, include = FALSE}
 
 val1 <- SkapaStapelDiagram(skickad_df = valdeltagande %>% 
-                             filter(kpi == "Valdeltagande_kommun",gender == "T") %>% 
-                               mutate(year = year %>% as.character()) %>%
-                                  filter(!(is.na(value))),
-                    skickad_x_var = "year",
-                    skickad_y_var = "value",
+                             select(valår,valdeltagande_kommun) %>% 
+                              mutate(valår = valår %>% as.character()),
+                    skickad_x_var = "valår",
+                    skickad_y_var = "valdeltagande_kommun",
                     diagram_titel = paste0("Valdeltagande i kommunval i Dalarna"),
                     output_mapp = "Diagram/",
                     filnamn_diagram = "valdeltagande1.png",
-                    diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna",
+                    diagram_capt = "Källa: SCB:s öppna statistikdatabas\nBearbetning: Samhällsanalys, Region Dalarna",
                     manual_y_axis_title = "procent",
                     procent_0_100_10intervaller = TRUE,
                     x_axis_lutning = 0,
@@ -1346,15 +1345,14 @@ val1 <- SkapaStapelDiagram(skickad_df = valdeltagande %>%
                     lagg_pa_logga = FALSE)
 
 val2 <- SkapaStapelDiagram(skickad_df = valdeltagande %>% 
-                             filter(kpi == "Valdeltagande_region",gender == "T") %>% 
-                               mutate(year = year %>% as.character()) %>%
-                                  filter(!(is.na(value))),
-                    skickad_x_var = "year",
-                    skickad_y_var = "value",
+                             select(valår,valdeltagande_region) %>% 
+                              mutate(valår = valår %>% as.character()),
+                    skickad_x_var = "valår",
+                    skickad_y_var = "valdeltagande_region",
                     diagram_titel = paste0("Valdeltagande i regionval i Dalarna"),
                     output_mapp = "Diagram/",
                     filnamn_diagram = "valdeltagande2.png",
-                    diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna",
+                    diagram_capt = "Källa: SCB:s öppna statistikdatabas\nBearbetning: Samhällsanalys, Region Dalarna",
                     manual_y_axis_title = "procent",
                     procent_0_100_10intervaller = TRUE,
                     manual_color = diagramfarger("rus_sex")[1],
@@ -1362,15 +1360,14 @@ val2 <- SkapaStapelDiagram(skickad_df = valdeltagande %>%
                     lagg_pa_logga = FALSE)
 
 val3 <- SkapaStapelDiagram(skickad_df = valdeltagande %>% 
-                             filter(kpi == "Valdeltagande_riksdag",gender == "T") %>% 
-                               mutate(year = year %>% as.character()) %>%
-                                  filter(!(is.na(value))),
-                    skickad_x_var = "year",
-                    skickad_y_var = "value",
+                             select(valår,valdeltagande_riksdag) %>% 
+                              mutate(valår = valår %>% as.character()),
+                    skickad_x_var = "valår",
+                    skickad_y_var = "valdeltagande_riksdag",
                     diagram_titel = paste0("Valdeltagande i riksdagsval i Dalarna"),
                     output_mapp = "Diagram/",
                     filnamn_diagram = "valdeltagande3.png",
-                    diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna",
+                    diagram_capt = "Källa: SCB:s öppna statistikdatabas\nBearbetning: Samhällsanalys, Region Dalarna",
                     manual_color = diagramfarger("rus_sex")[1],
                     manual_y_axis_title = "procent",
                     procent_0_100_10intervaller = TRUE,
@@ -1384,7 +1381,7 @@ val4 <- SkapaStapelDiagram(skickad_df = valdeltagande_EU %>%
                     diagram_titel = paste0("Valdeltagande i EU-val i Dalarna"),
                     output_mapp = "Diagram/",
                     filnamn_diagram = "valdeltagande4.png",
-                    diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna",
+                    diagram_capt = "Källa: SCB:s öppna statistikdatabas\nBearbetning: Samhällsanalys, Region Dalarna",
                     manual_color = diagramfarger("rus_sex")[1],
                     manual_y_axis_title = "procent",
                     procent_0_100_10intervaller = TRUE,

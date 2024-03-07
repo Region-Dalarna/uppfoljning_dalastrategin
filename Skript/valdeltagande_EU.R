@@ -1,5 +1,5 @@
 
-berakna_valdeltagande_SCB = function(region = "20", # Funkar enbart på länsnivå
+berakna_valdeltagande_EU = function(region = "20", # Funkar enbart på länsnivå
                                         outputmapp = NA,
                                         filnamn = "valdeltagande_EU.csv",
                                         returnera_data = FALSE){ 
