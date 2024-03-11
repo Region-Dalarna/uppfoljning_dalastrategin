@@ -63,6 +63,14 @@ berakna_valdeltagande_nationellt = function(region = "20", # Funkar enbart på l
                        valdeltagande_kommun = round(antal_rostande_kommun/rostberattigade_kommun*100,1)) %>%
                 select(valår, valdeltagande_riksdag, valdeltagande_region, valdeltagande_kommun) %>% 
                   ungroup()
+  
+  # Pivotera data till long-format
+  valdeltagande_lan = valdeltagande_lan %>% 
+    pivot_longer(cols = -valår, names_to = "val", values_to = "valdeltagande") %>% 
+      mutate(val = case_when(val == "valdeltagande_riksdag" ~ "Riksdagsval",
+                             val == "valdeltagande_region" ~ "Regionfullmäktigval",
+                             val == "valdeltagande_kommun" ~ "Kommunfullmäktigval")) %>% 
+        select(valår, val, valdeltagande)
 
   # Sparar till Excel om användaren vill det
   if (!is.na(outputmapp) & !is.na(filnamn)) write.csv(valdeltagande_lan, paste0(outputmapp,filnamn), fileEncoding="UTF-8", row.names = FALSE)
