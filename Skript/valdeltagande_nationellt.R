@@ -68,8 +68,8 @@ berakna_valdeltagande_nationellt = function(region = "20", # Funkar enbart på l
   valdeltagande_lan = valdeltagande_lan %>% 
     pivot_longer(cols = -valår, names_to = "val", values_to = "valdeltagande") %>% 
       mutate(val = case_when(val == "valdeltagande_riksdag" ~ "Riksdagsval",
-                             val == "valdeltagande_region" ~ "Regionfullmäktigval",
-                             val == "valdeltagande_kommun" ~ "Kommunfullmäktigval")) %>% 
+                             val == "valdeltagande_region" ~ "Val till regionfullmäktige",
+                             val == "valdeltagande_kommun" ~ "Val till kommunfullmäktige")) %>% 
         select(valår, val, valdeltagande)
 
   # Sparar till Excel om användaren vill det

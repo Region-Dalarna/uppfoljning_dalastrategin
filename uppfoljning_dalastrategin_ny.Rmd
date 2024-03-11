@@ -1329,7 +1329,7 @@ I Dalarna har valdeltagande varierat över tid. I riksdagsvalet valde år `r min
 
 val1 <- SkapaStapelDiagram(skickad_df = valdeltagande %>% 
                               mutate(valår = valår %>% as.character(),
-                                     val = factor(val,levels=c("Riksdagsval","Regionfullmäktigval","Kommunfullmäktigval"))),
+                                     val = factor(val,levels=c("Riksdagsval","Val till regionfullmäktige","Val till kommunfullmäktige"))),
                     skickad_x_var = "valår",
                     skickad_y_var = "valdeltagande",
                     skickad_x_grupp = "val",
