@@ -125,6 +125,11 @@ intindex <- read_excel("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/ti
 intindex2 <- read_excel("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/tillväxtanalys/totalindex 2020.xlsx", sheet = 2)
 
 ```
+<br>
+<p style = "font-size:12px">
+<i>Rapporten är skapad av Samhällsanalys, Region Dalarna<br>
+Senast uppdaterad: `r Sys.Date()`</i>
+</p>
 
 # Introduktion {-}
 
