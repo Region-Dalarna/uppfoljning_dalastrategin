@@ -187,7 +187,7 @@ Dalarna är rikt på naturresurser och om vi brukar dem rätt ger de mångfalt t
 
 Dalarnas yta utgörs till 79 procent av skog vilket gör Dalarna till det femte mest skogstäta länet i landet [(SCB)](https://www.scb.se/hitta-statistik/sverige-i-siffror/miljo/marken-i-sverige/){target="_blank"}. All skogsmark är inte produktiv (ex. myrar och bergsytor etc. som producerar mindre än en kubikmeter virke per hektar och år). Dessa områden utgör 11,3 procent av skogsmarken och av dessa är ca 1,5 procentenheter formellt skyddad men icke produktiv skogsmark. Den konventionellt brukade skogsmarken utgör ca 78 procent av skogsmarken [(SCB)](https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__MI__MI0605/SkyddSkogFrivillig/table/tableViewLayout1/){target="_blank"}.
 
-Skyddad produktiv skog, tillsammans med frivilliga avsättningar av produktiv skog utgör andelen som brukas på ett hållbart sätt. I diagrammen nedan redovisas hur andelen skyddad produktiv skogsmark i Dalarnas län utvecklats mellan `r as.character(min(skogsmark$År))` och `r as.character(max(skogsmark$År))`. Arealen skyddad skogsmark i länet har ökat över tidsperioden, från `r format(skogsmark %>% filter(År==min(År)) %>% .$area_hektar,big.mark=" ")` hektar år `r as.character(min(skogsmark$År))` till `r format(skogsmark %>% filter(År==max(År)) %>% .$area_hektar,big.mark=" ")` hektar år `r as.character(max(skogsmark$År))`. Ungefär `r round(skogsmark %>% filter(År==max(År)) %>% .$area_procent,0)` procent av den produktiva skogsmarken i Dalarnas län var skyddad år `r as.character(max(skogsmark$År))`, vilket är i stort sett samma andel som `r as.character(min(skogsmark$År))`. Det betyder att den totala arealen skogsmark har ökat något under perioden.
+Skyddad produktiv skog, tillsammans med frivilliga avsättningar av produktiv skog utgör andelen som brukas på ett hållbart sätt. I diagrammen nedan redovisas hur andelen skyddad produktiv skogsmark i Dalarnas län utvecklats mellan `r as.character(min(skogsmark$År))` och `r as.character(max(skogsmark$År))`. Arealen skyddad skogsmark i länet har ökat över tidsperioden, från `r format(skogsmark %>% filter(År==min(År)) %>% .$area_hektar,big.mark=" ")` hektar år `r as.character(min(skogsmark$År))` till `r format(skogsmark %>% filter(År==max(År)) %>% .$area_hektar,big.mark=" ")` hektar år `r as.character(max(skogsmark$År))`. 
 
 ```{r, include = FALSE}
 skogsmark1 <- SkapaStapelDiagram(skickad_df = skogsmark %>%
@@ -220,8 +220,9 @@ skogsmark2 <- SkapaStapelDiagram(skickad_df = skogsmark,
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 skogsmark1
 ```
-<br>
-<br>
+
+Ungefär `r round(skogsmark %>% filter(År==max(År)) %>% .$area_procent,0)` procent av den produktiva skogsmarken i Dalarnas län var skyddad år `r as.character(max(skogsmark$År))`, vilket är i stort sett samma andel som `r as.character(min(skogsmark$År))`. Det betyder att den totala arealen skogsmark har ökat något under perioden.
+
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 skogsmark2
 ```
@@ -300,7 +301,7 @@ Ett sätt att mäta energieffektivitet är att sätta energiförbrukningen i lä
 
 Ett ökat förädlingsvärde per mängd förbrukad energi i länet kan betyda att länet har förbättrat energieffektiviteten i de fall industrier och näringar är ungefär desamma mellan mätningarna. En förklaring till en förbättrad energieffektivitet kan annars vara att näringslivets struktur har förändrats i en riktning där energikrävande industrier har lämnat regionen och mer kunskapsintensiv tjänsteproduktion har ökat (som generellt kräver mindre energi). Om energikrävande industrier har lämnat regionen och skapar utsläpp i andra delar av världen är det tyvärr inte självklart att nettoeffekten på de globala utsläppen minskat.
 
-Mellan `r min(effektivitet$År)` och `r max(effektivitet$År)` ökade energieffektiviteten i Dalarna med ca `r round((effektivitet %>% filter(Region == "Dalarnas län", År == max(År)) %>% .$value/effektivitet %>% filter(Region == "Dalarnas län", År == min(År)) %>% .$value-1)*100,0)` procent. Förändringen beror framförallt på att utsläppen av växthusgaser i länet har minskat under perioden men även på att BRP för Dalarna har stigit under samma tidsperiod. I en nationell jämförelse ligger Dalarnas energieffektivitet på den lägre halvan av intervallet tillsammans med regioner som också är mer glesbefolkade och har tunga industrier.
+Mellan `r min(effektivitet$År)` och `r max(effektivitet$År)` ökade energieffektiviteten i Dalarna med ca `r round((effektivitet %>% filter(Region == "Dalarnas län", År == max(År)) %>% .$value/effektivitet %>% filter(Region == "Dalarnas län", År == min(År)) %>% .$value-1)*100,0)` procent. Förändringen beror framförallt på att utsläppen av växthusgaser i länet har minskat under perioden men även på att BRP för Dalarna har stigit under samma tidsperiod. 
 
 ```{r, include = FALSE}
 
@@ -345,7 +346,9 @@ effektivitet3 <- SkapaStapelDiagram(skickad_df = effektivitet  %>%
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 effektivitet1alt
 ```
-<br>
+
+I en nationell jämförelse ligger Dalarnas energieffektivitet på den lägre halvan av intervallet tillsammans med regioner som också är mer glesbefolkade och har tunga industrier.
+
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 effektivitet3
 ```
@@ -408,7 +411,7 @@ avfallbrpdiag
 
 De klimatpåverkande växthusgaserna innefattar fler ämnen än koldioxid. Ett exempel är metangas, som därtill är betydligt skadligare per enhet än koldioxid (1 ton metangas motsvarar utsläpp av ca 28 ton koldioxid). För att utsläppen som sker i Dalarna ska vara jämförbara med andra regioners utsläpp omsätts därför samtliga gasers utsläpp till så kallade koldioxidekvivalenter, det vill säga den mängd som varje ämne släpper ut omräknat i termer av koldioxid.
 
-I Dalarna går utvecklingen i positiv riktning med minskande utsläpp av växthusgaser under de senaste decennierna. Det är  industri- och transportsektorn som står för den volymmässigt största minskningen samtidigt som dessa sektorer, i likhet med övriga Sverige, står för den största andelen utsläpp av växthusgaser totalt sett i länet (se den första figuren nedan). Sett till utsläpp per person ligger Dalarna högre än riksgenomsnittet, trots en minskning från knappt `r gsub("\\.",",",round(vaxthusgaser %>% filter(year == min(year),kpi == "Utsläpp per invånare",municipality == "Dalarnas län") %>% .$value,1))` ton/invånare år `r min(vaxthusgaser$year)`  till drygt `r gsub("\\.",",",round(vaxthusgaser %>% filter(year == max(year),kpi == "Utsläpp per invånare",municipality == "Dalarnas län") %>% .$value,1))` ton/invånare år `r max(vaxthusgaser$year)`. För att uppnå målet om klimatneutralitet 2045, skulle utsläppen behöva minska till ca 1,25 ton/invånare år 2045. Även om vi ser en utveckling i rätt riktning kommer det därför att krävas en ännu snabbare minskningstakt för att uppnå våra ambitioner i Dalastrategin och bli klimatneutrala till år 2045 enligt den nationella målsättningen.
+I Dalarna går utvecklingen i positiv riktning med minskande utsläpp av växthusgaser under de senaste decennierna. Det är  industri- och transportsektorn som står för den volymmässigt största minskningen samtidigt som dessa sektorer, i likhet med övriga Sverige, står för den största andelen utsläpp av växthusgaser totalt sett i länet. 
 
 ```{r, include = FALSE}
 #colnames(vaxthusgaser) <- c("Id", "Ar", "Geografi", "Utsläpp per invånare", "Totalt Utsläpp", "Uppvärmning", "Transporter", "Arbetsmaskiner", "El/Fjärrvärme", "Industri", "Jordbruk")
@@ -469,11 +472,12 @@ utslapp3 <- SkapaStapelDiagram(skickad_df = vaxthusgaser %>%
 
 ```
 
-<center>
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 utslapp1
 
 ```
+
+Sett till utsläpp per person ligger Dalarna högre än riksgenomsnittet, trots en minskning från knappt `r gsub("\\.",",",round(vaxthusgaser %>% filter(year == min(year),kpi == "Utsläpp per invånare",municipality == "Dalarnas län") %>% .$value,1))` ton/invånare år `r min(vaxthusgaser$year)`  till drygt `r gsub("\\.",",",round(vaxthusgaser %>% filter(year == max(year),kpi == "Utsläpp per invånare",municipality == "Dalarnas län") %>% .$value,1))` ton/invånare år `r max(vaxthusgaser$year)`. För att uppnå målet om klimatneutralitet 2045, skulle utsläppen behöva minska till ca 1,25 ton/invånare år 2045. Även om vi ser en utveckling i rätt riktning kommer det därför att krävas en ännu snabbare minskningstakt för att uppnå våra ambitioner i Dalastrategin och bli klimatneutrala till år 2045 enligt den nationella målsättningen.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 utslapp3
@@ -495,7 +499,7 @@ resande1alt <- SkapaStapelDiagram(skickad_df = resande %>%
                     diagram_titel = paste0("Resor per invånare med kollektivtrafik i Dalarna"),
                     output_mapp = "Diagram/",
                     filnamn_diagram = "resande1.png",
-                    diagram_capt = "Källa: Kollektivtrafikbarometern(via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna",
+                    diagram_capt = "Källa: Trafikanalys (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna",
                     x_axis_lutning = 0,
                     manual_color = diagramfarger("rus_sex")[1],
                     stodlinjer_avrunda_fem = TRUE,
@@ -522,15 +526,14 @@ resande2alt <- SkapaLinjeDiagram(skickad_df = resande %>%
 ```
 På grund av den utsträckta och relativt glesbefolkade geografin har Dalarna en utmaning i att skapa en hållbar transportinfrastruktur. För att nå klimat- och energimålen krävs kraftfull teknisk utveckling i kombination med beteendeförändringar. Kollektivt resande spelar en central roll för utvecklandet av en klimatsmart och resurseffektiv, men också mer jämställd och jämlik, mobilitet. Kollektivtrafik är förenat med höga kostnader, samtidigt som det finns samhällsekonomiska vinster. För att klara omställningen krävs mod att ställa olika kostnader mot varandra. För att vi ska lyckas öka det kollektiva resandet behöver den traditionella kollektivtrafiken sannolikt kompletteras med nya mobilitetslösningar och tjänster, särskilt för länets mest glesbefolkade områden.
 
-Diagrammen redovisar indikatorer för kollektivt resande i Dalarna: kollektivtrafiksresor per invånare samt marknadsandel för kollektivtrafik i länet. För antal resor per invånare syns att det kollektiva resandet har minskat avsevärt i Dalarna, från  `r resande %>% filter(kpi == "Resor_per_invanare") %>% filter(year == min(year)) %>% .$value ` resor per person och år från `r min(resande$year)` till `r round(resande %>% filter(kpi == "Resor_per_invanare") %>% filter(year == max(year)) %>% .$value,0) ` år `r max(resande$year)`. Nedgången kan delvis förklaras av pandemin - det sker en tydlig minskning mellan 2019 och 2020 - men även mellan 2012 och 2013 minskade antalet resor per invånare avsevärt i Dalarna. I en nationell jämförelse år 2021 framgår att det i glesbygdslänen i Sverige som mest görs 40 resor per person. Medan det görs betydligt fler i storstadsregionerna, så som Skåne med i snitt 71 resor per person och år och i Stockholm där flest resor görs, sker 230 resor per person och år (det sista stycket uppdateras inte automatiskt).
-
-Marknadsandelen för kollektivtrafik beräknas som andelen resor med kollektivtrafik (linjelagd buss, spårvagn, tunnelbana, pendeltåg, tåg och båt) och taxi av det totala antalet resor, dvs kollektivtrafik, taxi, bil (förare och passagerare) samt moped/MC. Här bryts uppgången i en förmodad pandemieffekt efter ett antal år av ökande marknadsandel för kollektivtrafiken.
+Diagrammen redovisar indikatorer för kollektivt resande i Dalarna: kollektivtrafiksresor per invånare samt marknadsandel för kollektivtrafik i länet. För antal resor per invånare syns att det kollektiva resandet har minskat avsevärt i Dalarna, från  `r resande %>% filter(kpi == "Resor_per_invanare") %>% filter(year == min(year)) %>% .$value ` resor per person och år från `r min(resande$year)` till `r round(resande %>% filter(kpi == "Resor_per_invanare") %>% filter(year == max(year)) %>% .$value,0) ` år `r max(resande$year)`. Nedgången kan delvis förklaras av pandemin - det sker en tydlig minskning mellan 2019 och 2020 - men även mellan 2012 och 2013 minskade antalet resor per invånare avsevärt i Dalarna. I en nationell jämförelse år 2022 framgår att det i glesbygdslänen i Sverige som mest görs runt 60 resor per person. Medan det görs betydligt fler i storstadsregionerna, så som Skåne med i snitt 105 resor per person och år och i Stockholm där flest resor görs, sker 290 resor per person och år.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 resande1alt
 ```
-<br>
-<br>
+
+Marknadsandelen för kollektivtrafik beräknas som andelen resor med kollektivtrafik (linjelagd buss, spårvagn, tunnelbana, pendeltåg, tåg och båt) och taxi av det totala antalet resor, dvs kollektivtrafik, taxi, bil (förare och passagerare) samt moped/MC. Här bryts uppgången i en förmodad pandemieffekt efter ett antal år av ökande marknadsandel för kollektivtrafiken.
+
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 resande2alt
 ```
@@ -680,20 +683,20 @@ forsk3 <- SkapaStapelDiagram(skickad_df = forskning_totalt %>%
 
 För att lösa dagens och morgondagens samhällsutmaningar och för att skapa utveckling och konkurrenskraft krävs ökad innovationskraft. Individers, företags, organisationers och offentlig sektors innovationsförmåga påverkar platsers utvecklingskraft och möjligheter till omställning. Denna indikator mäter investeringar i forskning och utveckling i länet. Det bör dock påpekas att resurser som använts till innovation och forskning är synnerligen svåra att mäta, så denna indikators värden bör främst tolkas utifrån de förändringar som skett, och inte som ett exakt värde.
 
-Under tidsperioden från 2011 till 2019 ses en viss ökning i investeringar mätt i kronor per invånare i länet, från drygt `r format(round(forskning_totalt %>% filter(year == min(.$year),municipality == "Dalarnas län") %>% .$utgiftertotalt,0),big.mark = " ")` kronor till drygt `r format(round(forskning_totalt %>% filter(year == 2019,municipality == "Dalarnas län") %>% .$utgiftertotalt,0),big.mark = " ")` kronor per invånare. Efter 2019 skedde dock en stor förändring, och investeringarna minskade avsevärt till `r format(round(forskning_totalt %>% filter(year == max(.$year),municipality == "Dalarnas län") %>% .$utgiftertotalt,0),big.mark = " ")` kronor per invånare år `r max(forskning_totalt$year)`. Den stor andelen investeringar sker i företagen, medan den offentliga sektorn och universitets- och högskolesektorn står för en mindre andel. Minskningen i investeringar mellan 2019 och 2021 förklaras av att företagens och offentlig sektors investeringar minskade, inom högskolesektorn ökade istället investeringarna under samma period. En trolig orsak till detta är Coronapandemin som fick betydande effekter på många delar av samhället. 
-
-I ett nationellt perspektiv ser vi att Dalarna hamnar på den nedre halvan. `r forskning_totalt %>% filter(year == max(.$year)) %>% filter(utgiftertotalt == max(utgiftertotalt)) %>% .$municipality`, som hade den högsta noteringen för investeringar i forskning och utveckling år `r max(forskning_totalt$year)`, hade ett drygt `r plyr::round_any(forskning_totalt %>% filter(year == max(.$year)) %>% filter(utgiftertotalt == max(utgiftertotalt)) %>% .$utgiftertotalt/forskning_totalt %>% filter(year == max(.$year)) %>% filter(municipality == "Dalarnas län") %>% .$utgiftertotalt,1)` gånger högre värde per invånare jämfört med Dalarna.
+Under tidsperioden från 2011 till 2019 ses en viss ökning i investeringar mätt i kronor per invånare i länet, från drygt `r format(round(forskning_totalt %>% filter(year == min(.$year),municipality == "Dalarnas län") %>% .$utgiftertotalt,0),big.mark = " ")` kronor till drygt `r format(round(forskning_totalt %>% filter(year == 2019,municipality == "Dalarnas län") %>% .$utgiftertotalt,0),big.mark = " ")` kronor per invånare. Efter 2019 skedde dock en stor förändring, och investeringarna minskade avsevärt till `r format(round(forskning_totalt %>% filter(year == max(.$year),municipality == "Dalarnas län") %>% .$utgiftertotalt,0),big.mark = " ")` kronor per invånare år `r max(forskning_totalt$year)`. 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 forsk1
 ```
-<br>
-<br>
+
+Den stor andelen investeringar sker i företagen, medan den offentliga sektorn och universitets- och högskolesektorn står för en mindre andel. Minskningen i investeringar mellan 2019 och 2021 förklaras av att företagens och offentlig sektors investeringar minskade, inom högskolesektorn ökade istället investeringarna under samma period. En trolig orsak till detta är Coronapandemin som fick betydande effekter på många delar av samhället.
+
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 forsk2
 ```
-<br>
-<br>
+
+I ett nationellt perspektiv ser vi att Dalarna hamnar på den nedre halvan. `r forskning_totalt %>% filter(year == max(.$year)) %>% filter(utgiftertotalt == max(utgiftertotalt)) %>% .$municipality`, som hade den högsta noteringen för investeringar i forskning och utveckling år `r max(forskning_totalt$year)`, hade ett drygt `r plyr::round_any(forskning_totalt %>% filter(year == max(.$year)) %>% filter(utgiftertotalt == max(utgiftertotalt)) %>% .$utgiftertotalt/forskning_totalt %>% filter(year == max(.$year)) %>% filter(municipality == "Dalarnas län") %>% .$utgiftertotalt,1)` gånger högre värde per invånare jämfört med Dalarna.
+
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 forsk3
 ```
