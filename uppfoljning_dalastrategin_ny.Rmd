@@ -117,7 +117,7 @@ hlv <- read_excel("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/HLV_Dal
 
 # Ej uppdaterade (Excelfil från tillväxtanalys?)
 
-# Källa: Senast kontrollerad 2024-03-01 - Senaste år är 2020
+# Källa: Senast kontrollerad 2024-03-13 - Senaste år är 2020
 # https://tillvaxtverket.se/tillvaxtverket/statistikochanalys/statistikomregionalutveckling/regionaltinternationaliseringsindex.1791.html
 
 intindex <- read_excel("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/tillväxtanalys/totalindex 2020.xlsx")
@@ -813,13 +813,12 @@ Internationellt kunskapsutbyte och handel är viktiga faktorer för att möta sa
 
 En indikator som används för att följa utvecklingen inom detta område är internationalisering. Internationalisering är ett komplext koncept och kan bestå av flera olika delar. I denna uppföljning används Tillväxtverkets regionala internationaliseringsindex för att illustrera internationalisering. Det består av ett antal variabler som innefattar handel (export), arbetsmarknad (internationella företags betydelse för regionen) och turism (utländska gästnätter). Indexet gör det möjligt att följa hur internationaliseringen utvecklas över tid i olika regioner (län).
 
-För 2020 ligger Dalarna i mittenskiktet bland de svenska regionerna. Den region som presterar bäst är Västra Götalandsregionen med ett index-värde på 78,6 medan värdet för Dalarna är 49,1. Dalarna presterar bättre än de andra regionerna i Norra Mellansverige (Gävleborg 25,8 och Värmland 47,2). Resultatet för Dalarna har förbättras sedan 2016 tack vare en ökning av antalet utländska gästnätter. År 2020 var länet på en tredje plats i en nationell jämförelse av utländska gästnätter per invånare, bakom Norrbotten och Jämtland.
-
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 inter1
 ```
-<br>
-<br>
+
+För 2020 ligger Dalarna i mittenskiktet bland de svenska regionerna. Den region som presterar bäst är Västra Götalandsregionen med ett index-värde på 78,6 medan värdet för Dalarna är 49,1. Dalarna presterar bättre än de andra regionerna i Norra Mellansverige (Gävleborg 25,8 och Värmland 47,2). Resultatet för Dalarna har förbättras sedan 2016 tack vare en ökning av antalet utländska gästnätter. År 2020 var länet på en tredje plats i en nationell jämförelse av utländska gästnätter per invånare, bakom Norrbotten och Jämtland.
+
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 inter2
 ```
@@ -1026,11 +1025,6 @@ Invandring är en del av lösningen för att möta en ökad efterfrågan på arb
 
 Diagrammet visar tydligt hur andelen etablerade på arbetsmarknaden i arbetsför ålder ökar efter vistelsetid i landet. För det senaste året i period, `r max(etablering$år)`, hade drygt `r round(etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 0-1 år",år == max(år)) %>% .$Andel_forvarvsarbetande,0)` procent av invandrade med vistelsetid under ett år etablerat sig på arbetsmarknaden. Andelen etablerade på arbetsmarknaden ökar sedan alltmer efter vistelsetid och för samma år var det ca `r round(etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år", år == max(år)) %>% .$Andel_forvarvsarbetande,0)` procent i gruppen som vistats i Sverige i tio år eller mer som var etablerade på arbetsmarknaden.
 
-Ytterligare en positiv trend är att det över tid verkar gå snabbare för nyanlända att etablera sig på arbetsmarknaden. Från `r min(etablering$år)` till `r max(etablering$år)` har andelen etablerade på arbetsmarknaden i gruppen med vistelsetid under ett år, ökat från ca `r round(etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 0-1 år",år == min(år)) %>% .$Andel_forvarvsarbetande,0)` procent till drygt `r round(etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 0-1 år",år == max(år)) %>% .$Andel_forvarvsarbetande,0)` procent, vilket är mer än en fördubbling. Det finns dessvärre tydliga skillnader mellan mäns och kvinnors förutsättningar att etablera sig de första åren. En betydligt högre andel män har lyckats etablera sig på arbetsmarknaden inom nio år i jämförelse med andelen kvinnor. Efter minst 10 år i landet är dock kvinnorna i princip ikapp männen. Cirka `r round(etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% .$Andel_forvarvsarbetande,0)`  procent i respektive grupp är etablerad, och det skiljer endast `r etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% .$Andel_forvarvsarbetande - etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% .$Andel_forvarvsarbetande` procentenheter mellan grupperna.
-
-I en jämförelse med övriga län av andelen etablerade efter minst 10 år i Sverige, återfinns Dalarna i mittensegmentet. `r etablering %>% filter(utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% filter(Andel_forvarvsarbetande == max(Andel_forvarvsarbetande)) %>% .$region` har den högsta andelen etablerade med `r round(etablering %>% filter(utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% filter(Andel_forvarvsarbetande == max(Andel_forvarvsarbetande)) %>% .$Andel_forvarvsarbetande,0)` procent, och i `r etablering %>% filter(utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% filter(Andel_forvarvsarbetande == min(Andel_forvarvsarbetande)) %>% .$region` är andelen etablerade efter minst 10 år i landet lägst, med ca `r round(etablering %>% filter(utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% filter(Andel_forvarvsarbetande == min(Andel_forvarvsarbetande)) %>% .$Andel_forvarvsarbetande,0)` procent. 
-
-
 ```{r, include = FALSE}
 etablering$bakgrundsvariabel <- gsub("^.{0,12}", "", etablering$bakgrundsvariabel)
 
@@ -1117,12 +1111,14 @@ etab4 <- SkapaStapelDiagram(skickad_df = etablering %>%
 etab1
 ```
 
-<br>
+Ytterligare en positiv trend är att det över tid verkar gå snabbare för nyanlända att etablera sig på arbetsmarknaden. Från `r min(etablering$år)` till `r max(etablering$år)` har andelen etablerade på arbetsmarknaden i gruppen med vistelsetid under ett år, ökat från ca `r round(etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 0-1 år",år == min(år)) %>% .$Andel_forvarvsarbetande,0)` procent till drygt `r round(etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 0-1 år",år == max(år)) %>% .$Andel_forvarvsarbetande,0)` procent, vilket är mer än en fördubbling. Det finns dessvärre tydliga skillnader mellan mäns och kvinnors förutsättningar att etablera sig de första åren. En betydligt högre andel män har lyckats etablera sig på arbetsmarknaden inom nio år i jämförelse med andelen kvinnor. Efter minst 10 år i landet är dock kvinnorna i princip ikapp männen. Cirka `r round(etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% .$Andel_forvarvsarbetande,0)`  procent i respektive grupp är etablerad, och det skiljer endast `r etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% .$Andel_forvarvsarbetande - etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% .$Andel_forvarvsarbetande` procentenheter mellan grupperna.
+
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 etab_alt
 ```
 
-<br>
+I en jämförelse med övriga län av andelen etablerade efter minst 10 år i Sverige, återfinns Dalarna i mittensegmentet. `r etablering %>% filter(utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% filter(Andel_forvarvsarbetande == max(Andel_forvarvsarbetande)) %>% .$region` har den högsta andelen etablerade med `r round(etablering %>% filter(utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% filter(Andel_forvarvsarbetande == max(Andel_forvarvsarbetande)) %>% .$Andel_forvarvsarbetande,0)` procent, och i `r etablering %>% filter(utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% filter(Andel_forvarvsarbetande == min(Andel_forvarvsarbetande)) %>% .$region` är andelen etablerade efter minst 10 år i landet lägst, med ca `r round(etablering %>% filter(utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% filter(Andel_forvarvsarbetande == min(Andel_forvarvsarbetande)) %>% .$Andel_forvarvsarbetande,0)` procent. 
+
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 etab4
 ```
@@ -1546,7 +1542,7 @@ Ekonomiska klyftor mellan olika grupper i samhället är en utmaning för både 
 
 Med låg ekonomisk standard menas de hushåll som har en årsinkomst under 60 procent av medianvärdet för hushållens årliga inkomster i Sverige. Andel barn som lever i hushåll med låg ekonomisk standard blir därför ett mått på barns ekonomiska utsatthet i samhället. 
 
-I diagrammet nedan kan vi notera att andelen unga (0-19 år) som lever i hushåll med låg ekonomisk standard i Dalarnas län har ökat över mätperioden, vilket är negativt, från `r utsatt %>% filter(municipality_id == 20, year == min(year)) %>% .$value` procent år `r min(utsatt$year)` till drygt `r utsatt %>% filter(municipality_id == 20, year == max(year)) %>% .$value` procent `r max(utsatt$year)`. I ett nationellt perspektiv ser vi att endast fyra andra län har en högre andel unga som lever i hushåll med låg ekonomisk standard än vad Dalarna har.
+I diagrammet nedan kan vi notera att andelen unga (0-19 år) som lever i hushåll med låg ekonomisk standard i Dalarnas län har ökat över mätperioden, vilket är negativt, från `r utsatt %>% filter(municipality_id == 20, year == min(year)) %>% .$value` procent år `r min(utsatt$year)` till drygt `r utsatt %>% filter(municipality_id == 20, year == max(year)) %>% .$value` procent `r max(utsatt$year)`. 
 
 ```{r, include = FALSE}
 
@@ -1593,8 +1589,9 @@ ut2 <- SkapaStapelDiagram(skickad_df = utsatt %>%
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 ut1
 ```
-<br>
-<br>
+
+I ett nationellt perspektiv ser vi att endast fyra andra län har en högre andel unga som lever i hushåll med låg ekonomisk standard än vad Dalarna har.
+
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 ut2
 ```
