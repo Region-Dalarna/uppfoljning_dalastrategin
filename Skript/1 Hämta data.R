@@ -78,7 +78,8 @@ hamta_data_kollektivtresande(outputmapp = outputmapp)
 ##########################
 # OBS - uppdateras inte automatiskt. År behöver för tillfället "hårdkodas"
 source("Skript/livsmedel.R", encoding="UTF-8")
-hamta_data_livsmedel(outputmapp = outputmapp)
+hamta_data_livsmedel(outputmapp = outputmapp,
+                     filnamn = "livsmedel_ny.csv")
 
 ###############################
 ### Självförsörjning energi ###

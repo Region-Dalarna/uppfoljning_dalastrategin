@@ -53,7 +53,7 @@ elproduktion <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/
 
 # Uppdateras inte automatiskt. Se skriptet livsmedel.R för mer info
 
-livsmedel <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/livsmedel.csv",encoding="UTF-8")
+livsmedel <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/livsmedel_ny.csv",encoding="UTF-8")
 
 avfall <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/avfall.csv",encoding="UTF-8")
 
@@ -538,21 +538,11 @@ Marknadsandelen för kollektivtrafik beräknas som andelen resor med kollektivtr
 resande2alt
 ```
 
-## Laddinfrastruktur för fordon
-
-Eu har tagit fram ett regelverk för alternativa bränslen och ställer minimikrav på tillgänglig effekt per registrerad bil i en kommun. Regelverket förkortas AFIR (Alternative Fuels Infrastructure Regulation) och följs upp på den nationella plattformen drivmedla.se[https://drivmedla.se/kartor-och-statistik/afir-kartan] 
-Kravet gör gällande att det måste finnas en effekt på 1,3 kW i offentligt tillgänglig laddningsinfrastruktur för varje elfordon och 0,8 kW för varje Laddhybrid. Ev. karta här. 
-
-En egen ansats är att göra en beräkning av hur tillgängligheten till laddning är längs de större och mest trafikerade vägarna, så som E16, E45, Risk 70, m.fl. Anna frågar Henrik om detta.
-
-
 ## Skattad självförsörjningsgrad av energi och livsmedel
 
 Klimatförändringarna medför lokalt förändrade mönster för nederbörd, torka och vind men även insekts- och svampangrepp på grödor och skog, höga temperaturer, med mera. Här spelar god samhällsplanering på regional och kommunal nivå en viktig roll. Ett sätt att förbättra beredskapen i Dalarna är att ha en tillräckligt omfattande lokal och hållbar livsmedelsproduktion. En ökad självförsörjningsgrad är en trygghet på flera sätt och gynnar även miljöns motståndskraft genom en ökad biologisk mångfald.
 
-Det första diagrammet visar andelen livsmedel inom fem kategorier (fårkött, griskött, matpotatis, mjölkprodukter samt nötkött) som producerats i Dalarna i relation till den mängd livsmedel i varje kategori som konsumerats i länet. Med undantag för matpotatis år 2016 och år 2019, som vi i princip är självförsörjande på, konsumerar befolkningen i Dalarna idag betydligt mer inom samtliga kategorier jämfört med den mängd som produceras i länet.
-
-Det andra diagrammet visar ett teroretiskt mått på självförsörjning av energi i Dalarna där den totala elproduktionen i länet visas som andel av den total elförbrukningen. Diagrammet visar en positiv trend för självförsörjningsgraden av energi, vilket beror på att förbrukningen av el har minskat i länet sedan 2016 samtidigt som produktionen av el har ökat under samma tidsperiod.
+Diagrammet nedan visar andelen livsmedel inom fem kategorier (fårkött, griskött, matpotatis, mjölkprodukter samt nötkött) som producerats i Dalarna i relation till den mängd livsmedel i varje kategori som konsumerats i länet. Med undantag för matpotatis år 2016, 2019 och 2022, som vi i princip är självförsörjande på, konsumerar befolkningen i Dalarna idag betydligt mer inom samtliga kategorier jämfört med den mängd som produceras i länet.
 
 ```{r, include = FALSE}
 #livsmedel1  <- ggplot(livsmedel, aes(fill=as.character(År), y=Andel, x=Produkt))+
@@ -599,8 +589,9 @@ elgrad <- SkapaStapelDiagram(skickad_df = el %>%
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 livsmedel1alt
 ```
-<br>
-<br>
+
+I diagrammet nedan visas ett teoretiskt mått på självförsörjning av energi i Dalarna där den totala elproduktionen i länet visas som andel av den total elförbrukningen. Diagrammet visar en positiv trend för självförsörjningsgraden av energi, vilket beror på att förbrukningen av el har minskat i länet sedan 2016 samtidigt som produktionen av el har ökat under samma tidsperiod.
+
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 elgrad
 ```
@@ -703,18 +694,13 @@ forsk3
 
 ## Branschbredd
 
-TEXT KOPIERAD FRÅN SÅRBARHETSANALYS. BEHÖVER UPPDATERAS
-
-Ett annat sätt att mäta beroende av enskilda branscher är genom den så kallade branschbredden, ett mått som jämför antalet branscher som finns representerade i exempelvis en kommun med det totala antalet branscher i Sverige. I Dalarna som helhet fanns företag inom ca `r round(branschbredd %>% filter(municipality =="Dalarnas län",year == max(year)) %>% .$Branschbredd,0)` procent av alla Sveriges branscher år `r max(branschbredd$year)`. Bland Dalarnas kommuner hade de med högst befolkning, Falun och Borlänge, också störst branschbredd, med drygt `r round(branschbredd %>% filter(municipality =="Falun",year == max(year)) %>% .$Branschbredd,0)` respektive `r round(branschbredd %>% filter(municipality =="Borlänge",year == max(year)) %>% .$Branschbredd,0)` procent av branscherna representerade `r max(branschbredd$year)`. Lägst branschbredd hade `r branschbredd %>% filter(year == max(year)) %>% filter(Branschbredd == min(Branschbredd)) %>% .$municipality`, med ca `r round(branschbredd %>% filter(year == max(year)) %>% filter(Branschbredd == min(Branschbredd)) %>% .$Branschbredd,0)` procent av branscherna representerade år 2021. 
+Ett sätt att mäta konkurrensen i Dalarna är genom den så kallade branschbredden, ett mått som jämför antalet branscher som finns representerade i exempelvis en kommun med det totala antalet branscher i Sverige. I Dalarna som helhet fanns företag inom ca `r round(branschbredd %>% filter(municipality =="Dalarnas län",year == max(year)) %>% .$Branschbredd,0)` procent av alla Sveriges branscher år `r max(branschbredd$year)`. Bland Dalarnas kommuner hade de med högst befolkning, Falun och Borlänge, också störst branschbredd, med drygt `r round(branschbredd %>% filter(municipality =="Falun",year == max(year)) %>% .$Branschbredd,0)` respektive `r round(branschbredd %>% filter(municipality =="Borlänge",year == max(year)) %>% .$Branschbredd,0)` procent av branscherna representerade `r max(branschbredd$year)`. Lägst branschbredd hade `r branschbredd %>% filter(year == max(year)) %>% filter(Branschbredd == min(Branschbredd)) %>% .$municipality`, med ca `r round(branschbredd %>% filter(year == max(year)) %>% filter(Branschbredd == min(Branschbredd)) %>% .$Branschbredd,0)` procent av branscherna representerade år `r max(branschbredd$year)`. 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_branschbredd$branschbredd
 ```
 
-
 ## Branschstruktur
-
-TEXT KOPIERAD FRÅN SÅRBARHETSANALYS. BEHÖVER UPPDATERAS
 
 Traditionellt anses Dalarna vara ett så kallat tillverkande län, med många företag inom tillverkning och utvinning. Denna bild bekräftas delvis av figuren nedan, som visar hur stor andel av de förvärvsarbetande som arbetar i olika branscher i Dalarna och Sverige. I Dalarna arbetar drygt `r round(andel_forvarvsarbetande_bransch %>% filter(region == "Dalarna",bransch == "Tillverkning och utvinning") %>% .$andel,0)` procent av de sysselsatta inom tillverkning och utvinning, att jämföra med strax under `r round(andel_forvarvsarbetande_bransch %>% filter(region == "Sverige",bransch == "Tillverkning och utvinning") %>% .$andel,0)` procent i Sverige som helhet. Mer än var femte förvärvsarbetande i Dalarna arbetar dock inom vård och omsorg, vilket gör branschen till Dalarnas viktigaste vad gäller sysselsättning. Som jämförelse arbetar bara ungefär `r round(andel_forvarvsarbetande_bransch %>% filter(region == "Sverige",bransch == "Vård och omsorg") %>% .$andel,0)` procent av de förvärvsarbetande i Sverige inom vård och omsorg.
 
@@ -725,22 +711,26 @@ gg_andel_forv$andel_per_bransch
 
 ## Nyföretagande
 
-TEXT KOPIERAD FRÅN SÅRBARHETSANALYS. BEHÖVER UPPDATERAS
-
-När det gäller nystartade företag har `r Nystartade %>% filter(substr(year,1,1) != "m") %>% filter(year == max(year)) %>% filter(nystartade_ftg == max(nystartade_ftg)) %>% .$municipality` kommun flest, med ungefär `r round(Nystartade %>% filter(substr(year,1,1) != "m") %>% filter(year == max(year)) %>% filter(nystartade_ftg == max(nystartade_ftg)) %>% .$nystartade_ftg,0)` nystartade företag per 1000 invånare `r max(Nystartade %>% filter(substr(year,1,1) != "m") %>% .$year)`. Även Malung-Sälen och Falun hade fler nystartade företag (per 1000 invånare) än Sverige `r max(Nystartade %>% filter(substr(year,1,1) != "m") %>% .$year)`. Glädjande är att antalet nystartade företag har ökat i en majoritet av Dalarnas kommuner om år `r max(Nystartade %>% filter(substr(year,1,1) != "m") %>% .$year)` jämförs med medelvärdet 2015-2020.
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_nyst_konk$nystartade
-```
-
-
 ```{r, include = FALSE}
 
-nystart1 <- SkapaStapelDiagram(skickad_df = nystartade %>% 
+# Data fram till 2021. Äldre dataset som inte verkar finnas längre
+nystart_21 <- nystartade %>% 
                 filter(Län =="Dalarnas län") %>% 
                 pivot_longer(!Län, names_to="År", values_to="Antal") %>% 
                   mutate(År = str_sub(År, 1,4)) %>% 
-                  slice(-17),                      # dublett på år 2010 tas bort med radnummer
+                  slice(-17)
+
+# Läser in data för 2022 från Tillväxtanalys statistikdatabas. Finns enbart data från 2011, varför jag behåller det gamla datasettet också
+nystart_efter_21 <- read_excel("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/nystartade_efter2021_240314.xlsx") %>% 
+  mutate(År = substr(Kvartal,1,4),
+         Län = sub("^\\S+\\s+", '', Län)) %>% 
+          group_by(År,Län) %>%
+            summarize(Antal=sum(antal)) %>%
+              ungroup() 
+
+nystartade_diag = rbind(nystart_21,nystart_efter_21)
+
+nystart1 <- SkapaStapelDiagram(skickad_df = nystartade_diag ,                      
                     skickad_x_var = "År",
                     skickad_y_var = "Antal",
                     diagram_titel = paste0("Antal nystartade företag i Dalarna"),
@@ -756,13 +746,17 @@ nystart1 <- SkapaStapelDiagram(skickad_df = nystartade %>%
                     lagg_pa_logga = FALSE)
 ```
 
-EJ UPPDATERAD. VÄNTA TILLS SENARE MED ATT UPPDATERA DATA (EJ API)
-För ekonomins och samhällets förnyelse är entreprenörskap en avgörande faktor. Dalarna behöver fler, och olika typer av entreprenörer och en av prioriteringarna i Dalastrategin är att främja entreprenörskap och företagande. Denna indikator mäter antalet nystartade företag i geografin. Antalet nystartade företag per år i Dalarna har ökat över tid där toppnoteringen nåddes 2021 med 1 748 stycken. År 2007 gjordes en större förändring i statistiken över nystartade företag vilket kan förklara den skarpa förändringen från 2006 till 2007.
+För ekonomins och samhällets förnyelse är entreprenörskap en avgörande faktor. Dalarna behöver fler, och olika typer av entreprenörer och en av prioriteringarna i Dalastrategin är att främja entreprenörskap och företagande. Denna indikator mäter antalet nystartade företag i geografin. Antalet nystartade företag per år i Dalarna har ökat över tid där toppnoteringen nåddes `r nystartade_diag %>% filter(Antal == max(Antal)) %>% .$År` med `r format(nystartade_diag %>% filter(Antal == max(Antal)) %>% .$Antal,big.mark=" ")` stycken. Antal nystartade företag minskade dock något år 2022. År 2007 gjordes en större förändring i statistiken över nystartade företag vilket kan förklara den skarpa förändringen från 2006 till 2007.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 nystart1
 ```
 
+Om antalet nystartade företag delas upp på Dalarnas kommuner, har `r Nystartade %>% filter(substr(year,1,1) != "m") %>% filter(year == max(year)) %>% filter(nystartade_ftg == max(nystartade_ftg)) %>% .$municipality` kommun flest, med ungefär `r round(Nystartade %>% filter(substr(year,1,1) != "m") %>% filter(year == max(year)) %>% filter(nystartade_ftg == max(nystartade_ftg)) %>% .$nystartade_ftg,0)` nystartade företag per 1000 invånare `r max(Nystartade %>% filter(substr(year,1,1) != "m") %>% .$year)`. Även Malung-Sälen och Falun hade fler nystartade företag (per 1000 invånare) än Sverige `r max(Nystartade %>% filter(substr(year,1,1) != "m") %>% .$year)`. Glädjande är att antalet nystartade företag har ökat i en majoritet av Dalarnas kommuner om år `r max(Nystartade %>% filter(substr(year,1,1) != "m") %>% .$year)` jämförs med medelvärdet 2015-2020.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_nyst_konk$nystartade
+```
 
 ## Internationaliseringsgrad
 
@@ -813,11 +807,13 @@ Internationellt kunskapsutbyte och handel är viktiga faktorer för att möta sa
 
 En indikator som används för att följa utvecklingen inom detta område är internationalisering. Internationalisering är ett komplext koncept och kan bestå av flera olika delar. I denna uppföljning används Tillväxtverkets regionala internationaliseringsindex för att illustrera internationalisering. Det består av ett antal variabler som innefattar handel (export), arbetsmarknad (internationella företags betydelse för regionen) och turism (utländska gästnätter). Indexet gör det möjligt att följa hur internationaliseringen utvecklas över tid i olika regioner (län).
 
+För 2020 ligger Dalarna i mittenskiktet bland de svenska regionerna. Den region som presterar bäst är Västra Götalandsregionen med ett index-värde på 78,6 medan värdet för Dalarna är 49,1. Dalarna presterar bättre än de andra regionerna i Norra Mellansverige (Gävleborg 25,8 och Värmland 47,2).
+
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 inter1
 ```
 
-För 2020 ligger Dalarna i mittenskiktet bland de svenska regionerna. Den region som presterar bäst är Västra Götalandsregionen med ett index-värde på 78,6 medan värdet för Dalarna är 49,1. Dalarna presterar bättre än de andra regionerna i Norra Mellansverige (Gävleborg 25,8 och Värmland 47,2). Resultatet för Dalarna har förbättras sedan 2016 tack vare en ökning av antalet utländska gästnätter. År 2020 var länet på en tredje plats i en nationell jämförelse av utländska gästnätter per invånare, bakom Norrbotten och Jämtland.
+Resultatet för Dalarna är nästintill oförändrat sedan 2016 (en försämring med under 1 indexenhet) . År 2020 var länet dock på en tredje plats i en nationell jämförelse av utländska gästnätter per invånare, bakom Norrbotten och Jämtland.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 inter2
