@@ -70,6 +70,10 @@ hamta_data_avfall = function(region_Kolada = "0020",
   ### Gör datan wide istället för long. Detta för att enklare kunna beräkna avfall relaterat till BNO
   avfall <- pivot_wider(avfall, names_from=kpi, values_from=value)
   
+  # Tar bort år om det saknas data. Data för vissa variabler (invånare kommer sannolikt tidigare)
+  avfall <- avfall %>% 
+    filter(!is.na(`Insamlat kommunalt avfall totalt, kg/invånare (justerat)`))
+  
   ### BRP-data från SCB för Dalarna. Används för att beräkna avfall/BRP
   ### Först skapar vi en lista på det vi vill ha
   pxweb_query_list <- 

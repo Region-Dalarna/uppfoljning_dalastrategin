@@ -25,7 +25,7 @@ hamta_data_energieffektivitet = function(region = "20",
   
   # ===========================================================================================================
   
-  source("https://raw.githubusercontent.com/FaluPeppe/func/main/func_API.R")
+  source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R")
   
   if (!require("pacman")) install.packages("pacman")
   pacman::p_load(tidyverse,

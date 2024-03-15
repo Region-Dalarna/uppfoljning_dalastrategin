@@ -51,8 +51,6 @@ vaxthusgaser <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/
 
 elproduktion <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/elproduktion.csv",encoding="UTF-8")
 
-# Uppdateras inte automatiskt. Se skriptet livsmedel.R för mer info
-
 livsmedel <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/livsmedel_ny.csv",encoding="UTF-8")
 
 avfall <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/avfall.csv",encoding="UTF-8")
