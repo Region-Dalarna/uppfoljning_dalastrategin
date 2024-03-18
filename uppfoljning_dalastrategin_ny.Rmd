@@ -1232,7 +1232,7 @@ till1 <- SkapaStapelDiagram(skickad_df = service %>%
 till1
 ```
 
-## Tillgång till vård
+## Tillgänglighet till vård
 
 Den här indikatorn visar hur stor andel av Dalarnas befolkning som anser att de har tillgång den hälso och sjukvård som de behöver. 
 
