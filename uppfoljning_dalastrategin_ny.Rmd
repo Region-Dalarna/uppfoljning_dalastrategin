@@ -179,11 +179,12 @@ Den miljömässiga dimensionen i regional utveckling handlar bland annat om att 
 Dalarna är rikt på naturresurser och om de brukas rätt ger de mångfalt tillbaka. Indikatorer som följs upp är därför bland annat hur resurser som vatten och vind, skog och jordbruksmark används. I Dalarna utgörs samtidigt en stor del av näringslivet av tillverkande industri som förbrukar relativt sett stora mängder energi, och driver därigenom upp mängden energi förbrukad per invånare. Det är en viktig avvägning mellan nytta och miljöpåverkan, att bedöma huruvida Dalarnas företag har det produktionssätt som har den minsta miljöpåverkan i global jämförelse och därmed motiv till att just företagen i Dalarna ska bedriva denna produktion.
 
 
-## Formellt skyddad produktiv skogsmark
+## Skogsmark 
+Formellt skyddad produktiv skogsmark
 
 År 2018 beslutade dåvarande regering om Sveriges första nationella skogsprogram med fokus på skogsbrukets roll för en hållbar utveckling. I Dalastrategin omnämns skogsbruket som en av länets viktigare näringar. Skogsbruket påverkar och påverkas av klimatförändringarna, och därför behöver skötsel och brukande anpassas utifrån rådande kunskap om vad som har minst miljöpåverkan.
 
-Dalarnas yta utgörs till 79 procent av skog vilket gör Dalarna till det femte mest skogstäta länet i landet [(SCB)](https://www.scb.se/hitta-statistik/sverige-i-siffror/miljo/marken-i-sverige/){target="_blank"}. All skogsmark är inte produktiv (ex. myrar och bergsytor etc. som producerar mindre än en kubikmeter virke per hektar och år). Dessa områden utgör 11,3 procent av skogsmarken, av dessa är ca 1,5 procentenheter formellt skyddad. Skogsbruket i Dalarna utgörs nästan enbart av konventionella metoder, ca 78 procent av skogsmarken brukas konventionellt. [(SCB)](https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__MI__MI0605/SkyddSkogFrivillig/table/tableViewLayout1/){target="_blank"}.
+Dalarnas yta utgörs till 79 procent av skog vilket gör Dalarna till det femte mest skogstäta länet i landet [(SCB)](https://www.scb.se/hitta-statistik/sverige-i-siffror/miljo/marken-i-sverige/){target="_blank"}. All skogsmark är inte produktiv (ex. myrar och bergsytor etc. som producerar mindre än en kubikmeter virke per hektar och år). Dessa områden utgör 11,3 procent av skogsmarken, av dessa är ca 1,5 procentenheter formellt skyddad. Skogsbruket i Dalarna brukas nästan enbart med konventionella metoder, ca 78 procent av skogsmarken brukas konventionellt. [(SCB)](https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__MI__MI0605/SkyddSkogFrivillig/table/tableViewLayout1/){target="_blank"}.
 
 Skyddad produktiv skog, tillsammans med frivilliga avsättningar av produktiv skog utgör andelen som brukas på ett hållbart sätt. I diagrammen nedan redovisas hur andelen skyddad produktiv skogsmark i Dalarnas län utvecklats mellan `r as.character(min(skogsmark$År))` och `r as.character(max(skogsmark$År))`. Arealen skyddad skogsmark i länet har ökat över tidsperioden, från `r format(skogsmark %>% filter(År==min(År)) %>% .$area_hektar,big.mark=" ")` hektar år `r as.character(min(skogsmark$År))` till `r format(skogsmark %>% filter(År==max(År)) %>% .$area_hektar,big.mark=" ")` hektar år `r as.character(max(skogsmark$År))`. 
 
@@ -227,11 +228,11 @@ skogsmark2
 
 ## Betesmark och slåtteräng
 
-Biologisk mångfald och väl fungerande ekosystem är en förutsättning för allt liv på jorden. Det är också en bas för goda livsmiljöer för både Dalarnas invånare och för Dalarnas näringsliv. Den gröna infrastrukturen är ekologiskt funktionella nätverk av livsmiljöer och naturområden som utformas, brukas och förvaltas så att den biologiska mångfalden bevaras och därmed främjar för samhället så centrala ekosystemtjänster som exempelvis vattenrening och livskraftiga jordbruksmarker etc. Samhället har allt att vinna på ett hållbart bruk av ekosystemen och att förvalta ett mångfunktionellt landskap där natur- och kulturvärden tillvaratas.
+Biologisk mångfald och väl fungerande ekosystem är en förutsättning för allt liv på jorden. Det är därmed också nödvändiga för goda livsmiljöer för både Dalarnas invånare och för Dalarnas näringsliv. Den gröna infrastrukturen är ekologiskt funktionella nätverk av livsmiljöer och naturområden som utformas, brukas och förvaltas så att den biologiska mångfalden bevaras och därmed främjar för samhället så centrala ekosystemtjänster som exempelvis vattenrening och livskraftiga jordbruksmarker etc. Samhället har allt att vinna på ett hållbart bruk av ekosystemen och att förvalta ett mångfunktionellt landskap där natur- och kulturvärden tillvaratas.
 
-Betesmark tillsammans med åkermark utgör jordbruksmark. Åkermarken kan brukas för djurfoder och livsmedel, medan betesmarken och betande djur i hög grad bidrar till att upprätthålla artrikedomen. En delmängd av betesmarken är slåtterängar, dessa har särskilt höga biologiska värden.
+Betesmark tillsammans med åkermark utgör jordbruksmark. Åkermarken kan brukas för djurfoder och livsmedel, medan betesmarken och betande djur i hög grad bidrar till att upprätthålla artrikedomen. En delmängd av betesmarken är slåtterängar, som har särskilt höga biologiska värden.
 
-I diagrammet nedan redovisas hur arealen betesmark i Dalarnas län har utvecklats mellan `r as.character(min(betesmark$year))` och `r as.character(max(betesmark$year))`. I diagrammet är den totala arealen betesmarken uppdelad på slåtteräng och alla annan betesmark, benämnd övrig betesmark. Den totala arealen betesmark har under denna period minskat från `r format(betesmark %>% filter(municipality_id == 20,year == min(year),kpi == "Total betesmark") %>% .$value,big.mark=" ")` till `r format(betesmark %>% filter(municipality_id == 20,year == max(year),kpi == "Total betesmark") %>% .$value,big.mark=" ")` hektar. Minskningen motsvarar ungefär samma areal som den formellt skyddade skogsmarken har ökat med. Den negativa trenden som ses för Dalarna går i motsatt riktning mot den nationella trenden. I riket har arealen betesmark istället ökat något. Slåtteräng är en delmängd av betesmarken som har särskilt höga biologiska värden och därmed särskilt stor betydelse för biologisk mångfald. I Dalarna har andelen slåtteräng ökat från `r gsub("\\.","\\,",round((betesmark %>% filter(municipality_id == 20,year == min(year),kpi == "Slåtteräng") %>% .$value/betesmark %>% filter(municipality_id == 20,year == min(year),kpi == "Total betesmark") %>% .$value)*100,1))` procent av betesmarken år `r as.character(min(betesmark$year))` till `r gsub("\\.","\\,",round((betesmark %>% filter(municipality_id == 20,year == max(year),kpi == "Slåtteräng") %>% .$value/betesmark %>% filter(municipality_id == 20,year == max(year),kpi == "Total betesmark") %>% .$value)*100,1))` procent av betesmarken år `r as.character(max(betesmark$year))`.
+I diagrammet nedan redovisas hur arealen betesmark i Dalarnas län har utvecklats mellan `r as.character(min(betesmark$year))` och `r as.character(max(betesmark$year))`. I diagrammet är den totala arealen betesmark uppdelad på slåtteräng och alla annan betesmark, benämnd övrig betesmark. Den totala arealen betesmark har under denna period minskat från `r format(betesmark %>% filter(municipality_id == 20,year == min(year),kpi == "Total betesmark") %>% .$value,big.mark=" ")` till `r format(betesmark %>% filter(municipality_id == 20,year == max(year),kpi == "Total betesmark") %>% .$value,big.mark=" ")` hektar. Minskningen motsvarar ungefär samma areal som den formellt skyddade skogsmarken har ökat med. Den negativa trenden som ses för Dalarna går i motsatt riktning mot den nationella trenden. I riket har arealen betesmark istället ökat något. Slåtteräng är en delmängd av betesmarken som har särskilt höga biologiska värden och därmed särskilt stor betydelse för biologisk mångfald. I Dalarna har andelen slåtteräng ökat från `r gsub("\\.","\\,",round((betesmark %>% filter(municipality_id == 20,year == min(year),kpi == "Slåtteräng") %>% .$value/betesmark %>% filter(municipality_id == 20,year == min(year),kpi == "Total betesmark") %>% .$value)*100,1))` procent av betesmarken år `r as.character(min(betesmark$year))` till `r gsub("\\.","\\,",round((betesmark %>% filter(municipality_id == 20,year == max(year),kpi == "Slåtteräng") %>% .$value/betesmark %>% filter(municipality_id == 20,year == max(year),kpi == "Total betesmark") %>% .$value)*100,1))` procent av betesmarken år `r as.character(max(betesmark$year))`.
 
 ```{r, include = FALSE}
 
@@ -259,7 +260,7 @@ Betesmark <- SkapaStapelDiagram(skickad_df = betesmark %>%
 Betesmark
 ```
 
-## Energiproduktion
+## Regionens energiproduktion
 
 En god tillgång till hållbar energi är avgörande för näringslivets och hela samhällets omställningsförmåga. En ökad regional produktion av förnybar energi bidrar till såväl minskade utsläpp som ökad självförsörjning och resiliens för Dalarna.
 
@@ -293,11 +294,11 @@ energialt <- SkapaStapelDiagram(skickad_df = elproduktion %>%
 energialt
 ```
 
-## Energieffektivitet
+## Energins ekonomiska effektivitet
 
-Ett sätt att mäta energieffektivitet är att sätta energiförbrukningen i länet i relation till de ekonomiska värden som produceras i länet. Detta skattas genom att beräkna förädlingsvärdet per ton koldioxidekvivalenter, vilket kopplar ihop utsläppen i länet med den ekonomiska aktiviteten. Att få ut ett större ekonomiskt värde av varje använd energienhet är generellt sett positivt för miljön. Forskare undersöker om det är möjligt att ha en fortsatt ökad ekonomisk tillväxt och samtidigt minska energiförbrukningen i samhället, så pass att ekonomisk aktivitet inte orsakar miljöpåverkan. Detta kallas frikoppling. Hittills visar resultaten på flera goda exempel men synliggör också konflikten mellan skyddet av naturresurser och den traditionella tillväxtmodellen som i praktiken tar naturresurser och ekosystemtjänster för givna.
+Ett sätt att mäta den ekonomiska effektiviteten i energianvändningen är att sätta energiförbrukningen i länet i relation till de ekonomiska värden som produceras i länet. En regions ekonomiska värdeproduktion mäts genom bruttoregionalprodukten (BRP). Energins ekonomiska effektivitet skattas sedan genom att beräkna förädlingsvärdet per ton koldioxidekvivalenter, vilket kopplar ihop utsläppen i länet med den ekonomiska aktiviteten. Att få ut ett större ekonomiskt värde av varje använd energienhet är generellt sett positivt för miljön. Forskare undersöker om det är möjligt att ha en fortsatt ökad ekonomisk tillväxt och samtidigt minska energiförbrukningen i samhället, så pass att ekonomisk aktivitet inte orsakar miljöpåverkan. Detta kallas frikoppling. Hittills visar resultaten på exempel med en minskad miljöpåverkan men synliggör också konflikten mellan skyddet av naturresurser och den traditionella tillväxtmodellen som i praktiken tar naturresurser och ekosystemtjänster för givna.
 
-Ett ökat förädlingsvärde per mängd förbrukad energi i länet kan betyda att länet har förbättrat energieffektiviteten i de fall industrier och näringar är ungefär desamma mellan mätningarna. En förklaring till en förbättrad energieffektivitet kan annars vara att näringslivets struktur har förändrats i en riktning där energikrävande industrier har lämnat regionen och mer kunskapsintensiv tjänsteproduktion har ökat (som generellt kräver mindre energi). Om energikrävande industrier har lämnat regionen och skapar utsläpp i andra delar av världen är det tyvärr inte självklart att nettoeffekten på de globala utsläppen minskat.
+Ett ökat förädlingsvärde per mängd förbrukad energi i länet kan betyda att länet har förbättrat energieffektiviteten i de fall industrier och näringar är ungefär desamma mellan mätningarna. En förklaring till en förbättrad energieffektivitet kan annars vara att näringslivets struktur har förändrats i en riktning där energikrävande industrier har lämnat regionen och mer kunskapsintensiv tjänsteproduktion har ökat (som generellt kräver mindre energi). Om energikrävande industrier har lämnat regionen och skapar utsläpp i andra delar av världen är det tyvärr inte självklart att nettoeffekten på de globala utsläppen minskat, då de flesta andra länder har en svagare miljölagstiftning än Sverige.
 
 Mellan `r min(effektivitet$År)` och `r max(effektivitet$År)` ökade energieffektiviteten i Dalarna med ca `r round((effektivitet %>% filter(Region == "Dalarnas län", År == max(År)) %>% .$value/effektivitet %>% filter(Region == "Dalarnas län", År == min(År)) %>% .$value-1)*100,0)` procent. Förändringen beror framförallt på att utsläppen av växthusgaser i länet har minskat under perioden men även på att BRP för Dalarna har stigit under samma tidsperiod. 
 
@@ -345,14 +346,14 @@ effektivitet3 <- SkapaStapelDiagram(skickad_df = effektivitet  %>%
 effektivitet1alt
 ```
 
-I en nationell jämförelse ligger Dalarnas energieffektivitet på den lägre halvan av intervallet tillsammans med regioner som också är mer glesbefolkade och har tunga industrier.
+I en nationell jämförelse ligger Dalarnas energieffektivitet på den sämre halvan av intervallet tillsammans med regioner som också är mer glesbefolkade och har tunga industrier.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 effektivitet3
 ```
 
 
-##  Insamlat kommunalt avfall
+##  Invånarnas resursförbrukning
 
 ```{r, include = FALSE}
 
@@ -378,7 +379,7 @@ En av prioriteringarna i Dalastrategin är att öka resurseffektiviteten i läne
 avfalldiag
 ```
 
-## Avfall/BRP
+## Avfall och ekonomisk produktion
 
 ```{r, include = FALSE}
 
@@ -397,7 +398,7 @@ avfallbrpdiag <- SkapaStapelDiagram(skickad_df = avfallbrp %>%
                     lagg_pa_logga = FALSE)
 ```
 
-Ytterligare en indikator på resurseffektivitet är kopplingen mellan mängden insamlat avfall (förbrukade resurser) och den ekonomiska aktiviteten i regionen, mätt genom bruttoregionalprodukten (BRP). Indikatorns värde uppvisar en positiv trend av att mängden avfall minskar per producerat ekonomiskt värde över perioden från `r min(avfallbrp$year)` till `r max(avfallbrp$year)`. `r min(avfallbrp$year)` samlades det in knappt `r format(plyr::round_any(avfallbrp %>% filter(year == min(year)) %>%  .$avfallbrp,10),big.mark = " ")` kg avfall för varje miljon kronor av Dalarnas BRP under samma år. `r max(avfallbrp$year)` hade motsvarande mängd avfall sjunkit till drygt `r format(plyr::round_any(avfallbrp %>% filter(year == max(year)) %>%  .$avfallbrp,10),big.mark = " ")` kg avfall. Det kan främst förklaras med att BRP har ökat under perioden.
+Ytterligare en indikator på ekonomisk resurseffektivitet är kopplingen mellan mängden insamlat avfall (förbrukade resurser) och den ekonomiska aktiviteten i regionen, mätt genom bruttoregionalprodukten (BRP). Indikatorns värde visar på en positiv trend av att mängden avfall minskar per producerat ekonomiskt värde över perioden från `r min(avfallbrp$year)` till `r max(avfallbrp$year)`. `r min(avfallbrp$year)` samlades det in knappt `r format(plyr::round_any(avfallbrp %>% filter(year == min(year)) %>%  .$avfallbrp,10),big.mark = " ")` kg avfall för varje miljon kronor av Dalarnas BRP under samma år. `r max(avfallbrp$year)` hade motsvarande mängd avfall sjunkit till drygt `r format(plyr::round_any(avfallbrp %>% filter(year == max(year)) %>%  .$avfallbrp,10),big.mark = " ")` kg avfall. Det kan främst förklaras med att BRP har ökat under perioden.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 avfallbrpdiag
@@ -522,7 +523,7 @@ resande2alt <- SkapaLinjeDiagram(skickad_df = resande %>%
                     y_axis_100proc = TRUE)
 
 ```
-Den utsträckta och relativt glesbefolkade geografin i Dalarna är utmaningar i arbetet med att skapa en hållbar transportinfrastruktur. För att transportsektorn ska nå klimat- och energimålen krävs kraftfull teknisk utveckling i kombination med beteendeförändringar. Kollektivt resande spelar en central roll för utvecklandet av en klimatsmart och resurseffektiv, men också mer jämställd och jämlik, mobilitet. Kollektivtrafik är sförenat med höga kostnader, samtidigt som det finns samhällsekonomiska vinster. För att klara omställningen krävs mod att ställa olika kostnader mot varandra. För att vi ska lyckas öka det kollektiva resandet behöver den traditionella kollektivtrafiken sannolikt kompletteras med nya mobilitetslösningar och tjänster, särskilt för länets mest glesbefolkade områden.
+Den utsträckta och relativt glesbefolkade geografin i Dalarna är utmaningar i arbetet med att skapa en hållbar transportinfrastruktur. För att transportsektorn ska nå klimat- och energimålen krävs kraftfull teknisk utveckling i kombination med beteendeförändringar så som minskad konsumtion av varor som transporteras så att de orsakar utsläpp, ökad samåkning och minskat resande totalt sett. Kollektivt resande spelar en central roll för utvecklandet av en klimatsmart och resurseffektiv, men också mer jämlik, mobilitet. Kollektivtrafik bidrar både till miljönytta och samhällsekonomisk effektivitet men är också förenat med höga kostnader. För att klara omställningen krävs mod att ställa olika kostnader mot varandra. För att det kollektiva resandet ska öka behöver den traditionella kollektivtrafiken sannolikt kompletteras med nya mobilitetslösningar och tjänster, särskilt för länets mest glesbefolkade områden.
 
 Diagrammen redovisar indikatorer för kollektivt resande i Dalarna: kollektivtrafiksresor per invånare samt marknadsandel för kollektivtrafik i länet. För antal resor per invånare syns att det kollektiva resandet har minskat avsevärt i Dalarna, från  `r resande %>% filter(kpi == "Resor_per_invanare") %>% filter(year == min(year)) %>% .$value ` resor per person och år från `r min(resande$year)` till `r round(resande %>% filter(kpi == "Resor_per_invanare") %>% filter(year == max(year)) %>% .$value,0) ` resor år `r max(resande$year)`. Nedgången kan delvis förklaras av pandemin - det sker en tydlig minskning mellan 2019 och 2020 - men även mellan 2012 och 2013 minskade antalet resor per invånare avsevärt i Dalarna. I en nationell jämförelse år 2022 framgår att det i glesbygdslänen i Sverige som mest görs runt 60 resor per person. Medan det görs betydligt fler i storstadsregionerna, så som Skåne med i snitt 105 resor per person och år. I Stockholm där flest resor sker, görs 290 resor per person och år.
 
@@ -536,11 +537,11 @@ Marknadsandelen för kollektivtrafik beräknas som andelen resor med kollektivtr
 resande2alt
 ```
 
-## Skattad självförsörjningsgrad av energi och livsmedel
+## Självförsörjningsgrad av energi och livsmedel
 
-Klimatförändringarna medför lokalt förändrade mönster för nederbörd, torka och vind men även insekts- och svampangrepp på grödor och skog, höga temperaturer, med mera. Här spelar god samhällsplanering på regional och kommunal nivå en viktig roll. Ett sätt att förbättra beredskapen i Dalarna är att ha en tillräckligt omfattande lokal och hållbar livsmedelsproduktion. En ökad självförsörjningsgrad är en trygghet på flera sätt och gynnar även miljöns motståndskraft genom en ökad biologisk mångfald.
+Klimatförändringarna medför lokalt förändrade mönster för nederbörd, torka och vind men även insekts- och svampangrepp på grödor och skog, höga temperaturer, med mera. Här spelar god samhällsplanering på regional och kommunal nivå en viktig roll. Ett sätt att förbättra beredskapen i Dalarna är att ha en tillräckligt omfattande lokal och hållbar energi- och livsmedelsproduktion. En ökad självförsörjningsgrad är en trygghet på flera sätt och gynnar även miljöns motståndskraft genom en ökad biologisk mångfald.
 
-Diagrammet nedan visar andelen livsmedel inom fem kategorier (fårkött, griskött, matpotatis, mjölkprodukter samt nötkött) som producerats i Dalarna i relation till den mängd livsmedel i varje kategori som konsumerats i länet. Med undantag för matpotatis år 2016, 2019 och 2022, som vi i princip är självförsörjande på, konsumerar befolkningen i Dalarna idag betydligt mer inom samtliga kategorier jämfört med den mängd som produceras i länet.
+Diagrammet nedan visar andelen livsmedel inom fem kategorier (fårkött, griskött, matpotatis, mjölkprodukter samt nötkött) som producerats i Dalarna i relation till den mängd livsmedel i varje kategori som konsumerats i länet. Med undantag för matpotatis år 2016, 2019 och 2022, som länet i princip är självförsörjande på, konsumerar befolkningen i Dalarna idag betydligt mer inom samtliga kategorier jämfört med den mängd som produceras i länet.
 
 ```{r, include = FALSE}
 #livsmedel1  <- ggplot(livsmedel, aes(fill=as.character(År), y=Andel, x=Produkt))+
@@ -588,7 +589,7 @@ elgrad <- SkapaStapelDiagram(skickad_df = el %>%
 livsmedel1alt
 ```
 
-I diagrammet nedan visas ett teoretiskt mått på självförsörjning av energi i Dalarna där den totala elproduktionen i länet visas som andel av den total elförbrukningen. Diagrammet visar en positiv trend för självförsörjningsgraden av energi, vilket beror på att förbrukningen av el har minskat i länet sedan 2016 samtidigt som produktionen av el har ökat under samma tidsperiod.
+I diagrammet nedan visas ett teoretisk beräkning av självförsörjning av energi i Dalarna där den totala elproduktionen i länet visas som andel av den total elförbrukningen. Diagrammet visar en positiv trend för självförsörjningsgraden av energi, vilket beror på att förbrukningen av el har minskat i länet sedan 2016 samtidigt som produktionen av el har ökat under samma tidsperiod.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 elgrad
@@ -598,7 +599,7 @@ elgrad
 # Ett konkurrenskraftigt Dalarna
 
 <p class="intro" style = "background-color: #f8aab6">
-I ett konkurrenskraftigt Dalarna är näringslivet livskraftigt och bidrar till hållbar tillväxt. En väl utvecklad och hållbar infrastruktur skapar värden för näringsliv, boende och besökare. Det är ett Dalarna där allas kunskaper och kompetenser tas till vara och där individer, näringsliv, offentlig sektor och civilsamhälle utvecklas tillsammans och i samspel med omvärlden. Det är också ett nyskapande Dalarna där utmaningsdriven innovation bidrar till ett gott samhälle och hållbar tillväxt.
+I ett konkurrenskraftigt Dalarna är näringslivet livskraftigt och skapar tillväxt inom de planetära gränserna. En väl utvecklad och hållbar infrastruktur skapar värden för näringsliv, boende och besökare. Det är ett Dalarna där allas kunskaper och kompetenser tas till vara och där individer, näringsliv, offentlig sektor och civilsamhälle utvecklas tillsammans och i samspel med omvärlden. Det är också ett nyskapande Dalarna där utmaningsdriven innovation bidrar till ett gott samhälle och hållbar tillväxt.
 </p>
 
 Den ekonomiska dimensionen av hållbarhet i det regionala utvecklingsarbetet handlar om att använda, hushålla med och förädla idéer och resurser på ett miljömässigt och socialt hållbart sätt och ta vara på möjligheterna att därigenom skapa konkurrenskraft och sysselsättning. Med ett cirkulärt system där resurser och värden kan återbrukas främjas en ekonomiskt hållbar utveckling.
@@ -606,10 +607,10 @@ Den ekonomiska dimensionen av hållbarhet i det regionala utvecklingsarbetet han
 
 ## Infrastrukturinvesteringar
 
-Anna undersöker med strategerna.
+Infrastrukturinvesteringar är en fastställd indikator i Dalastrategin. I dagsläget är den inte definierad i ett mätbart format, men arbete pågår inom Region Dalarna och målsättningen är att kunna följa infrastrukturens effektivitet inom transportsektorn, energisektorn samt bredbandsutbyggnaden.
 
 
-## Investeringar i FoU
+## Resurser till forskning och utveckling
 
 ```{r, include = FALSE}
 
@@ -670,7 +671,7 @@ forsk3 <- SkapaStapelDiagram(skickad_df = forskning_totalt %>%
                     manual_color = diagramfarger("rus_tva_fokus"))
 ```
 
-För att lösa dagens och morgondagens samhällsutmaningar och för att skapa utveckling och konkurrenskraft krävs ökad innovationskraft. Individers, företags, organisationers och offentlig sektors innovationsförmåga påverkar platsers utvecklingskraft och möjligheter till omställning. Denna indikator mäter investeringar i forskning och utveckling i länet. Det bör dock påpekas att resurser som använts till innovation och forskning är synnerligen svåra att mäta, så denna indikators värden bör främst tolkas utifrån de förändringar som skett, och inte som ett exakt värde.
+För att lösa dagens och morgondagens samhällsutmaningar och för att skapa utveckling och konkurrenskraft krävs ökad innovationskapacitet. Individers, företags, organisationers och offentlig sektors innovationsförmåga påverkar samhällets utveckling och förutsättningar att ställa om. Denna indikator har för avsikt att mäta investeringar i forskning och utveckling i länet. Det bör dock påpekas att resurser som använts till innovation och forskning är synnerligen svåra att mäta, så denna indikators värden bör främst tolkas utifrån de förändringar som skett, och inte som ett exakt värde.
 
 Under tidsperioden från 2011 till 2019 ses en viss ökning i investeringar mätt i kronor per invånare i länet, från drygt `r format(round(forskning_totalt %>% filter(year == min(.$year),municipality == "Dalarnas län") %>% .$utgiftertotalt,0),big.mark = " ")` kronor till drygt `r format(round(forskning_totalt %>% filter(year == 2019,municipality == "Dalarnas län") %>% .$utgiftertotalt,0),big.mark = " ")` kronor per invånare. Efter 2019 skedde dock en stor förändring, och investeringarna minskade avsevärt till `r format(round(forskning_totalt %>% filter(year == max(.$year),municipality == "Dalarnas län") %>% .$utgiftertotalt,0),big.mark = " ")` kronor per invånare år `r max(forskning_totalt$year)`. 
 
@@ -678,7 +679,7 @@ Under tidsperioden från 2011 till 2019 ses en viss ökning i investeringar mät
 forsk1
 ```
 
-Den stor andelen investeringar sker i företagen, medan den offentliga sektorn och universitets- och högskolesektorn står för en mindre andel. Minskningen i investeringar mellan 2019 och 2021 förklaras av att företagens och offentlig sektors investeringar minskade, inom högskolesektorn ökade istället investeringarna under samma period. En trolig orsak till detta är Coronapandemin som fick betydande effekter på många delar av samhället.
+Den stor andelen forskning och utveckling sker i företagen, medan den offentliga sektorn och universitets- och högskolesektorn står för en mindre andel. Minskningen i investeringar mellan 2019 och 2021 förklaras av att företagens och offentlig sektors investeringar minskade, inom högskolesektorn ökade istället investeringarna under samma period. En trolig orsak till detta är coronapandemin som fick betydande effekter för många delar av samhället.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 forsk2
@@ -690,7 +691,7 @@ I ett nationellt perspektiv ser vi att Dalarna hamnar på den nedre halvan. `r f
 forsk3
 ```
 
-## Branschbredd
+## Näringsgrenarna 
 
 Ett sätt att mäta konkurrensen i Dalarna är genom den så kallade branschbredden, ett mått som jämför antalet branscher som finns representerade i exempelvis en kommun med det totala antalet branscher i Sverige. I Dalarna som helhet fanns företag inom ca `r round(branschbredd %>% filter(municipality =="Dalarnas län",year == max(year)) %>% .$Branschbredd,0)` procent av alla Sveriges branscher år `r max(branschbredd$year)`. Bland Dalarnas kommuner hade de med högst befolkning, Falun och Borlänge, också störst branschbredd, med drygt `r round(branschbredd %>% filter(municipality =="Falun",year == max(year)) %>% .$Branschbredd,0)` respektive `r round(branschbredd %>% filter(municipality =="Borlänge",year == max(year)) %>% .$Branschbredd,0)` procent av branscherna representerade `r max(branschbredd$year)`. Lägst branschbredd hade `r branschbredd %>% filter(year == max(year)) %>% filter(Branschbredd == min(Branschbredd)) %>% .$municipality`, med ca `r round(branschbredd %>% filter(year == max(year)) %>% filter(Branschbredd == min(Branschbredd)) %>% .$Branschbredd,0)` procent av branscherna representerade år `r max(branschbredd$year)`. 
 
@@ -1234,7 +1235,7 @@ till1
 
 ## Tillgänglighet till vård
 
-Den här indikatorn visar hur stor andel av Dalarnas befolkning som anser att de har tillgång den hälso och sjukvård som de behöver. 
+Den här indikatorn visar hur stor andel av Dalarnas befolkning som anser att de har tillgång den hälso- och sjukvård som de behöver. 
 
 ```{r, include = FALSE}
 
