@@ -691,7 +691,7 @@ I ett nationellt perspektiv ser vi att Dalarna hamnar på den nedre halvan. `r f
 forsk3
 ```
 
-## Branschbredd - arbetsmarknadens diversifiering
+## Branschbredd
 
 Ett sätt att mäta arbetsmarknadens beroende av enskilda företag och näringar i Dalarna är genom den så kallade branschbredden, ett mått som jämför antalet branscher som finns representerade i exempelvis en kommun med det totala antalet branscher i Sverige. I Dalarna som helhet fanns företag inom ca `r round(branschbredd %>% filter(municipality =="Dalarnas län",year == max(year)) %>% .$Branschbredd,0)` procent av alla Sveriges branscher år `r max(branschbredd$year)`. Bland Dalarnas kommuner hade de med högst befolkning, Falun och Borlänge, också störst branschbredd, med drygt `r round(branschbredd %>% filter(municipality =="Falun",year == max(year)) %>% .$Branschbredd,0)` respektive `r round(branschbredd %>% filter(municipality =="Borlänge",year == max(year)) %>% .$Branschbredd,0)` procent av branscherna representerade `r max(branschbredd$year)`. Lägst branschbredd hade `r branschbredd %>% filter(year == max(year)) %>% filter(Branschbredd == min(Branschbredd)) %>% .$municipality`, med ca `r round(branschbredd %>% filter(year == max(year)) %>% filter(Branschbredd == min(Branschbredd)) %>% .$Branschbredd,0)` procent av branscherna representerade år `r max(branschbredd$year)`. 
 
@@ -876,18 +876,17 @@ chef4
 
 ## Transporter via olika trafikslag
 
-I enkätundersökningen Kollektivtrafikbarometern frågas befolkningen om deras resmönster. Under en genomsnittlig dag reser befolkningen (ålder?) i Dalarna enligt följande...
+Denna indikator är under konstruktion.
 
 
+## Tillgänglighet till arbetsplatser resp. skolor
 
-## Tillgänglighet (restid) till arbetsplatser/skolor
-
-Detta ska gå att få fram, får göras under februari.
+Denna indikator är under konstruktion. 
 
 
 ## Unga som fullföljer gymnasiet
 
-Kunskap ger människor möjlighet att växa och påverka sin livssituation. Tillgång till bildning, kunskap och kompetens är avgörande för såväl utvecklingen av samhället, som god välfärd och tillväxt i näringslivet. När arbetsgivare inte hittar rätt kompetens hämmas den ekonomiska utvecklingen. Samtidigt försvagas den sociala hållbarheten när människor ställs utanför arbetsmarknaden. Befolkningens låga utbildningsnivåer är en utmaning i stora delar av Dalarna. Ambitionen i Dalastrategin är att fler ska klara en gymnasieexamen för att därmed få bättre förutsättningar att etablera sig på arbetsmarknaden.
+Kunskap ger människor möjlighet att växa och påverka sin livssituation. Tillgång till utbildning, kunskap och bildning är avgörande för såväl utvecklingen av samhället, som god välfärd och tillväxt i näringslivet. När arbetsgivare inte hittar rätt kompetens hämmas den ekonomiska utvecklingen. Samtidigt försvagas den sociala hållbarheten när människor ställs utanför arbetsmarknaden. Befolkningens låga utbildningsnivåer är en utmaning i stora delar av Dalarna. Ambitionen i Dalastrategin är att fler ska klara en gymnasieexamen för att därmed få bättre förutsättningar att etablera sig på arbetsmarknaden.
 
 Denna indikator mäter andelen gymnasieelever i Dalarna som har fullföljt en utbildning inom fyra år efter att de påbörjat gymnasiet. Det finns ingen tydlig trend över tidsperioden `r gymnasie %>% filter(läsår == min(läsår)) %>% .$läsår` till `r gymnasie %>% filter(läsår == max(läsår)) %>% .$läsår` utan andelen fluktuerar mellan åren. Av eleverna som började läsa på gymnasiet i Dalarna läsåret `r gymnasie %>% filter(läsår == min(läsår)) %>% .$läsår` var det `r gsub("\\.",",",gymnasie %>% filter(läsår == min(läsår)) %>% .$andel)` procent som inom fyra år fullföljde sin utbildning med examen. Den lägsta andelen avklarade examen om `r gymnasie %>% filter(andel == min(andel)) %>% .$andel` procent uppmättes för dem som påbörjade gymnasiet läsåret `r gymnasie %>% filter(andel == min(andel)) %>% .$läsår` (möjligen en pandemieffekt) samtidigt som den högsta andelen avklarade examen finns bland de elever som påbörjade gymnasiet läsåret `r gymnasie %>% filter(andel == max(andel)) %>% .$läsår`, `r gsub("\\.",",",gymnasie %>% filter(andel == max(andel)) %>% .$andel)` procent av dem har tagit ut examen inom fyra år.
 
@@ -922,10 +921,10 @@ gym1 <- SkapaStapelDiagram(skickad_df = gymnasie %>%
 gym1
 ```
 
-## Andel högskoleutbildade i befolkningen
-Med ett alltmer kunskapsintensivt samhälle och en arbetsmarknad som ställer högre krav på kompetens ökar också behovet av eftergymnasialt utbildade. I Dalastrategin poängteras betydelsen av en stark regional högskola med närvaro i hela länet. Även andra utbildningsformer såsom folkhögskolor, yrkesvux och yrkeshögskolor bidrar till att stärka kompetensförsörjningen i länet i form av såväl bredd som spets. Denna indikator mäter andelen invånare med eftergymnasial utbildning i åldersspannet 25 till 64 år. Med eftergymnasial utbildning avses både eftergymnasial utbildning kortare än tre år, längre än tre år och forskarutbildning.
+## Eftergymnasialt och högskoleutbildade
 
-Andelen högskoleutbildade i länet ökar över tid (Vi behöver byta diagram, indikatorn är högskoleutbildade. STÄMMER INTE MED STYCKET FÖRE - EFTERGYMNASIAL UTBILDNING KORTARE ÄN 3 ÅR BEHÖVER INTE VARA HÖGSKOLA). Från `r round(eftergym %>% filter(gender == "T",year == min(year)) %>% .$value,0)` procent år `r min(eftergym$year)` till `r round(eftergym %>% filter(gender == "T",year == max(year)) %>% .$value,0)` procent `r max(eftergym$year)`. Skillnaden mellan kvinnors och mäns utbildningsnivå är tydlig, år `r max(eftergym$year)` hade `r round(eftergym %>% filter(gender == "K",year == max(year)) %>% .$value,0)` procent av kvinnorna i Dalarna någon form av eftergymnasial utbildning, medan motsvarande siffra för männen i Dalarna var avsevärt lägre, `r round(eftergym %>% filter(gender == "M",year == max(year)) %>% .$value,0)` procent. Det är även tydligt att skillnaden har ökat över tidsperioden.
+Med ett alltmer kunskapsintensivt samhälle och en arbetsmarknad som ställer högre krav på kompetens ökar också behovet av eftergymnasialt utbildade. I Dalastrategin poängteras betydelsen av en stark regional högskola med närvaro i hela länet. Även andra utbildningsformer såsom folkhögskolor, yrkesvux och yrkeshögskolor bidrar till att stärka kompetensförsörjningen i länet i form av såväl bredd som spets. Denna indikator mäter andelen invånare med eftergymnasial utbildning i åldersspannet 25 till 64 år. Med eftergymnasial utbildning avses både eftergymnasial utbildning kortare än tre år, längre än tre år och forskarutbildning. Skillnaden mellan kvinnors och mäns utbildningsnivå är tydlig, år `r max(eftergym$year)` hade `r round(eftergym %>% filter(gender == "K",year == max(year)) %>% .$value,0)` procent av kvinnorna i Dalarna någon form av eftergymnasial utbildning, medan motsvarande siffra för männen i Dalarna var avsevärt lägre, `r round(eftergym %>% filter(gender == "M",year == max(year)) %>% .$value,0)` procent. Det är även tydligt att skillnaden har ökat över tidsperioden.
+
 
 ```{r, include = FALSE}
 
@@ -953,13 +952,14 @@ eftergym1 <- SkapaStapelDiagram(skickad_df = eftergym %>%
 eftergym1
 ```
 
-ALTERNATIV FIGUR. FÖR LÅNG TIDSSERIE?
+När det gäller andelen som har en högskoleutbildning om minst 3 år, ökar även den i länet. Från `r round(eftergym %>% filter(gender == "T",year == min(year)) %>% .$value,0)` procent år `r min(eftergym$year)` till `r round(eftergym %>% filter(gender == "T",year == max(year)) %>% .$value,0)` procent `r max(eftergym$year)`. 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_utbniva_85$hogutb_andel_ar20_1985_2022
 ```
 
-## Sysselsatta i arbetsför ålder
+## Sysselsatta på arbetsmarknaden
+
 I Dalastrategin sätts ambitiösa mål, både om en ökad sysselsättningsgrad i länet i allmänhet och att skillnader som finns mellan olika gruppers sysselsättningsgrad ska minska. Detta mäts genom en indikator för andelen förvärvsarbetande (personer med inkomst från anställning eller näringsverksamhet) i arbetsför ålder i länet. År `r min(sysselsatt$år)` beräknades sysselsättningsgraden till `r gsub("\\.",",",round(sysselsatt %>% filter(kön == "totalt",år == min(år)) %>% .$sysselsättningsgrad,1))` procent av arbetsför befolkning. Bland kvinnorna var `r gsub("\\.",",",round(sysselsatt %>% filter(kön == "kvinnor",år == min(år)) %>% .$sysselsättningsgrad,1))` procent förvärvsarbetande, och av männen räknades `r gsub("\\.",",",round(sysselsatt %>% filter(kön == "män",år == min(år)) %>% .$sysselsättningsgrad,1))` procent som förvärvsarbetande. Gapet mellan kvinnor och män var därmed knappt `r round(sysselsatt %>% filter(kön == "män",år == min(år)) %>% .$sysselsättningsgrad - sysselsatt %>% filter(kön == "kvinnor",år == min(år)) %>% .$sysselsättningsgrad,0)` procentenheter. Utvecklingen inom båda grupperna har sedan dess varit positiv. År `r max(sysselsatt$år)`  hade andelen förvärvsarbetande ökat till `r gsub("\\.",",",round(sysselsatt %>% filter(kön == "totalt",år == max(år)) %>% .$sysselsättningsgrad,1))` procent, varav den ökat till `r gsub("\\.",",",round(sysselsatt %>% filter(kön == "kvinnor",år == max(år)) %>% .$sysselsättningsgrad,1))` procent bland kvinnorna och till `r gsub("\\.",",",round(sysselsatt %>% filter(kön == "män",år == max(år)) %>% .$sysselsättningsgrad,1))` procent bland männen. Gapet mellan grupperna har således krympt till drygt `r round(sysselsatt %>% filter(kön == "män",år == max(år)) %>% .$sysselsättningsgrad - sysselsatt %>% filter(kön == "kvinnor",år == max(år)) %>% .$sysselsättningsgrad,0)` procentenheter.
 
 ```{r, include = FALSE}
@@ -990,7 +990,7 @@ syss1
 
 ## Långtidsarbetslöshet
 
-En annan indikator för att följa sysselsättningsutvecklingen i länet är andelen långtidsarbetslösa. Som långtidsarbetslös räknas den som har varit öppet arbetslös eller i program med aktivitetsstöd i minst sex månader. År `r min(arbets$year)` noterades `r gsub("\\.",",",round(arbets %>% filter(year == min(year),gender == "K",municipality == "Dalarnas län") %>% .$value,1))` procent av länets kvinnor i åldern 25-64 år som långtidsarbetslösa, medan motsvarande siffra för männen var `r gsub("\\.",",",round(arbets %>% filter(year == min(year),gender == "M",municipality == "Dalarnas län") %>% .$value,1))` procent.  Under 2010-talet gick långtidsarbetslösheten såväl upp som ned, innan den nådde sin topp i samband med pandemin 2020-2021. På senare år har långtidsarbetslösheten minskat tydligt och var år 2023 i Dalarna på ungefär samma nivå som 2011 för såväl kvinnor som män. Långtidsarbetslösheten i Sverige är högre än i Dalarna för båda könen. En generell orsak till långtidsarbetslöshet är strukturarbetslöshet som innebär att de arbetssökande saknar rätt kompetens för de arbeten som det finns efterfrågan på.
+En annan indikator för att följa sysselsättningsutvecklingen i länet är andelen långtidsarbetslösa. Som långtidsarbetslös räknas den som har varit öppet arbetslös eller i program med aktivitetsstöd i minst sex månader. År `r min(arbets$year)` noterades `r gsub("\\.",",",round(arbets %>% filter(year == min(year),gender == "K",municipality == "Dalarnas län") %>% .$value,1))` procent av länets kvinnor i åldern 25-64 år som långtidsarbetslösa, medan motsvarande siffra för männen var `r gsub("\\.",",",round(arbets %>% filter(year == min(year),gender == "M",municipality == "Dalarnas län") %>% .$value,1))` procent. Under 2010-talet gick långtidsarbetslösheten såväl upp som ned, innan den nådde sin topp i samband med pandemin 2020-2021. På senare år har långtidsarbetslösheten minskat tydligt och var år 2023 i Dalarna på ungefär samma nivå som 2011 för såväl kvinnor som män. Långtidsarbetslösheten i Sverige är högre än i Dalarna för båda könen. En generell orsak till långtidsarbetslöshet är strukturarbetslöshet som innebär att de arbetssökande saknar rätt kompetens för de arbeten som finns tillgängliga.
 
 ```{r, include = FALSE}
 
@@ -1016,10 +1016,11 @@ arb1 <- SkapaStapelDiagram(skickad_df = arbets %>%
 arb1
 ```
 
-## Etableringstid för nyanlända
+## Invandrades etablering på arbetsmarknaden
+
 Invandring är en del av lösningen för att möta en ökad efterfrågan på arbetskraft och rätt kompetens i Dalarna och Sverige. Dalarna har haft en relativt stor inflyttning av utomeuropeiskt födda under senare år. Många invandrade är i arbetsför ålder och blir därför ett viktigt tillskott till arbetskraften. Denna indikator är ett mått på i vilken takt och utsträckning som nyanlända etablerar sig på arbetsmarknaden i Dalarna. Med etablering menas att personen är förvärvsarbetande helt utan stöd från a-kassa eller arbetsmarknadsåtgärd, eller dylikt.
 
-Diagrammet visar tydligt hur andelen etablerade på arbetsmarknaden i arbetsför ålder ökar efter vistelsetid i landet. För det senaste året i period, `r max(etablering$år)`, hade drygt `r round(etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 0-1 år",år == max(år)) %>% .$Andel_forvarvsarbetande,0)` procent av invandrade med vistelsetid under ett år etablerat sig på arbetsmarknaden. Andelen etablerade på arbetsmarknaden ökar sedan alltmer efter vistelsetid och för samma år var det ca `r round(etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år", år == max(år)) %>% .$Andel_forvarvsarbetande,0)` procent i gruppen som vistats i Sverige i tio år eller mer som var etablerade på arbetsmarknaden.
+Diagrammet visar tydligt hur andelen etablerade på arbetsmarknaden i arbetsför ålder ökar efter vistelsetid i landet. För det senaste året i period, `r max(etablering$år)`, hade drygt `r round(etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 0-1 år",år == max(år)) %>% .$Andel_forvarvsarbetande,0)` procent av invandrade med vistelsetid under ett år etablerat sig på arbetsmarknaden. Andelen etablerade på arbetsmarknaden ökar sedan gradvis efter vistelsetid och för samma år var det ca `r round(etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år", år == max(år)) %>% .$Andel_forvarvsarbetande,0)` procent i gruppen som vistats i Sverige i tio år eller mer som var etablerade på arbetsmarknaden.
 
 ```{r, include = FALSE}
 etablering$bakgrundsvariabel <- gsub("^.{0,12}", "", etablering$bakgrundsvariabel)
@@ -1033,7 +1034,7 @@ etab1 <- SkapaStapelDiagram(skickad_df = etablering %>%
                             skickad_x_var = "bakgrundsvariabel",
                             skickad_y_var = "Andel_forvarvsarbetande",
                             skickad_x_grupp = "år",
-                            diagram_titel = str_wrap(paste0("Etablering på arbetsmarknaden efter vistelsetid för nyanlända i Dalarna"),50),
+                            diagram_titel = str_wrap(paste0("Etablering på arbetsmarknaden efter vistelsetid för invandrade i Dalarna"),50),
                             diagram_capt = " Källa: SCB\n Bearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andelen etablerade på arbetsmarknaden efter vistelsetid i landet",
                             x_axis_lutning = 0,
                             manual_color = diagramfarger("rus_gradient"),
@@ -1064,7 +1065,7 @@ etab_alt <- SkapaStapelDiagram(skickad_df = etablering %>%
                     facet_grp = "kön",                     
                     facet_scale = "fixed",
                     facet_legend_bottom = TRUE,
-                    diagram_titel = str_wrap(paste0("Etablering på arbetsmarknaden efter vistelsetid för nyanlända i Dalarna "),50),
+                    diagram_titel = str_wrap(paste0("Etablering på arbetsmarknaden efter vistelsetid för invandrade i Dalarna "),50),
                     diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andelen etablerade på arbetsmarknaden efter vistelsetid i landet",
                     x_axis_lutning = 0,
                     manual_color = diagramfarger("rus_gradient"),
@@ -1107,20 +1108,20 @@ etab4 <- SkapaStapelDiagram(skickad_df = etablering %>%
 etab1
 ```
 
-Ytterligare en positiv trend är att det över tid verkar gå snabbare för nyanlända att etablera sig på arbetsmarknaden. Från `r min(etablering$år)` till `r max(etablering$år)` har andelen etablerade på arbetsmarknaden i gruppen med vistelsetid under ett år, ökat från ca `r round(etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 0-1 år",år == min(år)) %>% .$Andel_forvarvsarbetande,0)` procent till drygt `r round(etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 0-1 år",år == max(år)) %>% .$Andel_forvarvsarbetande,0)` procent, vilket är mer än en fördubbling. Det finns dessvärre tydliga skillnader mellan mäns och kvinnors förutsättningar att etablera sig de första åren. En betydligt högre andel män har lyckats etablera sig på arbetsmarknaden inom nio år i jämförelse med andelen kvinnor. Efter minst 10 år i landet är dock kvinnorna i princip ikapp männen. Cirka `r round(etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% .$Andel_forvarvsarbetande,0)`  procent i respektive grupp är etablerad, och det skiljer endast `r etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% .$Andel_forvarvsarbetande - etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% .$Andel_forvarvsarbetande` procentenheter mellan grupperna.
+Ytterligare en positiv trend är att det över tid verkar gå snabbare för nyligen invandrade att etablera sig på arbetsmarknaden. Från `r min(etablering$år)` till `r max(etablering$år)` har andelen etablerade på arbetsmarknaden i gruppen med vistelsetid under ett år, ökat från ca `r round(etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 0-1 år",år == min(år)) %>% .$Andel_forvarvsarbetande,0)` procent till drygt `r round(etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 0-1 år",år == max(år)) %>% .$Andel_forvarvsarbetande,0)` procent, vilket är mer än en fördubbling. Det finns dessvärre tydliga skillnader mellan mäns och kvinnors etablering de första åren. En betydligt högre andel män har lyckats etablera sig på arbetsmarknaden inom nio år i jämförelse med andelen kvinnor. Efter minst 10 år i landet är dock kvinnorna i princip ikapp männen. Cirka `r round(etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% .$Andel_forvarvsarbetande,0)`  procent i respektive grupp är etablerad, och det skiljer endast `r etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% .$Andel_forvarvsarbetande - etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% .$Andel_forvarvsarbetande` procentenheter mellan grupperna.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 etab_alt
 ```
 
-I en jämförelse med övriga län av andelen etablerade efter minst 10 år i Sverige, återfinns Dalarna i mittensegmentet. `r etablering %>% filter(utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% filter(Andel_forvarvsarbetande == max(Andel_forvarvsarbetande)) %>% .$region` har den högsta andelen etablerade med `r round(etablering %>% filter(utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% filter(Andel_forvarvsarbetande == max(Andel_forvarvsarbetande)) %>% .$Andel_forvarvsarbetande,0)` procent, och i `r etablering %>% filter(utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% filter(Andel_forvarvsarbetande == min(Andel_forvarvsarbetande)) %>% .$region` är andelen etablerade efter minst 10 år i landet lägst, med ca `r round(etablering %>% filter(utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% filter(Andel_forvarvsarbetande == min(Andel_forvarvsarbetande)) %>% .$Andel_forvarvsarbetande,0)` procent. 
+I en jämförelse av andelen etablerade efter minst 10 år i Sverige med övriga län, återfinns Dalarna i mittensegmentet. `r etablering %>% filter(utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% filter(Andel_forvarvsarbetande == max(Andel_forvarvsarbetande)) %>% .$region` har den högsta andelen etablerade med `r round(etablering %>% filter(utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% filter(Andel_forvarvsarbetande == max(Andel_forvarvsarbetande)) %>% .$Andel_forvarvsarbetande,0)` procent, och i `r etablering %>% filter(utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% filter(Andel_forvarvsarbetande == min(Andel_forvarvsarbetande)) %>% .$region` är andelen etablerade efter minst 10 år i landet lägst, med ca `r round(etablering %>% filter(utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% filter(Andel_forvarvsarbetande == min(Andel_forvarvsarbetande)) %>% .$Andel_forvarvsarbetande,0)` procent. 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 etab4
 ```
 
 
-## Matchningsgrad
+## Matchning mellan utbildning och yrke
 En förbättrad matchning mellan arbetsmarknadens behov och arbetskraftens kompetens bidrar till ett bättre nyttjande av samhällets resurser. Det handlar både om att de utbildningar som ges är efterfrågade på arbetsmarknaden och att arbetsgivare har kunskap att välja rätt kompetens. För att lyckas med detta krävs också en god samverkan mellan utbildningsanordnare, näringsliv, civilsamhälle och myndigheter samt en god dialog över kommun- och länsgränser.
 
 I diagrammet visas matchningsgraden i form av andelen anställda som arbetar i yrken som stämmer väl överens med deras utbildning. För att detta ska gälla ska det dels finnas en stark överensstämmelse mellan utbildningens och yrkets ämnesinriktning (t.ex. teknikutbildning – teknikyrke) och dels ska utbildningsnivån vara rätt i förhållande till vad yrket kräver. Yrken som kräver legitimation har generellt den högsta matchningsgraden. 
@@ -1154,9 +1155,9 @@ matchning1
 
 
 ## Ginikoefficient
-I Dalastrategin lyfts ekonomiska klyftor som en framtidsutmaning för länet. För att redovisa ojämlikheten i inkomstfördelningen används gini-koefficienten. Ett högt värde på koefficienten visar på större inkomstskillnader och därmed större ojämlikhet. Här redovisas ginikoefficienten beräknad genom disponibel inkomst per "konsumtionsenhet". Med konsumtionsenhet menas att det i beräkningen av en individs tillgängliga ekonomiska resurser tas hänsyn till hur hushållet är sammansatt som individen bor i. Det betyder att beakta om personen är ensamboende eller sammanboende och om den har ansvar för minderåriga barn eller inte etc, faktorer som kan minska eller öka individens disponibla inkomst.
+I Dalastrategin lyfts ekonomiska klyftor som en framtidsutmaning för länet. För att redovisa ojämlikheten i inkomstfördelningen används gini-koefficienten. Ett högt värde på koefficienten visar på större inkomstskillnader och därmed större ojämlikhet. Här redovisas ginikoefficienten beräknad genom disponibel inkomst per "konsumtionsenhet". Med konsumtionsenhet menas att det i beräkningen av en individs tillgängliga ekonomiska resurser tas hänsyn till hur hushållet som individen bor i är sammansatt. Det betyder att beräkningen beaktar om personen är ensamboende eller sammanboende och om den har ansvar för minderåriga barn eller inte etc, faktorer som kan minska eller öka individens disponibla inkomst.
 
-För Dalarnas räkning har ginikoefficienten ökat något från 2011 till `r max(gini$year)`, vilket visar på en ökad ekonomisk ojämlikhet i länet, med en toppnotering 2019. Ginikoefficienten för länet ligger under koefficienten för riket för samtliga år förutom 2019, det vill säga i Dalarna lever befolkningen mindre ojämlikt. År 2019 avviker så skarpt från den generella trenden att det årets notering bör betraktas med försiktighet. Ökningen i ojämlikhet från 2011 och framåt är dock tydlig oavsett inverkan från år 2019. 
+För Dalarnas räkning har ginikoefficienten ökat något från 2011 till `r max(gini$year)`, vilket visar på en ökad ekonomisk ojämlikhet i länet, med en toppnotering 2019. Ginikoefficienten för länet ligger under koefficienten för riket för samtliga år förutom 2019, det vill säga i Dalarna är inkomsterna mindre ojämlika än i Sverige som helhet. År 2019 avviker så skarpt från den generella trenden att det årets notering bör betraktas med försiktighet. Ökningen i ojämlikhet från 2011 och framåt är dock tydlig oavsett inverkan från år 2019. 
 
 ```{r, include = FALSE}
 
@@ -1204,7 +1205,7 @@ som känner sig delaktiga, desto mer utveckling kan
 ## Tillgång till service och tjänster
 Olika platser i Dalarna har olika utmaningar och möjligheter att möta de förändrade behoven, bland annat beroende på om det är platser med växande eller krympande befolkningsunderlag. En princip för genomförandet av Dalastrategin är att allt utvecklingsarbete ska vara platsbaserat med målsättningen att sammanhållningen ska stärkas och olika platsers förutsättningar och resurser ska tas till vara på ett bra sätt. För utvecklingskraft i hela länet är det viktigt att säkra tillgången till service, vård, fritidsaktiviteter och kultur i alla delar av länet. Människor behöver ha en god tillgänglighet till såväl statlig som regional och kommunal service. Tillgången till service påverkar människors levnadsvillkor och är viktig för platsens attraktivitet och för möjligheten att skapa arbetstillfällen på platsen.
 
-Den här indikatorn presenterar två olika mått på tillgång till service; tillgång till grundskola samt tillgång till dagligvarubutik. Resultatet visar att tillgång till grundskola har minskat något under perioden från `r min(service %>% filter(!(is.na(value))) %>% .$year)` till `r max(service %>% filter(!(is.na(value))) %>% .$year)`. I början på perioden hade drygt `r round(service %>% filter(!(is.na(value)),kpi == "Invånare 0-16 år med tillgång till grundskola inom 2 km, andel (%)") %>% filter(year == min(year)) %>%  .$value,1)` procent av alla invånare mellan 0-16 år en grundskola inom 2 km från bostaden. `r max(service %>% filter(!(is.na(value))) %>% .$year)` hade motsvarande siffra minskat till `r round(service %>% filter(!(is.na(value)),kpi == "Invånare 0-16 år med tillgång till grundskola inom 2 km, andel (%)") %>% filter(year == max(year)) %>%  .$value,1)` procent. Samma trend ses även för tillgång till dagligvarubutiker. Under samma period har andelen med en dagligvarubutik inom 2 km från bostaden minskat från `r round(service %>% filter(!(is.na(value)),kpi == "Invånare med tillgång till dagligvarubutik inom 2 km, andel (%)") %>% filter(year == min(year)) %>%  .$value,1)` procent till `r round(service %>% filter(!(is.na(value)),kpi == "Invånare med tillgång till dagligvarubutik inom 2 km, andel (%)") %>% filter(year == max(year)) %>%  .$value,1)` procent.
+Den här indikatorn presenterar två olika mått på tillgång till service; tillgång till grundskola samt tillgång till dagligvarubutik. Resultatet visar att tillgång till grundskola har minskat något under perioden från `r min(service %>% filter(!(is.na(value))) %>% .$year)` till `r max(service %>% filter(!(is.na(value))) %>% .$year)`. I början på perioden hade drygt `r gsub("\\.",",",round(service %>% filter(!(is.na(value)),kpi == "Invånare 0-16 år med tillgång till grundskola inom 2 km, andel (%)") %>% filter(year == min(year)) %>%  .$value,1))` procent av alla invånare mellan 0-16 år en grundskola inom 2 km från bostaden. `r max(service %>% filter(!(is.na(value))) %>% .$year)` hade motsvarande siffra minskat till `r round(service %>% filter(!(is.na(value)),kpi == "Invånare 0-16 år med tillgång till grundskola inom 2 km, andel (%)") %>% filter(year == max(year)) %>%  .$value,1)` procent. Samma trend ses även för tillgång till dagligvarubutiker. Under samma period har andelen med en dagligvarubutik inom 2 km från bostaden minskat från `r round(service %>% filter(!(is.na(value)),kpi == "Invånare med tillgång till dagligvarubutik inom 2 km, andel (%)") %>% filter(year == min(year)) %>%  .$value,1)` procent till `r round(service %>% filter(!(is.na(value)),kpi == "Invånare med tillgång till dagligvarubutik inom 2 km, andel (%)") %>% filter(year == max(year)) %>%  .$value,1)` procent.
 
 ```{r, include = FALSE}
 
@@ -1233,9 +1234,10 @@ till1 <- SkapaStapelDiagram(skickad_df = service %>%
 till1
 ```
 
-## Tillgänglighet till vård
+## Tillgång till vård
 
-Den här indikatorn visar hur stor andel av Dalarnas befolkning som anser att de har tillgång den hälso- och sjukvård som de behöver. 
+Den här indikatorn visar hur stor andel av Dalarnas befolkning som anser sig ha tillgång den hälso- och sjukvård som de behöver. För Dalarna är det inga större skillnader mellan kvinnor och män och andelen årligen ligger på mellan 85 och 90 procent. Tillgång till vård påverkas dock av vilket vårdbehov man anser sig ha. I den nationella rapporten Hälso- och sjukvårds-barometern 2022 beskrivs att "de som upplever att deras allmänna hälsotillstånd är bra eller mycket bra anser sig ha tillgång till den vård de behöver i större utsträckning än de som upplever att deras hälsotillstånd är dåligt eller mycket dåligt" [(SKR)](https://skr.se/download/18.58c9210b18692149c6f1b3b/1677506194408/Halso-och-sjukvardsbarometern-2022.pdf){target="_blank"}.
+
 
 ```{r, include = FALSE}
 
@@ -1264,7 +1266,7 @@ tillgang_vard
 
 
 ## Hushåll med tillgång till bredband
-Tillgång till en snabb och robust digital infrastruktur är en grundförutsättning för att bo och verka i hela Dalarna. Fysiska och digitala mötesplatser gör att vi når både varandra och omvärlden. En av utmaningarna för Dalarna är en ojämnt fördelad digital infrastruktur. Att stärka och tillgängliggöra den digitala infrastrukturen för hela Dalarnas befolkning, oavsett plats, är avgörande för en lyckad digitalisering av samhället.
+Tillgång till en snabb och robust digital infrastruktur är för de flesta en grundförutsättning för att bo och verka i hela Dalarna. Fysiska och digitala mötesplatser gör att vi når både varandra och omvärlden. En av utmaningarna för Dalarna är en ojämnt fördelad digital infrastruktur. Att stärka och tillgängliggöra den digitala infrastrukturen för hela Dalarnas befolkning, oavsett plats, är avgörande för en lyckad digitalisering av samhället.
 
 I Dalarna har andelen av befolkningen med tillgång till, eller möjlighet att ansluta till, bredband om minst 1 Gbit/s ökat från ca `r round(bredband %>% filter(municipality == "Region Dalarna",year == min(year)) %>% .$value,0)` procent `r min(bredband$year)` till ca `r round(bredband %>% filter(municipality == "Region Dalarna",year == max(year)) %>% .$value,0)` procent `r max(bredband$year)`. Det kan jämföras med riksgenomsnittet som år `r max(bredband$year)` var `r round(bredband %>% filter(municipality == "Riket",year == max(year)) %>% .$value,0)` procent. 
 
@@ -1291,7 +1293,7 @@ bred1
 ```
 
 
-## Boendetyper
+## Bostadstyper
 Diversifierade boendeformer bidrar till flexibilitet på bostadsmarknaden och möjligheten till en god livskvalitet under alla skeden i livet. I Dalarna är småhus den dominerande boendeformen med ungefär `r format(plyr::round_any(boende %>% filter(boendeform == "småhus, äganderätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` hushåll `r max(boende$år)`, en ökning med `r format(plyr::round_any(boende %>% filter(boendeform == "småhus, äganderätt",år == max(år)) %>% .$Antal.hushåll-boende %>% filter(boendeform == "småhus, äganderätt",år == min(år)) %>% .$Antal.hushåll,100),big.mark=" ")` småhus sedan år `r min(boende$år)`. Vidare fanns det år `r max(boende$år)` ca `r format(plyr::round_any(boende %>% filter(boendeform == "flerbostadshus, hyresrätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` hyresrätter i flerbostadshus, ca `r format(plyr::round_any(boende %>% filter(boendeform == "flerbostadshus, bostadsrätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` bostadsrätter i flerbostadshus, samt `r format(plyr::round_any(boende %>% filter(boendeform == "småhus, bostadsrätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` bostadsrätter i formen småhus.
 
 ```{r, include = FALSE}
@@ -1322,7 +1324,7 @@ boende1
 ## Valdeltagande
 En levande demokrati grundar sig i människors tillit till att de demokratiskt valda representativa institutionerna fungerar, såsom kommuner, region och myndigheter. Valdeltagande är därmed en viktig indikator på invånarnas vilja och tro på de demokratiska institutionerna i länet.
 
-I Dalarna har valdeltagande varierat över tid. I riksdagsvalet valde år `r min(valdeltagande$valår)` drygt `r round(valdeltagande %>% filter(valår == min(valår),val == "Riksdagsval") %>% .$valdeltagande,0)` procent att rösta, en andel som hade minskat avsevärt till valet 2002, då bara ungefär `r round(valdeltagande %>% filter(valår == "2002",val == "Riksdagsval") %>% .$valdeltagande,0)` procent valde att rösta i riksdagsvalet. Därefter ökade valdeltagandet stadigt i de nationella valen fram till 2018, då `r round(valdeltagande %>% filter(valår == "2018",val == "Riksdagsval") %>% .$valdeltagande,0)` procent av invånarna i Dalarna röstade i riksdagsvalet. I valet 2022 minskade valdeltagandet dock tydligt. Generellt är valdeltagandet ungefär lika högt i såväl riksdagsval, som val till region- och kommunfullmäktige, även om det på senare år har varit något högre i riksdagsvalet.
+I Dalarna har valdeltagandet varierat över tid. I riksdagsvalet valde år `r min(valdeltagande$valår)` drygt `r round(valdeltagande %>% filter(valår == min(valår),val == "Riksdagsval") %>% .$valdeltagande,0)` procent att rösta, en andel som hade minskat avsevärt till valet 2002, då bara ungefär `r round(valdeltagande %>% filter(valår == "2002",val == "Riksdagsval") %>% .$valdeltagande,0)` procent valde att rösta i riksdagsvalet. Därefter ökade valdeltagandet stadigt i de nationella valen fram till 2018, då `r round(valdeltagande %>% filter(valår == "2018",val == "Riksdagsval") %>% .$valdeltagande,0)` procent av invånarna i Dalarna röstade i riksdagsvalet. I valet 2022 minskade valdeltagandet dock tydligt. Generellt är valdeltagandet ungefär lika högt i såväl riksdagsval, som val till region- och kommunfullmäktige, även om det på senare år har varit något högre i riksdagsvalet.
 
 ```{r, include = FALSE}
 
