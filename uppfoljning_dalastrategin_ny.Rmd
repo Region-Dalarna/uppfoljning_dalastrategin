@@ -179,12 +179,11 @@ Den miljömässiga dimensionen i regional utveckling handlar bland annat om att 
 Dalarna är rikt på naturresurser och om de brukas rätt ger de mångfalt tillbaka. Indikatorer som följs upp är därför bland annat hur resurser som vatten och vind, skog och jordbruksmark används. I Dalarna utgörs samtidigt en stor del av näringslivet av tillverkande industri som förbrukar relativt sett stora mängder energi, och driver därigenom upp mängden energi förbrukad per invånare. Det är en viktig avvägning mellan nytta och miljöpåverkan, att bedöma huruvida Dalarnas företag har det produktionssätt som har den minsta miljöpåverkan i global jämförelse och därmed motiv till att just företagen i Dalarna ska bedriva denna produktion.
 
 
-## Skogsmark 
-Formellt skyddad produktiv skogsmark
+## Formellt skyddad skogsmark 
 
 År 2018 beslutade dåvarande regering om Sveriges första nationella skogsprogram med fokus på skogsbrukets roll för en hållbar utveckling. I Dalastrategin omnämns skogsbruket som en av länets viktigare näringar. Skogsbruket påverkar och påverkas av klimatförändringarna, och därför behöver skötsel och brukande anpassas utifrån rådande kunskap om vad som har minst miljöpåverkan.
 
-Dalarnas yta utgörs till 79 procent av skog vilket gör Dalarna till det femte mest skogstäta länet i landet [(SCB)](https://www.scb.se/hitta-statistik/sverige-i-siffror/miljo/marken-i-sverige/){target="_blank"}. All skogsmark är inte produktiv (ex. myrar och bergsytor etc. som producerar mindre än en kubikmeter virke per hektar och år). Dessa områden utgör 11,3 procent av skogsmarken, av dessa är ca 1,5 procentenheter formellt skyddad. Skogsbruket i Dalarna brukas nästan enbart med konventionella metoder, ca 78 procent av skogsmarken brukas konventionellt. [(SCB)](https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__MI__MI0605/SkyddSkogFrivillig/table/tableViewLayout1/){target="_blank"}.
+Dalarnas yta utgörs till 79 procent av skog vilket gör Dalarna till det femte mest skogstäta länet i landet [(SCB)](https://www.scb.se/hitta-statistik/sverige-i-siffror/miljo/marken-i-sverige/){target="_blank"}. All skogsmark är inte produktiv (ex. myrar och bergsytor etc. som producerar mindre än en kubikmeter virke per hektar och år). Dessa områden utgör 11,3 procent av skogsmarken, varav ca 1,5 procentenheter är formellt skyddad. Skogsbruket i Dalarna brukas nästan enbart med konventionella metoder, ca 78 procent av skogsmarken brukas konventionellt. [(SCB)](https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__MI__MI0605/SkyddSkogFrivillig/table/tableViewLayout1/){target="_blank"}.
 
 Skyddad produktiv skog, tillsammans med frivilliga avsättningar av produktiv skog utgör andelen som brukas på ett hållbart sätt. I diagrammen nedan redovisas hur andelen skyddad produktiv skogsmark i Dalarnas län utvecklats mellan `r as.character(min(skogsmark$År))` och `r as.character(max(skogsmark$År))`. Arealen skyddad skogsmark i länet har ökat över tidsperioden, från `r format(skogsmark %>% filter(År==min(År)) %>% .$area_hektar,big.mark=" ")` hektar år `r as.character(min(skogsmark$År))` till `r format(skogsmark %>% filter(År==max(År)) %>% .$area_hektar,big.mark=" ")` hektar år `r as.character(max(skogsmark$År))`. 
 
@@ -260,7 +259,7 @@ Betesmark <- SkapaStapelDiagram(skickad_df = betesmark %>%
 Betesmark
 ```
 
-## Regionens energiproduktion
+## Energiproduktion
 
 En god tillgång till hållbar energi är avgörande för näringslivets och hela samhällets omställningsförmåga. En ökad regional produktion av förnybar energi bidrar till såväl minskade utsläpp som ökad självförsörjning och resiliens för Dalarna.
 
@@ -296,11 +295,11 @@ energialt
 
 ## Energins ekonomiska effektivitet
 
-Ett sätt att mäta den ekonomiska effektiviteten i energianvändningen är att sätta energiförbrukningen i länet i relation till de ekonomiska värden som produceras i länet. En regions ekonomiska värdeproduktion mäts genom bruttoregionalprodukten (BRP). Energins ekonomiska effektivitet skattas sedan genom att beräkna förädlingsvärdet per ton koldioxidekvivalenter, vilket kopplar ihop utsläppen i länet med den ekonomiska aktiviteten. Att få ut ett större ekonomiskt värde av varje använd energienhet är generellt sett positivt för miljön. Forskare undersöker om det är möjligt att ha en fortsatt ökad ekonomisk tillväxt och samtidigt minska energiförbrukningen i samhället, så pass att ekonomisk aktivitet inte orsakar miljöpåverkan. Detta kallas frikoppling. Hittills visar resultaten på exempel med en minskad miljöpåverkan men synliggör också konflikten mellan skyddet av naturresurser och den traditionella tillväxtmodellen som i praktiken tar naturresurser och ekosystemtjänster för givna.
+Ett sätt att mäta den ekonomiska effektiviteten i energianvändningen är att sätta energiförbrukningen i länet i relation till de ekonomiska värden som produceras i länet. En regions ekonomiska värdeproduktion mäts genom bruttoregionalprodukten (BRP). Energins ekonomiska effektivitet skattas sedan genom att beräkna förädlingsvärdet per ton koldioxidekvivalenter, vilket kopplar ihop utsläppen i länet med den ekonomiska aktiviteten. Att få ut ett större ekonomiskt värde av varje använd energienhet antas innebära en lägre miljöbelastning per producerad krona, och ses därför generellt som positivt. Forskare undersöker om det är möjligt att ha en fortsatt ökad ekonomisk tillväxt och samtidigt minska energiförbrukningen i samhället, så pass att ekonomisk aktivitet inte orsakar miljöpåverkan. Detta kallas frikoppling. Hittills visar resultaten på exempel med en minskad miljöpåverkan men synliggör också konflikten mellan skyddet av naturresurser och den traditionella tillväxtmodellen som i praktiken tar naturresurser och ekosystemtjänster för givna.
 
 Ett ökat förädlingsvärde per mängd förbrukad energi i länet kan betyda att länet har förbättrat energieffektiviteten i de fall industrier och näringar är ungefär desamma mellan mätningarna. En förklaring till en förbättrad energieffektivitet kan annars vara att näringslivets struktur har förändrats i en riktning där energikrävande industrier har lämnat regionen och mer kunskapsintensiv tjänsteproduktion har ökat (som generellt kräver mindre energi). Om energikrävande industrier har lämnat regionen och skapar utsläpp i andra delar av världen är det tyvärr inte självklart att nettoeffekten på de globala utsläppen minskat, då de flesta andra länder har en svagare miljölagstiftning än Sverige.
 
-Mellan `r min(effektivitet$År)` och `r max(effektivitet$År)` ökade energieffektiviteten i Dalarna med ca `r round((effektivitet %>% filter(Region == "Dalarnas län", År == max(År)) %>% .$value/effektivitet %>% filter(Region == "Dalarnas län", År == min(År)) %>% .$value-1)*100,0)` procent. Förändringen beror framförallt på att utsläppen av växthusgaser i länet har minskat under perioden men även på att BRP för Dalarna har stigit under samma tidsperiod. 
+Mellan `r min(effektivitet$År)` och `r max(effektivitet$År)` ökade energieffektiviteten i ekonomiska termer i Dalarna med ca `r round((effektivitet %>% filter(Region == "Dalarnas län", År == max(År)) %>% .$value/effektivitet %>% filter(Region == "Dalarnas län", År == min(År)) %>% .$value-1)*100,0)` procent. Förändringen beror framförallt på att utsläppen av växthusgaser i länet har minskat under perioden men även på att BRP för Dalarna har stigit under samma tidsperiod. 
 
 ```{r, include = FALSE}
 
@@ -610,7 +609,7 @@ Den ekonomiska dimensionen av hållbarhet i det regionala utvecklingsarbetet han
 Denna indikator är under konstruktion.
 
 
-## Resurser till forskning och utveckling
+## Investeringar i forskning och utveckling
 
 ```{r, include = FALSE}
 
@@ -1436,7 +1435,7 @@ del1 <- SkapaStapelDiagram(skickad_df = deltagande %>%
 del1
 ```
 
-## Ungas upplevelse av delaktighet i sin kommun
+## Ungas upplevelse av delaktighet
 
 Att skapa en hållbar utveckling kräver förståelse för och kunskap om framtida generationers utmaningar och behov. FN:s konvention om barns rättigheter, eller barnkonventionen som den ofta kallas, är svensk lag och syftar till att ge barn oavsett bakgrund rätt att behandlas med respekt och att få komma till tals. Barn och unga i Dalarna måste ges möjlighet att ta en aktiv del i samhällsutvecklingen för att målen i Dalastrategin ska kunna uppnås.
 
