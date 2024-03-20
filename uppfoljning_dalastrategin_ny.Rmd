@@ -607,7 +607,7 @@ Den ekonomiska dimensionen av hållbarhet i det regionala utvecklingsarbetet han
 
 ## Infrastrukturinvesteringar
 
-Infrastrukturinvesteringar är en fastställd indikator i Dalastrategin. I dagsläget är den inte definierad i ett mätbart format, men arbete pågår inom Region Dalarna och målsättningen är att kunna följa infrastrukturens effektivitet inom transportsektorn, energisektorn samt bredbandsutbyggnaden.
+Denna indikator är under konstruktion.
 
 
 ## Resurser till forskning och utveckling
@@ -1293,7 +1293,7 @@ bred1
 ```
 
 
-## Bostadstyper
+## Boendetyper
 Diversifierade boendeformer bidrar till flexibilitet på bostadsmarknaden och möjligheten till en god livskvalitet under alla skeden i livet. I Dalarna är småhus den dominerande boendeformen med ungefär `r format(plyr::round_any(boende %>% filter(boendeform == "småhus, äganderätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` hushåll `r max(boende$år)`, en ökning med `r format(plyr::round_any(boende %>% filter(boendeform == "småhus, äganderätt",år == max(år)) %>% .$Antal.hushåll-boende %>% filter(boendeform == "småhus, äganderätt",år == min(år)) %>% .$Antal.hushåll,100),big.mark=" ")` småhus sedan år `r min(boende$år)`. Vidare fanns det år `r max(boende$år)` ca `r format(plyr::round_any(boende %>% filter(boendeform == "flerbostadshus, hyresrätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` hyresrätter i flerbostadshus, ca `r format(plyr::round_any(boende %>% filter(boendeform == "flerbostadshus, bostadsrätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` bostadsrätter i flerbostadshus, samt `r format(plyr::round_any(boende %>% filter(boendeform == "småhus, bostadsrätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` bostadsrätter i formen småhus.
 
 ```{r, include = FALSE}
@@ -1473,7 +1473,7 @@ Det är människorna i Dalarna som skapar regionen – alla enskilda individer b
 
 Indikatorn för tillit mäter andel (%) invånare 16-84 år som har uppgett att de anser sig sakna tillit till andra. Värdet är beräknat som medelvärdet över en fyraårsperiod. Mellan tidsperioden 2004-2007 och 2019-2022 visar det sig att andelen som anser sig sakna tillit är ungefär densamma, ca 28 procent. Under intervallet har däremot andelen under perioden 2007 till 2015 varit lägre mellan 23 och 25 procent. Andelen kvinnor som saknar tillit till andra har varit högre än andelen män som saknar tillit till andra fram till ungefär år 2015. Sedan år 2015 är mönstret inte längre entydigt, och det senaste året 2022 uppgav en större andel män, än kvinnor, att de saknade tillit till andra.
 
-Andelen som säger sig sakna tillit utgör ungefär 25 procent av invånarna, samtidigt som det framkommer i folkhälsoenkäten att ca 20 procent av invånarna aldrig eller väldigt sällan deltog i sociala sammankomster före pandemin, och att andelen har ökat till ca 35 procent av invånarna efter pandemin år 2022. Att delta i olika typer av sociala sammankomster är en byggsten för att skapa sammanhang och i förlängningen tillit.
+Andelen som säger sig sakna tillit utgör ungefär 27 procent av invånarna, samtidigt som det framkommer i folkhälsoenkäten att ca 20 procent av invånarna aldrig eller väldigt sällan deltog i sociala sammankomster före pandemin, och att andelen har ökat till ca 35 procent av invånarna efter pandemin år 2022. Att delta i olika typer av sociala sammankomster är en byggsten för att skapa sammanhang och i förlängningen tillit.
 
 ```{r, include = FALSE}
 
@@ -1504,13 +1504,13 @@ till1
 
 ## Digitalt deltagande
 
-Har vi data för detta nu?
+Denna indikator är under konstruktion.
 
 
 ## Trångboddhet
 Goda livsmiljöer som upplevs trygga och inkluderande är en förutsättning för att människor ska må bra. Olika platser i Dalarna har olika utmaningar och möjligheter att möta dessa behov, bland annat beroende på om det är platser med växande eller krympande befolkningsunderlag. Indikatorn trångboddhet relaterar bland annat till prioriteringen i Dalastrategin om diversifierade boendeformer som i sin tur ska motverka segregation och polarisering.
 
-Antalet trångbodda i Dalarna har ökat under perioden från `r min(trang$år)` till `r max(trang$år)`. I början på perioden räknades cirka `r format(plyr::round_any(trang %>% filter(år == min(år)) %>% .$Samtliga.i.populationen,100),big.mark = " ")` individer i Dalarna som trångbodda enligt norm 2. År `r max(trang$år)` har denna siffra ökat till `r format(plyr::round_any(trang %>% filter(år == max(år)) %>% .$Samtliga.i.populationen,100),big.mark = " ")` personer. Norm 2 innebär att de boende räknas som trångbodda om de bor fler personer än två per rum i alla rum som inte räknas som kök eller vardagsrum.
+Antalet trångbodda i Dalarna har ökat under perioden från `r min(trang$år)` till `r max(trang$år)`. I början på perioden räknades cirka `r format(plyr::round_any(trang %>% filter(år == min(år)) %>% .$Samtliga.i.populationen,100),big.mark = " ")` individer i Dalarna som trångbodda enligt norm 2. År `r max(trang$år)` har denna siffra ökat till `r format(plyr::round_any(trang %>% filter(år == max(år)) %>% .$Samtliga.i.populationen,100),big.mark = " ")` personer. Norm 2 innebär att de boende räknas som trångbodda om det bor fler personer än två per rum i alla rum som inte räknas som kök eller vardagsrum.
 
 ```{r, include = FALSE}
 bodd1 <- SkapaStapelDiagram(skickad_df = trang  %>% 
