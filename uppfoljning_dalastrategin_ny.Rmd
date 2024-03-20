@@ -1023,7 +1023,7 @@ Invandring är en del av lösningen för att möta en ökad efterfrågan på arb
 Diagrammet visar tydligt hur andelen etablerade på arbetsmarknaden i arbetsför ålder ökar efter vistelsetid i landet. För det senaste året i period, `r max(etablering$år)`, hade drygt `r round(etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 0-1 år",år == max(år)) %>% .$Andel_forvarvsarbetande,0)` procent av invandrade med vistelsetid under ett år etablerat sig på arbetsmarknaden. Andelen etablerade på arbetsmarknaden ökar sedan gradvis efter vistelsetid och för samma år var det ca `r round(etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år", år == max(år)) %>% .$Andel_forvarvsarbetande,0)` procent i gruppen som vistats i Sverige i tio år eller mer som var etablerade på arbetsmarknaden.
 
 ```{r, include = FALSE}
-etablering$bakgrundsvariabel <- gsub("^.{0,12}", "", etablering$bakgrundsvariabel)
+#etablering$bakgrundsvariabel <- gsub("^.{0,12}", "", etablering$bakgrundsvariabel)
 
 
 etab1 <- SkapaStapelDiagram(skickad_df = etablering %>% 
