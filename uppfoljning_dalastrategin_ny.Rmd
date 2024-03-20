@@ -373,7 +373,7 @@ avfalldiag <- SkapaStapelDiagram(skickad_df = avfall %>%
                    lagg_pa_logga = FALSE)
 ```
 
-En av prioriteringarna i Dalastrategin är att öka resurseffektiviteten i länet. Ett mått på resursförbrukning är mängden insamlat kommunalt avfall som ett mått på invånarnas resursförbrukning. I det kommunala avfallet ingår det mesta avfall som ett hushåll producerar, så som mat- och restavfall, grov- och trädgårdsavfall och farligt avfall. Även förpackningar och batterier etc. som ingår i producentansvaret ingår i beräkningen. I sammanställningen nedan visas insamlat kommunalt avfall per person och år i Dalarna från 2013 till 2021. År `r min(avfall$year)` samlades det in `r avfall %>% filter(year == min(year),name == "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$value` kg avfall per person i Dalarna, att jämföra med `r avfall %>% filter(year == max(year),name == "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$value` kg per person år `r max(avfall$year)`. En lägre mängd per person signalerar en lägre resursanvändning. I en nationell jämförelse ses att Uppsalas och Stockholms län ligger bäst till med under 400 kg per person och år, medan Kalmar ligger sämst till med över 530 kg per person och år [(Kolada)](https://www.kolada.se/verktyg/fri-sokning/?kpis=61064&years=30200,30199,30198&municipals=27493,27494,27495,27496,27497,27498,27499,27500,27501,27502,27503,27504,27505,27506,27507,27508,27509,27510,27511,27512,27513&rows=municipal,kpi&visualization=bar-chart&focus=27508){target="_blank"}.
+En av prioriteringarna i Dalastrategin är att öka resurseffektiviteten i länet. Ett mått på resursförbrukning är mängden insamlat kommunalt avfall som ett mått på invånarnas resursförbrukning. I det kommunala avfallet ingår det mesta avfall som ett hushåll producerar, så som mat- och restavfall, grov- och trädgårdsavfall och farligt avfall. Även förpackningar och batterier etc. som ingår i producentansvaret ingår i beräkningen. I sammanställningen nedan visas insamlat kommunalt avfall per person och år i Dalarna från 2013 till 2021. År `r min(avfall$year)` samlades det in `r avfall %>% filter(year == min(year),name == "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$value` kg avfall per person i Dalarna, att jämföra med ca `r round(avfall %>% filter(year == max(year),name == "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$value,0)` kg per person år `r max(avfall$year)`. En lägre mängd per person signalerar en lägre resursanvändning. I en nationell jämförelse ses att Uppsalas och Stockholms län ligger bäst till med under 400 kg per person och år, medan Kalmar ligger sämst till med över 530 kg per person och år [(Kolada)](https://www.kolada.se/verktyg/fri-sokning/?kpis=61064&years=30200,30199,30198&municipals=27493,27494,27495,27496,27497,27498,27499,27500,27501,27502,27503,27504,27505,27506,27507,27508,27509,27510,27511,27512,27513&rows=municipal,kpi&visualization=bar-chart&focus=27508){target="_blank"}.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 avfalldiag
@@ -589,7 +589,7 @@ elgrad <- SkapaStapelDiagram(skickad_df = el %>%
 livsmedel1alt
 ```
 
-I diagrammet nedan visas ett teoretisk beräkning av självförsörjning av energi i Dalarna där den totala elproduktionen i länet visas som andel av den total elförbrukningen. Diagrammet visar en positiv trend för självförsörjningsgraden av energi, vilket beror på att förbrukningen av el har minskat i länet sedan 2016 samtidigt som produktionen av el har ökat under samma tidsperiod.
+I diagrammet nedan visas ett teoretisk beräkning av självförsörjning av energi i Dalarna där den totala elproduktionen i länet visas som andel av den total elförbrukningen. Diagrammet visar en positiv trend för självförsörjningsgraden av energi från `r round(el %>% filter(year == min(year)) %>% .$elgrad,0)` procent år `r min(el$year)` till `r round(el %>% filter(year == max(year)) %>% .$elgrad,0)` procent år `r max(el$year)`. Beroende på vilket år som undersöks, kan detta förklaras med att produktionen av el har ökat, konsumtionen av el har minskat eller en kombination av de båda.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 elgrad
@@ -801,7 +801,6 @@ inter2 <- SkapaStapelDiagram(skickad_df = intindex2 %>%
                     manual_color = diagramfarger("rus_tva_fokus"))
 ```
 
-EJ UPPDATERAT. VÄNTA MED ATT HÄMTA HEM DATA (EJ API)
 Internationellt kunskapsutbyte och handel är viktiga faktorer för att möta samhällsutmaningar och för att ta vara på möjligheter till import, investeringar och export av varor och tjänster. I vårt län finns världsledande företag som deltar i globala värdekedjor, och många mindre företag som främst levererar till dessa regionala storkunder. De mindre företagen spelar på den globala marknaden.
 
 En indikator som används för att följa utvecklingen inom detta område är internationalisering. Internationalisering är ett komplext koncept och kan bestå av flera olika delar. I denna uppföljning används Tillväxtverkets regionala internationaliseringsindex för att illustrera internationalisering. Det består av ett antal variabler som innefattar handel (export), arbetsmarknad (internationella företags betydelse för regionen) och turism (utländska gästnätter). Indexet gör det möjligt att följa hur internationaliseringen utvecklas över tid i olika regioner (län).
@@ -952,7 +951,7 @@ eftergym1 <- SkapaStapelDiagram(skickad_df = eftergym %>%
 eftergym1
 ```
 
-När det gäller andelen som har en högskoleutbildning om minst 3 år, ökar även den i länet. Från `r round(eftergym %>% filter(gender == "T",year == min(year)) %>% .$value,0)` procent år `r min(eftergym$year)` till `r round(eftergym %>% filter(gender == "T",year == max(year)) %>% .$value,0)` procent `r max(eftergym$year)`. 
+När det gäller andelen som har en högskoleutbildning om minst 3 år, ökar även den tydligt i länet. 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_utbniva_85$hogutb_andel_ar20_1985_2022
@@ -1205,7 +1204,7 @@ som känner sig delaktiga, desto mer utveckling kan
 ## Tillgång till service och tjänster
 Olika platser i Dalarna har olika utmaningar och möjligheter att möta de förändrade behoven, bland annat beroende på om det är platser med växande eller krympande befolkningsunderlag. En princip för genomförandet av Dalastrategin är att allt utvecklingsarbete ska vara platsbaserat med målsättningen att sammanhållningen ska stärkas och olika platsers förutsättningar och resurser ska tas till vara på ett bra sätt. För utvecklingskraft i hela länet är det viktigt att säkra tillgången till service, vård, fritidsaktiviteter och kultur i alla delar av länet. Människor behöver ha en god tillgänglighet till såväl statlig som regional och kommunal service. Tillgången till service påverkar människors levnadsvillkor och är viktig för platsens attraktivitet och för möjligheten att skapa arbetstillfällen på platsen.
 
-Den här indikatorn presenterar två olika mått på tillgång till service; tillgång till grundskola samt tillgång till dagligvarubutik. Resultatet visar att tillgång till grundskola har minskat något under perioden från `r min(service %>% filter(!(is.na(value))) %>% .$year)` till `r max(service %>% filter(!(is.na(value))) %>% .$year)`. I början på perioden hade drygt `r gsub("\\.",",",round(service %>% filter(!(is.na(value)),kpi == "Invånare 0-16 år med tillgång till grundskola inom 2 km, andel (%)") %>% filter(year == min(year)) %>%  .$value,1))` procent av alla invånare mellan 0-16 år en grundskola inom 2 km från bostaden. `r max(service %>% filter(!(is.na(value))) %>% .$year)` hade motsvarande siffra minskat till `r round(service %>% filter(!(is.na(value)),kpi == "Invånare 0-16 år med tillgång till grundskola inom 2 km, andel (%)") %>% filter(year == max(year)) %>%  .$value,1)` procent. Samma trend ses även för tillgång till dagligvarubutiker. Under samma period har andelen med en dagligvarubutik inom 2 km från bostaden minskat från `r round(service %>% filter(!(is.na(value)),kpi == "Invånare med tillgång till dagligvarubutik inom 2 km, andel (%)") %>% filter(year == min(year)) %>%  .$value,1)` procent till `r round(service %>% filter(!(is.na(value)),kpi == "Invånare med tillgång till dagligvarubutik inom 2 km, andel (%)") %>% filter(year == max(year)) %>%  .$value,1)` procent.
+Den här indikatorn presenterar två olika mått på tillgång till service; tillgång till grundskola samt tillgång till dagligvarubutik. Resultatet visar att tillgång till grundskola har minskat något under perioden från `r min(service %>% filter(!(is.na(value))) %>% .$year)` till `r max(service %>% filter(!(is.na(value))) %>% .$year)`. I början på perioden hade drygt `r gsub("\\.",",",round(service %>% filter(!(is.na(value)),kpi == "Invånare 0-16 år med tillgång till grundskola inom 2 km, andel (%)") %>% filter(year == min(year)) %>%  .$value,1))` procent av alla invånare mellan 0-16 år en grundskola inom 2 km från bostaden. `r max(service %>% filter(!(is.na(value))) %>% .$year)` hade motsvarande siffra minskat till `r gsub("\\.",",",round(service %>% filter(!(is.na(value)),kpi == "Invånare 0-16 år med tillgång till grundskola inom 2 km, andel (%)") %>% filter(year == max(year)) %>%  .$value,1))` procent. Samma trend ses även för tillgång till dagligvarubutiker. Under samma period har andelen med en dagligvarubutik inom 2 km från bostaden minskat från `r gsub("\\.",",",round(service %>% filter(!(is.na(value)),kpi == "Invånare med tillgång till dagligvarubutik inom 2 km, andel (%)") %>% filter(year == min(year)) %>%  .$value,1))` procent till `r gsub("\\.",",",round(service %>% filter(!(is.na(value)),kpi == "Invånare med tillgång till dagligvarubutik inom 2 km, andel (%)") %>% filter(year == max(year)) %>%  .$value,1))` procent.
 
 ```{r, include = FALSE}
 
@@ -1588,7 +1587,7 @@ ut2 <- SkapaStapelDiagram(skickad_df = utsatt %>%
 ut1
 ```
 
-I ett nationellt perspektiv ser vi att endast fyra andra län har en högre andel unga som lever i hushåll med låg ekonomisk standard än vad Dalarna har.
+I ett nationellt perspektiv ser vi att endast fem andra län har en högre andel unga som lever i hushåll med låg ekonomisk standard än vad Dalarna har.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 ut2
@@ -1603,8 +1602,6 @@ Folkhälsan mäts genom enkätundersökningar där ett urval av befolkningen (16
 Av svaren framgår att hälsan varierar både i riket och mellan platser i Dalarnas län. Personer med lägre utbildningsnivå uppger generellt sett en sämre hälsa och sämre förutsättningar för en god hälsa än de med högre utbildningsnivå.
 
 År 2021 var det totalt `r hlv %>% filter(Fråga=="Allmänt hälsotillstånd - Bra eller mycket bra hälsa", Kommun=="Dalarna",Kön == "Totalt",År == max(År)) %>% .$Andel` procent av respondenterna i Dalarnas län som uppgav ett bra eller mycket bra allmänt hälsotillstånd. Under tidsperioden 2014-2021 har det allmänna hälsotillståndet i länet varit stabilt runt 68-69 procent utan några större förändringar. Under samtliga tre uppmätta år har en något större andel av männen svarat att de upplever ett allmänt gott hälsotillstånd i jämförelse med andelen kvinnor, men skillnaden är relativt liten.
-
-I ett nationellt perspektiv ligger alla kommuner i Dalarnas i nivå med, eller under riksgenomsnittet. I 2021 års undersökning uppgav 74 procent av befolkningen i riket att de har ett bra eller mycket bra allmänt hälsotillstånd, samma andel som Älvdalens invånare rapporterade, medan genomsnittet för Dalarnas befolkning var 69 procent, det vill säga 5 procentenheter under riksgenomsnittet. Lägst nivå på andelen med självrapporterad god hälsa finns i Smedjebacken där 66 procent av invånarna ansåg sig ha en allmänt god hälsa. Även på nationell nivå är andelen med god hälsa större bland män än bland kvinnor, och större bland yngre jämfört med äldre.
 
 ```{r, include = FALSE}
 halsa1 <- SkapaStapelDiagram(skickad_df = hlv %>% 
@@ -1652,8 +1649,9 @@ halsa2 <- SkapaStapelDiagram(skickad_df = hlv %>%
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 halsa1
 ```
-<br>
-<br>
+
+I ett nationellt perspektiv ligger alla kommuner i Dalarnas län i nivå med, eller under riksgenomsnittet. I 2021 års undersökning uppgav 74 procent av befolkningen i riket att de har ett bra eller mycket bra allmänt hälsotillstånd, samma andel som Älvdalens invånare rapporterade, medan genomsnittet för Dalarnas befolkning var 69 procent, det vill säga 5 procentenheter under riksgenomsnittet. Lägst nivå på andelen med självrapporterad god hälsa finns i Smedjebacken där 66 procent av invånarna ansåg sig ha en allmänt god hälsa. Även på nationell nivå är andelen med god hälsa större bland män än bland kvinnor, och större bland yngre jämfört med äldre.
+
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 halsa2
 ```
