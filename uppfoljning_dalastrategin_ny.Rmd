@@ -1005,7 +1005,7 @@ arb1 <- SkapaStapelDiagram(skickad_df = arbets %>%
                     diagram_titel = paste0("Långtidsarbetslöshet 25-64 år i Dalarna"),
                     output_mapp = "Diagram/",
                     filnamn_diagram = "arbets.png",
-                    diagram_capt = "Källa: Arbetsförmedlingen (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Antal invånare 25-64 år (årsmedelvärde år T) som varit öppet arbetslösa eller i program med aktivitetsstöd i minst sex månader,\n dividerat med antal invånare 25-64 år den 31/12 år T-1.",
+                    diagram_capt = "Källa: Arbetsförmedlingen (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Antal invånare 25-64 år (årsmedelvärde år T) som varit öppet arbetslösa eller i program med aktivitetsstöd i minst sex månader,\ndividerat med antal invånare 25-64 år den 31/12 år T-1.",
                     manual_y_axis_title = "procent",
                     x_axis_lutning = 0,
                     manual_color=diagramfarger("kon"),
@@ -1540,7 +1540,7 @@ Ekonomiska klyftor mellan olika grupper i samhället är en utmaning för både 
 
 Med låg ekonomisk standard menas de hushåll som har en årsinkomst under 60 procent av medianvärdet för hushållens årliga inkomster i Sverige. Andel barn som lever i hushåll med låg ekonomisk standard blir därför ett mått på barns ekonomiska utsatthet i samhället. 
 
-I diagrammet nedan kan vi notera att andelen unga (0-19 år) som lever i hushåll med låg ekonomisk standard i Dalarnas län har ökat över mätperioden, vilket är negativt, från `r utsatt %>% filter(municipality_id == 20, year == min(year)) %>% .$value` procent år `r min(utsatt$year)` till drygt `r utsatt %>% filter(municipality_id == 20, year == max(year)) %>% .$value` procent `r max(utsatt$year)`. 
+I diagrammet nedan kan vi notera att andelen unga (0-19 år) som lever i hushåll med låg ekonomisk standard i Dalarnas län har ökat över mätperioden, vilket är negativt, från `r utsatt %>% filter(municipality_id == 20, year == min(year)) %>% .$value` procent år `r min(utsatt$year)` till drygt `r utsatt %>% filter(municipality_id == 20, year == max(year)) %>% .$value` procent `r max(utsatt$year)`. Viktigt att notera är dock att andelen har minskat tydligt mellan 2019 och `r max(utsatt$year)`, från `r utsatt %>% filter(municipality_id == 20, year == 2019) %>% .$value` procent till `r utsatt %>% filter(municipality_id == 20, year == max(year)) %>% .$value` procent, vilket är positivt.
 
 ```{r, include = FALSE}
 
@@ -1552,7 +1552,7 @@ ut1 <- SkapaStapelDiagram(skickad_df = utsatt %>%
                          diagram_titel = "Andel invånare 0-19 år med låg ekonomisk standard i Dalarna",
                          output_mapp = "Diagram/",
                          filnamn_diagram = "utsatt1.png",
-                         diagram_capt = " Källa: Kolada\n Bearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Låg ekonomisk standard avser andelen personer som lever i hushåll vars ekonomiska standard är mindre än 60 procent av medianvärdet för riket.",
+                         diagram_capt = " Källa: Kolada\n Bearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Låg ekonomisk standard avser andelen personer som lever i hushåll\nvars ekonomiska standard är mindre än 60 procent av medianvärdet för riket.",
                          manual_color = diagramfarger("rus_sex")[1],
                          manual_y_axis_title = "procent",
                          x_axis_lutning = 0,
@@ -1572,7 +1572,7 @@ ut2 <- SkapaStapelDiagram(skickad_df = utsatt %>%
                     diagram_titel = paste0("Andel invånare 0-19 år med låg ekonomisk standard ",max(utsatt$year)),
                     output_mapp = "Diagram/",
                     filnamn_diagram = "utsatt2.png",
-                    diagram_capt = "Källa: Kolada\n Bearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Låg ekonomisk standard avser andelen personer som lever i hushåll vars ekonomiska standard är mindre än 60 procent av medianvärdet för riket.",
+                    diagram_capt = "Källa: Kolada\n Bearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Låg ekonomisk standard avser andelen personer som lever i hushåll\nvars ekonomiska standard är mindre än 60 procent av medianvärdet för riket.",
                     manual_y_axis_title = "procent",
                     manual_color = diagramfarger("rus_tva_fokus"),
                     x_axis_lutning = 45,
