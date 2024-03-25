@@ -43,9 +43,16 @@ options(dplyr.summarise.inform = FALSE)
 source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_SkapaDiagram.R")
 source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R")
 
+# Skall extern hemsida uppdateras. Skall sättas till FALSE i normala fall
+uppdatera_hemsida = FALSE
+
 indikatorer <- read_excel("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/indikatorer.xlsx")
 
-resande <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/resande.csv",encoding="UTF-8")
+# Lägger till tre år för hand utifrån figur som Anna skickade via Teams
+resande <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/resande.csv",encoding="UTF-8") %>% 
+  bind_rows(data.frame(year = 2021, kpi = "Marknadsandel_procent", value = 6,municipality = "Region Dalarna"),
+            data.frame(year = 2022, kpi = "Marknadsandel_procent", value = 9,municipality = "Region Dalarna"),
+            data.frame(year = 2023, kpi = "Marknadsandel_procent", value = 11,municipality = "Region Dalarna"))
 
 vaxthusgaser <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/vaxthusgaser.csv",encoding="UTF-8")
 
@@ -547,7 +554,7 @@ Diagrammen redovisar indikatorer för kollektivt resande i Dalarna: kollektivtra
 resande1alt
 ```
 
-Marknadsandelen för kollektivtrafik beräknas som andelen resor med kollektivtrafik (linjelagd buss, spårvagn, tunnelbana, pendeltåg, tåg och båt) och taxi av det totala antalet resor, dvs kollektivtrafik, taxi, bil (förare och passagerare) samt moped/MC. Här bryts uppgången i en förmodad pandemieffekt efter ett antal år av ökande marknadsandel för kollektivtrafiken.
+Marknadsandelen för kollektivtrafik beräknas som andelen resor med kollektivtrafik (linjelagd buss, spårvagn, tunnelbana, pendeltåg, tåg och båt) och taxi av det totala antalet resor, dvs kollektivtrafik, taxi, bil (förare och passagerare) samt moped/MC. Efter ett antal år av ökande marknadsandel för kollektivtrafiken bröts uppgången år 2020 av en förmodad pandemieffekt. Nedgången fortsatte år 2021 när marknadsandelen för kollektivtrafik bara var `r resande %>% filter(kpi == "Marknadsandel_procent", year == 2021) %>% .$value` procent, men därefter har marknadsandelen ökat igen och uppgick år `r max(resande$year)` till `r resande %>% filter(kpi == "Marknadsandel_procent", year == max(year)) %>% .$value` procent. 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 resande2alt
@@ -1472,7 +1479,7 @@ del1 <- SkapaStapelDiagram(skickad_df = deltagande %>%
                            diagram_capt = " Källa: Nationella folkhälsoenkäten - Hälsa på lika villkor (Folkhälsomyndigheten)\n Bearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andelen (%) invånare 16-84 år med lågt socialt deltagande,\ndet vill säga de som deltagit i högst en aktivitet de senaste 12 månaderna.",
                            #diagram_liggande = TRUE,
                            manual_y_axis_title = "procent",
-                           #procent_0_100_10intervaller = TRUE,
+                           procent_0_100_10intervaller = TRUE,
                            x_axis_lutning = 45,
                            stodlinjer_avrunda_fem = TRUE,
                            manual_x_axis_text_hjust = 1,
@@ -1705,3 +1712,16 @@ I ett nationellt perspektiv ligger alla kommuner i Dalarnas län i nivå med, el
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 halsa2
 ```
+
+```{r, include = FALSE}
+
+if(uppdatera_hemsida==TRUE){
+# kopiera html-filen till 
+file.copy(from = "uppfoljning_dalastrategin_ny.html", to = "docs/index.html", overwrite = TRUE)
+file.copy(from = "uppfoljning_dalastrategin_ny.Rmd", to = "docs/index.Rmd", overwrite = TRUE)
+
+# ska vi ta bort html-filen i projektmappen eller ha dubbelt, både där och i docs-mappen?
+#file.remove("laget_i_Dalarna.html")
+}
+```
+
