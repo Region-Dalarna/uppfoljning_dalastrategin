@@ -395,7 +395,7 @@ En av prioriteringarna i Dalastrategin är att öka resurseffektiviteten i läne
 avfalldiag
 ```
 
-## Avfall och ekonomisk produktion
+## Avfall och bruttoregionalprodukten
 
 ```{r, include = FALSE}
 
@@ -426,7 +426,7 @@ avfallbrpdiag
 
 De klimatpåverkande växthusgaserna innefattar fler ämnen än koldioxid. Ett exempel är metangas, som även är betydligt skadligare per enhet än koldioxid (1 ton metangas motsvarar utsläpp av ca 28 ton koldioxid). För att utsläppen som sker i Dalarna ska vara jämförbara med andra regioners utsläpp omsätts därför samtliga gasers utsläpp till så kallade koldioxidekvivalenter, det vill säga den mängd som varje ämne släpper ut omräknat i termer av koldioxid.
 
-I Dalarna har utvecklingen gått i positiv riktning med minskande utsläpp av växthusgaser under de senaste decennierna. Det är  industri- och transportsektorerna som står för den volymmässigt största minskningen samtidigt som dessa sektorer, i likhet med övriga Sverige, står för den största andelen utsläpp av växthusgaser totalt sett i länet. Diagrammet visar även att trenden av minskande utsläpp stannar av. Pandemiåret 2020 var utsläppen som lägst, rimligtvis för att produktionstakten saktade in. År 2021 ökar utsläppen relativt 2020, men minskar ändå litet i jämförelse med 2019. Ska utsläppsmålen uppnås krävs dock en betydligt snabbare minskningstakt.   
+I Dalarna har utvecklingen gått i positiv riktning med minskande utsläpp av växthusgaser under de senaste decennierna. Det är  industri- och transportsektorerna som står för den volymmässigt största minskningen samtidigt som dessa sektorer, i likhet med övriga Sverige, står för den största andelen utsläpp av växthusgaser totalt sett i länet. Diagrammet visar även att trenden av minskande utsläpp stannar av. Pandemiåret 2020 var utsläppen som lägst, rimligtvis för att produktionstakten saktade in. År 2021 ökar utsläppen relativt 2020, men minskar ändå litet i jämförelse med 2019 (siffror för år 2022 väntas vara tillgängliga från halvårsskiftet 2024). Ska utsläppsmålen uppnås krävs dock en betydligt snabbare minskningstakt.  
 
 ```{r, include = FALSE}
 #colnames(vaxthusgaser) <- c("Id", "Ar", "Geografi", "Utsläpp per invånare", "Totalt Utsläpp", "Uppvärmning", "Transporter", "Arbetsmaskiner", "El/Fjärrvärme", "Industri", "Jordbruk")
@@ -627,8 +627,9 @@ Denna indikator är under konstruktion.
 
 ## Laddinfrastruktur för fordon
 
-Eu har tagit fram ett regelverk för alternativa bränslen och ställer minimikrav på tillgänglig effekt per registrerad bil i en kommun. Regelverket förkortas AFIR (Alternative Fuels Infrastructure Regulation) och följs upp på den nationella plattformen drivmedla.se[https://drivmedla.se/kartor-och-statistik/afir-kartan] 
-Kravet gör gällande att det måste finnas en effekt på 1,3 kW i offentligt tillgänglig laddningsinfrastruktur för varje elfordon och 0,8 kW för varje Laddhybrid.
+Eu har tagit fram ett regelverk för alternativa bränslen och ställer minimikrav på tillgänglig effekt i publika laddningsstationer för lätta fordon, dvs per registrerad personbil, i en kommun. Regelverket förkortas AFIR (Alternative Fuels Infrastructure Regulation) och följs upp på den nationella plattformen drivmedla.se[https://drivmedla.se/kartor-och-statistik/afir-kartan] 
+Kravet gör gällande att det måste finnas en effekt på 1,3 kW i offentligt tillgänglig laddningsinfrastruktur för varje elfordon och 0,8 kW för varje Laddhybrid. 
+Behovet av publika laddninsstationer bör också kopplas till trafikmängden på en plats. Dalarna är ett län som tar emot många besökare, och därför är en indikator som sätter tillgänglig effekt i relation till trafikmängden, under konstruktion för att än bättre spegla det faktiska behovet av laddinfrastruktur.
 
 ```{r, include = FALSE}
 laddstationer_fig <- SkapaStapelDiagram(skickad_df = laddstationer %>%
