@@ -21,8 +21,8 @@ p_load(httr,
 ##############
 ## Gateway ###
 ##############
-set_config(use_proxy(url = "http://mwg.ltdalarna.se", port = 9090, username = Sys.info()[["user"]], password = key_get("rd")))
-set_config(config(ssl_verifypeer = 0L))
+# set_config(use_proxy(url = "http://mwg.ltdalarna.se", port = 9090, username = Sys.info()[["user"]], password = key_get("rd")))
+# set_config(config(ssl_verifypeer = 0L))
 
 outputmapp = "G:/skript/projekt/data/uppfoljning_dalastrategin/Data/"
 
@@ -74,7 +74,7 @@ source("Skript/kollektivtresande.R", encoding="UTF-8")
 hamta_data_kollektivtresande(outputmapp = outputmapp)
 
 ##########################
-### Livsmedel          ### 
+### Livsmedel          ###  OBS! Fungerar inte!
 ##########################
 # OBS - uppdateras inte automatiskt. År behöver för tillfället "hårdkodas"
 source("Skript/livsmedel.R", encoding="UTF-8")
@@ -121,7 +121,7 @@ hamta_data_eftergymnasial(outputmapp = outputmapp)
 source("Skript/gymnasie.R", encoding="UTF-8")
 
 ###############
-## Matchning ##
+## Matchning ## OBS! Fungerar inte! Se andra skript, tror de har bytt adress
 ###############
 source("Skript/matchning.R", encoding="UTF-8")
 hamta_data_matchning(outputmapp = outputmapp)
@@ -178,7 +178,7 @@ source("Skript/vard.R", encoding="UTF-8")
 hamta_data_vard(outputmapp = outputmapp)
 
 ########################
-## Socialt deltagande ##
+## Socialt deltagande ## OBS! Fungerar inte! Måste eventuellt uppdateras baserat på Peters nya skript för att hämta data från FOHM
 ########################
 source("Skript/socialtdeltagande_ny.R", encoding="UTF-8")
 hamta_data_socialtdeltagande(outputmapp = outputmapp)

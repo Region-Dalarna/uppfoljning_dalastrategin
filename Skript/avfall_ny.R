@@ -2,7 +2,7 @@
 hamta_data_avfall = function(region_Kolada = "0020",
                              region_SCB = "20",
                              outputmapp = "G:/skript/projekt/data/uppfoljning_dalastrategin/Data/",
-                             filnamn = c("avfall.csv"), 
+                             filnamn = c("avfall.csv","avfallbrp.csv"), 
                              kpi = c("U07801","U07485", "U07483", "U07484", "U07482", "N01951"),
                              returnera_data = FALSE,
                              spara_data = TRUE,
@@ -36,11 +36,11 @@ hamta_data_avfall = function(region_Kolada = "0020",
   
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R")
   
-  # Väljer senaste år
-  if(senaste_ar == TRUE){
-  tid_kolada <- max(unique(hamta_kolada_giltiga_ar("U07801",vald_region = region_Kolada)))
-  tid_SCB = max(hamta_giltiga_varden_fran_tabell(api_scb, "tid"))
-  }
+  # # Väljer senaste år. Oklart vad den här gjorde
+  # if(senaste_ar == TRUE){
+  # tid_kolada <- max(unique(hamta_kolada_giltiga_ar("U07801",vald_region = region_Kolada)))
+  # tid_SCB = max(hamta_giltiga_varden_fran_tabell(api_scb, "tid"))
+  # }
 
   if (!require("pacman")) install.packages("pacman")
   pacman::p_load(tidyverse,

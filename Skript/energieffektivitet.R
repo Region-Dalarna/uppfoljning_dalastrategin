@@ -22,7 +22,7 @@ hamta_data_energieffektivitet = function(region = "20",
   # - tid: Vilka år vill man ha? Välj ett högt senaste år om man vill ha alla
   # - returnera_data: TRUE om data skall returneras som en df
   # - spara_data: TRUE om data skall sparas till Excel  
-  
+  # Länk till statistikdatabasen: https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__MI__MI1301__MI1301B/UtslappKommun/
   # ===========================================================================================================
   
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R")

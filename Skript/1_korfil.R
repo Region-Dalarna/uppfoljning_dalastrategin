@@ -25,15 +25,16 @@ gg_nyst_konk <- diagram_nystartade_konkurser(output_mapp_figur = output_mapp_fig
                                              vald_farg = diagramfarger("rus_sex"),
                                              cont_cod = c("N00999"))
 
-source("G:/skript/diagram/diag_utbniva_over_tid_och_andel_specifikt_ar.R")
-gg_utbniva_85 <- diag_utbniva_lang_tidserie(region_vekt = c("20"),
-                                            output_mapp = output_mapp_figur,
-                                            diagram_capt = "Källa: SCB:s öppna statistikdatabas.\nBearbetning: Samhällsanalys, Region Dalarna",
-                                            skapa_fil = TRUE,
-                                            diag_hogutb_over_tid = TRUE,
-                                            diag_lagutb_over_tid = FALSE,
-                                            diag_andel_alla_utbnivaer = FALSE,
-                                            diag_andel_eftergymn_jmfr_lan = FALSE)
+
+
+source("https://raw.githubusercontent.com/Region-Dalarna/diagram/refs/heads/main/diag_utbniva_flera_diagram_scb.R")
+gg_utbniva_85 <- diag_utbniva_tidserie_och_lansjmfr (region_vekt = c("20"),
+                                                    output_mapp = output_mapp_figur,
+                                                    diagram_capt = "Källa: SCB:s öppna statistikdatabas.\nBearbetning: Samhällsanalys, Region Dalarna",
+                                                    skapa_fil = TRUE,
+                                                    diag_hogutb_over_tid = TRUE,
+                                                    diag_lagutb_over_tid = FALSE,
+                                                    diag_andel_alla_utbnivaer = FALSE)
 
 source("https://raw.githubusercontent.com/Region-Dalarna/diagram/main/diagram_arbetsmarknadsstatus_senastear.R")
 gg_arbetsmaknadsstatus <- diagram_arbetsmarknadsstatus(output_mapp_figur = output_mapp_figur,
