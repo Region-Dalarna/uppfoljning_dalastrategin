@@ -127,13 +127,13 @@ source("Skript/matchning.R", encoding="UTF-8")
 hamta_data_matchning(outputmapp = outputmapp)
 
 #################
-## Sysselsatta ##
+## Sysselsatta ## - Se körfil, hämtas numer via hamtadata-skript
 #################
 # source("Skript/sysselsatta.R", encoding="UTF-8")
 # hamta_data_sysselsatta(outputmapp = outputmapp)
 
-source("Skript/sysselsatta_ny.R", encoding="UTF-8")
-hamta_data_sysselsatta_ny(outputmapp = outputmapp)
+# source("Skript/sysselsatta_ny.R", encoding="UTF-8")
+# hamta_data_sysselsatta_ny(outputmapp = outputmapp)
 
 ####################
 ## Etableringstid ##
