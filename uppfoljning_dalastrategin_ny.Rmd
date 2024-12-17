@@ -80,7 +80,7 @@ matchning <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/mat
 
 arbets <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/arbetsloshet.csv",encoding="UTF-8")
 
-gymnasie <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/gymnasie.csv",encoding="UTF-8")
+#gymnasie <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/gymnasie.csv",encoding="UTF-8")
 
 eftergym <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/eftergym.csv",encoding="UTF-8")
 
@@ -779,14 +779,54 @@ nystart_21 <- nystartade %>%
                   slice(-17)
 
 # Läser in data för 2022 från Tillväxtanalys statistikdatabas. Finns enbart data från 2011, varför jag behåller det gamla datasettet också
-nystart_efter_21 <- read_excel("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/nystartade_efter2021_240314.xlsx") %>% 
-  mutate(År = substr(Kvartal,1,4),
-         Län = sub("^\\S+\\s+", '', Län)) %>% 
-          group_by(År,Län) %>%
-            summarize(Antal=sum(antal)) %>%
-              ungroup() 
+# nystart_efter_21 <- read_excel("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/nystartade_efter2021_240314.xlsx") %>% 
+#   mutate(År = substr(Kvartal,1,4),
+#          Län = sub("^\\S+\\s+", '', Län)) %>% 
+#           group_by(År,Län) %>%
+#             summarize(Antal=sum(antal)) %>%
+#               ungroup() 
+source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/refs/heads/main/hamta_nystartade_ftg_kvartal_lan_variabel_nyaf_2011_tva.R")
 
-nystartade_diag = rbind(nystart_21,nystart_efter_21)
+nystartade <- hamta_nystartade_kvartal_lan_variabel_tva(
+    region_vekt = "20" , 
+    variabel_klartext = "*",
+    kvartal_klartext = "*")
+
+  # Diverse justeringar
+  nystartade_df <- nystartade %>% 
+    rename(tid = kvartal,
+           antal = `Nystartade företag 2011-`) %>%
+    #separate(län, into = c("regionkod", "region"), sep = " ", remove = TRUE,extra = "merge") %>% 
+    mutate(ar = substr(tid,1,4),
+           kvartal = substr(tid,5,6)) %>% 
+    mutate(kvartal_namn = case_when(
+      kvartal == "Q1" ~ "kvartal ett",
+      kvartal == "Q2" ~ "kvartal två",
+      kvartal == "Q3" ~ "kvartal tre",
+      kvartal == "Q4" ~ "kvartal fyra")) 
+  
+  # Om det är färre än 4 kvartal för det sista året, ignorera detta
+  antal_kvartel_senaste_ar <- nystartade_df %>% 
+    filter(ar == max(ar)) %>% 
+      group_by(kvartal) %>% 
+        summarise(antal = sum(antal)) %>% 
+          count()
+  
+  if(antal_kvartel_senaste_ar<4) {
+    max_ar = (as.integer(max(nystartade_df$ar)) -1)
+  }else {
+    max_ar = max(nystartade_df$ar)
+  }
+  
+  nystartade_df <- nystartade_df %>% 
+    filter(ar>2021 & ar <= max_ar) %>% 
+      group_by(region,ar) %>%
+        summarise(Antal = sum(antal)) %>% 
+          ungroup() %>% 
+            rename(Län = region,
+                   År = ar) 
+
+nystartade_diag = rbind(nystart_21,nystartade_df)
 
 nystart1 <- SkapaStapelDiagram(skickad_df = nystartade_diag ,                      
                     skickad_x_var = "År",
@@ -804,7 +844,7 @@ nystart1 <- SkapaStapelDiagram(skickad_df = nystartade_diag ,
                     lagg_pa_logga = FALSE)
 ```
 
-För ekonomins och samhällets förnyelse är entreprenörskap en avgörande faktor. Dalarna behöver fler, och olika typer av entreprenörer och en av prioriteringarna i Dalastrategin är att främja entreprenörskap och företagande. Ett sätt att fånga entreprenörskapsandan är genom att följa antalet nystartade företag i länet. Över tid har antalet nystartade företag per år i Dalarna ökat, och där toppnoteringen nåddes `r nystartade_diag %>% filter(Antal == max(Antal)) %>% .$År` med `r format(nystartade_diag %>% filter(Antal == max(Antal)) %>% .$Antal,big.mark=" ")` stycken. Antal nystartade företag minskade dock något år 2022. År 2007 gjordes en större förändring i statistiken över nystartade företag vilket kan förklara den skarpa förändringen från 2006 till 2007.
+För ekonomins och samhällets förnyelse är entreprenörskap en avgörande faktor. Dalarna behöver fler, och olika typer av entreprenörer och en av prioriteringarna i Dalastrategin är att främja entreprenörskap och företagande. Ett sätt att fånga entreprenörskapsandan är genom att följa antalet nystartade företag i länet. Över tid har antalet nystartade företag per år i Dalarna ökat, och där toppnoteringen nåddes `r nystartade_diag %>% filter(Antal == max(Antal)) %>% .$År` med `r format(nystartade_diag %>% filter(Antal == max(Antal)) %>% .$Antal,big.mark=" ")` stycken. Därefter har dock antalet nystartade företag minskat (år `r max(nystartade_diag$År)` startades `r format(nystartade_diag %>% filter(År == max(År)) %>% .$Antal,big.mark=" ")` företag). År 2007 gjordes en större förändring i statistiken över nystartade företag vilket kan förklara den skarpa förändringen från 2006 till 2007.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 nystart1
@@ -860,7 +900,7 @@ inter2 <- SkapaStapelDiagram(skickad_df = intindex2 %>%
                     manual_color = diagramfarger("rus_tva_fokus"))
 ```
 
-<span class = "kommentar">Kan inte hitta längre. Byta till något annat? Exempelvis https://tillvaxtverket.se/tillvaxtverket/statistikochanalys/statistikomforetag/foretagande/internationalisering.1610.html</kommentar>
+<span class = "kommentar">Kan inte hitta längre. Byta till något annat? Exempelvis https://tillvaxtverket.se/tillvaxtverket/statistikochanalys/statistikomforetag/foretagande/internationalisering.1610.html</kommentar></span>
 Internationellt kunskapsutbyte och handel är viktiga faktorer för att möta samhällsutmaningar och för att ta vara på möjligheter till import, investeringar och export av varor och tjänster. I vårt län finns världsledande företag som deltar i globala värdekedjor, och många mindre företag som främst levererar till dessa regionala storkunder. De mindre företagen spelar på den globala marknaden.
 
 En indikator som används för att följa utvecklingen inom detta område är internationalisering. Internationalisering är ett komplext koncept och kan bestå av flera olika delar. I denna uppföljning används Tillväxtverkets regionala internationaliseringsindex för att illustrera internationalisering. Det består av ett antal variabler som innefattar handel (export), arbetsmarknad (internationella företags betydelse för regionen) och turism (utländska gästnätter). Indexet gör det möjligt att följa hur internationaliseringen utvecklas över tid i olika regioner (län).
@@ -981,6 +1021,8 @@ gym1
 ```
 
 ## Eftergymnasialt och högskoleutbildade
+
+<span class ="kommentar">Lite förvirrande avsnitt. Både eftergymnasialt och eftergymnasialt minst 3 år. Fokusera på det ena?</span>
 
 Med ett alltmer kunskapsintensivt samhälle och en arbetsmarknad som ställer högre krav på kompetens ökar också behovet av eftergymnasialt utbildade. I Dalastrategin poängteras betydelsen av en stark regional högskola med närvaro i hela länet. Även andra utbildningsformer såsom folkhögskolor, yrkesvux och yrkeshögskolor bidrar till att stärka kompetensförsörjningen i länet i form av såväl bredd som spets. Denna indikator mäter andelen invånare med eftergymnasial utbildning i åldersspannet 25 till 64 år. Med eftergymnasial utbildning avses både eftergymnasial utbildning kortare än tre år, längre än tre år och forskarutbildning. Skillnaden mellan kvinnors och mäns utbildningsnivå är tydlig, år `r max(eftergym$year)` hade `r round(eftergym %>% filter(gender == "K",year == max(year)) %>% .$value,0)` procent av kvinnorna i Dalarna någon form av eftergymnasial utbildning, medan motsvarande siffra för männen i Dalarna var avsevärt lägre, `r round(eftergym %>% filter(gender == "M",year == max(year)) %>% .$value,0)` procent. Det är även tydligt att skillnaden har ökat över tidsperioden.
 
@@ -1375,7 +1417,7 @@ bred1
 
 
 ## Boendetyper
-Diversifierade boendeformer bidrar till flexibilitet på bostadsmarknaden och möjligheten till en god livskvalitet under alla skeden i livet. I Dalarna är småhus den dominerande boendeformen med ungefär `r format(plyr::round_any(boende %>% filter(boendeform == "småhus, äganderätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` hushåll `r max(boende$år)`, en ökning med `r format(plyr::round_any(boende %>% filter(boendeform == "småhus, äganderätt",år == max(år)) %>% .$Antal.hushåll-boende %>% filter(boendeform == "småhus, äganderätt",år == min(år)) %>% .$Antal.hushåll,100),big.mark=" ")` småhus sedan år `r min(boende$år)`. Vidare fanns det år `r max(boende$år)` ca `r format(plyr::round_any(boende %>% filter(boendeform == "flerbostadshus, hyresrätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` hyresrätter i flerbostadshus, ca `r format(plyr::round_any(boende %>% filter(boendeform == "flerbostadshus, bostadsrätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` bostadsrätter i flerbostadshus, samt `r format(plyr::round_any(boende %>% filter(boendeform == "småhus, bostadsrätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` bostadsrätter i formen småhus.
+Diversifierade boendeformer bidrar till flexibilitet på bostadsmarknaden och möjligheten till en god livskvalitet under alla skeden i livet. I Dalarna är småhus den dominerande boendeformen med ungefär `r format(plyr::round_any(boende %>% filter(boendeform == "småhus, äganderätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` hushåll `r max(boende$år)`, en ökning med drygt `r format(plyr::round_any(boende %>% filter(boendeform == "småhus, äganderätt",år == max(år)) %>% .$Antal.hushåll-boende %>% filter(boendeform == "småhus, äganderätt",år == min(år)) %>% .$Antal.hushåll,100),big.mark=" ")` småhus sedan år `r min(boende$år)`. Vidare fanns det år `r max(boende$år)` ca `r format(plyr::round_any(boende %>% filter(boendeform == "flerbostadshus, hyresrätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` hyresrätter i flerbostadshus, ca `r format(plyr::round_any(boende %>% filter(boendeform == "flerbostadshus, bostadsrätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` bostadsrätter i flerbostadshus, samt drygt `r format(plyr::round_any(boende %>% filter(boendeform == "småhus, bostadsrätt",år == max(år)) %>% .$Antal.hushåll ,100),big.mark =" ")` bostadsrätter i formen småhus.
 
 ```{r, include = FALSE}
 
@@ -1477,7 +1519,7 @@ val4 <- SkapaStapelDiagram(skickad_df = valdeltagande_EU %>%
 val1
 ```
 
-Valdeltagandet i valet till EU-parlamentet har ökat sedan valet 2004, då blott `r round(valdeltagande_EU %>% filter(valår == 2004) %>% .$valdeltagande,0)` procent av de röstberättigade invånarna i Dalarna röstade. I valet 2019 hade andelen ökat till `r round(valdeltagande_EU %>% filter(valår == 2019) %>% .$valdeltagande,0)` procent. Värt att notera är att valdeltagandet i EU-valet är avsevärt mycket lägre än i de nationella valen.
+Valdeltagandet i valet till EU-parlamentet har ökat sedan valet 2004, då blott `r round(valdeltagande_EU %>% filter(valår == 2004) %>% .$valdeltagande,0)` procent av de röstberättigade invånarna i Dalarna röstade. Fram till och med valet 2019 ökade valdeltagandet vid varje år (`r round(valdeltagande_EU %>% filter(valår == 2019) %>% .$valdeltagande,0)` procent år 2019), men i det senaste valet (`r valdeltagande_EU %>% .$valår %>% max()`) minskade valdeltagandet till ungefär `r round(valdeltagande_EU %>% filter(valår == max(valår)) %>% .$valdeltagande,0)` procent. Värt att notera är också att valdeltagandet i EU-valet är avsevärt mycket lägre än i de nationella valen.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 val4
@@ -1591,7 +1633,7 @@ Denna indikator är under konstruktion.
 ## Trångboddhet
 Goda livsmiljöer som upplevs trygga och inkluderande är en förutsättning för att människor ska må bra. Olika platser i Dalarna har olika utmaningar och möjligheter att möta dessa behov, bland annat beroende på om det är platser med växande eller krympande befolkningsunderlag. Indikatorn trångboddhet relaterar bland annat till prioriteringen i Dalastrategin om diversifierade boendeformer som i sin tur ska motverka segregation och polarisering.
 
-Antalet trångbodda i Dalarna har ökat under perioden från `r min(trang$år)` till `r max(trang$år)`. I början på perioden räknades cirka `r format(plyr::round_any(trang %>% filter(år == min(år)) %>% .$Samtliga.i.populationen,100),big.mark = " ")` individer i Dalarna som trångbodda enligt norm 2. År `r max(trang$år)` har denna siffra ökat till `r format(plyr::round_any(trang %>% filter(år == max(år)) %>% .$Samtliga.i.populationen,100),big.mark = " ")` personer. Norm 2 innebär att de boende räknas som trångbodda om det bor fler personer än två per rum i alla rum som inte räknas som kök eller vardagsrum.
+Antalet trångbodda i Dalarna har ökat under perioden från `r min(trang$år)` till `r max(trang$år)`. I början på perioden räknades cirka `r format(plyr::round_any(trang %>% filter(år == min(år)) %>% .$Samtliga.i.populationen,100),big.mark = " ")` individer i Dalarna som trångbodda enligt norm 2. År `r max(trang$år)` har denna siffra ökat till `r format(plyr::round_any(trang %>% filter(år == max(år)) %>% .$Samtliga.i.populationen,100),big.mark = " ")` personer. Värt att notera är dock att antalet trångbodda minskade något år `r max(trang$år)`, jämfört med åren innan. Norm 2 innebär att de boende räknas som trångbodda om det bor fler personer än två per rum i alla rum som inte räknas som kök eller vardagsrum.
 
 ```{r, include = FALSE}
 bodd1 <- SkapaStapelDiagram(skickad_df = trang  %>% 

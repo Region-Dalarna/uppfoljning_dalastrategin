@@ -29,4 +29,9 @@ library(tidyverse)
 source("G:/skript/hamta_data/hamta_skolverket_avgangna_gymn_genomstromning_excel.R", encoding = "utf-8")
 gymnasie <- hamta_skolverket_gymn_avgangna_genomstromning(region_vekt = "20")
 
+source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/refs/heads/main/hamta_gymn_avg_genomstromning_4ar_prg_skolverket.R")
+
+gymnasie_alt <- hamta_gymn_avg_genomstromning_4ar_prg_skolverket(region_vekt = "20")
+
+
 write.csv(gymnasie,"G:/skript/projekt/data/uppfoljning_dalastrategin/Data/gymnasie.csv", fileEncoding="UTF-8", row.names = FALSE)

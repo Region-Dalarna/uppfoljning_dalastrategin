@@ -1,10 +1,23 @@
 
 # OBS! Ska sättas till FALSE när skriptet går i produktion - men kan stängas av genom att sätta till TRUE för att se att alla skript fungerar som de ska
 # skriptet är till för att hantera rcurl-fel och inte vanliga fel som ju inte blir bättre av att man försöker flera gånger. =)
+source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R")
 hoppa_over_felhantering = FALSE
 
 output_mapp_figur = "Diagram/"
 
+# Genomströmning gymnasiet
+
+source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/refs/heads/main/hamta_gymn_avg_genomstromning_4ar_prg_skolverket.R")
+
+gymnasie <- gg_branschbredd <- funktion_upprepa_forsok_om_fel( function() {
+  hamta_gymn_avg_genomstromning_4ar_prg_skolverket(region_vekt = "20",
+                                                   huvudman = "Samtliga",
+                                                   gymnasieprogram = "Gymnasieskolan totalt")
+}, hoppa_over = hoppa_over_felhantering)
+
+
+# Branschbredd
 source("https://raw.githubusercontent.com/Region-Dalarna/sarbarhetsanalys/main/Skript/diagram_branschbredd.R")
 
 gg_branschbredd <- funktion_upprepa_forsok_om_fel( function() {
@@ -50,7 +63,7 @@ gg_utbniva_85 <- funktion_upprepa_forsok_om_fel( function() {
 
 source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/refs/heads/main/hamta_syss_rams_bas_fran_ar_1993_region_inrikesutrikes_kon_tid_RAMSForvInt03_RAMSForvInt04_RamsForvInt04N_ArRegArbStatus_scb.R")
 sysselsatt <- funktion_upprepa_forsok_om_fel( function() {
-  hamta_rams_bas_region_inrikesutrikes_kon_tid_scb(region_vekt = region,
+  hamta_rams_bas_region_inrikesutrikes_kon_tid_scb(region_vekt = "20",
                                                    inrikesutrikes_klartext = "inrikes och utrikes födda") 
 }, hoppa_over = hoppa_over_felhantering)
 

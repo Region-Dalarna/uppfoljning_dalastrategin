@@ -53,8 +53,14 @@ service <- get_values(
   period = tid
 )
 
+# Tar enbart ut första och sista år med data
+valda_ar<- service %>% 
+  filter(!is.na(value)) %>% 
+    filter(year %in% c(min(year), max(year))) %>% .$year %>% unique()
+  
 # Väljer bort variabler och ger mer rimliga namn.
 service <- service %>% 
+  filter(year %in% valda_ar) %>%
   select(-c(count,municipality_type,municipality_id,gender)) %>% 
     mutate(kpi = case_when(
       kpi == "N07530" ~ "Invånare med tillgång till dagligvarubutik inom 2 km, andel (%)",

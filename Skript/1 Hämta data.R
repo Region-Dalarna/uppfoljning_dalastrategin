@@ -116,9 +116,9 @@ source("Skript/eftergymnasial.R", encoding="UTF-8")
 hamta_data_eftergymnasial(outputmapp = outputmapp)
 
 ###############################
-## Gymnasial genomströmmning ##
+## Gymnasial genomströmmning ## Hämtas numer i skriptet korfil.R
 ###############################
-source("Skript/gymnasie.R", encoding="UTF-8")
+#source("Skript/gymnasie.R", encoding="UTF-8")
 
 ###############
 ## Matchning ## OBS! Fungerar inte! Se andra skript, tror de har bytt adress

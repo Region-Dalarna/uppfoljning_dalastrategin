@@ -12,13 +12,11 @@ hamta_data_vard = function(region = "0020",
   
   # ===========================================================================================================
   # 
-  # Skript som hämtar data för betesmark
+  # Skript som hämtar data för tillgång till vård
   # Parametrar som skickas med (= variabler i Kolada-tabellen) är:
   # - region: Vald region
   # - alla_regioner: Välj om man vill ha alla regioner. Om den är satt till True så skriver den över region ovan.
   # - ta_med_riket: TRUE om man vill ta med riket också
-  # - kpi:  
-  # - N00750: Total_betesmark
   # - filnamn : Vad skall filen heta
   # - senaste_ar: Sätts till TRUE om man bara vill ha data för senaste år
   # - tid: Vilka år vill man ha? Välj ett högt senaste år om man vill ha alla
