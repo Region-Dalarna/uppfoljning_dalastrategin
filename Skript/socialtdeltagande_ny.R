@@ -55,11 +55,11 @@ hamta_data_socialtdeltagande = function(region = "20",
   
   # Senaste år
   if (senaste_ar == TRUE){
-    tid = max(hamta_giltiga_varden_fran_tabell("http://fohm-app.folkhalsomyndigheten.se/Folkhalsodata/api/v1/sv/A_Folkhalsodata/B_HLV/eSocialarel/aSocialarel/hlv1socxreg.px", "År"))
+    tid = max(hamta_giltiga_varden_fran_tabell("https://fohm-app.folkhalsomyndigheten.se/Folkhalsodata/api/v1/sv/A_Folkhalsodata/B_HLV/eSocialarel/aSocialarel/hlv1socxreg.px", "År"))
   }
 
   pxweb_query_list <- 
-    list("Region" = region,
+    list("Region" = "20",
          "Sociala relationer"= Soc_relationer,
          "Andel och konfidensintervall"= Andel_conf,
          "Kön"= Kon,
@@ -68,7 +68,7 @@ hamta_data_socialtdeltagande = function(region = "20",
   
   # Download data 
   px_data <- 
-    pxweb_get(url = "http://fohm-app.folkhalsomyndigheten.se/Folkhalsodata/api/v1/sv/A_Folkhalsodata/B_HLV/eSocialarel/aSocialarel/hlv1socxreg.px",
+    pxweb_get(url = "https://fohm-app.folkhalsomyndigheten.se/Folkhalsodata/api/v1/sv/A_Folkhalsodata/B_HLV/eSocialarel/aSocialarel/hlv1socxreg.px",
               query = pxweb_query_list)
   
   # Convert to data.frame 

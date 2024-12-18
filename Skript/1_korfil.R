@@ -77,6 +77,18 @@ gg_arbetsmaknadsstatus <- funktion_upprepa_forsok_om_fel( function() {
                                returnera_data = TRUE)
 }, hoppa_over = hoppa_over_felhantering)
 
+source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/refs/heads/main/hamta_sociala_relationer_region_kon_ar_hlv1socxreg_fohm.R")
+
+deltagande <- funktion_upprepa_forsok_om_fel( function() {
+  hamta_sociala_relationer_region_kon_ar_fohm(region_vekt = "20",
+                                              sociala_relationer_klartext = c("Lågt socialt deltagande","Svårt att lita på andra"),
+                                              andel_och_konfidensintervall_klartext = "Andel")
+}, hoppa_over = hoppa_over_felhantering) %>% 
+  rename(Andel_konfidens = `Andel och konfidensintervall`,
+         Andel = `Sociala relationer efter region, kön och år`,
+         Sociala_relationer = `Sociala relationer`,
+         Region = `region`,)
+
 rmarkdown::render(
   input = 'uppfoljning_dalastrategin_ny.Rmd',
   output_file = 'uppfoljning_dalastrategin_ny.html',

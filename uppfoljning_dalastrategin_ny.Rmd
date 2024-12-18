@@ -106,7 +106,7 @@ valdeltagande_EU <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/D
 
 utsatt <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/utsatthet_ny.csv", encoding="UTF-8")
 
-deltagande <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/deltagande_ny.csv", encoding="UTF-8")
+#deltagande <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/deltagande_ny.csv", encoding="UTF-8")
 
 vard <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/vard.csv", encoding="UTF-8")
 
