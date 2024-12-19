@@ -87,7 +87,8 @@ deltagande <- funktion_upprepa_forsok_om_fel( function() {
   rename(Andel_konfidens = `Andel och konfidensintervall`,
          Andel = `Sociala relationer efter region, kön och år`,
          Sociala_relationer = `Sociala relationer`,
-         Region = `region`,)
+         Region = `region`) %>% 
+  filter(!is.na(Andel))
 
 rmarkdown::render(
   input = 'uppfoljning_dalastrategin_ny.Rmd',
