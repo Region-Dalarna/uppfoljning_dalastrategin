@@ -84,7 +84,8 @@ arbets <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/arbets
 
 eftergym <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/eftergym.csv",encoding="UTF-8")
 
-etablering <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/etablering.csv",encoding="UTF-8")
+etablering <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/etablering_ny.csv",encoding="UTF-8") %>% 
+  filter(år>2011)
 
 forskning <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/forskning.csv",encoding="UTF-8")
 
@@ -956,7 +957,7 @@ chef4 <- SkapaStapelDiagram(skickad_df = chefsrepresentation %>%
                               filter(år==max(år)) %>% 
                                 mutate(kön = str_to_title(kön)),
                     skickad_x_var = "bakgrundsvariabel",
-                    skickad_y_var = "Andel i chefsposition, procent",
+                    skickad_y_var = "Andel i chefsposition",
                     skickad_x_grupp = "kön",
                     diagram_titel = paste0("Chefsrepresentation i Dalarna ",max(chefsrepresentation$år)),
                     output_mapp = "Diagram/",

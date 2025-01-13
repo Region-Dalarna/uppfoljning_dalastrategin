@@ -137,9 +137,9 @@ hamta_data_matchning(outputmapp = outputmapp)
 ####################
 ## Etableringstid ##
 ####################
-source("Skript/invandringetablering.R", encoding="UTF-8")
-hamta_data_invandringsetablering(outputmapp = outputmapp,
-                                 start_ar = "2010")
+source("Skript/invandringetablering_ny.R", encoding="UTF-8")
+hamta_data_invandringsetablering(region = "*",
+                                 outputmapp = outputmapp)
 
 ####################
 ## Forskning ##
@@ -204,7 +204,7 @@ source("Skript/utsatta.R", encoding="UTF-8")
 hamta_data_utsatta(outputmapp = outputmapp)
 
 ###################
-## Valdeltagande ##
+## Valdeltagande ## - Funkar inte för tillfället
 ###################
 # source("Skript/valdeltagande.R", encoding="UTF-8")
 # hamta_data_valdeltagande(outputmapp = outputmapp)

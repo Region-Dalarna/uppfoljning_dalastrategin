@@ -1,12 +1,10 @@
-
 hamta_data_chefrepresentation <- function(region = "20",
                                           alla_regioner = FALSE,
                                           ta_med_riket = FALSE,
                                           kon = c("1","2"),
                                           utb_niva = c("000"), #Enbart en i taget för tillfället
                                           bakgrund = c("SE","INTTOT"),
-                                          tid = c("*"), 
-                                          senaste_ar = FALSE,
+                                          tid = c("*"),
                                           spara_data = TRUE,
                                           returnera_data = FALSE,
                                           outputmapp = "G:/skript/projekt/data/uppfoljning_dalastrategin/Data/",
@@ -29,7 +27,6 @@ hamta_data_chefrepresentation <- function(region = "20",
   # - kon: ""
   # - outputmapp: Vart skall data sparas
   # - filnamn : Vad skall filen heta
-  # - senaste_ar: Sätts till TRUE om man bara vill ha data för senaste år
   # - tid: Vilka år vill man ha? Normalt c("*"), men går även att sätta ett intervall.
   # - returnera_data: True om data skall returneras som en df
   # - spara_data: True om data skall sparas till Excel  
@@ -58,9 +55,8 @@ if(ta_med_riket == TRUE){
   region = c("00",region)
 }
 
-if (senaste_ar == TRUE){
-  tid = max(hamta_giltiga_varden_fran_tabell("https://api.scb.se/OV0104/v1/doris/sv/ssd/AA/AA0003/AA0003B/IntGr1LanKonUtb", "tid"))
-}
+# https://api.scb.se/OV0104/v1/doris/sv/ssd/AA/AA0003/AA0003B/IntGr1LanKonUtb
+# 0000001Y
 
 # Hämtar data från PXweb
 pxweb_query_list <- 
@@ -68,12 +64,12 @@ pxweb_query_list <-
        "Kon" = kon,
        "UtbNiv" = utb_niva,
        "BakgrVar" = bakgrund,
-       "ContentsCode" = c("0000001Y"),
-       "Tid" = tid)
+       "ContentsCode" = c("000007KF"),
+       "Tid" = "*")
 
 # Download data 
 chefspositioner <- 
-  pxweb_get(url = "https://api.scb.se/OV0104/v1/doris/sv/ssd/AA/AA0003/AA0003B/IntGr1LanKonUtb",
+  pxweb_get(url = "https://api.scb.se/OV0104/v1/doris/sv/ssd/START/AA/AA0003/AA0003B/IntGr1LanUtbBAS",
             query = pxweb_query_list)
 
 # Convert to data.frame 
@@ -82,7 +78,7 @@ chefspositioner <- as.data.frame(chefspositioner, column.name.type = "text", var
 chefspositioner <- chefspositioner %>% 
   select(-utbildningsnivå) %>% 
     mutate(bakgrundsvariabel = ifelse(bakgrundsvariabel =="födelseregion: Sverige", "Inrikes född","Utrikes född")) %>% 
-      filter(!(is.na(`Andel i chefsposition, procent`)))
+      filter(!(is.na(`Andel i chefsposition`)))
 
 # Sparar till Excel om användaren vill det
 if (spara_data == TRUE) write.csv(chefspositioner, paste0(outputmapp,filnamn), fileEncoding="UTF-8", row.names = FALSE)

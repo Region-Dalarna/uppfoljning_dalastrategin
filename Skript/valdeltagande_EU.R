@@ -27,7 +27,7 @@ berakna_valdeltagande_EU = function(region = "20", # Funkar enbart på länsniv�
   
   rostberattigade_EU = hamta_rostberattigade_EU_region_medborgarskap_tid_scb(region_vekt = hamtakommuner(region,tamedriket = FALSE,tamedlan = FALSE)) %>%  
       group_by(regionkoder,region,valår) %>% 
-        summarize(rostberattigade = sum(`Europaparlamentsval - röstberättigade`, na.rm = TRUE)) %>% 
+        summarize(rostberattigade = sum(Antal, na.rm = TRUE)) %>% 
           ungroup()
   
   valdeltagande_lan = left_join(valdeltagande_EU,rostberattigade_EU, by = c("regionkoder","region","valår")) %>% 

@@ -33,16 +33,16 @@ berakna_valdeltagande_nationellt = function(region = "20", # Funkar enbart på l
            valdeltagande_kommun = `Valdeltagande i kommunfullmäktigval, procent`)
   
   rostberattigade_riksdag = hamta_rostberattigade_riksdagsval_region_tid_scb(region_vekt = hamtakommuner(region,tamedriket = FALSE,tamedlan = FALSE)) %>% 
-    rename(rostberattigade_riksdag = `Riksdagsval - röstberättigade`)
+    rename(rostberattigade_riksdag = Antal)
 
   rostberattigade_region = hamta_rostberattigade_regionfullmaktige_region_medborgarskap_tid_scb(region_vekt = hamtakommuner(region,tamedriket = FALSE,tamedlan = FALSE)) %>%  
     group_by(regionkoder,region,valår) %>%
-      summarize(rostberattigade_region = sum(`Regionfullmäktigval - röstberättigade`, na.rm = TRUE)) %>%
+      summarize(rostberattigade_region = sum(Antal, na.rm = TRUE)) %>%
         ungroup()
   
   rostberattigade_kommun = hamta_rostberattigade_kommunfullmaktige_region_medborgarskap_tid_scb(region_vekt = hamtakommuner(region,tamedriket = FALSE,tamedlan = FALSE)) %>%  
     group_by(regionkoder,region,valår) %>%
-      summarize(rostberattigade_kommun = sum(`Kommunfullmäktigval - röstberättigade`, na.rm = TRUE)) %>%
+      summarize(rostberattigade_kommun = sum(Antal, na.rm = TRUE)) %>%
         ungroup()
   
   valdeltagande_lan = left_join(valdeltagande,rostberattigade_riksdag, by = c("regionkoder","region","valår")) %>% 
