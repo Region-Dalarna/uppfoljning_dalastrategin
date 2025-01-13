@@ -6,7 +6,7 @@ hamta_data_matchning = function(region = "20", # Spelar enbart roll om man vill 
                                 spara_data = TRUE,
                                 returnera_data = FALSE,
                                 outputmapp = "G:/skript/projekt/data/uppfoljning_dalastrategin/Data/",
-                                filnamn = "matchning.csv", 
+                                filnamn = "matchning_ny.csv", 
                                 senaste_ar = FALSE, 
                                 tid = c("*")){ 
 
@@ -52,7 +52,7 @@ hamta_data_matchning = function(region = "20", # Spelar enbart roll om man vill 
   }
   
   if (senaste_ar == TRUE){
-    tid = max(hamta_giltiga_varden_fran_tabell("https://api.scb.se/OV0104/v1/doris/sv/ssd/AM/AM9906/AM9906A/RegionInd19M2N", "tid"))
+    tid = max(hamta_giltiga_varden_fran_tabell("https://api.scb.se/OV0104/v1/doris/sv/ssd/START/AM/AM9906/AM9906A/RegionInd19M2N1", "tid"))
   }
   
   # Skapa en lista med information som vi vill ha hem 
@@ -60,12 +60,16 @@ hamta_data_matchning = function(region = "20", # Spelar enbart roll om man vill 
     list("Region" = region,
          "Kon" = Kon,
          "AlderFodelselandgr" = alder_fodelseland,
-         "ContentsCode" = c("000005SF"),
+         #"ContentsCode" = c("000005SF"),
+         "ContentsCode" = c("000007I3"),
          "Tid"=tid)
+  
+  # Tidigare "https://api.scb.se/OV0104/v1/doris/sv/ssd/AM/AM9906/AM9906A/RegionInd19M2N"
+  # Enligt SCB sker ett skrifte från 2019 när man byter metod. Jag använder enbart ny data. Tidigare var det från 2015
   
   # Download data 
   px_data <- 
-    pxweb_get(url = "https://api.scb.se/OV0104/v1/doris/sv/ssd/AM/AM9906/AM9906A/RegionInd19M2N",
+    pxweb_get(url = "https://api.scb.se/OV0104/v1/doris/sv/ssd/START/AM/AM9906/AM9906A/RegionInd19M2N1",
               query = pxweb_query_list)
   
   # Convert to data.frame 
