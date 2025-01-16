@@ -204,10 +204,10 @@ source("Skript/utsatta.R", encoding="UTF-8")
 hamta_data_utsatta(outputmapp = outputmapp)
 
 ###################
-## Valdeltagande ## - Funkar inte för tillfället
+## Valdeltagande ##
 ###################
-# source("Skript/valdeltagande.R", encoding="UTF-8")
-# hamta_data_valdeltagande(outputmapp = outputmapp)
+source("Skript/valdeltagande.R", encoding="UTF-8")
+hamta_data_valdeltagande(outputmapp = outputmapp)
 
 source("Skript/valdeltagande_nationellt.R", encoding="UTF-8")
 berakna_valdeltagande_nationellt(outputmapp = outputmapp)

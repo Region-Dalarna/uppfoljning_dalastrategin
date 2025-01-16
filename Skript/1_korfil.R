@@ -61,10 +61,11 @@ gg_utbniva_85 <- funktion_upprepa_forsok_om_fel( function() {
                                       diag_andel_alla_utbnivaer = FALSE)
 }, hoppa_over = hoppa_over_felhantering)
 
+
 source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/refs/heads/main/hamta_syss_rams_bas_fran_ar_1993_region_inrikesutrikes_kon_tid_RAMSForvInt03_RAMSForvInt04_RamsForvInt04N_ArRegArbStatus_scb.R")
 sysselsatt <- funktion_upprepa_forsok_om_fel( function() {
   hamta_rams_bas_region_inrikesutrikes_kon_tid_scb(region_vekt = "20",
-                                                   inrikesutrikes_klartext = "inrikes och utrikes födda") 
+                                                   inrikesutrikes_klartext = "inrikes och utrikes födda")
 }, hoppa_over = hoppa_over_felhantering)
 
 source("https://raw.githubusercontent.com/Region-Dalarna/diagram/main/diagram_arbetsmarknadsstatus_senastear.R")
