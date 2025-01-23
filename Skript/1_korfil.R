@@ -91,6 +91,12 @@ deltagande <- funktion_upprepa_forsok_om_fel( function() {
          Region = `region`) %>% 
   filter(!is.na(Andel))
 
+# Gini-koefficienten - hämtar enbart data
+gini <- hamta_inkomstfordelning_region_inkomsttyp_tid_scb(region_vekt = region,
+                                                          inkomsttyp_klartext = "disponibel inkomst per k.e. inkl. kapitalvinst",
+                                                          cont_klartext = "Gini-koefficient")
+
+
 rmarkdown::render(
   input = 'uppfoljning_dalastrategin_ny.Rmd',
   output_file = 'uppfoljning_dalastrategin_ny.html',

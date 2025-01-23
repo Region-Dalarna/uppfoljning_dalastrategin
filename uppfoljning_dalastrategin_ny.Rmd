@@ -72,7 +72,8 @@ skogsmark <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/sko
 
 betesmark <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/betesmark.csv",encoding="UTF-8")
 
-gini <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/gini.csv",encoding="UTF-8")
+# Data hämtas automatiskt i 1_korfil.R
+#gini <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/gini.csv",encoding="UTF-8")
 
 matchning <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/matchning_ny.csv",encoding="UTF-8")
 
@@ -1279,20 +1280,19 @@ matchning1
 
 
 ## Ginikoefficient
-I Dalastrategin lyfts ekonomiska klyftor som en framtidsutmaning för länet. För att redovisa ojämlikheten i inkomstfördelningen används gini-koefficienten. Ett högt värde på koefficienten visar på större inkomstskillnader och därmed större ojämlikhet. Här redovisas ginikoefficienten beräknad genom disponibel inkomst per "konsumtionsenhet". Med konsumtionsenhet menas att det i beräkningen av en individs tillgängliga ekonomiska resurser tas hänsyn till hur hushållet som individen bor i är sammansatt. Det betyder att beräkningen beaktar om personen är ensamboende eller sammanboende och om den har ansvar för minderåriga barn eller inte etc, faktorer som kan minska eller öka individens disponibla inkomst.
+I Dalastrategin lyfts ekonomiska klyftor som en framtidsutmaning för länet. För att redovisa ojämlikheten i inkomstfördelningen används gini-koefficienten. Ett högt värde på koefficienten visar på större inkomstskillnader och därmed större ojämlikhet. Här redovisas ginikoefficienten beräknad genom disponibel inkomst per "konsumtionsenhet" inklusive kapitalvinster. Med konsumtionsenhet menas att det i beräkningen av en individs tillgängliga ekonomiska resurser tas hänsyn till hur hushållet som individen bor i är sammansatt. Det betyder att beräkningen beaktar om personen är ensamboende eller sammanboende och om den har ansvar för minderåriga barn eller inte etc, faktorer som kan minska eller öka individens disponibla inkomst.
 
-För Dalarnas räkning har ginikoefficienten ökat något från 2011 till `r max(gini$year)`, vilket visar på en ökad ekonomisk ojämlikhet i länet, med en toppnotering 2019. Ginikoefficienten för länet ligger under koefficienten för riket för samtliga år förutom 2019, det vill säga i Dalarna är inkomsterna mindre ojämlika än i Sverige som helhet. År 2019 avviker så skarpt från den generella trenden att det årets notering bör betraktas med försiktighet. Ökningen i ojämlikhet från 2011 och framåt är dock tydlig oavsett inverkan från år 2019. 
+För Dalarnas räkning har ginikoefficienten ökat något från 2011 till `r max(gini$år)`, vilket visar på en ökad ekonomisk ojämlikhet i länet, med en toppnotering 2019. Värt att notera är dock att Ginikoeffiecienten minskade `r max(gini$år)`, jämfört med året innan. Ginikoefficienten för länet ligger under koefficienten för riket för samtliga år förutom 2019, det vill säga i Dalarna är inkomsterna mindre ojämlika än i Sverige som helhet. År 2019 avviker så skarpt från den generella trenden att det årets notering bör betraktas med försiktighet. 
 
 ```{r, include = FALSE}
 
 gini1 <- SkapaLinjeDiagram(skickad_df = gini %>% 
-                             mutate(year = year %>% as.character(),
-                                    municipality = ifelse(municipality == "Region Dalarna", "Dalarna", municipality)),
-                    skickad_x_var = "year",
-                    skickad_y_var = "value",
+                             mutate(region = ifelse(region == "Dalarnas län", "Dalarna", region)),
+                    skickad_x_var = "år",
+                    skickad_y_var = "Gini-koefficient",
                     diagram_titel = paste0("Ginikoefficient"),
-                    skickad_x_grupp = "municipality",
-                    diagram_capt = "Källa: SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: För att redovisa ojämnheten i inkomstfördelningen används gini-koefficienten.\nKoefficienten kan anta ett värde mellan 0 och 1.\nEtt högt värde på koefficienten visar på större ojämnhet än ett lågt värde",
+                    skickad_x_grupp = "region",
+                    diagram_capt = "Källa: SCB \nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: För att redovisa ojämnheten i inkomstfördelningen används gini-koefficienten.\nKoefficienten kan anta ett värde mellan 0 och 1.\nEtt högt värde på koefficienten visar på större ojämnhet än ett lågt värde",
                     x_axis_lutning = 0,
                     manual_color = diagramfarger("rus_tva_fokus"),
                     stodlinjer_avrunda_fem = TRUE,

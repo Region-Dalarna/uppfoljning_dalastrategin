@@ -97,10 +97,10 @@ source("Skript/chefspositioner.R", encoding="UTF-8")
 hamta_data_chefrepresentation(outputmapp = outputmapp)
 
 #####################
-## Ginikoefficient ##
+## Ginikoefficient ## - Hämtas numera via hamta_data-skript (se korfil)
 #####################
-source("Skript/gini.R", encoding="UTF-8")
-hamta_data_gini(outputmapp = outputmapp)
+# source("Skript/gini.R", encoding="UTF-8")
+# hamta_data_gini(outputmapp = outputmapp)
 
 ##########################
 ## Långtidsarbetslöshet ##
