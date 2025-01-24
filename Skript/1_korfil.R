@@ -92,7 +92,8 @@ deltagande <- funktion_upprepa_forsok_om_fel( function() {
   filter(!is.na(Andel))
 
 # Gini-koefficienten - hämtar enbart data
-gini <- hamta_inkomstfordelning_region_inkomsttyp_tid_scb(region_vekt = region,
+source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/refs/heads/main/hamta_inkomstfordelning_region_inkomsttyp_tid_TabVX1DispInkN_HE0110_HE0110F_scb.R")
+gini <- hamta_inkomstfordelning_region_inkomsttyp_tid_scb(region_vekt = c("20","00"),
                                                           inkomsttyp_klartext = "disponibel inkomst per k.e. inkl. kapitalvinst",
                                                           cont_klartext = "Gini-koefficient")
 

@@ -748,7 +748,7 @@ Den stor andelen forskning och utveckling sker i företagen, medan den offentlig
 forsk2
 ```
 
-I ett nationellt perspektiv ser vi att Dalarna hamnar på den nedre halvan. `r forskning_totalt %>% filter(year == max(.$year)) %>% filter(utgiftertotalt == max(utgiftertotalt)) %>% .$municipality`, som hade den högsta noteringen för investeringar i forskning och utveckling år `r max(forskning_totalt$year)`, hade ett drygt `r plyr::round_any(forskning_totalt %>% filter(year == max(.$year)) %>% filter(utgiftertotalt == max(utgiftertotalt)) %>% .$utgiftertotalt/forskning_totalt %>% filter(year == max(.$year)) %>% filter(municipality == "Dalarnas län") %>% .$utgiftertotalt,1)` gånger högre värde per invånare jämfört med Dalarna.
+I ett nationellt perspektiv ser vi att Dalarna hamnar på den nedre halvan. `r forskning_totalt %>% filter(year == max(.$year)) %>% filter(utgiftertotalt == max(utgiftertotalt)) %>% .$municipality`, som hade den högsta noteringen för investeringar i forskning och utveckling år `r max(forskning_totalt$year)`, hade ungefär `r plyr::round_any(forskning_totalt %>% filter(year == max(.$year)) %>% filter(utgiftertotalt == max(utgiftertotalt)) %>% .$utgiftertotalt/forskning_totalt %>% filter(year == max(.$year)) %>% filter(municipality == "Dalarnas län") %>% .$utgiftertotalt,1)` gånger högre värde per invånare jämfört med Dalarna.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 forsk3
