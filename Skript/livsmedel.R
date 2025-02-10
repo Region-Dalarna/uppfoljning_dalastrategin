@@ -4,6 +4,8 @@ hamta_data_livsmedel = function(outputmapp = "G:/skript/projekt/data/uppfoljning
   if (!require("pacman")) install.packages("pacman")
   p_load(tidyverse)
   
+  # Text nedan gäller inte längre. Sedan 2024 hämtas data från jordbruksverket via skript som Peter skrivit
+  #
   # Källa för data: https://jordbruksverket.se/mat-och-drycker/livsmedelsstrategi-for-sverige/statistik-om-livsmedelskedjan 
   # För tillfället är denna data dock inte uppdaterad, varför jag använder en fil (regionalstatistik_2023) som jag fått mailad från Jordbruksverket. 
   # Detta mail fick jag under våren 2023 och under våren 2024 mailar jag dom på nytt för att undersöka om det finns uppdaterad data. Sparas i så fall som regionalstatistik_2024
