@@ -131,9 +131,9 @@ hamta_data_matchning(outputmapp = outputmapp)
 # source("Skript/sysselsatta.R", encoding="UTF-8")
 # hamta_data_sysselsatta(outputmapp = outputmapp)
 
-# source("Skript/sysselsatta_ny.R", encoding="UTF-8")
-# hamta_data_sysselsatta_ny(outputmapp = outputmapp,
-#                           tid = 1993:2100)
+source("Skript/sysselsatta_ny.R", encoding="UTF-8")
+hamta_data_sysselsatta_ny(outputmapp = outputmapp,
+                          tid = 1993:2100)
 
 ####################
 ## Etableringstid ##

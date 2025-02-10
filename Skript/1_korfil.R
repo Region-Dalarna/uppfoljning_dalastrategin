@@ -62,6 +62,7 @@ gg_utbniva_85 <- funktion_upprepa_forsok_om_fel( function() {
 }, hoppa_over = hoppa_over_felhantering)
 
 
+# Skript funkar för tillfälligt inte. Låt vara tillsvidare
 source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/refs/heads/main/hamta_syss_rams_bas_fran_ar_1993_region_inrikesutrikes_kon_tid_RAMSForvInt03_RAMSForvInt04_RamsForvInt04N_ArRegArbStatus_scb.R")
 sysselsatt <- funktion_upprepa_forsok_om_fel( function() {
   hamta_rams_bas_region_inrikesutrikes_kon_tid_scb(region_vekt = "20",
