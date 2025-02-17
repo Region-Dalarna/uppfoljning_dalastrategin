@@ -215,3 +215,10 @@ berakna_valdeltagande_nationellt(outputmapp = outputmapp)
 
 source("Skript/valdeltagande_EU.R", encoding="UTF-8")
 berakna_valdeltagande_EU(outputmapp = outputmapp)
+
+# #########################
+# ## Självskattad hälsa ##
+# #########################
+# 
+# source("https://raw.githubusercontent.com/Region-Dalarna/diagram/refs/heads/main/diag_sjalvskattad_halsa_kon_lan_fohm.R")
+# test <- diag_sjalvskattad_halsa_kon_lan(tid_koder = "*")

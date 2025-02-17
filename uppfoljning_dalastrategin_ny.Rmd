@@ -552,7 +552,7 @@ resande2alt <- SkapaLinjeDiagram(skickad_df = resande %>%
 ```
 Den utsträckta och relativt glesbefolkade geografin i Dalarna är utmaningar i arbetet med att skapa en hållbar transportinfrastruktur. För att transportsektorn ska nå klimat- och energimålen krävs kraftfull teknisk utveckling i kombination med beteendeförändringar så som minskad konsumtion av varor som transporteras så att de orsakar utsläpp, ökad samåkning och minskat resande totalt sett. Kollektivt resande spelar en central roll för utvecklandet av en klimatsmart och resurseffektiv, men också mer jämlik, mobilitet. Kollektivtrafik bidrar både till miljönytta och samhällsekonomisk effektivitet men är också förenat med höga kostnader. För att klara omställningen krävs mod att ställa olika kostnader mot varandra. För att det kollektiva resandet ska öka behöver den traditionella kollektivtrafiken sannolikt kompletteras med nya mobilitetslösningar och tjänster, särskilt för länets mest glesbefolkade områden.
 
-Diagrammen redovisar indikatorer för kollektivt resande i Dalarna: kollektivtrafiksresor per invånare samt marknadsandel för kollektivtrafik i länet. För antal resor per invånare syns att det kollektiva resandet har minskat avsevärt i Dalarna, från  `r resande %>% filter(kpi == "Resor_per_invanare") %>% filter(year == min(year)) %>% .$value ` resor per person och år från `r min(resande$year)` till `r round(resande %>% filter(kpi == "Resor_per_invanare") %>% filter(year == max(year)) %>% .$value,0) ` resor år `r max(resande$year)`. Nedgången kan delvis förklaras av pandemin - det sker en tydlig minskning mellan 2019 och 2020 - men även mellan 2012 och 2013 minskade antalet resor per invånare avsevärt i Dalarna. I en nationell jämförelse år 2023 framgår att det i glesbygdslänen i Sverige som mest görs runt 60 resor per person, medan det görs betydligt fler i storstadsregionerna, så som Skåne med i snitt 117 resor per person och år. I Stockholm där flest resor sker, görs 304 resor per person och år. I jämförelse med Sveriges övriga län görs näst minst antal resor med kollektivtrafik per invånare i Dalarna. Bara på Gotland görs färre resor ([Kolada](https://www.kolada.se/verktyg/fri-sokning/?kpis=40615&years=30201,30200,30199&municipals=27493,27494,27495,27496,27497,27498,27499,27500,27501,27502,27503,27504,27505,27506,27507,27508,27509,27510,27511,27512,27513&rows=municipal,kpi&visualization=bar-chart){target="_blank"}).
+Diagrammen redovisar indikatorer för kollektivt resande i Dalarna: kollektivtrafiksresor per invånare samt marknadsandel för kollektivtrafik i länet. För antal resor per invånare syns att det kollektiva resandet har minskat avsevärt i Dalarna, från  `r resande %>% filter(kpi == "Resor_per_invanare") %>% filter(year == min(year)) %>% .$value ` resor per person och år `r min(resande$year)` till `r round(resande %>% filter(kpi == "Resor_per_invanare") %>% filter(year == max(year)) %>% .$value,0) ` resor år `r max(resande$year)`. Nedgången kan delvis förklaras av pandemin - det sker en tydlig minskning mellan 2019 och 2020 - men även mellan 2012 och 2013 minskade antalet resor per invånare avsevärt i Dalarna. I en nationell jämförelse år 2023 framgår att det i glesbygdslänen i Sverige som mest görs runt 60 resor per person, medan det görs betydligt fler i storstadsregionerna, så som Skåne med i snitt 117 resor per person och år. I Stockholm där flest resor sker, görs 304 resor per person och år. I jämförelse med Sveriges övriga län görs näst minst antal resor med kollektivtrafik per invånare i Dalarna. Bara på Gotland görs färre resor ([Kolada](https://www.kolada.se/verktyg/fri-sokning/?kpis=40615&years=30201,30200,30199&municipals=27493,27494,27495,27496,27497,27498,27499,27500,27501,27502,27503,27504,27505,27506,27507,27508,27509,27510,27511,27512,27513&rows=municipal,kpi&visualization=bar-chart){target="_blank"}).
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 resande1alt
@@ -1633,7 +1633,7 @@ Denna indikator är under konstruktion.
 ## Trångboddhet
 Goda livsmiljöer som upplevs trygga och inkluderande är en förutsättning för att människor ska må bra. Olika platser i Dalarna har olika utmaningar och möjligheter att möta dessa behov, bland annat beroende på om det är platser med växande eller krympande befolkningsunderlag. Indikatorn trångboddhet relaterar bland annat till prioriteringen i Dalastrategin om diversifierade boendeformer som i sin tur ska motverka segregation och polarisering.
 
-Antalet trångbodda i Dalarna har ökat tydligt mellan `r min(trang$år)` till `r max(trang$år)`. I början på perioden räknades cirka `r format(plyr::round_any(trang %>% filter(år == min(år)) %>% .$Samtliga.i.populationen,100),big.mark = " ")` individer i Dalarna som trångbodda enligt norm 2. År `r max(trang$år)` har denna siffra ökat till `r format(plyr::round_any(trang %>% filter(år == max(år)) %>% .$Samtliga.i.populationen,100),big.mark = " ")` personer. Värt att notera är dock att antalet trångbodda ökade som mest mellan 2012 och 2018. Därefter har andelen trångbodda varit relativt stabilt, och till och med minskat något år `r max(trang$år)`. Norm 2 innebär att de boende räknas som trångbodda om det bor fler personer än två per rum i alla rum som inte räknas som kök eller vardagsrum.
+Antalet trångbodda i Dalarna har ökat tydligt mellan `r min(trang$år)` och `r max(trang$år)`. I början på perioden räknades cirka `r format(plyr::round_any(trang %>% filter(år == min(år)) %>% .$Samtliga.i.populationen,100),big.mark = " ")` individer i Dalarna som trångbodda enligt norm 2. År `r max(trang$år)` har denna siffra ökat till `r format(plyr::round_any(trang %>% filter(år == max(år)) %>% .$Samtliga.i.populationen,100),big.mark = " ")` personer. Värt att notera är dock att antalet trångbodda ökade som mest mellan 2012 och 2018. Därefter har andelen trångbodda varit relativt stabilt, och till och med minskat något år `r max(trang$år)`. Norm 2 innebär att de boende räknas som trångbodda om det bor fler personer än två per rum i alla rum som inte räknas som kök eller vardagsrum.
 
 ```{r, include = FALSE}
 bodd1 <- SkapaStapelDiagram(skickad_df = trang  %>% 
@@ -1663,7 +1663,7 @@ Ekonomiska klyftor mellan olika grupper i samhället är en utmaning för både 
 
 Med låg ekonomisk standard menas de hushåll som har en årsinkomst under 60 procent av medianvärdet för hushållens årliga inkomster i Sverige. Andel barn som lever i hushåll med låg ekonomisk standard blir därför ett mått på barns ekonomiska utsatthet i samhället. 
 
-I diagrammet nedan kan vi notera att andelen unga (0-19 år) som lever i hushåll med låg ekonomisk standard i Dalarnas län har ökat över mätperioden, vilket är negativt, från `r utsatt %>% filter(municipality_id == 20, year == min(year)) %>% .$value` procent år `r min(utsatt$year)` till drygt `r utsatt %>% filter(municipality_id == 20, year == max(year)) %>% .$value` procent `r max(utsatt$year)`. Viktigt att notera är dock att andelen har minskat tydligt mellan 2019 och `r max(utsatt$year)`, från `r utsatt %>% filter(municipality_id == 20, year == 2019) %>% .$value` procent till `r utsatt %>% filter(municipality_id == 20, year == max(year)) %>% .$value` procent, vilket är positivt.
+I diagrammet nedan kan vi notera att andelen unga (0-19 år) som lever i hushåll med låg ekonomisk standard i Dalarnas län har ökat över mätperioden, vilket är negativt, från `r utsatt %>% filter(municipality_id == 20, year == min(year)) %>% .$value` procent år `r min(utsatt$year)` till drygt `r utsatt %>% filter(municipality_id == 20, year == max(year)) %>% .$value` procent `r max(utsatt$year)`. Viktigt att notera är dock att andelen har minskat tydligt mellan 2019 och `r max(utsatt$year)`, från `r utsatt %>% filter(municipality_id == 20, year == 2019) %>% .$value` procent till `r utsatt %>% filter(municipality_id == 20, year == max(year)) %>% .$value` procent.
 
 ```{r, include = FALSE}
 
@@ -1779,6 +1779,16 @@ I ett nationellt perspektiv ligger alla kommuner i Dalarnas län i nivå med, el
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 halsa2
 ```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_sjalvskattad_halsa$`sjalvskattad_halsa_fohm_Dalarna_ar2004-2007 till 2021-2024`
+```
+
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_sjalvskattad_halsa_kommun$`sjalvskattad_halsa_fohm_Dalarnas kommuner_ar2021-2024`
+```
+
 
 ```{r, include = FALSE}
 

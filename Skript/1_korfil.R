@@ -98,6 +98,23 @@ gini <- hamta_inkomstfordelning_region_inkomsttyp_tid_scb(region_vekt = c("20","
                                                           inkomsttyp_klartext = "disponibel inkomst per k.e. inkl. kapitalvinst",
                                                           cont_klartext = "Gini-koefficient")
 
+# Självskattad hälsa - diagram - Först län över tid sedan kommun
+source("https://raw.githubusercontent.com/Region-Dalarna/diagram/refs/heads/main/diag_sjalvskattad_halsa_kon_lan_kommun_fohm.R")
+gg_sjalvskattad_halsa <- diag_sjalvskattad_halsa_kon_lan_kommun(region_vekt = "20",
+                                                                #region_vekt = "20",
+                                                                tid_koder = "*",
+                                                                output_mapp = output_mapp_figur,
+                                                                returnera_dataframe_global_environment = TRUE)
+
+gg_sjalvskattad_halsa_kommun <- diag_sjalvskattad_halsa_kon_lan_kommun(region_vekt = hamtakommuner("20",tamedlan = F),
+                                                                       #region_vekt = "20",
+                                                                       tid_koder = "9999",
+                                                                       kon_klartext = c("Totalt"),
+                                                                       diagram_fargvekt = diagramfarger("rus_sex"),
+                                                                       region_sort = TRUE,
+                                                                       output_mapp = output_mapp_figur,
+                                                                       returnera_dataframe_global_environment = TRUE)
+
 
 rmarkdown::render(
   input = 'uppfoljning_dalastrategin_ny.Rmd',
