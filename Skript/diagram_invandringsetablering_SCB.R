@@ -1,5 +1,8 @@
+test <- diag_etablering_diverse_scb()
 diag_etablering_diverse_scb <- function(region = "20", # Enbart ett i taget.
-                                        diag_alla_lan = FALSE,
+                                        diag_alla_lan = TRUE,
+                                        diag_tidsserie = TRUE,
+                                        diag_facet = TRUE,
                                         diag_fargvektor = diagramfarger("rus_sex"),                               # valbar färgvektor för diagrammet
                                         visa_logga_i_diagram = TRUE,                        # TRUE om logga ska visas i diagrammet, FALSE om logga inte ska visas i diagrammet
                                         logga_sokvag = NA,                                 # sökväg till logga som ska visas i diagrammet
@@ -7,7 +10,7 @@ diag_etablering_diverse_scb <- function(region = "20", # Enbart ett i taget.
                                         output_mapp = "G:/Samhällsanalys/API/Fran_R/utskrift/",                                  # mapp där diagram ska sparas, NA = sparas ingen fil
                                         skriv_diagrambildfil = FALSE,                           # TRUE om diagram ska skrivas till fil, FALSE om diagram inte ska skrivas till fil
                                         excel_mapp = NA,                                   # mapp där excelfil ska sparas, NA = sparas ingen fil
-                                        demo = FALSE,             # sätts till TRUE om man bara vill se ett exempel på diagrammet i webbläsaren och inget annat
+                                        demo = FALSE             # sätts till TRUE om man bara vill se ett exempel på diagrammet i webbläsaren och inget annat
                                   ) {
   
   
@@ -47,9 +50,7 @@ diag_etablering_diverse_scb <- function(region = "20", # Enbart ett i taget.
   
   if(diag_alla_lan) {
     region_fokus <- region
-    region <- hamtaAllaLan(tamedriket = FALSE))} else {
-     
-    } else {
+    region <- hamtaAllaLan(tamedriket = FALSE)}else {
       region_fokus <- region
     }
   
@@ -78,38 +79,41 @@ diag_etablering_diverse_scb <- function(region = "20", # Enbart ett i taget.
   #diag_fargvektor <- if (all(is.na(diag_fargvektor)) & exists("diagramfarger")) diagramfarger("rus_sex") else c("darkred", "yellow", "darkgreen")
   
   gg_list <- list()
+  
+  if(diag_tidsserie == TRUE){
 
-  diagramtitel <- glue("Etablering på arbetsmarknaden efter vistelsetid för invandrade i {skapa_kortnamn_lan(hamtaregion_kod_namn(region_fokus)$region)}")
-  diagramfil <- glue("etablering_vistelsetid_{skapa_kortnamn_lan(hamtaregion_kod_namn(region_fokus)$region)}.png")
-
+    diagramtitel <- glue("Etablering på arbetsmarknaden efter vistelsetid för invandrade i {skapa_kortnamn_lan(hamtaregion_kod_namn(region_fokus)$region)}")
+    diagramfil <- glue("etablering_vistelsetid_{skapa_kortnamn_lan(hamtaregion_kod_namn(region_fokus)$region)}.png")
   
-  gg_obj <- SkapaStapelDiagram(skickad_df = etablering %>% 
-                                filter(region == skapa_kortnamn_lan(hamtaregion_kod_namn(region_fokus)$region), 
-                                       kön %in% ifelse(hej,"män och kvinnor",c("män","kvinnor"))) %>% 
-                                  mutate(år = år %>% as.character(),
-                                         bakgrundsvariabel = bakgrundsvariabel %>% str_remove("vistelsetid ")) %>% 
-                                    filter(år > (max(as.integer(år))-12)),
-                              skickad_x_var = "bakgrundsvariabel",
-                              skickad_y_var = "Andel_forvarvsarbetande",
-                              skickad_x_grupp = "år",
-                              diagram_titel = diagramtitel,
-                              diagram_capt = diagram_capt,
-                              x_axis_lutning = 0,
-                              manual_color = diagramfarger("rus_gradient"),
-                              manual_y_axis_title = "procent",
-                              procent_0_100_10intervaller = TRUE,
-                              output_mapp = output_mapp,
-                              filnamn_diagram = diagramfil,
-                              legend_rader = 2,
-                              legend_byrow = TRUE,
-                              x_axis_sort_value = TRUE,
-                              vand_sortering = TRUE,
-                              lagg_pa_logga = visa_logga_i_diagram,
-                              skriv_till_diagramfil = skriv_diagrambildfil)
-  
-  
-  gg_list <- c(gg_list, list(gg_obj))
-  names(gg_list)[[length(gg_list)]] <- diagramfil %>% str_remove(".png")
+    
+    gg_obj <- SkapaStapelDiagram(skickad_df = etablering %>% 
+                                  filter(region == skapa_kortnamn_lan(hamtaregion_kod_namn(region_fokus)$region), 
+                                         kön %in% c("män och kvinnor")) %>% 
+                                    mutate(år = år %>% as.character(),
+                                           bakgrundsvariabel = bakgrundsvariabel %>% str_remove("vistelsetid ")) %>% 
+                                      filter(år > (max(as.integer(år))-12)),
+                                skickad_x_var = "bakgrundsvariabel",
+                                skickad_y_var = "Andel_forvarvsarbetande",
+                                skickad_x_grupp = "år",
+                                diagram_titel = diagramtitel,
+                                diagram_capt = diagram_capt,
+                                x_axis_lutning = 0,
+                                manual_color = diagramfarger("rus_gradient"),
+                                manual_y_axis_title = "procent",
+                                procent_0_100_10intervaller = TRUE,
+                                output_mapp = output_mapp,
+                                filnamn_diagram = diagramfil,
+                                legend_rader = 2,
+                                legend_byrow = TRUE,
+                                x_axis_sort_value = TRUE,
+                                vand_sortering = TRUE,
+                                lagg_pa_logga = visa_logga_i_diagram,
+                                skriv_till_diagramfil = skriv_diagrambildfil)
+    
+    
+    gg_list <- c(gg_list, list(gg_obj))
+    names(gg_list)[[length(gg_list)]] <- diagramfil %>% str_remove(".png")
+  }
   
  if(diag_facet == TRUE){
     diagramtitel <- glue("Etablering på arbetsmarknaden efter vistelsetid för invandrade i {skapa_kortnamn_lan(hamtaregion_kod_namn(region_fokus)$region)}")
