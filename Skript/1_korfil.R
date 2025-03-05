@@ -93,11 +93,19 @@ deltagande <- funktion_upprepa_forsok_om_fel( function() {
   filter(!is.na(Andel))
 
 # Hämtar data för långtidsarbetslöshet
-långtidsarbetslöshet <- hamta_kolada_df(kpi_id = c("N03926"),
-                                        valda_kommuner = "20",
-                                        valda_ar = 2011:2100,
-                                        konsuppdelat = TRUE) %>% 
-  mutate(kon = tolower(kon))
+långtidsarbetslöshet <- funktion_upprepa_forsok_om_fel( function() {
+    hamta_kolada_df(kpi_id = c("N03926"),
+                    valda_kommuner = "20",
+                    valda_ar = 2011:2100,
+                    konsuppdelat = TRUE)
+  }, hoppa_over = hoppa_over_felhantering) %>% 
+    mutate(kon = tolower(kon))
+
+# långtidsarbetslöshet <- hamta_kolada_df(kpi_id = c("N03926"),
+#                                         valda_kommuner = "20",
+#                                         valda_ar = 2011:2100,
+#                                         konsuppdelat = TRUE) %>% 
+#   mutate(kon = tolower(kon))
 
 langtidsarbetsloshet_ar_min = långtidsarbetslöshet$ar %>% min()
 langtidsarbetsloshet_ar_max = långtidsarbetslöshet$ar %>% max()
@@ -117,26 +125,51 @@ gg_etableringstid <- funktion_upprepa_forsok_om_fel( function() {
 
 # Gini-koefficienten - hämtar enbart data
 source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/refs/heads/main/hamta_inkomstfordelning_region_inkomsttyp_tid_TabVX1DispInkN_HE0110_HE0110F_scb.R")
-gini <- hamta_inkomstfordelning_region_inkomsttyp_tid_scb(region_vekt = c("20","00"),
-                                                          inkomsttyp_klartext = "disponibel inkomst per k.e. inkl. kapitalvinst",
-                                                          cont_klartext = "Gini-koefficient")
+
+gini <- funktion_upprepa_forsok_om_fel( function() {
+  hamta_inkomstfordelning_region_inkomsttyp_tid_scb(region_vekt = c("20","00"),
+                                                    inkomsttyp_klartext = "disponibel inkomst per k.e. inkl. kapitalvinst",
+                                                    cont_klartext = "Gini-koefficient")
+}, hoppa_over = hoppa_over_felhantering)
+
+# gini <- hamta_inkomstfordelning_region_inkomsttyp_tid_scb(region_vekt = c("20","00"),
+#                                                           inkomsttyp_klartext = "disponibel inkomst per k.e. inkl. kapitalvinst",
+#                                                           cont_klartext = "Gini-koefficient")
 
 # Självskattad hälsa - diagram - Först län över tid sedan kommun
 source("https://raw.githubusercontent.com/Region-Dalarna/diagram/refs/heads/main/diag_sjalvskattad_halsa_kon_lan_kommun_fohm.R")
-gg_sjalvskattad_halsa <- diag_sjalvskattad_halsa_kon_lan_kommun(region_vekt = "20",
-                                                                #region_vekt = "20",
-                                                                tid_koder = "*",
-                                                                output_mapp = output_mapp_figur,
-                                                                returnera_dataframe_global_environment = TRUE)
 
-gg_sjalvskattad_halsa_kommun <- diag_sjalvskattad_halsa_kon_lan_kommun(region_vekt = hamtakommuner("20",tamedlan = F),
-                                                                       #region_vekt = "20",
-                                                                       tid_koder = "9999",
-                                                                       kon_klartext = c("Totalt"),
-                                                                       diagram_fargvekt = diagramfarger("rus_sex"),
-                                                                       region_sort = TRUE,
-                                                                       output_mapp = output_mapp_figur,
-                                                                       returnera_dataframe_global_environment = TRUE)
+gg_sjalvskattad_halsa <- funktion_upprepa_forsok_om_fel( function() {
+  diag_sjalvskattad_halsa_kon_lan_kommun(region_vekt = "20",
+                                         tid_koder = "*",
+                                         output_mapp = output_mapp_figur,
+                                         returnera_dataframe_global_environment = TRUE)
+}, hoppa_over = hoppa_over_felhantering)
+# gg_sjalvskattad_halsa <- diag_sjalvskattad_halsa_kon_lan_kommun(region_vekt = "20",
+#                                                                 #region_vekt = "20",
+#                                                                 tid_koder = "*",
+#                                                                 output_mapp = output_mapp_figur,
+#                                                                 returnera_dataframe_global_environment = TRUE)
+
+gg_sjalvskattad_halsa_kommun <- funktion_upprepa_forsok_om_fel( function() {
+  diag_sjalvskattad_halsa_kon_lan_kommun(region_vekt = hamtakommuner("20",tamedlan = F),
+                                         #region_vekt = "20",
+                                         tid_koder = "9999",
+                                         kon_klartext = c("Totalt"),
+                                         diagram_fargvekt = diagramfarger("rus_sex"),
+                                         region_sort = TRUE,
+                                         output_mapp = output_mapp_figur,
+                                         returnera_dataframe_global_environment = TRUE)
+}, hoppa_over = hoppa_over_felhantering)
+# 
+# gg_sjalvskattad_halsa_kommun <- diag_sjalvskattad_halsa_kon_lan_kommun(region_vekt = hamtakommuner("20",tamedlan = F),
+#                                                                        #region_vekt = "20",
+#                                                                        tid_koder = "9999",
+#                                                                        kon_klartext = c("Totalt"),
+#                                                                        diagram_fargvekt = diagramfarger("rus_sex"),
+#                                                                        region_sort = TRUE,
+#                                                                        output_mapp = output_mapp_figur,
+#                                                                        returnera_dataframe_global_environment = TRUE)
 
 
 rmarkdown::render(
