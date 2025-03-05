@@ -85,8 +85,8 @@ arbets <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/arbets
 
 eftergym <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/eftergym.csv",encoding="UTF-8")
 
-etablering <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/etablering_ny.csv",encoding="UTF-8") %>% 
-  filter(år>2011)
+# etablering <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/etablering_ny.csv",encoding="UTF-8") %>% 
+#   filter(år>2011)
 
 forskning <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/forskning.csv",encoding="UTF-8")
 
@@ -1144,106 +1144,117 @@ arb1
 
 Invandring är en del av lösningen för att möta en ökad efterfrågan på arbetskraft och rätt kompetens i Dalarna och Sverige. Dalarna har haft en relativt stor inflyttning av utomeuropeiskt födda under senare år. Många invandrade är i arbetsför ålder och blir därför ett viktigt tillskott till arbetskraften. Denna indikator är ett mått på i vilken takt och utsträckning som nyanlända etablerar sig på arbetsmarknaden i Dalarna. Med etablering menas att personen är förvärvsarbetande helt utan stöd från a-kassa eller arbetsmarknadsåtgärd, eller dylikt.
 
-Diagrammet visar tydligt hur andelen etablerade på arbetsmarknaden i arbetsför ålder ökar efter vistelsetid i landet. För det senaste året i perioden, `r max(etablering$år)`, hade drygt `r round(etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 0-1 år",år == max(år)) %>% .$Andel_forvarvsarbetande,0)` procent av invandrade med vistelsetid under ett år etablerat sig på arbetsmarknaden. Andelen etablerade på arbetsmarknaden ökar sedan gradvis efter vistelsetid och för samma år var det ca `r round(etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år", år == max(år)) %>% .$Andel_forvarvsarbetande,0)` procent i gruppen som vistats i Sverige i tio år eller mer som var etablerade på arbetsmarknaden.
+Diagrammet visar tydligt hur andelen etablerade på arbetsmarknaden i arbetsför ålder ökar efter vistelsetid i landet. För det senaste året i perioden, `r max(etablering$år)`, hade drygt `r round(etablering %>% filter(region == "Dalarna", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 0-1 år",år == max(år)) %>% .$Andel_forvarvsarbetande,0)` procent av invandrade med vistelsetid under ett år etablerat sig på arbetsmarknaden. Andelen etablerade på arbetsmarknaden ökar sedan gradvis efter vistelsetid och för samma år var det ca `r round(etablering %>% filter(region == "Dalarna", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år", år == max(år)) %>% .$Andel_forvarvsarbetande,0)` procent i gruppen som vistats i Sverige i tio år eller mer som var etablerade på arbetsmarknaden.
 
 ```{r, include = FALSE}
 #etablering$bakgrundsvariabel <- gsub("^.{0,12}", "", etablering$bakgrundsvariabel)
-
-
-etab1 <- SkapaStapelDiagram(skickad_df = etablering %>% 
-                              filter(region == "Dalarnas län", 
-                                     kön=="män och kvinnor") %>% 
-                                mutate(år = år %>% as.character(),
-                                       bakgrundsvariabel = bakgrundsvariabel %>% str_remove("vistelsetid ")),
-                            skickad_x_var = "bakgrundsvariabel",
-                            skickad_y_var = "Andel_forvarvsarbetande",
-                            skickad_x_grupp = "år",
-                            diagram_titel = str_wrap(paste0("Etablering på arbetsmarknaden efter vistelsetid för invandrade i Dalarna"),50),
-                            diagram_capt = " Källa: SCB\n Bearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andelen etablerade på arbetsmarknaden efter vistelsetid i landet",
-                            x_axis_lutning = 0,
-                            manual_color = diagramfarger("rus_gradient"),
-                            manual_y_axis_title = "procent",
-                            procent_0_100_10intervaller = TRUE,
-                            output_mapp = "Diagram/",
-                            filnamn_diagram = "etablering1.png",
-                            legend_rader = 2,
-                            legend_byrow = TRUE,
-                            x_axis_sort_value = TRUE,
-                            vand_sortering = TRUE,
-                            lagg_pa_logga = FALSE)
-
-
-etab_alt <- SkapaStapelDiagram(skickad_df = etablering %>% 
-                              filter(region == "Dalarnas län", 
-                                     #år%in%c(valda_ar,max(ar)), 
-                                     kön%in%c("män","kvinnor")) %>% 
-                              mutate(år = år %>% as.character(),
-                                       bakgrundsvariabel = bakgrundsvariabel %>% str_remove("vistelsetid "),
-                                     kön = str_to_title(kön)),
-                    skickad_x_var = "bakgrundsvariabel",
-                    skickad_y_var = "Andel_forvarvsarbetande",
-                    skickad_x_grupp = "år",
-                    legend_rader = 2,
-                    legend_byrow = TRUE,
-                    diagram_facet = TRUE,
-                    facet_grp = "kön",                     
-                    facet_scale = "fixed",
-                    facet_legend_bottom = TRUE,
-                    diagram_titel = str_wrap(paste0("Etablering på arbetsmarknaden efter vistelsetid för invandrade i Dalarna "),50),
-                    diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andelen etablerade på arbetsmarknaden efter vistelsetid i landet",
-                    x_axis_lutning = 0,
-                    manual_color = diagramfarger("rus_gradient"),
-                    manual_y_axis_title = "procent",
-                    procent_0_100_10intervaller = TRUE,
-                    output_mapp = "Diagram/",
-                    filnamn_diagram = "etablering3.png",
-                    x_axis_sort_value = TRUE,
-                    vand_sortering = TRUE,
-                    lagg_pa_logga = FALSE)
-
-etab4 <- SkapaStapelDiagram(skickad_df = etablering %>% 
-                              mutate( fokus = ifelse( region == "Dalarnas län", "1", "0"),
-                                        år = år %>% as.character(),
-                                      bakgrundsvariabel = bakgrundsvariabel %>% str_remove("vistelsetid "),
-                                      region = skapa_kortnamn_lan(region)) %>%
-                              filter(år==max(år), 
-                                     kön=="män och kvinnor", 
-                                     bakgrundsvariabel == "10- år"),
-                    skickad_x_var = "region",
-                    skickad_y_var = "Andel_forvarvsarbetande",
-                    diagram_titel = str_wrap(paste0("Arbetsmarknadsetablering efter minst 10 års vistelsetid i Sverige ",max(etablering$år)),50),
-                    diagram_capt = " Källa: SCB\n Bearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andelen etablerade på arbetsmarknaden efter minst 10 års vistelsetid i landet",
-                    manual_x_axis_text_vjust = 1,
-                    manual_x_axis_text_hjust = 1,
-                    x_axis_lutning = 45,
-                    manual_color = diagramfarger("rus_tva_fokus"),
-                    manual_y_axis_title = "procent",
-                    procent_0_100_10intervaller = TRUE,
-                    output_mapp = "Diagram/",
-                    filnamn_diagram = "etablering4.png",
-                    x_axis_sort_value = TRUE,
-                    lagg_pa_logga = FALSE,
-                    x_var_fokus="fokus")
+# 
+# 
+# etab1 <- SkapaStapelDiagram(skickad_df = etablering %>% 
+#                               filter(region == "Dalarnas län", 
+#                                      kön=="män och kvinnor") %>% 
+#                                 mutate(år = år %>% as.character(),
+#                                        bakgrundsvariabel = bakgrundsvariabel %>% str_remove("vistelsetid ")),
+#                             skickad_x_var = "bakgrundsvariabel",
+#                             skickad_y_var = "Andel_forvarvsarbetande",
+#                             skickad_x_grupp = "år",
+#                             diagram_titel = str_wrap(paste0("Etablering på arbetsmarknaden efter vistelsetid för invandrade i Dalarna"),50),
+#                             diagram_capt = " Källa: SCB\n Bearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andelen etablerade på arbetsmarknaden efter vistelsetid i landet",
+#                             x_axis_lutning = 0,
+#                             manual_color = diagramfarger("rus_gradient"),
+#                             manual_y_axis_title = "procent",
+#                             procent_0_100_10intervaller = TRUE,
+#                             output_mapp = "Diagram/",
+#                             filnamn_diagram = "etablering1.png",
+#                             legend_rader = 2,
+#                             legend_byrow = TRUE,
+#                             x_axis_sort_value = TRUE,
+#                             vand_sortering = TRUE,
+#                             lagg_pa_logga = FALSE)
+# 
+# 
+# etab_alt <- SkapaStapelDiagram(skickad_df = etablering %>% 
+#                               filter(region == "Dalarnas län", 
+#                                      #år%in%c(valda_ar,max(ar)), 
+#                                      kön%in%c("män","kvinnor")) %>% 
+#                               mutate(år = år %>% as.character(),
+#                                        bakgrundsvariabel = bakgrundsvariabel %>% str_remove("vistelsetid "),
+#                                      kön = str_to_title(kön)),
+#                     skickad_x_var = "bakgrundsvariabel",
+#                     skickad_y_var = "Andel_forvarvsarbetande",
+#                     skickad_x_grupp = "år",
+#                     legend_rader = 2,
+#                     legend_byrow = TRUE,
+#                     diagram_facet = TRUE,
+#                     facet_grp = "kön",                     
+#                     facet_scale = "fixed",
+#                     facet_legend_bottom = TRUE,
+#                     diagram_titel = str_wrap(paste0("Etablering på arbetsmarknaden efter vistelsetid för invandrade i Dalarna "),50),
+#                     diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andelen etablerade på arbetsmarknaden efter vistelsetid i landet",
+#                     x_axis_lutning = 0,
+#                     manual_color = diagramfarger("rus_gradient"),
+#                     manual_y_axis_title = "procent",
+#                     procent_0_100_10intervaller = TRUE,
+#                     output_mapp = "Diagram/",
+#                     filnamn_diagram = "etablering3.png",
+#                     x_axis_sort_value = TRUE,
+#                     vand_sortering = TRUE,
+#                     lagg_pa_logga = FALSE)
+# 
+# etab4 <- SkapaStapelDiagram(skickad_df = etablering %>% 
+#                               mutate( fokus = ifelse( region == "Dalarnas län", "1", "0"),
+#                                         år = år %>% as.character(),
+#                                       bakgrundsvariabel = bakgrundsvariabel %>% str_remove("vistelsetid "),
+#                                       region = skapa_kortnamn_lan(region)) %>%
+#                               filter(år==max(år), 
+#                                      kön=="män och kvinnor", 
+#                                      bakgrundsvariabel == "10- år"),
+#                     skickad_x_var = "region",
+#                     skickad_y_var = "Andel_forvarvsarbetande",
+#                     diagram_titel = str_wrap(paste0("Arbetsmarknadsetablering efter minst 10 års vistelsetid i Sverige ",max(etablering$år)),50),
+#                     diagram_capt = " Källa: SCB\n Bearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andelen etablerade på arbetsmarknaden efter minst 10 års vistelsetid i landet",
+#                     manual_x_axis_text_vjust = 1,
+#                     manual_x_axis_text_hjust = 1,
+#                     x_axis_lutning = 45,
+#                     manual_color = diagramfarger("rus_tva_fokus"),
+#                     manual_y_axis_title = "procent",
+#                     procent_0_100_10intervaller = TRUE,
+#                     output_mapp = "Diagram/",
+#                     filnamn_diagram = "etablering4.png",
+#                     x_axis_sort_value = TRUE,
+#                     lagg_pa_logga = FALSE,
+#                     x_var_fokus="fokus")
 
 ```
 
 <br>
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-etab1
+# etab1
 ```
 
-Ytterligare en positiv trend är att det över tid verkar gå snabbare för nyligen invandrade att etablera sig på arbetsmarknaden. Från `r min(etablering$år)` till `r max(etablering$år)` har andelen etablerade på arbetsmarknaden i gruppen med vistelsetid under ett år, ökat från ca `r round(etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 0-1 år",år == min(år)) %>% .$Andel_forvarvsarbetande,0)` procent till drygt `r round(etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 0-1 år",år == max(år)) %>% .$Andel_forvarvsarbetande,0)` procent, vilket är mer än en fördubbling. Det finns dessvärre tydliga skillnader mellan mäns och kvinnors etablering de första åren. En betydligt högre andel män har lyckats etablera sig på arbetsmarknaden inom nio år i jämförelse med andelen kvinnor. Efter minst 10 år i landet är dock kvinnorna ikapp och förbi männen, då `r gsub("\\.",",",etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% .$Andel_forvarvsarbetande)` procent av kvinnorna och `r gsub("\\.",",",etablering %>% filter(region == "Dalarnas län", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% .$Andel_forvarvsarbetande)` procent av männen är etablerade på arbetsmarknaden.
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_etableringstid$etablering_vistelsetid_Dalarna
+```
+
+Ytterligare en positiv trend är att det över tid verkar gå snabbare för nyligen invandrade att etablera sig på arbetsmarknaden. Från `r min(etablering$år)` till `r max(etablering$år)` har andelen etablerade på arbetsmarknaden i gruppen med vistelsetid under ett år, ökat från ca `r round(etablering %>% filter(region == "Dalarna", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 0-1 år",år == min(år)) %>% .$Andel_forvarvsarbetande,0)` procent till drygt `r round(etablering %>% filter(region == "Dalarna", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 0-1 år",år == max(år)) %>% .$Andel_forvarvsarbetande,0)` procent, vilket är mer än en fördubbling. Det finns dessvärre tydliga skillnader mellan mäns och kvinnors etablering de första åren. En betydligt högre andel män har lyckats etablera sig på arbetsmarknaden inom nio år i jämförelse med andelen kvinnor. Efter minst 10 år i landet är dock kvinnorna ikapp och förbi männen, då `r gsub("\\.",",",etablering %>% filter(region == "Dalarna", utbildningsnivå == "samtliga utbildningsnivåer", kön == "kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% .$Andel_forvarvsarbetande)` procent av kvinnorna och `r gsub("\\.",",",etablering %>% filter(region == "Dalarna", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% .$Andel_forvarvsarbetande)` procent av männen är etablerade på arbetsmarknaden.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-etab_alt
+# etab_alt
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_etableringstid$etablering_vistelsetid_kon_Dalarna
 ```
 
 I en jämförelse av andelen etablerade efter minst 10 år i Sverige med övriga län, återfinns Dalarna i mittensegmentet. `r etablering %>% filter(utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% filter(Andel_forvarvsarbetande == max(Andel_forvarvsarbetande)) %>% .$region` har den högsta andelen etablerade med knappt `r round(etablering %>% filter(utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% filter(Andel_forvarvsarbetande == max(Andel_forvarvsarbetande)) %>% .$Andel_forvarvsarbetande,0)` procent, och i `r etablering %>% filter(utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% filter(Andel_forvarvsarbetande == min(Andel_forvarvsarbetande)) %>% .$region` är andelen etablerade efter minst 10 år i landet lägst, med drygt `r round(etablering %>% filter(utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% filter(Andel_forvarvsarbetande == min(Andel_forvarvsarbetande)) %>% .$Andel_forvarvsarbetande,0)` procent. 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-etab4
+# etab4
 ```
 
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_etableringstid$etablering_vistelsetid_allalan
+```
 
 ## Matchning mellan utbildning och yrke
 En förbättrad matchning mellan arbetsmarknadens behov och arbetskraftens kompetens bidrar till ett bättre nyttjande av samhällets resurser. Det handlar både om att de utbildningar som ges är efterfrågade på arbetsmarknaden och att arbetsgivare har kunskap att välja rätt kompetens. För att lyckas med detta krävs också en god samverkan mellan utbildningsanordnare, näringsliv, civilsamhälle och myndigheter samt en god dialog över kommun- och länsgränser.

@@ -92,6 +92,15 @@ deltagande <- funktion_upprepa_forsok_om_fel( function() {
          Region = `region`) %>% 
   filter(!is.na(Andel))
 
+# Invandringsetablering
+source("https://raw.githubusercontent.com/Region-Dalarna/diagram/refs/heads/main/diag_etableringstid_kon_lan_tidsserie_SCB.R")
+gg_etableringstid <- funktion_upprepa_forsok_om_fel( function() {
+  diag_etablering_diverse_scb(output_mapp = output_mapp_figur,
+                              returnera_data_rmarkdown = TRUE,
+                              startar = 2012,
+                              skriv_diagrambildfil = TRUE)
+}, hoppa_over = hoppa_over_felhantering)
+
 # Gini-koefficienten - hämtar enbart data
 source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/refs/heads/main/hamta_inkomstfordelning_region_inkomsttyp_tid_TabVX1DispInkN_HE0110_HE0110F_scb.R")
 gini <- hamta_inkomstfordelning_region_inkomsttyp_tid_scb(region_vekt = c("20","00"),

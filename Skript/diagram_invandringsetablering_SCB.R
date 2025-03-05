@@ -1,6 +1,5 @@
-test <- diag_etablering_diverse_scb()
 diag_etablering_diverse_scb <- function(region = "20", # Enbart ett i taget.
-                                        diag_alla_lan = TRUE,
+                                        diag_alla_lan = TRUE, # Skapar ett diagram där länen jämförs
                                         diag_tidsserie = TRUE,
                                         diag_facet = TRUE,
                                         diag_fargvektor = diagramfarger("rus_sex"),                               # valbar färgvektor för diagrammet
@@ -10,17 +9,16 @@ diag_etablering_diverse_scb <- function(region = "20", # Enbart ett i taget.
                                         output_mapp = "G:/Samhällsanalys/API/Fran_R/utskrift/",                                  # mapp där diagram ska sparas, NA = sparas ingen fil
                                         skriv_diagrambildfil = FALSE,                           # TRUE om diagram ska skrivas till fil, FALSE om diagram inte ska skrivas till fil
                                         excel_mapp = NA,                                   # mapp där excelfil ska sparas, NA = sparas ingen fil
+                                        returnera_data_rmarkdown = FALSE,
                                         demo = FALSE             # sätts till TRUE om man bara vill se ett exempel på diagrammet i webbläsaren och inget annat
                                   ) {
   
   
   # =======================================================================================================================
   #
-  # Hämta hem data med funktionen hamta_aterstaende_medellivslangd, skriv ut ett diagram. Defaultinställning är
-  # återstående medellivslängd vid 30 års ålder för kvinnor respektive män i Dalarna. Det finns fler innehålls-
-  # variabler, vilka primärt används för att beräkna dödsrisker och återstående medellivslängd.
+  # Tre diagram kopplade till invandringsetablering som används i Rus-uppföljningen
   #
-  # Länk till SCB-tabell där data hämtas: https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__BE__BE0701/LivslUtbLan/
+  # 
   #
   # =======================================================================================================================
   
@@ -75,6 +73,10 @@ diag_etablering_diverse_scb <- function(region = "20", # Enbart ett i taget.
   
   etablering <- rbind(etablering_2021,etablering_2022_) %>% 
     mutate(region = skapa_kortnamn_lan(region))
+  
+  if(returnera_data_rmarkdown == TRUE){
+    assign("etablering", etablering, envir = .GlobalEnv)
+  }
   
   #diag_fargvektor <- if (all(is.na(diag_fargvektor)) & exists("diagramfarger")) diagramfarger("rus_sex") else c("darkred", "yellow", "darkgreen")
   
