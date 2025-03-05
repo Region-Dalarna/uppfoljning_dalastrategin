@@ -79,7 +79,7 @@ matchning <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/mat
 
 #sysselsatt <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/sysselsatt.csv",encoding="UTF-8")
 
-arbets <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/arbetsloshet.csv",encoding="UTF-8")
+#arbets <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/arbetsloshet.csv",encoding="UTF-8")
 
 #gymnasie <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/gymnasie.csv",encoding="UTF-8")
 
@@ -1114,26 +1114,28 @@ syss1
 
 ## Långtidsarbetslöshet
 
-En annan indikator för att följa sysselsättningsutvecklingen i länet är andelen långtidsarbetslösa. Som långtidsarbetslös räknas den som har varit öppet arbetslös eller i program med aktivitetsstöd i minst sex månader. År `r min(arbets$year)` noterades `r gsub("\\.",",",round(arbets %>% filter(year == min(year),gender == "K",municipality == "Dalarnas län") %>% .$value,1))` procent av länets kvinnor i åldern 25-64 år som långtidsarbetslösa, medan motsvarande siffra för männen var `r gsub("\\.",",",round(arbets %>% filter(year == min(year),gender == "M",municipality == "Dalarnas län") %>% .$value,1))` procent. Under 2010-talet gick långtidsarbetslösheten såväl upp som ned, innan den nådde sin topp i samband med pandemin 2020-2021. På senare år har långtidsarbetslösheten minskat tydligt och var år `r max(arbets$year)` i Dalarna något högre för män, men något lägre för kvinnor jämfört med 2011. Långtidsarbetslösheten i Sverige är högre än i Dalarna för båda könen. En generell orsak till långtidsarbetslöshet är strukturarbetslöshet som innebär att de arbetssökande saknar rätt kompetens för de arbeten som finns tillgängliga.
+En annan indikator för att följa sysselsättningsutvecklingen i länet är andelen långtidsarbetslösa. Som långtidsarbetslös räknas den som har varit öppet arbetslös eller i program med aktivitetsstöd i minst sex månader. År `r langtidsarbetsloshet_ar_min` noterades `r langtidsarbetsloshet_kvinnor_min` procent av länets kvinnor i åldern 25-64 år som långtidsarbetslösa, medan motsvarande siffra för männen var `r langtidsarbetsloshet_man_min` procent. Under 2010-talet gick långtidsarbetslösheten såväl upp som ned, innan den nådde sin topp i samband med pandemin 2020-2021. På senare år har långtidsarbetslösheten minskat tydligt och var år `r langtidsarbetsloshet_ar_max` i Dalarna något högre för män, men något lägre för kvinnor jämfört med 2011. Långtidsarbetslösheten i Sverige är högre än i Dalarna för båda könen. En generell orsak till långtidsarbetslöshet är strukturarbetslöshet som innebär att de arbetssökande saknar rätt kompetens för de arbeten som finns tillgängliga.
 
-```{r, include = FALSE}
+```{r, echo=FALSE, fig.width=10, fig.align='center', out.width="90%"}
+diagram_capt <- "Källa: Arbetsförmedlingen (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Antal invånare 25-64 år (årsmedelvärde år T) som varit öppet arbetslösa eller i program med aktivitetsstöd i minst sex månader,\ndividerat med antal invånare 25-64 år den 31/12 år T-1."
 
-arb1 <- SkapaStapelDiagram(skickad_df = arbets %>% 
-                              filter(gender!="T",municipality =="Dalarnas län") %>% 
-                              mutate(year = year %>% as.character(),
-                                     gender = case_when(gender == "K" ~ "Kvinnor",
-                                                        gender == "M" ~ "Män")),
-                    skickad_x_var = "year",
-                    skickad_y_var = "value",
-                    skickad_x_grupp = "gender",
-                    diagram_titel = paste0("Långtidsarbetslöshet 25-64 år i Dalarna"),
-                    output_mapp = "Diagram/",
-                    filnamn_diagram = "arbets.png",
-                    diagram_capt = "Källa: Arbetsförmedlingen (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Antal invånare 25-64 år (årsmedelvärde år T) som varit öppet arbetslösa eller i program med aktivitetsstöd i minst sex månader,\ndividerat med antal invånare 25-64 år den 31/12 år T-1.",
-                    manual_y_axis_title = "procent",
-                    x_axis_lutning = 0,
-                    manual_color=diagramfarger("kon"),
-                    lagg_pa_logga = FALSE)
+diagramtitel <- "Långtidsarbetslöshet 25-64 år i Dalarna"
+diagramfilnamn <- "langtidsarbetsloshet_kolada.png"
+
+  arb1 <- SkapaStapelDiagram(skickad_df = långtidsarbetslöshet,
+                             skickad_x_var = "ar",
+                             skickad_y_var = "varde",
+                             skickad_x_grupp = "kon",
+                             diagram_titel = diagramtitel,
+                             diagram_capt = diagram_capt,
+                             manual_y_axis_title = "procent",
+                             x_axis_lutning = 0,
+                             manual_color=diagramfarger("kon"),
+                             lagg_pa_logga = FALSE,
+                             output_mapp = "Diagram/",
+                             filnamn_diagram = diagramfilnamn,
+                             skriv_till_diagramfil = TRUE)
+
 ```
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}

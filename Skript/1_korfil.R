@@ -92,6 +92,20 @@ deltagande <- funktion_upprepa_forsok_om_fel( function() {
          Region = `region`) %>% 
   filter(!is.na(Andel))
 
+# Hämtar data för långtidsarbetslöshet
+långtidsarbetslöshet <- hamta_kolada_df(kpi_id = c("N03926"),
+                                        valda_kommuner = "20",
+                                        valda_ar = 2011:2100,
+                                        konsuppdelat = TRUE) %>% 
+  mutate(kon = tolower(kon))
+
+langtidsarbetsloshet_ar_min = långtidsarbetslöshet$ar %>% min()
+langtidsarbetsloshet_ar_max = långtidsarbetslöshet$ar %>% max()
+langtidsarbetsloshet_kvinnor_min = gsub("\\.",",",round(långtidsarbetslöshet %>% filter(kon=="kvinnor",ar==min(ar)) %>%  .$varde,1))
+langtidsarbetsloshet_kvinnor_max = gsub("\\.",",",round(långtidsarbetslöshet %>% filter(kon=="kvinnor",ar==max(ar)) %>%  .$varde,1))
+langtidsarbetsloshet_man_min = gsub("\\.",",",round(långtidsarbetslöshet %>% filter(kon=="män",ar==min(ar)) %>%  .$varde,1))
+langtidsarbetsloshet_man_max = gsub("\\.",",",round(långtidsarbetslöshet %>% filter(kon=="män",ar==max(ar)) %>%  .$varde,1))
+
 # Invandringsetablering
 source("https://raw.githubusercontent.com/Region-Dalarna/diagram/refs/heads/main/diag_etableringstid_kon_lan_tidsserie_SCB.R")
 gg_etableringstid <- funktion_upprepa_forsok_om_fel( function() {

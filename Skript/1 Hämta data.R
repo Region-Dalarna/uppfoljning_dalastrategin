@@ -105,8 +105,9 @@ hamta_data_chefrepresentation(outputmapp = outputmapp)
 ##########################
 ## Långtidsarbetslöshet ##
 ##########################
-source("Skript/långtidsarbetslöshet.R", encoding="UTF-8")
-hamta_data_langtidsarb(output_mapp = outputmapp)
+# Data hämtas numer direkt från Kolada, se 1_korfil.R
+# source("Skript/långtidsarbetslöshet.R", encoding="UTF-8")
+# hamta_data_langtidsarb(output_mapp = outputmapp)
 
 ###############################
 ## Eftergymnasial utbildning ##
@@ -138,9 +139,10 @@ hamta_data_sysselsatta_ny(outputmapp = outputmapp,
 ####################
 ## Etableringstid ##
 ####################
-source("Skript/invandringetablering_ny.R", encoding="UTF-8")
-hamta_data_invandringsetablering(region = "*",
-                                 outputmapp = outputmapp)
+# Hämtas i ett diagramskript, se 1_korfil.R
+# source("Skript/invandringetablering_ny.R", encoding="UTF-8")
+# hamta_data_invandringsetablering(region = "*",
+#                                  outputmapp = outputmapp)
 
 ####################
 ## Forskning ##
