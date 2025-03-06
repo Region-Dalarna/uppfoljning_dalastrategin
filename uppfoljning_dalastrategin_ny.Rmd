@@ -1294,28 +1294,32 @@ matchning1
 ## Ginikoefficient
 I Dalastrategin lyfts ekonomiska klyftor som en framtidsutmaning för länet. För att redovisa ojämlikheten i inkomstfördelningen används gini-koefficienten. Ett högt värde på koefficienten visar på större inkomstskillnader och därmed större ojämlikhet. Här redovisas ginikoefficienten beräknad genom disponibel inkomst per "konsumtionsenhet" inklusive kapitalvinster. Med konsumtionsenhet menas att det i beräkningen av en individs tillgängliga ekonomiska resurser tas hänsyn till hur hushållet som individen bor i är sammansatt. Det betyder att beräkningen beaktar om personen är ensamboende eller sammanboende och om den har ansvar för minderåriga barn eller inte etc, faktorer som kan minska eller öka individens disponibla inkomst.
 
-För Dalarnas räkning har ginikoefficienten ökat något från 2011 till `r max(gini$år)`, vilket visar på en ökad ekonomisk ojämlikhet i länet, med en toppnotering 2019. Värt att notera är dock att Ginikoeffiecienten minskade `r max(gini$år)`, jämfört med året innan. Ginikoefficienten för länet ligger under koefficienten för riket för samtliga år förutom 2019, det vill säga i Dalarna är inkomsterna mindre ojämlika än i Sverige som helhet. År 2019 avviker så skarpt från den generella trenden att det årets notering bör betraktas med försiktighet. 
+För Dalarnas räkning har ginikoefficienten ökat något från  `r gini_min_ar` till `r gini_max_ar`, vilket visar på en ökad ekonomisk ojämlikhet i länet, med en toppnotering 2019. Värt att notera är dock att Ginikoeffiecienten minskade `r gini_max_ar`, jämfört med året innan. Ginikoefficienten för länet ligger under koefficienten för riket för samtliga år förutom 2019, det vill säga i Dalarna är inkomsterna mindre ojämlika än i Sverige som helhet. År 2019 avviker så skarpt från den generella trenden att det årets notering bör betraktas med försiktighet. 
 
 ```{r, include = FALSE}
 
-gini1 <- SkapaLinjeDiagram(skickad_df = gini %>% 
-                             mutate(region = ifelse(region == "Dalarnas län", "Dalarna", region)),
-                    skickad_x_var = "år",
-                    skickad_y_var = "Gini-koefficient",
-                    diagram_titel = paste0("Ginikoefficient"),
-                    skickad_x_grupp = "region",
-                    diagram_capt = "Källa: SCB \nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: För att redovisa ojämnheten i inkomstfördelningen används gini-koefficienten.\nKoefficienten kan anta ett värde mellan 0 och 1.\nEtt högt värde på koefficienten visar på större ojämnhet än ett lågt värde",
-                    x_axis_lutning = 0,
-                    manual_color = diagramfarger("rus_tva_fokus"),
-                    stodlinjer_avrunda_fem = TRUE,
-                    manual_y_axis_title = "Ginikoefficient",
-                    output_mapp = "Diagram/",
-                    filnamn_diagram = "gini.png")
+# gini1 <- SkapaLinjeDiagram(skickad_df = gini %>% 
+#                              mutate(region = ifelse(region == "Dalarnas län", "Dalarna", region)),
+#                     skickad_x_var = "år",
+#                     skickad_y_var = "Gini-koefficient",
+#                     diagram_titel = paste0("Ginikoefficient"),
+#                     skickad_x_grupp = "region",
+#                     diagram_capt = "Källa: SCB \nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: För att redovisa ojämnheten i inkomstfördelningen används gini-koefficienten.\nKoefficienten kan anta ett värde mellan 0 och 1.\nEtt högt värde på koefficienten visar på större ojämnhet än ett lågt värde",
+#                     x_axis_lutning = 0,
+#                     manual_color = diagramfarger("rus_tva_fokus"),
+#                     stodlinjer_avrunda_fem = TRUE,
+#                     manual_y_axis_title = "Ginikoefficient",
+#                     output_mapp = "Diagram/",
+#                     filnamn_diagram = "gini.png")
 
 ```
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gini1
+#gini1
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_gini$gini_tidsserie_00_20
 ```
 
 # Ett sammanhållet Dalarna

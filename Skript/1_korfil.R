@@ -123,19 +123,20 @@ gg_etableringstid <- funktion_upprepa_forsok_om_fel( function() {
                               skriv_diagrambildfil = TRUE)
 }, hoppa_over = hoppa_over_felhantering)
 
-# Gini-koefficienten - hämtar enbart data
-source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/refs/heads/main/hamta_inkomstfordelning_region_inkomsttyp_tid_TabVX1DispInkN_HE0110_HE0110F_scb.R")
-
-gini <- funktion_upprepa_forsok_om_fel( function() {
-  hamta_inkomstfordelning_region_inkomsttyp_tid_scb(region_vekt = c("20","00"),
-                                                    inkomsttyp_klartext = "disponibel inkomst per k.e. inkl. kapitalvinst",
-                                                    cont_klartext = "Gini-koefficient")
+# Gini-koefficienten - 1 diagram
+source("https://raw.githubusercontent.com/Region-Dalarna/diagram/refs/heads/main/diag_gini_tidsserie_jmf_SCB.R")
+gg_gini <- funktion_upprepa_forsok_om_fel( function() {
+  diag_gini_SCB(region_vekt = c("00","20"),
+                region_vekt_linje =  c("00","20"),
+                diag_tidsserie = TRUE,
+                diag_jmfr_senastear = FALSE,
+                spara_diagrambildfil = TRUE,
+                output_mapp = output_mapp_figur,
+                returnera_data = TRUE)
 }, hoppa_over = hoppa_over_felhantering)
 
-# gini <- hamta_inkomstfordelning_region_inkomsttyp_tid_scb(region_vekt = c("20","00"),
-#                                                           inkomsttyp_klartext = "disponibel inkomst per k.e. inkl. kapitalvinst",
-#                                                           cont_klartext = "Gini-koefficient")
-
+gini_min_ar <- min(gini_df$år)
+gini_max_ar <- max(gini_df$år)
 # Självskattad hälsa - diagram - Först län över tid sedan kommun
 source("https://raw.githubusercontent.com/Region-Dalarna/diagram/refs/heads/main/diag_sjalvskattad_halsa_kon_lan_kommun_fohm.R")
 
