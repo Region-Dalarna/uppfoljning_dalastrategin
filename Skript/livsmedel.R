@@ -72,7 +72,7 @@ hamta_data_livsmedel = function(outputmapp = "G:/skript/projekt/data/uppfoljning
   
   # ================================================== spannmål och potatis ==================================================
   
-  skordar_df <- hamta_skordar_lan_sjv()
+  skordar_df <- hamta_skordar_lan_sjv(år_klartext = c("2010":max(mjolk_df$År)))
   
   spannmal_df <- skordar_df %>% 
     filter(Gröda %in% c("Höstvete", "Vårvete", "Vårkorn", "Havre"),

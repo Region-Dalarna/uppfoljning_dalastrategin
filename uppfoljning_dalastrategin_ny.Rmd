@@ -570,7 +570,7 @@ resande2alt
 
 Klimatförändringarna medför lokalt förändrade mönster för nederbörd, torka och vind men även insekts- och svampangrepp på grödor och skog, höga temperaturer, med mera. Här spelar god samhällsplanering på regional och kommunal nivå en viktig roll. Ett sätt att förbättra beredskapen i Dalarna är att ha en tillräckligt omfattande lokal och hållbar energi- och livsmedelsproduktion. En ökad självförsörjningsgrad är en trygghet på flera sätt och gynnar även miljöns motståndskraft genom en ökad biologisk mångfald.
 
-Diagrammet nedan visar andelen livsmedel inom fem kategorier (fårkött, griskött, matpotatis, mjölkprodukter samt nötkött) som producerats i Dalarna i relation till den mängd livsmedel i varje kategori som konsumerats i länet. Med undantag för matpotatis år 2016, 2019 och 2022, som länet i princip är självförsörjande på, konsumerar befolkningen i Dalarna idag betydligt mer inom samtliga kategorier jämfört med den mängd som produceras i länet.
+Diagrammet nedan visar andelen livsmedel inom fem kategorier (fårkött, griskött, matpotatis, mjölkprodukter samt nötkött) som producerats i Dalarna i relation till den mängd livsmedel i varje kategori som konsumerats i länet. Med undantag för matpotatis år 2016, 2019 och 2022, som länet i princip är självförsörjande på, konsumerar befolkningen i Dalarna idag betydligt mer inom samtliga kategorier jämfört med den mängd som produceras i länet. Intressant att notera är dock att självförsörjningsgraden för matpotatis sjönk avsevärt 2023, jämfört med åren innan. Detta berodde på att skörden av matpotatis i länet var ovanligt liten 2023 (den lägsta sedan åtminstone 2010).
 
 ```{r, include = FALSE}
 #livsmedel1  <- ggplot(livsmedel, aes(fill=as.character(År), y=Andel, x=Produkt))+
