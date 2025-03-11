@@ -54,6 +54,9 @@ resande <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/resan
             data.frame(year = 2022, kpi = "Marknadsandel_procent", value = 9,municipality = "Region Dalarna"),
             data.frame(year = 2023, kpi = "Marknadsandel_procent", value = 11,municipality = "Region Dalarna"))
 
+# Hårdkodad, se mail som Anna skickat + data från 2024 i Teams som Mats letade reda på
+resande_marknadsandel <- read.xlsx("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/resande_kollektivbarometern.xlsx")
+
 vaxthusgaser <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/vaxthusgaser.csv",encoding="UTF-8")
 
 elproduktion <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/elproduktion.csv",encoding="UTF-8")
@@ -534,7 +537,7 @@ resande1alt <- SkapaStapelDiagram(skickad_df = resande %>%
 
 # Skapar en separat df eftersom tidsserier är olika långa
 
-resande2alt <- SkapaLinjeDiagram(skickad_df = resande %>% 
+resande2alt <- SkapaLinjeDiagram(skickad_df = resande_marknadsandel %>% 
                                     filter(kpi == "Marknadsandel_procent") %>% 
                                       mutate(year = year %>% as.character()),
                     skickad_x_var = "year",
@@ -542,7 +545,7 @@ resande2alt <- SkapaLinjeDiagram(skickad_df = resande %>%
                     diagram_titel = paste0("Marknadsandel för kollektivtrafik i Dalarna"),
                     skickad_x_grupp = "municipality",
                     diagram_capt = "Källa: Kollektivtrafikbarometern (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nAndelen resor med Kollektivtrafik (linjelagd buss, spårvagn, tunnelbana, pendeltåg, tåg och båt) och taxi\nav det totala antalet resor med Kollektivtrafik, taxi, bil (förare och passagerare) samt moped/MC.",
-                    x_axis_lutning = 0,
+                    x_axis_lutning = 45,
                     manual_color = diagramfarger("rus_sex")[1],
                     output_mapp = "Diagram/",
                     filnamn_diagram = "resande2.png",
@@ -558,9 +561,7 @@ Diagrammen redovisar indikatorer för kollektivt resande i Dalarna: kollektivtra
 resande1alt
 ```
 
-<span class="kommentar">Statistik nedan finns inte längre via Kolada</span>
-
-Marknadsandelen för kollektivtrafik beräknas som andelen resor med kollektivtrafik (linjelagd buss, spårvagn, tunnelbana, pendeltåg, tåg och båt) och taxi av det totala antalet resor, dvs kollektivtrafik, taxi, bil (förare och passagerare) samt moped/MC. Efter ett antal år av ökande marknadsandel för kollektivtrafiken bröts uppgången år 2020 av en förmodad pandemieffekt. Nedgången fortsatte år 2021 när marknadsandelen för kollektivtrafik bara var `r resande %>% filter(kpi == "Marknadsandel_procent", year == 2021) %>% .$value` procent, men därefter har marknadsandelen ökat igen och uppgick år `r max(resande$year)` till `r resande %>% filter(kpi == "Marknadsandel_procent", year == max(year)) %>% .$value` procent. 
+Marknadsandelen för kollektivtrafik beräknas som andelen resor med kollektivtrafik (linjelagd buss, spårvagn, tunnelbana, pendeltåg, tåg och båt) och taxi av det totala antalet resor, dvs kollektivtrafik, taxi, bil (förare och passagerare) samt moped/MC. Efter ett antal år av ökande marknadsandel för kollektivtrafiken bröts uppgången år 2020 av en förmodad pandemieffekt. Nedgången fortsatte år 2021 när marknadsandelen för kollektivtrafik bara var `r resande_marknadsandel %>% filter(kpi == "Marknadsandel_procent", year == 2021) %>% .$value` procent. Därefter ökade marknadsandelen under ett par år, innan den minskade igen år `r max(resande_marknadsandel$year)` till `r resande_marknadsandel %>% filter(kpi == "Marknadsandel_procent", year == max(year)) %>% .$value` procent. Sett över hela tidsperioden `r min(resande_marknadsandel$year)` till `r max(resande_marknadsandel$year)` har marknadsandelen för kollektivtrafik `r ifelse(resande_marknadsandel %>% filter(kpi == "Marknadsandel_procent", year == max(year)) %>% .$value>resande_marknadsandel %>% filter(kpi == "Marknadsandel_procent", year == min(year)) %>% .$value,"ökat","minskat")` med `r abs(resande_marknadsandel %>% filter(kpi == "Marknadsandel_procent", year == max(year)) %>% .$value -resande_marknadsandel %>% filter(kpi == "Marknadsandel_procent", year == min(year)) %>% .$value)` procentenhet. 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 resande2alt
