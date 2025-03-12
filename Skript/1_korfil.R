@@ -62,12 +62,27 @@ gg_utbniva_85 <- funktion_upprepa_forsok_om_fel( function() {
 }, hoppa_over = hoppa_over_felhantering)
 
 
-# Skript funkar för tillfälligt inte. Låt vara tillsvidare
+# Sysselsättningsgrad från 1993 och framåt
 source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/refs/heads/main/hamta_syss_rams_bas_fran_ar_1993_region_inrikesutrikes_kon_tid_RAMSForvInt03_RAMSForvInt04_RamsForvInt04N_ArRegArbStatus_scb.R")
 sysselsatt <- funktion_upprepa_forsok_om_fel( function() {
   hamta_rams_bas_region_inrikesutrikes_kon_tid_scb(region_vekt = "20",
                                                    inrikesutrikes_klartext = "inrikes och utrikes födda")
 }, hoppa_over = hoppa_over_felhantering)
+
+# Sysselsättningsgrad preliminär för senaste år
+source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/refs/heads/main/hamta_data_arbetsmarknadsstatus_bas_ar_prel.R")
+sysselsatt_prel <- funktion_upprepa_forsok_om_fel( function() {
+  hamta_arbetsmarknadsstatus_bas_ar_prel(region_vekt = "20",
+                                         alder_klartext = "20-64 år",
+                                         cont_klartext = "sysselsättningsgrad",
+                                         fodelseregion_klartext = "totalt",
+                                         tid_koder = "9999",
+                                         kon_klartext = c("män","kvinnor")) %>% 
+    rename("regionkod"=regionkoder)
+}, hoppa_over = hoppa_over_felhantering)
+
+# Binder ihop statistik
+sysselsatt <- rbind(sysselsatt, sysselsatt_prel %>% filter(!(år%in%unique(sysselsatt$år))))
 
 source("https://raw.githubusercontent.com/Region-Dalarna/diagram/main/diagram_arbetsmarknadsstatus_senastear.R")
 gg_arbetsmaknadsstatus <- funktion_upprepa_forsok_om_fel( function() {
