@@ -77,8 +77,9 @@ sysselsatt_prel <- funktion_upprepa_forsok_om_fel( function() {
                                          cont_klartext = "sysselsättningsgrad",
                                          fodelseregion_klartext = "totalt",
                                          tid_koder = "9999",
-                                         kon_klartext = c("män","kvinnor")) %>% 
-    rename("regionkod"=regionkoder)
+                                         kon_klartext = "*") %>% 
+    rename("regionkod"=regionkoder) %>% 
+     mutate(kön = ifelse(kön == "totalt", "kvinnor och män", kön))
 }, hoppa_over = hoppa_over_felhantering)
 
 # Binder ihop statistik
