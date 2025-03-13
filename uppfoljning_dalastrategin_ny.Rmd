@@ -59,7 +59,7 @@ resande_marknadsandel <- read.xlsx("G:/skript/projekt/data/uppfoljning_dalastrat
 
 vaxthusgaser <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/vaxthusgaser.csv",encoding="UTF-8")
 
-elproduktion <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/elproduktion.csv",encoding="UTF-8")
+elproduktion <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/elproduktion.csv",encoding="UTF-8") 
 
 livsmedel <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/livsmedel_ny.csv",encoding="UTF-8")
 
@@ -303,12 +303,14 @@ Betesmark
 
 En god tillgång till hållbar energi är avgörande för näringslivets och hela samhällets omställningsförmåga. En ökad regional produktion av förnybar energi bidrar till såväl minskade utsläpp som ökad självförsörjning och resiliens för Dalarna.
 
-Elproduktionen i Dalarna består nästan uteslutande av vindkraft och vattenkraft. Produktionen av el från vattenkraft står för majoriteten av produktionen även om den varierar mellan olika år, bland annat beroende på om det är torrår eller våtår (se exempelvis år 2018 som var ett ovanligt torrt år). I diagrammet visas mängden el producerad av vatten- respektive vindkraft. Även om vattenkraften står för merparten så är trenden tydlig att elproduktionen från vindkraft ökar, och har mer än tredubblats sedan första mätåret 2012. År `r min(elproduktion$year)` gav vindkraften ca `r format(plyr::round_any(elproduktion %>% filter(kpi == "Vindkraft",municipality == "Region Dalarna") %>% filter(year == min(year)) %>%  .$value,100),big.mark = " ")` MVh och år `r max(elproduktion$year)` gav den `r format(plyr::round_any(elproduktion %>% filter(kpi == "Vindkraft",municipality == "Region Dalarna") %>% filter(year == max(year)) %>%  .$value,100),big.mark = " ")` MVh. Betydelsen av vindkraft för den totala elproduktionen har därmed också ökat från att ha utgjort ca `r round((elproduktion %>% filter(kpi == "Vindkraft",municipality == "Region Dalarna") %>% filter(year == min(year)) %>%  .$value/elproduktion %>% filter(kpi == "Totalt",municipality == "Region Dalarna") %>% filter(year == min(year)) %>%  .$value)*100,0)` procent till att år `r max(elproduktion$year)` utgöra knappt `r round((elproduktion %>% filter(kpi == "Vindkraft",municipality == "Region Dalarna") %>% filter(year == max(year)) %>%  .$value/elproduktion %>% filter(kpi == "Totalt",municipality == "Region Dalarna") %>% filter(year == max(year)) %>%  .$value)*100,0)` procent av den totala produktionen.
+Elproduktionen i Dalarna består nästan uteslutande av vindkraft och vattenkraft. Det saknas dock statistik för vattenkraft under något enskilt år, varför kategorin vattenkraft och övrigt används i diagrammet nedan. Denna har beräknats som skillnaden mellan total elproduktion och produktion från vindkraft.  
+
+Produktionen av el från vattenkraft och övrigt står för majoriteten av produktionen även om den varierar mellan olika år, bland annat beroende på om det är torrår eller våtår (se exempelvis år 2018 som var ett ovanligt torrt år). I diagrammet visas mängden el producerad av vattenkraft och övrigt respektive vindkraft. Även om vattenkraft och övrigt står för merparten så är trenden tydlig att elproduktionen från vindkraft ökar, och har nästan tredubblats sedan första mätåret 2012. År `r min(elproduktion$year)` gav vindkraften ca `r format(plyr::round_any(elproduktion %>% filter(kpi == "Vindkraft",municipality == "Region Dalarna") %>% filter(year == min(year)) %>%  .$value,100),big.mark = " ")` MVh och år `r max(elproduktion$year)` gav den `r format(plyr::round_any(elproduktion %>% filter(kpi == "Vindkraft",municipality == "Region Dalarna") %>% filter(year == max(year)) %>%  .$value,100),big.mark = " ")` MVh. Betydelsen av vindkraft för den totala elproduktionen har därmed också ökat från att ha utgjort ca `r round((elproduktion %>% filter(kpi == "Vindkraft",municipality == "Region Dalarna") %>% filter(year == min(year)) %>%  .$value/elproduktion %>% filter(kpi == "Totalt",municipality == "Region Dalarna") %>% filter(year == min(year)) %>%  .$value)*100,0)` procent till att år `r max(elproduktion$year)` utgöra knappt `r round((elproduktion %>% filter(kpi == "Vindkraft",municipality == "Region Dalarna") %>% filter(year == max(year)) %>%  .$value/elproduktion %>% filter(kpi == "Totalt",municipality == "Region Dalarna") %>% filter(year == max(year)) %>%  .$value)*100,0)` procent av den totala produktionen. Efter att ha minskat under 2022, ökade elproduktionen tydligt i Dalarna under 2023, en ökning som helt kan tillskrivas en ökad produktion av vattenkraft och övrigt.
 
 ```{r, include = FALSE}
 
 energialt <- SkapaStapelDiagram(skickad_df = elproduktion %>%
-                                  filter(kpi != "Totalt",
+                                  filter(kpi %in% c("Vindkraft","Vattenkraft och övrigt"),
                                          municipality == "Region Dalarna") %>% 
                                   mutate(value = value/1000,
                                          year = year %>% as.character()),
@@ -321,7 +323,7 @@ energialt <- SkapaStapelDiagram(skickad_df = elproduktion %>%
                                 manual_color = diagramfarger("rus_sex"),
                                 output_mapp = "Diagram/",
                                 filnamn_diagram = "elproduktion2.png",
-                                diagram_capt = "Källa: Energimyndigheten och SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Total elproduktion inom det geografiska områdets gränser, oavsett producent.",
+                                diagram_capt = "Källa: Energimyndigheten och SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Total elproduktion inom det geografiska områdets gränser, oavsett producent.\nVattenkraft och övrigt har beräknats som skillnaden mellan total elproduktion och vindkraft.",
                                 manual_y_axis_title = "MWh (tusental)",
                                 x_axis_lutning = 0,
                                 lagg_pa_logga = FALSE)
@@ -618,9 +620,9 @@ elgrad <- SkapaStapelDiagram(skickad_df = el %>%
                     x_axis_lutning = 0,
                     manual_color = diagramfarger("rus_sex")[1],
                     lagg_pa_logga = FALSE,
-                    y_axis_100proc = TRUE,
+                    y_axis_100proc = FALSE,
                     manual_y_axis_title = "procent",
-                    procent_0_100_10intervaller = TRUE)
+                    procent_0_100_10intervaller = FALSE)
 
 ```
 
@@ -628,7 +630,7 @@ elgrad <- SkapaStapelDiagram(skickad_df = el %>%
 livsmedel1alt
 ```
 
-I diagrammet nedan visas ett teoretisk beräkning av självförsörjning av energi i Dalarna där den totala elproduktionen i länet visas som andel av den total elförbrukningen. Diagrammet visar en positiv trend för självförsörjningsgraden av energi från `r round(el %>% filter(year == min(year)) %>% .$elgrad,0)` procent år `r min(el$year)` till `r round(el %>% filter(year == max(year)) %>% .$elgrad,0)` procent år `r max(el$year)`. Beroende på vilket år som undersöks, kan detta förklaras med att produktionen av el har ökat, konsumtionen av el har minskat eller en kombination av de båda.
+I diagrammet nedan visas en teoretisk beräkning av självförsörjning av energi i Dalarna där den totala elproduktionen i länet visas som andel av den total elförbrukningen. Diagrammet visar en positiv trend för självförsörjningsgraden av energi från `r round(el %>% filter(year == min(year)) %>% .$elgrad,0)` procent år `r min(el$year)` till `r round(el %>% filter(year == max(year)) %>% .$elgrad,0)` procent år `r max(el$year)`. Att självförsörjningsgraden ökade tydligt år 2023, då mer el producerades i länet än den som konsumerades, beror i första hand på en låg konsumtion av el, något som potentiellt delvis kan förklaras av Rysslands invasion av Ukraina och dess effekt på elpriserna. Konsumtionen av el var ovanligt låg även 2022, men då var även produktionen av el i länet ovanligt liten (se avsnitt 1.3 ovan).
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 elgrad
