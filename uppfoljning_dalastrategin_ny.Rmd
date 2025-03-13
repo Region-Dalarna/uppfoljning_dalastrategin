@@ -123,7 +123,13 @@ ungadel <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/LUPP/
 
 export <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/Export/exportperinv.csv",encoding="latin1")
 
-hlv <- read_excel("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/HLV_Dalarna_ 2014_2018_2021.xlsx")
+hlv_alt <- read_excel("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/HLV_Dalarna_ 2014_2018_2021.xlsx")
+hlv <- read_excel("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/HLV_självskattad_hälsa_20250313.xlsx") %>% 
+  rename(År = "year",
+         Kommun = "region",
+         Kön = "Kon") %>% 
+   select(År,Kommun,Kön,Svar,Andel)
+
 
 # Ej uppdaterade (Excelfil från tillväxtanalys?)
 
@@ -1750,11 +1756,51 @@ Folkhälsan mäts genom enkätundersökningar där ett urval av befolkningen (16
 
 Av svaren framgår att hälsan varierar både i riket och mellan platser i Dalarnas län. Personer med lägre utbildningsnivå uppger generellt sett en sämre hälsa och sämre förutsättningar för en god hälsa än de med högre utbildningsnivå.
 
-År 2021 var det totalt `r hlv %>% filter(Fråga=="Allmänt hälsotillstånd - Bra eller mycket bra hälsa", Kommun=="Dalarna",Kön == "Totalt",År == max(År)) %>% .$Andel` procent av respondenterna i Dalarnas län som uppgav ett bra eller mycket bra allmänt hälsotillstånd. Under tidsperioden 2014-2021 har det allmänna hälsotillståndet i länet varit stabilt runt 68-69 procent utan några större förändringar. Under samtliga tre uppmätta år har en något större andel av männen svarat att de upplever ett allmänt gott hälsotillstånd i jämförelse med andelen kvinnor, men skillnaden är relativt liten.
+År `r max(hlv$År)` var det ungefär `r round(hlv %>% filter(Svar=="Bra eller mycket bra hälsa", Kommun=="Dalarna",Kön == "Totalt",År == max(År)) %>% .$Andel,0)` procent av respondenterna i Dalarnas län som uppgav ett bra eller mycket bra allmänt hälsotillstånd, vilket var en tydlig försämring jämfört med åren innan. Under tidsperioden 2014-2021 var det allmänna hälsotillståndet i länet stabilt runt 68-69 procent utan några större förändringar. Under samtliga fyra uppmätta år har en något större andel av männen svarat att de upplever ett allmänt gott hälsotillstånd i jämförelse med andelen kvinnor, en skillnad som ökade `r max(hlv$År)`.
 
 ```{r, include = FALSE}
+# halsa1 <- SkapaStapelDiagram(skickad_df = hlv %>% 
+#                                   filter(Fråga=="Allmänt hälsotillstånd - Bra eller mycket bra hälsa", 
+#                                          Kommun=="Dalarna",
+#                                          Kön != "Totalt"),
+#                     skickad_x_var = "År",
+#                     skickad_y_var = "Andel",
+#                     skickad_x_grupp = "Kön",
+#                     #diagram_titel = "Självskattat allmänt hälsotillstånd, Dalarnas län (2014-2021)",
+#                     diagram_titel = paste0("Självskattat allmänt hälsotillstånd i Dalarna"),
+#                     output_mapp = "Diagram/",
+#                     filnamn_diagram = "halsa1.png",
+#                     diagram_capt = " Källa: Nationella folkhälsoenkäten - Hälsa på lika villkor\n Bearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andel av befolkningen 16-84 år som uppger att de har en bra eller mycket bra hälsa",
+#                     manual_y_axis_title = "procent",
+#                     procent_0_100_10intervaller = TRUE,
+#                     x_axis_lutning = 0,
+#                     lagg_pa_logga = FALSE,
+#                     manual_color = diagramfarger("kon"))
+# 
+# halsa2 <- SkapaStapelDiagram(skickad_df = hlv %>% 
+#                                   filter(Fråga=="Allmänt hälsotillstånd - Bra eller mycket bra hälsa", 
+#                                          Kön=="Totalt", 
+#                                          År==max(hlv$År), 
+#                                          Kommun!="Dalarna") %>% 
+#                                   mutate(fokus = ifelse(Kommun == "Riket", "1", "0" ) ),
+#                     skickad_x_var = "Kommun",
+#                     skickad_y_var = "Andel",
+#                     diagram_titel = paste0("Självskattat allmänt hälsotillstånd i Dalarna ",max(hlv$År)),
+#                     output_mapp = "Diagram/",
+#                     filnamn_diagram = "halsa2.png",
+#                     diagram_capt = " Källa: Nationella folkhälsoenkäten - Hälsa på lika villkor\n Bearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andel av befolkningen 16-84 år som uppger att de har en bra eller mycket bra hälsa",
+#                     manual_y_axis_title = "procent",
+#                     procent_0_100_10intervaller = TRUE,
+#                     x_axis_lutning = 45,
+#                     manual_x_axis_text_hjust = 1,
+#                     manual_x_axis_text_vjust = 1,
+#                     lagg_pa_logga = FALSE,
+#                     x_var_fokus="fokus",
+#                     x_axis_sort_value = TRUE,
+#                     manual_color =diagramfarger("rus_tva_fokus"))
+
 halsa1 <- SkapaStapelDiagram(skickad_df = hlv %>% 
-                                  filter(Fråga=="Allmänt hälsotillstånd - Bra eller mycket bra hälsa", 
+                                  filter(Svar=="Bra eller mycket bra hälsa", 
                                          Kommun=="Dalarna",
                                          Kön != "Totalt"),
                     skickad_x_var = "År",
@@ -1772,7 +1818,7 @@ halsa1 <- SkapaStapelDiagram(skickad_df = hlv %>%
                     manual_color = diagramfarger("kon"))
 
 halsa2 <- SkapaStapelDiagram(skickad_df = hlv %>% 
-                                  filter(Fråga=="Allmänt hälsotillstånd - Bra eller mycket bra hälsa", 
+                                  filter(Svar=="Bra eller mycket bra hälsa", 
                                          Kön=="Totalt", 
                                          År==max(hlv$År), 
                                          Kommun!="Dalarna") %>% 
@@ -1799,19 +1845,19 @@ halsa2 <- SkapaStapelDiagram(skickad_df = hlv %>%
 halsa1
 ```
 
-I ett nationellt perspektiv ligger alla kommuner i Dalarnas län i nivå med, eller under riksgenomsnittet. I 2021 års undersökning uppgav 74 procent av befolkningen i riket att de har ett bra eller mycket bra allmänt hälsotillstånd, samma andel som Älvdalens invånare rapporterade, medan genomsnittet för Dalarnas befolkning var 69 procent, det vill säga 5 procentenheter under riksgenomsnittet. Lägst nivå på andelen med självrapporterad god hälsa finns i Smedjebacken där 66 procent av invånarna ansåg sig ha en allmänt god hälsa. Även på nationell nivå är andelen med god hälsa större bland män än bland kvinnor, och större bland yngre jämfört med äldre.
+I ett nationellt perspektiv ligger alla kommuner i Dalarnas län i nivå med, eller under riksgenomsnittet. I `r max(hlv$År)` års undersökning uppgav ca `r round(hlv %>% filter(Svar=="Bra eller mycket bra hälsa", Kommun=="Leksand",Kön == "Totalt",År == max(År)) %>% .$Andel,0)` procent av befolkningen i riket att de har ett bra eller mycket bra allmänt hälsotillstånd, samma andel som Leksands invånare rapporterade, medan genomsnittet för Dalarnas befolkning var `r round(hlv %>% filter(Svar=="Bra eller mycket bra hälsa", Kommun=="Dalarna",Kön == "Totalt",År == max(År)) %>% .$Andel,0)` procent, det vill säga `r round(hlv %>% filter(Svar=="Bra eller mycket bra hälsa", Kommun=="Riket",Kön == "Totalt",År == max(År)) %>% .$Andel-hlv %>% filter(Svar=="Bra eller mycket bra hälsa", Kommun=="Dalarna",Kön == "Totalt",År == max(År)) %>% .$Andel,0)` procentenheter under riksgenomsnittet. Lägst nivå på andelen med självrapporterad god hälsa finns i `r hlv %>% filter(Svar=="Bra eller mycket bra hälsa",Kön == "Totalt",År == max(År)) %>% filter(Andel == min(Andel)) %>%  .$Kommun` där ungefär `r round(hlv %>% filter(Svar=="Bra eller mycket bra hälsa",Kön == "Totalt",År == max(År)) %>% filter(Andel == min(Andel)) %>%  .$Andel,0)` procent av invånarna ansåg sig ha en allmänt god hälsa. 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 halsa2
 ```
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_sjalvskattad_halsa$`sjalvskattad_halsa_fohm_Dalarna_ar2004-2007 till 2021-2024`
+#gg_sjalvskattad_halsa$`sjalvskattad_halsa_fohm_Dalarna_ar2004-2007 till 2021-2024`
 ```
 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_sjalvskattad_halsa_kommun$`sjalvskattad_halsa_fohm_Dalarnas kommuner_ar2021-2024`
+#gg_sjalvskattad_halsa_kommun$`sjalvskattad_halsa_fohm_Dalarnas kommuner_ar2021-2024`
 ```
 
 

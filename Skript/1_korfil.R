@@ -153,31 +153,32 @@ gg_gini <- funktion_upprepa_forsok_om_fel( function() {
 
 gini_min_ar <- min(gini_df$år)
 gini_max_ar <- max(gini_df$år)
-# Självskattad hälsa - diagram - Först län över tid sedan kommun
-source("https://raw.githubusercontent.com/Region-Dalarna/diagram/refs/heads/main/diag_sjalvskattad_halsa_kon_lan_kommun_fohm.R")
 
-gg_sjalvskattad_halsa <- funktion_upprepa_forsok_om_fel( function() {
-  diag_sjalvskattad_halsa_kon_lan_kommun(region_vekt = "20",
-                                         tid_koder = "*",
-                                         output_mapp = output_mapp_figur,
-                                         returnera_dataframe_global_environment = TRUE)
-}, hoppa_over = hoppa_over_felhantering)
+# Självskattad hälsa - diagram - Först län över tid sedan kommun. Används inte i diagrammet, då vi fick data av Junia
+#source("https://raw.githubusercontent.com/Region-Dalarna/diagram/refs/heads/main/diag_sjalvskattad_halsa_kon_lan_kommun_fohm.R")
+
+# gg_sjalvskattad_halsa <- funktion_upprepa_forsok_om_fel( function() {
+#   diag_sjalvskattad_halsa_kon_lan_kommun(region_vekt = "20",
+#                                          tid_koder = "*",
+#                                          output_mapp = output_mapp_figur,
+#                                          returnera_dataframe_global_environment = TRUE)
+# }, hoppa_over = hoppa_over_felhantering)
 # gg_sjalvskattad_halsa <- diag_sjalvskattad_halsa_kon_lan_kommun(region_vekt = "20",
 #                                                                 #region_vekt = "20",
 #                                                                 tid_koder = "*",
 #                                                                 output_mapp = output_mapp_figur,
 #                                                                 returnera_dataframe_global_environment = TRUE)
 
-gg_sjalvskattad_halsa_kommun <- funktion_upprepa_forsok_om_fel( function() {
-  diag_sjalvskattad_halsa_kon_lan_kommun(region_vekt = hamtakommuner("20",tamedlan = F),
-                                         #region_vekt = "20",
-                                         tid_koder = "9999",
-                                         kon_klartext = c("Totalt"),
-                                         diagram_fargvekt = diagramfarger("rus_sex"),
-                                         region_sort = TRUE,
-                                         output_mapp = output_mapp_figur,
-                                         returnera_dataframe_global_environment = TRUE)
-}, hoppa_over = hoppa_over_felhantering)
+# gg_sjalvskattad_halsa_kommun <- funktion_upprepa_forsok_om_fel( function() {
+#   diag_sjalvskattad_halsa_kon_lan_kommun(region_vekt = hamtakommuner("20",tamedlan = F),
+#                                          #region_vekt = "20",
+#                                          tid_koder = "9999",
+#                                          kon_klartext = c("Totalt"),
+#                                          diagram_fargvekt = diagramfarger("rus_sex"),
+#                                          region_sort = TRUE,
+#                                          output_mapp = output_mapp_figur,
+#                                          returnera_dataframe_global_environment = TRUE)
+# }, hoppa_over = hoppa_over_felhantering)
 # 
 # gg_sjalvskattad_halsa_kommun <- diag_sjalvskattad_halsa_kon_lan_kommun(region_vekt = hamtakommuner("20",tamedlan = F),
 #                                                                        #region_vekt = "20",
