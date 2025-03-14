@@ -44,7 +44,8 @@ source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_Sk
 source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R")
 
 # Skall extern hemsida uppdateras. Skall sättas till FALSE i normala fall
-uppdatera_hemsida = FALSE
+# Gäller inte längre
+#uppdatera_hemsida = FALSE
 
 indikatorer <- read_excel("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/indikatorer.xlsx")
 
@@ -1867,13 +1868,13 @@ halsa2
 
 ```{r, include = FALSE}
 
-if(uppdatera_hemsida==TRUE){
-# kopiera html-filen till 
-file.copy(from = "uppfoljning_dalastrategin_ny.html", to = "docs/index.html", overwrite = TRUE)
-file.copy(from = "uppfoljning_dalastrategin_ny.Rmd", to = "docs/index.Rmd", overwrite = TRUE)
-
-# ska vi ta bort html-filen i projektmappen eller ha dubbelt, både där och i docs-mappen?
-#file.remove("laget_i_Dalarna.html")
-}
+# if(uppdatera_hemsida==TRUE){
+# # kopiera html-filen till 
+# file.copy(from = "uppfoljning_dalastrategin_ny.html", to = "docs/index.html", overwrite = TRUE)
+# file.copy(from = "uppfoljning_dalastrategin_ny.Rmd", to = "docs/index.Rmd", overwrite = TRUE)
+# 
+# # ska vi ta bort html-filen i projektmappen eller ha dubbelt, både där och i docs-mappen?
+# #file.remove("laget_i_Dalarna.html")
+# }
 ```
 
