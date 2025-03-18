@@ -10,7 +10,7 @@ output_mapp_figur = "Diagram/"
 
 source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/refs/heads/main/hamta_gymn_avg_genomstromning_4ar_prg_skolverket.R")
 
-gymnasie <- gg_branschbredd <- funktion_upprepa_forsok_om_fel( function() {
+gymnasie <- funktion_upprepa_forsok_om_fel( function() {
   hamta_gymn_avg_genomstromning_4ar_prg_skolverket(region_vekt = "20",
                                                    huvudman = "Samtliga",
                                                    gymnasieprogram = "Gymnasieskolan totalt")
