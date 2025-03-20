@@ -122,6 +122,10 @@ service <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/servi
 
 ungadel <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/LUPP/ungadel.csv",encoding="latin1")
 
+ungadel <- read_excel("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/LUPP/lupp_data.xlsx") %>% 
+  rename(Undersökning = Grupp,
+         Boendekommun = Kommun)
+
 export <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/Export/exportperinv.csv",encoding="latin1")
 
 hlv_alt <- read_excel("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/HLV_Dalarna_ 2014_2018_2021.xlsx")
@@ -1602,15 +1606,17 @@ Att skapa en hållbar utveckling kräver förståelse för och kunskap om framti
 
 För att kunna följa utvecklingen på det här området har en indikator för ungas delaktighet inkluderats i Dalastrategin. Data för indikatorn hämtas från ungdomsenkäten LUPP som genomförs vart tredje år. Här redovisas andelen unga som har angett att de upplever att de har "ganska eller mycket stora möjligheter" att föra fram sina åsikter till dem som bestämmer i kommunen. 
 
-Utvecklingen för denna indikator är sammantaget negativ. På gymnasienivå är andelen som har svarat att de anser sig ha möjligheter till delaktighet ungefär lika stor år `r min(ungadel$År)` som år `r max(ungadel$År)`, `r gsub("\\.",",",ungadel %>% filter(År == min(År),Undersökning == "Gymnasiet",Boendekommun=="Dalarna") %>% .$andel)` respektive `r gsub("\\.",",",ungadel %>% filter(År == max(År),Undersökning == "Gymnasiet",Boendekommun=="Dalarna") %>% .$andel)` procent. En tydligare negativ trend ses bland högstadieungdomar där andelen som anger att de har möjlighet till delaktighet har sjunkit från `r gsub("\\.",",",ungadel %>% filter(År == min(År),Undersökning == "Högstadiet",Boendekommun=="Dalarna") %>% .$andel)` till `r gsub("\\.",",",ungadel %>% filter(År == max(År),Undersökning == "Högstadiet",Boendekommun=="Dalarna") %>% .$andel)` procent. 
+Utvecklingen för denna indikator är sammantaget negativ. På gymnasienivå är andelen som har svarat att de anser sig ha möjligheter till delaktighet lägre år `r max(ungadel$År)` jämfört med år `r min(ungadel$År)`, `r gsub("\\.",",",round(ungadel %>% filter(År == max(År),Undersökning == "Gymnasiet",Boendekommun=="Dalarna") %>% .$andel,1))` respektive `r gsub("\\.",",",round(ungadel %>% filter(År == min(År),Undersökning == "Gymnasiet",Boendekommun=="Dalarna") %>% .$andel,1))` procent. En ännu tydligare negativ trend ses bland högstadieungdomar där andelen som anger att de har möjlighet till delaktighet har sjunkit från `r gsub("\\.",",",round(ungadel %>% filter(År == min(År),Undersökning == "Högstadiet",Boendekommun=="Dalarna") %>% .$andel,1))` till `r gsub("\\.",",",round(ungadel %>% filter(År == max(År),Undersökning == "Högstadiet",Boendekommun=="Dalarna") %>% .$andel,1))` procent. 
 
 ```{r, include = FALSE}
+
 unga1 <- SkapaStapelDiagram(skickad_df = ungadel %>% 
                      filter(Boendekommun=="Dalarna") %>% 
-                     mutate(År = År %>% as.character()),
-                   skickad_x_var = "År",
+                     mutate(År = År %>% as.character(),
+                            Undersökning = factor(Undersökning,levels=c("Högstadiet","Gymnasiet"))),
+                   skickad_x_var = "Undersökning",
                    skickad_y_var = "andel",
-                   skickad_x_grupp = "Undersökning",
+                   skickad_x_grupp = "År",
                    diagram_titel = paste0("Ungas delaktighet i Dalarna"),
                    output_mapp = "Diagram/",
                    filnamn_diagram = "ungadel1.png",
