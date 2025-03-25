@@ -650,18 +650,18 @@ elgrad
 I ett konkurrenskraftigt Dalarna är näringslivet livskraftigt och skapar tillväxt inom de planetära gränserna. En väl utvecklad och hållbar infrastruktur skapar värden för näringsliv, boende och besökare. Det är ett Dalarna där allas kunskaper och kompetenser tas till vara och där individer, näringsliv, offentlig sektor och civilsamhälle utvecklas tillsammans och i samspel med omvärlden. Det är också ett nyskapande Dalarna där utmaningsdriven innovation bidrar till ett gott samhälle och hållbar tillväxt.
 </p>
 
-Den ekonomiska dimensionen av hållbarhet i det regionala utvecklingsarbetet handlar om att använda, hushålla med och förädla idéer och resurser på ett miljömässigt och socialt hållbart sätt och ta vara på möjligheterna att därigenom skapa konkurrenskraft och sysselsättning. Med ett cirkulärt system där resurser och värden kan återbrukas främjas en ekonomiskt hållbar utveckling.
+Den ekonomiska dimensionen av hållbarhet i det regionala utvecklingsarbetet handlar om att använda och hushålla med resurser och förädla idéer på ett miljömässigt och socialt hållbart sätt och ta vara på möjligheterna att därigenom skapa konkurrenskraft och sysselsättning. Med ett cirkulärt system där resurser och värden kan återbrukas främjas en ekonomiskt hållbar utveckling.
 
 
 ## Infrastrukturinvesteringar
 
-Denna indikator är under konstruktion.
+Indikatorn är under konstruktion.
 
 ## Laddinfrastruktur för fordon
 
-EU har tagit fram ett regelverk för alternativa bränslen och ställer minimikrav på tillgänglig effekt i publika laddningsstationer för lätta fordon, dvs per registrerad personbil, i en kommun. Regelverket förkortas AFIR (Alternative Fuels Infrastructure Regulation) och följs upp på den nationella plattformen [drivmedla.se](https://drivmedla.se/kartor-och-statistik/afir-kartan){target="_blank"}. Kravet gör gällande att det måste finnas en effekt på 1,3 kW i offentligt tillgänglig laddningsinfrastruktur för varje elfordon och 0,8 kW för varje Laddhybrid. I Dalarna uppfyller två kommuner inte kravet enligt AFIR, Gagnef och Säter.
+EU har tagit fram ett regelverk för alternativa bränslen och ställer minimikrav på tillgänglig effekt i publika laddningsstationer för lätta fordon, dvs per registrerad personbil, i en kommun. Regelverket förkortas AFIR (Alternative Fuels Infrastructure Regulation) och följs upp på den nationella plattformen [drivmedla.se](https://drivmedla.se/kartor-och-statistik/afir-kartan){target="_blank"}. Kravet gör gällande att det måste finnas en effekt på 1,3 kW i offentligt tillgänglig laddningsinfrastruktur för varje elfordon och 0,8 kW för varje Laddhybrid. I Dalarna uppfyller alla kommuner utom två kravet enligt AFIR, de som inte uppfyller kravet ännu är Gagnef och Säter.
 
-Behovet av publika laddningsstationer bör också kopplas till trafikmängden på en plats. Dalarna är ett län som tar emot många besökare, och därför är en indikator som sätter tillgänglig effekt i relation till trafikmängden, under konstruktion för att än bättre spegla det faktiska behovet av laddinfrastruktur.
+I diagrammet ses att Malung-Sälen, Mora, Vansbro och Älvdalen är de kommuner med högst tillgänglig effekt. Det kan bland annat förklaras med att dessa kommuner tar emot många turister och därigenom har en hög trafikmängd. Behovet av publika laddningsstationer bör därför också kopplas till trafikmängden på en plats. Dalarna är ett län som tar emot många besökare generellt, och därför är en indikator som sätter tillgänglig effekt i relation till trafikmängden, under konstruktion för att ännu bättre spegla det faktiska behovet av laddinfrastruktur.
 
 ```{r, include = FALSE}
 laddstationer_fig <- SkapaStapelDiagram(skickad_df = laddstationer %>%
@@ -762,7 +762,7 @@ Under tidsperioden från 2011 till 2019 ses en viss ökning i investeringar mät
 forsk1
 ```
 
-Den stor andelen forskning och utveckling sker i företagen, medan den offentliga sektorn och universitets- och högskolesektorn står för en mindre andel. Minskningen i investeringar sedan 2019 förklaras av att företagens och offentlig sektors investeringar minskat, inom högskolesektorn ökade istället investeringarna under samma period. Troliga orsaker till detta är dels coronapandemin, som fick betydande effekter för många delar av samhället, men sannolikt även att räntenivån i samhället har ökat avsevärt sedan 2019, vilket kan ha påverkat företagens investeringsvilja.
+Den stor andelen forskning och utveckling sker i företagen, medan den offentliga sektorn och universitets- och högskolesektorn står för en mindre andel. Minskningen i investeringar sedan 2019 förklaras av att företagens och offentlig sektors investeringar minskat, inom högskolesektorn ökade istället investeringarna under samma period. Troliga orsaker till detta är coronapandemin, som fick betydande effekter för många delar av samhället, men sannolikt även att räntenivån i samhället har ökat avsevärt sedan 2019, vilket kan ha påverkat företagens investeringsvilja.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 forsk2
@@ -776,7 +776,7 @@ forsk3
 
 ## Branschbredd
 
-Ett sätt att mäta arbetsmarknadens beroende av enskilda företag och näringar i Dalarna är genom den så kallade branschbredden, ett mått som jämför antalet branscher som finns representerade i exempelvis en kommun med det totala antalet branscher i Sverige. I Dalarna som helhet fanns företag inom ca `r round(branschbredd %>% filter(municipality =="Dalarnas län",year == max(year)) %>% .$Branschbredd,0)` procent av alla Sveriges branscher år `r max(branschbredd$year)`. Bland Dalarnas kommuner hade de med högst befolkning, Falun och Borlänge, också störst branschbredd, med drygt `r round(branschbredd %>% filter(municipality =="Falun",year == max(year)) %>% .$Branschbredd,0)` respektive `r round(branschbredd %>% filter(municipality =="Borlänge",year == max(year)) %>% .$Branschbredd,0)` procent av branscherna representerade `r max(branschbredd$year)`. Lägst branschbredd hade `r branschbredd %>% filter(year == max(year)) %>% filter(Branschbredd == min(Branschbredd)) %>% .$municipality`, med ca `r round(branschbredd %>% filter(year == max(year)) %>% filter(Branschbredd == min(Branschbredd)) %>% .$Branschbredd,0)` procent av branscherna representerade år `r max(branschbredd$year)`. 
+Ett sätt att mäta arbetsmarknadens beroende av enskilda företag och näringar i Dalarna är genom den så kallade branschbredden, ett mått som jämför antalet branscher som finns representerade i exempelvis en kommun med det totala antalet branscher i Sverige. I Dalarna som helhet fanns företag inom ca `r round(branschbredd %>% filter(municipality =="Dalarnas län",year == max(year)) %>% .$Branschbredd,0)` procent av alla Sveriges branscher år `r max(branschbredd$year)`. Bland Dalarnas kommuner hade de med högst befolkning, Falun och Borlänge, också störst branschbredd, med drygt `r round(branschbredd %>% filter(municipality =="Falun",year == max(year)) %>% .$Branschbredd,0)` respektive `r round(branschbredd %>% filter(municipality =="Borlänge",year == max(year)) %>% .$Branschbredd,0)` procent av branscherna representerade år `r max(branschbredd$year)`. Lägst branschbredd hade `r branschbredd %>% filter(year == max(year)) %>% filter(Branschbredd == min(Branschbredd)) %>% .$municipality` med ca `r round(branschbredd %>% filter(year == max(year)) %>% filter(Branschbredd == min(Branschbredd)) %>% .$Branschbredd,0)` procent av branscherna representerade år `r max(branschbredd$year)`. 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_branschbredd$branschbredd
@@ -999,19 +999,19 @@ chef4
 
 ## Transporter via olika trafikslag
 
-Denna indikator är under konstruktion.
+Indikatorn är under konstruktion.
 
 
 ## Tillgänglighet till arbetsplatser resp. skolor
 
-Denna indikator är under konstruktion. 
+Indikatorn är under konstruktion. 
 
 
 ## Unga som fullföljer gymnasiet
 
-Kunskap ger människor möjlighet att växa och påverka sin livssituation. Tillgång till utbildning, kunskap och bildning är avgörande för såväl utvecklingen av samhället, som god välfärd och tillväxt i näringslivet. När arbetsgivare inte hittar rätt kompetens hämmas den ekonomiska utvecklingen. Samtidigt försvagas den sociala hållbarheten när människor ställs utanför arbetsmarknaden. Befolkningens låga utbildningsnivåer är en utmaning i stora delar av Dalarna. Ambitionen i Dalastrategin är att fler ska klara en gymnasieexamen för att därmed få bättre förutsättningar att etablera sig på arbetsmarknaden.
+Kunskap ger människor möjlighet att växa och påverka sin livssituation. Tillgång till utbildning, kunskap och bildning är avgörande för såväl utvecklingen av samhället, som god välfärd och tillväxt i näringslivet. När arbetsgivare inte hittar rätt kompetens hämmas den ekonomiska utvecklingen. Samtidigt försvagas den sociala hållbarheten när människor ställs utanför arbetsmarknaden. Befolkningens relativt sett låga utbildningsnivåer är en utmaning i stora delar av Dalarna. Ambitionen i Dalastrategin är att fler ska klara en gymnasieexamen för att därmed få bättre förutsättningar att etablera sig på arbetsmarknaden.
 
-Denna indikator mäter andelen gymnasieelever i Dalarna som har fullföljt en utbildning inom fyra år efter att de påbörjat gymnasiet. Sett över hela tidsperioden `r gymnasie %>% filter(läsår == min(läsår)) %>% .$läsår` till `r gymnasie %>% filter(läsår == max(läsår)) %>% .$läsår` finns det en positiv trend, även om andelen fluktuerar mellan åren. Av eleverna som började läsa på gymnasiet i Dalarna läsåret `r gymnasie %>% filter(läsår == min(läsår)) %>% .$läsår` var det `r gsub("\\.",",",gymnasie %>% filter(läsår == min(läsår)) %>% .$andel)` procent som inom fyra år fullföljde sin utbildning med examen. Den lägsta andelen avklarade examen om `r gymnasie %>% filter(andel == min(andel)) %>% .$andel` procent uppmättes för dem som påbörjade gymnasiet läsåret `r gymnasie %>% filter(andel == min(andel)) %>% .$läsår` (möjligen en pandemieffekt), samtidigt som den högsta andelen avklarade examen finns bland de elever som påbörjade gymnasiet läsåret `r gymnasie %>% filter(andel == max(andel)) %>% .$läsår`, `r gsub("\\.",",",gymnasie %>% filter(andel == max(andel)) %>% .$andel)` procent av dem har tagit ut examen inom fyra år.
+Denna indikator mäter andelen elever i Dalarna som har fullföljt en gymnasieutbildning inom fyra år efter att de påbörjat gymnasiet. Sett över hela tidsperioden `r gymnasie %>% filter(läsår == min(läsår)) %>% .$läsår` till `r gymnasie %>% filter(läsår == max(läsår)) %>% .$läsår` finns det en positiv trend, även om andelen fluktuerar mellan åren. Av eleverna som började läsa på gymnasiet i Dalarna läsåret `r gymnasie %>% filter(läsår == min(läsår)) %>% .$läsår` var det `r gsub("\\.",",",gymnasie %>% filter(läsår == min(läsår)) %>% .$andel)` procent som inom fyra år fullföljde sin utbildning med examen. Den lägsta andelen avklarade examen om `r gymnasie %>% filter(andel == min(andel)) %>% .$andel` procent uppmättes för dem som påbörjade gymnasiet läsåret `r gymnasie %>% filter(andel == min(andel)) %>% .$läsår` (möjligen en pandemieffekt), samtidigt som den högsta andelen avklarade examen finns bland de elever som påbörjade gymnasiet läsåret `r gymnasie %>% filter(andel == max(andel)) %>% .$läsår`, `r gsub("\\.",",",gymnasie %>% filter(andel == max(andel)) %>% .$andel)` procent av dem har tagit ut examen inom fyra år.
 
 ```{r, include = FALSE}
 # gymnasie <- gymnasie %>% 
@@ -1133,7 +1133,7 @@ syss1 <- SkapaStapelDiagram(skickad_df = sysselsatt %>%
 syss1
 ```
 
-## Långtidsarbetslöshet
+## Långtidsarbetslösa
 
 En annan indikator för att följa sysselsättningsutvecklingen i länet är andelen långtidsarbetslösa. Som långtidsarbetslös räknas den som har varit öppet arbetslös eller i program med aktivitetsstöd i minst sex månader. År `r langtidsarbetsloshet_ar_min` noterades `r langtidsarbetsloshet_kvinnor_min` procent av länets kvinnor i åldern 25-64 år som långtidsarbetslösa, medan motsvarande siffra för männen var `r langtidsarbetsloshet_man_min` procent. Under 2010-talet gick långtidsarbetslösheten såväl upp som ned, innan den nådde sin topp i samband med pandemin 2020-2021. På senare år har långtidsarbetslösheten minskat tydligt och var år `r langtidsarbetsloshet_ar_max` i Dalarna något högre för män, men något lägre för kvinnor jämfört med 2011. Långtidsarbetslösheten i Sverige är högre än i Dalarna för båda könen. En generell orsak till långtidsarbetslöshet är strukturarbetslöshet som innebär att de arbetssökande saknar rätt kompetens för de arbeten som finns tillgängliga.
 
@@ -1165,7 +1165,7 @@ arb1
 
 ## Invandrades etablering på arbetsmarknaden
 
-Invandring är en del av lösningen för att möta en ökad efterfrågan på arbetskraft och rätt kompetens i Dalarna och Sverige. Dalarna har haft en relativt stor inflyttning av utomeuropeiskt födda under senare år. Många invandrade är i arbetsför ålder och blir därför ett viktigt tillskott till arbetskraften. Denna indikator är ett mått på i vilken takt och utsträckning som nyanlända etablerar sig på arbetsmarknaden i Dalarna. Med etablering menas att personen är förvärvsarbetande helt utan stöd från a-kassa eller arbetsmarknadsåtgärd, eller dylikt.
+Invandring är en del av lösningen för att möta en ökad efterfrågan på arbetskraft och rätt kompetens i Dalarna och Sverige. Dalarna har haft en relativt stor inflyttning av utomeuropeiskt födda under senare år. Många invandrade är i arbetsför ålder och blir därför ett viktigt tillskott till arbetskraften. Denna indikator är ett mått på i vilken takt och utsträckning som invandrade etablerar sig på arbetsmarknaden i Dalarna. Med etablering menas att personen är förvärvsarbetande helt utan stöd från a-kassa eller arbetsmarknadsåtgärd, eller dylikt.
 
 Diagrammet visar tydligt hur andelen etablerade på arbetsmarknaden i arbetsför ålder ökar efter vistelsetid i landet. För det senaste året i perioden, `r max(etablering$år)`, hade drygt `r round(etablering %>% filter(region == "Dalarna", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 0-1 år",år == max(år)) %>% .$Andel_forvarvsarbetande,0)` procent av invandrade med vistelsetid under ett år etablerat sig på arbetsmarknaden. Andelen etablerade på arbetsmarknaden ökar sedan gradvis efter vistelsetid och för samma år var det ca `r round(etablering %>% filter(region == "Dalarna", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år", år == max(år)) %>% .$Andel_forvarvsarbetande,0)` procent i gruppen som vistats i Sverige i tio år eller mer som var etablerade på arbetsmarknaden.
 
@@ -1259,7 +1259,7 @@ Diagrammet visar tydligt hur andelen etablerade på arbetsmarknaden i arbetsför
 gg_etableringstid$etablering_vistelsetid_Dalarna
 ```
 
-Ytterligare en positiv trend är att det över tid verkar gå snabbare för nyligen invandrade att etablera sig på arbetsmarknaden. Från `r min(etablering$år)` till `r max(etablering$år)` har andelen etablerade på arbetsmarknaden i gruppen med vistelsetid under ett år, ökat från ca `r round(etablering %>% filter(region == "Dalarna", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 0-1 år",år == min(år)) %>% .$Andel_forvarvsarbetande,0)` procent till drygt `r round(etablering %>% filter(region == "Dalarna", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 0-1 år",år == max(år)) %>% .$Andel_forvarvsarbetande,0)` procent, vilket är mer än en fördubbling. Det finns dessvärre tydliga skillnader mellan mäns och kvinnors etablering de första åren. En betydligt högre andel män har lyckats etablera sig på arbetsmarknaden inom nio år i jämförelse med andelen kvinnor. Efter minst 10 år i landet är dock kvinnorna ikapp och förbi männen, då `r gsub("\\.",",",etablering %>% filter(region == "Dalarna", utbildningsnivå == "samtliga utbildningsnivåer", kön == "kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% .$Andel_forvarvsarbetande)` procent av kvinnorna och `r gsub("\\.",",",etablering %>% filter(region == "Dalarna", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% .$Andel_forvarvsarbetande)` procent av männen är etablerade på arbetsmarknaden.
+Ytterligare en positiv trend är att det över tid verkar gå snabbare för nyligen invandrade att etablera sig på arbetsmarknaden. Från `r min(etablering$år)` till `r max(etablering$år)` har andelen etablerade på arbetsmarknaden i gruppen med vistelsetid under ett år, ökat från ca `r round(etablering %>% filter(region == "Dalarna", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 0-1 år",år == min(år)) %>% .$Andel_forvarvsarbetande,0)` procent till drygt `r round(etablering %>% filter(region == "Dalarna", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 0-1 år",år == max(år)) %>% .$Andel_forvarvsarbetande,0)` procent, vilket är mer än en fördubbling. Det finns dessvärre tydliga skillnader mellan mäns och kvinnors etableringsmöjligheter de första åren. En betydligt högre andel män har lyckats etablera sig på arbetsmarknaden inom nio år i jämförelse med andelen kvinnor. Efter minst 10 år i landet är dock kvinnorna ikapp och förbi männen, då `r gsub("\\.",",",etablering %>% filter(region == "Dalarna", utbildningsnivå == "samtliga utbildningsnivåer", kön == "kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% .$Andel_forvarvsarbetande)` procent av kvinnorna och `r gsub("\\.",",",etablering %>% filter(region == "Dalarna", utbildningsnivå == "samtliga utbildningsnivåer", kön == "män", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% .$Andel_forvarvsarbetande)` procent av männen är etablerade på arbetsmarknaden.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 # etab_alt
