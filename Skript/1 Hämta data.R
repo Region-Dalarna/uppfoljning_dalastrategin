@@ -45,7 +45,8 @@ hamta_data_avfall(outputmapp = outputmapp)
 ### Energiproduktion ### 
 ########################
 source("Skript/energiproduktion.R", encoding="UTF-8")
-hamta_data_energiproduktion(outputmapp = outputmapp)
+hamta_data_energiproduktion(outputmapp = outputmapp,
+                            filnamn = "elproduktion_ny.csv")
 
 ##########################
 ### Energieffektivitet ### 

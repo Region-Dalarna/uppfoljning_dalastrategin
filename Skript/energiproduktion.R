@@ -62,10 +62,15 @@ hamta_data_energiproduktion = function(region = c("0020"),
         kpi == "N45927" ~ "Vattenkraft"))
   
   ### Beräknar övrig produktion. Detta är enklare om data först görs om till wide
-  elproduktion <- pivot_wider(elproduktion, names_from=kpi, values_from=value) %>% 
-    mutate(Övrigt = Totalt - Vindkraft - Vattenkraft,
-           `Vattenkraft och övrigt` = Totalt - Vindkraft) %>% 
-      pivot_longer(cols=3:7,names_to = "kpi",values_to = "value")
+  # elproduktion <- pivot_wider(elproduktion, names_from=kpi, values_from=value) %>%
+  #   mutate(Övrigt = Totalt - Vindkraft - Vattenkraft,
+  #          `Vattenkraft och övrigt` = Totalt - Vindkraft) %>%
+  #     pivot_longer(cols=3:7,names_to = "kpi",values_to = "value")
+  
+  # elproduktion <- pivot_wider(elproduktion, names_from=kpi, values_from=value) %>% 
+  #   mutate(Övrigt = Totalt - Vindkraft - Vattenkraft,
+  #          `Vattenkraft och övrigt` = Totalt - Vindkraft) %>% 
+  #   pivot_longer(cols=3:7,names_to = "kpi",values_to = "value")
   
   # Sparar till CSV om användaren vill det
   if (spara_data == TRUE) write.csv(elproduktion, paste0(outputmapp,filnamn), fileEncoding="UTF-8", row.names = FALSE)
