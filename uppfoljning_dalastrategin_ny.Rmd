@@ -263,7 +263,7 @@ skogsmark2 <- SkapaStapelDiagram(skickad_df = skogsmark%>%
 skogsmark1
 ```
 
-Drygt `r round(skogsmark %>% filter(År==max(År)) %>% .$area_procent,0)` procent av den produktiva skogsmarken i Dalarnas län var skyddad år `r as.character(max(skogsmark$År))`, vilket är en något större andel än `r as.character(min(skogsmark$År))`. Det betyder att den totala arealen produktiv skogsmark har ökat något under perioden, en ökning som kan komma ifrån att jordbruksmark har omvandlats till skog. <span class="kommentar">Förstår inte riktigt den sista meningen</span>.
+Drygt `r round(skogsmark %>% filter(År==max(År)) %>% .$area_procent,0)` procent av den produktiva skogsmarken i Dalarnas län var skyddad år `r as.character(max(skogsmark$År))`, vilket är en något större andel än `r as.character(min(skogsmark$År))`. Det betyder att den totala arealen produktiv skogsmark har ökat något under perioden, en ökning som kan komma sig av att jordbruksmark har omvandlats till skog.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 skogsmark2
