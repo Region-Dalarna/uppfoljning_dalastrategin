@@ -655,7 +655,7 @@ Den ekonomiska dimensionen av hållbarhet i det regionala utvecklingsarbetet han
 
 ## Infrastrukturinvesteringar
 
-Indikatorn är under konstruktion.
+*Indikatorn är under konstruktion.*
 
 ## Laddinfrastruktur för fordon
 
@@ -999,12 +999,12 @@ chef4
 
 ## Transporter via olika trafikslag
 
-Indikatorn är under konstruktion.
+*Indikatorn är under konstruktion.*
 
 
 ## Tillgänglighet till arbetsplatser resp. skolor
 
-Indikatorn är under konstruktion. 
+*Indikatorn är under konstruktion.* 
 
 
 ## Unga som fullföljer gymnasiet
