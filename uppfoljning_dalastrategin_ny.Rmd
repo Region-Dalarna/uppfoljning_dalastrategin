@@ -555,15 +555,17 @@ resande1alt <- SkapaStapelDiagram(skickad_df = resande %>%
 
 # Skapar en separat df eftersom tidsserier är olika långa
 
-resande2alt <- SkapaLinjeDiagram(skickad_df = resande_marknadsandel %>% 
+resande2alt <- SkapaStapelDiagram(skickad_df = resande_marknadsandel %>% 
                                     filter(kpi == "Marknadsandel_procent") %>% 
                                       mutate(year = year %>% as.character()),
                     skickad_x_var = "year",
                     skickad_y_var = "value",
                     diagram_titel = paste0("Marknadsandel för kollektivtrafik i Dalarna"),
-                    skickad_x_grupp = "municipality",
+                    #skickad_x_grupp = "municipality",
                     diagram_capt = "Källa: Kollektivtrafikbarometern (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nAndelen resor med Kollektivtrafik (linjelagd buss, spårvagn, tunnelbana, pendeltåg, tåg och båt) och taxi\nav det totala antalet resor med Kollektivtrafik, taxi, bil (förare och passagerare) samt moped/MC.",
                     x_axis_lutning = 45,
+                    manual_x_axis_text_hjust = 1,
+                    manual_x_axis_text_vjust = 1,
                     manual_color = diagramfarger("rus_sex")[1],
                     output_mapp = "Diagram/",
                     filnamn_diagram = "resande2.png",
