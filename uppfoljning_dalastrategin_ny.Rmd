@@ -60,8 +60,7 @@ resande_marknadsandel <- read.xlsx("G:/skript/projekt/data/uppfoljning_dalastrat
 
 vaxthusgaser <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/vaxthusgaser.csv",encoding="UTF-8")
 
-elproduktion <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/elproduktion_ny.csv",encoding="UTF-8") %>% 
-  filter(year<2023)
+elproduktion <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/elproduktion_ny.csv",encoding="UTF-8") 
 
 livsmedel <- read.csv("G:/skript/projekt/data/uppfoljning_dalastrategin/Data/livsmedel_ny.csv",encoding="UTF-8")
 
@@ -309,7 +308,12 @@ Betesmark
 
 En god tillgång till hållbar energi är avgörande för näringslivets och hela samhällets omställningsförmåga. En ökad regional produktion av förnybar energi bidrar till såväl minskade utsläpp som ökad självförsörjning och resiliens för Dalarna.
 
-Elproduktionen i Dalarna består nästan uteslutande av vindkraft och vattenkraft. Produktionen av el från vattenkraft står för majoriteten av produktionen även om den varierar mellan olika år, bland annat beroende på om det är torrår eller våtår (se exempelvis år 2018 som var ett ovanligt torrt år).  I diagrammet visas mängden el producerad av vattenkraft och vindkraft. Även om vattenkraft står för merparten så är trenden tydlig att elproduktionen från vindkraft ökar, och har nästan tredubblats sedan första mätåret 2012. År `r min(elproduktion$year)` gav vindkraften ca `r format(plyr::round_any(elproduktion %>% filter(kpi == "Vindkraft",municipality == "Region Dalarna") %>% filter(year == min(year)) %>%  .$value,100),big.mark = " ")` MVh och år `r max(elproduktion$year)` gav den `r format(plyr::round_any(elproduktion %>% filter(kpi == "Vindkraft",municipality == "Region Dalarna") %>% filter(year == max(year)) %>%  .$value,100),big.mark = " ")` MVh. Betydelsen av vindkraft för den totala elproduktionen har därmed också ökat från att ha utgjort ca `r round((elproduktion %>% filter(kpi == "Vindkraft",municipality == "Region Dalarna") %>% filter(year == min(year)) %>%  .$value/elproduktion %>% filter(kpi == "Totalt",municipality == "Region Dalarna") %>% filter(year == min(year)) %>%  .$value)*100,0)` procent till att år `r max(elproduktion$year)` utgöra knappt `r round((elproduktion %>% filter(kpi == "Vindkraft",municipality == "Region Dalarna") %>% filter(year == max(year)) %>%  .$value/elproduktion %>% filter(kpi == "Totalt",municipality == "Region Dalarna") %>% filter(year == max(year)) %>%  .$value)*100,0)` procent av den totala produktionen. 
+Elproduktionen i Dalarna består till stor del av vindkraft och vattenkraft. Det saknas dock statistik över vattenkraft enskilt för vissa år, varför kategorin vattenkraft och övrigt används i diagrammet nedan. Denna har beräknats som skillnaden mellan total elproduktion och produktion från vindkraft.
+
+Produktionen av el från vattenkraft och övrigt står för majoriteten av produktionen även om den varierar mellan olika år, bland annat beroende på om det är torrår eller våtår (se exempelvis år 2018 som var ett ovanligt torrt år). I diagrammet visas mängden el producerad av vattenkraft och övrigt respektive vindkraft. Även om vattenkraft och övrigt står för merparten så är trenden tydlig att elproduktionen från vindkraft ökar, och har nästan tredubblats sedan första mätåret 2012. År `r min(elproduktion$year)` gav vindkraften ca `r format(plyr::round_any(elproduktion %>% filter(kpi == "Vindkraft",municipality == "Region Dalarna") %>% filter(year == min(year)) %>%  .$value,100),big.mark = " ")` MVh och år `r max(elproduktion$year)` gav den `r format(plyr::round_any(elproduktion %>% filter(kpi == "Vindkraft",municipality == "Region Dalarna") %>% filter(year == max(year)) %>%  .$value,100),big.mark = " ")` MVh. Betydelsen av vindkraft för den totala elproduktionen har därmed också ökat från att ha utgjort ca `r round((elproduktion %>% filter(kpi == "Vindkraft",municipality == "Region Dalarna") %>% filter(year == min(year)) %>%  .$value/elproduktion %>% filter(kpi == "Totalt",municipality == "Region Dalarna") %>% filter(year == min(year)) %>%  .$value)*100,0)` procent till att år `r max(elproduktion$year)` utgöra knappt `r round((elproduktion %>% filter(kpi == "Vindkraft",municipality == "Region Dalarna") %>% filter(year == max(year)) %>%  .$value/elproduktion %>% filter(kpi == "Totalt",municipality == "Region Dalarna") %>% filter(year == max(year)) %>%  .$value)*100,0)` procent av den totala produktionen. Efter att ha minskat under 2022, ökade elproduktionen tydligt i Dalarna under 2023, en ökning som helt kan tillskrivas en ökad produktion av vattenkraft och övrigt.
+
+Även elproduktionen från solkraft, som är en del av vattenkraft och övrigt i diagrammet nedan, har ökat tydligt i Dalarna på senare år, från ungefär `r format(plyr::round_any(elproduktion %>% filter(kpi == "Solkraft",municipality == "Region Dalarna") %>% filter(year == 2021) %>%  .$value,100),big.mark = " ")` MVh år 2021 till ca `r format(plyr::round_any(elproduktion %>% filter(kpi == "Solkraft",municipality == "Region Dalarna") %>% filter(year == max(year)) %>%  .$value,100),big.mark = " ")` MVh år `r max(elproduktion$year)`. Trots ökningen stod solkraft bara för `r gsub("\\.",",",round((elproduktion %>% filter(kpi == "Solkraft",municipality == "Region Dalarna") %>% filter(year == max(year)) %>%  .$value/elproduktion %>% filter(kpi == "Totalt",municipality == "Region Dalarna") %>% filter(year == max(year)) %>%  .$value)*100,1))` procent av den totala elproduktionen i Dalarna år `r max(elproduktion$year)`. 
+
 
 ```{r, include = FALSE}
 
@@ -332,7 +336,7 @@ Elproduktionen i Dalarna består nästan uteslutande av vindkraft och vattenkraf
 #                                 x_axis_lutning = 0,
 #                                 lagg_pa_logga = FALSE)
 elproduktion <- elproduktion %>% 
-  filter(kpi%in%c("Vindkraft","Vattenkraft"))
+  filter(kpi%in%c("Vindkraft","Vattenkraft och övrigt"))
 
 energialt <- SkapaStapelDiagram(skickad_df = elproduktion %>%
                                   filter(municipality == "Region Dalarna") %>% 
@@ -347,7 +351,7 @@ energialt <- SkapaStapelDiagram(skickad_df = elproduktion %>%
                                 manual_color = diagramfarger("rus_sex"),
                                 output_mapp = "Diagram/",
                                 filnamn_diagram = "elproduktion2.png",
-                                diagram_capt = "Källa: Energimyndigheten och SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Elproduktion inom det geografiska områdets gränser, oavsett producent.",
+                                diagram_capt = "Källa: Energimyndigheten och SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Elproduktion inom det geografiska områdets gränser, oavsett producent.\nVattenkraft och övrigt har beräknats som skillnaden mellan total elproduktion och produktion från vindkraft.",
                                 manual_y_axis_title = "MWh (tusental)",
                                 x_axis_lutning = 0,
                                 lagg_pa_logga = FALSE)

@@ -3,7 +3,7 @@ hamta_data_energiproduktion = function(region = c("0020"),
                                        ta_med_riket = TRUE,
                                        outputmapp = "G:/skript/projekt/data/uppfoljning_dalastrategin/Data/",
                                        filnamn = "elproduktion.csv", 
-                                       kpi = c("N45926","N45904", "N45927"),
+                                       kpi = c("N45926","N45904", "N45927","N45952"),
                                        returnera_data = FALSE,
                                        spara_data = TRUE,
                                        senaste_ar = FALSE, # Om man enbart vill ha senaste år
@@ -33,6 +33,8 @@ hamta_data_energiproduktion = function(region = c("0020"),
                  rKolada,
                  readxl)
   
+  kpi = c("N45926","N45904", "N45927","N45952")
+  
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R")
   
   if(alla_regioner == TRUE){
@@ -59,13 +61,14 @@ hamta_data_energiproduktion = function(region = c("0020"),
       mutate(kpi = case_when(
         kpi == "N45926" ~ "Totalt",
         kpi == "N45904" ~ "Vindkraft",
-        kpi == "N45927" ~ "Vattenkraft"))
+        kpi == "N45927" ~ "Vattenkraft",
+        kpi == "N45952" ~ "Solkraft"))
   
   ### Beräknar övrig produktion. Detta är enklare om data först görs om till wide
-  # elproduktion <- pivot_wider(elproduktion, names_from=kpi, values_from=value) %>%
-  #   mutate(Övrigt = Totalt - Vindkraft - Vattenkraft,
-  #          `Vattenkraft och övrigt` = Totalt - Vindkraft) %>%
-  #     pivot_longer(cols=3:7,names_to = "kpi",values_to = "value")
+  elproduktion <- pivot_wider(elproduktion, names_from=kpi, values_from=value) %>%
+    mutate(Övrigt = Totalt - Vindkraft - Vattenkraft,
+           `Vattenkraft och övrigt` = Totalt - Vindkraft) %>%
+      pivot_longer(cols=3:8,names_to = "kpi",values_to = "value")
   
   # elproduktion <- pivot_wider(elproduktion, names_from=kpi, values_from=value) %>% 
   #   mutate(Övrigt = Totalt - Vindkraft - Vattenkraft,
