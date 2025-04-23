@@ -131,7 +131,7 @@ langtidsarbetsloshet_man_min = gsub("\\.",",",round(långtidsarbetslöshet %>% f
 langtidsarbetsloshet_man_max = gsub("\\.",",",round(långtidsarbetslöshet %>% filter(kon=="män",ar==max(ar)) %>%  .$varde,1))
 
 # Invandringsetablering
-source("https://raw.githubusercontent.com/Region-Dalarna/diagram/refs/heads/main/diag_etableringstid_kon_lan_tidsserie_SCB.R")
+source("https://raw.githubusercontent.com/Region-Dalarna/diagram/refs/heads/main/diag_etableringstid_kon_lan_tidsserie_RUS.R")
 gg_etableringstid <- funktion_upprepa_forsok_om_fel( function() {
   diag_etablering_diverse_scb(output_mapp = output_mapp_figur,
                               returnera_data_rmarkdown = TRUE,
