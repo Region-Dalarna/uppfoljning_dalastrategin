@@ -195,3 +195,4 @@ rmarkdown::render(
   output_file = 'uppfoljning_dalastrategin_ny.html',
   envir = parent.frame()
 )
+
