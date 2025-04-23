@@ -610,7 +610,7 @@ Marknadsandelen för kollektivtrafik beräknas som andelen resor med kollektivtr
 resande2alt
 ```
 
-## Självförsörjningsgrad av energi och livsmedel
+## Självförsörjningsgrad av elektricitet och livsmedel
 
 Klimatförändringarna medför lokalt förändrade mönster för nederbörd, torka och vind men även insekts- och svampangrepp på grödor och skog, höga temperaturer, med mera. Här spelar god samhällsplanering på regional och kommunal nivå en viktig roll. Ett sätt att förbättra beredskapen i Dalarna är att ha en tillräckligt omfattande lokal och hållbar energi- och livsmedelsproduktion. En ökad självförsörjningsgrad är en trygghet på flera sätt och gynnar även miljöns motståndskraft genom en ökad biologisk mångfald.
 
