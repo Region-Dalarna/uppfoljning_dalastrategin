@@ -1,5 +1,6 @@
 if (!require("pacman")) install.packages("pacman")
-p_load(here)
+p_load(here,
+       tidyverse)
 
 senaste_html_filen <- list.files(here(), pattern = "\\.html$") %>% 
   .[which.max(file.info(.)$mtime)]
