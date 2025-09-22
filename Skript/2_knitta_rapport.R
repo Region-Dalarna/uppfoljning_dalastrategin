@@ -5,6 +5,8 @@ source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_AP
 hoppa_over_felhantering = FALSE
 
 output_mapp_figur = "Diagram/"
+if (!require("pacman")) install.packages("pacman")
+p_load(here)
 
 # Genomströmning gymnasiet
 
@@ -153,6 +155,31 @@ gg_gini <- funktion_upprepa_forsok_om_fel( function() {
 
 gini_min_ar <- min(gini_df$år)
 gini_max_ar <- max(gini_df$år)
+
+# Låg ekonomisk standard - har inte lagt till i rapporten ännu, men skall inte vara något problem
+source(here("Skript", "diag_lag_ekonomisk_standard.R"))
+gg_lag_ek_standard <- funktion_upprepa_forsok_om_fel( function() {
+  diag_lag_ek_standard(region = "20", # Enbart ett i taget.
+                       diag_alla_lan = TRUE, # Skapar ett diagram där länen jämförs
+                       diag_tidsserie = TRUE,
+                       diagram_capt = " Källa: SCB, bearbetning av Samhällsanalys, Region Dalarna\nDiagramförklaring: Låg ekonomisk standard avser andelen personer som lever i hushåll\nvars ekonomiska standard är mindre än 60 procent av medianvärdet för riket.",
+                       skriv_diagrambildfil = TRUE,
+                       output_mapp = output_mapp_figur,
+                       returnera_data_rmarkdown = TRUE)
+}, hoppa_over = hoppa_over_felhantering)
+
+# Olika variabler
+forsta_ar <- min(lag_ek_standard_df$år)
+andel_forsta_ar <- lag_ek_standard_df %>% filter(region == "Dalarna", år == forsta_ar) %>% .$`Låg ekonomisk standard, procent`
+sista_ar <- max(lag_ek_standard_df$år)
+andel_sista_ar <- lag_ek_standard_df %>% filter(region == "Dalarna", år == sista_ar) %>% .$`Låg ekonomisk standard, procent`
+andel_2019 <- lag_ek_standard_df %>% filter(region == "Dalarna", år == 2019) %>% .$`Låg ekonomisk standard, procent`
+
+# Hur många län har högre andel än Dalarna det senaste året?
+hogre_an_dalarna <- lag_ek_standard_df %>% 
+  filter(år==max(år))%>%
+    mutate(.target = `Låg ekonomisk standard, procent`[region == "Dalarna"][1]) %>%
+     summarise(n_higher = sum(`Låg ekonomisk standard, procent` > .target, na.rm = TRUE)) %>% .$n_higher
 
 # Självskattad hälsa - diagram - Först län över tid sedan kommun. Används inte i diagrammet, då vi fick data av Junia
 #source("https://raw.githubusercontent.com/Region-Dalarna/diagram/refs/heads/main/diag_sjalvskattad_halsa_kon_lan_kommun_fohm.R")
