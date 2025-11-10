@@ -131,7 +131,49 @@ gg_utslapp$utslapp_per_capita
 
 # Ett konkurrenskraftigt Dalarna
 
+## Arbetskraften{.tabset}
+
+### Invandrares etablering på arbetsmarknaden{-}
+
+Invandring är en del av lösningen för att möta en ökad efterfrågan på arbetskraft och rätt kompetens i Dalarna och Sverige. Dalarna har haft en relativt stor inflyttning av utomeuropeiskt födda under senare år. Många invandrade är i arbetsför ålder och blir därför ett viktigt tillskott till arbetskraften. Denna indikator är ett mått på i vilken takt och utsträckning som invandrade etablerar sig på arbetsmarknaden i Dalarna. Med etablering menas att personen är förvärvsarbetande helt utan stöd från a-kassa eller arbetsmarknadsåtgärd, eller dylikt.
+
+Diagrammet visar tydligt hur andelen etablerade på arbetsmarknaden i arbetsför ålder ökar efter vistelsetid i landet. För det senaste året i perioden, `r etablering_max_ar`, hade ungefär `r etablering_0_1_max_ar_alla` procent av invandrade med vistelsetid under ett år etablerat sig på arbetsmarknaden. Andelen etablerade på arbetsmarknaden ökar sedan gradvis efter vistelsetid och för samma år var det ca `r etablering_10_max_ar_alla` procent i gruppen som vistats i Sverige i tio år eller mer som var etablerade på arbetsmarknaden.
+
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_etableringstid$etablering_vistelsetid_Dalarna
+```
+
+Ytterligare en positiv trend är att det över tid verkar gå snabbare för nyligen invandrade att etablera sig på arbetsmarknaden. Från `r etablering_min_ar` till `r etablering_max_ar` har andelen etablerade på arbetsmarknaden i gruppen med vistelsetid under ett år, ökat från ca `r etablering_0_1_min_ar_alla` procent till ungefär `r etablering_0_1_max_ar_alla` procent, vilket är mer än en fördubbling. Det finns dessvärre tydliga skillnader mellan mäns och kvinnors etableringsmöjligheter de första åren. En betydligt högre andel män har lyckats etablera sig på arbetsmarknaden inom nio år i jämförelse med andelen kvinnor. Efter minst 10 år i landet är dock kvinnorna ikapp och förbi männen, då `r etablering_10_max_ar_kvinnor` procent av kvinnorna och `r etablering_10_max_ar_man` procent av männen är etablerade på arbetsmarknaden.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_etableringstid$etablering_vistelsetid_kon_Dalarna
+```
+
+En jämförelse mellan länen när det gäller möjligheten att ha etablerat sig på arbetsmarknaden efter minst 10 år i Sverige visar att Dalarna återfinns i mittensegmentet. `r etablering_lan_10_hogst_andel_lan` har den högsta andelen etablerade med knappt `r etablering_lan_10_hogst_andel_varde` procent, och i `r etablering_lan_10_lagst_andel_lan` är andelen etablerade efter minst 10 år i landet lägst, med drygt `r etablering_lan_10_lagst_andel_varde` procent. 
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_etableringstid$etablering_vistelsetid_allalan
+```
+
 # Ett sammanhållet Dalarna
+
+## Hälsa och trygghet{.tabset}
+
+## Hur uppkopplade är dalfolket{.tabset}
+
+## Ekonomisk jämlikhet{.tabset}
+
+### Gini-koefficient{-}
+
+I Dalastrategin lyfts ekonomiska klyftor som en framtidsutmaning för länet. För att redovisa ojämlikheten i inkomstfördelningen används gini-koefficienten. Ett högt värde på koefficienten visar på större inkomstskillnader och därmed större ojämlikhet. Här redovisas ginikoefficienten beräknad genom disponibel inkomst per "konsumtionsenhet" inklusive kapitalvinster. Med konsumtionsenhet menas att det i beräkningen av en individs tillgängliga ekonomiska resurser tas hänsyn till hur hushållet som individen bor i är sammansatt. Det betyder att beräkningen beaktar om personen är ensamboende eller sammanboende och om den har ansvar för minderåriga barn eller inte etc, faktorer som kan minska eller öka individens disponibla inkomst.
+
+I Dalarna har ginikoefficienten ökat något från  `r gini_min_ar` till `r gini_max_ar`, vilket således visar på en ökad ekonomisk ojämlikhet i länet, med en toppnotering 2019. Värt att notera är dock att trenden verkar bruten då ginikoeffiecienten minskade `r gini_max_ar`, jämfört med året innan. Ginikoefficienten för länet ligger även under koefficienten för riket för samtliga år förutom 2019, det vill säga i Dalarna är inkomsterna mindre ojämlika än i Sverige som helhet. År 2019 avviker så skarpt från den generella trenden att det årets notering bör betraktas med försiktighet. 
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_gini$gini_tidsserie_00_20
+```
+
 
 ```{=html}
 <script>
