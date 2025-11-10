@@ -1,0 +1,84 @@
+---
+title: "Uppföljning Dalastrategin"
+author: ""
+date: ""
+output: 
+  html_document:
+    self_contained: true
+    includes:
+      in_header: 
+      - favicon.html
+      - hero_image.html
+    toc: yes
+    toc_float: yes
+    toc_depth: 6
+    css: "styles_hero.css"
+    number_sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{js}
+const debounce = (fn) => {
+  let frame;
+  return (...params) => {
+    if (frame) cancelAnimationFrame(frame);
+    frame = requestAnimationFrame(() => fn(...params));
+  };
+};
+
+const storeScroll = () => {
+  const threshold = 150; // px
+  const scrolled = window.scrollY > threshold;
+
+  document.documentElement.dataset.scroll = scrolled ? 'scrolled' : 'top';
+};
+
+document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+storeScroll();
+
+```
+<p style = "font-size:12px">
+<i>Rapporten är skapad av Samhällsanalys, Region Dalarna<br>
+Senast uppdaterad: `r Sys.Date()`</i>
+</p>
+
+# Ett klimatsmart Dalarna
+
+<p class="intro" style = "background-color: #93CEC1">
+Ett klimatsmart Dalarna är ett resurseffektivt Dalarna utan
+klimatpåverkande utsläpp. Resande sker på ett enkelt och
+miljömässigt hållbart sätt. I ett klimatsmart Dalarna är samhällets
+robusthet och resiliens vid klimatförändringar god.
+</p>
+
+Den miljömässiga dimensionen för en hållbar regional utveckling handlar bland annat om att säkerställa att ekosystemen bibehålls och vårdas så att de fortsätter att leverera de tjänster som människor och samhällen är beroende av. Genom ambitionen att gå före i en miljömässigt hållbar omställning ska innovationer med hållbarhet i fokus gynnas bland regionens företag. Regionala lösningar kan bidra till att lösa globala problem och är vägen fram till goda livsmiljöer och levnadsvillkor för de boende.
+
+Dalarna är rikt på naturresurser och om de brukas rätt ger de mångfalt tillbaka. Indikatorer som följs upp är därför bland annat hur resurser som vatten och vind, skog och jordbruksmark används. I Dalarna utgörs samtidigt en stor del av näringslivet av tillverkande industri som förbrukar relativt sett stora mängder energi och driver därigenom upp mängden energi förbrukad per invånare. Det är en viktig avvägning mellan nytta och miljöpåverkan, att bedöma huruvida Dalarnas företag har det produktionssätt som har den minsta miljöpåverkan i global jämförelse och därmed motiv till att just företagen i Dalarna ska bedriva denna produktion.
+
+
+## Hur mår Dalarnas natur{.tabset}
+
+Här skriver man en kort introduktion med pilar?
+
+### Formellt skyddad skogsmark{-} 
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+### Vatten{-} 
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
