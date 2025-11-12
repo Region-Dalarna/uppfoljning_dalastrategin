@@ -121,6 +121,18 @@ gg_utslapp$utslapp_per_capita
 
 ### Elproduktion{-}
 
+En god tillgång till hållbar energi är avgörande för näringslivets och hela samhällets omställningsförmåga. En ökad regional produktion av förnybar energi bidrar till såväl minskade utsläpp som ökad självförsörjningsförmåga och resiliens för Dalarna. Sveriges samlade energisystem beskrivs utförligt på [Energimyndighetens webbplats](https://www.energimyndigheten.se/energisystemet/sveriges-energisystem/){target="_blank"}. 
+
+Den regionalt producerade energin som omsätts till elektricitet i Dalarna omfattar vatten- och vindkraft samt övrigt, där vatten och vind är de huvudsakliga energikällorna. Det saknas dock statistik över vattenkraft enskilt för vissa år, varför kategorin vattenkraft och övrigt används i diagrammet nedan. I kategorin vattenkraft och övrigt ingår även solkraft som utgör en liten men växande andel över tid. Kategorin har beräknats som skillnaden mellan total elproduktion och elproduktion från vindkraft.
+
+Produktionen av el i Dalarna varierar mellan olika år, bland annat beroende på om det är torrår eller våtår (se exempelvis år 2018 som var ett ovanligt torrt år). I diagrammet visas mängden el producerad av vattenkraft och övrigt respektive vindkraft. Även om vattenkraft och övrigt står för merparten så är trenden tydlig att elproduktionen från vindkraft ökar, och har nästan tredubblats sedan första mätåret 2012. År `r elproduktion_min_ar` gav vindkraften ca `r elproduktion_vind_min_ar` MVh och år `r elproduktion_max_ar` gav den `r elproduktion_vind_max_ar` MVh. Betydelsen av vindkraft för den totala elproduktionen har därmed också ökat från att ha utgjort ca `r elproduktion_andel_min_ar` procent till att år `r elproduktion_max_ar` utgöra knappt `r elproduktion_andel_max_ar` procent av den totala produktionen. Efter att ha minskat under 2022, ökade elproduktionen tydligt i Dalarna under 2023, en ökning som helt kan tillskrivas en ökad produktion av vattenkraft och övrigt.
+
+Även elproduktionen från solkraft, som är en del av kategorin vattenkraft och övrigt i diagrammet nedan, har ökat tydligt i Dalarna på senare år, från ungefär `r elproduktion_sol_2021` MVh år 2021 till ca `r elproduktion_sol_max_ar` MVh år `r elproduktion_max_ar`. Trots ökningen stod solkraft bara för `r solkraft_andel_max_ar` procent av den totala elproduktionen i Dalarna år `r elproduktion_max_ar`.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_energiproduktion$elproduktion_Dalarna
+```
+
 ### Energieffektivitet{-}
 
 ### Avfall{-}
@@ -156,6 +168,26 @@ En jämförelse mellan länen när det gäller möjligheten att ha etablerat sig
 gg_etableringstid$etablering_vistelsetid_allalan
 ```
 
+## Marknadseffektivitet{.tabset}
+
+### Föräldrapenning
+
+Fördelningen av dagar mellan vårdnadshavarna har jämnats ut något sedan slutet av 1990-talet då runt 85-90 procent av föräldrapenningdagarna togs ut av mammorna. Sedan dess har först en (1995), sedan två (2002) och även tre månader (2016) reserverats åt respektive vårdnadshavare (också kallade "pappamånader"). Detta har bidragit till ett jämnare uttag men utvecklingen får ändå sägas gå relativt trögt, då kvinnors andel endast har minskat till runt `r round(as.numeric(foraldrapenning_df %>% filter(Kommun == "Samtliga kommuner", Kön == "Kvinnor", År == max(År)) %>% .$Andel),0)` procent `r max(foraldrapenning_df$År)`. Svenska vårdnadshavare är således långt ifrån att ge sina barn en jämställd tillgång till sina föräldrar. Skillnaden i uttag påverkar också den disponibla inkomsten, som beskrivits under rubriken Ekonomisk jämställdhet. Skillnaden är som störst mellan sammanboende kvinnor och män när det yngsta barnet är 0–3 år [(Regeringen, 2022)](<https://www.regeringen.se/contentassets/46945970585240a4a5bfd9a0f75ecf3d/ekonomisk-jamstalldhet.pdf>){target="_blank"}.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_fp_vab$Foraldrapenning_andel_Dalarna
+```
+
+### Tillgång till bredband{-}
+
+Tillgång till en snabb och robust digital infrastruktur är för de flesta en grundförutsättning för att bo och verka i hela Dalarna. Fysiska och digitala mötesplatser gör att vi når både varandra och omvärlden. En av utmaningarna för Dalarna är en ojämnt fördelad digital infrastruktur. Att stärka och tillgängliggöra den digitala infrastrukturen för hela Dalarnas befolkning, oavsett plats, är avgörande för en lyckad digitalisering av samhället.
+
+I Dalarna har andelen av befolkningen med tillgång till, eller möjlighet att ansluta till, bredband om minst 1 Gbit/s ökat från ca `r andel_bredband_min` procent `r bredband_min_ar` till ca `r andel_bredband_max` procent `r bredband_max_ar`. Det kan jämföras med riksgenomsnittet som år `r bredband_max_ar` var `r andel_bredband_max_riket` procent. 
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_bredband$tillgang_bredband_Dalarna
+```
+
 # Ett sammanhållet Dalarna
 
 ## Hälsa och trygghet{.tabset}
@@ -174,6 +206,23 @@ I Dalarna har ginikoefficienten ökat något från  `r gini_min_ar` till `r gini
 gg_gini$gini_tidsserie_00_20
 ```
 
+### Låg ekonomisk standard
+
+Ekonomiska klyftor mellan olika grupper i samhället är en utmaning för både Sverige och Dalarna. Om de socioekonomiska klyftorna blir alltför stora riskerar de att motverka sammanhållning, tillit och trygghet. Det riskerar i sin tur att försvaga demokratin, exempelvis genom systematiska skillnader i valdeltagande, faktiskt eller upplevt inflytande samt delaktighet och engagemang.
+
+Med låg ekonomisk standard menas de hushåll som har en årsinkomst under 60 procent av medianvärdet för hushållens årliga inkomster i Sverige. Andel barn som lever i hushåll med låg ekonomisk standard blir därför ett mått på barns ekonomiska utsatthet i samhället. 
+
+I diagrammet nedan kan vi notera att andelen unga (0-19 år) som lever i hushåll med låg ekonomisk standard i Dalarnas län har ökat över mätperioden, vilket är negativt, från `r lag_ek_standard_df_dalarna_min_ar` procent år `r min_ar_lag_ek` till drygt `r lag_ek_standard_df_dalarna_max_ar` procent `r max_ar_lag_ek`. Viktigt att notera är dock att andelen har minskat tydligt mellan 2019 och `r max_ar_lag_ek`, från `r lag_ek_standard_df_dalarna_2019` procent till `r lag_ek_standard_df_dalarna_max_ar` procent.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_lag_ek_standard$andel_invånare_0_19_år_med_låg_ekonomisk_standard_i_dalarna
+```
+
+I ett nationellt perspektiv ser vi att endast fem andra län har en högre andel unga som lever i hushåll med låg ekonomisk standard än vad Dalarna har.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_lag_ek_standard$andel_invånare_0_19_år_med_låg_ekonomisk_standard
+```
 
 ```{=html}
 <script>

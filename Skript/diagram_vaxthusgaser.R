@@ -62,7 +62,8 @@ diagram_vaxthusgaser <- function(region_vekt = "20",
                                stodlinjer_avrunda_fem = TRUE,
                                x_axis_lutning = 0,
                                manual_y_axis_title = "Ton CO2 (tusental)",
-                               manual_color = diagramfarger("rus_sex"))
+                               manual_color = diagramfarger("rus_sex"),
+                               skriv_till_diagramfil = spara_figur)
   
   gg_list <- c(gg_list, list(gg_obj))
   names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
@@ -86,7 +87,8 @@ diagram_vaxthusgaser <- function(region_vekt = "20",
                                  stodlinjer_avrunda_fem = TRUE,
                                  x_axis_lutning = 0,
                                  manual_y_axis_title = "Ton CO2/invånare",
-                                 manual_color = diagramfarger("rus_sex"))
+                                 manual_color = diagramfarger("rus_sex"),
+                                 skriv_till_diagramfil = spara_figur)
   
   gg_list <- c(gg_list, list(gg_obj))
   names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")

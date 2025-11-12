@@ -55,6 +55,28 @@ ar_sedan_2015 <- as.integer(max(vaxthusgaser_df$ar))-2015
 
 forandring_sedan_2015 <- round(abs(((borjan_varde / utslapp_2015)^(1 / ar_sedan_2015) - 1) * 100),0)
 
+## Energiproduktion
+source(here("Skript","diagram_energiproduktion.R"))
+gg_energiproduktion <- diagram_energiproduktion(region = "20",
+                                                output_mapp = output_mapp_figur,
+                                                returnera_data = TRUE,
+                                                spara_figur = spara_figurer)
+
+elproduktion_min_ar <- min(elproduktion_df$ar)
+elproduktion_max_ar <- max(elproduktion_df$ar)
+
+elproduktion_vind_min_ar <- format(plyr::round_any(elproduktion_df %>% filter(variabel_kort == "Vindkraft",region == "Dalarna") %>% filter(ar == min(ar)) %>%  .$varde,100),big.mark = " ")
+elproduktion_vind_max_ar <- format(plyr::round_any(elproduktion_df %>% filter(variabel_kort == "Vindkraft",region == "Dalarna") %>% filter(ar == max(ar)) %>%  .$varde,100),big.mark = " ")
+
+elproduktion_andel_min_ar <- round((elproduktion_df %>% filter(variabel_kort == "Vindkraft",region == "Dalarna") %>% filter(ar == min(ar)) %>%  .$varde/elproduktion_df %>% filter(variabel_kort == "Totalt",region == "Dalarna") %>% filter(ar == min(ar)) %>%  .$varde)*100,0)
+elproduktion_andel_max_ar <- round((elproduktion_df %>% filter(variabel_kort == "Vindkraft",region == "Dalarna") %>% filter(ar == max(ar)) %>%  .$varde/elproduktion_df %>% filter(variabel_kort == "Totalt",region == "Dalarna") %>% filter(ar == max(ar)) %>%  .$varde)*100,0)
+
+elproduktion_sol_2021 <- format(plyr::round_any(elproduktion_df %>% filter(variabel_kort == "Solkraft",region == "Dalarna") %>% filter(ar == 2021) %>%  .$varde,100),big.mark = " ")
+elproduktion_sol_max_ar <- format(plyr::round_any(elproduktion_df %>% filter(variabel_kort == "Solkraft",region == "Dalarna") %>% filter(ar == max(ar)) %>%  .$varde,100),big.mark = " ")
+
+solkraft_andel_max_ar <- gsub("\\.",",",round((elproduktion_df %>% filter(variabel_kort == "Solkraft",region == "Dalarna") %>% filter(ar == max(ar)) %>%  .$varde/elproduktion_df %>% filter(variabel_kort == "Totalt",region == "Dalarna") %>% filter(ar == max(ar)) %>%  .$varde)*100,1))
+
+
 ################################################
 ####    Ett konkurrenskraftigt Dalarna     #####
 ################################################
@@ -65,7 +87,7 @@ gg_etableringstid <- funktion_upprepa_forsok_om_fel( function() {
   diag_etablering_diverse_scb(output_mapp = output_mapp_figur,
                               returnera_data_rmarkdown = TRUE,
                               startar = 2012,
-                              skriv_diagrambildfil = TRUE)
+                              skriv_diagrambildfil = spara_figurer)
 }, hoppa_over = hoppa_over_felhantering)
 
 # Diagram 1-2 jämförelse över tid
@@ -82,6 +104,29 @@ etablering_lan_10_hogst_andel_varde <- round(etablering %>% filter(utbildningsni
 etablering_lan_10_lagst_andel_lan <- etablering %>% filter(utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% filter(Andel_forvarvsarbetande == min(Andel_forvarvsarbetande)) %>% .$region
 etablering_lan_10_lagst_andel_varde <- round(etablering %>% filter(utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% filter(Andel_forvarvsarbetande == min(Andel_forvarvsarbetande)) %>% .$Andel_forvarvsarbetande,0)
 
+## Tillgång till bredband
+source(here("Skript","diagram_bredband.R"))
+gg_bredband <- diagram_bredband(region_vekt = "20",
+                                   output_mapp = output_mapp_figur,
+                                   returnera_data = TRUE,
+                                   spara_figur = spara_figurer)
+
+bredband_min_ar <- min(bredband_df$ar)
+bredband_max_ar <- max(bredband_df$ar)
+andel_bredband_min <- round(bredband_df %>% filter(region == "Dalarna",ar == min(ar)) %>% .$varde,0)
+andel_bredband_max <- round(bredband_df %>% filter(region == "Dalarna",ar == max(ar)) %>% .$varde,0)
+andel_bredband_max_riket <- round(bredband_df %>% filter(region == "Riket",ar == max(ar)) %>% .$varde,0)
+
+# Föräldrapenning och VAB
+source("https://raw.githubusercontent.com/Region-Dalarna/diagram/refs/heads/main/diagram_foraldrapenning_vab_kv_man.R")
+gg_fp_vab <- diag_foraldrapenning_vab(region_vekt = "20",
+                                      output_mapp = output_mapp_figur,
+                                      diag_foraldrapenning = TRUE,
+                                      diag_vab = FALSE,
+                                      spara_diagrambildfil = spara_figurer,
+                                      spara_dataframe_till_global_environment = TRUE)
+
+
 #########################################
 ####    Ett sammanhållet Dalarna     ####
 #########################################
@@ -93,11 +138,29 @@ gg_gini <- funktion_upprepa_forsok_om_fel( function() {
                 region_vekt_linje =  c("00","20"),
                 diag_tidsserie = TRUE,
                 diag_jmfr_senastear = FALSE,
-                spara_diagrambildfil = TRUE,
+                spara_diagrambildfil = spara_figurer,
                 output_mapp = output_mapp_figur,
                 returnera_data = TRUE)
 }, hoppa_over = hoppa_over_felhantering)
 
 gini_min_ar <- min(gini_df$år)
 gini_max_ar <- max(gini_df$år)
+
+# Låg ekonomisk standard - har inte lagt till i rapporten ännu, men skall inte vara något problem
+source(here("Skript", "diag_lag_ekonomisk_standard.R"))
+gg_lag_ek_standard <- funktion_upprepa_forsok_om_fel( function() {
+  diag_lag_ek_standard(region = "20", # Enbart ett i taget.
+                       diag_alla_lan = TRUE, # Skapar ett diagram där länen jämförs
+                       diag_tidsserie = TRUE,
+                       diagram_capt = " Källa: SCB, bearbetning av Samhällsanalys, Region Dalarna\nDiagramförklaring: Låg ekonomisk standard avser andelen personer som lever i hushåll\nvars ekonomiska standard är mindre än 60 procent av medianvärdet för riket.",
+                       skriv_diagrambildfil = spara_figurer,
+                       output_mapp = output_mapp_figur,
+                       returnera_data_rmarkdown = TRUE)
+}, hoppa_over = hoppa_over_felhantering)
+
+min_ar_lag_ek <- min(lag_ek_standard_df$år)
+max_ar_lag_ek <- max(lag_ek_standard_df$år)
+lag_ek_standard_df_dalarna_min_ar <- lag_ek_standard_df %>% filter(region == "Dalarna", år == min(år)) %>% .$`Låg ekonomisk standard, procent`
+lag_ek_standard_df_dalarna_max_ar <- lag_ek_standard_df %>% filter(region == "Dalarna", år == max(år)) %>% .$`Låg ekonomisk standard, procent`
+lag_ek_standard_df_dalarna_2019 <- lag_ek_standard_df %>% filter(region == "Dalarna", år == 2019) %>% .$`Låg ekonomisk standard, procent`
 
