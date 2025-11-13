@@ -204,7 +204,7 @@ gg_etableringstid$etablering_vistelsetid_allalan
 
 ## Marknadseffektivitet{.tabset}
 
-### Föräldrapenning
+### Föräldrapenning{-}
 
 Fördelningen av dagar mellan vårdnadshavarna har jämnats ut något sedan slutet av 1990-talet då runt 85-90 procent av föräldrapenningdagarna togs ut av mammorna. Sedan dess har först en (1995), sedan två (2002) och även tre månader (2016) reserverats åt respektive vårdnadshavare (också kallade "pappamånader"). Detta har bidragit till ett jämnare uttag men utvecklingen får ändå sägas gå relativt trögt, då kvinnors andel endast har minskat till runt `r round(as.numeric(foraldrapenning_df %>% filter(Kommun == "Samtliga kommuner", Kön == "Kvinnor", År == max(År)) %>% .$Andel),0)` procent `r max(foraldrapenning_df$År)`. Svenska vårdnadshavare är således långt ifrån att ge sina barn en jämställd tillgång till sina föräldrar. Skillnaden i uttag påverkar också den disponibla inkomsten, som beskrivits under rubriken Ekonomisk jämställdhet. Skillnaden är som störst mellan sammanboende kvinnor och män när det yngsta barnet är 0–3 år [(Regeringen, 2022)](<https://www.regeringen.se/contentassets/46945970585240a4a5bfd9a0f75ecf3d/ekonomisk-jamstalldhet.pdf>){target="_blank"}.
 
@@ -222,11 +222,33 @@ I Dalarna har andelen av befolkningen med tillgång till, eller möjlighet att a
 gg_bredband$tillgang_bredband_Dalarna
 ```
 
+## Företagande{.tabset}
+
+### Nystartade företag{-}
+
+Antalet nystartade företag per kommun i Dalarna visar att `r nystartade_kommun_hogst_max_ar` kommun har flest, med ungefär `r nystartade_kommun_hogst_max_ar_varde` nystartade företag per 1000 invånare `r nystartade_max_ar`, medan `r nystartade_kommun_lagst_min_ar` har minst med ca `r nystartade_kommun_lagst_min_ar_varde`.  Ungefär hälften av Dalarnas kommuner hade fler nystartade företag (per 1000 invånare) än Sverige `r nystartade_max_ar`.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_nyst_konk$nystartade
+```
+
 # Ett sammanhållet Dalarna
 
 ## Hälsa och trygghet{.tabset}
 
 ## Hur uppkopplade är dalfolket{.tabset}
+
+### Avsaknad av tillit till andra människor{-}
+
+Det är människorna i Dalarna som skapar regionen – alla enskilda individer boende i länet, som också är del av familjer och av andra gemenskaper, organisationer och företag. Människors känsla av sammanhang och delaktighet är centralt för att skapa ett väl fungerande samhälle. För att skapa sammanhang och delaktighet behövs tillit mellan dem som ingår i gemenskapen, och det behövs sätt att hantera osäkerhet som kan uppstå när nya medlemmar inkluderas i en gemenskap. Socialt kapital beskriver det kitt som uppstår när en grupp människor enas kring gemensamma värden, normer och värderingar, det får människor att ha tillit till sina medmänniskor och till det gemensamma. Att den representativa demokratins institutioner, såsom kommuner, region och myndigheter, är väl fungerande och att invånarna har förtroende för dem är centralt för en levande demokrati. En stark tillit till andra underlättar samarbetet mellan människor och viljan och förmågan att bidra med nya idéer till samhällsutvecklingen. Ett samhälle med ett starkt socialt kapital är bättre rustat för att möta förändringar och eventuella kriser.
+
+Indikatorn för tillit mäter andel (%) invånare 16-84 år som i en enkätundersökning har uppgett att de anser sig sakna tillit till andra. Värdet är beräknat som medelvärdet över en fyraårsperiod. Mellan tidsperioden `r tillit_min_period` och `r tillit_max_period` visar det sig att andelen som anser sig sakna tillit har ökat något, från `r tillit_min_period_varde` procent  till `r tillit_max_period_varde` procent. Under intervallet har däremot andelen under perioden 2007 till 2015 varit lägre mellan 23 och 25 procent. Andelen kvinnor som saknar tillit till andra har varit högre än andelen män som saknar tillit till andra fram till ungefär år 2015. Sedan år 2015 är mönstret inte längre entydigt, och det senaste året `r tillit_senaste_ar` uppgav en större andel män, än kvinnor, att de saknade tillit till andra.
+
+Andelen som säger sig sakna tillit utgör ungefär `r  tillit_senaste_ar` procent av invånarna, samtidigt som det framkommer i folkhälsoenkäten att ca 20 procent av invånarna aldrig eller väldigt sällan deltog i sociala sammankomster före pandemin, och att andelen har ökat till ca `r lagt_soc_deltagande_senaste_ar_varde` procent av invånarna efter pandemin år `r lagt_soc_deltagande_senaste_ar`. Att delta i olika typer av sociala sammankomster är en byggsten för att skapa sammanhang och i förlängningen tillit.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_tillit$tillit_Dalarna
+```
 
 ## Ekonomisk jämlikhet{.tabset}
 
@@ -240,7 +262,7 @@ I Dalarna har ginikoefficienten ökat något från  `r gini_min_ar` till `r gini
 gg_gini$gini_tidsserie_00_20
 ```
 
-### Låg ekonomisk standard
+### Låg ekonomisk standard{-}
 
 Ekonomiska klyftor mellan olika grupper i samhället är en utmaning för både Sverige och Dalarna. Om de socioekonomiska klyftorna blir alltför stora riskerar de att motverka sammanhållning, tillit och trygghet. Det riskerar i sin tur att försvaga demokratin, exempelvis genom systematiska skillnader i valdeltagande, faktiskt eller upplevt inflytande samt delaktighet och engagemang.
 

@@ -156,6 +156,22 @@ gg_fp_vab <- diag_foraldrapenning_vab(region_vekt = "20",
                                       spara_diagrambildfil = spara_figurer,
                                       spara_dataframe_till_global_environment = TRUE)
 
+# Nystartade företag
+source("https://github.com/Region-Dalarna/sarbarhetsanalys/raw/main/Skript/diagram_nyst_arbetslosa.R")
+gg_nyst_konk <- funktion_upprepa_forsok_om_fel( function() {
+  diagram_nystartade_konkurser(output_mapp_figur = output_mapp_figur,
+                               spara_figur = spara_figurer,
+                               returnera_figur = TRUE,
+                               returnera_data = TRUE,
+                               vald_farg = diagramfarger("rus_sex"),
+                               cont_cod = c("N00999"))
+}, hoppa_over = hoppa_over_felhantering)
+
+nystartade_max_ar <- max(Nystartade %>% filter(substr(year,1,1) != "m") %>% .$year)
+nystartade_kommun_hogst_max_ar <- Nystartade %>% filter(substr(year,1,1) != "m") %>% filter(year == max(year)) %>% filter(nystartade_ftg == max(nystartade_ftg)) %>% .$municipality
+nystartade_kommun_lagst_min_ar <- Nystartade %>% filter(substr(year,1,1) != "m") %>% filter(year == max(year)) %>% filter(nystartade_ftg == min(nystartade_ftg)) %>% .$municipality
+nystartade_kommun_hogst_max_ar_varde <- round(Nystartade %>% filter(substr(year,1,1) != "m") %>% filter(year == max(year)) %>% filter(nystartade_ftg == max(nystartade_ftg)) %>% .$nystartade_ftg,0)
+nystartade_kommun_lagst_min_ar_varde <- round(Nystartade %>% filter(substr(year,1,1) != "m") %>% filter(year == max(year)) %>% filter(nystartade_ftg == min(nystartade_ftg)) %>% .$nystartade_ftg,0)
 
 #########################################
 ####    Ett sammanhållet Dalarna     ####
@@ -193,4 +209,27 @@ max_ar_lag_ek <- max(lag_ek_standard_df$år)
 lag_ek_standard_df_dalarna_min_ar <- lag_ek_standard_df %>% filter(region == "Dalarna", år == min(år)) %>% .$`Låg ekonomisk standard, procent`
 lag_ek_standard_df_dalarna_max_ar <- lag_ek_standard_df %>% filter(region == "Dalarna", år == max(år)) %>% .$`Låg ekonomisk standard, procent`
 lag_ek_standard_df_dalarna_2019 <- lag_ek_standard_df %>% filter(region == "Dalarna", år == 2019) %>% .$`Låg ekonomisk standard, procent`
+
+# Tillit
+source(here("Skript","diagram_tillit.R"))
+gg_tillit <- diagram_tillit(region = "20",
+                            output_mapp = output_mapp_figur,
+                            returnera_data = TRUE,
+                            spara_figur = spara_figurer)
+
+tillit_min_period <- deltagande_df %>% filter(Sociala_relationer == "Svårt att lita på andra") %>% .$År %>% min()
+tillit_max_period <- deltagande_df %>% filter(Sociala_relationer == "Svårt att lita på andra") %>% .$År %>% max()
+
+
+tillit_min_period_varde <- gsub("\\.",",",round(deltagande_df %>% filter(Sociala_relationer == "Svårt att lita på andra",År == min(År),Kön == "Totalt") %>% .$Andel,0))
+tillit_max_period_varde <- gsub("\\.",",",round(deltagande_df %>% filter(Sociala_relationer == "Svårt att lita på andra",År == max(År),Kön == "Totalt") %>% .$Andel,0))
+
+tillit_senaste_ar <- deltagande_df %>% filter(Sociala_relationer == "Svårt att lita på andra",Kön == "Totalt") %>% last() %>% .$År %>% substr(6,9)
+
+lagt_soc_deltagande_senaste_ar <- deltagande_df %>% filter(Sociala_relationer == "Lågt socialt deltagande",Kön == "Totalt") %>% last() %>% .$År %>% substr(6,9)
+lagt_soc_deltagande_senaste_ar_varde <- round(last(deltagande_df %>% filter(Sociala_relationer == "Lågt socialt deltagande",Kön == "Totalt") %>% .$Andel),0)
+
+
+
+
 
