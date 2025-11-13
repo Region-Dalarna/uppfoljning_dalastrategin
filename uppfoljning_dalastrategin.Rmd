@@ -202,6 +202,17 @@ En jämförelse mellan länen när det gäller möjligheten att ha etablerat sig
 gg_etableringstid$etablering_vistelsetid_allalan
 ```
 
+### Unga som fullföljer gymnasiet{-}
+
+Kunskap ger människor möjlighet att växa och påverka sin livssituation. Tillgång till utbildning, kunskap och bildning är avgörande för såväl utvecklingen av samhället, som god välfärd och tillväxt i näringslivet. När arbetsgivare inte hittar rätt kompetens hämmas den ekonomiska utvecklingen. Samtidigt försvagas den sociala hållbarheten när människor ställs utanför arbetsmarknaden. Befolkningens relativt sett låga utbildningsnivåer är en utmaning i stora delar av Dalarna. Ambitionen i Dalastrategin är att fler ska klara en gymnasieexamen för att därmed få bättre förutsättningar att etablera sig på arbetsmarknaden.
+
+Denna indikator mäter andelen elever i Dalarna som har fullföljt en gymnasieutbildning inom fyra år efter att de påbörjat gymnasiet. Sett över hela tidsperioden `r gymnasiet_min_lasar` till `r gymnasiet_max_lasar` finns det en positiv trend, även om andelen fluktuerar mellan åren. Av eleverna som började läsa på gymnasiet i Dalarna läsåret `r gymnasiet_min_lasar` var det `r gymnasiet_min_lasar_andel` procent som inom fyra år fullföljde sin utbildning med examen. Den lägsta andelen avklarade examen om `r gymnasiet_lagst_avklarat_andel` procent uppmättes för dem som påbörjade gymnasiet läsåret `r gymnasiet_lagst_avklarat_lasar` (möjligen en pandemieffekt), samtidigt som den högsta andelen avklarade examen finns bland de elever som påbörjade gymnasiet läsåret `r gymnasiet_hogst_avklarat_lasar`, `r gymnasiet_hogst_avklarat_andel` procent av dem har tagit ut examen inom fyra år.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_genomstromning_gym$genomstromning_gymnasiet_Dalarna
+```
+
+
 ## Marknadseffektivitet{.tabset}
 
 ### Föräldrapenning{-}

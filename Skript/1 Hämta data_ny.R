@@ -134,6 +134,27 @@ etablering_lan_10_hogst_andel_varde <- round(etablering %>% filter(utbildningsni
 etablering_lan_10_lagst_andel_lan <- etablering %>% filter(utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% filter(Andel_forvarvsarbetande == min(Andel_forvarvsarbetande)) %>% .$region
 etablering_lan_10_lagst_andel_varde <- round(etablering %>% filter(utbildningsnivå == "samtliga utbildningsnivåer", kön == "män och kvinnor", bakgrundsvariabel == "vistelsetid 10- år",år == max(år)) %>% filter(Andel_forvarvsarbetande == min(Andel_forvarvsarbetande)) %>% .$Andel_forvarvsarbetande,0)
 
+## Unga som genomför gymnasiet
+source(here("Skript","diagram_genomstromning_gymnasiet.R"))
+gg_genomstromning_gym <- diagram_genomstromning_gymnasiet(region_vekt = "20",
+                                                          output_mapp = output_mapp_figur,
+                                                          returnera_data = TRUE,
+                                                          spara_figur = spara_figurer)
+
+gymnasiet_min_lasar <- genomstromning_gymnasiet_df %>% filter(läsår == min(läsår)) %>% .$läsår
+gymnasiet_max_lasar <- genomstromning_gymnasiet_df %>% filter(läsår == max(läsår)) %>% .$läsår
+
+gymnasiet_min_lasar <- genomstromning_gymnasiet_df %>% filter(läsår == min(läsår)) %>% .$läsår
+gymnasiet_max_lasar <- genomstromning_gymnasiet_df %>% filter(läsår == max(läsår)) %>% .$läsår
+
+gymnasiet_min_lasar_andel <- gsub("\\.",",",genomstromning_gymnasiet_df %>% filter(läsår == min(läsår)) %>% .$andel)
+
+gymnasiet_lagst_avklarat_lasar <- genomstromning_gymnasiet_df %>% filter(andel == min(andel)) %>% .$läsår
+gymnasiet_lagst_avklarat_andel <- genomstromning_gymnasiet_df %>% filter(andel == min(andel)) %>% .$andel
+  
+gymnasiet_hogst_avklarat_lasar <- genomstromning_gymnasiet_df %>% filter(andel == max(andel)) %>% .$läsår
+gymnasiet_hogst_avklarat_andel <- gsub("\\.",",",genomstromning_gymnasiet_df %>% filter(andel == max(andel)) %>% .$andel)
+
 ## Tillgång till bredband
 source(here("Skript","diagram_bredband.R"))
 gg_bredband <- diagram_bredband(region_vekt = "20",
