@@ -32,6 +32,25 @@ areal_skogsmark_max_ar <- format(skogsmark_df %>% filter(år==max(år)) %>% .$ar
 andel_skogsmark_min_ar <- round(skogsmark_df %>% filter(år==min(år)) %>% .$area_procent,0)
 andel_skogsmark_max_ar <- round(skogsmark_df %>% filter(år==max(år)) %>% .$area_procent,0)
 
+## Avfall
+source(here("Skript","diagram_avfall.R"))
+gg_avfall <- diagram_avfall(region_vekt = "20",
+                                   output_mapp = output_mapp_figur,
+                                   returnera_data = TRUE,
+                                   spara_figur = spara_figurer)
+
+avfall_min_ar <- min(avfall_df$ar)
+avfall_max_ar <- max(avfall_df$ar)
+
+avfall_per_person_min_ar <- avfall_df %>% filter(ar == min(ar),variabel_kort == "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$varde
+avfall_per_person_max_ar <- round(avfall_df %>% filter(ar == max(ar),variabel_kort == "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$varde,0)
+
+avfall_brp_min_ar <- min(avfall_brp_df$ar)
+avfall_brp_max_ar <- max(avfall_brp_df$ar)
+
+avfall_brp_min_ar_varde <- format(plyr::round_any(avfall_brp_df %>% filter(ar == min(ar)) %>%  .$avfallbrp,10),big.mark = " ")
+avfall_brp_max_ar_varde <- format(plyr::round_any(avfall_brp_df %>% filter(ar == max(ar)) %>%  .$avfallbrp,10),big.mark = " ")
+
 ## Utsläpp
 source(here("Skript","diagram_vaxthusgaser.R"))
 gg_utslapp <- diagram_vaxthusgaser(region_vekt = "20",
@@ -76,6 +95,17 @@ elproduktion_sol_max_ar <- format(plyr::round_any(elproduktion_df %>% filter(var
 
 solkraft_andel_max_ar <- gsub("\\.",",",round((elproduktion_df %>% filter(variabel_kort == "Solkraft",region == "Dalarna") %>% filter(ar == max(ar)) %>%  .$varde/elproduktion_df %>% filter(variabel_kort == "Totalt",region == "Dalarna") %>% filter(ar == max(ar)) %>%  .$varde)*100,1))
 
+## Energieffektivitet
+source(here("Skript","diagram_energieffektivitet.R"))
+gg_energieffektivitet <- diagram_energieffektivitet(region = "20",
+                                                    output_mapp = output_mapp_figur,
+                                                    returnera_data = TRUE,
+                                                    spara_figur = spara_figurer)
+
+energieffektivitet_min_ar <- min(energieffektivitet_df$År)
+energieffektivitet_max_ar <- max(energieffektivitet_df$År)
+
+energieffektivitet_forandring_procent <- round((energieffektivitet_df %>% filter(Region == "Dalarna", År == max(År)) %>% .$value/energieffektivitet_df %>% filter(Region == "Dalarna", År == min(År)) %>% .$value-1)*100,0)
 
 ################################################
 ####    Ett konkurrenskraftigt Dalarna     #####
