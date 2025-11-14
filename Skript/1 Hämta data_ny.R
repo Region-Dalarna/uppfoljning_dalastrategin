@@ -32,6 +32,28 @@ areal_skogsmark_max_ar <- format(skogsmark_df %>% filter(år==max(år)) %>% .$ar
 andel_skogsmark_min_ar <- round(skogsmark_df %>% filter(år==min(år)) %>% .$area_procent,0)
 andel_skogsmark_max_ar <- round(skogsmark_df %>% filter(år==max(år)) %>% .$area_procent,0)
 
+## Vatten
+source(here("Skript","diagram_vatten.R"))
+gg_vatten <- diagram_vatten(region = "20",
+                            output_mapp = output_mapp_figur,
+                            returnera_data = TRUE,
+                            spara_figur = spara_figurer)
+
+elbilar_min_ar <- min(elbilar_df$ar)
+elbilar_max_ar <- max(elbilar_df$ar)
+
+
+## Elbilar och laddhybrider
+source(here("Skript","diagram_elbilar.R"))
+gg_elbilar <- diagram_elbilar(region = "20",
+                                output_mapp = output_mapp_figur,
+                                returnera_data = TRUE,
+                                spara_figur = spara_figurer)
+
+elbilar_min_ar <- min(elbilar_df$ar)
+elbilar_max_ar <- max(elbilar_df$ar)
+
+
 ## Avfall
 source(here("Skript","diagram_avfall.R"))
 gg_avfall <- diagram_avfall(region_vekt = "20",

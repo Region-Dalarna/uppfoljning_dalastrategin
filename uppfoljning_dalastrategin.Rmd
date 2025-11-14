@@ -87,17 +87,27 @@ gg_skogsmark$andel_skyddad_skogsmark_Dalarna
 
 ### Vatten{-} 
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_vatten$vattendrag_Dalarna
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_vatten$vattendrag_Sverige
+```
 
 ### Luft{-} 
 
 ## Resursförbrukning{.tabset}
+
+### Elbilar{-}
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_elbilar$elbilar_Dalarna
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_elbilar$elbilar_Sverige
+```
 
 ### Insamlat avfall{-}
 
