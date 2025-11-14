@@ -39,10 +39,6 @@ gg_vatten <- diagram_vatten(region = "20",
                             returnera_data = TRUE,
                             spara_figur = spara_figurer)
 
-elbilar_min_ar <- min(elbilar_df$ar)
-elbilar_max_ar <- max(elbilar_df$ar)
-
-
 ## Elbilar och laddhybrider
 source(here("Skript","diagram_elbilar.R"))
 gg_elbilar <- diagram_elbilar(region = "20",
@@ -271,6 +267,26 @@ tillit_senaste_ar <- deltagande_df %>% filter(Sociala_relationer == "Svårt att 
 
 lagt_soc_deltagande_senaste_ar <- deltagande_df %>% filter(Sociala_relationer == "Lågt socialt deltagande",Kön == "Totalt") %>% last() %>% .$År %>% substr(6,9)
 lagt_soc_deltagande_senaste_ar_varde <- round(last(deltagande_df %>% filter(Sociala_relationer == "Lågt socialt deltagande",Kön == "Totalt") %>% .$Andel),0)
+
+source("https://raw.githubusercontent.com/Region-Dalarna/diagram/refs/heads/main/diagram_inkomst_region_aldersgrupper_kv_man.R")
+gg_inkomst <- diag_inkomst_scb(regionvekt = "20", # Enbart ett i taget. går även att välja kommuner, men då genereras inget kommundiagram
+                               output_mapp = output_mapp_figur,                                  # mapp där diagram ska sparas, NA = sparas ingen fil
+                               inkomst_typ = "Medianinkomst, tkr", # Finns "Medianinkomst, tkr", "Medelinkomst, tkr". Max 1 åt gången
+                               diag_tid = TRUE,
+                               diag_linje = FALSE,
+                               diag_kommun = FALSE,
+                               skriv_diagrambildfil = spara_figurer,                           # TRUE om diagram ska skrivas till fil, FALSE om diagram inte ska skrivas till fil
+                               alder_klartext = c("20-64 år"),			 #  Finns: "20+ år", "20-64 år", "20-65 år", "65+ år", "66+ år". OBS!! Funkar ej med "*"
+                               returnera_data_rmarkdown = TRUE)
+
+inkomst_max_ar <- max(forvarvsinkomst_df$år)
+
+# Län 20-64 år
+medianinkomst_man_max_20_64 <- round(forvarvsinkomst_df %>% filter(region == "Dalarna", år == max(år),kön == "män",ålder == "20-64 år") %>% .$`Medianinkomst, tkr`,0)
+medianinkomst_kvinna_max_20_64 <- round(forvarvsinkomst_df %>% filter(region == "Dalarna", år == max(år),kön == "kvinnor",ålder == "20-64 år") %>% .$`Medianinkomst, tkr`,0)
+medianinkomst_man_forandring_20_64 <- round((forvarvsinkomst_df %>% filter(region == "Dalarna", år == max(år),kön == "män",ålder == "20-64 år") %>% .$`Medianinkomst, tkr`/forvarvsinkomst_df %>% filter(region == "Dalarna", år == min(år),kön == "män",ålder == "20-64 år") %>% .$`Medianinkomst, tkr`-1)*100,0)
+medianinkomst_kvinna_forandring_20_64 <- round((forvarvsinkomst_df %>% filter(region == "Dalarna", år == max(år),kön == "kvinnor",ålder == "20-64 år") %>% .$`Medianinkomst, tkr`/forvarvsinkomst_df %>% filter(region == "Dalarna", år == min(år),kön == "kvinnor",ålder == "20-64 år") %>% .$`Medianinkomst, tkr`-1)*100,0)
+
 
 
 

@@ -187,6 +187,10 @@ gg_avfall$avfall_BRP_Dalarna
 
 # Ett konkurrenskraftigt Dalarna
 
+<p class="intro" style = "background-color: #f8aab6">
+I ett konkurrenskraftigt Dalarna är näringslivet livskraftigt och skapar tillväxt inom de planetära gränserna. En väl utvecklad och hållbar infrastruktur skapar värden för näringsliv, boende och besökare. Det är ett Dalarna där allas kunskaper och kompetenser tas till vara och där individer, näringsliv, offentlig sektor och civilsamhälle utvecklas tillsammans och i samspel med omvärlden. Det är också ett nyskapande Dalarna där utmaningsdriven innovation bidrar till ett gott samhälle och hållbar tillväxt.
+</p>
+
 ## Arbetskraften{.tabset}
 
 ### Invandrares etablering på arbetsmarknaden{-}
@@ -255,6 +259,16 @@ gg_nyst_konk$nystartade
 
 # Ett sammanhållet Dalarna
 
+<p class="intro" style = "background-color: #ffec9f">
+I ett sammanhållet Dalarna finns goda livsmiljöer
+som skapar en känsla av närhet. Det är ett
+Dalarna fyllt av engagemang, där människor upplever
+delaktighet och tillsammans bidrar till en hållbar
+utveckling. Det är ett inkluderande, jämställt,
+och jämlikt Dalarna där människor mår bra och
+där alla ges möjlighet att utvecklas.
+</p>
+
 ## Hälsa och trygghet{.tabset}
 
 ## Hur uppkopplade är dalfolket{.tabset}
@@ -299,6 +313,16 @@ I ett nationellt perspektiv ser vi att endast fem andra län har en högre andel
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_lag_ek_standard$andel_invånare_0_19_år_med_låg_ekonomisk_standard
+```
+
+### Löner{-}
+
+En egen inkomst är en av förutsättningarna för ett ekonomiskt självständigt liv. Livsinkomsten påverkar även vilken pension personen kommer att få vid pensionering. 
+
+För kvinnor och män i Dalarna i arbetsför ålder (20-64 år) är inkomstskillnaderna relativt stora och har hållit i sig över tid. Medianinkomsten för en man i Dalarna var `r inkomst_max_ar` cirka `r medianinkomst_man_max_20_64` tusen kronor före skatt, medan en kvinna hade en medianinkomst på ungefär `r medianinkomst_kvinna_max_20_64` tusen kronor. I den andra figuren nedan syns även en positiv utveckling i form av att den relativa skillnaden i inkomst mellan könen har minskat sedan millennieskiftet. Diagrammet visar att kvinnors medianinkomst har ökat med `r medianinkomst_kvinna_forandring_20_64` procent sedan slutet millennieskiftet, medan mäns har ökat med ungefär `r medianinkomst_man_forandring_20_64` procent. Det är dock viktigt att notera att figurerna nedan endast redovisar kvinnors och mäns skilda ekonomiska förutsättningar, medan det kan finnas flera förklaringar till skillnaden. En faktor är att kvinnor i högre grad arbetar deltid, och därför kan ha en lägre årsinkomst. Men även yrke, bransch och utbildningsinriktning kan förklara en del av skillnaden. 
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_inkomst$Medianinkomst_20_64_Dalarna_tid
 ```
 
 ```{=html}
