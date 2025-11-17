@@ -224,6 +224,13 @@ gg_fp_vab <- diag_foraldrapenning_vab(region_vekt = "20",
                                       spara_diagrambildfil = spara_figurer,
                                       spara_dataframe_till_global_environment = TRUE)
 
+# Förtroende för rättsväsendet
+source(here("Skript","diagram_fortroende_rattsvasande.R"))
+gg_fortroende_rattsvasande <- diagram_fortroende_rattsvasande(region_vekt = "20",
+                                                              output_mapp = output_mapp_figur,
+                                                              returnera_data = TRUE,
+                                                              spara_figur = spara_figurer)
+
 # Nystartade företag
 source("https://github.com/Region-Dalarna/sarbarhetsanalys/raw/main/Skript/diagram_nyst_arbetslosa.R")
 gg_nyst_konk <- funktion_upprepa_forsok_om_fel( function() {

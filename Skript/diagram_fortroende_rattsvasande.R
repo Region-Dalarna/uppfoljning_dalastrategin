@@ -1,9 +1,9 @@
-diagram_vatten <- function(region_vekt = "20",
-                            output_mapp = "G:/Samhällsanalys/Statistik/Näringsliv/basfakta/",
-                            filnamn = "utslapp.xlsx",
-                            returnera_data = FALSE,
-                            #spara_data = FALSE,
-                            spara_figur = FALSE){
+diagram_fortroende_rattsvasande <- function(region_vekt = "20",
+                                            output_mapp = "G:/Samhällsanalys/Statistik/Näringsliv/basfakta/",
+                                            filnamn = "utslapp.xlsx",
+                                            returnera_data = FALSE,
+                                            #spara_data = FALSE,
+                                            spara_figur = FALSE){
   
   # ===========================================================================================================
   
@@ -21,23 +21,24 @@ diagram_vatten <- function(region_vekt = "20",
   
   vald_region = skapa_kortnamn_lan(hamtaregion_kod_namn(region_vekt)$region)
   
-  vatten_df <- hamta_kolada_df(kpi = c("N85052"),hamtaAllaLan(),valda_ar = c(2000:2100)) %>% 
-    mutate(region = skapa_kortnamn_lan(region,byt_ut_riket_mot_sverige = TRUE))
-
+  fortroende_df <- hamta_kolada_df(kpi = c(" N07600"),hamtaAllaLan(),valda_ar = c(2000:2100)) %>% 
+    mutate(region = skapa_kortnamn_lan(region))
+  
   if(returnera_data == TRUE){
-    assign("vatten_df", vatten_df, envir = .GlobalEnv)
+    assign("fortroende_df", fortroende_df, envir = .GlobalEnv)
   }
   
   # Enbart ett län över tid för både elbilar och laddhybrider
   
-  diagram_titel <- paste0("Andelen vattendrag med god ekologisk status i",vald_region)
-  diagramfilnamn = paste0("vattendrag_",vald_region,".png")
-  diagram_capt = "Källa: VISS och Länsstyrelserna (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Klassning görs successivt under en flerårscykel. Nyckeltalet uppdateras eftersom och alla siffror utom det sista i en cykel bör ses som preliminära."
+  diagram_titel <- paste0("Andel med mycket stort eller ganska stort förtroende för rättsväsandet i ",vald_region)
+  diagramfilnamn = paste0("fortroende_rattsvasande_",vald_region,".png")
+  diagram_capt = "Källa: BRÅs nationella trygghetsundersökning\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andel som har svarat Mycket stort eller Ganska stort på frågan\nOm du tänker dig rättsväsendet som en helhet. Hur stort eller litet förtroende har du för rättsväsendet?"
   
-  gg_obj <- SkapaStapelDiagram(skickad_df = vatten_df %>% 
+  gg_obj <- SkapaStapelDiagram(skickad_df = fortroende_df %>% 
                                  filter(region == vald_region),
                                skickad_x_var = "ar",
                                skickad_y_var = "varde",
+                               skickad_x_grupp = "kon",
                                procent_0_100_10intervaller = TRUE,
                                diagram_titel = diagram_titel,
                                output_mapp = output_mapp,
@@ -46,22 +47,22 @@ diagram_vatten <- function(region_vekt = "20",
                                #stodlinjer_avrunda_fem = TRUE,
                                x_axis_lutning = 0,
                                manual_y_axis_title = "procent",
-                               manual_color = diagramfarger("rus_sex"),
+                               manual_color = diagramfarger("kon"),
                                skriv_till_diagramfil = spara_figur)
   
   gg_list <- c(gg_list, list(gg_obj))
   names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
   
   # Jämför län för senaste år
-  diagram_titel <- paste0("Andelen vattendrag med god ekologisk status i Sverige")
-  diagramfilnamn = paste0("vattendrag_Sverige")
-  diagram_capt = "Källa: VISS och Länsstyrelserna (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Klassning görs successivt under en flerårscykel.\nNyckeltalet uppdateras eftersom och alla siffror utom det sista i en cykel bör ses som preliminära."
+  diagram_titel <- paste0("Andel med mycket stort eller ganska stort förtroende för rättsväsandet i Sverige år ",max(fortroende_df$ar))
+  diagramfilnamn = paste0("fortroende_rattsvasande_sverige.png")
+  diagram_capt = "Källa: BRÅs nationella trygghetsundersökning\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andel som har svarat Mycket stort eller Ganska stort på frågan\nOm du tänker dig rättsväsendet som en helhet. Hur stort eller litet förtroende har du för rättsväsendet?"
   
-  gg_obj <- SkapaStapelDiagram(skickad_df = vatten_df %>% 
-                                 filter(ar == max(ar)) %>%
-                                 mutate(fokus = ifelse(region == vald_region, "1", ifelse(region == "Sverige", "2", "0"))),
+  gg_obj <- SkapaStapelDiagram(skickad_df = fortroende_df %>% 
+                                 filter(ar == max(ar)),
                                skickad_x_var = "region",
                                skickad_y_var = "varde",
+                               skickad_x_grupp = "kon",
                                procent_0_100_10intervaller = TRUE,
                                diagram_titel = diagram_titel,
                                manual_x_axis_text_vjust = 1,
@@ -69,12 +70,13 @@ diagram_vatten <- function(region_vekt = "20",
                                output_mapp = output_mapp,
                                filnamn_diagram = diagramfilnamn,
                                x_axis_sort_value = TRUE,
+                               x_axis_sort_grp = 1,
+                               vand_sortering = TRUE,
                                diagram_capt = diagram_capt,
                                stodlinjer_avrunda_fem = TRUE,
                                x_axis_lutning = 45,
                                manual_y_axis_title = "procent",
-                               manual_color = diagramfarger("rus_tre_fokus"),
-                               x_var_fokus = "fokus",
+                               manual_color = diagramfarger("kon"),
                                skriv_till_diagramfil = spara_figur)
   
   gg_list <- c(gg_list, list(gg_obj))

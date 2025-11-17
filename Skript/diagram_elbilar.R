@@ -33,7 +33,7 @@ diagram_elbilar <- function(region_vekt = "20",
         variabelkod == "N07945" ~ "Elbilar",
         variabelkod == "N07947" ~ "Laddhybrider")) %>% 
       select(ar,region,variabel_kort,varde) %>% 
-      mutate(region = skapa_kortnamn_lan(region))
+      mutate(region = skapa_kortnamn_lan(region,byt_ut_riket_mot_sverige = TRUE))
     
     
     if(returnera_data == TRUE){
@@ -86,7 +86,7 @@ diagram_elbilar <- function(region_vekt = "20",
                                  stodlinjer_avrunda_fem = TRUE,
                                  x_axis_lutning = 45,
                                  manual_y_axis_title = "procent",
-                                 manual_color = diagramfarger("rus_sex"),
+                                 manual_color = diagramfarger("rus_tre_fokus"),
                                  skriv_till_diagramfil = spara_figur)
     
     gg_list <- c(gg_list, list(gg_obj))

@@ -211,6 +211,8 @@ gg_avfall$avfall_BRP_Dalarna
 I ett konkurrenskraftigt Dalarna är näringslivet livskraftigt och skapar tillväxt inom de planetära gränserna. En väl utvecklad och hållbar infrastruktur skapar värden för näringsliv, boende och besökare. Det är ett Dalarna där allas kunskaper och kompetenser tas till vara och där individer, näringsliv, offentlig sektor och civilsamhälle utvecklas tillsammans och i samspel med omvärlden. Det är också ett nyskapande Dalarna där utmaningsdriven innovation bidrar till ett gott samhälle och hållbar tillväxt.
 </p>
 
+Den ekonomiska dimensionen av hållbarhet i det regionala utvecklingsarbetet handlar om att använda och hushålla med resurser och förädla idéer på ett miljömässigt och socialt hållbart sätt och ta vara på möjligheterna att därigenom skapa konkurrenskraft och sysselsättning. Med ett cirkulärt system där resurser och värden kan återbrukas främjas en ekonomiskt hållbar utveckling.
+
 ## Arbetskraften{.tabset}
 
 ### Invandrares etablering på arbetsmarknaden{-}
@@ -257,6 +259,16 @@ Fördelningen av dagar mellan vårdnadshavarna har jämnats ut något sedan slut
 gg_fp_vab$Foraldrapenning_andel_Dalarna
 ```
 
+### Förtroende för rättsväsendet{-}
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_fortroende_rattsvasande$fortroende_rattsvasande_Dalarna
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_fortroende_rattsvasande$fortroende_rattsvasande_sverige
+```
+
 ### Tillgång till bredband{-}
 
 Tillgång till en snabb och robust digital infrastruktur är för de flesta en grundförutsättning för att bo och verka i hela Dalarna. Fysiska och digitala mötesplatser gör att vi når både varandra och omvärlden. En av utmaningarna för Dalarna är en ojämnt fördelad digital infrastruktur. Att stärka och tillgängliggöra den digitala infrastrukturen för hela Dalarnas befolkning, oavsett plats, är avgörande för en lyckad digitalisering av samhället.
@@ -299,6 +311,13 @@ utveckling. Det är ett inkluderande, jämställt,
 och jämlikt Dalarna där människor mår bra och
 där alla ges möjlighet att utvecklas.
 </p>
+
+Den sociala dimensionen av hållbarhet i det regionala
+utvecklingsarbetet handlar om att alla människor,
+utifrån sina behov och förutsättningar, ges likvärdiga
+möjligheter att delta i samhällsutvecklingen. Ju fler
+som känner sig delaktiga, desto mer utveckling kan
+åstadkommas.
 
 ## Hälsa och trygghet{.tabset}
 
