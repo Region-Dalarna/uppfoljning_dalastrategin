@@ -271,6 +271,12 @@ där alla ges möjlighet att utvecklas.
 
 ## Hälsa och trygghet{.tabset}
 
+### Medellivslängd{-}
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_aterstaende_medellivslangd[[1]]
+```
+
 ## Hur uppkopplade är dalfolket{.tabset}
 
 ### Avsaknad av tillit till andra människor{-}

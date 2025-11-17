@@ -249,6 +249,12 @@ lag_ek_standard_df_dalarna_min_ar <- lag_ek_standard_df %>% filter(region == "Da
 lag_ek_standard_df_dalarna_max_ar <- lag_ek_standard_df %>% filter(region == "Dalarna", år == max(år)) %>% .$`Låg ekonomisk standard, procent`
 lag_ek_standard_df_dalarna_2019 <- lag_ek_standard_df %>% filter(region == "Dalarna", år == 2019) %>% .$`Låg ekonomisk standard, procent`
 
+# Medellivslängd
+source("https://raw.githubusercontent.com/Region-Dalarna/diagram/refs/heads/main/diag_aterstaende_medellivslangd_utbniva_lan_scb.R")
+gg_aterstaende_medellivslangd <- diag_aterstaende_medellivslangd_utbniva_lan_scb(region_vekt = "20",
+                                                                                 utmapp = output_mapp_figur,
+                                                                                 skriv_diagramfil = spara_figurer)
+
 # Tillit
 source(here("Skript","diagram_tillit.R"))
 gg_tillit <- diagram_tillit(region = "20",
