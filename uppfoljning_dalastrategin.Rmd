@@ -99,6 +99,22 @@ gg_vatten$vattendrag_Sverige
 
 ## Resursförbrukning{.tabset}
 
+### Kollektivt resande{-}
+
+Den utsträckta och relativt glesbefolkade geografin i Dalarna är utmaningar i arbetet med att skapa en hållbar transportinfrastruktur. För att transportsektorn ska nå klimat- och energimålen krävs kraftfull teknisk utveckling i kombination med beteendeförändringar så som minskad konsumtion av varor vars transporter orsakar höga utsläpp, ökad samåkning och minskat resande totalt sett. Kollektivt resande spelar en central roll för utvecklandet av en klimatsmart och resurseffektiv, men också mer jämlik, mobilitet. Kollektivtrafik bidrar både till miljönytta och samhällsekonomisk effektivitet men är också förenat med höga kostnader. För att klara omställningen krävs mod att ställa olika kostnader mot varandra. För att det kollektiva resandet ska öka behöver den traditionella kollektivtrafiken sannolikt kompletteras med nya mobilitetslösningar och tjänster, särskilt för länets mest glesbefolkade områden.
+
+Diagrammen redovisar indikatorer för kollektivt resande i Dalarna: Kollektivtrafiksresor per invånare samt marknadsandel för kollektivtrafik i länet. För antal resor per invånare syns att det kollektiva resandet har minskat avsevärt i Dalarna, från  `r resande_per_person_min_ar_varde ` resor per person och år `r resande_per_person_min_ar` till `r resande_per_person_max_ar_varde ` resor år `r resande_per_person_max_ar`. Nedgången kan delvis förklaras av pandemin - det sker en tydlig minskning mellan 2019 och 2020 - men även mellan 2012 och 2013 minskade antalet resor per invånare avsevärt i Dalarna. I en nationell jämförelse år 2024 framgår att det i glesbygdslänen i Sverige som mest görs runt 60 resor per person, medan det görs betydligt fler i storstadsregionerna, så som Skåne med i snitt 122 resor per person och år. I Stockholm där flest resor sker, görs 306 resor per person och år. I jämförelse med Sveriges övriga län görs näst minst antal resor med kollektivtrafik per invånare i Dalarna. Bara på Gotland görs färre resor ([Kolada](https://www.kolada.se/verktyg/fri-sokning/?kpis=40615&years=30201,30200,30199&municipals=27493,27494,27495,27496,27497,27498,27499,27500,27501,27502,27503,27504,27505,27506,27507,27508,27509,27510,27511,27512,27513&rows=municipal,kpi&visualization=bar-chart){target="_blank"}).
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_kollektivt_resande$resor_per_invanare_Dalarna
+```
+
+Marknadsandelen för kollektivtrafik beräknas som andelen resor med kollektivtrafik (linjelagd buss, spårvagn, tunnelbana, pendeltåg, tåg och båt) och taxi av det totala antalet resor, dvs kollektivtrafik, taxi, bil (förare och passagerare) samt moped/MC. Efter ett antal år av ökande marknadsandel för kollektivtrafiken bröts uppgången år 2020 av en förmodad pandemieffekt. Nedgången fortsatte år 2021 när marknadsandelen för kollektivtrafik bara var `r resande_marknadsandel_2021` procent. Därefter ökade marknadsandelen under ett par år, innan den minskade igen år `r resande_marknadsandel_max_ar`. Sett över hela tidsperioden `r resande_marknadsandel_min_ar` till `r resande_marknadsandel_max_ar` har marknadsandelen för kollektivtrafik `r okning_minskning_marknadsandel_klartext` med `r forandring_marknadsandel` procentenhet, från `r resande_marknadandel_min_ar_varde` procent år `r resande_marknadsandel_min_ar`  till `r resande_marknadsandel_max_ar_varde` procent år `r resande_marknadsandel_max_ar`. 
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_kollektivt_resande$marknadsandel_resande_Dalarna
+```
+
 ### Elbilar{-}
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
@@ -255,6 +271,17 @@ Antalet nystartade företag per kommun i Dalarna visar att `r nystartade_kommun_
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_nyst_konk$nystartade
+```
+
+### Könssegregering{-}
+
+Sedan många år har kvinnor och män haft likvärdig tillgång till utbildning och möjlighet att fritt välja yrke. Trots detta består många av könsskillnaderna i arbetslivet (se figuren nedan). Många branscher i länet har idag en tydlig övervikt av det ena eller det andra könet, exempelvis byggbranschen som omfattar yrken inom bland annat el och VVS, och där kvinnor bara utgör ungefär `r forvarvsarbetande_bygg_andel` procent av de förvärvsarbetande. Även om det har skett en ökning av andelen kvinnor inom byggbranschen är denna ökning ännu liten i sammanhanget. Inom vård och omsorg är bilden densamma men med motsatt könsfördelning. Här utgör kvinnor cirka `r forvarvsarbetande_vard_andel` procent av de förvärvsarbetande.
+
+Att åstadkomma en förändring i närtid av balansen mellan män och kvinnor inom de könssegregerade branscherna förefaller inte vara inom räckhåll då ungdomars studieval som visats ovan är så pass könsstereotypa.
+
+<br>
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_antal_forv$antal_per_bransch
 ```
 
 # Ett sammanhållet Dalarna

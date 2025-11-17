@@ -49,6 +49,30 @@ gg_elbilar <- diagram_elbilar(region = "20",
 elbilar_min_ar <- min(elbilar_df$ar)
 elbilar_max_ar <- max(elbilar_df$ar)
 
+## Kollektivt resande
+source(here("Skript","diagram_kollektivt_resande.R"))
+gg_kollektivt_resande <- diagram_kollektivt_resande(region_vekt = "20",
+                                                    output_mapp = output_mapp_figur,
+                                                    returnera_data = TRUE,
+                                                    diag_andel_per_invanare = TRUE,
+                                                    diag_marknadsandel = TRUE,
+                                                    spara_figur = spara_figurer)
+
+# Resor per invånare
+resande_per_person_min_ar <- min(kollektivt_resande_df$ar)
+resande_per_person_max_ar <- max(kollektivt_resande_df$ar)
+resande_per_person_min_ar_varde <- kollektivt_resande_df %>% filter(ar == min(ar)) %>% .$varde
+resande_per_person_max_ar_varde <- round(kollektivt_resande_df %>% filter(ar == max(ar)) %>% .$varde,0)
+
+# Marknadsandel
+resande_marknadsandel_min_ar <- min(resande_marknadsandel_df$year)
+resande_marknadsandel_max_ar <- max(resande_marknadsandel_df$year)
+resande_marknadsandel_2021 <- resande_marknadsandel_df %>% filter(kpi == "Marknadsandel_procent", year == 2021) %>% .$value
+resande_marknadandel_min_ar_varde <- resande_marknadsandel_df %>% filter(kpi == "Marknadsandel_procent", year == min(year)) %>% .$value
+resande_marknadsandel_max_ar_varde <- resande_marknadsandel_df %>% filter(kpi == "Marknadsandel_procent", year == max(year)) %>% .$value
+
+okning_minskning_marknadsandel_klartext <- ifelse(resande_marknadsandel_df %>% filter(kpi == "Marknadsandel_procent", year == max(year)) %>% .$value>resande_marknadsandel_df %>% filter(kpi == "Marknadsandel_procent", year == min(year)) %>% .$value,"ökat","minskat")
+forandring_marknadsandel <- abs(resande_marknadsandel_df %>% filter(kpi == "Marknadsandel_procent", year == max(year)) %>% .$value -resande_marknadsandel_df %>% filter(kpi == "Marknadsandel_procent", year == min(year)) %>% .$value)
 
 ## Avfall
 source(here("Skript","diagram_avfall.R"))
@@ -211,6 +235,22 @@ nystartade_kommun_hogst_max_ar <- Nystartade %>% filter(substr(year,1,1) != "m")
 nystartade_kommun_lagst_min_ar <- Nystartade %>% filter(substr(year,1,1) != "m") %>% filter(year == max(year)) %>% filter(nystartade_ftg == min(nystartade_ftg)) %>% .$municipality
 nystartade_kommun_hogst_max_ar_varde <- round(Nystartade %>% filter(substr(year,1,1) != "m") %>% filter(year == max(year)) %>% filter(nystartade_ftg == max(nystartade_ftg)) %>% .$nystartade_ftg,0)
 nystartade_kommun_lagst_min_ar_varde <- round(Nystartade %>% filter(substr(year,1,1) != "m") %>% filter(year == max(year)) %>% filter(nystartade_ftg == min(nystartade_ftg)) %>% .$nystartade_ftg,0)
+
+# Könsfördelning (bransch)
+
+source("https://raw.githubusercontent.com/Region-Dalarna/diagram/main/diagram_andel_forvarvsarbetande_bransch.R", encoding="UTF-8")
+gg_antal_forv <- diag_sysselsatta_andel(output_mapp_figur = output_mapp_figur,
+                                        returnera_figur = TRUE,
+                                        spara_figur = spara_figurer, 
+                                        diag_lan = FALSE, 
+                                        diag_kommun = FALSE,
+                                        caption = "Källa: BAS i SCB:s öppna statistikdatabas\nBearbetning: Samhällsanalys, Region Dalarna",
+                                        diag_lan_antal = TRUE, # Antal för länet, uppdelat på kvinnor och män
+                                        returnera_data = TRUE)
+
+forvarvsarbetande_bygg_andel <- antal_forvarvsarbetande_bransch %>% filter(bransch=="Bygg") %>% pivot_wider(names_from = kön, values_from = Antal) %>%  mutate(andel= (kvinnor/(män+kvinnor))*100) %>% .$andel %>% round(0)
+forvarvsarbetande_vard_andel <- antal_forvarvsarbetande_bransch %>% filter(bransch=="Vård och omsorg") %>% pivot_wider(names_from = kön, values_from = Antal) %>%  mutate(andel= (kvinnor/(män+kvinnor))*100) %>% .$andel %>% round(0)
+
 
 #########################################
 ####    Ett sammanhållet Dalarna     ####
