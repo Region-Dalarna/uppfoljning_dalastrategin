@@ -49,6 +49,11 @@ gg_elbilar <- diagram_elbilar(region = "20",
 elbilar_min_ar <- min(elbilar_df$ar)
 elbilar_max_ar <- max(elbilar_df$ar)
 
+elbilar_andel_max_ar_Dalarna <- round(elbilar_df %>% filter(ar == max(ar),region == "Dalarna") %>% .$varde %>% sum(),0)
+elbilar_andel_max_ar_Stockholm <-  round(elbilar_df %>% filter(ar == max(ar),region == "Stockholm") %>% .$varde %>% sum(),0)
+
+
+
 ## Kollektivt resande
 source(here("Skript","diagram_kollektivt_resande.R"))
 gg_kollektivt_resande <- diagram_kollektivt_resande(region_vekt = "20",

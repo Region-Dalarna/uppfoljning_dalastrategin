@@ -66,7 +66,7 @@ diagram_elbilar <- function(region_vekt = "20",
     names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
     
     # Jämför län för senaste år
-    diagram_titel <- paste0("Andelen elbilar och laddhybrider i Sverige")
+    diagram_titel <- paste0("Andelen elbilar och laddhybrider i Sverige år ",max(elbilar_df$ar))
     diagramfilnamn = paste0("elbilar_Sverige.png")
     diagram_capt = "Källa: Trafikanalys och SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andelen personbilar i trafik den 31/12."
     

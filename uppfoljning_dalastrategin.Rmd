@@ -117,9 +117,13 @@ gg_kollektivt_resande$marknadsandel_resande_Dalarna
 
 ### Elbilar{-}
 
+Andelen personbilar som helt eller delvis drivs av el har ökat tydligt i Dalarna på senare år. Fram till mitten av 2010-talet var andelen mer eller mindre obefintlig, men därefter har ökningen gått snabbt. Initialt ökade framförallt andelen laddhybrider, men på senare år har även andelen rena elbilar ökat kraftigt. Andelen är dock fortfarande relativt låg. År `r elbilar_max_ar` var ungefär `r elbilar_andel_max_ar_Dalarna` procent av personbilarna i Dalarna antingen rena elbilar eller laddhybrider.
+
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_elbilar$elbilar_Dalarna
 ```
+
+I ett nationellt perspektiv sticker framförallt Stockholms län ut, där mer än var 4:e personbil år `r elbilar_max_ar` var en ren elbil eller en laddhybrid. Bland övriga län är det framförallt storstadslän som Västra Götaland eller Skåne som har en relativt hög andel elbilar eller laddhybrider (mellan 10 och 15 procent). Lägst andel åtefinns i nordliga län som Norrbotten och Jämtland Härjedalen, men även Gotland har relativt få elbilar.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_elbilar$elbilar_Sverige
