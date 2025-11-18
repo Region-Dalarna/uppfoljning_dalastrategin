@@ -269,6 +269,17 @@ gg_fortroende_rattsvasande$fortroende_rattsvasande_Dalarna
 gg_fortroende_rattsvasande$fortroende_rattsvasande_sverige
 ```
 
+### Anmälda brott{-} 
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_anmalda_brott$anmalda_ekobrott_Dalarna
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_anmalda_brott$anmalda_bostadsinbrott_Dalarna
+```
+
+
 ### Tillgång till bredband{-}
 
 Tillgång till en snabb och robust digital infrastruktur är för de flesta en grundförutsättning för att bo och verka i hela Dalarna. Fysiska och digitala mötesplatser gör att vi når både varandra och omvärlden. En av utmaningarna för Dalarna är en ojämnt fördelad digital infrastruktur. Att stärka och tillgängliggöra den digitala infrastrukturen för hela Dalarnas befolkning, oavsett plats, är avgörande för en lyckad digitalisering av samhället.
@@ -325,6 +336,12 @@ som känner sig delaktiga, desto mer utveckling kan
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_aterstaende_medellivslangd[[1]]
+```
+
+### Brott{-}
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_anmalda_brott$`anmalda_stold-_och_tillgreppsbrott_Dalarna`
 ```
 
 ## Hur uppkopplade är dalfolket{.tabset}

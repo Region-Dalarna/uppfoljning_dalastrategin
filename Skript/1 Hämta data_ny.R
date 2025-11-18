@@ -231,6 +231,15 @@ gg_fortroende_rattsvasande <- diagram_fortroende_rattsvasande(region_vekt = "20"
                                                               returnera_data = TRUE,
                                                               spara_figur = spara_figurer)
 
+# Anmälda brott per 100 000 invånare (diverse)
+source(here("Skript","diagram_brott_hundratusen.R"))
+gg_anmalda_brott <- diagram_brott_hundratusen(region_vekt = "20",
+                                              kpi = c("N07538","U07417","N07546"),
+                                              output_mapp = output_mapp_figur,
+                                              returnera_data = TRUE,
+                                              spara_figur = spara_figurer)
+
+
 # Nystartade företag
 source("https://github.com/Region-Dalarna/sarbarhetsanalys/raw/main/Skript/diagram_nyst_arbetslosa.R")
 gg_nyst_konk <- funktion_upprepa_forsok_om_fel( function() {
