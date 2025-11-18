@@ -30,7 +30,7 @@ diagram_vatten <- function(region_vekt = "20",
   
   # Enbart ett län över tid för både elbilar och laddhybrider
   
-  diagram_titel <- paste0("Andelen vattendrag med god ekologisk status i",vald_region)
+  diagram_titel <- paste0("Andelen vattendrag med god ekologisk status i ",vald_region)
   diagramfilnamn = paste0("vattendrag_",vald_region,".png")
   diagram_capt = "Källa: VISS och Länsstyrelserna (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Klassning görs successivt under en flerårscykel. Nyckeltalet uppdateras eftersom och alla siffror utom det sista i en cykel bör ses som preliminära."
   
@@ -53,7 +53,7 @@ diagram_vatten <- function(region_vekt = "20",
   names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
   
   # Jämför län för senaste år
-  diagram_titel <- paste0("Andelen vattendrag med god ekologisk status i Sverige")
+  diagram_titel <- paste0("Andelen vattendrag med god ekologisk status i Sverige år ",max(vatten_df$ar))
   diagramfilnamn = paste0("vattendrag_Sverige")
   diagram_capt = "Källa: VISS och Länsstyrelserna (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Klassning görs successivt under en flerårscykel.\nNyckeltalet uppdateras eftersom och alla siffror utom det sista i en cykel bör ses som preliminära."
   
