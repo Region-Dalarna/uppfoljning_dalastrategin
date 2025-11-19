@@ -86,9 +86,10 @@ forandring_marknadsandel <- abs(resande_marknadsandel_df %>% filter(kpi == "Mark
 ## Avfall
 source(here("Skript","diagram_avfall.R"))
 gg_avfall <- diagram_avfall(region_vekt = "20",
-                                   output_mapp = output_mapp_figur,
-                                   returnera_data = TRUE,
-                                   spara_figur = spara_figurer)
+                            output_mapp = output_mapp_figur,
+                            returnera_data = TRUE,
+                            ggobjektfilnamn_utan_tid = TRUE,
+                            spara_figur = spara_figurer)
 
 avfall_min_ar <- min(avfall_df$ar)
 avfall_max_ar <- max(avfall_df$ar)

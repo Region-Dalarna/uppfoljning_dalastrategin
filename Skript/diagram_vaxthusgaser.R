@@ -2,6 +2,7 @@ diagram_vaxthusgaser <- function(region_vekt = "20",
                                  output_mapp = "G:/Samhällsanalys/Statistik/Näringsliv/basfakta/",
                                  filnamn = "utslapp.xlsx",
                                  returnera_data = FALSE,
+                                 ggobjektfilnamn_utan_tid = TRUE,
                                  #spara_data = FALSE,
                                  spara_figur = FALSE){
   
@@ -40,9 +41,10 @@ diagram_vaxthusgaser <- function(region_vekt = "20",
     assign("vaxthusgaser_df", vaxthusgaser_df, envir = .GlobalEnv)
   }
   
+  vald_region <- unique(vaxthusgaser_df %>% filter(region != "Riket") %>% .$region)
   
   diagram_titel <- paste0("Klimatpåverkande utsläpp i ",unique(vaxthusgaser_df %>% filter(region != "Riket") %>% .$region)," per källa")
-  diagramfilnamn = paste0("utslapp_bransch_",unique(vaxthusgaser_df %>% filter(region != "Riket") %>% .$region),".png")
+  diagramfilnamn <- glue("utslapp_bransch_{vald_region}_ar_{first(vaxthusgaser_df$ar)}_{last(vaxthusgaser_df$ar)}.png")
   diagram_capt = "Källa:  RKA (Kolada) har beräknat utsläpp med data från den Nationella emissionsdatabasen\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Utsläpp av växthusgaser inom det geografiska området i ton CO2-ekvivalenter."
 
   gg_obj <- SkapaStapelDiagram(skickad_df = vaxthusgaser_df %>%
@@ -68,8 +70,14 @@ diagram_vaxthusgaser <- function(region_vekt = "20",
   gg_list <- c(gg_list, list(gg_obj))
   names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
   
+  # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+  if (ggobjektfilnamn_utan_tid) {
+    names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+  }
+  
   diagram_titel <- "Utsläpp per invånare"
-  diagramfilnamn = paste0("utslapp_per_capita.png")
+  diagramfilnamn <- glue("utslapp_per_capita_{vald_region}_ar_{first(vaxthusgaser_df$ar)}_{last(vaxthusgaser_df$ar)}.png")
+  
   diagram_capt = "Källa: RKA (Kolada) har beräknat utsläpp med data från den Nationella emissionsdatabasen\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Utsläpp av växthusgaser inom det geografiska området i ton CO2-ekvivalenter."
   
 
@@ -92,6 +100,11 @@ diagram_vaxthusgaser <- function(region_vekt = "20",
   
   gg_list <- c(gg_list, list(gg_obj))
   names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
+  
+  # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+  if (ggobjektfilnamn_utan_tid) {
+    names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+  }
   
   return(gg_list)
   

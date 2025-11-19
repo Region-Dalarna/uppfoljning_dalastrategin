@@ -82,9 +82,7 @@ diagram_kollektivt_resande <- function(region_vekt = "20",
     # Enbart ett län över tid för både elbilar och laddhybrider
     
     diagram_titel = paste0("Marknadsandel för kollektivtrafik i Dalarna")
-    diagramfilnamn = paste0("marknadsandel_resande_",vald_region,".png")
-    diagramfilnamn <- glue("marknadsandel_resande_{vald_region}_ar_{first(resande_marknadsandel_df$ar)}_{last(resande_marknadsandel_df$ar)}.png")
-    
+    diagramfilnamn <- glue("marknadsandel_resande_{vald_region}_ar_{first(resande_marknadsandel_df$year)}_{last(resande_marknadsandel_df$year)}.png")
     diagram_capt = "Källa: Kollektivtrafikbarometern\nBearbetning: Samhällsanalys, Region Dalarna\nAndelen resor med Kollektivtrafik (linjelagd buss, spårvagn, tunnelbana, pendeltåg, tåg och båt) och taxi\nav det totala antalet resor med Kollektivtrafik, taxi, bil (förare och passagerare) samt moped/MC."
     
     gg_obj <- SkapaStapelDiagram(skickad_df = resande_marknadsandel %>% 

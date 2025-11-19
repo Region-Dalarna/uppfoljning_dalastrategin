@@ -2,6 +2,7 @@ diagram_avfall <- function(region_vekt = "20",
                            output_mapp = "G:/Samhällsanalys/Statistik/Näringsliv/basfakta/",
                            filnamn = "utslapp.xlsx",
                            returnera_data = FALSE,
+                           ggobjektfilnamn_utan_tid = TRUE,
                            #spara_data = FALSE,
                            spara_figur = FALSE){
   
@@ -13,7 +14,8 @@ diagram_avfall <- function(region_vekt = "20",
   pacman::p_load(tidyverse,
                  rKolada,
                  readxl,
-                 pxweb)
+                 pxweb,
+                 glue)
   
   gg_list <- list()
   
@@ -45,7 +47,7 @@ diagram_avfall <- function(region_vekt = "20",
   ################################
   
   diagram_titel <- paste0("Insamlat avfall i ",unique(avfall_df%>% .$region))
-  diagramfilnamn = paste0("avfall_",unique(avfall_df%>% .$region),".png")
+  diagramfilnamn <- glue("avfall_{unique(avfall_df%>% .$region)}_ar_{first(avfall_df$ar)}_{last(avfall_df$ar)}.png")
   diagram_capt = "Källa: Avfall Sverige (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Antal kilogram kommunalt avfall per justerat invånarantal i Dalarna"
   
   gg_obj <- SkapaStapelDiagram(skickad_df = avfall_df %>% 
@@ -64,6 +66,11 @@ diagram_avfall <- function(region_vekt = "20",
   
   gg_list <- c(gg_list, list(gg_obj))
   names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
+  
+  # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+  if (ggobjektfilnamn_utan_tid) {
+    names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+  }
 
   #######################################
   # Insamlat avfall i relation till BRP 
@@ -114,6 +121,8 @@ diagram_avfall <- function(region_vekt = "20",
     
     diagram_titel <- paste0("Avfall/BRP i ",unique(avfall_df%>% .$region))
     diagramfilnamn = paste0("avfall_BRP_",unique(avfall_df%>% .$region),".png")
+    diagramfilnamn <- glue("avfall_BRP_{unique(avfall_df%>% .$region)}_ar_{first(avfall_brp_df$ar)}_{last(avfall_brp_df$ar)}.png")
+    
     diagram_capt = "Källa: Avfall Sverige (via Kolada) och SCB\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Antal kilogram kommunalt avfall dividerat med BRP (miljoner kronor) i Dalarna"
     
     gg_obj <- SkapaStapelDiagram(skickad_df = avfallbrp,
@@ -131,6 +140,11 @@ diagram_avfall <- function(region_vekt = "20",
     
     gg_list <- c(gg_list, list(gg_obj))
     names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
+    
+    # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+    if (ggobjektfilnamn_utan_tid) {
+      names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+    }
 
   return(gg_list)
   
