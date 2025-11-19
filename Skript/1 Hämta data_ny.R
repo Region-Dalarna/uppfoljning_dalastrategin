@@ -20,6 +20,7 @@ source(here("Skript","diagram_skogsmark.R"))
 gg_skogsmark <- diagram_skogsmark(region = "20",
                                  output_mapp = output_mapp_figur,
                                  returnera_data = TRUE,
+                                 ggobjektfilnamn_utan_tid = TRUE,
                                  spara_figur = spara_figurer)
 
 ar_min_skogsmark <- as.character(min(skogsmark_df$år))
@@ -37,14 +38,16 @@ source(here("Skript","diagram_vatten.R"))
 gg_vatten <- diagram_vatten(region = "20",
                             output_mapp = output_mapp_figur,
                             returnera_data = TRUE,
+                            ggobjektfilnamn_utan_tid = TRUE,
                             spara_figur = spara_figurer)
 
 ## Elbilar och laddhybrider
 source(here("Skript","diagram_elbilar.R"))
 gg_elbilar <- diagram_elbilar(region = "20",
-                                output_mapp = output_mapp_figur,
-                                returnera_data = TRUE,
-                                spara_figur = spara_figurer)
+                              output_mapp = output_mapp_figur,
+                              returnera_data = TRUE,
+                              ggobjektfilnamn_utan_tid = TRUE,
+                              spara_figur = spara_figurer)
 
 elbilar_min_ar <- min(elbilar_df$ar)
 elbilar_max_ar <- max(elbilar_df$ar)
@@ -61,6 +64,7 @@ gg_kollektivt_resande <- diagram_kollektivt_resande(region_vekt = "20",
                                                     returnera_data = TRUE,
                                                     diag_andel_per_invanare = TRUE,
                                                     diag_marknadsandel = TRUE,
+                                                    ggobjektfilnamn_utan_tid = TRUE,
                                                     spara_figur = spara_figurer)
 
 # Resor per invånare

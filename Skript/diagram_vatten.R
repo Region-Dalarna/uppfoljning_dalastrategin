@@ -2,6 +2,7 @@ diagram_vatten <- function(region_vekt = "20",
                             output_mapp = "G:/Samhällsanalys/Statistik/Näringsliv/basfakta/",
                             filnamn = "utslapp.xlsx",
                             returnera_data = FALSE,
+                            ggobjektfilnamn_utan_tid = TRUE,
                             #spara_data = FALSE,
                             spara_figur = FALSE){
   
@@ -12,7 +13,8 @@ diagram_vatten <- function(region_vekt = "20",
   if (!require("pacman")) install.packages("pacman")
   pacman::p_load(tidyverse,
                  rKolada,
-                 readxl)
+                 readxl,
+                 glue)
   
   gg_list <- list()
   
@@ -31,7 +33,7 @@ diagram_vatten <- function(region_vekt = "20",
   # Enbart ett län över tid för både elbilar och laddhybrider
   
   diagram_titel <- paste0("Andelen vattendrag med god ekologisk status i ",vald_region)
-  diagramfilnamn = paste0("vattendrag_",vald_region,".png")
+  diagramfilnamn <- glue("vattendrag_{vald_region}_ar_{first(vatten_df$ar)}_{last(vatten_df$ar)}.png")
   diagram_capt = "Källa: VISS och Länsstyrelserna (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Klassning görs successivt under en flerårscykel. Nyckeltalet uppdateras eftersom och alla siffror utom det sista i en cykel bör ses som preliminära."
   
   gg_obj <- SkapaStapelDiagram(skickad_df = vatten_df %>% 
@@ -52,9 +54,14 @@ diagram_vatten <- function(region_vekt = "20",
   gg_list <- c(gg_list, list(gg_obj))
   names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
   
+  # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+  if (ggobjektfilnamn_utan_tid) {
+    names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+  }
+  
   # Jämför län för senaste år
   diagram_titel <- paste0("Andelen vattendrag med god ekologisk status i Sverige år ",max(vatten_df$ar))
-  diagramfilnamn = paste0("vattendrag_Sverige")
+  diagramfilnamn <- glue("vattendrag_Sverige_ar_{last(vatten_df$ar)}.png")
   diagram_capt = "Källa: VISS och Länsstyrelserna (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Klassning görs successivt under en flerårscykel.\nNyckeltalet uppdateras eftersom och alla siffror utom det sista i en cykel bör ses som preliminära."
   
   gg_obj <- SkapaStapelDiagram(skickad_df = vatten_df %>% 
@@ -79,6 +86,11 @@ diagram_vatten <- function(region_vekt = "20",
   
   gg_list <- c(gg_list, list(gg_obj))
   names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
+  
+  # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+  if (ggobjektfilnamn_utan_tid) {
+    names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+  }
   
   
   return(gg_list)

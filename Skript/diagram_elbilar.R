@@ -4,6 +4,7 @@ diagram_elbilar <- function(region_vekt = "20",
                             returnera_data = FALSE,
                             diag_lan = TRUE,
                             diag_kommun = FALSE,
+                            ggobjektfilnamn_utan_tid = TRUE,
                             #spara_data = FALSE,
                             spara_figur = FALSE){
   
@@ -14,7 +15,8 @@ diagram_elbilar <- function(region_vekt = "20",
   if (!require("pacman")) install.packages("pacman")
   pacman::p_load(tidyverse,
                  rKolada,
-                 readxl)
+                 readxl,
+                 glue)
   
   gg_list <- list()
   
@@ -43,7 +45,7 @@ diagram_elbilar <- function(region_vekt = "20",
     # Enbart ett län över tid för både elbilar och laddhybrider
     
     diagram_titel <- paste0("Andelen elbilar och laddhybrider i ",vald_region)
-    diagramfilnamn = paste0("elbilar_",vald_region,".png")
+    diagramfilnamn <- glue("elbilar_{vald_region}_ar_{first(elbilar_df$ar)}_{last(elbilar_df$ar)}.png")
     diagram_capt = "Källa: Trafikanalys och SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andelen personbilar i trafik den 31/12."
     
     gg_obj <- SkapaStapelDiagram(skickad_df = elbilar_df %>% 
@@ -65,9 +67,14 @@ diagram_elbilar <- function(region_vekt = "20",
     gg_list <- c(gg_list, list(gg_obj))
     names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
     
+    # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+    if (ggobjektfilnamn_utan_tid) {
+      names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+    }
+    
     # Jämför län för senaste år
     diagram_titel <- paste0("Andelen elbilar och laddhybrider i Sverige år ",max(elbilar_df$ar))
-    diagramfilnamn = paste0("elbilar_Sverige.png")
+    diagramfilnamn <- glue("elbilar_Sverige_ar_{last(elbilar_df$ar)}.png")
     diagram_capt = "Källa: Trafikanalys och SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andelen personbilar i trafik den 31/12."
     
     gg_obj <- SkapaStapelDiagram(skickad_df = elbilar_df %>% 
@@ -92,6 +99,11 @@ diagram_elbilar <- function(region_vekt = "20",
     gg_list <- c(gg_list, list(gg_obj))
     names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
     
+    # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+    if (ggobjektfilnamn_utan_tid) {
+      names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+    }
+    
   }
   
   if(diag_kommun == TRUE){
@@ -112,7 +124,7 @@ diagram_elbilar <- function(region_vekt = "20",
     }
     
     diagram_titel <- paste0("Andelen elbilar och laddhybrider i ",vald_region)
-    diagramfilnamn = paste0("elbilar_kommun_",vald_region,".png")
+    diagramfilnamn <- glue("elbilar_kommun_{vald_region}_ar_{last(elbilar_df$ar)}.png")
     diagram_capt = "Källa: Trafikanalys och SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andelen personbilar i trafik den 31/12."
     
     gg_obj <- SkapaStapelDiagram(skickad_df = elbilar_kommun_df %>% 
@@ -136,6 +148,11 @@ diagram_elbilar <- function(region_vekt = "20",
     
     gg_list <- c(gg_list, list(gg_obj))
     names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
+    
+    # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+    if (ggobjektfilnamn_utan_tid) {
+      names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+    }
     
     
   }

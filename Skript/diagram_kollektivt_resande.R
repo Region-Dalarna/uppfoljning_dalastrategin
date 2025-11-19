@@ -5,6 +5,7 @@ diagram_kollektivt_resande <- function(region_vekt = "20",
                                        diag_andel_per_invanare = TRUE,
                                        diag_marknadsandel = TRUE,
                                        startar_per_invanare = "2010",
+                                       ggobjektfilnamn_utan_tid = TRUE,
                                        #spara_data = FALSE,
                                        spara_figur = FALSE){
   
@@ -15,7 +16,8 @@ diagram_kollektivt_resande <- function(region_vekt = "20",
   if (!require("pacman")) install.packages("pacman")
   pacman::p_load(tidyverse,
                  rKolada,
-                 readxl)
+                 readxl,
+                 glue)
   
   gg_list <- list()
   
@@ -38,11 +40,9 @@ diagram_kollektivt_resande <- function(region_vekt = "20",
     if(returnera_data == TRUE){
       assign("kollektivt_resande_df", kollektivt_resande_df, envir = .GlobalEnv)
     }
-    
-    # Enbart ett län över tid för både elbilar och laddhybrider
-    
+
     diagram_titel <- paste0("Resor per invånare med kollektivtrafik i",vald_region)
-    diagramfilnamn = paste0("resor_per_invanare_",vald_region,".png")
+    diagramfilnamn <- glue("resor_per_invanare_{vald_region}_ar_{startar_per_invanare}_{last(kollektivt_resande_df$ar)}.png")
     diagram_capt = "Källa: Trafikanalys (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna"
     
     gg_obj <- SkapaStapelDiagram(skickad_df = kollektivt_resande_df %>% 
@@ -63,6 +63,11 @@ diagram_kollektivt_resande <- function(region_vekt = "20",
     gg_list <- c(gg_list, list(gg_obj))
     names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
     
+    # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+    if (ggobjektfilnamn_utan_tid) {
+      names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+    }
+    
   }
   
   if(diag_marknadsandel == TRUE){
@@ -78,6 +83,8 @@ diagram_kollektivt_resande <- function(region_vekt = "20",
     
     diagram_titel = paste0("Marknadsandel för kollektivtrafik i Dalarna")
     diagramfilnamn = paste0("marknadsandel_resande_",vald_region,".png")
+    diagramfilnamn <- glue("marknadsandel_resande_{vald_region}_ar_{first(resande_marknadsandel_df$ar)}_{last(resande_marknadsandel_df$ar)}.png")
+    
     diagram_capt = "Källa: Kollektivtrafikbarometern\nBearbetning: Samhällsanalys, Region Dalarna\nAndelen resor med Kollektivtrafik (linjelagd buss, spårvagn, tunnelbana, pendeltåg, tåg och båt) och taxi\nav det totala antalet resor med Kollektivtrafik, taxi, bil (förare och passagerare) samt moped/MC."
     
     gg_obj <- SkapaStapelDiagram(skickad_df = resande_marknadsandel %>% 
@@ -99,6 +106,11 @@ diagram_kollektivt_resande <- function(region_vekt = "20",
     
     gg_list <- c(gg_list, list(gg_obj))
     names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
+    
+    # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+    if (ggobjektfilnamn_utan_tid) {
+      names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+    }
     
   }
   

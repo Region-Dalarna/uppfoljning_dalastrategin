@@ -1,13 +1,19 @@
 diagram_skogsmark <- function(region = "20",
                               output_mapp = "G:/Samhällsanalys/Statistik/Näringsliv/basfakta/",
-                              filnamn = "skogsmark.xlsx",
+                              #filnamn = "skogsmark.xlsx",
                               returnera_data = FALSE,
+                              ggobjektfilnamn_utan_tid = TRUE,
                               #spara_data = FALSE,
                               spara_figur = FALSE){
   
   # ===========================================================================================================
-  # Skapar diagram över skyddad produktiv skogsmark för vald region
-  # ===========================================================================================================  
+  # Skapar två diagram över skyddad produktiv skogsmark för vald region
+  # ===========================================================================================================
+  if (!require("pacman")) install.packages("pacman")
+  pacman::p_load(tidyverse,
+                 rKolada,
+                 readxl,
+                 glue)
   
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R")
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_SkapaDiagram.R")
@@ -30,10 +36,8 @@ diagram_skogsmark <- function(region = "20",
     assign("skogsmark_df", skogsmark_df, envir = .GlobalEnv)
   }
   
-  skapa_kortnamn_lan(unique(skogsmark_df$region))
-  
   diagram_titel <- paste0("Areal skyddad produktiv skogsmark i ",skapa_kortnamn_lan(unique(skogsmark_df$region)))
-  diagramfilnamn <- paste0("areal_skyddad_skogsmark_",skapa_kortnamn_lan(unique(skogsmark_df$region)),".png")
+  diagramfilnamn <- glue("areal_skyddad_skogsmark_{skapa_kortnamn_lan(unique(skogsmark_df$region))}_ar_{first(skogsmark_df$år)}_{last(skogsmark_df$år)}.png")
   diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna"
 
   gg_obj <- SkapaStapelDiagram(skickad_df = skogsmark_df %>%
@@ -52,8 +56,13 @@ diagram_skogsmark <- function(region = "20",
   gg_list <- c(gg_list, list(gg_obj))
   names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
   
+  # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+  if (ggobjektfilnamn_utan_tid) {
+    names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+  }
+  
   diagram_titel <- paste0("Andel skyddad produktiv skogsmark i ",skapa_kortnamn_lan(unique(skogsmark_df$region)))
-  diagramfilnamn <- paste0("andel_skyddad_skogsmark_",skapa_kortnamn_lan(unique(skogsmark_df$region)),".png")
+  diagramfilnamn <- glue("andel_skyddad_skogsmark_{skapa_kortnamn_lan(unique(skogsmark_df$region))}_ar_{first(skogsmark_df$år)}_{last(skogsmark_df$år)}.png")
   diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna"
   
   gg_obj <- SkapaStapelDiagram(skickad_df = skogsmark_df,
@@ -70,6 +79,11 @@ diagram_skogsmark <- function(region = "20",
   
   gg_list <- c(gg_list, list(gg_obj))
   names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
+  
+  # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+  if (ggobjektfilnamn_utan_tid) {
+    names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+  }
   
   return(gg_list)
   
