@@ -1,7 +1,8 @@
 diagram_energiproduktion <- function(region_vekt = "20",
                              output_mapp = "G:/Samhällsanalys/Statistik/Näringsliv/basfakta/",
-                             filnamn = "utslapp.xlsx",
+                             #filnamn = "utslapp.xlsx",
                              returnera_data = FALSE,
+                             ggobjektfilnamn_utan_tid = TRUE,
                              #spara_data = FALSE,
                              spara_figur = FALSE){
   
@@ -12,7 +13,8 @@ diagram_energiproduktion <- function(region_vekt = "20",
   if (!require("pacman")) install.packages("pacman")
   pacman::p_load(tidyverse,
                  rKolada,
-                 readxl)
+                 readxl,
+                 glue)
   
   gg_list <- list()
   
@@ -41,7 +43,7 @@ diagram_energiproduktion <- function(region_vekt = "20",
   }
   
   diagram_titel <- paste0("Elproduktion i ",unique(elproduktion_df%>% .$region))
-  diagramfilnamn = paste0("elproduktion_",unique(elproduktion_df%>% .$region),".png")
+  diagramfilnamn <- glue("elproduktion_{unique(elproduktion_df%>% .$region)}_ar_{first(elproduktion_df$ar)}_{last(elproduktion_df$ar)}.png")
   diagram_capt = "Källa: Energimyndigheten och SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Elproduktion inom det geografiska områdets gränser, oavsett producent.\nVattenkraft och övrigt har beräknats som skillnaden mellan total elproduktion och produktion från vindkraft."
   
   gg_obj <- SkapaStapelDiagram(skickad_df = elproduktion_df %>% 
@@ -63,6 +65,11 @@ diagram_energiproduktion <- function(region_vekt = "20",
 
   gg_list <- c(gg_list, list(gg_obj))
   names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
+  
+  # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+  if (ggobjektfilnamn_utan_tid) {
+    names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+  }
   
   return(gg_list)
   

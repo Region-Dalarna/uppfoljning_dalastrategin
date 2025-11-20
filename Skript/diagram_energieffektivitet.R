@@ -2,6 +2,7 @@ diagram_energieffektivitet <- function(region_vekt = "20",
                                        output_mapp = "G:/Samhällsanalys/Statistik/Näringsliv/basfakta/",
                                        filnamn = "utslapp.xlsx",
                                        returnera_data = FALSE,
+                                       ggobjektfilnamn_utan_tid = TRUE,
                                        #spara_data = FALSE,
                                        spara_figur = FALSE){
   
@@ -79,7 +80,7 @@ diagram_energieffektivitet <- function(region_vekt = "20",
   ## Dalarna över tid
   
   diagram_titel <- paste0("Energieffektivitet i ",vald_region)
-  diagramfilnamn = paste0("energieffektivitet_",vald_region,".png")
+  diagramfilnamn <- glue("energieffektivitet_{vald_region}_ar_{first(energieffektivitet$År)}_{last(energieffektivitet$År)}.png")
   diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna"
   
   gg_obj <- SkapaStapelDiagram(skickad_df = energieffektivitet %>% 
@@ -99,10 +100,17 @@ diagram_energieffektivitet <- function(region_vekt = "20",
   gg_list <- c(gg_list, list(gg_obj))
   names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
   
+  # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+  if (ggobjektfilnamn_utan_tid) {
+    names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+  }
+  
   # Alla län för senaste år
   
   diagram_titel = paste0("Energieffektivitet i Sverige år ", max(energieffektivitet$År))
   diagramfilnamn = paste0("energieffektivitet_alla_lan.png")
+  diagramfilnamn <- glue("energieffektivitet_alla_lan_ar_{last(energieffektivitet$År)}.png")
+  
   diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna"
   
   gg_obj <- SkapaStapelDiagram(skickad_df = energieffektivitet  %>% 
@@ -126,6 +134,11 @@ diagram_energieffektivitet <- function(region_vekt = "20",
   
   gg_list <- c(gg_list, list(gg_obj))
   names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
+  
+  # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+  if (ggobjektfilnamn_utan_tid) {
+    names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+  }
 
   
   return(gg_list)

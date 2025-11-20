@@ -106,9 +106,10 @@ avfall_brp_max_ar_varde <- format(plyr::round_any(avfall_brp_df %>% filter(ar ==
 ## Utsläpp
 source(here("Skript","diagram_vaxthusgaser.R"))
 gg_utslapp <- diagram_vaxthusgaser(region_vekt = "20",
-                                     output_mapp = output_mapp_figur,
-                                     returnera_data = TRUE,
-                                     spara_figur = spara_figurer)
+                                   output_mapp = output_mapp_figur,
+                                   returnera_data = TRUE,
+                                   ggobjektfilnamn_utan_tid = TRUE,
+                                   spara_figur = spara_figurer)
 
 utslapp_min_ar <- min(vaxthusgaser_df$ar)
 utslapp_max_ar <- max(vaxthusgaser_df$ar)
@@ -131,6 +132,7 @@ source(here("Skript","diagram_energiproduktion.R"))
 gg_energiproduktion <- diagram_energiproduktion(region = "20",
                                                 output_mapp = output_mapp_figur,
                                                 returnera_data = TRUE,
+                                                ggobjektfilnamn_utan_tid = TRUE,
                                                 spara_figur = spara_figurer)
 
 elproduktion_min_ar <- min(elproduktion_df$ar)
@@ -152,6 +154,7 @@ source(here("Skript","diagram_energieffektivitet.R"))
 gg_energieffektivitet <- diagram_energieffektivitet(region = "20",
                                                     output_mapp = output_mapp_figur,
                                                     returnera_data = TRUE,
+                                                    ggobjektfilnamn_utan_tid = TRUE,
                                                     spara_figur = spara_figurer)
 
 energieffektivitet_min_ar <- min(energieffektivitet_df$År)
