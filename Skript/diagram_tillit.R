@@ -37,7 +37,7 @@ diagram_tillit <- function(region_vekt = "20",
   }
   
   diagram_titel <- paste0("Avsaknad av tillit till andra i ",unique(deltagande%>%.$Region))
-  diagramfilnamn = paste0("tillit_",unique(deltagande%>% .$Region),".png")
+  diagramfilnamn <- glue("tillit_{unique(deltagande%>% .$Region)}_ar_{substr(min(deltagande$År),1,4)}_{substr(max(deltagande$År),1,4)}.png")
   diagram_capt = " Källa: Nationella folkhälsoenkäten - Hälsa på lika villkor (Folkhälsomyndigheten)\n Bearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andel (%) invånare 16-84 år med avsaknad av tillit till andra"
   
   gg_obj <- SkapaStapelDiagram(skickad_df = deltagande %>% 
@@ -62,6 +62,11 @@ diagram_tillit <- function(region_vekt = "20",
   
   gg_list <- c(gg_list, list(gg_obj))
   names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
+  
+  # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+  if (ggobjektfilnamn_utan_tid) {
+    names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+  }
   
   return(gg_list)
   

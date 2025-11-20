@@ -335,7 +335,7 @@ som känner sig delaktiga, desto mer utveckling kan
 ### Medellivslängd{-}
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_aterstaende_medellivslangd[[1]]
+gg_aterstaende_medellivslangd$`medellivslangd_aterstaende_vid_30 år_alder_Dalarna`
 ```
 
 ### Brott{-}

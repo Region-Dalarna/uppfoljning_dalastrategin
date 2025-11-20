@@ -1,9 +1,10 @@
 diagram_bredband <- function(region_vekt = "20",
-                                 output_mapp = "G:/Samhällsanalys/Statistik/Näringsliv/basfakta/",
-                                 filnamn = "utslapp.xlsx",
-                                 returnera_data = FALSE,
-                                 #spara_data = FALSE,
-                                 spara_figur = FALSE){
+                             output_mapp = "G:/Samhällsanalys/Statistik/Näringsliv/basfakta/",
+                             #filnamn = "utslapp.xlsx",
+                             returnera_data = FALSE,
+                             ggobjektfilnamn_utan_tid = TRUE,
+                             #spara_data = FALSE,
+                             spara_figur = FALSE){
   
   # ===========================================================================================================
   
@@ -25,8 +26,10 @@ diagram_bredband <- function(region_vekt = "20",
     assign("bredband_df", bredband_df, envir = .GlobalEnv)
   }
   
+  vald_region <- unique(bredband_df %>% filter(region != "Riket") %>% .$region)
+  
   diagram_titel <- paste0("Tillgång till bredband i ",unique(bredband_df %>% filter(region != "Riket") %>% .$region))
-  diagramfilnamn = paste0("tillgang_bredband_",unique(bredband_df %>% filter(region != "Riket") %>% .$region),".png")
+  diagramfilnamn <- glue("tillgang_bredband_{vald_region}_ar_{min(bredband_df$ar)}_{max(bredband_df$ar)}.png")
   diagram_capt = "Källa:  Post- och telestyrelsen, PTS (via Kolada), bearbetning av Samhällsanalys, Region Dalarna\nDiagramförklaring: Hushåll med tillgång till eller möjlighet att ansluta till bredband om minst 1 Gbit/s, andel (%),\nså kallade homes passed"
   
   gg_obj <- SkapaStapelDiagram(skickad_df = bredband_df %>%
@@ -45,6 +48,11 @@ diagram_bredband <- function(region_vekt = "20",
 
   gg_list <- c(gg_list, list(gg_obj))
   names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
+  
+  # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+  if (ggobjektfilnamn_utan_tid) {
+    names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+  }
 
   return(gg_list)
   

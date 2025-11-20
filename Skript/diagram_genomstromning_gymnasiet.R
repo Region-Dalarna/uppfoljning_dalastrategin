@@ -1,7 +1,8 @@
 diagram_genomstromning_gymnasiet <- function(region_vekt = "20",
                                              output_mapp = "G:/Samhällsanalys/Statistik/Näringsliv/basfakta/",
-                                             filnamn = "utslapp.xlsx",
+                                             #filnamn = "utslapp.xlsx",
                                              returnera_data = FALSE,
+                                             ggobjektfilnamn_utan_tid = TRUE,
                                              #spara_data = FALSE,
                                              spara_figur = FALSE){
   
@@ -30,7 +31,7 @@ diagram_genomstromning_gymnasiet <- function(region_vekt = "20",
   }
   
   diagram_titel <- paste0("Andel i ",unique(gymnasie %>%.$region)," med fullföljd gymnasieutbildning inom fyra år")
-  diagramfilnamn = paste0("genomstromning_gymnasiet_",unique(gymnasie %>% .$region),".png")
+  diagramfilnamn <- glue("genomstromning_gymnasiet_{unique(gymnasie %>% .$region)}_ar_{substr(last(gymnasie$läsår),1,4)}_{substr(first(gymnasie$läsår),1,4)}.png")
   diagram_capt = "Källa: Skolverket\nBearbetning: Samhällsanalys, Region Dalarna"
   
   gg_obj <- SkapaStapelDiagram(skickad_df = gymnasie ,
@@ -53,6 +54,11 @@ diagram_genomstromning_gymnasiet <- function(region_vekt = "20",
   
   gg_list <- c(gg_list, list(gg_obj))
   names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
+  
+  # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+  if (ggobjektfilnamn_utan_tid) {
+    names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+  }
   
   return(gg_list)
   

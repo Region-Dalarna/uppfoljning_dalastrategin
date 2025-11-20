@@ -194,6 +194,7 @@ source(here("Skript","diagram_genomstromning_gymnasiet.R"))
 gg_genomstromning_gym <- diagram_genomstromning_gymnasiet(region_vekt = "20",
                                                           output_mapp = output_mapp_figur,
                                                           returnera_data = TRUE,
+                                                          ggobjektfilnamn_utan_tid = TRUE,
                                                           spara_figur = spara_figurer)
 
 gymnasiet_min_lasar <- genomstromning_gymnasiet_df %>% filter(läsår == min(läsår)) %>% .$läsår
@@ -213,9 +214,10 @@ gymnasiet_hogst_avklarat_andel <- gsub("\\.",",",genomstromning_gymnasiet_df %>%
 ## Tillgång till bredband
 source(here("Skript","diagram_bredband.R"))
 gg_bredband <- diagram_bredband(region_vekt = "20",
-                                   output_mapp = output_mapp_figur,
-                                   returnera_data = TRUE,
-                                   spara_figur = spara_figurer)
+                                output_mapp = output_mapp_figur,
+                                returnera_data = TRUE,
+                                ggobjektfilnamn_utan_tid = TRUE,
+                                spara_figur = spara_figurer)
 
 bredband_min_ar <- min(bredband_df$ar)
 bredband_max_ar <- max(bredband_df$ar)
@@ -237,6 +239,7 @@ source(here("Skript","diagram_fortroende_rattsvasande.R"))
 gg_fortroende_rattsvasande <- diagram_fortroende_rattsvasande(region_vekt = "20",
                                                               output_mapp = output_mapp_figur,
                                                               returnera_data = TRUE,
+                                                              ggobjektfilnamn_utan_tid = TRUE,
                                                               spara_figur = spara_figurer)
 
 # Anmälda brott per 100 000 invånare (diverse)
@@ -245,6 +248,7 @@ gg_anmalda_brott <- diagram_brott_hundratusen(region_vekt = "20",
                                               kpi = c("N07538","U07417","N07546"),
                                               output_mapp = output_mapp_figur,
                                               returnera_data = TRUE,
+                                              ggobjektfilnamn_utan_tid = TRUE,
                                               spara_figur = spara_figurer)
 
 
@@ -322,6 +326,7 @@ lag_ek_standard_df_dalarna_2019 <- lag_ek_standard_df %>% filter(region == "Dala
 source("https://raw.githubusercontent.com/Region-Dalarna/diagram/refs/heads/main/diag_aterstaende_medellivslangd_utbniva_lan_scb.R")
 gg_aterstaende_medellivslangd <- diag_aterstaende_medellivslangd_utbniva_lan_scb(region_vekt = "20",
                                                                                  utmapp = output_mapp_figur,
+                                                                                 ggobjektfilnamn_utan_tid = TRUE,
                                                                                  skriv_diagramfil = spara_figurer)
 
 # Tillit

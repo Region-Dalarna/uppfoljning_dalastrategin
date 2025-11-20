@@ -3,6 +3,7 @@ diagram_brott_hundratusen <- function(region_vekt = "20",
                                       returnera_data = FALSE,
                                       kpi = c("N07538"), # Ekobrott, finns även andra, se Kolada
                                       #spara_data = FALSE,
+                                      ggobjektfilnamn_utan_tid = TRUE,
                                       spara_figur = FALSE){
   
   # ===========================================================================================================
@@ -43,7 +44,7 @@ diagram_brott_hundratusen <- function(region_vekt = "20",
     variabel_fil <- tolower(gsub(" +", "_",stringi::stri_trans_general(sub(",.*", "", unique(df$variabel)), "Latin-ASCII")))
     
     diagram_titel <- paste0(sub(",.*", "", unique(df$variabel)) ," i ",vald_region," år ",max(df$ar))
-    diagramfilnamn = paste0(variabel_fil,"_",vald_region,"_",max(df$ar),".png")
+    diagramfilnamn = paste0(variabel_fil,"_",vald_region,"_ar_",max(df$ar),".png")
     diagram_capt = "Källa: BRÅ och SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna"
     
     gg_obj <- SkapaStapelDiagram(skickad_df = df %>% 
@@ -64,7 +65,13 @@ diagram_brott_hundratusen <- function(region_vekt = "20",
                                  skriv_till_diagramfil = spara_figur)
     
     gg_list <- c(gg_list, list(gg_obj))
-    names(gg_list)[[length(gg_list)]] <- paste0(variabel_fil,"_",vald_region)
+    names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
+    
+    # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+    if (ggobjektfilnamn_utan_tid) {
+      names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+    }
+    
     return(gg_list)
   }
   

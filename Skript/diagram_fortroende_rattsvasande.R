@@ -1,8 +1,9 @@
 diagram_fortroende_rattsvasande <- function(region_vekt = "20",
                                             output_mapp = "G:/Samhällsanalys/Statistik/Näringsliv/basfakta/",
-                                            filnamn = "utslapp.xlsx",
+                                            #filnamn = "utslapp.xlsx",
                                             returnera_data = FALSE,
                                             #spara_data = FALSE,
+                                            ggobjektfilnamn_utan_tid = TRUE,
                                             spara_figur = FALSE){
   
   # ===========================================================================================================
@@ -31,7 +32,7 @@ diagram_fortroende_rattsvasande <- function(region_vekt = "20",
   # Enbart ett län över tid för både elbilar och laddhybrider
   
   diagram_titel <- paste0("Andel med mycket stort eller ganska stort förtroende för rättsväsandet i ",vald_region)
-  diagramfilnamn = paste0("fortroende_rattsvasande_",vald_region,".png")
+  diagramfilnamn <- glue("fortroende_rattsvasande_{vald_region}_ar_{min(fortroende_df$ar)}_{max(fortroende_df$ar)}.png")
   diagram_capt = "Källa: BRÅs nationella trygghetsundersökning\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andel som har svarat Mycket stort eller Ganska stort på frågan\nOm du tänker dig rättsväsendet som en helhet. Hur stort eller litet förtroende har du för rättsväsendet?"
   
   gg_obj <- SkapaStapelDiagram(skickad_df = fortroende_df %>% 
@@ -53,9 +54,15 @@ diagram_fortroende_rattsvasande <- function(region_vekt = "20",
   gg_list <- c(gg_list, list(gg_obj))
   names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
   
+  # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+  if (ggobjektfilnamn_utan_tid) {
+    names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+  }
+  
+  
   # Jämför län för senaste år
   diagram_titel <- paste0("Andel med mycket stort eller ganska stort förtroende för rättsväsandet i Sverige år ",max(fortroende_df$ar))
-  diagramfilnamn = paste0("fortroende_rattsvasande_sverige.png")
+  diagramfilnamn <- glue("fortroende_rattsvasande__sverige_ar_{max(fortroende_df$ar)}.png")
   diagram_capt = "Källa: BRÅs nationella trygghetsundersökning\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andel som har svarat Mycket stort eller Ganska stort på frågan\nOm du tänker dig rättsväsendet som en helhet. Hur stort eller litet förtroende har du för rättsväsendet?"
   
   gg_obj <- SkapaStapelDiagram(skickad_df = fortroende_df %>% 
@@ -82,6 +89,10 @@ diagram_fortroende_rattsvasande <- function(region_vekt = "20",
   gg_list <- c(gg_list, list(gg_obj))
   names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
   
+  # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+  if (ggobjektfilnamn_utan_tid) {
+    names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+  }
   
   return(gg_list)
   
