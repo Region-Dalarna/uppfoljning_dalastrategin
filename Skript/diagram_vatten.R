@@ -1,4 +1,5 @@
-diagram_vatten <- function(region_vekt = "20",
+
+diagram_vatten <- function(region_vekt = "20", # Län eller kommunnivå
                             output_mapp = "G:/Samhällsanalys/Statistik/Näringsliv/basfakta/",
                             filnamn = "utslapp.xlsx",
                             returnera_data = FALSE,
@@ -7,7 +8,7 @@ diagram_vatten <- function(region_vekt = "20",
                             spara_figur = FALSE){
   
   # ===========================================================================================================
-  
+   # Två diagram för andel vattendrag med god ekologisk status. Finns för både län och kommun
   # ===========================================================================================================
   
   if (!require("pacman")) install.packages("pacman")
@@ -21,14 +22,26 @@ diagram_vatten <- function(region_vekt = "20",
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R")
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_SkapaDiagram.R")
   
-  vald_region = skapa_kortnamn_lan(hamtaregion_kod_namn(region_vekt)$region)
+   vald_region = skapa_kortnamn_lan(hamtaregion_kod_namn(region_vekt)$region)
   
-  vatten_df <- hamta_kolada_df(kpi = c("N85052"),hamtaAllaLan(),valda_ar = c(2000:2100)) %>% 
-    mutate(region = skapa_kortnamn_lan(region,byt_ut_riket_mot_sverige = TRUE))
-
-  if(returnera_data == TRUE){
-    assign("vatten_df", vatten_df, envir = .GlobalEnv)
-  }
+   if(nchar(region_vekt) == 2){
+     
+     vatten_df <- hamta_kolada_df(kpi = c("N85052"),hamtaAllaLan(),valda_ar = c(2000:2100)) %>% 
+       mutate(region = skapa_kortnamn_lan(region,byt_ut_riket_mot_sverige = TRUE))
+     
+     if(returnera_data == TRUE){
+       assign("vatten_df", vatten_df, envir = .GlobalEnv)
+     }
+     
+   } else{
+     vatten_df <- hamta_kolada_df(kpi = c("N85052"),hamtakommuner(substr(region_vekt,1,2),tamedlan = TRUE,tamedriket = FALSE),valda_ar = c(2000:2100)) %>% 
+       mutate(region = skapa_kortnamn_lan(region,byt_ut_riket_mot_sverige = TRUE))
+     
+     if(returnera_data == TRUE){
+       assign("vatten_kommun_df", vatten_df, envir = .GlobalEnv)
+     }
+     
+   }
   
   # Enbart ett län över tid för både elbilar och laddhybrider
   
@@ -59,14 +72,21 @@ diagram_vatten <- function(region_vekt = "20",
     names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
   }
   
-  # Jämför län för senaste år
-  diagram_titel <- paste0("Andelen vattendrag med god ekologisk status i Sverige år ",max(vatten_df$ar))
-  diagramfilnamn <- glue("vattendrag_Sverige_ar_{last(vatten_df$ar)}.png")
+  # Jämför kommuner eller län för senaste år
+  if(nchar(region_vekt) == 2){
+    region_fokus = "Sverige"
+    diagram_titel <- paste0("Andelen vattendrag med god ekologisk status i Sverige år ",max(vatten_df$ar))
+    diagramfilnamn <- glue("vattendrag_Sverige_ar_{last(vatten_df$ar)}.png")
+  }else{
+    region_fokus = skapa_kortnamn_lan(hamtaregion_kod_namn(substr(region_vekt,1,2))$region)
+    diagram_titel <- paste0("Andelen vattendrag med god ekologisk status i ",region_fokus," år ",max(vatten_df$ar))
+    diagramfilnamn <- glue("vattendrag_",region_fokus,"_ar_{last(vatten_df$ar)}.png")
+  }
   diagram_capt = "Källa: VISS och Länsstyrelserna (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Klassning görs successivt under en flerårscykel.\nNyckeltalet uppdateras eftersom och alla siffror utom det sista i en cykel bör ses som preliminära."
   
   gg_obj <- SkapaStapelDiagram(skickad_df = vatten_df %>% 
                                  filter(ar == max(ar)) %>%
-                                 mutate(fokus = ifelse(region == vald_region, "1", ifelse(region == "Sverige", "2", "0"))),
+                                 mutate(fokus = ifelse(region == vald_region, "1", ifelse(region == region_fokus, "2", "0"))),
                                skickad_x_var = "region",
                                skickad_y_var = "varde",
                                procent_0_100_10intervaller = TRUE,
