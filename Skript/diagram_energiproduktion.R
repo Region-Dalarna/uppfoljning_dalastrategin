@@ -2,12 +2,14 @@ diagram_energiproduktion <- function(region_vekt = "20",
                              output_mapp = "G:/Samhällsanalys/Statistik/Näringsliv/basfakta/",
                              #filnamn = "utslapp.xlsx",
                              returnera_data = FALSE,
+                             stodlinjer_avrunda_fem = TRUE, # Om diagrammet får konstig y-axel (för täta stödlinjer), ändr denna till FALSE
                              ggobjektfilnamn_utan_tid = TRUE,
                              #spara_data = FALSE,
                              spara_figur = FALSE){
   
   # ===========================================================================================================
-  
+  # Ett diagram för energiproduktion. Finns både på riks, region och kommunnivå. Notera dock att det ofta saknas 
+  # data i exempelvis mindre kommuner 
   # ===========================================================================================================
   
   if (!require("pacman")) install.packages("pacman")
@@ -57,7 +59,7 @@ diagram_energiproduktion <- function(region_vekt = "20",
                                output_mapp = output_mapp,
                                filnamn_diagram = diagramfilnamn,
                                diagram_capt = diagram_capt,
-                               stodlinjer_avrunda_fem = TRUE,
+                               stodlinjer_avrunda_fem = stodlinjer_avrunda_fem,
                                x_axis_lutning = 0,
                                manual_y_axis_title = "MWh (tusental)",
                                manual_color = diagramfarger("rus_sex"),

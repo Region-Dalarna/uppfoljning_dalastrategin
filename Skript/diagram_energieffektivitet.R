@@ -1,13 +1,16 @@
 diagram_energieffektivitet <- function(region_vekt = "20",
                                        output_mapp = "G:/Samhällsanalys/Statistik/Näringsliv/basfakta/",
-                                       filnamn = "utslapp.xlsx",
+                                       #filnamn = "utslapp.xlsx",
                                        returnera_data = FALSE,
+                                       diag_tid = TRUE,
+                                       diag_jmf_senaste_ar = TRUE,
                                        ggobjektfilnamn_utan_tid = TRUE,
                                        #spara_data = FALSE,
                                        spara_figur = FALSE){
   
   # ===========================================================================================================
-  
+  # Tar fram två diagram för energieffektivitet, ett över tid för valt län och ett för alla län för senaste året
+  # Enbart på länsnivå då BRP inte finns på lägre nivå
   # ===========================================================================================================
   
   if (!require("pacman")) install.packages("pacman")
@@ -79,65 +82,71 @@ diagram_energieffektivitet <- function(region_vekt = "20",
   
   ## Dalarna över tid
   
-  diagram_titel <- paste0("Energieffektivitet i ",vald_region)
-  diagramfilnamn <- glue("energieffektivitet_{vald_region}_ar_{first(energieffektivitet$År)}_{last(energieffektivitet$År)}.png")
-  diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna"
+  if(diag_tid == TRUE){
   
-  gg_obj <- SkapaStapelDiagram(skickad_df = energieffektivitet %>% 
-                                 filter(Region == vald_region),
-                               skickad_x_var = "År",
-                               skickad_y_var = "value",
-                               diagram_titel = diagram_titel,
-                               output_mapp = output_mapp,
-                               filnamn_diagram = diagramfilnamn,
-                               diagram_capt = diagram_capt,
-                               stodlinjer_avrunda_fem = TRUE,
-                               x_axis_lutning = 0,
-                               manual_y_axis_title = "BRP per ton utsläpp av CO2 (tusental)",
-                               manual_color = diagramfarger("rus_sex"),
-                               skriv_till_diagramfil = spara_figur)
-
-  gg_list <- c(gg_list, list(gg_obj))
-  names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
+    diagram_titel <- paste0("Energieffektivitet i ",vald_region)
+    diagramfilnamn <- glue("energieffektivitet_{vald_region}_ar_{first(energieffektivitet$År)}_{last(energieffektivitet$År)}.png")
+    diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna"
+    
+    gg_obj <- SkapaStapelDiagram(skickad_df = energieffektivitet %>% 
+                                   filter(Region == vald_region),
+                                 skickad_x_var = "År",
+                                 skickad_y_var = "value",
+                                 diagram_titel = diagram_titel,
+                                 output_mapp = output_mapp,
+                                 filnamn_diagram = diagramfilnamn,
+                                 diagram_capt = diagram_capt,
+                                 stodlinjer_avrunda_fem = TRUE,
+                                 x_axis_lutning = 0,
+                                 manual_y_axis_title = "BRP per ton utsläpp av CO2 (tusental)",
+                                 manual_color = diagramfarger("rus_sex"),
+                                 skriv_till_diagramfil = spara_figur)
   
-  # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
-  if (ggobjektfilnamn_utan_tid) {
-    names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+    gg_list <- c(gg_list, list(gg_obj))
+    names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
+    
+    # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+    if (ggobjektfilnamn_utan_tid) {
+      names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+    }
+  
   }
   
   # Alla län för senaste år
+  if(diag_jmf_senaste_ar == TRUE){
   
-  diagram_titel = paste0("Energieffektivitet i Sverige år ", max(energieffektivitet$År))
-  diagramfilnamn = paste0("energieffektivitet_alla_lan.png")
-  diagramfilnamn <- glue("energieffektivitet_alla_lan_ar_{last(energieffektivitet$År)}.png")
-  
-  diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna"
-  
-  gg_obj <- SkapaStapelDiagram(skickad_df = energieffektivitet  %>% 
-                                 filter(År == max(År)) %>%
-                                 mutate(fokus = ifelse(Region == vald_region, "1", "0" )),
-                               skickad_x_var = "Region",
-                               skickad_y_var = "value",
-                               diagram_titel = diagram_titel,
-                               output_mapp = output_mapp,
-                               filnamn_diagram = diagramfilnamn,
-                               diagram_capt = diagram_capt,
-                               x_axis_sort_value = TRUE,
-                               stodlinjer_avrunda_fem = TRUE,
-                               manual_x_axis_text_hjust = 1,
-                               manual_x_axis_text_vjust = 1,
-                               x_axis_lutning = 45,
-                               x_var_fokus="fokus",
-                               manual_y_axis_title = "BRP per ton utsläpp av CO2 (tusental)",
-                               manual_color = diagramfarger("rus_tva_fokus"),
-                               skriv_till_diagramfil = spara_figur)
-  
-  gg_list <- c(gg_list, list(gg_obj))
-  names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
-  
-  # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
-  if (ggobjektfilnamn_utan_tid) {
-    names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+    diagram_titel = paste0("Energieffektivitet i Sverige år ", max(energieffektivitet$År))
+    diagramfilnamn = paste0("energieffektivitet_alla_lan.png")
+    diagramfilnamn <- glue("energieffektivitet_alla_lan_ar_{last(energieffektivitet$År)}.png")
+    
+    diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna"
+    
+    gg_obj <- SkapaStapelDiagram(skickad_df = energieffektivitet  %>% 
+                                   filter(År == max(År)) %>%
+                                   mutate(fokus = ifelse(Region == vald_region, "1", "0" )),
+                                 skickad_x_var = "Region",
+                                 skickad_y_var = "value",
+                                 diagram_titel = diagram_titel,
+                                 output_mapp = output_mapp,
+                                 filnamn_diagram = diagramfilnamn,
+                                 diagram_capt = diagram_capt,
+                                 x_axis_sort_value = TRUE,
+                                 stodlinjer_avrunda_fem = TRUE,
+                                 manual_x_axis_text_hjust = 1,
+                                 manual_x_axis_text_vjust = 1,
+                                 x_axis_lutning = 45,
+                                 x_var_fokus="fokus",
+                                 manual_y_axis_title = "BRP per ton utsläpp av CO2 (tusental)",
+                                 manual_color = diagramfarger("rus_tva_fokus"),
+                                 skriv_till_diagramfil = spara_figur)
+    
+    gg_list <- c(gg_list, list(gg_obj))
+    names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
+    
+    # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+    if (ggobjektfilnamn_utan_tid) {
+      names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+    }
   }
 
   

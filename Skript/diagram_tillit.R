@@ -1,4 +1,4 @@
-diagram_tillit <- function(region_vekt = "20",
+diagram_tillit <- function(region_vekt = "20", # Riks eller region, ej kommun
                            output_mapp = "G:/Samhällsanalys/Statistik/Näringsliv/basfakta/",
                            #filnamn = "utslapp.xlsx",
                            returnera_data = FALSE,
@@ -7,7 +7,7 @@ diagram_tillit <- function(region_vekt = "20",
                            spara_figur = FALSE){
   
   # ===========================================================================================================
-  
+  # Ett diagram för tillit över tid för vald region. Enbart på riks eller region-nivå
   # ===========================================================================================================
   
   if (!require("pacman")) install.packages("pacman")
@@ -16,7 +16,6 @@ diagram_tillit <- function(region_vekt = "20",
                  readxl)
   
   gg_list <- list()
-  
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R")
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_SkapaDiagram.R")
   source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/refs/heads/main/hamta_sociala_relationer_region_kon_ar_hlv1socxreg_fohm.R")

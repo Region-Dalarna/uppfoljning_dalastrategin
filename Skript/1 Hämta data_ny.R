@@ -124,6 +124,8 @@ avfall_brp_max_ar_varde <- format(plyr::round_any(avfall_brp_df %>% filter(ar ==
 source(here("Skript","diagram_vaxthusgaser.R"))
 gg_utslapp <- diagram_vaxthusgaser(region_vekt = "20",
                                    output_mapp = output_mapp_figur,
+                                   diag_bransch = TRUE,
+                                   diag_per_invanare = TRUE,
                                    returnera_data = TRUE,
                                    ggobjektfilnamn_utan_tid = TRUE,
                                    spara_figur = spara_figurer)
@@ -171,6 +173,8 @@ source(here("Skript","diagram_energieffektivitet.R"))
 gg_energieffektivitet <- diagram_energieffektivitet(region = "20",
                                                     output_mapp = output_mapp_figur,
                                                     returnera_data = TRUE,
+                                                    diag_tid = TRUE,
+                                                    diag_jmf_senaste_ar = TRUE,
                                                     ggobjektfilnamn_utan_tid = TRUE,
                                                     spara_figur = spara_figurer)
 

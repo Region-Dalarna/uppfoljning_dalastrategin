@@ -1,8 +1,10 @@
 diagram_vaxthusgaser <- function(region_vekt = "20",
                                  output_mapp = "G:/Samhällsanalys/Statistik/Näringsliv/basfakta/",
-                                 filnamn = "utslapp.xlsx",
+                                 #filnamn = "utslapp.xlsx",
                                  returnera_data = FALSE,
                                  ggobjektfilnamn_utan_tid = TRUE,
+                                 diag_bransch = TRUE,
+                                 diag_per_invanare = TRUE,
                                  #spara_data = FALSE,
                                  spara_figur = FALSE){
   
@@ -43,67 +45,75 @@ diagram_vaxthusgaser <- function(region_vekt = "20",
   
   vald_region <- unique(vaxthusgaser_df %>% filter(region != "Riket") %>% .$region)
   
-  diagram_titel <- paste0("Klimatpåverkande utsläpp i ",unique(vaxthusgaser_df %>% filter(region != "Riket") %>% .$region)," per källa")
-  diagramfilnamn <- glue("utslapp_bransch_{vald_region}_ar_{first(vaxthusgaser_df$ar)}_{last(vaxthusgaser_df$ar)}.png")
-  diagram_capt = "Källa:  RKA (Kolada) har beräknat utsläpp med data från den Nationella emissionsdatabasen\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Utsläpp av växthusgaser inom det geografiska området i ton CO2-ekvivalenter."
-
-  gg_obj <- SkapaStapelDiagram(skickad_df = vaxthusgaser_df %>%
-                                 filter(regionkod == region_vekt,
-                                        ar%in%c(2005,2010,2015:last(ar)),
-                                        !(variabel_kort %in% c("Utsläpp per invånare","Totalt Utsläpp"))) %>%
-                                 mutate(varde=varde/1000),
-                               skickad_x_var = "ar",
-                               skickad_y_var = "varde",
-                               skickad_x_grupp ="variabel_kort",
-                               diagram_titel = diagram_titel,
-                               output_mapp = output_mapp,
-                               filnamn_diagram = diagramfilnamn,
-                               diagram_capt = diagram_capt,
-                               geom_position_stack = TRUE,
-                               legend_vand_ordning = TRUE,
-                               stodlinjer_avrunda_fem = TRUE,
-                               x_axis_lutning = 0,
-                               manual_y_axis_title = "Ton CO2 (tusental)",
-                               manual_color = diagramfarger("rus_sex"),
-                               skriv_till_diagramfil = spara_figur)
+  if(diag_bransch == TRUE){
   
-  gg_list <- c(gg_list, list(gg_obj))
-  names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
+    diagram_titel <- paste0("Klimatpåverkande utsläpp i ",unique(vaxthusgaser_df %>% filter(region != "Riket") %>% .$region)," per källa")
+    diagramfilnamn <- glue("utslapp_bransch_{vald_region}_ar_{first(vaxthusgaser_df$ar)}_{last(vaxthusgaser_df$ar)}.png")
+    diagram_capt = "Källa:  RKA (Kolada) har beräknat utsläpp med data från den Nationella emissionsdatabasen\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Utsläpp av växthusgaser inom det geografiska området i ton CO2-ekvivalenter."
   
-  # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
-  if (ggobjektfilnamn_utan_tid) {
-    names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
-  }
-  
-  diagram_titel <- "Utsläpp per invånare"
-  diagramfilnamn <- glue("utslapp_per_capita_{vald_region}_ar_{first(vaxthusgaser_df$ar)}_{last(vaxthusgaser_df$ar)}.png")
-  
-  diagram_capt = "Källa: RKA (Kolada) har beräknat utsläpp med data från den Nationella emissionsdatabasen\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Utsläpp av växthusgaser inom det geografiska området i ton CO2-ekvivalenter."
-  
-
-  gg_obj <- SkapaStapelDiagram(skickad_df = vaxthusgaser_df %>% 
-                                   filter(variabel_kort == "Utsläpp per invånare",
-                                          ar%in%c(1990,2000,2005,2010,2015:last(ar))) %>% 
-                                   mutate(region = skapa_kortnamn_lan(region,byt_ut_riket_mot_sverige = TRUE)),
+    gg_obj <- SkapaStapelDiagram(skickad_df = vaxthusgaser_df %>%
+                                   filter(regionkod == region_vekt,
+                                          ar%in%c(2005,2010,2015:last(ar)),
+                                          !(variabel_kort %in% c("Utsläpp per invånare","Totalt Utsläpp"))) %>%
+                                   mutate(varde=varde/1000),
                                  skickad_x_var = "ar",
                                  skickad_y_var = "varde",
-                                 skickad_x_grupp = "region",
+                                 skickad_x_grupp ="variabel_kort",
                                  diagram_titel = diagram_titel,
                                  output_mapp = output_mapp,
                                  filnamn_diagram = diagramfilnamn,
                                  diagram_capt = diagram_capt,
+                                 geom_position_stack = TRUE,
+                                 legend_vand_ordning = TRUE,
                                  stodlinjer_avrunda_fem = TRUE,
                                  x_axis_lutning = 0,
-                                 manual_y_axis_title = "Ton CO2/invånare",
+                                 manual_y_axis_title = "Ton CO2 (tusental)",
                                  manual_color = diagramfarger("rus_sex"),
                                  skriv_till_diagramfil = spara_figur)
+    
+    gg_list <- c(gg_list, list(gg_obj))
+    names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
+    
+    # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+    if (ggobjektfilnamn_utan_tid) {
+      names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+    }
   
-  gg_list <- c(gg_list, list(gg_obj))
-  names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
+  }
   
-  # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
-  if (ggobjektfilnamn_utan_tid) {
-    names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+  if(diag_per_invanare == TRUE){
+  
+    diagram_titel <- "Utsläpp per invånare"
+    diagramfilnamn <- glue("utslapp_per_capita_{vald_region}_ar_{first(vaxthusgaser_df$ar)}_{last(vaxthusgaser_df$ar)}.png")
+    
+    diagram_capt = "Källa: RKA (Kolada) har beräknat utsläpp med data från den Nationella emissionsdatabasen\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Utsläpp av växthusgaser inom det geografiska området i ton CO2-ekvivalenter."
+    
+  
+    gg_obj <- SkapaStapelDiagram(skickad_df = vaxthusgaser_df %>% 
+                                     filter(variabel_kort == "Utsläpp per invånare",
+                                            ar%in%c(1990,2000,2005,2010,2015:last(ar))) %>% 
+                                     mutate(region = skapa_kortnamn_lan(region,byt_ut_riket_mot_sverige = TRUE)),
+                                   skickad_x_var = "ar",
+                                   skickad_y_var = "varde",
+                                   skickad_x_grupp = "region",
+                                   diagram_titel = diagram_titel,
+                                   output_mapp = output_mapp,
+                                   filnamn_diagram = diagramfilnamn,
+                                   diagram_capt = diagram_capt,
+                                   stodlinjer_avrunda_fem = TRUE,
+                                   x_axis_lutning = 0,
+                                   manual_y_axis_title = "Ton CO2/invånare",
+                                   manual_color = diagramfarger("rus_sex"),
+                                   skriv_till_diagramfil = spara_figur)
+    
+    gg_list <- c(gg_list, list(gg_obj))
+    names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
+    
+    # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+    if (ggobjektfilnamn_utan_tid) {
+      names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+    }
+  
   }
   
   return(gg_list)
