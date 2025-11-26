@@ -1,5 +1,7 @@
 diagram_skogsmark <- function(region = "20",
                               output_mapp = "G:/Samhällsanalys/Statistik/Näringsliv/basfakta/",
+                              diag_areal = TRUE,
+                              diag_andel = TRUE,
                               #filnamn = "skogsmark.xlsx",
                               returnera_data = FALSE,
                               ggobjektfilnamn_utan_tid = TRUE,
@@ -36,53 +38,59 @@ diagram_skogsmark <- function(region = "20",
     assign("skogsmark_df", skogsmark_df, envir = .GlobalEnv)
   }
   
-  diagram_titel <- paste0("Areal skyddad produktiv skogsmark i ",skapa_kortnamn_lan(unique(skogsmark_df$region)))
-  diagramfilnamn <- glue("areal_skyddad_skogsmark_{skapa_kortnamn_lan(unique(skogsmark_df$region))}_ar_{first(skogsmark_df$år)}_{last(skogsmark_df$år)}.png")
-  diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna"
-
-  gg_obj <- SkapaStapelDiagram(skickad_df = skogsmark_df %>%
-                                 mutate(area_hektar=area_hektar/1000),
-                               skickad_x_var = "år",
-                               skickad_y_var = "area_hektar",
-                               diagram_titel = diagram_titel,
-                               diagram_capt = diagram_capt,
-                               x_axis_lutning = 0,
-                               manual_color= diagramfarger("rus_sex")[1],
-                               manual_y_axis_title = "Hektar (tusental)",
-                               output_mapp = output_mapp,
-                               filnamn_diagram = diagramfilnamn,
-                               skriv_till_diagramfil = spara_figur)
+  if(diag_areal == TRUE){
   
-  gg_list <- c(gg_list, list(gg_obj))
-  names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
+    diagram_titel <- paste0("Areal skyddad produktiv skogsmark i ",skapa_kortnamn_lan(unique(skogsmark_df$region)))
+    diagramfilnamn <- glue("areal_skyddad_skogsmark_{skapa_kortnamn_lan(unique(skogsmark_df$region))}_ar_{first(skogsmark_df$år)}_{last(skogsmark_df$år)}.png")
+    diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna"
   
-  # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
-  if (ggobjektfilnamn_utan_tid) {
-    names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+    gg_obj <- SkapaStapelDiagram(skickad_df = skogsmark_df %>%
+                                   mutate(area_hektar=area_hektar/1000),
+                                 skickad_x_var = "år",
+                                 skickad_y_var = "area_hektar",
+                                 diagram_titel = diagram_titel,
+                                 diagram_capt = diagram_capt,
+                                 x_axis_lutning = 0,
+                                 manual_color= diagramfarger("rus_sex")[1],
+                                 manual_y_axis_title = "Hektar (tusental)",
+                                 output_mapp = output_mapp,
+                                 filnamn_diagram = diagramfilnamn,
+                                 skriv_till_diagramfil = spara_figur)
+    
+    gg_list <- c(gg_list, list(gg_obj))
+    names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
+    
+    # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+    if (ggobjektfilnamn_utan_tid) {
+      names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+    }
   }
   
-  diagram_titel <- paste0("Andel skyddad produktiv skogsmark i ",skapa_kortnamn_lan(unique(skogsmark_df$region)))
-  diagramfilnamn <- glue("andel_skyddad_skogsmark_{skapa_kortnamn_lan(unique(skogsmark_df$region))}_ar_{first(skogsmark_df$år)}_{last(skogsmark_df$år)}.png")
-  diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna"
+  if(diag_andel == TRUE){
   
-  gg_obj <- SkapaStapelDiagram(skickad_df = skogsmark_df,
-                               skickad_x_var = "år",
-                               skickad_y_var = "area_procent",
-                               diagram_titel = diagram_titel,
-                               diagram_capt = diagram_capt,
-                               x_axis_lutning = 0,
-                               manual_color= diagramfarger("rus_sex")[1],
-                               manual_y_axis_title = "procent",
-                               output_mapp = output_mapp,
-                               filnamn_diagram = diagramfilnamn,
-                               skriv_till_diagramfil = spara_figur)
-  
-  gg_list <- c(gg_list, list(gg_obj))
-  names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
-  
-  # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
-  if (ggobjektfilnamn_utan_tid) {
-    names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+    diagram_titel <- paste0("Andel skyddad produktiv skogsmark i ",skapa_kortnamn_lan(unique(skogsmark_df$region)))
+    diagramfilnamn <- glue("andel_skyddad_skogsmark_{skapa_kortnamn_lan(unique(skogsmark_df$region))}_ar_{first(skogsmark_df$år)}_{last(skogsmark_df$år)}.png")
+    diagram_capt = "Källa: SCB\nBearbetning: Samhällsanalys, Region Dalarna"
+    
+    gg_obj <- SkapaStapelDiagram(skickad_df = skogsmark_df,
+                                 skickad_x_var = "år",
+                                 skickad_y_var = "area_procent",
+                                 diagram_titel = diagram_titel,
+                                 diagram_capt = diagram_capt,
+                                 x_axis_lutning = 0,
+                                 manual_color= diagramfarger("rus_sex")[1],
+                                 manual_y_axis_title = "procent",
+                                 output_mapp = output_mapp,
+                                 filnamn_diagram = diagramfilnamn,
+                                 skriv_till_diagramfil = spara_figur)
+    
+    gg_list <- c(gg_list, list(gg_obj))
+    names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
+    
+    # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+    if (ggobjektfilnamn_utan_tid) {
+      names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+    }
   }
   
   return(gg_list)

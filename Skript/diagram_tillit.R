@@ -1,7 +1,8 @@
 diagram_tillit <- function(region_vekt = "20",
                            output_mapp = "G:/Samhällsanalys/Statistik/Näringsliv/basfakta/",
-                           filnamn = "utslapp.xlsx",
+                           #filnamn = "utslapp.xlsx",
                            returnera_data = FALSE,
+                           ggobjektfilnamn_utan_tid = TRUE,
                            #spara_data = FALSE,
                            spara_figur = FALSE){
   

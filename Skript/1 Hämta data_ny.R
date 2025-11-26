@@ -1,3 +1,20 @@
+# Skript som hämtar data och skapar figurer/variabler som används för att skapa markdown-rapporten. Det finns två alternativ för skriptet:
+
+# 1: Kör skriptet utan att uppdatera data - sätt variabeln uppdatera_data till FALSE. Då läses den senast sparade versionen av R-studio global environment in.
+# Detta är ett bra alternativ om man enbart vill ändra text eller liknande, men inte uppdatera data.
+
+# 2: Uppdatera data - sätt variabeln uppdatera_data till TRUE. Då uppdateras data, alla figurer skapas på nytt och en ny enviroment sparas.
+# Tar längre tid (ett par minuter) och medför en risk att text inte längre är aktuell då figurer har uppdaterats med nya data.
+
+
+uppdatera_data = FALSE
+spara_figurer = FALSE                   # funkar bara om uppdatera_data är TRUE
+
+if(uppdatera_data == TRUE){
+  
+  cat("Hämtning av data påbörjad\n\n")
+  start_time <- Sys.time()
+
 # OBS! Ska sättas till FALSE när skriptet går i produktion - men kan stängas av genom att sätta till TRUE för att se att alla skript fungerar som de ska
 # skriptet är till för att hantera rcurl-fel och inte vanliga fel som ju inte blir bättre av att man försöker flera gånger. =)
 source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R")
@@ -9,8 +26,6 @@ p_load(here,
 
 output_mapp_figur = here("Diagram","/")
 
-spara_figurer = FALSE
-
 #########################################
 ####    Ett klimatsmart Dalarna     #####
 #########################################
@@ -20,6 +35,8 @@ source(here("Skript","diagram_skogsmark.R"))
 gg_skogsmark <- diagram_skogsmark(region = "20",
                                  output_mapp = output_mapp_figur,
                                  returnera_data = TRUE,
+                                 diag_areal = TRUE,
+                                 diag_andel = TRUE,
                                  ggobjektfilnamn_utan_tid = TRUE,
                                  spara_figur = spara_figurer)
 
@@ -229,8 +246,12 @@ andel_bredband_max_riket <- round(bredband_df %>% filter(region == "Riket",ar ==
 source("https://raw.githubusercontent.com/Region-Dalarna/diagram/refs/heads/main/diagram_foraldrapenning_vab_kv_man.R")
 gg_fp_vab <- diag_foraldrapenning_vab(region_vekt = "20",
                                       output_mapp = output_mapp_figur,
-                                      diag_foraldrapenning = TRUE,
-                                      diag_vab = FALSE,
+                                      diag_foraldrapenning_mottagare = FALSE,
+                                      diag_foraldrapenning_andel_nettodagar = TRUE,
+                                      diag_foraldrapenning_andel_senaste_ar_lanets_kommuner = FALSE,
+                                      diag_foraldrapenning_antal_nettodagar = FALSE,
+                                      diag_vab_antal_nettodagar = FALSE,
+                                      diag_vab_forandring_nettodagar = FALSE,
                                       spara_diagrambildfil = spara_figurer,
                                       spara_dataframe_till_global_environment = TRUE)
 
@@ -367,7 +388,17 @@ medianinkomst_kvinna_max_20_64 <- round(forvarvsinkomst_df %>% filter(region == 
 medianinkomst_man_forandring_20_64 <- round((forvarvsinkomst_df %>% filter(region == "Dalarna", år == max(år),kön == "män",ålder == "20-64 år") %>% .$`Medianinkomst, tkr`/forvarvsinkomst_df %>% filter(region == "Dalarna", år == min(år),kön == "män",ålder == "20-64 år") %>% .$`Medianinkomst, tkr`-1)*100,0)
 medianinkomst_kvinna_forandring_20_64 <- round((forvarvsinkomst_df %>% filter(region == "Dalarna", år == max(år),kön == "kvinnor",ålder == "20-64 år") %>% .$`Medianinkomst, tkr`/forvarvsinkomst_df %>% filter(region == "Dalarna", år == min(år),kön == "kvinnor",ålder == "20-64 år") %>% .$`Medianinkomst, tkr`-1)*100,0)
 
+save.image(file = "G:/skript/projekt/environments/uppfoljning_dalastrategin.RData")
 
+end_time <- Sys.time()
+elapsed_time <- as.numeric(difftime(end_time, start_time, units = "secs"))
+cat(sprintf("Hämtning av data klar: Det tog %.2f sekunder.", elapsed_time))
+cat("\n\n")
+
+
+}else{
+  load("G:/skript/projekt/environments/uppfoljning_dalastrategin.RData")
+}
 
 
 
