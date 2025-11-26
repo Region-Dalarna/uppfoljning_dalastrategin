@@ -1,9 +1,12 @@
 diagram_elbilar <- function(region_vekt = "20",
+                            region_vekt_kommun = "2080", # Om man vill ha ett diagram över tid för en kommun
                             output_mapp = "G:/Samhällsanalys/Statistik/Näringsliv/basfakta/",
                             filnamn = "elbilar.xlsx",
                             returnera_data = FALSE,
                             diag_lan = TRUE, # Skapar ett diagram för valt län över tid samt jämför samtliga län för senaste år
                             diag_kommun = FALSE, # Jämför kommuner i valt län för senaste år
+                            diag_tid = TRUE, # Om man vill ha ett diagram över tid för län/kommun
+                            diag_jmf_senaste_ar = TRUE, # Jmfr senste år
                             ggobjektfilnamn_utan_tid = TRUE,
                             #spara_data = FALSE,
                             spara_figur = FALSE){
@@ -43,7 +46,6 @@ diagram_elbilar <- function(region_vekt = "20",
     }
     
     # Enbart ett län över tid för både elbilar och laddhybrider
-    
     diagram_titel <- paste0("Andelen elbilar och laddhybrider i ",vald_region)
     diagramfilnamn <- glue("elbilar_{vald_region}_ar_{first(elbilar_df$ar)}_{last(elbilar_df$ar)}.png")
     diagram_capt = "Källa: Trafikanalys och SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andelen personbilar i trafik den 31/12."

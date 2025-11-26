@@ -1,0 +1,152 @@
+diagram_elbilar <- function(region_vekt = "20",
+                            output_mapp = "G:/Samhällsanalys/Statistik/Näringsliv/basfakta/",
+                            #filnamn = "elbilar.xlsx",
+                            returnera_data = FALSE,
+                            diag_tid = TRUE,
+                            diag_jmf_senaste_ar = TRUE,
+                            fokus_kommun = FALSE,
+                            ggobjektfilnamn_utan_tid = TRUE,
+                            #spara_data = FALSE,
+                            spara_figur = FALSE){
+  
+  # ===========================================================================================================
+  
+  # ===========================================================================================================
+  
+  if (!require("pacman")) install.packages("pacman")
+  pacman::p_load(tidyverse,
+                 rKolada,
+                 readxl,
+                 glue)
+  
+  gg_list <- list()
+  
+  source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R")
+  source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_SkapaDiagram.R")
+  
+  vald_region = skapa_kortnamn_lan(hamtaregion_kod_namn(region_vekt)$region)
+    
+    if(nchar(region_vekt) == 2){
+      
+      elbilar_df <- hamta_kolada_df(kpi = c("N07945","N07947"),hamtaAllaLan(),valda_ar = c(2012:2100))
+      
+    } else{
+      elbilar_df <- hamta_kolada_df(kpi = c("N07945","N07947"),hamtakommuner(substr(region_vekt,1,2),tamedlan = TRUE,tamedriket = FALSE),valda_ar = c(2000:2100)) 
+
+    }
+
+    # Väljer bort variabler och ger mer rimliga namn.
+    elbilar_df <- elbilar_df %>% 
+      mutate(variabel_kort = case_when(
+        variabelkod == "N07945" ~ "Elbilar",
+        variabelkod == "N07947" ~ "Laddhybrider")) %>% 
+      select(ar,region,variabel_kort,varde) %>% 
+      mutate(region = skapa_kortnamn_lan(region,byt_ut_riket_mot_sverige = TRUE))
+    
+    if(nchar(region_vekt) == 2){
+      
+      if(returnera_data == TRUE){
+        assign("elbilar_df", elbilar_df, envir = .GlobalEnv)
+      }
+      
+    } else{
+      if(returnera_data == TRUE){
+        assign("elbilar_kommun_df", elbilar_df, envir = .GlobalEnv)
+      } 
+      
+    }
+
+    # Enbart ett län över tid för både elbilar och laddhybrider
+    if(diag_tid == TRUE){
+    
+      diagram_titel <- paste0("Andelen elbilar och laddhybrider i ",vald_region)
+      diagramfilnamn <- glue("elbilar_{vald_region}_ar_{first(elbilar_df$ar)}_{last(elbilar_df$ar)}.png")
+      diagram_capt = "Källa: Trafikanalys och SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andelen personbilar i trafik den 31/12."
+      
+      gg_obj <- SkapaStapelDiagram(skickad_df = elbilar_df %>% 
+                                     filter(region == vald_region),
+                                   skickad_x_var = "ar",
+                                   skickad_y_var = "varde",
+                                   geom_position_stack = TRUE,
+                                   skickad_x_grupp = "variabel_kort",
+                                   diagram_titel = diagram_titel,
+                                   output_mapp = output_mapp,
+                                   filnamn_diagram = diagramfilnamn,
+                                   diagram_capt = diagram_capt,
+                                   stodlinjer_avrunda_fem = TRUE,
+                                   x_axis_lutning = 0,
+                                   manual_y_axis_title = "procent",
+                                   manual_color = diagramfarger("rus_sex"),
+                                   skriv_till_diagramfil = spara_figur)
+      
+      gg_list <- c(gg_list, list(gg_obj))
+      names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
+      
+      # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+      if (ggobjektfilnamn_utan_tid) {
+        names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+      }
+    
+    }
+    
+    # Jämför län för senaste år
+    
+    if(diag_jmf_senaste_ar == TRUE){ 
+    
+    if(nchar(region_vekt) == 2){
+      region_fokus = "Sverige"
+      diagram_titel <- paste0("Andelen elbilar och laddhybrider i Sverige år ",max(elbilar_df$ar))
+      diagramfilnamn <- glue("elbilar_Sverige_ar_{last(elbilar_df$ar)}.png")
+    }else{
+      vald_region = skapa_kortnamn_lan(hamtaregion_kod_namn(substr(region_vekt,1,2))$region)
+      if(fokus_kommun == TRUE){
+      region_fokus = hamtaregion_kod_namn(region_vekt)$region
+      }else{
+      region_fokus = ""
+      }
+      diagram_titel <- paste0("Andelen elbilar och laddhybrider i ",region_fokus," år ",max(elbilar_df$ar))
+      diagramfilnamn <- glue("elbilar_kommun_",vald_region,"_ar_{last(elbilar_df$ar)}.png")
+    }
+    
+    diagram_capt = "Källa: Trafikanalys och SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andelen personbilar i trafik den 31/12."
+    
+    gg_obj <- SkapaStapelDiagram(skickad_df = elbilar_df %>% 
+                                   filter(ar == max(ar)) %>%
+                                   mutate(fokus = ifelse(region == vald_region, "1", ifelse(region == region_fokus, "2", "0"))),
+                                 skickad_x_var = "region",
+                                 skickad_y_var = "varde",
+                                 geom_position_stack = TRUE,
+                                 skickad_x_grupp = "variabel_kort",
+                                 diagram_titel = diagram_titel,
+                                 manual_x_axis_text_vjust = 1,
+                                 manual_x_axis_text_hjust = 1,
+                                 output_mapp = output_mapp,
+                                 filnamn_diagram = diagramfilnamn,
+                                 x_axis_sort_value = TRUE,
+                                 diagram_capt = diagram_capt,
+                                 stodlinjer_avrunda_fem = TRUE,
+                                 x_axis_lutning = 45,
+                                 x_var_fokus = "fokus",
+                                 manual_y_axis_title = "procent",
+                                 manual_color = diagramfarger("rus_tre_fokus"),
+                                 skriv_till_diagramfil = spara_figur)
+    
+    gg_list <- c(gg_list, list(gg_obj))
+    names(gg_list)[[length(gg_list)]] <- diagramfilnamn %>% str_remove(".png")
+    
+    # ta bort tidsbestämning (tex. år) ur objektsnamnet, för användning i tex r-markdownrapporter
+    if (ggobjektfilnamn_utan_tid) {
+      names(gg_list)[[length(gg_list)]] <-  sub("_ar.*", "", diagramfilnamn)
+    }
+    
+  }
+
+  return(gg_list)
+  
+  # Sparar till Excel om användaren vill det
+  #if (spara_data == TRUE) write.csv(skyddadproduktivskogsmark, paste0(outputmapp,filnamn), fileEncoding="UTF-8", row.names = FALSE)
+  
+  # Data returneras som en DF om användaren vill det
+  
+}
+

@@ -54,6 +54,8 @@ andel_skogsmark_max_ar <- round(skogsmark_df %>% filter(år==max(år)) %>% .$are
 source(here("Skript","diagram_vatten.R"))
 gg_vatten <- diagram_vatten(region = "20",
                             output_mapp = output_mapp_figur,
+                            diag_tid = TRUE,
+                            diag_jmf_senaste_ar = TRUE,
                             returnera_data = TRUE,
                             ggobjektfilnamn_utan_tid = TRUE,
                             spara_figur = spara_figurer)
