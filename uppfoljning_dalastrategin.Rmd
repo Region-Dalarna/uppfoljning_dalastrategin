@@ -45,10 +45,25 @@ document.addEventListener('scroll', debounce(storeScroll), { passive: true });
 storeScroll();
 
 ```
+<br>
 <p style = "font-size:12px">
 <i>Rapporten är skapad av Samhällsanalys, Region Dalarna<br>
 Senast uppdaterad: `r Sys.Date()`</i>
 </p>
+
+# Introduktion {-}
+
+Dalarna står tillsammans med övriga Sverige, Europa och världen inför stora samhällsutmaningar. För att skapa en hållbar framtid för Dalarna antog Regionfullmäktige i juni 2021 en ny regional utvecklingsstrategi, ["Dalastrategin - Tillsammans för ett hållbart Dalarna"](https://www.regiondalarna.se/globalassets/regional-utveckling/dalastrategin-2030-tillsammans-for-ett-hallbart-dalarna-dec.pdf){target="_blank"}. 
+
+Strategin är ett stöd och en språngbräda i arbetet med att rusta Dalarna för att möta framtidens utmaningar och göra dem till möjligheter. Dalastrategin är indelad i tre målområden som kopplar an till de olika dimensionerna av hållbarhet - miljömässig, ekonomisk och social hållbarhet: 
+
+- ett klimatsmart Dalarna 
+- ett sammanhållet Dalarna
+- ett konkurrenskraftigt Dalarna 
+
+I Dalastrategin betonas att en miljömässigt hållbar omställning är en utmaning som berör alla delar av samhället, från global till lokal nivå och inom alla sektorer.
+
+En princip för genomförandet av Dalastrategin är ett kunskapsbaserat arbetssätt. Det innebär bland annat att arbeta aktivt med uppföljning, utvärdering och att skapa ett kontinuerligt lärande. En central del av uppföljningsarbetet är de indikatorer som kopplas till respektive målområde, och den här rapporten är en del av den årliga uppföljningen som beskriver utvecklingen i Dalarna på vägen till en hållbar framtid. 
 
 # Ett klimatsmart Dalarna
 
