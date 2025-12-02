@@ -62,7 +62,7 @@ gg_vatten <- diagram_vatten(region = "20",
 
 ## Elbilar och laddhybrider
 source(here("Skript","diagram_elbilar.R"))
-gg_elbilar <- diagram_elbilar(region = "20",
+gg_elbilar <- diagram_elbilar(region_vekt = "20",
                               output_mapp = output_mapp_figur,
                               returnera_data = TRUE,
                               ggobjektfilnamn_utan_tid = TRUE,
@@ -380,7 +380,7 @@ gg_inkomst <- diag_inkomst_scb(regionvekt = "20", # Enbart ett i taget. går äv
                                output_mapp = output_mapp_figur,                                  # mapp där diagram ska sparas, NA = sparas ingen fil
                                inkomst_typ = "Medianinkomst, tkr", # Finns "Medianinkomst, tkr", "Medelinkomst, tkr". Max 1 åt gången
                                diag_tid = TRUE,
-                               diag_linje = FALSE,
+                               diag_linje = TRUE,
                                diag_kommun = FALSE,
                                skriv_diagrambildfil = spara_figurer,                           # TRUE om diagram ska skrivas till fil, FALSE om diagram inte ska skrivas till fil
                                alder_klartext = c("20-64 år"),			 #  Finns: "20+ år", "20-64 år", "20-65 år", "65+ år", "66+ år". OBS!! Funkar ej med "*"

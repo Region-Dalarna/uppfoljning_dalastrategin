@@ -20,6 +20,8 @@ diagram_vatten <- function(region_vekt = "20", # Län eller kommunnivå, max 1 �
                  glue)
   
   gg_list <- list()
+  diagram_capt = "Källa: VISS och Länsstyrelserna (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Klassning görs successivt under en flerårscykel.\nNyckeltalet uppdateras eftersom och alla siffror utom det sista i en cykel bör ses som preliminära."
+  
   
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_API.R")
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_SkapaDiagram.R")
@@ -50,8 +52,7 @@ diagram_vatten <- function(region_vekt = "20", # Län eller kommunnivå, max 1 �
   
     diagram_titel <- paste0("Andelen vattendrag med god ekologisk status i ",vald_region)
     diagramfilnamn <- glue("vattendrag_{vald_region}_ar_{first(vatten_df$ar)}_{last(vatten_df$ar)}.png")
-    diagram_capt = "Källa: VISS och Länsstyrelserna (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Klassning görs successivt under en flerårscykel. Nyckeltalet uppdateras eftersom och alla siffror utom det sista i en cykel bör ses som preliminära."
-    
+
     gg_obj <- SkapaStapelDiagram(skickad_df = vatten_df %>% 
                                    filter(region == vald_region),
                                  skickad_x_var = "ar",
@@ -90,8 +91,7 @@ diagram_vatten <- function(region_vekt = "20", # Län eller kommunnivå, max 1 �
       diagram_titel <- paste0("Andelen vattendrag med god ekologisk status i ",region_fokus," år ",max(vatten_df$ar))
       diagramfilnamn <- glue("vattendrag_kommun",region_fokus,"_ar_{last(vatten_df$ar)}.png")
     }
-    diagram_capt = "Källa: VISS och Länsstyrelserna (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Klassning görs successivt under en flerårscykel.\nNyckeltalet uppdateras eftersom och alla siffror utom det sista i en cykel bör ses som preliminära."
-    
+
     gg_obj <- SkapaStapelDiagram(skickad_df = vatten_df %>% 
                                    filter(ar == max(ar)) %>%
                                    mutate(fokus = ifelse(region == vald_region, "1", ifelse(region == region_fokus, "2", "0"))),

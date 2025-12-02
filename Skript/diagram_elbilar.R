@@ -1,5 +1,4 @@
 diagram_elbilar <- function(region_vekt = "20",
-                            region_vekt_kommun = "2080", # Om man vill ha ett diagram över tid för en kommun
                             output_mapp = "G:/Samhällsanalys/Statistik/Näringsliv/basfakta/",
                             filnamn = "elbilar.xlsx",
                             returnera_data = FALSE,
