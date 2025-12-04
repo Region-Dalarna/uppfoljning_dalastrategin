@@ -7,7 +7,7 @@
 # Tar längre tid (ett par minuter) och medför en risk att text inte längre är aktuell då figurer har uppdaterats med nya data.
 
 
-uppdatera_data = FALSE
+uppdatera_data = TRUE
 spara_figurer = FALSE                   # funkar bara om uppdatera_data är TRUE
 
 if(uppdatera_data == TRUE){
@@ -252,6 +252,18 @@ gymnasiet_lagst_avklarat_andel <- genomstromning_gymnasiet_df %>% filter(andel =
   
 gymnasiet_hogst_avklarat_lasar <- genomstromning_gymnasiet_df %>% filter(andel == max(andel)) %>% .$läsår
 gymnasiet_hogst_avklarat_andel <- gsub("\\.",",",genomstromning_gymnasiet_df %>% filter(andel == max(andel)) %>% .$andel)
+
+## Fruktsamhet
+source("https://raw.githubusercontent.com/Region-Dalarna/diagram/main/diagram_fruktsamhet_SCB.R", encoding="UTF-8")
+gg_fruktsamhet <- diagram_fruktsamhet(region_vekt = c("00","20"),
+                                      diag_facet = TRUE, # diag_fokus_tid som facet-diagram istället för ett per region
+                                      diag_jmf_lan = FALSE, # Skapa diagram för jämförelse mellan valda regioner
+                                      diag_forandring = FALSE, # Skapa diagram för förändringar över tid
+                                      spara_figur = spara_figurer,
+                                      output_mapp_figur = output_mapp_figur,
+                                      vald_period = "*",
+                                      facet_skala = "fixed",
+                                      returnera_data = TRUE)
 
 ## Tillgång till bredband
 source(here("Skript","diagram_bredband.R"))
