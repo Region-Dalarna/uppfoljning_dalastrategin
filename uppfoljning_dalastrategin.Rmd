@@ -105,6 +105,18 @@ gg_skogsmark$andel_skyddad_skogsmark_Dalarna
 
 **Betesmark och slåtteräng**
 
+Biologisk mångfald och väl fungerande ekosystem är en förutsättning för allt liv på jorden. De är därmed också nödvändiga för goda livsmiljöer för både Dalarnas invånare och för Dalarnas näringsliv. Den gröna infrastrukturen är ekologiskt funktionella nätverk av livsmiljöer och naturområden som utformas, brukas och förvaltas så att den biologiska mångfalden bevaras och därmed främjar för samhället så centrala ekosystemtjänster som exempelvis vattenrening och livskraftiga jordbruksmarker, etc. Samhället har allt att vinna på ett hållbart bruk av ekosystemen och att förvalta ett mångfunktionellt landskap där natur- och kulturvärden tillvaratas.
+
+Betesmark tillsammans med åkermark utgör jordbruksmark. Åkermarken kan brukas för djurfoder och livsmedel, medan betesmarken och betande djur i hög grad bidrar till att upprätthålla artrikedomen. En delmängd av betesmarken är slåtterängar, som har särskilt höga biologiska värden.
+
+I diagrammet nedan redovisas hur arealen betesmark i Dalarnas län har utvecklats mellan `r ar_min_betesmark` och `r ar_max_betesmark`. I diagrammet är den totala arealen betesmark uppdelad på slåtteräng och alla annan betesmark, benämnd övrig betesmark. Den totala arealen betesmark har under denna period minskat med ungefär `r forandring_betsmark` procent, från `r betesmark_tot_min_ar` till `r betesmark_tot_max_ar` hektar. Efter en tydlig minskning mellan 2022 och 2023, ökade arealen betesmark återigen år 2024. 
+
+Slåtteräng är en delmängd av betesmarken som har särskilt höga biologiska värden och därmed särskilt stor betydelse för biologisk mångfald. I Dalarna har andelen slåtteräng ökat från `r andel_slatterang_min_ar` procent av betesmarken år `r ar_min_betesmark` till `r andel_slatterang_max_ar` procent av betesmarken år `r ar_max_betesmark`.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_betesmark$areal_betesmark_Dalarna
+```
+
 ### Vatten{-} 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}

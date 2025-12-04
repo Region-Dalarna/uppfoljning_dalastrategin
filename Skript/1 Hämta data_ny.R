@@ -50,6 +50,25 @@ areal_skogsmark_max_ar <- format(skogsmark_df %>% filter(år==max(år)) %>% .$ar
 andel_skogsmark_min_ar <- round(skogsmark_df %>% filter(år==min(år)) %>% .$area_procent,0)
 andel_skogsmark_max_ar <- round(skogsmark_df %>% filter(år==max(år)) %>% .$area_procent,0)
 
+## Betesmark
+source(here("Skript","diagram_betesmark.R"))
+gg_betesmark <- diagram_betesmark(region = "20",
+                                  output_mapp = output_mapp_figur,
+                                  returnera_data = TRUE,
+                                  ggobjektfilnamn_utan_tid = TRUE,
+                                  spara_figur = spara_figurer)
+
+ar_min_betesmark <- as.character(min(betesmark_df$ar))
+ar_max_betesmark <- as.character(max(betesmark_df$ar))
+
+forandring_betsmark <- abs(round(((betesmark_df %>% filter(ar == max(ar),variabel_kort == "Total betesmark") %>% .$varde/betesmark_df %>% filter(ar == min(ar),variabel_kort == "Total betesmark") %>% .$varde)-1)*100,0))
+betesmark_tot_min_ar <- format(betesmark_df %>% filter(ar == min(ar),variabel_kort == "Total betesmark") %>% .$varde,big.mark=" ")
+betesmark_tot_max_ar <- format(betesmark_df %>% filter(ar == max(ar),variabel_kort == "Total betesmark") %>% .$varde,big.mark=" ")
+
+andel_slatterang_min_ar <- gsub("\\.","\\,",round((betesmark_df %>% filter(ar == min(ar),variabel_kort == "Slåtteräng") %>% .$varde/betesmark_df %>% filter(ar == min(ar),variabel_kort == "Total betesmark") %>% .$varde)*100,1))
+andel_slatterang_max_ar <- gsub("\\.","\\,",round((betesmark_df %>% filter(ar == max(ar),variabel_kort == "Slåtteräng") %>% .$varde/betesmark_df %>% filter(ar == max(ar),variabel_kort == "Total betesmark") %>% .$varde)*100,1))
+
+
 ## Vatten
 source(here("Skript","diagram_vatten.R"))
 gg_vatten <- diagram_vatten(region = "20",
