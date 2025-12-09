@@ -7,7 +7,7 @@
 # Tar längre tid (ett par minuter) och medför en risk att text inte längre är aktuell då figurer har uppdaterats med nya data.
 
 
-uppdatera_data = TRUE
+uppdatera_data = FALSE
 spara_figurer = FALSE                   # funkar bara om uppdatera_data är TRUE
 
 if(uppdatera_data == TRUE){
