@@ -82,7 +82,21 @@ Dalarna är rikt på naturresurser och om de brukas rätt ger de mångfalt tillb
 
 ## Hur mår Dalarnas natur{.tabset}
 
-Här skriver man en kort introduktion med pilar?
+<div class="indicator-row">
+
+<span class="big-indicator">
+Skogsmark <span style="color:green; font-size:1.8em; font-weight:900;">⬆</span>
+</span>
+
+<span class="big-indicator">
+Vatten <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Luft <span style="color:black; font-size:1.8em; font-weight:900;">➡</span>
+</span>
+
+</div>
 
 ### Markanvändning{-} 
 
