@@ -63,7 +63,12 @@ Strategin är ett stöd och en språngbräda i arbetet med att rusta Dalarna fö
 
 I Dalastrategin betonas att en miljömässigt hållbar omställning är en utmaning som berör alla delar av samhället, från global till lokal nivå och inom alla sektorer.
 
-En princip för genomförandet av Dalastrategin är ett kunskapsbaserat arbetssätt. Det innebär bland annat att arbeta aktivt med uppföljning, utvärdering och ett kontinuerligt lärande. En central del av uppföljningsarbetet är de indikatorer som kopplas till respektive målområde, och den här rapporten är en del av den årliga uppföljningen som beskriver utvecklingen i Dalarna på vägen till en hållbar framtid. 
+Den här rapporten är en del av den årliga uppföljningen som beskriver utvecklingen i Dalarna på vägen till en hållbar framtid.
+
+En hållbar framtid handlar om att vårda de naturkapital och humankapital som ger människor och samhällen värden, så som rent vatten, ren luft, biologisk mångfald och andra ekosystem, samt att vårda människor och människors hälsa, kunskap och utbildning, detta är grunden till ekonomiska värden.
+
+Delrubrikerna ska bidra till att fånga grundläggande värden, på ett sådant sätt att det ska gå att följa trender, investeringar, avkastning och slitage, dvs. om kapitalen förvaltas väl, genererar positiva värden, eller om de slits för mycket
+
 
 
 # Ett klimatsmart Dalarna
@@ -80,7 +85,7 @@ Den miljömässiga dimensionen för en hållbar regional utveckling handlar blan
 Dalarna är rikt på naturresurser och om de brukas rätt ger de mångfalt tillbaka. Indikatorer som följs upp är därför bland annat hur resurser som vatten och vind, skog och jordbruksmark används. I Dalarna utgörs samtidigt en stor del av näringslivet av tillverkande industri som förbrukar relativt sett stora mängder energi och driver därigenom upp mängden energi förbrukad per invånare. Det är en viktig avvägning mellan nytta och miljöpåverkan, att bedöma huruvida Dalarnas företag har det produktionssätt som har den minsta miljöpåverkan i global jämförelse och därmed motiv till att just företagen i Dalarna ska bedriva denna produktion.
 
 
-## Hur mår Dalarnas natur{.tabset}
+## Naturresurser och ekosystemtjänster{.tabset}
 
 <div class="indicator-row">
 
