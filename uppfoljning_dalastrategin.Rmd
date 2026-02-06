@@ -90,7 +90,7 @@ Dalarna är rikt på naturresurser och om de brukas rätt ger de mångfalt tillb
 <div class="indicator-row">
 
 <span class="big-indicator">
-Skogsmark <span style="color:green; font-size:1.8em; font-weight:900;">⬆</span>
+Markanvändning <span style="color:green; font-size:1.8em; font-weight:900;">⬆</span>
 </span>
 
 <span class="big-indicator">
@@ -476,10 +476,102 @@ gg_inkomst$Medianinkomst_20_64_Dalarna_tid_linje
 ```{=html}
 <script>
 window.addEventListener('load', function () {
-  document.querySelectorAll('div.section.tabset .nav-tabs li, div.section.tabset .nav-tabs a')
-    .forEach(function (el) { el.classList.remove('active'); el.setAttribute('aria-selected','false'); });
-  document.querySelectorAll('div.section.tabset .tab-content .tab-pane')
-    .forEach(function (pane) { pane.classList.remove('active','in','show'); });
+
+  function ensurePlaceholder(tabset) {
+    let ph = tabset.querySelector('.tabset-placeholder');
+    if (!ph) {
+      ph = document.createElement('div');
+      ph.className = 'tabset-placeholder';
+      ph.style.margin = '0.75rem 0';
+      ph.style.fontStyle = 'italic';
+      ph.textContent = 'Klicka på en flik för att visa innehåll.';
+      const tabContent = tabset.querySelector('.tab-content');
+      if (tabContent) tabContent.parentNode.insertBefore(ph, tabContent);
+    }
+    return ph;
+  }
+
+  function collapse(tabset) {
+    const ph = ensurePlaceholder(tabset);
+    tabset.classList.add('tabset-collapsed');
+
+    tabset.querySelectorAll('.nav-tabs li, .nav-tabs a').forEach(function (el) {
+      el.classList.remove('active');
+      if (el.getAttribute) el.setAttribute('aria-selected','false');
+    });
+
+    ph.style.display = '';
+  }
+
+  function expand(tabset) {
+    const ph = ensurePlaceholder(tabset);
+    tabset.classList.remove('tabset-collapsed');
+    ph.style.display = 'none';
+  }
+
+  // Keeps the clicked element at the same visual spot after layout changes above it
+  function keepAnchorStable(anchorEl, fnThatChangesLayout) {
+    const beforeTop = anchorEl.getBoundingClientRect().top;
+
+    fnThatChangesLayout();
+
+    // Wait for layout to settle (2 RAFs is usually enough)
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        const afterTop = anchorEl.getBoundingClientRect().top;
+        const delta = afterTop - beforeTop;
+        if (delta !== 0) window.scrollBy(0, delta);
+      });
+    });
+  }
+
+  const tabsets = Array.from(document.querySelectorAll('div.section.tabset'));
+  tabsets.forEach(collapse);
+
+  tabsets.forEach(function (tabset) {
+    tabset.querySelectorAll('.nav-tabs a').forEach(function (a) {
+
+      a.addEventListener('click', function (e) {
+        const isActive = a.classList.contains('active') ||
+                         (a.parentElement && a.parentElement.classList.contains('active'));
+
+        // If clicking the active tab, collapse this tabset (toggle closed)
+        if (isActive) {
+          e.preventDefault();
+          keepAnchorStable(a, function () {
+            collapse(tabset);
+          });
+          return;
+        }
+
+        // Otherwise: close all OTHER tabsets, but keep this clicked tab in place visually
+        keepAnchorStable(a, function () {
+          tabsets.forEach(function (other) {
+            if (other !== tabset) collapse(other);
+          });
+          expand(tabset);
+        });
+        // Let Bootstrap activate the pane normally after this
+      });
+
+    });
+
+    // When Bootstrap finishes showing a tab, re-apply "close others" in case it re-opened something
+    // and keep the active tab header stable.
+    tabset.addEventListener('shown.bs.tab', function (ev) {
+      const activeLink = ev.target; // the <a> that was activated
+      if (!activeLink) return;
+
+      keepAnchorStable(activeLink, function () {
+        tabsets.forEach(function (other) {
+          if (other !== tabset) collapse(other);
+        });
+        expand(tabset);
+      });
+    });
+
+  });
+
 });
 </script>
 ```

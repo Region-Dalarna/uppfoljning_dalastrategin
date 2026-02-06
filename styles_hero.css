@@ -337,4 +337,7 @@ html[data-scroll="scrolled"] .tocify {
   line-height: 1.1;
 }
 
+.section.tabset.tabset-collapsed .tab-content {
+  display: none !important;
+}
 
