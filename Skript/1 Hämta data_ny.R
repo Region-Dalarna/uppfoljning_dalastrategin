@@ -204,6 +204,22 @@ energieffektivitet_max_ar <- max(energieffektivitet_df$År)
 
 energieffektivitet_forandring_procent <- round((energieffektivitet_df %>% filter(Region == "Dalarna", År == max(År)) %>% .$value/energieffektivitet_df %>% filter(Region == "Dalarna", År == min(År)) %>% .$value-1)*100,0)
 
+## Självförsörjning av livsmedel och el
+source(here("Skript","diagram_sjalvforsorjning.R"))
+gg_sjalvforsorjning <- diagram_sjalvforsorjning(region_vekt = "20",
+                                                output_mapp = output_mapp_figur,
+                                                diag_livsmedel = TRUE,
+                                                diag_el = TRUE,
+                                                returnera_data = TRUE,
+                                                ggobjektfilnamn_utan_tid = TRUE,
+                                                spara_figur = spara_figurer)
+
+# El
+sjalvforsorjning_el_min_ar <- min(sjalvforsorjning_el_df$ar)
+sjalvforsorjning_el_min_ar_varde <- round(sjalvforsorjning_el_df %>% filter(ar == min(ar)) %>% .$sjalvforsorjning,0)
+sjalvforsorjning_el_max_ar <- max(sjalvforsorjning_el_df$ar)
+sjalvforsorjning_el_max_ar_varde <- round(sjalvforsorjning_el_df %>% filter(ar == max(ar)) %>% .$sjalvforsorjning,0)
+
 ################################################
 ####    Ett konkurrenskraftigt Dalarna     #####
 ################################################
@@ -213,7 +229,7 @@ source("https://raw.githubusercontent.com/Region-Dalarna/diagram/refs/heads/main
 gg_etableringstid <- funktion_upprepa_forsok_om_fel( function() {
   diag_etablering_diverse_scb(output_mapp = output_mapp_figur,
                               returnera_data_rmarkdown = TRUE,
-                              startar = 2012,
+                              startar = 2013,
                               skriv_diagrambildfil = spara_figurer)
 }, hoppa_over = hoppa_over_felhantering)
 
@@ -299,6 +315,23 @@ gg_fortroende_rattsvasande <- diagram_fortroende_rattsvasande(region_vekt = "20"
                                                               returnera_data = TRUE,
                                                               ggobjektfilnamn_utan_tid = TRUE,
                                                               spara_figur = spara_figurer)
+
+fortroende_min_ar <- min(fortroende_df$ar)
+fortroende_max_ar <- max(fortroende_df$ar)
+fortroende_min_ar_varde_kvinnor <- round(fortroende_df %>% filter(ar == min(ar),region == "Dalarna",kon == "Kvinnor") %>% .$varde,0)
+fortroende_max_ar_varde_kvinnor <- round(fortroende_df %>% filter(ar == max(ar),region == "Dalarna",kon == "Kvinnor") %>% .$varde,0)
+fortroende_min_ar_varde_man <- round(fortroende_df %>% filter(ar == min(ar),region == "Dalarna",kon == "Män") %>% .$varde,0)
+fortroende_max_ar_varde_man <- round(fortroende_df %>% filter(ar == max(ar),region == "Dalarna",kon == "Män") %>% .$varde,0)
+
+hogst_fortroende_lan_man <- fortroende_df %>% filter(ar == max(ar),kon == "Män") %>% filter(varde == max(varde)) %>% .$region
+hogst_fortroende_lan_kvinnor <- fortroende_df %>% filter(ar == max(ar),kon == "Kvinnor") %>% filter(varde == max(varde)) %>% .$region
+hogst_fortroende_lan_man_varde <- round(fortroende_df %>% filter(ar == max(ar),kon == "Män") %>% filter(varde == max(varde)) %>% .$varde,0)
+hogst_fortroende_lan_kvinnor_varde <- round(fortroende_df %>% filter(ar == max(ar),kon == "Kvinnor") %>% filter(varde == max(varde)) %>% .$varde,0)
+
+lagst_fortroende_lan_man <- fortroende_df %>% filter(ar == max(ar),kon == "Män") %>% filter(varde == min(varde)) %>% .$region
+lagst_fortroende_lan_kvinnor <- fortroende_df %>% filter(ar == max(ar),kon == "Kvinnor") %>% filter(varde == min(varde)) %>% .$region
+lagst_fortroende_lan_man_varde <- round(fortroende_df %>% filter(ar == max(ar),kon == "Män") %>% filter(varde == min(varde)) %>% .$varde,0)
+lagst_fortroende_lan_kvinnor_varde <- round(fortroende_df %>% filter(ar == max(ar),kon == "Kvinnor") %>% filter(varde == min(varde)) %>% .$varde,0)
 
 # Anmälda brott per 100 000 invånare (diverse)
 source(here("Skript","diagram_brott_hundratusen.R"))
