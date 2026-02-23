@@ -187,7 +187,28 @@ Klimatförändringar påverkar fjällen och dess ekosystemprocesser allt mer. L�
 Fisktrappor etc?
 
 
-## Resursförbrukning{.tabset}
+## Förändrade beteenden för minskad resursförbrukning{.tabset}
+
+
+<div class="indicator-row">
+
+<span class="big-indicator">
+Vatten <span style="color:red; font-size:1.8em; font-weight:900;">➡</span>
+</span>
+
+
+<span class="big-indicator">
+Luft <span style="color:black; font-size:1.8em; font-weight:900;">⬆</span>
+</span>
+
+
+<span class="big-indicator">
+Skog och mark <span style="color:green; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Biologisk mångfald <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
 
 ### Kollektivt resande{-}
 
@@ -205,7 +226,7 @@ Marknadsandelen för kollektivtrafik beräknas som andelen resor med kollektivtr
 gg_kollektivt_resande$marknadsandel_resande_Dalarna
 ```
 
-### Elbilar{-}
+### ÖVergång till fler elbilar{-}
 
 Andelen personbilar som helt eller delvis drivs av el har ökat tydligt i Dalarna på senare år. Fram till mitten av 2010-talet var andelen mer eller mindre obefintlig, men därefter har ökningen gått snabbt. Initialt ökade framförallt andelen laddhybrider, men på senare år har även andelen rena elbilar ökat kraftigt. Andelen är dock fortfarande relativt låg. År `r elbilar_max_ar` var ungefär `r elbilar_andel_max_ar_Dalarna` procent av personbilarna i Dalarna antingen rena elbilar eller laddhybrider.
 
@@ -219,7 +240,7 @@ I ett nationellt perspektiv sticker framförallt Stockholms län ut, där mer ä
 gg_elbilar$elbilar_Sverige
 ```
 
-### Insamlat avfall{-}
+### Befolkningens insamlade avfall{-}
 
 En av prioriteringarna i Dalastrategin är att öka resurseffektiviteten i länet. Ett mått på resursförbrukning är mängden insamlat kommunalt avfall som kan antas motsvara invånarnas resursförbrukning. I det kommunala avfallet ingår det mesta avfall som ett hushåll producerar, så som mat- och restavfall, grov- och trädgårdsavfall och farligt avfall. Även förpackningar och batterier etc. som ingår i producentansvaret ingår i beräkningen. I sammanställningen nedan visas insamlat kommunalt avfall per person och år i Dalarna från `r avfall_min_ar` till `r avfall_max_ar`. År `r avfall_min_ar` samlades det in `r avfall_per_person_min_ar` kg avfall per person i Dalarna, att jämföra med ca `r avfall_per_person_max_ar` kg per person år `r avfall_max_ar`. En lägre mängd per person signalerar en lägre resursanvändning. I en nationell jämförelse ses att Stockholms län ligger bäst till med 384 kg per person och år, medan Kalmar ligger sämst till med över 517 kg per person och år - ej uppdaterat [(Kolada)](https://www.kolada.se/verktyg/fri-sokning/?kpis=61064&years=30200,30199,30198&municipals=27493,27494,27495,27496,27497,27498,27499,27500,27501,27502,27503,27504,27505,27506,27507,27508,27509,27510,27511,27512,27513&rows=municipal,kpi&visualization=bar-chart&focus=27508){target="_blank"}.
 
@@ -228,7 +249,7 @@ gg_avfall$avfall_Dalarna
 ```
 
 
-## Resurseffektivitet{.tabset}
+## Elproduktion och användning av energi- och material/råvaror {.tabset}
 
 ### Utsläpp{-}
 
