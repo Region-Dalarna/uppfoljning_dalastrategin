@@ -53,22 +53,17 @@ Senast uppdaterad: `r Sys.Date()`</i>
 
 # Introduktion {-}
 
-Dalarna står tillsammans med övriga Sverige, Europa och världen inför stora samhällsutmaningar. För att skapa en hållbar framtid för Dalarna antog Regionfullmäktige i juni 2021 en ny regional utvecklingsstrategi, ["Dalastrategin - Tillsammans för ett hållbart Dalarna"](https://www.regiondalarna.se/globalassets/regional-utveckling/dalastrategin-2030-tillsammans-for-ett-hallbart-dalarna-dec.pdf){target="_blank"}. 
+Dalarna står tillsammans med övriga Sverige, Europa och världen inför stora samhällsutmaningar. För att skapa en hållbar framtid för Dalarna antog Regionfullmäktige i juni 2021 en ny regional utvecklingsstrategi (reviderad 2026-02-16), ["Dalastrategin - Tillsammans för ett hållbart Dalarna"](https://www.regiondalarna.se/globalassets/regional-utveckling/dalastrategin-2030-tillsammans-for-ett-hallbart-dalarna-dec.pdf){target="_blank"}. 
 
-Strategin är ett stöd och en språngbräda i arbetet med att rusta Dalarna för att möta framtidens utmaningar och göra dem till möjligheter. Dalastrategin är indelad i tre målområden som kopplar an till de olika dimensionerna av hållbarhet - miljömässig, ekonomisk och social hållbarhet: 
+Strategin är ett stöd och en språngbräda i arbetet med att rusta Dalarna för att möta framtidens utmaningar och göra dem till möjligheter. Målsättningarna för Dalarna sammanfattas i tre målområden som kopplar an till de olika dimensionerna av hållbarhet - miljömässig, ekonomisk och social hållbarhet: 
 
 - ett klimatsmart Dalarna 
 - ett sammanhållet Dalarna
 - ett konkurrenskraftigt Dalarna 
 
-I Dalastrategin betonas att en miljömässigt hållbar omställning är en utmaning som berör alla delar av samhället, från global till lokal nivå och inom alla sektorer.
+Att ställa om för att skapa en hållbar framtid är en utmaning som berör alla delar av samhället, från global till lokal nivå och inom alla sektorer. Omställningen innebär att flytta fokus från att exploatera naturresurser till arbetssätt som vårdar naturen och naturkapitalet så att människor kan leva gott på dess avkastning och säkra tillgången till naturresurserna för kommande generationer. Rent vatten, ren luft, biologisk mångfald och andra ekosystem är grundläggande värden för människor och samhällen, och att vårda människor och människors hälsa, kunskap och bildning är grunden till att skapa långsiktig ekonomisk nytta och ekonomisk avkastning.
 
-Den här rapporten är en del av den årliga uppföljningen som beskriver utvecklingen i Dalarna på vägen till en hållbar framtid.
-
-En hållbar framtid handlar om att vårda de naturkapital och humankapital som ger människor och samhällen värden, så som rent vatten, ren luft, biologisk mångfald och andra ekosystem, samt att vårda människor och människors hälsa, kunskap och utbildning, detta är grunden till ekonomiska värden.
-
-Delrubrikerna ska bidra till att fånga grundläggande värden, på ett sådant sätt att det ska gå att följa trender, investeringar, avkastning och slitage, dvs. om kapitalen förvaltas väl, genererar positiva värden, eller om de slits för mycket
-
+Den här rapporten är en del av den årliga uppföljningen av Dalarnas utveckling och beskriver läget i Dalarna på vägen till en hållbar framtid.
 
 
 # Ett klimatsmart Dalarna
@@ -80,12 +75,12 @@ miljömässigt hållbart sätt. I ett klimatsmart Dalarna är samhällets
 robusthet och resiliens vid klimatförändringar god.
 </p>
 
-Den miljömässiga dimensionen för en hållbar regional utveckling handlar bland annat om att säkerställa att ekosystemen bibehålls och vårdas så att de fortsätter att leverera de tjänster som människor och samhällen är beroende av. Genom ambitionen att gå före i en miljömässigt hållbar omställning ska innovationer med hållbarhet i fokus gynnas bland regionens företag. Regionala lösningar kan bidra till att lösa globala problem och är vägen fram till goda livsmiljöer och levnadsvillkor för de boende.
+Den miljömässiga dimensionen för en hållbar regional utveckling handlar bland annat om att säkerställa att ekosystemen bibehålls och vårdas så att de fortsätter att leverera de tjänster som människor och samhällen är beroende av. I Dalarna finns företag och människor med idéer som kan bidra till att lösa globala problem, och är vägen fram till goda livsmiljöer och levnadsvillkor för de boende.
 
 Dalarna är rikt på naturresurser och om de brukas rätt ger de mångfalt tillbaka. Indikatorer som följs upp är därför bland annat hur resurser som vatten och vind, skog och jordbruksmark används. I Dalarna utgörs samtidigt en stor del av näringslivet av tillverkande industri som förbrukar relativt sett stora mängder energi och driver därigenom upp mängden energi förbrukad per invånare. Det är en viktig avvägning mellan nytta och miljöpåverkan, att bedöma huruvida Dalarnas företag har det produktionssätt som har den minsta miljöpåverkan i global jämförelse och därmed motiv till att just företagen i Dalarna ska bedriva denna produktion.
 
 
-## Naturresurser och ekosystemtjänster{.tabset}
+## Hur står det till med naturresurser och ekosystemtjänster{.tabset}
 
 <div class="indicator-row">
 
