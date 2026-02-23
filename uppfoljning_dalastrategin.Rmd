@@ -53,7 +53,12 @@ Senast uppdaterad: `r Sys.Date()`</i>
 
 # Introduktion {-}
 
-Dalarna står tillsammans med övriga Sverige, Europa och världen inför stora samhällsutmaningar. För att skapa en hållbar framtid för Dalarna antog Regionfullmäktige i juni 2021 en ny regional utvecklingsstrategi (reviderad 2026-02-16), ["Dalastrategin - Tillsammans för ett hållbart Dalarna"](https://www.regiondalarna.se/globalassets/regional-utveckling/dalastrategin-2030-tillsammans-for-ett-hallbart-dalarna-dec.pdf){target="_blank"}. 
+Dalarna står tillsammans med övriga Sverige, Europa och världen inför stora samhällsutmaningar. För att skapa en hållbar framtid för Dalarna antog Regionfullmäktige i juni 2021 en ny regional utvecklingsstrategi (reviderad och beslutad 2026-02-16), ["Dalastrategin - Tillsammans för ett hållbart Dalarna"](https://www.regiondalarna.se/globalassets/regional-utveckling/dalastrategin-2030-tillsammans-for-ett-hallbart-dalarna-dec.pdf){target="_blank"}. 
+
+Info-ruta Regional utveckling:
+Dalastrategin är regional utvecklingsstrategi, och är en central del av styrningen av den regionala utvecklingen i Dalarna. Varje region ges även ett uppdrag från riksdagen, formulerat genom den nationella strategin för hållbar regional utveckling (länk till strategin). Regionerna ges också en summa pengar årligen att använda för att koordinera och främja regional utveckling.... Budgetpropostionen område 19... Länsstyrelsens arbete är också en del av ... 
+Uppföljning, årlig rapportering till regeringen, länsstyrelsens uppföljning av miljömålen och av hur de bidrar till regional utveckling..
+
 
 Strategin är ett stöd och en språngbräda i arbetet med att rusta Dalarna för att möta framtidens utmaningar och göra dem till möjligheter. Målsättningarna för Dalarna sammanfattas i tre målområden som kopplar an till de olika dimensionerna av hållbarhet - miljömässig, ekonomisk och social hållbarhet: 
 
@@ -61,7 +66,7 @@ Strategin är ett stöd och en språngbräda i arbetet med att rusta Dalarna fö
 - ett sammanhållet Dalarna
 - ett konkurrenskraftigt Dalarna 
 
-Att ställa om för att skapa en hållbar framtid är en utmaning som berör alla delar av samhället, från global till lokal nivå och inom alla sektorer. Omställningen innebär att flytta fokus från att exploatera naturresurser till arbetssätt som vårdar naturen och naturkapitalet så att människor kan leva gott på dess avkastning och säkra tillgången till naturresurserna för kommande generationer. Rent vatten, ren luft, biologisk mångfald och andra ekosystem är grundläggande värden för människor och samhällen, och att vårda människor och människors hälsa, kunskap och bildning är grunden till att skapa långsiktig ekonomisk nytta och ekonomisk avkastning.
+Att ställa om för att skapa en hållbar framtid är en utmaning som berör alla delar av samhället, från global till lokal nivå och inom alla sektorer. Omställningen innebär att flytta fokus från kortsiktiga resultat till arbetssätt som säkrar naturresurserna långsiktigt så att människor kan leva gott på dess avkastning också i många generationer. Rent vatten, ren luft, biologisk mångfald och andra ekosystem är grundläggande värden för människor och samhällen, och att vårda människor och människors hälsa, kunskap och bildning är grunden till att skapa långsiktig ekonomisk nytta och ekonomisk trygghet.
 
 Den här rapporten är en del av den årliga uppföljningen av Dalarnas utveckling och beskriver läget i Dalarna på vägen till en hållbar framtid.
 
@@ -75,33 +80,71 @@ miljömässigt hållbart sätt. I ett klimatsmart Dalarna är samhällets
 robusthet och resiliens vid klimatförändringar god.
 </p>
 
-Den miljömässiga dimensionen för en hållbar regional utveckling handlar bland annat om att säkerställa att ekosystemen bibehålls och vårdas så att de fortsätter att leverera de tjänster som människor och samhällen är beroende av. I Dalarna finns företag och människor med idéer som kan bidra till att lösa globala problem, och är vägen fram till goda livsmiljöer och levnadsvillkor för de boende.
+Den miljömässiga dimensionen för en hållbar regional utveckling handlar bland annat om att säkerställa att ekosystemen bibehålls och vårdas så att de fortsätter att leverera de tjänster som människor och samhällen är beroende av. I Dalarna finns företag och människor med idéer som kan bidra till att lösa globala problem, och bana väg till goda livsmiljöer och levnadsvillkor för de boende.
 
-Dalarna är rikt på naturresurser och om de brukas rätt ger de mångfalt tillbaka. Indikatorer som följs upp är därför bland annat hur resurser som vatten och vind, skog och jordbruksmark används. I Dalarna utgörs samtidigt en stor del av näringslivet av tillverkande industri som förbrukar relativt sett stora mängder energi och driver därigenom upp mängden energi förbrukad per invånare. Det är en viktig avvägning mellan nytta och miljöpåverkan, att bedöma huruvida Dalarnas företag har det produktionssätt som har den minsta miljöpåverkan i global jämförelse och därmed motiv till att just företagen i Dalarna ska bedriva denna produktion.
+Dalarna är rikt på naturresurser och om de brukas rätt ger de mångfalt tillbaka.  som följs upp är därför bland annat hur resurser som vatten och vind, skog och jordbruksmark används. I Dalarna utgörs samtidigt en stor del av näringslivet av tillverkande industri som förbrukar relativt sett stora mängder energi och driver därigenom upp mängden energi förbrukad per invånare. Det är en viktig avvägning mellan nytta och miljöpåverkan, att bedöma huruvida Dalarnas företag har det produktionssätt som har den minsta miljöpåverkan i global jämförelse och därmed motiv till att just företagen i Dalarna ska bedriva denna produktion.
 
 
-## Hur står det till med naturresurser och ekosystemtjänster{.tabset}
+## Hur står det till med Dalarnas natur?{.tabset}
+
+Länsstyrelserna i Sverige har i uppdrag att följa upp tillståndet i miljön i respektive län. För Dalarna finns redovisningen här: https://www.rus.se/regional-arlig-uppfoljning/dalarnas-lan/#generation
+Avsnittet som följer utgår ifrån denna rapport.
 
 <div class="indicator-row">
 
 <span class="big-indicator">
-Markanvändning <span style="color:green; font-size:1.8em; font-weight:900;">⬆</span>
+Vatten <span style="color:red; font-size:1.8em; font-weight:900;">➡</span>
+</span>
+Tillgången på grundvatten av god kvalitet är god, Det atmosfäriska nedfallet har avtagit och flera vatten som tidigare varit försurade har återhämtat sig. Samtidigt tillåtna miljöfarliga ämnen och nya ämnen med okända effekter släppas ut i miljön. Hundratals ämnen påträffas i Dalarnas ytvatten vilket återspeglar den stora kemikalieanvändningen i samhället och industrin. Övergödningsproblemen är störst i jordbruksområden i de sydöstra delarna av länet.
+
+<span class="big-indicator">
+Luft <span style="color:black; font-size:1.8em; font-weight:900;">⬆</span>
+</span>
+Luftkvaliteten i Dalarna förbättras.
+
+<span class="big-indicator">
+Skog och mark <span style="color:green; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 
 <span class="big-indicator">
-Vatten <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-
-<span class="big-indicator">
-Luft <span style="color:black; font-size:1.8em; font-weight:900;">➡</span>
+Biologisk mångfald <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 
 </div>
 
-### Markanvändning{-} 
+### Vatten{-} 
+Dalarna har god tillgång till grundvatten av god kvalitet ur ett regionalt perspektiv. Arbetet med statusklassificering 2018-2019 visar dock att ca 40 av Dalarnas 277 grundvattenförekomster riskerar att inte nå god kemisk status till år 2027.
+Det atmosfäriska nedfallet har avtagit och flera vatten som tidigare varit försurade har återhämtat sig. Kalkningen har kunnat minskas i delar av Dalarnas län. 
+Hundratals ämnen påträffas i Dalarnas ytvatten vilket återspeglar den stora kemikalieanvändningen i samhället och industrin. Halter av förbjudna ämnen i miljön sjunker, samtidigt släpps tillåtna miljöfarliga ämnen och nya ämnen med okända effekter ut i miljön.
+Övergödningsproblemen är störst i jordbruksområden i de sydöstra delarna av länet. Åtgärdsarbetet har ökat på senare år, men det är inte tillräckligt för att målet ska kunna nås. Det tar också tid innan minskade utsläpp ger effekt i de vatten som är övergödda, bland annat eftersom den naturliga återhämtningen är långsam. Ännu märks inga tydliga förbättringar i miljön på regional nivå.
+
+Vattendragen i länet är kraftigt påverkade av fysiska ingrepp som rätning och rensningar, samt av vandringshinder och flödesreglering. Med dagens åtgärdstakt nås målet Levande sjöar och vattendrag om ungefär 200 år. Kunskapsbristen för kulturmiljövärden är stor även om förbättringar skett under senare år. Fler sjöar och vattendrag behöver skyddas genom inrättande av områdesskydd.
+
+Flera försurade vatten återhämtar sig och kalkningen har kunnat minskas i delar av länet. Minskande anslag leder till att kalkning behövt avslutas för sjöar och vattendrag med fortsatt behov av kalkning.
+
+Dalarnas grundvatten håller en god kvalitet men för vissa grundvattenförekomster finns det en risk att de ej når god kemisk status till 2027. Återhämtningstiden för övergödda vatten är lång och ännu märks inga tydliga förbättringar i miljön. Flertalet vattendragsrestaureringar pågår men åtgärdsbehovet är stort.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_vatten$vattendrag_Dalarna
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_vatten$vattendrag_Sverige
+```
+
+### Luft{-} 
+Luftkvaliteten är generellt god i Dalarna men försämrad i tätorter på grund av utsläpp från trafik, industri, uppvärmning av bostäder och småskalig vedeldning. Lokalt kan det periodvis finnas problem med föroreningar kopplat till veteranbilar.
+
+### Skog och mark{-} 
 
 **Skogsmark**
+I Dalarna genomförs många insatser för förbättrad miljöhänsyn och ökad kunskap om skogens natur- och kulturvärden. Viktiga strukturer, som död ved, ökar men saknas fortfararande i tillräcklig mängd. Bestånd med naturvärden och lång skoglig kontinuitet avverkas. Antalet hotade arter och skador på forn- och kulturlämningar är fortsatt på en hög nivå. För att nå miljömålet behöver sektorns ansvar förtydligas och insatser öka för inventering, skydd, naturvårdande skötsel och större variation i skogsbruket.
 
+En förutsättning för bibehållen biologisk mångfald och bevarade kulturmiljövärden i odlingslandskapet är att det finns hållbara och bärkraftiga jordbruksföretag i länet och betande djur i landskapet. 
+
+Antal betesdjur har minskat stadigt i Dalarnas län sedan 1980-talet, liksom antalet jordbruksföretag och arealen brukad jordbruksmark. Med färre betande djur och marker som inte längre hävdas försämras förutsättningarna för att bibehålla ett rikt odlingslandskap i länet.
+
+Klimatförändringar påverkar fjällen och dess ekosystemprocesser allt mer. Låglandsarter sprider sig in i fjällen och invasiva arter har spridit sig in i fjällområdet. Flera sjöar är försurade och kalkas för att gynna växt- och djurlivet. Inventering av fjällnära skogar har visat på höga biologiska värden, varför skydd av de fjällnära skogarna är av stor vikt. Fjällskogens kulturlämningar är däremot dåligt kända och sällan undersökta. Exploaterings- och besökstrycket ökar med markslitage, nedskräpning och störning av ren som följd.
 År 2018 beslutade dåvarande regering om Sveriges första nationella skogsprogram med fokus på skogsbrukets roll för en hållbar utveckling. I Dalastrategin omnämns skogsbruket som en av länets viktigare näringar. Skogsbruket påverkar och påverkas av klimatförändringarna, och därför behöver skötsel och brukande anpassas utifrån rådande kunskap om vad som har minst miljöpåverkan.
 
 Dalarnas yta utgörs till 79 procent av skog vilket gör Dalarna till det femte mest skogstäta länet i landet [(SCB)](https://www.scb.se/hitta-statistik/sverige-i-siffror/miljo/marken-i-sverige/){target="_blank"}. All skogsmark är inte produktiv (ex. myrar och bergsytor etc. som producerar mindre än en kubikmeter virke per hektar och år). Dessa områden utgör 11,3 procent av skogsmarken, varav ca 1,5 procentenheter är formellt skyddad. Skogsbruket i Dalarna brukas nästan enbart med konventionella metoder, ca 78 procent av skogsmarken brukas konventionellt [(SCB)](https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__MI__MI0605/SkyddSkogFrivillig/table/tableViewLayout1/){target="_blank"}.
@@ -118,6 +161,7 @@ Drygt `r andel_skogsmark_max_ar` procent av den produktiva skogsmarken i Dalarna
 gg_skogsmark$andel_skyddad_skogsmark_Dalarna
 ```
 
+
 **Betesmark och slåtteräng**
 
 Biologisk mångfald och väl fungerande ekosystem är en förutsättning för allt liv på jorden. De är därmed också nödvändiga för goda livsmiljöer för både Dalarnas invånare och för Dalarnas näringsliv. Den gröna infrastrukturen är ekologiskt funktionella nätverk av livsmiljöer och naturområden som utformas, brukas och förvaltas så att den biologiska mångfalden bevaras och därmed främjar för samhället så centrala ekosystemtjänster som exempelvis vattenrening och livskraftiga jordbruksmarker, etc. Samhället har allt att vinna på ett hållbart bruk av ekosystemen och att förvalta ett mångfunktionellt landskap där natur- och kulturvärden tillvaratas.
@@ -132,17 +176,16 @@ Slåtteräng är en delmängd av betesmarken som har särskilt höga biologiska 
 gg_betesmark$areal_betesmark_Dalarna
 ```
 
-### Vatten{-} 
+### Biologisk mångfald{-}
+Det bedrivs gediget arbete för att gynna arter, skapa livsmiljöer och förbättra grönstruktur i Dalarna. Ändå är 1396 av länets arter rödlistade och vissa nära att dö ut på grund av markanvändning och global uppvärmning. Klimatförändring kan ha bidragit till lokala utdöenden av Dalarnas landskapsfjäril violett guldvinge de senaste årtiondena, 2025 fanns den bara på en lokal. Invasiva främmande arter ökar trots att många bekämpar dem. Havsörnen tycks ha haft sämre framgång 2023-2025 än 2021-2022.
 
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_vatten$vattendrag_Dalarna
-```
+Utvecklingen för miljökvalitetsmålet bedöms neutral och är inte entydig. Flera insatser görs i samhället som bedöms gynna tillståndet. Genom våtmarkssatsningen restaureras och anläggs många våtmarker i länet. Takten i arbetet har goda förutsättningar att öka i och med klimatarbetet och ett ökande fokus på naturtypsrestaurering. Utvecklingen påverkas däremot negativt av den långsamma igenväxning som sker generellt på myrar samt exploatering i form av dikning vid vägar och järnvägar.
 
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_vatten$vattendrag_Sverige
-```
+Renbetesmarker
+Klimatförändringar påverkar fjällen och dess ekosystemprocesser allt mer. Låglandsarter sprider sig in i fjällen och invasiva arter har spridit sig in i fjällområdet. Flera sjöar är försurade och kalkas för att gynna växt- och djurlivet. Inventering av fjällnära skogar har visat på höga biologiska värden, varför skydd av de fjällnära skogarna är av stor vikt. Fjällskogens kulturlämningar är däremot dåligt kända och sällan undersökta. Exploaterings- och besökstrycket ökar med markslitage, nedskräpning och störning av ren som följd.
 
-### Luft{-} 
+Fisktrappor etc?
+
 
 ## Resursförbrukning{.tabset}
 
