@@ -359,6 +359,28 @@ Den ekonomiska dimensionen av hållbarhet i det regionala utvecklingsarbetet han
 
 ## Arbetskraften{.tabset}
 
+<span class="big-indicator">
+Utsläpp <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Elproduktion <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Energieffektivitet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Avfall/BRP <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+
+<span class="big-indicator">
+Självförsörjning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+
 ### Invandrares etablering på arbetsmarknaden{-}
 
 Invandring är en del av lösningen för att möta en ökad efterfrågan på arbetskraft och rätt kompetens i Dalarna och Sverige. Dalarna har haft en relativt stor inflyttning av utomeuropeiskt födda under senare år. Många invandrade är i arbetsför ålder och blir därför ett viktigt tillskott till arbetskraften. Denna indikator är ett mått på i vilken takt och utsträckning som invandrade etablerar sig på arbetsmarknaden i Dalarna. Med etablering menas att personen är förvärvsarbetande helt utan stöd från a-kassa eller arbetsmarknadsåtgärd, eller dylikt.
@@ -414,6 +436,27 @@ gg_fruktsamhet$summerad_fruktsamhet_Riket_facet
 
 ## Marknadseffektivitet{.tabset}
 
+<span class="big-indicator">
+Utsläpp <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Elproduktion <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Energieffektivitet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Avfall/BRP <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+
+<span class="big-indicator">
+Självförsörjning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
 ### Föräldrapenning{-}
 
 Fördelningen av dagar mellan vårdnadshavarna har jämnats ut något sedan slutet av 1990-talet då runt 85-90 procent av föräldrapenningdagarna togs ut av mammorna. Sedan dess har först en (1995), sedan två (2002) och även tre månader (2016) reserverats åt respektive vårdnadshavare (också kallade "pappamånader"). Detta har bidragit till ett jämnare uttag men utvecklingen får ändå sägas gå relativt trögt, då kvinnors andel endast har minskat till runt `r round(as.numeric(foraldrapenning_df %>% filter(Region == "Dalarnas län", Kön == "Kvinnor", År == max(År)) %>% .$Andel),0)` procent `r max(foraldrapenning_df$År)`. Svenska vårdnadshavare är således långt ifrån att ge sina barn en jämställd tillgång till sina föräldrar. Skillnaden i uttag påverkar också den disponibla inkomsten, som beskrivits under rubriken Ekonomisk jämställdhet. Skillnaden är som störst mellan sammanboende kvinnor och män när det yngsta barnet är 0–3 år [(Regeringen, 2022)](<https://www.regeringen.se/contentassets/46945970585240a4a5bfd9a0f75ecf3d/ekonomisk-jamstalldhet.pdf>){target="_blank"}.
@@ -459,6 +502,27 @@ gg_bredband$tillgang_bredband_Dalarna
 
 ## Företagande{.tabset}
 
+<span class="big-indicator">
+Utsläpp <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Elproduktion <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Energieffektivitet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Avfall/BRP <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+
+<span class="big-indicator">
+Självförsörjning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
 ### Nystartade företag{-}
 
 Antalet nystartade företag per kommun i Dalarna visar att `r nystartade_kommun_hogst_max_ar` kommun har flest, med ungefär `r nystartade_kommun_hogst_max_ar_varde` nystartade företag per 1000 invånare `r nystartade_max_ar`, medan `r nystartade_kommun_lagst_min_ar` har minst med ca `r nystartade_kommun_lagst_min_ar_varde`.  Ungefär hälften av Dalarnas kommuner hade fler nystartade företag (per 1000 invånare) än Sverige `r nystartade_max_ar`.
@@ -497,7 +561,29 @@ möjligheter att delta i samhällsutvecklingen. Ju fler
 som känner sig delaktiga, desto mer utveckling kan
 åstadkommas.
 
-## Hälsa och trygghet{.tabset}
+## Dalfolkets hälsa och trygghet{.tabset}
+
+<span class="big-indicator">
+Medellivslängd <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Upplevd hälsa <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Folksjukdomar <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Brott mot person <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+
+<span class="big-indicator">
+Upplevd trygghet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
 
 ### Medellivslängd{-}
 
@@ -511,7 +597,30 @@ gg_aterstaende_medellivslangd$`medellivslangd_aterstaende_vid_30 år_alder_Dalar
 gg_anmalda_brott$`anmalda_stold-_och_tillgreppsbrott_Dalarna`
 ```
 
-## Hur uppkopplade är dalfolket{.tabset}
+## Dalfolkets delaktighet, samhällsengagemang och tillit{.tabset}
+
+
+<span class="big-indicator">
+Utsläpp <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Elproduktion <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Energieffektivitet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Avfall/BRP <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+
+<span class="big-indicator">
+Självförsörjning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
 
 ### Avsaknad av tillit till andra människor{-}
 
@@ -525,9 +634,34 @@ Andelen som säger sig sakna tillit utgör ungefär `r  tillit_senaste_ar` proce
 gg_tillit$tillit_Dalarna
 ```
 
-## Ekonomisk jämlikhet{.tabset}
+## Fördelning av inkomster och ekonomiska värden hos Dalfolket {.tabset}
 
-### Gini-koefficient{-}
+<span class="big-indicator">
+Gini-fördelningen <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Barn i ekonomisk utsatthet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Könslönegap <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Bidragsberoende <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Privat sparande <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Kapitalvinst/förluster <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+
+### Gini-fördelningen {-}
 
 I Dalastrategin lyfts ekonomiska klyftor som en framtidsutmaning för länet. För att redovisa ojämlikheten i inkomstfördelningen används gini-koefficienten. Ett högt värde på koefficienten visar på större inkomstskillnader och därmed större ojämlikhet. Här redovisas ginikoefficienten beräknad genom disponibel inkomst per "konsumtionsenhet" inklusive kapitalvinster. Med konsumtionsenhet menas att det i beräkningen av en individs tillgängliga ekonomiska resurser tas hänsyn till hur hushållet som individen bor i är sammansatt. Det betyder att beräkningen beaktar om personen är ensamboende eller sammanboende och om den har ansvar för minderåriga barn eller inte etc, faktorer som kan minska eller öka individens disponibla inkomst.
 
