@@ -145,6 +145,7 @@ En förutsättning för bibehållen biologisk mångfald och bevarade kulturmilj�
 Antal betesdjur har minskat stadigt i Dalarnas län sedan 1980-talet, liksom antalet jordbruksföretag och arealen brukad jordbruksmark. Med färre betande djur och marker som inte längre hävdas försämras förutsättningarna för att bibehålla ett rikt odlingslandskap i länet.
 
 Klimatförändringar påverkar fjällen och dess ekosystemprocesser allt mer. Låglandsarter sprider sig in i fjällen och invasiva arter har spridit sig in i fjällområdet. Flera sjöar är försurade och kalkas för att gynna växt- och djurlivet. Inventering av fjällnära skogar har visat på höga biologiska värden, varför skydd av de fjällnära skogarna är av stor vikt. Fjällskogens kulturlämningar är däremot dåligt kända och sällan undersökta. Exploaterings- och besökstrycket ökar med markslitage, nedskräpning och störning av ren som följd.
+
 År 2018 beslutade dåvarande regering om Sveriges första nationella skogsprogram med fokus på skogsbrukets roll för en hållbar utveckling. I Dalastrategin omnämns skogsbruket som en av länets viktigare näringar. Skogsbruket påverkar och påverkas av klimatförändringarna, och därför behöver skötsel och brukande anpassas utifrån rådande kunskap om vad som har minst miljöpåverkan.
 
 Dalarnas yta utgörs till 79 procent av skog vilket gör Dalarna till det femte mest skogstäta länet i landet [(SCB)](https://www.scb.se/hitta-statistik/sverige-i-siffror/miljo/marken-i-sverige/){target="_blank"}. All skogsmark är inte produktiv (ex. myrar och bergsytor etc. som producerar mindre än en kubikmeter virke per hektar och år). Dessa områden utgör 11,3 procent av skogsmarken, varav ca 1,5 procentenheter är formellt skyddad. Skogsbruket i Dalarna brukas nästan enbart med konventionella metoder, ca 78 procent av skogsmarken brukas konventionellt [(SCB)](https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__MI__MI0605/SkyddSkogFrivillig/table/tableViewLayout1/){target="_blank"}.
@@ -187,7 +188,7 @@ Klimatförändringar påverkar fjällen och dess ekosystemprocesser allt mer. L�
 Fisktrappor etc?
 
 
-## Förändrade beteenden för minskad resursförbrukning{.tabset}
+## Beteenden som påverkar resursförbrukningen i Dalarna{.tabset}
 
 
 <div class="indicator-row">
@@ -198,12 +199,16 @@ Kollektivt resande <span style="color:red; font-size:1.8em; font-weight:900;">�
 
 
 <span class="big-indicator">
-ÖVergång till elbilar <span style="color:black; font-size:1.8em; font-weight:900;">⬆</span>
+Övergång till elbilar <span style="color:black; font-size:1.8em; font-weight:900;">⬆</span>
 </span>
 
 
 <span class="big-indicator">
 Insamlat avfall <span style="color:green; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Kommunala klimatanpassningsplaner <span style="color:green; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 
 
@@ -244,6 +249,7 @@ En av prioriteringarna i Dalastrategin är att öka resurseffektiviteten i läne
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_avfall$avfall_Dalarna
 ```
+### Kommunala klimatanpassningsplaner {-}
 
 
 ## Utsläpp, elproduktion och användning av energi- och material/råvaror {.tabset}
@@ -601,25 +607,38 @@ gg_anmalda_brott$`anmalda_stold-_och_tillgreppsbrott_Dalarna`
 
 
 <span class="big-indicator">
-Utsläpp <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Valdeltagande/ samhällsengagemang <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 
 <span class="big-indicator">
-Elproduktion <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Kultur/fritid unga (LOK, kulturskola) <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 
 <span class="big-indicator">
-Energieffektivitet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Tillgång fysiskt: bibliotek, skola, service <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 
 <span class="big-indicator">
-Avfall/BRP <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Skola och arbetsliv <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 
 
 <span class="big-indicator">
-Självförsörjning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Digital uppkoppling geografi <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+
+<span class="big-indicator">
+Kulturarv <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+
+## Valdeltagande/ samhällsengagemang {-}
+
+Ex. diagram över Unga som vill vara med och påverka i frågor som rör kommunen  (LUPP)
+
+## Kultur/fritid unga (LOK, kulturskola) {-}
+
+## Tillgång fysiskt: bibliotek, skola, service {-}
 
 
 ### Avsaknad av tillit till andra människor{-}
@@ -657,7 +676,7 @@ Privat sparande <span style="color:red; font-size:1.8em; font-weight:900;">⬇</
 </span>
 
 <span class="big-indicator">
-Kapitalvinst/förluster <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Kapitalvinster/förluster <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 
 
@@ -671,7 +690,7 @@ I Dalarna har ginikoefficienten ökat något från  `r gini_min_ar` till `r gini
 gg_gini$gini_tidsserie_00_20
 ```
 
-### Låg ekonomisk standard{-}
+### Låg ekonomisk standard / ? Barn i ekonomisk utsatthet{-}
 
 Ekonomiska klyftor mellan olika grupper i samhället är en utmaning för både Sverige och Dalarna. Om de socioekonomiska klyftorna blir alltför stora riskerar de att motverka sammanhållning, tillit och trygghet. Det riskerar i sin tur att försvaga demokratin, exempelvis genom systematiska skillnader i valdeltagande, faktiskt eller upplevt inflytande samt delaktighet och engagemang.
 
@@ -689,7 +708,7 @@ I ett nationellt perspektiv ser vi att endast fem andra län har en högre andel
 gg_lag_ek_standard$andel_invånare_0_19_år_med_låg_ekonomisk_standard
 ```
 
-### Löner{-}
+### Löner / Könslönegap {-}
 
 En egen inkomst är en av förutsättningarna för ett ekonomiskt självständigt liv. Livsinkomsten påverkar även vilken pension personen kommer att få vid pensionering. 
 
@@ -702,6 +721,18 @@ gg_inkomst$Medianinkomst_20_64_Dalarna_tid
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_inkomst$Medianinkomst_20_64_Dalarna_tid_linje
 ```
+
+### Bidragsberoende {-}
+
+
+
+### Privat sparande {-}
+
+
+
+### Kapitalvinster/förluster {-}
+
+
 
 ```{=html}
 <script>
