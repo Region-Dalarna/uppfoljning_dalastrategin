@@ -363,7 +363,7 @@ I ett konkurrenskraftigt Dalarna är näringslivet livskraftigt och skapar tillv
 
 Den ekonomiska dimensionen av hållbarhet i det regionala utvecklingsarbetet handlar om att använda och hushålla med resurser och förädla idéer på ett miljömässigt och socialt hållbart sätt och ta vara på möjligheterna att därigenom skapa konkurrenskraft och sysselsättning. Med ett cirkulärt system där resurser och värden kan återbrukas främjas en ekonomiskt hållbar utveckling.
 
-## Arbetskraften{.tabset}
+## Arbetskraften, återväxt och kompetens {.tabset}
 
 <span class="big-indicator">
 Utsläpp <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
@@ -385,6 +385,31 @@ Avfall/BRP <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 <span class="big-indicator">
 Självförsörjning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+
+### Arbetskraften, sysselsatta och arbetslösa {-}
+Samtliga i åldern 20-64 år, och fördelning mellan vilka aktivitetsgrupper de tillhör.
+
+Kommentera även UVAS och andra grupper som står långt ifrån arbetsmarknaden. 
+  
+
+### Unga som fullföljer gymnasiet{-}
+
+Kunskap ger människor möjlighet att växa och påverka sin livssituation. Tillgång till utbildning, kunskap och bildning är avgörande för såväl utvecklingen av samhället, som god välfärd och tillväxt i näringslivet. När arbetsgivare inte hittar rätt kompetens hämmas den ekonomiska utvecklingen. Samtidigt försvagas den sociala hållbarheten när människor ställs utanför arbetsmarknaden. Befolkningens relativt sett låga utbildningsnivåer är en utmaning i stora delar av Dalarna. Ambitionen i Dalastrategin är att fler ska klara en gymnasieexamen för att därmed få bättre förutsättningar att etablera sig på arbetsmarknaden.
+
+Denna indikator mäter andelen elever i Dalarna som har fullföljt en gymnasieutbildning inom fyra år efter att de påbörjat gymnasiet. Sett över hela tidsperioden `r gymnasiet_min_lasar` till `r gymnasiet_max_lasar` finns det en positiv trend, även om andelen fluktuerar mellan åren. Av eleverna som började läsa på gymnasiet i Dalarna läsåret `r gymnasiet_min_lasar` var det `r gymnasiet_min_lasar_andel` procent som inom fyra år fullföljde sin utbildning med examen. Den lägsta andelen avklarade examen om `r gymnasiet_lagst_avklarat_andel` procent uppmättes för dem som påbörjade gymnasiet läsåret `r gymnasiet_lagst_avklarat_lasar` (möjligen en pandemieffekt), samtidigt som den högsta andelen avklarade examen finns bland de elever som påbörjade gymnasiet läsåret `r gymnasiet_hogst_avklarat_lasar`, `r gymnasiet_hogst_avklarat_andel` procent av dem har tagit ut examen inom fyra år.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_genomstromning_gym$genomstromning_gymnasiet_Dalarna
+```
+
+### Utbildningsnivåer{-}
+
+Diagram, könsuppdelade, gärna jämte varandra. Finns stapeldiagram - funkar de, eller borde det göras om till ytdiagram?
+
+
+### Sjukfrånvaro minst 14 dagar{-}
+
+Längre sjukfrånvaro, alt, endast sjukfrånvaro pga stress? kan ofta härröras till Slitage på humankapitalet.
 
 
 ### Invandrares etablering på arbetsmarknaden{-}
@@ -410,17 +435,8 @@ En jämförelse mellan länen när det gäller möjligheten att ha etablerat sig
 gg_etableringstid$etablering_vistelsetid_allalan
 ```
 
-### Unga som fullföljer gymnasiet{-}
 
-Kunskap ger människor möjlighet att växa och påverka sin livssituation. Tillgång till utbildning, kunskap och bildning är avgörande för såväl utvecklingen av samhället, som god välfärd och tillväxt i näringslivet. När arbetsgivare inte hittar rätt kompetens hämmas den ekonomiska utvecklingen. Samtidigt försvagas den sociala hållbarheten när människor ställs utanför arbetsmarknaden. Befolkningens relativt sett låga utbildningsnivåer är en utmaning i stora delar av Dalarna. Ambitionen i Dalastrategin är att fler ska klara en gymnasieexamen för att därmed få bättre förutsättningar att etablera sig på arbetsmarknaden.
-
-Denna indikator mäter andelen elever i Dalarna som har fullföljt en gymnasieutbildning inom fyra år efter att de påbörjat gymnasiet. Sett över hela tidsperioden `r gymnasiet_min_lasar` till `r gymnasiet_max_lasar` finns det en positiv trend, även om andelen fluktuerar mellan åren. Av eleverna som började läsa på gymnasiet i Dalarna läsåret `r gymnasiet_min_lasar` var det `r gymnasiet_min_lasar_andel` procent som inom fyra år fullföljde sin utbildning med examen. Den lägsta andelen avklarade examen om `r gymnasiet_lagst_avklarat_andel` procent uppmättes för dem som påbörjade gymnasiet läsåret `r gymnasiet_lagst_avklarat_lasar` (möjligen en pandemieffekt), samtidigt som den högsta andelen avklarade examen finns bland de elever som påbörjade gymnasiet läsåret `r gymnasiet_hogst_avklarat_lasar`, `r gymnasiet_hogst_avklarat_andel` procent av dem har tagit ut examen inom fyra år.
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_genomstromning_gym$genomstromning_gymnasiet_Dalarna
-```
-
-### Fruktsamhet{-}
+### Fruktsamhet, alt. komponenterna som i integrationsrapporten? {-}
 
 <details>
 
@@ -440,28 +456,55 @@ gg_fruktsamhet$summerad_fruktsamhet_Riket_facet
 ```
 
 
-## Marknadseffektivitet{.tabset}
+## Företagandets förutsättningar{.tabset}
 
 <span class="big-indicator">
-Utsläpp <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Nya företag och 3-årig överlevnad <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 
 <span class="big-indicator">
-Elproduktion <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Största hindren för tillväxt i Dalarna <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 
 <span class="big-indicator">
-Energieffektivitet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Föräldrapenning, fördelning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 
 <span class="big-indicator">
-Avfall/BRP <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Förtroende för rättsväsendet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 
 
 <span class="big-indicator">
-Självförsörjning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Anmälda ekobrott och bostadsinbrott <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+
+<span class="big-indicator">
+Tillgång till bredband <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Punktlighet tåg, länsvis <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+
+<span class="big-indicator">
+Infrastruktur <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+
+### Nystartade företag och 3-årig överlevnad {-}
+
+Antalet nystartade företag per kommun i Dalarna visar att `r nystartade_kommun_hogst_max_ar` kommun har flest, med ungefär `r nystartade_kommun_hogst_max_ar_varde` nystartade företag per 1000 invånare `r nystartade_max_ar`, medan `r nystartade_kommun_lagst_min_ar` har minst med ca `r nystartade_kommun_lagst_min_ar_varde`.  Ungefär hälften av Dalarnas kommuner hade fler nystartade företag (per 1000 invånare) än Sverige `r nystartade_max_ar`.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_nyst_konk$nystartade
+```
+
+
+### Största hindren för tillväxt {-}
+Från TVV - företagens villkor och verklighet, alt. Entreprenörskapsforums rapport.
+
 
 ### Föräldrapenning{-}
 
@@ -487,6 +530,7 @@ gg_fortroende_rattsvasande$fortroende_rattsvasande__sverige
 
 ### Anmälda brott{-} 
 
+
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_anmalda_brott$anmalda_ekobrott_Dalarna
 ```
@@ -506,47 +550,65 @@ I Dalarna har andelen av befolkningen med tillgång till, eller möjlighet att a
 gg_bredband$tillgang_bredband_Dalarna
 ```
 
-## Företagande{.tabset}
 
-<span class="big-indicator">
-Utsläpp <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+### Punktlighet tåg {-}
 
-<span class="big-indicator">
-Elproduktion <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
 
-<span class="big-indicator">
-Energieffektivitet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+### Något som fångar infrastrukturläget {-}
 
-<span class="big-indicator">
-Avfall/BRP <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+
+
+
+## Produktion, produktivitet och export {.tabset}
 
 
 <span class="big-indicator">
-Självförsörjning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+BRP, arbetsproduktivitet alt. förädlingsvärde <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 
-### Nystartade företag{-}
+<span class="big-indicator">
+Regional export <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
 
-Antalet nystartade företag per kommun i Dalarna visar att `r nystartade_kommun_hogst_max_ar` kommun har flest, med ungefär `r nystartade_kommun_hogst_max_ar_varde` nystartade företag per 1000 invånare `r nystartade_max_ar`, medan `r nystartade_kommun_lagst_min_ar` har minst med ca `r nystartade_kommun_lagst_min_ar_varde`.  Ungefär hälften av Dalarnas kommuner hade fler nystartade företag (per 1000 invånare) än Sverige `r nystartade_max_ar`.
+<span class="big-indicator">
+Ägande, utländskt inhemskt <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
 
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_nyst_konk$nystartade
-```
+<span class="big-indicator">
+Könssegregering på arbetsmarknaden <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
 
-### Könssegregering{-}
+
+
+### BRP, arbetsproduktivitet {-} 
+
+
+### Regional export {-}
+
+Inkl. gästnätter från utlandet.. 
+
+
+### Inhemskt utländskt ägande {-}
+
+Sysselsatta som arbetar i utlandsägda företag
+
+Omsättning arbetsställe per utlandsägt, inhemskt företag.
+
+
+
+### Könssegregering på arbetsmarknaden {-}
 
 Sedan många år har kvinnor och män haft likvärdig tillgång till utbildning och möjlighet att fritt välja yrke. Trots detta består många av könsskillnaderna i arbetslivet. Många branscher i länet har idag en tydlig övervikt av det ena eller det andra könet, exempelvis byggbranschen som omfattar yrken inom bland annat el och VVS, och där kvinnor bara utgör ungefär `r forvarvsarbetande_bygg_andel` procent av de förvärvsarbetande. Även om det har skett en ökning av andelen kvinnor inom byggbranschen är denna ökning ännu liten i sammanhanget. Inom vård och omsorg är bilden densamma men med motsatt könsfördelning. Här utgör kvinnor cirka `r forvarvsarbetande_vard_andel` procent av de förvärvsarbetande.
 
-Att åstadkomma en förändring i närtid av balansen mellan män och kvinnor inom de könssegregerade branscherna förefaller inte vara inom räckhåll då redan ungdomars studieval är könsstereotypa.
+Att åstadkomma en förändring i närtid av balansen mellan män och kvinnor inom de könssegregerade branscherna förefaller inte vara inom räckhåll då ungdomars studieval fortsätter att vara könsstereotypa.
 
 <br>
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_antal_forv$antal_per_bransch
 ```
+
+
+
 
 # Ett sammanhållet Dalarna
 
