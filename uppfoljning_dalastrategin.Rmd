@@ -333,7 +333,7 @@ Ytterligare en indikator på ekonomisk resurseffektivitet är kopplingen mellan 
 gg_avfall$avfall_BRP_Dalarna
 ```
 
-### Självförsörjning{-}
+### Självförsörjning av livsmedel och el{-}
 
 Klimatförändringarna medför lokalt förändrade mönster för nederbörd, torka och vind men även insekts- och svampangrepp på grödor och skog, höga temperaturer, med mera. Här spelar god samhällsplanering på regional och kommunal nivå en viktig roll. Ett sätt att förbättra beredskapen i Dalarna är att ha en tillräckligt omfattande lokal och hållbar energi- och livsmedelsproduktion. En ökad självförsörjningsgrad är en trygghet på flera sätt och gynnar även miljöns motståndskraft genom en ökad biologisk mångfald.
 
@@ -358,17 +358,17 @@ I ett konkurrenskraftigt Dalarna är näringslivet livskraftigt och skapar tillv
 
 Den ekonomiska dimensionen av hållbarhet i det regionala utvecklingsarbetet handlar om att använda och hushålla med resurser och förädla idéer på ett miljömässigt och socialt hållbart sätt och ta vara på möjligheterna att därigenom skapa konkurrenskraft och sysselsättning. Med ett cirkulärt system där resurser och värden kan återbrukas främjas en ekonomiskt hållbar utveckling.
 
-I Dalarna finns företag och människor med idéer som kan bidra till att lösa globala problem, och bana väg till goda livsmiljöer och levnadsvillkor för de boende.
+I Dalarna finns företag och människor med idéer som kan bidra till att lösa globala problem, och bana väg för goda livsmiljöer och levnadsvillkor för de boende.
 
 
 ## Arbetskraften, återväxt och kompetens {.tabset}
 
 <span class="big-indicator">
-Arbetskraften och dess sysselsättning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Arbetskraften och sysselsättning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 
 <span class="big-indicator">
-Utbildningsgrupper <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Utbildningsnivåer <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 
 <span class="big-indicator">
@@ -376,24 +376,22 @@ Gymnasieexamen <span style="color:red; font-size:1.8em; font-weight:900;">⬇</s
 </span>
 
 <span class="big-indicator">
-Sjukfrånvaro, över 14 dagar orsaker <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-
-
-<span class="big-indicator">
 Invandrares etableringstid <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 
 
 <span class="big-indicator">
-Återväxten, födda och <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Sjukfrånvaro, över 14 dagar orsaker <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 
 
-•	Ytdiagram med arbetsför ålder som visar fördelningen av sysselsatta, arbetslösa et
+<span class="big-indicator">
+Återväxten: födda och nettoflyttning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
 
+### Arbetskraften och dess sysselsättning{-}
 
-Samtliga i åldern 20-64 år, och fördelning mellan vilka aktivitetsgrupper de tillhör.
+Ytdiagram med arbetsför ålder som visar fördelningen av sysselsatta, arbetslösa etc. Samtliga i åldern 20-64 år, och fördelning mellan vilka aktivitetsgrupper de tillhör.
 
 Kommentera även UVAS och andra grupper som står långt ifrån arbetsmarknaden. 
   
@@ -402,11 +400,6 @@ Kommentera även UVAS och andra grupper som står långt ifrån arbetsmarknaden.
 ### Utbildningsnivåer{-}
 
 Diagram, könsuppdelade, gärna jämte varandra. Finns stapeldiagram - funkar de, eller borde det göras om till ytdiagram?
-
-
-### Sjukfrånvaro minst 14 dagar{-}
-
-Längre sjukfrånvaro, alt, endast sjukfrånvaro pga stress? kan ofta härröras till Slitage på humankapitalet.
 
 
 ### Unga som fullföljer gymnasiet{-}
@@ -441,6 +434,9 @@ En jämförelse mellan länen när det gäller möjligheten att ha etablerat sig
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_etableringstid$etablering_vistelsetid_allalan
 ```
+### Sjukfrånvaro minst 14 dagar{-}
+
+Längre sjukfrånvaro, alt, endast sjukfrånvaro pga stress? kan ofta härröras till Slitage på humankapitalet.
 
 
 ### Fruktsamhet, alt. komponenterna som i integrationsrapporten? {-}
@@ -463,9 +459,9 @@ gg_fruktsamhet$summerad_fruktsamhet_Riket_facet
 ```
 
 
-## Arbete, företagande och dess förutsättningar{.tabset}
+## Arbete, företagande och förutsättningar{.tabset}
 
-förutsättningar för företagande,
+förutsättningar för arbete och företagande,
 utfall av företagandet
 
 
@@ -542,8 +538,6 @@ gg_bredband$tillgang_bredband_Dalarna
 ### Infrastrukturläget? {-}
 
 
-### Könssegregering på arbetsmarknaden{-}
-
 
 ### Könssegregering på arbetsmarknaden {-}
 
@@ -557,7 +551,6 @@ gg_antal_forv$antal_per_bransch
 ```
 
 
-
 ### Föräldrapenning{-}
 
 Fördelningen av dagar mellan vårdnadshavarna har jämnats ut något sedan slutet av 1990-talet då runt 85-90 procent av föräldrapenningdagarna togs ut av mammorna. Sedan dess har först en (1995), sedan två (2002) och även tre månader (2016) reserverats åt respektive vårdnadshavare (också kallade "pappamånader"). Detta har bidragit till ett jämnare uttag men utvecklingen får ändå sägas gå relativt trögt, då kvinnors andel endast har minskat till runt `r round(as.numeric(foraldrapenning_df %>% filter(Region == "Dalarnas län", Kön == "Kvinnor", År == max(År)) %>% .$Andel),0)` procent `r max(foraldrapenning_df$År)`. Svenska vårdnadshavare är således långt ifrån att ge sina barn en jämställd tillgång till sina föräldrar. Skillnaden i uttag påverkar också den disponibla inkomsten, som beskrivits under rubriken Ekonomisk jämställdhet. Skillnaden är som störst mellan sammanboende kvinnor och män när det yngsta barnet är 0–3 år [(Regeringen, 2022)](<https://www.regeringen.se/contentassets/46945970585240a4a5bfd9a0f75ecf3d/ekonomisk-jamstalldhet.pdf>){target="_blank"}.
@@ -566,7 +559,7 @@ Fördelningen av dagar mellan vårdnadshavarna har jämnats ut något sedan slut
 gg_fp_vab$Foraldrapenning_andel_Dalarna
 ```
 
-### Anmälda brott{-} 
+### Anmälda ekobrott och bostadsinbrott{-} 
 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
@@ -634,7 +627,6 @@ Sysselsatta som arbetar i utlandsägda företag, omsättning arbetsställe per u
 
 
 
-
 # Ett sammanhållet Dalarna
 
 <p class="intro" style = "background-color: #ffec9f">
@@ -677,20 +669,51 @@ Upplevd trygghet <span style="color:red; font-size:1.8em; font-weight:900;">⬇<
 </span>
 
 ## Dalfolkets hälsa och trygghet{.tabset}
+
 Friska och trygga människor 
 
+
 ### Medellivslängd{-}
+
+Återstående medellivslängd vid 30 års ålder, efter utbildningsnivå och kön (SCB)
+Dödlighet i befolkningen i åldrarna 15-64 år efter kön, region och år. Antal per 100 000 inv. (SCB) 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_aterstaende_medellivslangd$`medellivslangd_aterstaende_vid_30 år_alder_Dalarna`
 ```
 
 ### Upplevd hälsa{-}
+Bra eller mycket bra allmänt hälsotillstånd efter utbildningsnivå och kön (HLV)
+
+Allvarlig psykisk påfrestning efter utbildningsnivå och kön (HLV)
+
+Unga som skattar sin hälsa som mycket eller ganska bra  (LUPP)
+
+Andel unga som har svårt att somna i stort sett varje dag eller flera gånger i veckan efter kön, högstadiet och/eller gymnasiet (LUPP)
+
+Andel med lätta eller svåra sömnbesvär, efter utbildning och kön (HLV)
+
+
 
 ### Folksjukdomar{-}
 
+Hjärtinfarkt – incidenta fall per 100 000 (SoS)
+
+Hypertoni – efter utbildningsnivå och kön (HLV)
+
+Övervikt/obesitas – efter utbildningsnivå och kön (HLV)
+
+Fallskador bland personer 65+, 3-årsm, antal/100 000 inv (SoS)
+
 
 ### Brott motperson{-}
+
+Anmälda misshandelsbrott mot kvinna, inomhus, bekant med offret, antal/100 000 inv, per kommun (BRÅ/SCB)
+
+Anmälda sexualbrott, antal/100 000 inv, per kommun (BRÅ/SCB)
+
+Anmälda våldsbrott, antal/100 000 inv per kommun (BRÅ/SCB)
+
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_anmalda_brott$`anmalda_stold-_och_tillgreppsbrott_Dalarna`
@@ -698,6 +721,12 @@ gg_anmalda_brott$`anmalda_stold-_och_tillgreppsbrott_Dalarna`
 
 
 ### Upplevd trygghet{-}
+
+Avstår att gå ut ensam av rädsla för att bli överfallen, rånad eller på annat sätt ofredad, efter utbildningsnivå och kön (HLV)
+
+Andel elever som alltid eller ofta känner sig trygga på sociala medier, efter kön (7:e klass och/eller Åk 1 gymnasiet) 
+
+Andel elever som tycker att det stämmer helt eller till stor del att rasism förekommer på skolan, efter kön, högstadiet och/eller gymnasiet (LUPP)
 
 
 
@@ -743,6 +772,7 @@ Ex. diagram över Unga som vill vara med och påverka i frågor som rör kommune
 ### Tillit till människor och samhället {-}
 
 Tillit till andra människor efter utbildningsnivå och kön (HLV)
+
 Tillit till samhällsfunktioner efter utbildningsnivå och kön (HLV, ny design från och med 2024)
 
 
@@ -758,6 +788,7 @@ gg_tillit$tillit_Dalarna
 
 ## Kultur/fritid unga (LOK, kulturskola) {-}
 
+
 ## Tillgång fysiskt: bibliotek, skola, service {-}
 
 
@@ -772,7 +803,7 @@ Andel som alltid eller ofta känner sig trygg inför skoldagen efter kön (ELSA)
 ## Kulturarv {-}
 
 
-## Fördelning av inkomster och ekonomiska värden hos Dalfolket {.tabset}
+## Fördelning av inkomster och ekonomiska värden {.tabset}
 
 Ett mönster vi behöver kommentera: ekonomisk situation handlar ju inte bara om lönenivån utan också om kostnader, ex. om boendekostnaderna är lägre så får man ju mer kvar i plånboken, vilket ger förutsättningar för fritid och konsumtion. Hur synliggör vi det?
 
@@ -813,6 +844,7 @@ gg_gini$gini_tidsserie_00_20
 ```
 
 ### Låg ekonomisk standard / ? Barn i ekonomisk utsatthet{-}
+
 
 Personer 0-19 år i hushåll med låg ekonomisk standard per kommun (SCB)
 
