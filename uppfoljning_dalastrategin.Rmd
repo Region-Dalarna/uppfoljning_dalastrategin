@@ -361,44 +361,43 @@ Den ekonomiska dimensionen av hållbarhet i det regionala utvecklingsarbetet han
 I Dalarna finns företag och människor med idéer som kan bidra till att lösa globala problem, och bana väg till goda livsmiljöer och levnadsvillkor för de boende.
 
 
-<span class="big-indicator">
-Utsläpp <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-
-<span class="big-indicator">
-Elproduktion <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-
-<span class="big-indicator">
-Energieffektivitet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-
-<span class="big-indicator">
-Avfall/BRP <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-
-
-<span class="big-indicator">
-Självförsörjning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-
-
 ## Arbetskraften, återväxt och kompetens {.tabset}
+
+<span class="big-indicator">
+Arbetskraften och dess sysselsättning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Utbildningsgrupper <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Gymnasieexamen <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Sjukfrånvaro, över 14 dagar orsaker <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+
+<span class="big-indicator">
+Invandrares etableringstid <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+
+<span class="big-indicator">
+Återväxten, födda och <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+
+•	Ytdiagram med arbetsför ålder som visar fördelningen av sysselsatta, arbetslösa et
+
 
 Samtliga i åldern 20-64 år, och fördelning mellan vilka aktivitetsgrupper de tillhör.
 
 Kommentera även UVAS och andra grupper som står långt ifrån arbetsmarknaden. 
   
 
-### Unga som fullföljer gymnasiet{-}
-
-Kunskap ger människor möjlighet att växa och påverka sin livssituation. Tillgång till utbildning, kunskap och bildning är avgörande för såväl utvecklingen av samhället, som god välfärd och tillväxt i näringslivet. När arbetsgivare inte hittar rätt kompetens hämmas den ekonomiska utvecklingen. Samtidigt försvagas den sociala hållbarheten när människor ställs utanför arbetsmarknaden. Befolkningens relativt sett låga utbildningsnivåer är en utmaning i stora delar av Dalarna. Ambitionen i Dalastrategin är att fler ska klara en gymnasieexamen för att därmed få bättre förutsättningar att etablera sig på arbetsmarknaden.
-
-Denna indikator mäter andelen elever i Dalarna som har fullföljt en gymnasieutbildning inom fyra år efter att de påbörjat gymnasiet. Sett över hela tidsperioden `r gymnasiet_min_lasar` till `r gymnasiet_max_lasar` finns det en positiv trend, även om andelen fluktuerar mellan åren. Av eleverna som började läsa på gymnasiet i Dalarna läsåret `r gymnasiet_min_lasar` var det `r gymnasiet_min_lasar_andel` procent som inom fyra år fullföljde sin utbildning med examen. Den lägsta andelen avklarade examen om `r gymnasiet_lagst_avklarat_andel` procent uppmättes för dem som påbörjade gymnasiet läsåret `r gymnasiet_lagst_avklarat_lasar` (möjligen en pandemieffekt), samtidigt som den högsta andelen avklarade examen finns bland de elever som påbörjade gymnasiet läsåret `r gymnasiet_hogst_avklarat_lasar`, `r gymnasiet_hogst_avklarat_andel` procent av dem har tagit ut examen inom fyra år.
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_genomstromning_gym$genomstromning_gymnasiet_Dalarna
-```
 
 ### Utbildningsnivåer{-}
 
@@ -409,6 +408,16 @@ Diagram, könsuppdelade, gärna jämte varandra. Finns stapeldiagram - funkar de
 
 Längre sjukfrånvaro, alt, endast sjukfrånvaro pga stress? kan ofta härröras till Slitage på humankapitalet.
 
+
+### Unga som fullföljer gymnasiet{-}
+
+Kunskap ger människor möjlighet att växa och påverka sin livssituation. Tillgång till utbildning, kunskap och bildning är avgörande för såväl utvecklingen av samhället, som god välfärd och tillväxt i näringslivet. När arbetsgivare inte hittar rätt kompetens hämmas den ekonomiska utvecklingen. Samtidigt försvagas den sociala hållbarheten när människor ställs utanför arbetsmarknaden. Befolkningens relativt sett låga utbildningsnivåer är en utmaning i stora delar av Dalarna. Ambitionen i Dalastrategin är att fler ska klara en gymnasieexamen för att därmed få bättre förutsättningar att etablera sig på arbetsmarknaden.
+
+Denna indikator mäter andelen elever i Dalarna som har fullföljt en gymnasieutbildning inom fyra år efter att de påbörjat gymnasiet. Sett över hela tidsperioden `r gymnasiet_min_lasar` till `r gymnasiet_max_lasar` finns det en positiv trend, även om andelen fluktuerar mellan åren. Av eleverna som började läsa på gymnasiet i Dalarna läsåret `r gymnasiet_min_lasar` var det `r gymnasiet_min_lasar_andel` procent som inom fyra år fullföljde sin utbildning med examen. Den lägsta andelen avklarade examen om `r gymnasiet_lagst_avklarat_andel` procent uppmättes för dem som påbörjade gymnasiet läsåret `r gymnasiet_lagst_avklarat_lasar` (möjligen en pandemieffekt), samtidigt som den högsta andelen avklarade examen finns bland de elever som påbörjade gymnasiet läsåret `r gymnasiet_hogst_avklarat_lasar`, `r gymnasiet_hogst_avklarat_andel` procent av dem har tagit ut examen inom fyra år.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_genomstromning_gym$genomstromning_gymnasiet_Dalarna
+```
 
 ### Invandrares etablering på arbetsmarknaden{-}
 
@@ -454,7 +463,7 @@ gg_fruktsamhet$summerad_fruktsamhet_Riket_facet
 ```
 
 
-## Företagande och dess förutsättningar{.tabset}
+## Arbete, företagande och dess förutsättningar{.tabset}
 
 förutsättningar för företagande,
 utfall av företagandet
@@ -466,6 +475,11 @@ Nya företag och 3-årig överlevnad <span style="color:red; font-size:1.8em; fo
 
 <span class="big-indicator">
 Största hindren för tillväxt i Dalarna <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+
+<span class="big-indicator">
+Könssegregering på arbetsmarknaden <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 
 <span class="big-indicator">
@@ -528,6 +542,22 @@ gg_bredband$tillgang_bredband_Dalarna
 ### Infrastrukturläget? {-}
 
 
+### Könssegregering på arbetsmarknaden{-}
+
+
+### Könssegregering på arbetsmarknaden {-}
+
+Sedan många år har kvinnor och män haft likvärdig tillgång till utbildning och möjlighet att fritt välja yrke. Trots detta består många av könsskillnaderna i arbetslivet. Många branscher i länet har idag en tydlig övervikt av det ena eller det andra könet, exempelvis byggbranschen som omfattar yrken inom bland annat el och VVS, och där kvinnor bara utgör ungefär `r forvarvsarbetande_bygg_andel` procent av de förvärvsarbetande. Även om det har skett en ökning av andelen kvinnor inom byggbranschen är denna ökning ännu liten i sammanhanget. Inom vård och omsorg är bilden densamma men med motsatt könsfördelning. Här utgör kvinnor cirka `r forvarvsarbetande_vard_andel` procent av de förvärvsarbetande.
+
+Att åstadkomma en förändring i närtid av balansen mellan män och kvinnor inom de könssegregerade branscherna förefaller inte vara inom räckhåll då ungdomars studieval fortsätter att vara könsstereotypa.
+
+<br>
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_antal_forv$antal_per_bransch
+```
+
+
+
 ### Föräldrapenning{-}
 
 Fördelningen av dagar mellan vårdnadshavarna har jämnats ut något sedan slutet av 1990-talet då runt 85-90 procent av föräldrapenningdagarna togs ut av mammorna. Sedan dess har först en (1995), sedan två (2002) och även tre månader (2016) reserverats åt respektive vårdnadshavare (också kallade "pappamånader"). Detta har bidragit till ett jämnare uttag men utvecklingen får ändå sägas gå relativt trögt, då kvinnors andel endast har minskat till runt `r round(as.numeric(foraldrapenning_df %>% filter(Region == "Dalarnas län", Kön == "Kvinnor", År == max(År)) %>% .$Andel),0)` procent `r max(foraldrapenning_df$År)`. Svenska vårdnadshavare är således långt ifrån att ge sina barn en jämställd tillgång till sina föräldrar. Skillnaden i uttag påverkar också den disponibla inkomsten, som beskrivits under rubriken Ekonomisk jämställdhet. Skillnaden är som störst mellan sammanboende kvinnor och män när det yngsta barnet är 0–3 år [(Regeringen, 2022)](<https://www.regeringen.se/contentassets/46945970585240a4a5bfd9a0f75ecf3d/ekonomisk-jamstalldhet.pdf>){target="_blank"}.
@@ -567,8 +597,13 @@ gg_fortroende_rattsvasande$fortroende_rattsvasande__sverige
 ## Produktion, produktivitet och export {.tabset}
 
 
+
 <span class="big-indicator">
 BRP, arbetsproduktivitet alt. förädlingsvärde <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+
+<span class="big-indicator">
+Löner/ inkomster kvinnor och män <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 
 <span class="big-indicator">
@@ -577,15 +612,13 @@ Regional export <span style="color:red; font-size:1.8em; font-weight:900;">⬇</
 
 
 <span class="big-indicator">
-Ägande, utländskt inhemskt <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-
-<span class="big-indicator">
-Könssegregering på arbetsmarknaden <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Ägande, regionalt ägda ftg och utländskt <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 
 
 ### BRP, arbetsproduktivitet {-} 
+
+### Löner/ inkomster kvinnor och män{-}
 
 
 ### Regional export {-}
@@ -598,18 +631,6 @@ Inkl. gästnätter från utlandet..?
 Företag med huvudsäte i Dalarna
 Sysselsatta som arbetar i utlandsägda företag, omsättning arbetsställe per utlandsägt, inhemskt företag.
 
-
-
-### Könssegregering på arbetsmarknaden {-}
-
-Sedan många år har kvinnor och män haft likvärdig tillgång till utbildning och möjlighet att fritt välja yrke. Trots detta består många av könsskillnaderna i arbetslivet. Många branscher i länet har idag en tydlig övervikt av det ena eller det andra könet, exempelvis byggbranschen som omfattar yrken inom bland annat el och VVS, och där kvinnor bara utgör ungefär `r forvarvsarbetande_bygg_andel` procent av de förvärvsarbetande. Även om det har skett en ökning av andelen kvinnor inom byggbranschen är denna ökning ännu liten i sammanhanget. Inom vård och omsorg är bilden densamma men med motsatt könsfördelning. Här utgör kvinnor cirka `r forvarvsarbetande_vard_andel` procent av de förvärvsarbetande.
-
-Att åstadkomma en förändring i närtid av balansen mellan män och kvinnor inom de könssegregerade branscherna förefaller inte vara inom räckhåll då ungdomars studieval fortsätter att vara könsstereotypa.
-
-<br>
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_antal_forv$antal_per_bransch
-```
 
 
 
