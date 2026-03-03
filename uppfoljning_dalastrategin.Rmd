@@ -193,10 +193,17 @@ Klimatförändringar påverkar fjällen och dess ekosystemprocesser allt mer. L�
 Fisktrappor etc?
 
 
-## Beteenden som påverkar resursförbrukningen i Dalarna{.tabset}
+## Beteenden som påverkar miljö och resursförbrukning i Dalarna{.tabset}
+
+Förutsättningar för att ändra beteenden
+Utfall av förändrade beteenden
 
 
 <div class="indicator-row">
+
+<span class="big-indicator">
+Utsläpp av växthusgaser <span style="color:red; font-size:1.8em; font-weight:900;">➡</span>
+</span>
 
 <span class="big-indicator">
 Kollektivt resande <span style="color:red; font-size:1.8em; font-weight:900;">➡</span>
@@ -217,6 +224,25 @@ Kommunala klimatanpassningsplaner <span style="color:green; font-size:1.8em; fon
 </span>
 
 
+### Utsläpp{-}
+
+År 2017 antog Sverige ett långsiktigt nationellt mål om att landet ska vara klimatneutralt år 2045. Detta innebär en minskning av växthusgasutsläpp med minst 85 procent inom landets gränser i jämförelse med utsläppen år 1990. Målet innebär i princip att alla sektorer och verksamheter behöver vara fossilfria år 2045. Sveriges nationella mål är i linje med det europeiska målet om ett klimatneutralt EU till år 2050 och det internationella Parisavtalet som innebär att jordens länder strävar efter att ökningen av den globala genomsnittstemperaturen inte blir mer än 1,5°C till år 2050 i förhållande till den förindustriella nivån, samt att den i vilket fall inte överstiger 2°C.
+
+De klimatpåverkande växthusgaserna innefattar fler ämnen än koldioxid. Ett exempel är metangas som även är betydligt skadligare per enhet än koldioxid (1 ton metangas motsvarar utsläpp av ca 28 ton koldioxid). För att utsläppen som sker i Dalarna ska vara jämförbara med andra regioners utsläpp omsätts därför samtliga gasers utsläpp till så kallade koldioxidekvivalenter, det vill säga den mängd som varje ämne släpper ut omräknat i termer av koldioxid.
+
+I Dalarna har utvecklingen gått i positiv riktning med minskande utsläpp av växthusgaser under de senaste decennierna. Det är industri- och transportsektorerna som står för den volymmässigt största minskningen samtidigt som dessa sektorer, i likhet med övriga Sverige, står för den största andelen utsläpp av växthusgaser totalt sett i länet. Diagrammet visar även att utsläppen minskade tydligt under pandemiåret 2020, rimligtvis för att produktionstakten saktade in, men ökade år 2021. Under år 2022 minskade utsläppen återigen och var på den lägsta nivån sedan åtminstone 2005. Ska utsläppsmålen uppnås krävs dock en betydligt snabbare minskningstakt.  
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_utslapp$utslapp_bransch_Dalarna
+```
+
+Sett till utsläpp per person ligger Dalarna högre än riksgenomsnittet, trots en minskning från knappt `r utslapp_min_ar_per_person` ton/invånare år `r utslapp_min_ar`  till ungefär `r utslapp_max_ar_per_person` ton/invånare år `r utslapp_max_ar`. För att uppnå målet om klimatneutralitet 2045, skulle utsläppen behöva minska till ca 1,25 ton/invånare år 2045, vilket innebär en minskning om ungefär `r behovd_minskning` procent årligen mellan `r utslapp_max_ar` och 2045. Som jämförelse minskade utsläppen per person i Dalarna med ungefär `r forandring_sedan_2015` procent per år mellan 2015 och `r utslapp_max_ar`. Även om vi ser en utveckling i rätt riktning kommer det således att krävas en ännu snabbare minskningstakt för att uppnå våra ambitioner i Dalastrategin och bli klimatneutrala till år 2045 i enlighet med den nationella målsättningen.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_utslapp$utslapp_per_capita_Dalarna
+```
+
+
 ### Kollektivt resande{-}
 
 Den utsträckta och relativt glesbefolkade geografin i Dalarna är utmaningar i arbetet med att skapa en hållbar transportinfrastruktur. För att transportsektorn ska nå klimat- och energimålen krävs kraftfull teknisk utveckling i kombination med beteendeförändringar så som minskad konsumtion av varor vars transporter orsakar höga utsläpp, ökad samåkning och minskat resande totalt sett. Kollektivt resande spelar en central roll för utvecklandet av en klimatsmart och resurseffektiv, men också mer jämlik, mobilitet. Kollektivtrafik bidrar både till miljönytta och samhällsekonomisk effektivitet men är också förenat med höga kostnader. För att klara omställningen krävs mod att ställa olika kostnader mot varandra. För att det kollektiva resandet ska öka behöver den traditionella kollektivtrafiken sannolikt kompletteras med nya mobilitetslösningar och tjänster, särskilt för länets mest glesbefolkade områden.
@@ -233,7 +259,7 @@ Marknadsandelen för kollektivtrafik beräknas som andelen resor med kollektivtr
 gg_kollektivt_resande$marknadsandel_resande_Dalarna
 ```
 
-### ÖVergång till elbilar{-}
+### Övergång till elbilar{-}
 
 Andelen personbilar som helt eller delvis drivs av el har ökat tydligt i Dalarna på senare år. Fram till mitten av 2010-talet var andelen mer eller mindre obefintlig, men därefter har ökningen gått snabbt. Initialt ökade framförallt andelen laddhybrider, men på senare år har även andelen rena elbilar ökat kraftigt. Andelen är dock fortfarande relativt låg. År `r elbilar_max_ar` var ungefär `r elbilar_andel_max_ar_Dalarna` procent av personbilarna i Dalarna antingen rena elbilar eller laddhybrider.
 
@@ -256,27 +282,14 @@ gg_avfall$avfall_Dalarna
 ```
 ### Kommunala klimatanpassningsplaner {-}
 
+..
 
 
-### Utsläpp{-}
+## Förnybar elproduktion och ekonomiska värden av energi- och material/råvaror{.tabset}
 
-År 2017 antog Sverige ett långsiktigt nationellt mål om att landet ska vara klimatneutralt år 2045. Detta innebär en minskning av växthusgasutsläpp med minst 85 procent inom landets gränser i jämförelse med utsläppen år 1990. Målet innebär i princip att alla sektorer och verksamheter behöver vara fossilfria år 2045. Sveriges nationella mål är i linje med det europeiska målet om ett klimatneutralt EU till år 2050 och det internationella Parisavtalet som innebär att jordens länder strävar efter att ökningen av den globala genomsnittstemperaturen inte blir mer än 1,5°C till år 2050 i förhållande till den förindustriella nivån, samt att den i vilket fall inte överstiger 2°C.
+De ekonomiska aspekterna av ett klimatsmart Dalarna handlar om hur vi tar tillvara naturresurserna och skapar återanvändning och självförsörjning inom planetära gränserna. 
 
-De klimatpåverkande växthusgaserna innefattar fler ämnen än koldioxid. Ett exempel är metangas som även är betydligt skadligare per enhet än koldioxid (1 ton metangas motsvarar utsläpp av ca 28 ton koldioxid). För att utsläppen som sker i Dalarna ska vara jämförbara med andra regioners utsläpp omsätts därför samtliga gasers utsläpp till så kallade koldioxidekvivalenter, det vill säga den mängd som varje ämne släpper ut omräknat i termer av koldioxid.
-
-I Dalarna har utvecklingen gått i positiv riktning med minskande utsläpp av växthusgaser under de senaste decennierna. Det är industri- och transportsektorerna som står för den volymmässigt största minskningen samtidigt som dessa sektorer, i likhet med övriga Sverige, står för den största andelen utsläpp av växthusgaser totalt sett i länet. Diagrammet visar även att utsläppen minskade tydligt under pandemiåret 2020, rimligtvis för att produktionstakten saktade in, men ökade år 2021. Under år 2022 minskade utsläppen återigen och var på den lägsta nivån sedan åtminstone 2005. Ska utsläppsmålen uppnås krävs dock en betydligt snabbare minskningstakt.  
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_utslapp$utslapp_bransch_Dalarna
-```
-
-Sett till utsläpp per person ligger Dalarna högre än riksgenomsnittet, trots en minskning från knappt `r utslapp_min_ar_per_person` ton/invånare år `r utslapp_min_ar`  till ungefär `r utslapp_max_ar_per_person` ton/invånare år `r utslapp_max_ar`. För att uppnå målet om klimatneutralitet 2045, skulle utsläppen behöva minska till ca 1,25 ton/invånare år 2045, vilket innebär en minskning om ungefär `r behovd_minskning` procent årligen mellan `r utslapp_max_ar` och 2045. Som jämförelse minskade utsläppen per person i Dalarna med ungefär `r forandring_sedan_2015` procent per år mellan 2015 och `r utslapp_max_ar`. Även om vi ser en utveckling i rätt riktning kommer det således att krävas en ännu snabbare minskningstakt för att uppnå våra ambitioner i Dalastrategin och bli klimatneutrala till år 2045 i enlighet med den nationella målsättningen.
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_utslapp$utslapp_per_capita_Dalarna
-```
-
-### Elproduktion{-}
+### Förnybar elproduktion{-}
 
 En god tillgång till hållbar energi är avgörande för näringslivets och hela samhällets omställningsförmåga. En ökad regional produktion av förnybar energi bidrar till såväl minskade utsläpp som ökad självförsörjningsförmåga och resiliens för Dalarna. Sveriges samlade energisystem beskrivs utförligt på [Energimyndighetens webbplats](https://www.energimyndigheten.se/energisystemet/sveriges-energisystem/){target="_blank"}. 
 
@@ -289,6 +302,7 @@ Produktionen av el i Dalarna varierar mellan olika år, bland annat beroende på
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_energiproduktion$elproduktion_Dalarna
 ```
+
 
 ### Energieffektivitet{-}
 
@@ -335,6 +349,7 @@ I diagrammet nedan visas en teoretisk beräkning av självförsörjning av elekt
 gg_sjalvforsorjning$teoretisk_sjalvforsorjning_el_Dalarna
 ```
 
+
 # Ett konkurrenskraftigt Dalarna
 
 <p class="intro" style = "background-color: #f8aab6">
@@ -345,7 +360,6 @@ Den ekonomiska dimensionen av hållbarhet i det regionala utvecklingsarbetet han
 
 I Dalarna finns företag och människor med idéer som kan bidra till att lösa globala problem, och bana väg till goda livsmiljöer och levnadsvillkor för de boende.
 
-## Arbetskraften, återväxt och kompetens {.tabset}
 
 <span class="big-indicator">
 Utsläpp <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
@@ -368,7 +382,9 @@ Avfall/BRP <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 Självförsörjning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 
-### Arbetskraften, sysselsatta och arbetslösa {-}
+
+## Arbetskraften, återväxt och kompetens {.tabset}
+
 Samtliga i åldern 20-64 år, och fördelning mellan vilka aktivitetsgrupper de tillhör.
 
 Kommentera även UVAS och andra grupper som står långt ifrån arbetsmarknaden. 
@@ -438,7 +454,11 @@ gg_fruktsamhet$summerad_fruktsamhet_Riket_facet
 ```
 
 
-## Företagandets förutsättningar{.tabset}
+## Företagande och dess förutsättningar{.tabset}
+
+förutsättningar för företagande,
+utfall av företagandet
+
 
 <span class="big-indicator">
 Nya företag och 3-årig överlevnad <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
@@ -475,7 +495,10 @@ Infrastruktur <span style="color:red; font-size:1.8em; font-weight:900;">⬇</sp
 </span>
 
 
+
 ### Nystartade företag och 3-årig överlevnad {-}
+
+Obs, hitta siffror och kommentera könsuppdelning.
 
 Antalet nystartade företag per kommun i Dalarna visar att `r nystartade_kommun_hogst_max_ar` kommun har flest, med ungefär `r nystartade_kommun_hogst_max_ar_varde` nystartade företag per 1000 invånare `r nystartade_max_ar`, medan `r nystartade_kommun_lagst_min_ar` har minst med ca `r nystartade_kommun_lagst_min_ar_varde`.  Ungefär hälften av Dalarnas kommuner hade fler nystartade företag (per 1000 invånare) än Sverige `r nystartade_max_ar`.
 
@@ -488,6 +511,23 @@ gg_nyst_konk$nystartade
 Från TVV - företagens villkor och verklighet, alt. Entreprenörskapsforums rapport.
 
 
+### Tillgång till bredband{-}
+
+Tillgång till en snabb och robust digital infrastruktur är för de flesta en grundförutsättning för att bo och verka i hela Dalarna. Fysiska och digitala mötesplatser gör att vi når både varandra och omvärlden. En av utmaningarna för Dalarna är en ojämnt fördelad digital infrastruktur. Att stärka och tillgängliggöra den digitala infrastrukturen för hela Dalarnas befolkning, oavsett plats, är avgörande för en lyckad digitalisering av samhället.
+
+I Dalarna har andelen av befolkningen med tillgång till, eller möjlighet att ansluta till, bredband om minst 1 Gbit/s ökat från ca `r andel_bredband_min` procent `r bredband_min_ar` till ca `r andel_bredband_max` procent `r bredband_max_ar`. Det kan jämföras med riksgenomsnittet som år `r bredband_max_ar` var `r andel_bredband_max_riket` procent. 
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_bredband$tillgang_bredband_Dalarna
+```
+
+
+### Punktlighet på tåglinjerna {-}
+
+
+### Infrastrukturläget? {-}
+
+
 ### Föräldrapenning{-}
 
 Fördelningen av dagar mellan vårdnadshavarna har jämnats ut något sedan slutet av 1990-talet då runt 85-90 procent av föräldrapenningdagarna togs ut av mammorna. Sedan dess har först en (1995), sedan två (2002) och även tre månader (2016) reserverats åt respektive vårdnadshavare (också kallade "pappamånader"). Detta har bidragit till ett jämnare uttag men utvecklingen får ändå sägas gå relativt trögt, då kvinnors andel endast har minskat till runt `r round(as.numeric(foraldrapenning_df %>% filter(Region == "Dalarnas län", Kön == "Kvinnor", År == max(År)) %>% .$Andel),0)` procent `r max(foraldrapenning_df$År)`. Svenska vårdnadshavare är således långt ifrån att ge sina barn en jämställd tillgång till sina föräldrar. Skillnaden i uttag påverkar också den disponibla inkomsten, som beskrivits under rubriken Ekonomisk jämställdhet. Skillnaden är som störst mellan sammanboende kvinnor och män när det yngsta barnet är 0–3 år [(Regeringen, 2022)](<https://www.regeringen.se/contentassets/46945970585240a4a5bfd9a0f75ecf3d/ekonomisk-jamstalldhet.pdf>){target="_blank"}.
@@ -495,6 +535,18 @@ Fördelningen av dagar mellan vårdnadshavarna har jämnats ut något sedan slut
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_fp_vab$Foraldrapenning_andel_Dalarna
 ```
+
+### Anmälda brott{-} 
+
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_anmalda_brott$anmalda_ekobrott_Dalarna
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_anmalda_brott$anmalda_bostadsinbrott_Dalarna
+```
+
 
 ### Förtroende för rättsväsendet{-}
 
@@ -510,35 +562,6 @@ Andelen som svarade att de hade mycket stort eller ganska stort förtroende för
 gg_fortroende_rattsvasande$fortroende_rattsvasande__sverige
 ```
 
-### Anmälda brott{-} 
-
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_anmalda_brott$anmalda_ekobrott_Dalarna
-```
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_anmalda_brott$anmalda_bostadsinbrott_Dalarna
-```
-
-
-### Tillgång till bredband{-}
-
-Tillgång till en snabb och robust digital infrastruktur är för de flesta en grundförutsättning för att bo och verka i hela Dalarna. Fysiska och digitala mötesplatser gör att vi når både varandra och omvärlden. En av utmaningarna för Dalarna är en ojämnt fördelad digital infrastruktur. Att stärka och tillgängliggöra den digitala infrastrukturen för hela Dalarnas befolkning, oavsett plats, är avgörande för en lyckad digitalisering av samhället.
-
-I Dalarna har andelen av befolkningen med tillgång till, eller möjlighet att ansluta till, bredband om minst 1 Gbit/s ökat från ca `r andel_bredband_min` procent `r bredband_min_ar` till ca `r andel_bredband_max` procent `r bredband_max_ar`. Det kan jämföras med riksgenomsnittet som år `r bredband_max_ar` var `r andel_bredband_max_riket` procent. 
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_bredband$tillgang_bredband_Dalarna
-```
-
-
-### Punktlighet tåg {-}
-
-
-### Något som fångar infrastrukturläget {-}
-
-
 
 
 ## Produktion, produktivitet och export {.tabset}
@@ -552,6 +575,7 @@ BRP, arbetsproduktivitet alt. förädlingsvärde <span style="color:red; font-si
 Regional export <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 
+
 <span class="big-indicator">
 Ägande, utländskt inhemskt <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
@@ -561,20 +585,18 @@ Könssegregering på arbetsmarknaden <span style="color:red; font-size:1.8em; fo
 </span>
 
 
-
 ### BRP, arbetsproduktivitet {-} 
 
 
 ### Regional export {-}
 
-Inkl. gästnätter från utlandet.. 
+Inkl. gästnätter från utlandet..?
 
 
-### Inhemskt utländskt ägande {-}
+### Inhemskt och utländskt ägande {-}
 
-Sysselsatta som arbetar i utlandsägda företag
-
-Omsättning arbetsställe per utlandsägt, inhemskt företag.
+Företag med huvudsäte i Dalarna
+Sysselsatta som arbetar i utlandsägda företag, omsättning arbetsställe per utlandsägt, inhemskt företag.
 
 
 
@@ -642,11 +664,22 @@ Friska och trygga människor
 gg_aterstaende_medellivslangd$`medellivslangd_aterstaende_vid_30 år_alder_Dalarna`
 ```
 
-### Brott{-}
+### Upplevd hälsa{-}
+
+### Folksjukdomar{-}
+
+
+### Brott motperson{-}
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_anmalda_brott$`anmalda_stold-_och_tillgreppsbrott_Dalarna`
 ```
+
+
+### Upplevd trygghet{-}
+
+
+
 
 ## Dalfolkets delaktighet, samhällsengagemang och tillit{.tabset}
 
@@ -679,14 +712,18 @@ Kulturarv <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 
 ## Valdeltagande/ samhällsengagemang {-}
 
+Valdeltagande, gamla diagram.
+
 Ex. diagram över Unga som vill vara med och påverka i frågor som rör kommunen  (LUPP)
 
-## Kultur/fritid unga (LOK, kulturskola) {-}
-
-## Tillgång fysiskt: bibliotek, skola, service {-}
 
 
-### Avsaknad av tillit till andra människor{-}
+
+### Tillit till människor och samhället {-}
+
+Tillit till andra människor efter utbildningsnivå och kön (HLV)
+Tillit till samhällsfunktioner efter utbildningsnivå och kön (HLV, ny design från och med 2024)
+
 
 Det är människorna i Dalarna som skapar regionen – alla enskilda individer boende i länet, som också är del av familjer och av andra gemenskaper, organisationer och företag. Människors känsla av sammanhang och delaktighet är centralt för att skapa ett väl fungerande samhälle. För att skapa sammanhang och delaktighet behövs tillit mellan dem som ingår i gemenskapen, och det behövs sätt att hantera osäkerhet som kan uppstå när nya medlemmar inkluderas i en gemenskap. Socialt kapital beskriver det kitt som uppstår när en grupp människor enas kring gemensamma värden, normer och värderingar, det får människor att ha tillit till sina medmänniskor och till det gemensamma. Att den representativa demokratins institutioner, såsom kommuner, region och myndigheter, är väl fungerande och att invånarna har förtroende för dem är centralt för en levande demokrati. En stark tillit till andra underlättar samarbetet mellan människor och viljan och förmågan att bidra med nya idéer till samhällsutvecklingen. Ett samhälle med ett starkt socialt kapital är bättre rustat för att möta förändringar och eventuella kriser.
 
@@ -698,7 +735,26 @@ Andelen som säger sig sakna tillit utgör ungefär `r  tillit_senaste_ar` proce
 gg_tillit$tillit_Dalarna
 ```
 
+## Kultur/fritid unga (LOK, kulturskola) {-}
+
+## Tillgång fysiskt: bibliotek, skola, service {-}
+
+
+
+## Skola och arbetsliv {-}
+
+Elever som tycker att det stämmer helt eller till stor del att de trivs med stämningen i skolan  (LUPP)
+
+Andel som alltid eller ofta känner sig trygg inför skoldagen efter kön (ELSA) Åk 4, åk 7 eller  Åk 1 gymnasiet
+
+
+## Kulturarv {-}
+
+
 ## Fördelning av inkomster och ekonomiska värden hos Dalfolket {.tabset}
+
+Ett mönster vi behöver kommentera: ekonomisk situation handlar ju inte bara om lönenivån utan också om kostnader, ex. om boendekostnaderna är lägre så får man ju mer kvar i plånboken, vilket ger förutsättningar för fritid och konsumtion. Hur synliggör vi det?
+
 
 <span class="big-indicator">
 Gini-fördelningen <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
@@ -736,6 +792,8 @@ gg_gini$gini_tidsserie_00_20
 ```
 
 ### Låg ekonomisk standard / ? Barn i ekonomisk utsatthet{-}
+
+Personer 0-19 år i hushåll med låg ekonomisk standard per kommun (SCB)
 
 Ekonomiska klyftor mellan olika grupper i samhället är en utmaning för både Sverige och Dalarna. Om de socioekonomiska klyftorna blir alltför stora riskerar de att motverka sammanhållning, tillit och trygghet. Det riskerar i sin tur att försvaga demokratin, exempelvis genom systematiska skillnader i valdeltagande, faktiskt eller upplevt inflytande samt delaktighet och engagemang.
 
