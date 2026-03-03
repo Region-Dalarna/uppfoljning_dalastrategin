@@ -70,6 +70,8 @@ Att ställa om för att skapa en hållbar framtid är en utmaning som berör all
 
 Den här rapporten är en del av den årliga uppföljningen av Dalarnas utveckling och beskriver läget i Dalarna på vägen till en hållbar framtid.
 
+Rapporten är uppdelad efter strategins målområde; klimatsmart, konkurrenskraftigt och sammanhållet. Varje målområde är sedan uppdelat i tre avsnitt, som vart och ett är tänkta att fånga naturresurserna, samspel och beteendemönster samt ekonomiska värden. För klimatsmart Dalarna är exempelvis vind och vatten naturresurser, byten från bensinbilar till elbilar en del av beteendet och mängden regional produktion av miljövänlig electricitet ekonomiska värden. Inom konkurrenskraftigt är arbetskraft och kompetens naturresurser, ett gott företagsklimat beteeendet, och företagens produktion ekonomiska värden, och i sammanhållet är befolkningens hälsa och trygghet naturresurser, befolkningens görande, samhällsengagemang beteenden samt fördelningen av ekonomiska värden mellan människor en del av den ekonomiska delen av sammanhållet.
+
 
 # Ett klimatsmart Dalarna
 
@@ -80,12 +82,14 @@ miljömässigt hållbart sätt. I ett klimatsmart Dalarna är samhällets
 robusthet och resiliens vid klimatförändringar god.
 </p>
 
-Den miljömässiga dimensionen för en hållbar regional utveckling handlar bland annat om att säkerställa att ekosystemen bibehålls och vårdas så att de fortsätter att leverera de tjänster som människor och samhällen är beroende av. I Dalarna finns företag och människor med idéer som kan bidra till att lösa globala problem, och bana väg till goda livsmiljöer och levnadsvillkor för de boende.
+Den miljömässiga dimensionen för en hållbar regional utveckling handlar bland annat om att säkerställa att ekosystemen bibehålls och vårdas så att de fortsätter att leverera de tjänster som människor och samhällen är beroende av. 
 
-Dalarna är rikt på naturresurser och om de brukas rätt ger de mångfalt tillbaka.  som följs upp är därför bland annat hur resurser som vatten och vind, skog och jordbruksmark används. I Dalarna utgörs samtidigt en stor del av näringslivet av tillverkande industri som förbrukar relativt sett stora mängder energi och driver därigenom upp mängden energi förbrukad per invånare. Det är en viktig avvägning mellan nytta och miljöpåverkan, att bedöma huruvida Dalarnas företag har det produktionssätt som har den minsta miljöpåverkan i global jämförelse och därmed motiv till att just företagen i Dalarna ska bedriva denna produktion.
+Dalarna är rikt på naturresurser och om de brukas rätt ger de mångfalt tillbaka, därför följs bland annat hur resurser som vatten och vind, skog och jordbruksmark används. I Dalarna utgörs samtidigt en stor del av näringslivet av tillverkande industri som förbrukar relativt sett stora mängder energi och driver därigenom upp mängden energi förbrukad per invånare. 
+
+Det är en viktig avvägning mellan nytta och miljöpåverkan, att bedöma huruvida Dalarnas företag har det produktionssätt som har den minsta miljöpåverkan i global jämförelse och därmed motiv till att just företagen i Dalarna ska bedriva denna produktion.
 
 
-## Hur står det till med Dalarnas natur?{.tabset}
+## Tillståndet i Dalarnas miljö och natur{.tabset}
 
 Länsstyrelserna i Sverige har i uppdrag att följa upp tillståndet i miljön i respektive län. För Dalarna finns redovisningen här: https://www.rus.se/regional-arlig-uppfoljning/dalarnas-lan/#generation
 Avsnittet som följer utgår ifrån denna rapport.
@@ -95,16 +99,17 @@ Avsnittet som följer utgår ifrån denna rapport.
 <span class="big-indicator">
 Vatten <span style="color:red; font-size:1.8em; font-weight:900;">➡</span>
 </span>
-Tillgången på grundvatten av god kvalitet är god, Det atmosfäriska nedfallet har avtagit och flera vatten som tidigare varit försurade har återhämtat sig. Samtidigt tillåtna miljöfarliga ämnen och nya ämnen med okända effekter släppas ut i miljön. Hundratals ämnen påträffas i Dalarnas ytvatten vilket återspeglar den stora kemikalieanvändningen i samhället och industrin. Övergödningsproblemen är störst i jordbruksområden i de sydöstra delarna av länet.
+Tillgången på grundvatten av god kvalitet är god och flera vatten som tidigare varit försurade har återhämtat sig. Samtidigt fortsätter tillåtna men miljöfarliga ämnen och nya ämnen med okända effekter släppas ut i miljön. Övergödningsproblemen är störst i jordbruksområden i de sydöstra delarna av länet.
 
 <span class="big-indicator">
 Luft <span style="color:black; font-size:1.8em; font-weight:900;">⬆</span>
 </span>
-Luftkvaliteten i Dalarna förbättras.
+Luftkvaliteten i Dalarna har förbättrays.
 
 <span class="big-indicator">
 Skog och mark <span style="color:green; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+
 
 <span class="big-indicator">
 Biologisk mångfald <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
@@ -252,31 +257,6 @@ gg_avfall$avfall_Dalarna
 ### Kommunala klimatanpassningsplaner {-}
 
 
-## Utsläpp, elproduktion och användning av energi- och material/råvaror {.tabset}
-
-<span class="big-indicator">
-Utsläpp <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-
-<span class="big-indicator">
-Elproduktion <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-
-<span class="big-indicator">
-Energieffektivitet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-
-<span class="big-indicator">
-Avfall/BRP <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-
-
-<span class="big-indicator">
-Självförsörjning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-
-
-
 
 ### Utsläpp{-}
 
@@ -362,6 +342,8 @@ I ett konkurrenskraftigt Dalarna är näringslivet livskraftigt och skapar tillv
 </p>
 
 Den ekonomiska dimensionen av hållbarhet i det regionala utvecklingsarbetet handlar om att använda och hushålla med resurser och förädla idéer på ett miljömässigt och socialt hållbart sätt och ta vara på möjligheterna att därigenom skapa konkurrenskraft och sysselsättning. Med ett cirkulärt system där resurser och värden kan återbrukas främjas en ekonomiskt hållbar utveckling.
+
+I Dalarna finns företag och människor med idéer som kan bidra till att lösa globala problem, och bana väg till goda livsmiljöer och levnadsvillkor för de boende.
 
 ## Arbetskraften, återväxt och kompetens {.tabset}
 
@@ -629,7 +611,6 @@ möjligheter att delta i samhällsutvecklingen. Ju fler
 som känner sig delaktiga, desto mer utveckling kan
 åstadkommas.
 
-## Dalfolkets hälsa och trygghet{.tabset}
 
 <span class="big-indicator">
 Medellivslängd <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
@@ -652,6 +633,8 @@ Brott mot person <span style="color:red; font-size:1.8em; font-weight:900;">⬇<
 Upplevd trygghet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 
+## Dalfolkets hälsa och trygghet{.tabset}
+Friska och trygga människor 
 
 ### Medellivslängd{-}
 
