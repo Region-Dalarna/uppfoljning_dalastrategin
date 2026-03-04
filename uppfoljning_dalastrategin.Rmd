@@ -51,6 +51,9 @@ storeScroll();
 Senast uppdaterad: `r Sys.Date()`</i>
 </p>
 
+# Sammanfattning {-}
+
+
 # Introduktion {-}
 
 Dalarna står tillsammans med övriga Sverige, Europa och världen inför stora samhällsutmaningar. För att skapa en hållbar framtid för Dalarna antog Regionfullmäktige i juni 2021 en ny regional utvecklingsstrategi (reviderad och beslutad 2026-02-16), ["Dalastrategin - Tillsammans för ett hållbart Dalarna"](https://www.regiondalarna.se/globalassets/regional-utveckling/dalastrategin-2030-tillsammans-for-ett-hallbart-dalarna-dec.pdf){target="_blank"}. 
@@ -91,33 +94,39 @@ Det är en viktig avvägning mellan nytta och miljöpåverkan, att bedöma huruv
 
 ## Tillståndet i Dalarnas miljö och natur{.tabset}
 
-Länsstyrelserna i Sverige har i uppdrag att följa upp tillståndet i miljön i respektive län. För Dalarna finns redovisningen här: https://www.rus.se/regional-arlig-uppfoljning/dalarnas-lan/#generation
-Avsnittet som följer utgår ifrån denna rapport.
+Sammanfattande resultat...
 
-<div class="indicator-row">
-
-<span class="big-indicator">
-Vatten <span style="color:red; font-size:1.8em; font-weight:900;">➡</span>
-</span>
-Tillgången på grundvatten av god kvalitet är god och flera vatten som tidigare varit försurade har återhämtat sig. Samtidigt fortsätter tillåtna men miljöfarliga ämnen och nya ämnen med okända effekter släppas ut i miljön. Övergödningsproblemen är störst i jordbruksområden i de sydöstra delarna av länet.
+<!-- <div class="indicator-row"> -->
 
 <span class="big-indicator">
-Luft <span style="color:black; font-size:1.8em; font-weight:900;">⬆</span>
+Vatten <span style="color:black; font-size:1.8em; font-weight:900;">➡</span>
 </span>
-Luftkvaliteten i Dalarna har förbättrays.
+<br>
+
 
 <span class="big-indicator">
-Skog och mark <span style="color:green; font-size:1.8em; font-weight:900;">⬇</span>
+Luft <span style="color:green; font-size:1.8em; font-weight:900;">⬆</span>
 </span>
 
+
+<span class="big-indicator">
+Skog och mark <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+<br>
 
 <span class="big-indicator">
 Biologisk mångfald <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
-</div>
+<!-- </div> -->
+
+Länsstyrelserna i Sverige har i uppdrag att följa upp tillståndet i miljön i respektive län. För Dalarna finns redovisningen här: https://www.rus.se/regional-arlig-uppfoljning/dalarnas-lan/#generation
+Avsnittet som följer utgår ifrån denna rapport.
 
 ### Vatten{-} 
+Tillgången på grundvatten av god kvalitet är god och flera vatten som tidigare varit försurade har återhämtat sig. Samtidigt fortsätter tillåtna men miljöfarliga ämnen och nya ämnen med okända effekter släppas ut i miljön. Övergödningsproblemen är störst i jordbruksområden i de sydöstra delarna av länet.
+
 Dalarna har god tillgång till grundvatten av god kvalitet ur ett regionalt perspektiv. Arbetet med statusklassificering 2018-2019 visar dock att ca 40 av Dalarnas 277 grundvattenförekomster riskerar att inte nå god kemisk status till år 2027.
 Det atmosfäriska nedfallet har avtagit och flera vatten som tidigare varit försurade har återhämtat sig. Kalkningen har kunnat minskas i delar av Dalarnas län. 
 Hundratals ämnen påträffas i Dalarnas ytvatten vilket återspeglar den stora kemikalieanvändningen i samhället och industrin. Halter av förbjudna ämnen i miljön sjunker, samtidigt släpps tillåtna miljöfarliga ämnen och nya ämnen med okända effekter ut i miljön.
@@ -192,6 +201,7 @@ Klimatförändringar påverkar fjällen och dess ekosystemprocesser allt mer. L�
 
 Fisktrappor etc?
 
+--- SKAPA LINJE med Claude..
 
 ## Beteenden som påverkar miljö och resursförbrukning i Dalarna{.tabset}
 
@@ -534,10 +544,12 @@ gg_bredband$tillgang_bredband_Dalarna
 
 ### Punktlighet på tåglinjerna {-}
 
+Trafikanalys - hitta data?
+
 
 ### Infrastrukturläget? {-}
 
-
+Status på vägar, restider
 
 ### Könssegregering på arbetsmarknaden {-}
 
@@ -617,6 +629,8 @@ Regional export <span style="color:red; font-size:1.8em; font-weight:900;">⬇</
 ### Regional export {-}
 
 Inkl. gästnätter från utlandet..?
+
+
 
 
 ### Inhemskt och utländskt ägande {-}
