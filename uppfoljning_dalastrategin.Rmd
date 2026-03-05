@@ -96,29 +96,35 @@ Det är en viktig avvägning mellan nytta och miljöpåverkan, att bedöma huruv
 
 Sammanfattande resultat...
 
+<div class="indicator-row">
 
 
 <span class="big-indicator">
 Vatten <span style="color:black; font-size:1.8em; font-weight:900;">➡</span>
-</span>
-<br>
+</span>  
 
+<br>
 
 <span class="big-indicator">
 Luft <span style="color:green; font-size:1.8em; font-weight:900;">⬆</span>
-</span>
+</span>  
+
 <br>
 
 <span class="big-indicator">
 Skog och mark <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+</span>  
+
 <br>
 
 <span class="big-indicator">
 Biologisk mångfald <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+</span>  
+
 <br>
 
+ </div>
+ 
 
 Länsstyrelserna i Sverige har i uppdrag att följa upp tillståndet i miljön i respektive län. För Dalarna finns redovisningen här, för den som vill fördjupa sig ytterligare: https://www.rus.se/regional-arlig-uppfoljning/dalarnas-lan/#generation
 
@@ -145,8 +151,15 @@ gg_vatten$vattendrag_Dalarna
 gg_vatten$vattendrag_Sverige
 ```
 
+<hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
+
+
 ### Luft{-} 
 Luftkvaliteten är generellt god i Dalarna men försämrad i tätorter på grund av utsläpp från trafik, industri, uppvärmning av bostäder och småskalig vedeldning. Lokalt kan det periodvis finnas problem med föroreningar kopplat till veteranbilar.
+
+
+<hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
+
 
 ### Skog och mark{-} 
 
@@ -174,6 +187,8 @@ Drygt `r andel_skogsmark_max_ar` procent av den produktiva skogsmarken i Dalarna
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_skogsmark$andel_skyddad_skogsmark_Dalarna
 ```
+
+<hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
 
 ### Biologisk mångfald{-}
 
@@ -238,6 +253,8 @@ Kommunala klimatanpassningsplaner <span style="color:green; font-size:1.8em; fon
 </span>
 <br>
 
+ </div>
+ 
 Under flikarna hittar den som önskar fördjupad information om varje variabel.
 
 
@@ -259,6 +276,8 @@ Sett till utsläpp per person ligger Dalarna högre än riksgenomsnittet, trots 
 gg_utslapp$utslapp_per_capita_Dalarna
 ```
 
+<hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
+
 
 ### Kollektivt resande{-}
 
@@ -276,6 +295,9 @@ Marknadsandelen för kollektivtrafik beräknas som andelen resor med kollektivtr
 gg_kollektivt_resande$marknadsandel_resande_Dalarna
 ```
 
+<hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
+
+
 ### Övergång till elbilar{-}
 
 Andelen personbilar som helt eller delvis drivs av el har ökat tydligt i Dalarna på senare år. Fram till mitten av 2010-talet var andelen mer eller mindre obefintlig, men därefter har ökningen gått snabbt. Initialt ökade framförallt andelen laddhybrider, men på senare år har även andelen rena elbilar ökat kraftigt. Andelen är dock fortfarande relativt låg. År `r elbilar_max_ar` var ungefär `r elbilar_andel_max_ar_Dalarna` procent av personbilarna i Dalarna antingen rena elbilar eller laddhybrider.
@@ -290,6 +312,9 @@ I ett nationellt perspektiv sticker framförallt Stockholms län ut, där mer ä
 gg_elbilar$elbilar_Sverige
 ```
 
+<hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
+
+
 ### Insamlat avfall{-}
 
 En av prioriteringarna i Dalastrategin är att öka resurseffektiviteten i länet. Ett mått på resursförbrukning är mängden insamlat kommunalt avfall som kan antas motsvara invånarnas resursförbrukning. I det kommunala avfallet ingår det mesta avfall som ett hushåll producerar, så som mat- och restavfall, grov- och trädgårdsavfall och farligt avfall. Även förpackningar och batterier etc. som ingår i producentansvaret ingår i beräkningen. I sammanställningen nedan visas insamlat kommunalt avfall per person och år i Dalarna från `r avfall_min_ar` till `r avfall_max_ar`. År `r avfall_min_ar` samlades det in `r avfall_per_person_min_ar` kg avfall per person i Dalarna, att jämföra med ca `r avfall_per_person_max_ar` kg per person år `r avfall_max_ar`. En lägre mängd per person signalerar en lägre resursanvändning. I en nationell jämförelse ses att Stockholms län ligger bäst till med 384 kg per person och år, medan Kalmar ligger sämst till med över 517 kg per person och år - ej uppdaterat [(Kolada)](https://www.kolada.se/verktyg/fri-sokning/?kpis=61064&years=30200,30199,30198&municipals=27493,27494,27495,27496,27497,27498,27499,27500,27501,27502,27503,27504,27505,27506,27507,27508,27509,27510,27511,27512,27513&rows=municipal,kpi&visualization=bar-chart&focus=27508){target="_blank"}.
@@ -297,6 +322,9 @@ En av prioriteringarna i Dalastrategin är att öka resurseffektiviteten i läne
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_avfall$avfall_Dalarna
 ```
+
+<hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
+
 ### Kommunala klimatanpassningsplaner{-}
 
 Kommunala klimatanpassningsplaner utgör grunden för XXX.
@@ -311,6 +339,8 @@ De ekonomiska aspekterna av ett klimatsmart Dalarna handlar om hur vi tar tillva
 
 Sammanfatting.
 
+
+<div class="indicator-row">
 
 <span class="big-indicator">
 Förnybar elproduktion <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
@@ -332,6 +362,10 @@ Självförsörjning av livsmedel och el <span style="color:red; font-size:1.8em;
 </span>
 <br>
 
+</div>
+
+
+
 Mer att läsa, tipsa här.
 
 ### Förnybar elproduktion{-}
@@ -347,6 +381,7 @@ Produktionen av el i Dalarna varierar mellan olika år, bland annat beroende på
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_energiproduktion$elproduktion_Dalarna
 ```
+<hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
 
 
 ### Energieffektivitet{-}
@@ -378,6 +413,9 @@ Ytterligare en indikator på ekonomisk resurseffektivitet är kopplingen mellan 
 gg_avfall$avfall_BRP_Dalarna
 ```
 
+<hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
+
+
 ### Självförsörjning av livsmedel och el{-}
 
 Klimatförändringarna medför lokalt förändrade mönster för nederbörd, torka och vind men även insekts- och svampangrepp på grödor och skog, höga temperaturer, med mera. Här spelar god samhällsplanering på regional och kommunal nivå en viktig roll. Ett sätt att förbättra beredskapen i Dalarna är att ha en tillräckligt omfattande lokal och hållbar energi- och livsmedelsproduktion. En ökad självförsörjningsgrad är en trygghet på flera sätt och gynnar även miljöns motståndskraft genom en ökad biologisk mångfald.
@@ -394,6 +432,8 @@ I diagrammet nedan visas en teoretisk beräkning av självförsörjning av elekt
 gg_sjalvforsorjning$teoretisk_sjalvforsorjning_el_Dalarna
 ```
 
+<hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
+
 
 # Ett konkurrenskraftigt Dalarna
 
@@ -407,6 +447,8 @@ I Dalarna finns företag och människor med idéer som kan bidra till att lösa 
 
 
 ## Arbetskraften, återväxt och kompetens {.tabset}
+
+<div class="indicator-row">
 
 <span class="big-indicator">
 Arbetskraften och sysselsättning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
@@ -437,6 +479,9 @@ Sjukfrånvaro, över 14 dagar orsaker <span style="color:red; font-size:1.8em; f
 Återväxten: födda och nettoflyttning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
+
+</div>
+
 
 ### Arbetskraften och dess sysselsättning{-}
 
@@ -490,6 +535,10 @@ Längre sjukfrånvaro, alt, endast sjukfrånvaro pga stress? kan ofta härröras
 
 ### Fruktsamhet, alt. komponenterna som i integrationsrapporten? {-}
 
+Byt ut mot: 
+source("https://raw.githubusercontent.com/Region-Dalarna/diagram/main/diag_befutv_per_komponent_ar_scb.R")
+
+
 <details>
 
   <summary>Mer information om statistiken</summary>
@@ -515,56 +564,34 @@ Sammanfattning.
 förutsättningar för arbete och företagande,
 utfall av företagandet
 
+<div class="indicator-row">
 
 <span class="big-indicator">
-Nya företag och 3-årig överlevnad <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-<br>
-
-<span class="big-indicator">
-Största hindren för tillväxt i Dalarna <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-<br>
-
-<span class="big-indicator">
-Könssegregering på arbetsmarknaden <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-<br>
-
-<span class="big-indicator">
-Föräldrapenning, fördelning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-<br>
-
-<span class="big-indicator">
-Förtroende för rättsväsendet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Företagande <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
 
 <span class="big-indicator">
-Anmälda ekobrott och bostadsinbrott <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Jämställdhet på arbetsmarknaden <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
 <span class="big-indicator">
-Tillgång till bredband <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Tillit och brottslighet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
 <span class="big-indicator">
-Punktlighet tåg, länsvis <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Infrastruktur; bredband, tåg etc. <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
-<span class="big-indicator">
-Infrastruktur <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-<br>
+</div>
 
 Mer att läsa, tipsa här.
 
-### Nystartade företag och 3-årig överlevnad {-}
+### Företagande {-}
 
 Obs, hitta siffror och kommentera könsuppdelning.
 
@@ -648,8 +675,10 @@ gg_fortroende_rattsvasande$fortroende_rattsvasande__sverige
 
 
 ## Produktion, produktivitet och export {.tabset}
+Sammanfattning av avsnittet här.
 
 
+<div class="indicator-row">
 
 <span class="big-indicator">
 BRP, arbetsproduktivitet alt. förädlingsvärde <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
@@ -672,9 +701,12 @@ Regional export <span style="color:red; font-size:1.8em; font-weight:900;">⬇</
 </span>
 <br>
 
+</div>
+
+
 ### BRP, arbetsproduktivitet {-} 
 
-Digram hämtas från..
+Diagram hämtas från..
 
 
 ### Löner/ inkomster kvinnor och män{-}
@@ -712,6 +744,7 @@ Den sociala dimensionen av hållbarhet i det regionala utvecklingsarbetet handla
 
 Friska och trygga människor 
 
+<div class="indicator-row">
 
 <span class="big-indicator">
 Medellivslängd <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
@@ -737,6 +770,8 @@ Brott mot person <span style="color:red; font-size:1.8em; font-weight:900;">⬇<
 Upplevd trygghet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
+
+</div>
 
 Mer finns att läsa här, tipsa om ["folkhälsa på Region Dalarnas hemsida"] (https://www.regiondalarna.se/om-oss/hallbar-utveckling/social-hallbarhet/folkhalsa/)
 
@@ -803,6 +838,8 @@ Andel elever som tycker att det stämmer helt eller till stor del att rasism fö
 
 Sammanfattning här. 
 
+<div class="indicator-row">
+
 <span class="big-indicator">
 Valdeltagande/ samhällsengagemang <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
@@ -832,6 +869,8 @@ Digital uppkoppling geografi <span style="color:red; font-size:1.8em; font-weigh
 Kulturarv <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
+
+</div>
 
 Mer att läsa finns här: 
 
@@ -889,6 +928,7 @@ Sammanfattning.
 
 Ett mönster vi behöver kommentera: ekonomisk situation handlar ju inte bara om lönenivån utan också om kostnader, ex. om boendekostnaderna är lägre så får man ju mer kvar i plånboken, vilket ger förutsättningar för fritid och konsumtion. Hur synliggör vi det?
 
+<div class="indicator-row">
 
 <span class="big-indicator">
 Gini-fördelningen <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
@@ -919,6 +959,8 @@ Privat sparande <span style="color:red; font-size:1.8em; font-weight:900;">⬇</
 Kapitalvinster/förluster <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
+
+</div>
 
 Mer att läsa finns här den som önskar.
 
