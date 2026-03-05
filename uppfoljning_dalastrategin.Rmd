@@ -223,7 +223,6 @@ Kollektivt resande <span style="color:red; font-size:1.8em; font-weight:900;">�
 </span>
 <br>
 
-
 <span class="big-indicator">
 Övergång till elbilar <span style="color:black; font-size:1.8em; font-weight:900;">⬆</span>
 </span>
