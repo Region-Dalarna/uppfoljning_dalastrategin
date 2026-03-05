@@ -96,7 +96,7 @@ Det är en viktig avvägning mellan nytta och miljöpåverkan, att bedöma huruv
 
 Sammanfattande resultat...
 
-<!-- <div class="indicator-row"> -->
+
 
 <span class="big-indicator">
 Vatten <span style="color:black; font-size:1.8em; font-weight:900;">➡</span>
@@ -107,7 +107,7 @@ Vatten <span style="color:black; font-size:1.8em; font-weight:900;">➡</span>
 <span class="big-indicator">
 Luft <span style="color:green; font-size:1.8em; font-weight:900;">⬆</span>
 </span>
-
+<br>
 
 <span class="big-indicator">
 Skog och mark <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
@@ -119,10 +119,9 @@ Biologisk mångfald <span style="color:red; font-size:1.8em; font-weight:900;">�
 </span>
 <br>
 
-<!-- </div> -->
 
-Länsstyrelserna i Sverige har i uppdrag att följa upp tillståndet i miljön i respektive län. För Dalarna finns redovisningen här: https://www.rus.se/regional-arlig-uppfoljning/dalarnas-lan/#generation
-Avsnittet som följer utgår ifrån denna rapport.
+Länsstyrelserna i Sverige har i uppdrag att följa upp tillståndet i miljön i respektive län. För Dalarna finns redovisningen här, för den som vill fördjupa sig ytterligare: https://www.rus.se/regional-arlig-uppfoljning/dalarnas-lan/#generation
+
 
 ### Vatten{-} 
 Tillgången på grundvatten av god kvalitet är god och flera vatten som tidigare varit försurade har återhämtat sig. Samtidigt fortsätter tillåtna men miljöfarliga ämnen och nya ämnen med okända effekter släppas ut i miljön. Övergödningsproblemen är störst i jordbruksområden i de sydöstra delarna av länet.
@@ -176,12 +175,16 @@ Drygt `r andel_skogsmark_max_ar` procent av den produktiva skogsmarken i Dalarna
 gg_skogsmark$andel_skyddad_skogsmark_Dalarna
 ```
 
+### Biologisk mångfald{-}
 
 **Betesmark och slåtteräng**
 
 Biologisk mångfald och väl fungerande ekosystem är en förutsättning för allt liv på jorden. De är därmed också nödvändiga för goda livsmiljöer för både Dalarnas invånare och för Dalarnas näringsliv. Den gröna infrastrukturen är ekologiskt funktionella nätverk av livsmiljöer och naturområden som utformas, brukas och förvaltas så att den biologiska mångfalden bevaras och därmed främjar för samhället så centrala ekosystemtjänster som exempelvis vattenrening och livskraftiga jordbruksmarker, etc. Samhället har allt att vinna på ett hållbart bruk av ekosystemen och att förvalta ett mångfunktionellt landskap där natur- och kulturvärden tillvaratas.
 
 Betesmark tillsammans med åkermark utgör jordbruksmark. Åkermarken kan brukas för djurfoder och livsmedel, medan betesmarken och betande djur i hög grad bidrar till att upprätthålla artrikedomen. En delmängd av betesmarken är slåtterängar, som har särskilt höga biologiska värden.
+
+Det bedrivs ett gediget arbete för att gynna arter, skapa livsmiljöer och förbättra grönstruktur i Dalarna. Trots det är 1 396 av länets arter rödlistade och vissa nära att dö ut på grund av markanvändning och global uppvärmning. Klimatförändring kan ha bidragit till lokala utdöenden av Dalarnas landskapsfjäril violett guldvinge de senaste årtiondena, 2025 fanns den bara på en lokal. Invasiva främmande arter ökar trots att många bekämpar dem. Havsörnen tycks ha haft sämre framgång 2023-2025 än 2021-2022.
+
 
 I diagrammet nedan redovisas hur arealen betesmark i Dalarnas län har utvecklats mellan `r ar_min_betesmark` och `r ar_max_betesmark`. I diagrammet är den totala arealen betesmark uppdelad på slåtteräng och alla annan betesmark, benämnd övrig betesmark. Den totala arealen betesmark har under denna period minskat med ungefär `r forandring_betsmark` procent, från `r betesmark_tot_min_ar` till `r betesmark_tot_max_ar` hektar. Efter en tydlig minskning mellan 2022 och 2023, ökade arealen betesmark återigen år 2024. 
 
@@ -191,17 +194,16 @@ Slåtteräng är en delmängd av betesmarken som har särskilt höga biologiska 
 gg_betesmark$areal_betesmark_Dalarna
 ```
 
-### Biologisk mångfald{-}
-Det bedrivs gediget arbete för att gynna arter, skapa livsmiljöer och förbättra grönstruktur i Dalarna. Ändå är 1396 av länets arter rödlistade och vissa nära att dö ut på grund av markanvändning och global uppvärmning. Klimatförändring kan ha bidragit till lokala utdöenden av Dalarnas landskapsfjäril violett guldvinge de senaste årtiondena, 2025 fanns den bara på en lokal. Invasiva främmande arter ökar trots att många bekämpar dem. Havsörnen tycks ha haft sämre framgång 2023-2025 än 2021-2022.
+Flera insatser görs i samhället som bedöms gynna tillståndet för den biologiska mångfalden. Genom våtmarkssatsningen restaureras och anläggs många våtmarker i länet. Takten i arbetet har goda förutsättningar att öka i och med klimatarbetet och ett ökande fokus på naturtypsrestaurering. Utvecklingen påverkas däremot negativt av den långsamma igenväxning som sker generellt på myrar samt exploatering i form av dikning vid vägar och järnvägar.
 
-Utvecklingen för miljökvalitetsmålet bedöms neutral och är inte entydig. Flera insatser görs i samhället som bedöms gynna tillståndet. Genom våtmarkssatsningen restaureras och anläggs många våtmarker i länet. Takten i arbetet har goda förutsättningar att öka i och med klimatarbetet och ett ökande fokus på naturtypsrestaurering. Utvecklingen påverkas däremot negativt av den långsamma igenväxning som sker generellt på myrar samt exploatering i form av dikning vid vägar och järnvägar.
 
 Renbetesmarker
 Klimatförändringar påverkar fjällen och dess ekosystemprocesser allt mer. Låglandsarter sprider sig in i fjällen och invasiva arter har spridit sig in i fjällområdet. Flera sjöar är försurade och kalkas för att gynna växt- och djurlivet. Inventering av fjällnära skogar har visat på höga biologiska värden, varför skydd av de fjällnära skogarna är av stor vikt. Fjällskogens kulturlämningar är däremot dåligt kända och sällan undersökta. Exploaterings- och besökstrycket ökar med markslitage, nedskräpning och störning av ren som följd.
 
 Fisktrappor etc?
 
---- SKAPA LINJE med Claude..
+<hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
+
 
 ## Beteenden som påverkar miljö och resursförbrukning i Dalarna{.tabset}
 
@@ -214,24 +216,30 @@ Utfall av förändrade beteenden
 <span class="big-indicator">
 Utsläpp av växthusgaser <span style="color:red; font-size:1.8em; font-weight:900;">➡</span>
 </span>
+<br>
 
 <span class="big-indicator">
 Kollektivt resande <span style="color:red; font-size:1.8em; font-weight:900;">➡</span>
 </span>
+<br>
 
 
 <span class="big-indicator">
 Övergång till elbilar <span style="color:black; font-size:1.8em; font-weight:900;">⬆</span>
 </span>
-
+<br>
 
 <span class="big-indicator">
 Insamlat avfall <span style="color:green; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
 <span class="big-indicator">
 Kommunala klimatanpassningsplaner <span style="color:green; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
+
+Under flikarna hittar den som önskar fördjupad information om varje variabel.
 
 
 ### Utsläpp{-}
@@ -290,14 +298,42 @@ En av prioriteringarna i Dalastrategin är att öka resurseffektiviteten i läne
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_avfall$avfall_Dalarna
 ```
-### Kommunala klimatanpassningsplaner {-}
+### Kommunala klimatanpassningsplaner{-}
 
-..
+Kommunala klimatanpassningsplaner utgör grunden för XXX.
 
 
-## Förnybar elproduktion och ekonomiska värden av energi- och material/råvaror{.tabset}
+<hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
+
+
+## Förnybar elproduktion och ekonomiska värden av energi- och material och råvaror {.tabset}
 
 De ekonomiska aspekterna av ett klimatsmart Dalarna handlar om hur vi tar tillvara naturresurserna och skapar återanvändning och självförsörjning inom planetära gränserna. 
+
+Sammanfatting.
+
+
+<span class="big-indicator">
+Förnybar elproduktion <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+<br>
+
+<span class="big-indicator">
+Energieffektivitet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+<br>
+
+<span class="big-indicator">
+Avfall / BRP <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+<br>
+
+<span class="big-indicator">
+Självförsörjning av livsmedel och el <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+<br>
+
+Mer att läsa, tipsa här.
 
 ### Förnybar elproduktion{-}
 
@@ -376,28 +412,32 @@ I Dalarna finns företag och människor med idéer som kan bidra till att lösa 
 <span class="big-indicator">
 Arbetskraften och sysselsättning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
 <span class="big-indicator">
 Utbildningsnivåer <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
 <span class="big-indicator">
 Gymnasieexamen <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
 <span class="big-indicator">
 Invandrares etableringstid <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
-
+<br>
 
 <span class="big-indicator">
 Sjukfrånvaro, över 14 dagar orsaker <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
-
+<br>
 
 <span class="big-indicator">
 Återväxten: födda och nettoflyttning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
 ### Arbetskraften och dess sysselsättning{-}
 
@@ -471,6 +511,8 @@ gg_fruktsamhet$summerad_fruktsamhet_Riket_facet
 
 ## Arbete, företagande och förutsättningar{.tabset}
 
+Sammanfattning.
+
 förutsättningar för arbete och företagande,
 utfall av företagandet
 
@@ -478,43 +520,50 @@ utfall av företagandet
 <span class="big-indicator">
 Nya företag och 3-årig överlevnad <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
 <span class="big-indicator">
 Största hindren för tillväxt i Dalarna <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
-
+<br>
 
 <span class="big-indicator">
 Könssegregering på arbetsmarknaden <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
 <span class="big-indicator">
 Föräldrapenning, fördelning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
 <span class="big-indicator">
 Förtroende för rättsväsendet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
 
 <span class="big-indicator">
 Anmälda ekobrott och bostadsinbrott <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
 <span class="big-indicator">
 Tillgång till bredband <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
 <span class="big-indicator">
 Punktlighet tåg, länsvis <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
-
+<br>
 
 <span class="big-indicator">
 Infrastruktur <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
-
+Mer att läsa, tipsa här.
 
 ### Nystartade företag och 3-årig överlevnad {-}
 
@@ -606,30 +655,38 @@ gg_fortroende_rattsvasande$fortroende_rattsvasande__sverige
 <span class="big-indicator">
 BRP, arbetsproduktivitet alt. förädlingsvärde <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
 <span class="big-indicator">
 Löner/ inkomster kvinnor och män <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
 <span class="big-indicator">
 Regional export <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
 
 <span class="big-indicator">
 Ägande, regionalt ägda ftg och utländskt <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
-
+<br>
 
 ### BRP, arbetsproduktivitet {-} 
 
+Digram hämtas från..
+
+
 ### Löner/ inkomster kvinnor och män{-}
 
+Diagram hämtas från..
 
 ### Regional export {-}
 
-Inkl. gästnätter från utlandet..?
+Diagram hämtas från..
 
+Inkl. gästnätter från utlandet..?
 
 
 
@@ -644,47 +701,45 @@ Sysselsatta som arbetar i utlandsägda företag, omsättning arbetsställe per u
 # Ett sammanhållet Dalarna
 
 <p class="intro" style = "background-color: #ffec9f">
-I ett sammanhållet Dalarna finns goda livsmiljöer
-som skapar en känsla av närhet. Det är ett
-Dalarna fyllt av engagemang, där människor upplever
-delaktighet och tillsammans bidrar till en hållbar
-utveckling. Det är ett inkluderande, jämställt,
-och jämlikt Dalarna där människor mår bra och
+I ett sammanhållet Dalarna finns goda livsmiljöer som skapar en känsla av närhet. Det är ett Dalarna fyllt av engagemang, där människor upplever
+delaktighet och tillsammans bidrar till en hållbar utveckling. Det är ett inkluderande, jämställt, och jämlikt Dalarna där människor mår bra och
 där alla ges möjlighet att utvecklas.
 </p>
 
-Den sociala dimensionen av hållbarhet i det regionala
-utvecklingsarbetet handlar om att alla människor,
-utifrån sina behov och förutsättningar, ges likvärdiga
-möjligheter att delta i samhällsutvecklingen. Ju fler
-som känner sig delaktiga, desto mer utveckling kan
-åstadkommas.
+Den sociala dimensionen av hållbarhet i det regionala utvecklingsarbetet handlar om att alla människor, utifrån sina behov och förutsättningar, ges likvärdiga möjligheter att delta i samhällsutvecklingen. Ju fler som känner sig delaktiga, desto mer utveckling kan åstadkommas.
+
+
+## Dalfolkets hälsa och trygghet{.tabset}
+
+Friska och trygga människor 
 
 
 <span class="big-indicator">
 Medellivslängd <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
 <span class="big-indicator">
 Upplevd hälsa <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
 <span class="big-indicator">
 Folksjukdomar <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
 <span class="big-indicator">
 Brott mot person <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
-
+<br>
 
 <span class="big-indicator">
 Upplevd trygghet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
-## Dalfolkets hälsa och trygghet{.tabset}
-
-Friska och trygga människor 
+Mer finns att läsa här, tipsa om ["folkhälsa på Region Dalarnas hemsida"] (https://www.regiondalarna.se/om-oss/hallbar-utveckling/social-hallbarhet/folkhalsa/)
 
 
 ### Medellivslängd{-}
@@ -743,35 +798,43 @@ Andel elever som alltid eller ofta känner sig trygga på sociala medier, efter 
 Andel elever som tycker att det stämmer helt eller till stor del att rasism förekommer på skolan, efter kön, högstadiet och/eller gymnasiet (LUPP)
 
 
-
+<hr style="border: none; height: 5px; background-color: #2C7FB8; margin-top: 40px; margin-bottom: 40px;">
 
 ## Dalfolkets delaktighet, samhällsengagemang och tillit{.tabset}
 
+Sammanfattning här. 
 
 <span class="big-indicator">
 Valdeltagande/ samhällsengagemang <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
 <span class="big-indicator">
 Kultur/fritid unga (LOK, kulturskola) <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
 <span class="big-indicator">
 Tillgång fysiskt: bibliotek, skola, service <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
 <span class="big-indicator">
 Skola och arbetsliv <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
-
+<br>
 
 <span class="big-indicator">
 Digital uppkoppling geografi <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
 <span class="big-indicator">
 Kulturarv <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
+
+Mer att läsa finns här: 
 
 
 ## Valdeltagande/ samhällsengagemang {-}
@@ -779,7 +842,6 @@ Kulturarv <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 Valdeltagande, gamla diagram.
 
 Ex. diagram över Unga som vill vara med och påverka i frågor som rör kommunen  (LUPP)
-
 
 
 
@@ -802,9 +864,12 @@ gg_tillit$tillit_Dalarna
 
 ## Kultur/fritid unga (LOK, kulturskola) {-}
 
+Mer att läsa finns här.
+
 
 ## Tillgång fysiskt: bibliotek, skola, service {-}
 
+Mer att läsa finns här.
 
 
 ## Skola och arbetsliv {-}
@@ -816,8 +881,12 @@ Andel som alltid eller ofta känner sig trygg inför skoldagen efter kön (ELSA)
 
 ## Kulturarv {-}
 
+Mer att läsa finns här.
+
 
 ## Fördelning av inkomster och ekonomiska värden {.tabset}
+
+Sammanfattning.
 
 Ett mönster vi behöver kommentera: ekonomisk situation handlar ju inte bara om lönenivån utan också om kostnader, ex. om boendekostnaderna är lägre så får man ju mer kvar i plånboken, vilket ger förutsättningar för fritid och konsumtion. Hur synliggör vi det?
 
@@ -825,26 +894,34 @@ Ett mönster vi behöver kommentera: ekonomisk situation handlar ju inte bara om
 <span class="big-indicator">
 Gini-fördelningen <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
 <span class="big-indicator">
 Barn i ekonomisk utsatthet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
 <span class="big-indicator">
 Könslönegap <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
 <span class="big-indicator">
 Bidragsberoende <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
 <span class="big-indicator">
 Privat sparande <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
 
 <span class="big-indicator">
 Kapitalvinster/förluster <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+<br>
+
+Mer att läsa finns här den som önskar.
 
 
 ### Gini-fördelningen {-}
@@ -892,16 +969,21 @@ gg_inkomst$Medianinkomst_20_64_Dalarna_tid
 gg_inkomst$Medianinkomst_20_64_Dalarna_tid_linje
 ```
 
-### Bidragsberoende {-}
+### Bidragsmottagare {-}
+
+De som behöver stöd för att leva ett drägligt liv.
 
 
 
 ### Privat sparande {-}
 
+Varje vuxen borde ha xx kr i sparkapital för att vara försäkrad mot motgångar och svåra tider.
+
 
 
 ### Kapitalvinster/förluster {-}
 
+Påverkas av bostadsmarknaden etc.
 
 
 ```{=html}
