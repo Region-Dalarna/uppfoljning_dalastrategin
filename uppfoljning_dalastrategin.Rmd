@@ -706,6 +706,7 @@ Regional export <span style="color:red; font-size:1.8em; font-weight:900;">⬇</
 
 ### BRP, arbetsproduktivitet {-} 
 
+
 Diagram hämtas från..
 
 
