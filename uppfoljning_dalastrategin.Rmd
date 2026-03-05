@@ -96,8 +96,6 @@ Det är en viktig avvägning mellan nytta och miljöpåverkan, att bedöma huruv
 
 Sammanfattande resultat...
 
-<div class="indicator-row">
-
 
 <span class="big-indicator">
 Vatten <span style="color:black; font-size:1.8em; font-weight:900;">➡</span>
@@ -123,8 +121,6 @@ Biologisk mångfald <span style="color:red; font-size:1.8em; font-weight:900;">�
 
 <br>
 
- </div>
- 
 
 Länsstyrelserna i Sverige har i uppdrag att följa upp tillståndet i miljön i respektive län. För Dalarna finns redovisningen här, för den som vill fördjupa sig ytterligare: https://www.rus.se/regional-arlig-uppfoljning/dalarnas-lan/#generation
 
