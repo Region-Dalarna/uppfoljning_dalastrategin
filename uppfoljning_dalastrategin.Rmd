@@ -215,8 +215,11 @@ Klimatförändringar påverkar fjällen och dess ekosystemprocesser allt mer. L�
 
 Fisktrappor etc?
 
-##
+
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
+
+──── Kapitel 2 ────
+
 
 ## Beteenden som påverkar miljö och resursförbrukning i Dalarna{.tabset}
 
@@ -329,9 +332,8 @@ IVL har
 
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
 
-
-
 ## Förnybar elproduktion och ekonomiska värden av energi- och material och råvaror {.tabset}
+
 
 De ekonomiska aspekterna av ett klimatsmart Dalarna handlar om hur vi tar tillvara naturresurserna och skapar återanvändning och självförsörjning inom planetära gränserna. 
 
@@ -429,6 +431,7 @@ I diagrammet nedan visas en teoretisk beräkning av självförsörjning av elekt
 gg_sjalvforsorjning$teoretisk_sjalvforsorjning_el_Dalarna
 ```
 
+
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
 
 
@@ -448,7 +451,7 @@ I Dalarna finns företag och människor med idéer som kan bidra till att lösa 
 
 
 <span class="big-indicator">
-Arbetskraften och sysselsättning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Arbetskraftens sysselsättning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
@@ -458,22 +461,22 @@ Utbildningsnivåer <span style="color:red; font-size:1.8em; font-weight:900;">�
 <br>
 
 <span class="big-indicator">
-Gymnasieexamen <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Gymnasieutbildning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
 <span class="big-indicator">
-Invandrares etableringstid <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Invandrares arbetsetablering <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
 <span class="big-indicator">
-Sjukfrånvaro, över 14 dagar orsaker <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Sjukfrånvaro <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
 <span class="big-indicator">
-Återväxten: födda och nettoflyttning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Återväxt <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
@@ -492,7 +495,7 @@ Kommentera även UVAS och andra grupper som står långt ifrån arbetsmarknaden.
 Diagram, könsuppdelade, gärna jämte varandra. Finns stapeldiagram - funkar de, eller borde det göras om till ytdiagram?
 
 
-### Fullföljt gymnasium{-}
+### Gymnasiumutbildning{-}
 
 Kunskap ger människor möjlighet att växa och påverka sin livssituation. Tillgång till utbildning, kunskap och bildning är avgörande för såväl utvecklingen av samhället, som god välfärd och tillväxt i näringslivet. När arbetsgivare inte hittar rätt kompetens hämmas den ekonomiska utvecklingen. Samtidigt försvagas den sociala hållbarheten när människor ställs utanför arbetsmarknaden. Befolkningens relativt sett låga utbildningsnivåer är en utmaning i stora delar av Dalarna. Ambitionen i Dalastrategin är att fler ska klara en gymnasieexamen för att därmed få bättre förutsättningar att etablera sig på arbetsmarknaden.
 
@@ -502,7 +505,7 @@ Denna indikator mäter andelen elever i Dalarna som har fullföljt en gymnasieut
 gg_genomstromning_gym$genomstromning_gymnasiet_Dalarna
 ```
 
-### Invandrare på arbetsmarknaden{-}
+### Invandrares arbetsetablering {-}
 
 Invandring är en del av lösningen för att möta en ökad efterfrågan på arbetskraft och rätt kompetens i Dalarna och Sverige. Dalarna har haft en relativt stor inflyttning av utomeuropeiskt födda under senare år. Många invandrade är i arbetsför ålder och blir därför ett viktigt tillskott till arbetskraften. Denna indikator är ett mått på i vilken takt och utsträckning som invandrade etablerar sig på arbetsmarknaden i Dalarna. Med etablering menas att personen är förvärvsarbetande helt utan stöd från a-kassa eller arbetsmarknadsåtgärd, eller dylikt.
 
@@ -524,12 +527,22 @@ En jämförelse mellan länen när det gäller möjligheten att ha etablerat sig
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_etableringstid$etablering_vistelsetid_allalan
 ```
-### Sjukfrånvaro minst 14 dagar{-}
+### Sjukfrånvaro{-}
 
-Längre sjukfrånvaro, alt, endast sjukfrånvaro pga stress? kan ofta härröras till Slitage på humankapitalet.
+Ohälsotalet (ev källa) mäter i vilken utsträckning personer är borta från arbetet på grund av nedsatt arbetsförmåga, mätt under ett års tid. Ohälsotalet varierar över tid och var relativt högt under början av 2000-talet. Därefter syns en klart nedåtgående trend, även om ohälsotalet har ökat något de senaste åren. Under hela tidsperioden har ohälsotalet varit högre för kvinnor än för män, även om skillnaden mellan könen har minskat något över tid.
+
+Sjukfrånvaro är kostsamt i form av produktionsbortfall för både arbetsgivare och samhälle, och inte minst för individen. 
+
+med en mer ekonomisk term kan vi säga att det sliter på vårt humankapital...
+
+LÄGG IN DIAGRAM FRÅN KV o MÄN.
 
 
-### Fruktsamhet, alt. komponenterna som i integrationsrapporten? {-}
+
+
+
+### Återväxt genom födda och inflyttare {-}
+
 
 Byt ut mot: 
 source("https://raw.githubusercontent.com/Region-Dalarna/diagram/main/diag_befutv_per_komponent_ar_scb.R")
@@ -566,19 +579,24 @@ Företagande <span style="color:red; font-size:1.8em; font-weight:900;">⬇</spa
 </span>
 <br>
 
+<span class="big-indicator">
+Infrastrukturförutsättningar <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+<br>
+
 
 <span class="big-indicator">
-Jämställdhet på arbetsmarknaden <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Jämställdhet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
 <span class="big-indicator">
-Tillit och brottslighet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Brottslighet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
 <span class="big-indicator">
-Infrastruktur; bredband, tåg etc. <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Tillit <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
@@ -596,11 +614,15 @@ gg_nyst_konk$nystartade
 ```
 
 
-### Största hindren för tillväxt {-}
+**Största hindren för tillväxt**
+
 Från TVV - företagens villkor och verklighet, alt. Entreprenörskapsforums rapport.
 
 
-### Tillgång till bredband{-}
+
+### infrastruktur{-}
+
+**Tillgång till bredband**
 
 Tillgång till en snabb och robust digital infrastruktur är för de flesta en grundförutsättning för att bo och verka i hela Dalarna. Fysiska och digitala mötesplatser gör att vi når både varandra och omvärlden. En av utmaningarna för Dalarna är en ojämnt fördelad digital infrastruktur. Att stärka och tillgängliggöra den digitala infrastrukturen för hela Dalarnas befolkning, oavsett plats, är avgörande för en lyckad digitalisering av samhället.
 
@@ -611,18 +633,24 @@ gg_bredband$tillgang_bredband_Dalarna
 ```
 
 
-### Punktlighet på tåglinjerna {-}
+**Tågens punktlighet**
 
 Trafikanalys - hitta data?
 
 
-### Infrastrukturläget? {-}
+**Annat intressant infrastrukturmått**
+
 
 Status på vägar, restider
 
-### Könssegregering på arbetsmarknaden {-}
 
-Sedan många år har kvinnor och män haft likvärdig tillgång till utbildning och möjlighet att fritt välja yrke. Trots detta består många av könsskillnaderna i arbetslivet. Många branscher i länet har idag en tydlig övervikt av det ena eller det andra könet, exempelvis byggbranschen som omfattar yrken inom bland annat el och VVS, och där kvinnor bara utgör ungefär `r forvarvsarbetande_bygg_andel` procent av de förvärvsarbetande. Även om det har skett en ökning av andelen kvinnor inom byggbranschen är denna ökning ännu liten i sammanhanget. Inom vård och omsorg är bilden densamma men med motsatt könsfördelning. Här utgör kvinnor cirka `r forvarvsarbetande_vard_andel` procent av de förvärvsarbetande.
+### Jämställdhet {-}
+
+Sedan många år har kvinnor och män haft likvärdig tillgång till utbildning och möjlighet att fritt välja yrke. Trots detta består många av könsskillnaderna i arbetslivet. 
+
+**Könssegregering i olika branscher**
+
+Många branscher i länet har idag en tydlig övervikt av det ena eller det andra könet, exempelvis byggbranschen som omfattar yrken inom bland annat el och VVS, och där kvinnor bara utgör ungefär `r forvarvsarbetande_bygg_andel` procent av de förvärvsarbetande. Även om det har skett en ökning av andelen kvinnor inom byggbranschen är denna ökning ännu liten i sammanhanget. Inom vård och omsorg är bilden densamma men med motsatt könsfördelning. Här utgör kvinnor cirka `r forvarvsarbetande_vard_andel` procent av de förvärvsarbetande.
 
 Att åstadkomma en förändring i närtid av balansen mellan män och kvinnor inom de könssegregerade branscherna förefaller inte vara inom räckhåll då ungdomars studieval fortsätter att vara könsstereotypa.
 
@@ -632,7 +660,7 @@ gg_antal_forv$antal_per_bransch
 ```
 
 
-### Föräldrapenning{-}
+**Föräldrapenning**
 
 Fördelningen av dagar mellan vårdnadshavarna har jämnats ut något sedan slutet av 1990-talet då runt 85-90 procent av föräldrapenningdagarna togs ut av mammorna. Sedan dess har först en (1995), sedan två (2002) och även tre månader (2016) reserverats åt respektive vårdnadshavare (också kallade "pappamånader"). Detta har bidragit till ett jämnare uttag men utvecklingen får ändå sägas gå relativt trögt, då kvinnors andel endast har minskat till runt `r round(as.numeric(foraldrapenning_df %>% filter(Region == "Dalarnas län", Kön == "Kvinnor", År == max(År)) %>% .$Andel),0)` procent `r max(foraldrapenning_df$År)`. Svenska vårdnadshavare är således långt ifrån att ge sina barn en jämställd tillgång till sina föräldrar. Skillnaden i uttag påverkar också den disponibla inkomsten, som beskrivits under rubriken Ekonomisk jämställdhet. Skillnaden är som störst mellan sammanboende kvinnor och män när det yngsta barnet är 0–3 år [(Regeringen, 2022)](<https://www.regeringen.se/contentassets/46945970585240a4a5bfd9a0f75ecf3d/ekonomisk-jamstalldhet.pdf>){target="_blank"}.
 
@@ -640,12 +668,25 @@ Fördelningen av dagar mellan vårdnadshavarna har jämnats ut något sedan slut
 gg_fp_vab$Foraldrapenning_andel_Dalarna
 ```
 
-### Anmälda ekobrott och bostadsinbrott{-} 
+
+### Brottslighet{-} 
+
+Brottslighet drabbar företagandet på flera olika sätt. Ekonomisk brottslighet påverkar... 
+Bostadsinbrott...
+
+
+**Ekobrottslighet**
+
+Anmälda ekobrott...
 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_anmalda_brott$anmalda_ekobrott_Dalarna
 ```
+
+**Bostadsinbrott**
+
+Anmälda bostadsinbrott..
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_anmalda_brott$anmalda_bostadsinbrott_Dalarna
