@@ -92,6 +92,8 @@ Dalarna är rikt på naturresurser och om de brukas rätt ger de mångfalt tillb
 Det är en viktig avvägning mellan nytta och miljöpåverkan, att bedöma huruvida Dalarnas företag har det produktionssätt som har den minsta miljöpåverkan i global jämförelse och därmed motiv till att just företagen i Dalarna ska bedriva denna produktion.
 
 
+<hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
+
 ## Tillståndet i Dalarnas miljö och natur{.tabset}
 
 Sammanfattande resultat...
@@ -184,13 +186,13 @@ Drygt `r andel_skogsmark_max_ar` procent av den produktiva skogsmarken i Dalarna
 gg_skogsmark$andel_skyddad_skogsmark_Dalarna
 ```
 
-<hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
+
 
 ### Biologisk mångfald{-}
 
 **Betesmark och slåtteräng**
 
-Biologisk mångfald och väl fungerande ekosystem är en förutsättning för allt liv på jorden. De är därmed också nödvändiga för goda livsmiljöer för både Dalarnas invånare och för Dalarnas näringsliv. Den gröna infrastrukturen är ekologiskt funktionella nätverk av livsmiljöer och naturområden som utformas, brukas och förvaltas så att den biologiska mångfalden bevaras och därmed främjar för samhället så centrala ekosystemtjänster som exempelvis vattenrening och livskraftiga jordbruksmarker, etc. Samhället har allt att vinna på ett hållbart bruk av ekosystemen och att förvalta ett mångfunktionellt landskap där natur- och kulturvärden tillvaratas.
+Biologisk mångfald och väl fungerande ekosystem är en förutsättning för allt liv på jorden, att vårda dem ger goda livsmiljöer för både Dalarnas invånare och för Dalarnas näringsliv. Den gröna infrastrukturen är ekologiskt funktionella nätverk av livsmiljöer och naturområden som utformas, brukas och förvaltas så att den biologiska mångfalden bevaras och därmed främjar för samhället så centrala ekosystemtjänster som exempelvis vattenrening och livskraftiga jordbruksmarker, etc. Samhället har allt att vinna på ett hållbart bruk av ekosystemen och att förvalta ett mångfunktionellt landskap där natur- och kulturvärden tillvaratas.
 
 Betesmark tillsammans med åkermark utgör jordbruksmark. Åkermarken kan brukas för djurfoder och livsmedel, medan betesmarken och betande djur i hög grad bidrar till att upprätthålla artrikedomen. En delmängd av betesmarken är slåtterängar, som har särskilt höga biologiska värden.
 
@@ -213,16 +215,14 @@ Klimatförändringar påverkar fjällen och dess ekosystemprocesser allt mer. L�
 
 Fisktrappor etc?
 
+##
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
-
 
 ## Beteenden som påverkar miljö och resursförbrukning i Dalarna{.tabset}
 
 Förutsättningar för att ändra beteenden
 Utfall av förändrade beteenden
 
-
-<div class="indicator-row">
 
 <span class="big-indicator">
 Utsläpp av växthusgaser <span style="color:red; font-size:1.8em; font-weight:900;">➡</span>
@@ -249,7 +249,6 @@ Kommunala klimatanpassningsplaner <span style="color:green; font-size:1.8em; fon
 </span>
 <br>
 
- </div>
  
 Under flikarna hittar den som önskar fördjupad information om varje variabel.
 
@@ -294,7 +293,7 @@ gg_kollektivt_resande$marknadsandel_resande_Dalarna
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
 
 
-### Övergång till elbilar{-}
+### Elbilar{-}
 
 Andelen personbilar som helt eller delvis drivs av el har ökat tydligt i Dalarna på senare år. Fram till mitten av 2010-talet var andelen mer eller mindre obefintlig, men därefter har ökningen gått snabbt. Initialt ökade framförallt andelen laddhybrider, men på senare år har även andelen rena elbilar ökat kraftigt. Andelen är dock fortfarande relativt låg. År `r elbilar_max_ar` var ungefär `r elbilar_andel_max_ar_Dalarna` procent av personbilarna i Dalarna antingen rena elbilar eller laddhybrider.
 
@@ -311,7 +310,7 @@ gg_elbilar$elbilar_Sverige
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
 
 
-### Insamlat avfall{-}
+### Avfall{-}
 
 En av prioriteringarna i Dalastrategin är att öka resurseffektiviteten i länet. Ett mått på resursförbrukning är mängden insamlat kommunalt avfall som kan antas motsvara invånarnas resursförbrukning. I det kommunala avfallet ingår det mesta avfall som ett hushåll producerar, så som mat- och restavfall, grov- och trädgårdsavfall och farligt avfall. Även förpackningar och batterier etc. som ingår i producentansvaret ingår i beräkningen. I sammanställningen nedan visas insamlat kommunalt avfall per person och år i Dalarna från `r avfall_min_ar` till `r avfall_max_ar`. År `r avfall_min_ar` samlades det in `r avfall_per_person_min_ar` kg avfall per person i Dalarna, att jämföra med ca `r avfall_per_person_max_ar` kg per person år `r avfall_max_ar`. En lägre mängd per person signalerar en lägre resursanvändning. I en nationell jämförelse ses att Stockholms län ligger bäst till med 384 kg per person och år, medan Kalmar ligger sämst till med över 517 kg per person och år - ej uppdaterat [(Kolada)](https://www.kolada.se/verktyg/fri-sokning/?kpis=61064&years=30200,30199,30198&municipals=27493,27494,27495,27496,27497,27498,27499,27500,27501,27502,27503,27504,27505,27506,27507,27508,27509,27510,27511,27512,27513&rows=municipal,kpi&visualization=bar-chart&focus=27508){target="_blank"}.
 
@@ -321,12 +320,15 @@ gg_avfall$avfall_Dalarna
 
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
 
-### Kommunala klimatanpassningsplaner{-}
+### Klimatanpassning{-}
 
-Kommunala klimatanpassningsplaner utgör grunden för XXX.
+Kommunala klimatanpassningsplaner utgör grunden för XX.
+
+IVL har 
 
 
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
+
 
 
 ## Förnybar elproduktion och ekonomiska värden av energi- och material och råvaror {.tabset}
@@ -336,7 +338,6 @@ De ekonomiska aspekterna av ett klimatsmart Dalarna handlar om hur vi tar tillva
 Sammanfatting.
 
 
-<div class="indicator-row">
 
 <span class="big-indicator">
 Förnybar elproduktion <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
@@ -358,7 +359,7 @@ Självförsörjning av livsmedel och el <span style="color:red; font-size:1.8em;
 </span>
 <br>
 
-</div>
+
 
 
 
@@ -412,7 +413,7 @@ gg_avfall$avfall_BRP_Dalarna
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
 
 
-### Självförsörjning av livsmedel och el{-}
+### Självförsörjning mat och el{-}
 
 Klimatförändringarna medför lokalt förändrade mönster för nederbörd, torka och vind men även insekts- och svampangrepp på grödor och skog, höga temperaturer, med mera. Här spelar god samhällsplanering på regional och kommunal nivå en viktig roll. Ett sätt att förbättra beredskapen i Dalarna är att ha en tillräckligt omfattande lokal och hållbar energi- och livsmedelsproduktion. En ökad självförsörjningsgrad är en trygghet på flera sätt och gynnar även miljöns motståndskraft genom en ökad biologisk mångfald.
 
@@ -444,7 +445,7 @@ I Dalarna finns företag och människor med idéer som kan bidra till att lösa 
 
 ## Arbetskraften, återväxt och kompetens {.tabset}
 
-<div class="indicator-row">
+
 
 <span class="big-indicator">
 Arbetskraften och sysselsättning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
@@ -476,10 +477,9 @@ Sjukfrånvaro, över 14 dagar orsaker <span style="color:red; font-size:1.8em; f
 </span>
 <br>
 
-</div>
 
 
-### Arbetskraften och dess sysselsättning{-}
+### Arbetskraftens sysselsättning{-}
 
 Ytdiagram med arbetsför ålder som visar fördelningen av sysselsatta, arbetslösa etc. Samtliga i åldern 20-64 år, och fördelning mellan vilka aktivitetsgrupper de tillhör.
 
@@ -492,7 +492,7 @@ Kommentera även UVAS och andra grupper som står långt ifrån arbetsmarknaden.
 Diagram, könsuppdelade, gärna jämte varandra. Finns stapeldiagram - funkar de, eller borde det göras om till ytdiagram?
 
 
-### Unga som fullföljer gymnasiet{-}
+### Fullföljt gymnasium{-}
 
 Kunskap ger människor möjlighet att växa och påverka sin livssituation. Tillgång till utbildning, kunskap och bildning är avgörande för såväl utvecklingen av samhället, som god välfärd och tillväxt i näringslivet. När arbetsgivare inte hittar rätt kompetens hämmas den ekonomiska utvecklingen. Samtidigt försvagas den sociala hållbarheten när människor ställs utanför arbetsmarknaden. Befolkningens relativt sett låga utbildningsnivåer är en utmaning i stora delar av Dalarna. Ambitionen i Dalastrategin är att fler ska klara en gymnasieexamen för att därmed få bättre förutsättningar att etablera sig på arbetsmarknaden.
 
@@ -502,7 +502,7 @@ Denna indikator mäter andelen elever i Dalarna som har fullföljt en gymnasieut
 gg_genomstromning_gym$genomstromning_gymnasiet_Dalarna
 ```
 
-### Invandrares etablering på arbetsmarknaden{-}
+### Invandrare på arbetsmarknaden{-}
 
 Invandring är en del av lösningen för att möta en ökad efterfrågan på arbetskraft och rätt kompetens i Dalarna och Sverige. Dalarna har haft en relativt stor inflyttning av utomeuropeiskt födda under senare år. Många invandrade är i arbetsför ålder och blir därför ett viktigt tillskott till arbetskraften. Denna indikator är ett mått på i vilken takt och utsträckning som invandrade etablerar sig på arbetsmarknaden i Dalarna. Med etablering menas att personen är förvärvsarbetande helt utan stöd från a-kassa eller arbetsmarknadsåtgärd, eller dylikt.
 
@@ -560,7 +560,6 @@ Sammanfattning.
 förutsättningar för arbete och företagande,
 utfall av företagandet
 
-<div class="indicator-row">
 
 <span class="big-indicator">
 Företagande <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
@@ -583,7 +582,6 @@ Infrastruktur; bredband, tåg etc. <span style="color:red; font-size:1.8em; font
 </span>
 <br>
 
-</div>
 
 Mer att läsa, tipsa här.
 
@@ -674,8 +672,6 @@ gg_fortroende_rattsvasande$fortroende_rattsvasande__sverige
 Sammanfattning av avsnittet här.
 
 
-<div class="indicator-row">
-
 <span class="big-indicator">
 BRP, arbetsproduktivitet alt. förädlingsvärde <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
@@ -696,8 +692,6 @@ Regional export <span style="color:red; font-size:1.8em; font-weight:900;">⬇</
 Ägande, regionalt ägda ftg och utländskt <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
-
-</div>
 
 
 ### BRP, arbetsproduktivitet {-} 
@@ -741,7 +735,7 @@ Den sociala dimensionen av hållbarhet i det regionala utvecklingsarbetet handla
 
 Friska och trygga människor 
 
-<div class="indicator-row">
+
 
 <span class="big-indicator">
 Medellivslängd <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
@@ -768,7 +762,6 @@ Upplevd trygghet <span style="color:red; font-size:1.8em; font-weight:900;">⬇<
 </span>
 <br>
 
-</div>
 
 Mer finns att läsa här, tipsa om ["folkhälsa på Region Dalarnas hemsida"] (https://www.regiondalarna.se/om-oss/hallbar-utveckling/social-hallbarhet/folkhalsa/)
 
@@ -835,7 +828,7 @@ Andel elever som tycker att det stämmer helt eller till stor del att rasism fö
 
 Sammanfattning här. 
 
-<div class="indicator-row">
+
 
 <span class="big-indicator">
 Valdeltagande/ samhällsengagemang <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
@@ -867,7 +860,7 @@ Kulturarv <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
-</div>
+
 
 Mer att läsa finns här: 
 
@@ -925,7 +918,6 @@ Sammanfattning.
 
 Ett mönster vi behöver kommentera: ekonomisk situation handlar ju inte bara om lönenivån utan också om kostnader, ex. om boendekostnaderna är lägre så får man ju mer kvar i plånboken, vilket ger förutsättningar för fritid och konsumtion. Hur synliggör vi det?
 
-<div class="indicator-row">
 
 <span class="big-indicator">
 Gini-fördelningen <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
@@ -957,7 +949,6 @@ Kapitalvinster/förluster <span style="color:red; font-size:1.8em; font-weight:9
 </span>
 <br>
 
-</div>
 
 Mer att läsa finns här den som önskar.
 
