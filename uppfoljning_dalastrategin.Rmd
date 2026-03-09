@@ -59,7 +59,7 @@ Senast uppdaterad: `r Sys.Date()`</i>
 Dalarna står tillsammans med övriga Sverige, Europa och världen inför stora samhällsutmaningar. För att skapa en hållbar framtid för Dalarna antog Regionfullmäktige i juni 2021 en ny regional utvecklingsstrategi (reviderad och beslutad 2026-02-16), ["Dalastrategin - Tillsammans för ett hållbart Dalarna"](https://www.regiondalarna.se/globalassets/regional-utveckling/dalastrategin-2030-tillsammans-for-ett-hallbart-dalarna-dec.pdf){target="_blank"}. 
 
 Info-ruta Regional utveckling:
-Dalastrategin är regional utvecklingsstrategi, och är en central del av styrningen av den regionala utvecklingen i Dalarna. Varje region ges även ett uppdrag från riksdagen, formulerat genom den nationella strategin för hållbar regional utveckling (länk till strategin). Regionerna ges också en summa pengar årligen att använda för att koordinera och främja regional utveckling.... Budgetpropostionen område 19... Länsstyrelsens arbete är också en del av ... 
+Dalastrategin är regional utvecklingsstrategi, och är en central del av styrningen av den regionala utvecklingen i Dalarna. Varje region ges även ett uppdrag från riksdagen, formulerat genom den nationella strategin för hållbar regional utveckling ["Dalastrategin - Tillsammans för ett hållbart Dalarna"](https://www.regiondalarna.se/globalassets/regional-utveckling/dalastrategin-2030-tillsammans-for-ett-hallbart-dalarna-dec.pdf){target="_blank"}). Regionerna ges också en summa pengar årligen att använda för att koordinera och främja regional utveckling.... Budgetpropostionen område 19... Länsstyrelsens arbete är också en del av ... 
 Uppföljning, årlig rapportering till regeringen, länsstyrelsens uppföljning av miljömålen och av hur de bidrar till regional utveckling..
 
 
@@ -102,33 +102,29 @@ Sammanfattande resultat...
 <span class="big-indicator">
 Vatten <span style="color:black; font-size:1.8em; font-weight:900;">➡</span>
 </span>  
-
 <br>
 
 <span class="big-indicator">
 Luft <span style="color:green; font-size:1.8em; font-weight:900;">⬆</span>
 </span>  
-
 <br>
 
 <span class="big-indicator">
 Skog och mark <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>  
-
 <br>
 
 <span class="big-indicator">
 Biologisk mångfald <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>  
-
 <br>
 
 
-Länsstyrelserna i Sverige har i uppdrag att följa upp tillståndet i miljön i respektive län. För Dalarna finns redovisningen här, för den som vill fördjupa sig ytterligare: https://www.rus.se/regional-arlig-uppfoljning/dalarnas-lan/#generation
+Länsstyrelserna i Sverige har i uppdrag att följa upp tillståndet i miljön i respektive län. För Dalarna finns redovisningen ["här"](https://www.rus.se/regional-arlig-uppfoljning/dalarnas-lan/#generation){target="_blank"}, för den som vill fördjupa sig ytterligare.
 
 
 ### Vatten{-} 
-Tillgången på grundvatten av god kvalitet är god och flera vatten som tidigare varit försurade har återhämtat sig. Samtidigt fortsätter tillåtna men miljöfarliga ämnen och nya ämnen med okända effekter släppas ut i miljön. Övergödningsproblemen är störst i jordbruksområden i de sydöstra delarna av länet.
+Tillgången till grundvatten av god kvalitet är god och flera vatten som tidigare varit försurade har återhämtat sig. Samtidigt fortsätter tillåtna men miljöfarliga ämnen och nya ämnen med okända effekter släppas ut i miljön. Övergödningsproblemen är störst i jordbruksområden i de sydöstra delarna av länet.
 
 Dalarna har god tillgång till grundvatten av god kvalitet ur ett regionalt perspektiv. Arbetet med statusklassificering 2018-2019 visar dock att ca 40 av Dalarnas 277 grundvattenförekomster riskerar att inte nå god kemisk status till år 2027.
 Det atmosfäriska nedfallet har avtagit och flera vatten som tidigare varit försurade har återhämtat sig. Kalkningen har kunnat minskas i delar av Dalarnas län. 
@@ -213,15 +209,13 @@ Flera insatser görs i samhället som bedöms gynna tillståndet för den biolog
 Renbetesmarker
 Klimatförändringar påverkar fjällen och dess ekosystemprocesser allt mer. Låglandsarter sprider sig in i fjällen och invasiva arter har spridit sig in i fjällområdet. Flera sjöar är försurade och kalkas för att gynna växt- och djurlivet. Inventering av fjällnära skogar har visat på höga biologiska värden, varför skydd av de fjällnära skogarna är av stor vikt. Fjällskogens kulturlämningar är däremot dåligt kända och sällan undersökta. Exploaterings- och besökstrycket ökar med markslitage, nedskräpning och störning av ren som följd.
 
-Fisktrappor etc?
 
-
+<br>
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
-
-──── Kapitel 2 ────
-
+<br>
 
 ## Beteenden som påverkar miljö och resursförbrukning i Dalarna{.tabset}
+
 
 Förutsättningar för att ändra beteenden
 Utfall av förändrade beteenden
@@ -870,7 +864,6 @@ Andel elever som tycker att det stämmer helt eller till stor del att rasism fö
 Sammanfattning här. 
 
 
-
 <span class="big-indicator">
 Valdeltagande/ samhällsengagemang <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
@@ -902,11 +895,9 @@ Kulturarv <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 <br>
 
 
-
 Mer att läsa finns här: 
 
-
-## Valdeltagande/ samhällsengagemang {-}
+## Valdeltagande och samhällsengagemang{-}
 
 Valdeltagande, gamla diagram.
 
@@ -914,7 +905,7 @@ Ex. diagram över Unga som vill vara med och påverka i frågor som rör kommune
 
 
 
-### Tillit till människor och samhället {-}
+### Tillit{-}
 
 Tillit till andra människor efter utbildningsnivå och kön (HLV)
 
@@ -931,50 +922,40 @@ Andelen som säger sig sakna tillit utgör ungefär `r  tillit_senaste_ar` proce
 gg_tillit$tillit_Dalarna
 ```
 
-## Kultur/fritid unga (LOK, kulturskola) {-}
+## Kultur/fritid{-}
+
+(LOK, kulturskola)
 
 Mer att läsa finns här.
 
 
-## Tillgång fysiskt: bibliotek, skola, service {-}
+## Tillgång fysiskt: bibliotek, skola, service{-}
 
 Mer att läsa finns här.
 
 
-## Skola och arbetsliv {-}
+## Skola och arbetsliv{-}
 
 Elever som tycker att det stämmer helt eller till stor del att de trivs med stämningen i skolan  (LUPP)
 
 Andel som alltid eller ofta känner sig trygg inför skoldagen efter kön (ELSA) Åk 4, åk 7 eller Åk 1 gymnasiet
 
 
-## Kulturarv {-}
+## Kulturarv{-}
 
 *Ev hinner vi inte denna till 20 mars*
 Mer att läsa finns här.
 
 
-## Fördelning av inkomster och ekonomiska värden {.tabset}
+## Fördelning av inkomster och ekonomiska värden{.tabset}
 
 Sammanfattning.
 
 Ett mönster vi behöver kommentera: ekonomisk situation handlar ju inte bara om lönenivån utan också om kostnader, ex. om boendekostnaderna är lägre så får man ju mer kvar i plånboken, vilket ger förutsättningar för fritid och konsumtion. Hur synliggör vi det?
 
-*Fundering på att lägga ihop gini och medianinkomster samt sparande och kapitalvinster, så det blir 4 pilar och motsvarande 4 flikar:*
-
-Ojämlikhet: (Gini och inkomstskillnader mellan kvinnor och män.)
-Barn i ek utsatthet; 
-Bidragsmottagare;
-Sparande/kapital; (Privat sparande och kapitalvinster)
-
 
 <span class="big-indicator">
-Gini-fördelningen <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-<br>
-
-<span class="big-indicator">
-Mediankomst <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Jämlikhet/ojämlikhet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
@@ -989,12 +970,7 @@ Bidragsmottagare <span style="color:red; font-size:1.8em; font-weight:900;">⬇<
 <br>
 
 <span class="big-indicator">
-Privat sparande <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-<br>
-
-<span class="big-indicator">
-Kapitalvinster/förluster <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Sparande och kapital <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
@@ -1002,10 +978,11 @@ Kapitalvinster/förluster <span style="color:red; font-size:1.8em; font-weight:9
 Mer att läsa finns här den som önskar.
 
 
-### Gini-fördelningen {-}
+### Jämlikhet/ojämlikhet{-}
 
 I Dalastrategin lyfts ekonomiska klyftor som en framtidsutmaning för länet. För att redovisa ojämlikheten i inkomstfördelningen används gini-koefficienten. Ett högt värde på koefficienten visar på större inkomstskillnader och därmed större ojämlikhet. Här redovisas ginikoefficienten beräknad genom disponibel inkomst per "konsumtionsenhet" inklusive kapitalvinster. Med konsumtionsenhet menas att det i beräkningen av en individs tillgängliga ekonomiska resurser tas hänsyn till hur hushållet som individen bor i är sammansatt. Det betyder att beräkningen beaktar om personen är ensamboende eller sammanboende och om den har ansvar för minderåriga barn eller inte etc, faktorer som kan minska eller öka individens disponibla inkomst.
 
+**Gini-koefficienten**
 I Dalarna har ginikoefficienten ökat något från  `r gini_min_ar` till `r gini_max_ar`, vilket således visar på en ökad ekonomisk ojämlikhet i länet, med en toppnotering 2019. Värt att notera är dock att trenden verkar bruten då ginikoeffiecienten minskade såväl 2023 som  `r gini_max_ar`, jämfört med åren innan. Ginikoefficienten för länet ligger även under koefficienten för riket för samtliga år förutom 2019, det vill säga i Dalarna är inkomsterna mindre ojämlika än i Sverige som helhet. År 2019 avviker så skarpt från den generella trenden att det årets notering bör betraktas med försiktighet. 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
@@ -1013,7 +990,7 @@ gg_gini$gini_tidsserie_00_20
 ```
 
 
-### Inkomstskillnader {-}
+**Inkomstskillnader mellan könen**
 
 En egen inkomst är en av förutsättningarna för ett ekonomiskt självständigt liv. Livsinkomsten påverkar även vilken pension personen kommer att få efter arbetslivet. 
 
@@ -1046,20 +1023,23 @@ I ett nationellt perspektiv ser vi att endast fem andra län har en högre andel
 gg_lag_ek_standard$andel_invånare_0_19_år_med_låg_ekonomisk_standard
 ```
 
-### Bidragsmottagare {-}
+### Bidragsmottagare{-}
 
 De som behöver stöd för att leva ett drägligt liv.
 
 Lägg till diagrammet som vi använt.. 
 
 
-### Privat sparande {-}
+### Sparande och kapital{-}
 
+**Privat sparande**
 Varje vuxen borde ha xx kr i sparkapital för att vara försäkrad mot motgångar och svåra tider.
+Kolada
 
 
+**Kapitalvinster/förluster**
 
-### Kapitalvinster/förluster {-}
+Kolada
 
 Påverkas av bostadsmarknaden etc.
 
