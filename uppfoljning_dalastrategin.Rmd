@@ -58,10 +58,15 @@ Senast uppdaterad: `r Sys.Date()`</i>
 
 Dalarna står tillsammans med övriga Sverige, Europa och världen inför stora samhällsutmaningar. För att skapa en hållbar framtid för Dalarna antog Regionfullmäktige i juni 2021 en ny regional utvecklingsstrategi (reviderad och beslutad 2026-02-16), ["Dalastrategin - Tillsammans för ett hållbart Dalarna"](https://www.regiondalarna.se/globalassets/regional-utveckling/dalastrategin-2030-tillsammans-for-ett-hallbart-dalarna-dec.pdf){target="_blank"}. 
 
-Info-ruta Regional utveckling:
-Dalastrategin är regional utvecklingsstrategi, och är en central del av styrningen av den regionala utvecklingen i Dalarna. Varje region ges även ett uppdrag från riksdagen, formulerat genom den nationella strategin för hållbar regional utveckling ["Dalastrategin - Tillsammans för ett hållbart Dalarna"](https://www.regiondalarna.se/globalassets/regional-utveckling/dalastrategin-2030-tillsammans-for-ett-hallbart-dalarna-dec.pdf){target="_blank"}). Regionerna ges också en summa pengar årligen att använda för att koordinera och främja regional utveckling.... Budgetpropostionen område 19... Länsstyrelsens arbete är också en del av ... 
-Uppföljning, årlig rapportering till regeringen, länsstyrelsens uppföljning av miljömålen och av hur de bidrar till regional utveckling..
+<details>
 
+  <summary>Mer information om regional utveckling</summary>
+
+<div>Dalastrategin är en regional utvecklingsstrategi som är en central del av styrningen av den regionala utvecklingen i Dalarna. Varje region ges även ett uppdrag från riksdagen, formulerat genom den nationella strategin för hållbar regional utveckling ["Dalastrategin - Tillsammans för ett hållbart Dalarna"](https://www.regiondalarna.se/globalassets/regional-utveckling/dalastrategin-2030-tillsammans-for-ett-hallbart-dalarna-dec.pdf){target="_blank"}). Regionerna ges också en summa pengar årligen att använda för att koordinera och främja regional utveckling.... Budgetpropostionen område 19... Länsstyrelsens arbete är också en del av ... 
+Uppföljning, årlig rapportering till regeringen, länsstyrelsens uppföljning av miljömålen och av hur de bidrar till regional utveckling.. [Namn](hemsida){target="_blank"}
+</div>
+ 
+</details>
 
 Strategin är ett stöd och en språngbräda i arbetet med att rusta Dalarna för att möta framtidens utmaningar och göra dem till möjligheter. Målsättningarna för Dalarna sammanfattas i tre målområden som kopplar an till de olika dimensionerna av hållbarhet - miljömässig, ekonomisk och social hållbarhet: 
 
@@ -92,6 +97,8 @@ Dalarna är rikt på naturresurser och om de brukas rätt ger de mångfalt tillb
 
 Det är en viktig avvägning mellan nytta och miljöpåverkan, att bedöma huruvida Dalarnas företag har det produktionssätt som har den minsta miljöpåverkan i global jämförelse och därmed motiv till att just företagen i Dalarna ska bedriva denna produktion.
 
+För att nå ett klimatsmart Dalarna behöver vi skapa förutsättningar som gör det lätt att göra rätt – för invånare, företag och offentliga aktörer. Vi utgår från ett livscykelperspektiv där allt från råvara och produktion till användning och återbruk vägs in, och vi driver på cirkulära materialflöden och resurseffektivitet. Vi kombinerar teknisk omställning (elektrifiering, fossilfria bränslen, mer förnybar energi) med beteendeförändringar – särskilt i resor, transporter och konsumtion. Genom transportsnål planering och fler attraktiva alternativ till bilen blir det enklare att välja kollektivtrafik, cykel och gång. Offentlig sektor använder upphandling som hävstång och efterfrågar hållbara varor och tjänster så att marknaden ställer om snabbare. Vi bygger förändring genom samverkan, kunskap och analys, gemensamma pilotprojekt och lärande, och genom strategisk kommunikation som når rätt målgrupper. Tillsammans skapar vi nya vanor och normer som minskar utsläppen och stärker Dalarnas konkurrenskraft och livsmiljöer.
+
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
 
 ## Tillståndet i Dalarnas miljö och natur{.tabset}
@@ -100,29 +107,32 @@ Sammanfattande resultat...
 
 
 <span class="big-indicator">
-Vatten <span style="color:black; font-size:1.8em; font-weight:900;">➡</span>
-</span>  
-<br>
+Vatten <span style="color:black; font-size:1.5em; font-weight:900;">➡</span>
+</span>
+
 <span class="big-indicator">
-Luft <span style="color:green; font-size:1.8em; font-weight:900;">⬆</span>
-</span>  
-<br>
+Luft <span style="color:green; font-size:1.5em; font-weight:900;">⬆</span>
+</span>
+
 <span class="big-indicator">
 Skog och mark <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>  
-<br>
+</span>
+
 <span class="big-indicator">
 Biologisk mångfald <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>  
-<br>
+</span>
 
 Länsstyrelserna i Sverige har i uppdrag att följa upp tillståndet i miljön i respektive län. För Dalarna finns redovisningen ["här"](https://www.rus.se/regional-arlig-uppfoljning/dalarnas-lan/#generation){target="_blank"}, för den som vill fördjupa sig ytterligare.
 
 
 ### Vatten{-} 
+
+**Vatten**
+
 Tillgången till grundvatten av god kvalitet är god och flera vatten som tidigare varit försurade har återhämtat sig. Samtidigt fortsätter tillåtna men miljöfarliga ämnen och nya ämnen med okända effekter släppas ut i miljön. Övergödningsproblemen är störst i jordbruksområden i de sydöstra delarna av länet.
 
 Dalarna har god tillgång till grundvatten av god kvalitet ur ett regionalt perspektiv. Arbetet med statusklassificering 2018-2019 visar dock att ca 40 av Dalarnas 277 grundvattenförekomster riskerar att inte nå god kemisk status till år 2027.
+
 Det atmosfäriska nedfallet har avtagit och flera vatten som tidigare varit försurade har återhämtat sig. Kalkningen har kunnat minskas i delar av Dalarnas län. 
 Hundratals ämnen påträffas i Dalarnas ytvatten vilket återspeglar den stora kemikalieanvändningen i samhället och industrin. Halter av förbjudna ämnen i miljön sjunker, samtidigt släpps tillåtna miljöfarliga ämnen och nya ämnen med okända effekter ut i miljön.
 Övergödningsproblemen är störst i jordbruksområden i de sydöstra delarna av länet. Åtgärdsarbetet har ökat på senare år, men det är inte tillräckligt för att målet ska kunna nås. Det tar också tid innan minskade utsläpp ger effekt i de vatten som är övergödda, bland annat eftersom den naturliga återhämtningen är långsam. Ännu märks inga tydliga förbättringar i miljön på regional nivå.
@@ -145,7 +155,15 @@ gg_vatten$vattendrag_Sverige
 
 
 ### Luft{-} 
+
+**Luft**
+
 Luftkvaliteten är generellt god i Dalarna men försämrad i tätorter på grund av utsläpp från trafik, industri, uppvärmning av bostäder och småskalig vedeldning. Lokalt kan det periodvis finnas problem med föroreningar kopplat till veteranbilar.
+
+Åtgärdsarbetet sker främst genom trafik- och infrastrukturplanering. För att uppfylla Frisk luft behövs snabbare och kraftfullare åtgärder, vilket Världshälsoorganisationen (WHO) belyst genom att sänka sina riktvärden för luftföroreningar.
+
+
+Diagram?
 
 
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
@@ -153,7 +171,8 @@ Luftkvaliteten är generellt god i Dalarna men försämrad i tätorter på grund
 
 ### Skog och mark{-} 
 
-**Skogsmark**
+**Skog och mark**
+
 I Dalarna genomförs många insatser för förbättrad miljöhänsyn och ökad kunskap om skogens natur- och kulturvärden. Viktiga strukturer, som död ved, ökar men saknas fortfararande i tillräcklig mängd. Bestånd med naturvärden och lång skoglig kontinuitet avverkas. Antalet hotade arter och skador på forn- och kulturlämningar är fortsatt på en hög nivå. För att nå miljömålet behöver sektorns ansvar förtydligas och insatser öka för inventering, skydd, naturvårdande skötsel och större variation i skogsbruket.
 
 En förutsättning för bibehållen biologisk mångfald och bevarade kulturmiljövärden i odlingslandskapet är att det finns hållbara och bärkraftiga jordbruksföretag i länet och betande djur i landskapet. 
@@ -182,9 +201,9 @@ gg_skogsmark$andel_skyddad_skogsmark_Dalarna
 
 ### Biologisk mångfald{-}
 
-**Betesmark och slåtteräng**
+**Biologisk mångfald**
 
-Biologisk mångfald och väl fungerande ekosystem är en förutsättning för allt liv på jorden, att vårda dem ger goda livsmiljöer för både Dalarnas invånare och för Dalarnas näringsliv. Den gröna infrastrukturen är ekologiskt funktionella nätverk av livsmiljöer och naturområden som utformas, brukas och förvaltas så att den biologiska mångfalden bevaras och därmed främjar för samhället så centrala ekosystemtjänster som exempelvis vattenrening och livskraftiga jordbruksmarker, etc. Samhället har allt att vinna på ett hållbart bruk av ekosystemen och att förvalta ett mångfunktionellt landskap där natur- och kulturvärden tillvaratas.
+Betesmark och slåtteräng är centrala för att bibehålla biologisk mångfald och väl fungerande ekosystem, som i sig är en förutsättning för allt liv på jorden. Att vårda dem ger goda livsmiljöer och tillväxt för både Dalarnas invånare och för Dalarnas näringsliv. Den gröna infrastrukturen är ekologiskt funktionella nätverk av livsmiljöer och naturområden som utformas, brukas och förvaltas så att den biologiska mångfalden bevaras och därmed främjar för samhället så centrala ekosystemtjänster som exempelvis vattenrening och livskraftiga jordbruksmarker, etc. Samhället har allt att vinna på ett hållbart bruk av ekosystemen och att förvalta ett mångfunktionellt landskap där natur- och kulturvärden tillvaratas.
 
 Betesmark tillsammans med åkermark utgör jordbruksmark. Åkermarken kan brukas för djurfoder och livsmedel, medan betesmarken och betande djur i hög grad bidrar till att upprätthålla artrikedomen. En delmängd av betesmarken är slåtterängar, som har särskilt höga biologiska värden.
 
@@ -240,7 +259,9 @@ Kommunala klimatanpassningsplaner <span style="color:green; font-size:1.8em; fon
 </span>
 <br>
 
- 
+
+Tips på mer läsning: https://www.klimatanalys.se/climate-stories
+
 Under flikarna hittar den som önskar fördjupad information om varje variabel.
 
 
@@ -298,6 +319,9 @@ I ett nationellt perspektiv sticker framförallt Stockholms län ut, där mer ä
 gg_elbilar$elbilar_Sverige
 ```
 
+-> Lägga till något om laddplatser och AGIR..
+
+
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
 
 
@@ -312,6 +336,9 @@ gg_avfall$avfall_Dalarna
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
 
 ### Klimatanpassning{-}
+
+Se https://www.klimatanalys.se/climate-stories
+
 
 Kommunala klimatanpassningsplaner utgör grunden för XX.
 
@@ -436,9 +463,10 @@ I Dalarna finns företag och människor med idéer som kan bidra till att lösa 
 
 ## Arbetskraften, återväxt och kompetens {.tabset}
 
+Sammanfattning av avsnittet.
 
 <span class="big-indicator">
-Arbetskraftens sysselsättning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Arbetskraften <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
@@ -467,18 +495,26 @@ Ohälsa <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
+Läs mer om kompetensförsörjning i länet i SCB:s rapport ["Regionala Trender och Prognoser 2025 Med sikte på år 2040 Dalarnas län"](https://www.scb.se/contentassets/04cf1ee0f04b4c06a6e62d22d78e8d4c/dalarnas-lan-20251215.pdf){target="_blank"}
 
-### Arbetskraftens sysselsättning {-}
+### Arbetskraften {-}
 
 Ytdiagram med arbetsför ålder som visar fördelningen av sysselsatta, arbetslösa etc. Samtliga i åldern 20-64 år, och fördelning mellan vilka aktivitetsgrupper de tillhör.
 
 Kommentera även UVAS och andra grupper som står långt ifrån arbetsmarknaden. 
-  
+
+
+Figur 2 i kompetensrapporten - befolkning i arbetsför ålder 2000 - 2023X
+
+
+Figur 12 i Kompetensrapporten - förvärvsarbetande 1990-2023..
+
 
 
 ### Utbildningsnivåer {-}
 
 Diagram, könsuppdelade, gärna jämte varandra. Finns stapeldiagram - funkar de, eller borde det göras om till ytdiagram?
+
 
 
 ### Gymnasieutbildning {-}
@@ -562,7 +598,7 @@ utfall av företagandet
 
 
 <span class="big-indicator">
-Företagande <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Företagande och arbete <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
@@ -602,6 +638,8 @@ gg_nyst_konk$nystartade
 
 Från TVV - företagens villkor och verklighet, alt. Entreprenörskapsforums rapport.
 
+
+**Branscher där 
 
 ### Infrastruktur{-}
 
@@ -784,6 +822,9 @@ Upplevd trygghet <span style="color:red; font-size:1.8em; font-weight:900;">⬇<
 
 
 Mer finns att läsa här, tipsa om ["folkhälsa på Region Dalarnas hemsida"] (https://www.regiondalarna.se/om-oss/hallbar-utveckling/social-hallbarhet/folkhalsa/)
+
+Även https://www.oecd.org/en/data/tools/well-being-data-monitor/future-well-being.html
+
 
 
 ### Medellivslängd{-}
