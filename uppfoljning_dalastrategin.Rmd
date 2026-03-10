@@ -75,6 +75,7 @@ Den här rapporten är en del av den årliga uppföljningen av Dalarnas utveckli
 
 Rapporten är uppdelad efter strategins målområde; klimatsmart, konkurrenskraftigt och sammanhållet. Varje målområde är sedan uppdelat i tre avsnitt, som vart och ett är tänkta att fånga naturresurserna, samspel och beteendemönster samt ekonomiska värden. För klimatsmart Dalarna är exempelvis vind och vatten naturresurser, byten från bensinbilar till elbilar en del av beteendet och mängden regional produktion av miljövänlig electricitet ekonomiska värden. Inom konkurrenskraftigt är arbetskraft och kompetens naturresurser, ett gott företagsklimat beteeendet, och företagens produktion ekonomiska värden, och i sammanhållet är befolkningens hälsa och trygghet naturresurser, befolkningens görande, samhällsengagemang beteenden samt fördelningen av ekonomiska värden mellan människor en del av den ekonomiska delen av sammanhållet.
 
+<hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
 
 # Ett klimatsmart Dalarna
 
@@ -91,7 +92,6 @@ Dalarna är rikt på naturresurser och om de brukas rätt ger de mångfalt tillb
 
 Det är en viktig avvägning mellan nytta och miljöpåverkan, att bedöma huruvida Dalarnas företag har det produktionssätt som har den minsta miljöpåverkan i global jämförelse och därmed motiv till att just företagen i Dalarna ska bedriva denna produktion.
 
-
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
 
 ## Tillståndet i Dalarnas miljö och natur{.tabset}
@@ -103,22 +103,18 @@ Sammanfattande resultat...
 Vatten <span style="color:black; font-size:1.8em; font-weight:900;">➡</span>
 </span>  
 <br>
-
 <span class="big-indicator">
 Luft <span style="color:green; font-size:1.8em; font-weight:900;">⬆</span>
 </span>  
 <br>
-
 <span class="big-indicator">
 Skog och mark <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>  
 <br>
-
 <span class="big-indicator">
 Biologisk mångfald <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>  
 <br>
-
 
 Länsstyrelserna i Sverige har i uppdrag att följa upp tillståndet i miljön i respektive län. För Dalarna finns redovisningen ["här"](https://www.rus.se/regional-arlig-uppfoljning/dalarnas-lan/#generation){target="_blank"}, för den som vill fördjupa sig ytterligare.
 
@@ -209,10 +205,8 @@ Flera insatser görs i samhället som bedöms gynna tillståndet för den biolog
 Renbetesmarker
 Klimatförändringar påverkar fjällen och dess ekosystemprocesser allt mer. Låglandsarter sprider sig in i fjällen och invasiva arter har spridit sig in i fjällområdet. Flera sjöar är försurade och kalkas för att gynna växt- och djurlivet. Inventering av fjällnära skogar har visat på höga biologiska värden, varför skydd av de fjällnära skogarna är av stor vikt. Fjällskogens kulturlämningar är däremot dåligt kända och sällan undersökta. Exploaterings- och besökstrycket ökar med markslitage, nedskräpning och störning av ren som följd.
 
-
-<br>
+## {-}
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
-<br>
 
 ## Beteenden som påverkar miljö och resursförbrukning i Dalarna{.tabset}
 
@@ -323,7 +317,7 @@ Kommunala klimatanpassningsplaner utgör grunden för XX.
 
 IVL har 
 
-
+## {-}
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
 
 ## Förnybar elproduktion och ekonomiska värden av energi- och material och råvaror {.tabset}
@@ -425,9 +419,8 @@ I diagrammet nedan visas en teoretisk beräkning av självförsörjning av elekt
 gg_sjalvforsorjning$teoretisk_sjalvforsorjning_el_Dalarna
 ```
 
-
-<hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
-
+## {-}
+<hr style="border: none; height: 5px; background-color: #f8aab6; margin-top: 40px; margin-bottom: 40px;">
 
 # Ett konkurrenskraftigt Dalarna
 
@@ -439,9 +432,9 @@ Den ekonomiska dimensionen av hållbarhet i det regionala utvecklingsarbetet han
 
 I Dalarna finns företag och människor med idéer som kan bidra till att lösa globala problem, och bana väg för goda livsmiljöer och levnadsvillkor för de boende.
 
+<hr style="border: none; height: 5px; background-color: #f8aab6; margin-top: 40px; margin-bottom: 40px;">
 
 ## Arbetskraften, återväxt och kompetens {.tabset}
-
 
 
 <span class="big-indicator">
@@ -475,8 +468,7 @@ Ohälsa <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 <br>
 
 
-
-### Arbetskraftens sysselsättning{-}
+### Arbetskraftens sysselsättning {-}
 
 Ytdiagram med arbetsför ålder som visar fördelningen av sysselsatta, arbetslösa etc. Samtliga i åldern 20-64 år, och fördelning mellan vilka aktivitetsgrupper de tillhör.
 
@@ -484,12 +476,12 @@ Kommentera även UVAS och andra grupper som står långt ifrån arbetsmarknaden.
   
 
 
-### Utbildningsnivåer{-}
+### Utbildningsnivåer {-}
 
 Diagram, könsuppdelade, gärna jämte varandra. Finns stapeldiagram - funkar de, eller borde det göras om till ytdiagram?
 
 
-### Gymnasiumutbildning{-}
+### Gymnasieutbildning {-}
 
 Kunskap ger människor möjlighet att växa och påverka sin livssituation. Tillgång till utbildning, kunskap och bildning är avgörande för såväl utvecklingen av samhället, som god välfärd och tillväxt i näringslivet. När arbetsgivare inte hittar rätt kompetens hämmas den ekonomiska utvecklingen. Samtidigt försvagas den sociala hållbarheten när människor ställs utanför arbetsmarknaden. Befolkningens relativt sett låga utbildningsnivåer är en utmaning i stora delar av Dalarna. Ambitionen i Dalastrategin är att fler ska klara en gymnasieexamen för att därmed få bättre förutsättningar att etablera sig på arbetsmarknaden.
 
@@ -534,7 +526,6 @@ LÄGG IN DIAGRAM FRÅN KV o MÄN.
 
 
 
-
 ### Återväxt av befolkningen {-}
 
 
@@ -559,6 +550,8 @@ Fruktsamheten i Dalarna följer i praktiken samma mönster som fruktsamheten i S
 gg_fruktsamhet$summerad_fruktsamhet_Riket_facet
 ```
 
+## {-}
+<hr style="border: none; height: 5px; background-color: #f8aab6; margin-top: 40px; margin-bottom: 40px;">
 
 ## Arbete, företagande och förutsättningar{.tabset}
 
@@ -578,7 +571,6 @@ Infrastrukturförutsättningar <span style="color:red; font-size:1.8em; font-wei
 </span>
 <br>
 
-
 <span class="big-indicator">
 Jämställdhet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
@@ -594,7 +586,6 @@ Förtroende för rättsväsendet <span style="color:red; font-size:1.8em; font-w
 </span>
 <br>
 
-
 Mer att läsa, tipsa här.
 
 ### Företagande {-}
@@ -607,14 +598,12 @@ Antalet nystartade företag per kommun i Dalarna visar att `r nystartade_kommun_
 gg_nyst_konk$nystartade
 ```
 
-
 **Största hindren för tillväxt**
 
 Från TVV - företagens villkor och verklighet, alt. Entreprenörskapsforums rapport.
 
 
-
-### infrastruktur{-}
+### Infrastruktur{-}
 
 **Tillgång till bredband**
 
@@ -625,7 +614,6 @@ I Dalarna har andelen av befolkningen med tillgång till, eller möjlighet att a
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_bredband$tillgang_bredband_Dalarna
 ```
-
 
 **Tågens punktlighet**
 
@@ -653,7 +641,6 @@ Att åstadkomma en förändring i närtid av balansen mellan män och kvinnor in
 gg_antal_forv$antal_per_bransch
 ```
 
-
 **Föräldrapenning**
 
 Fördelningen av dagar mellan vårdnadshavarna har jämnats ut något sedan slutet av 1990-talet då runt 85-90 procent av föräldrapenningdagarna togs ut av mammorna. Sedan dess har först en (1995), sedan två (2002) och även tre månader (2016) reserverats åt respektive vårdnadshavare (också kallade "pappamånader"). Detta har bidragit till ett jämnare uttag men utvecklingen får ändå sägas gå relativt trögt, då kvinnors andel endast har minskat till runt `r round(as.numeric(foraldrapenning_df %>% filter(Region == "Dalarnas län", Kön == "Kvinnor", År == max(År)) %>% .$Andel),0)` procent `r max(foraldrapenning_df$År)`. Svenska vårdnadshavare är således långt ifrån att ge sina barn en jämställd tillgång till sina föräldrar. Skillnaden i uttag påverkar också den disponibla inkomsten, som beskrivits under rubriken Ekonomisk jämställdhet. Skillnaden är som störst mellan sammanboende kvinnor och män när det yngsta barnet är 0–3 år [(Regeringen, 2022)](<https://www.regeringen.se/contentassets/46945970585240a4a5bfd9a0f75ecf3d/ekonomisk-jamstalldhet.pdf>){target="_blank"}.
@@ -661,7 +648,6 @@ Fördelningen av dagar mellan vårdnadshavarna har jämnats ut något sedan slut
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_fp_vab$Foraldrapenning_andel_Dalarna
 ```
-
 
 ### Brottslighet{-} 
 
@@ -701,11 +687,11 @@ Andelen som svarade att de hade mycket stort eller ganska stort förtroende för
 gg_fortroende_rattsvasande$fortroende_rattsvasande__sverige
 ```
 
-
+## {-}
+<hr style="border: none; height: 5px; background-color: #f8aab6; margin-top: 40px; margin-bottom: 40px;">
 
 ## Produktion, produktivitet och export {.tabset}
 Sammanfattning av avsnittet här.
-
 
 <span class="big-indicator">
 BRP, arbetsproduktivitet alt. förädlingsvärde <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
@@ -722,12 +708,10 @@ Regional export <span style="color:red; font-size:1.8em; font-weight:900;">⬇</
 </span>
 <br>
 
-
 <span class="big-indicator">
 Ägande, regionalt ägda ftg och utländskt <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
-
 
 ### BRP, arbetsproduktivitet {-} 
 
@@ -747,13 +731,13 @@ Inkl. gästnätter från utlandet..?
 
 
 
-### Inhemskt och utländskt ägande {-}
+###Inhemskt och utländskt ägande {-}
 
 Företag med huvudsäte i Dalarna
 Sysselsatta som arbetar i utlandsägda företag, omsättning arbetsställe per utlandsägt, inhemskt företag.
 
-
-
+## {-}
+<hr style="border: none; height: 5px; background-color: #ffec9f; margin-top: 40px; margin-bottom: 40px;">
 
 # Ett sammanhållet Dalarna
 
@@ -765,10 +749,11 @@ där alla ges möjlighet att utvecklas.
 
 Den sociala dimensionen av hållbarhet i det regionala utvecklingsarbetet handlar om att alla människor, utifrån sina behov och förutsättningar, ges likvärdiga möjligheter att delta i samhällsutvecklingen. Ju fler som känner sig delaktiga, desto mer utveckling kan åstadkommas.
 
+<hr style="border: none; height: 5px; background-color: #ffec9f; margin-top: 40px; margin-bottom: 40px;">
 
 ## Dalfolkets hälsa och trygghet{.tabset}
 
-Friska och trygga människor 
+Friska och trygga människor.... 
 
 
 
@@ -822,7 +807,6 @@ Andel unga som har svårt att somna i stort sett varje dag eller flera gånger i
 Andel med lätta eller svåra sömnbesvär, efter utbildning och kön (HLV)
 
 
-
 ### Folksjukdomar{-}
 
 Hjärtinfarkt – incidenta fall per 100 000 (SoS)
@@ -834,7 +818,7 @@ Hypertoni – efter utbildningsnivå och kön (HLV)
 Fallskador bland personer 65+, 3-årsm, antal/100 000 inv (SoS)
 
 
-### Brott motperson{-}
+### Brott mot person{-}
 
 Anmälda misshandelsbrott mot kvinna, inomhus, bekant med offret, antal/100 000 inv, per kommun (BRÅ/SCB)
 
@@ -857,7 +841,8 @@ Andel elever som alltid eller ofta känner sig trygga på sociala medier, efter 
 Andel elever som tycker att det stämmer helt eller till stor del att rasism förekommer på skolan, efter kön, högstadiet och/eller gymnasiet (LUPP)
 
 
-<hr style="border: none; height: 5px; background-color: #2C7FB8; margin-top: 40px; margin-bottom: 40px;">
+## {-}
+<hr style="border: none; height: 5px; background-color: #ffec9f; margin-top: 40px; margin-bottom: 40px;">
 
 ## Dalfolkets delaktighet, samhällsengagemang och tillit{.tabset}
 
@@ -894,15 +879,13 @@ Kulturarv <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
-
 Mer att läsa finns här: 
 
-## Valdeltagande och samhällsengagemang{-}
+### Valdeltagande och samhällsengagemang{-}
 
 Valdeltagande, gamla diagram.
 
 Ex. diagram över Unga som vill vara med och påverka i frågor som rör kommunen  (LUPP)
-
 
 
 ### Tillit{-}
@@ -922,30 +905,32 @@ Andelen som säger sig sakna tillit utgör ungefär `r  tillit_senaste_ar` proce
 gg_tillit$tillit_Dalarna
 ```
 
-## Kultur/fritid{-}
+### Kultur/fritid{-}
 
 (LOK, kulturskola)
 
 Mer att läsa finns här.
 
 
-## Tillgång fysiskt: bibliotek, skola, service{-}
+### Tillgång fysiskt: bibliotek, skola, service{-}
 
 Mer att läsa finns här.
 
 
-## Skola och arbetsliv{-}
+### Skola och arbetsliv{-}
 
 Elever som tycker att det stämmer helt eller till stor del att de trivs med stämningen i skolan  (LUPP)
 
 Andel som alltid eller ofta känner sig trygg inför skoldagen efter kön (ELSA) Åk 4, åk 7 eller Åk 1 gymnasiet
 
 
-## Kulturarv{-}
+### Kulturarv{-}
 
 *Ev hinner vi inte denna till 20 mars*
 Mer att läsa finns här.
 
+## {-}
+<hr style="border: none; height: 5px; background-color: #ffec9f; margin-top: 40px; margin-bottom: 40px;">
 
 ## Fördelning av inkomster och ekonomiska värden{.tabset}
 
@@ -973,7 +958,6 @@ Bidragsmottagare <span style="color:red; font-size:1.8em; font-weight:900;">⬇<
 Sparande och kapital <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
-
 
 Mer att läsa finns här den som önskar.
 
@@ -1005,7 +989,6 @@ gg_inkomst$Medianinkomst_20_64_Dalarna_tid_linje
 ```
 
 ### Barn i ekonomisk utsatthet{-}
-
 
 Ekonomiska klyftor mellan olika grupper i samhället är en utmaning för både Sverige och Dalarna. Om de socioekonomiska klyftorna blir alltför stora riskerar de att motverka sammanhållning, tillit och trygghet. Det riskerar i sin tur att försvaga demokratin, exempelvis genom systematiska skillnader i valdeltagande, faktiskt eller upplevt inflytande samt delaktighet och engagemang.
 
@@ -1043,6 +1026,9 @@ Kolada
 
 Påverkas av bostadsmarknaden etc.
 
+## {-}
+<hr style="border: none; height: 5px; background-color: #ffec9f; margin-top: 40px; margin-bottom: 40px;">
+<br>
 
 ```{=html}
 <script>
