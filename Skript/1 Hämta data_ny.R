@@ -458,6 +458,59 @@ medianinkomst_kvinna_max_20_64 <- round(forvarvsinkomst_df %>% filter(region == 
 medianinkomst_man_forandring_20_64 <- round((forvarvsinkomst_df %>% filter(region == "Dalarna", år == max(år),kön == "män",ålder == "20-64 år") %>% .$`Medianinkomst, tkr`/forvarvsinkomst_df %>% filter(region == "Dalarna", år == min(år),kön == "män",ålder == "20-64 år") %>% .$`Medianinkomst, tkr`-1)*100,0)
 medianinkomst_kvinna_forandring_20_64 <- round((forvarvsinkomst_df %>% filter(region == "Dalarna", år == max(år),kön == "kvinnor",ålder == "20-64 år") %>% .$`Medianinkomst, tkr`/forvarvsinkomst_df %>% filter(region == "Dalarna", år == min(år),kön == "kvinnor",ålder == "20-64 år") %>% .$`Medianinkomst, tkr`-1)*100,0)
 
+# Nya diagram 2026-03-11
+# Ohälsotal - från kvinnor och män
+# Sjukpenningtal och ohälsotal
+source("https://raw.githubusercontent.com/Region-Dalarna/diagram/refs/heads/main/diagram_ohalsotal_sjukpenningtal_kv_man.R")
+gg_ohalsotal_sjp <- diag_ohalsotal_sjukpenningtal (region_vekt = "20",
+                                                   diag_ohalsotal = TRUE,
+                                                   diag_sjukpenningtal = FALSE,
+                                                   output_mapp = output_mapp_figur,
+                                                   spara_diagrambildfil = spara_figurer,
+                                                   spara_dataframe_till_global_environment = TRUE)
+
+ohalsotal_hogst_kommun_man <- ohalsotal_df %>% filter(region != "Samtliga kommuner", kön == "Män", år == max(.$år)) %>% filter(Ohälsotalet_medel == max(.$Ohälsotalet_medel)) %>% .$region %>% glue_collapse(sep = ", ", last = " och ") 
+ohalsotal_lagst_kommun_man <- ohalsotal_df %>% filter(region != "Samtliga kommuner", kön == "Män", år == max(.$år)) %>% filter(Ohälsotalet_medel == min(.$Ohälsotalet_medel)) %>% .$region %>% glue_collapse(sep = ", ", last = " och ")
+ohalsotal_hogst_kommun_kvinna <- ohalsotal_df %>% filter(region != "Samtliga kommuner", kön == "Kvinnor", år == max(.$år)) %>% filter(Ohälsotalet_medel == max(.$Ohälsotalet_medel)) %>% .$region %>% glue_collapse(sep = ", ", last = " och ")
+ohalsotal_lagst_kommun_kvinna <- ohalsotal_df %>% filter(region != "Samtliga kommuner", kön == "Kvinnor", år == max(.$år)) %>% filter(Ohälsotalet_medel == min(.$Ohälsotalet_medel)) %>% .$region %>% glue_collapse(sep = ", ", last = " och ")
+
+# Befolkningsutveckling per komponent
+source("https://raw.githubusercontent.com/Region-Dalarna/diagram/main/diag_befutv_per_komponent_ar_scb.R")
+gg_befutv_per_komponent_ar_scb <- diag_befutv_per_komponent_ar(region_vekt = "20",
+                                                               output_mapp = output_mapp_figur,
+                                                               skriv_till_diagramfil = spara_figurer,
+                                                               x_axis_visa_var_xe_etikett = 2,
+                                                               returnera_dataframe_global_environment = TRUE)
+
+# Utbildningsnivå 85 - senaste år och jämförelse mellan länen för senaste år.
+source("https://raw.githubusercontent.com/Region-Dalarna/diagram/refs/heads/main/diag_utbniva_flera_diagram_scb.R")
+gg_utbniva_85 <- diag_utbniva_tidserie_och_lansjmfr (region_vekt = c("20"),
+                                                     output_mapp = output_mapp_figur,
+                                                     diagram_capt = "Källa: SCB:s öppna statistikdatabas.\nBearbetning: Samhällsanalys, Region Dalarna",
+                                                     skapa_fil = spara_figurer,
+                                                     diag_hogutb_over_tid = TRUE,
+                                                     diag_lagutb_over_tid = FALSE,
+                                                     diag_andel_alla_utbnivaer = FALSE,
+                                                     diag_andel_utbniva_jmfr_lan = FALSE,
+                                                     vald_utb_niva = "hogutb")
+
+# Utbildningsnivå, senaste år, flera kategorier
+source("https://raw.githubusercontent.com/Region-Dalarna/kvinnor_man_i_Dalarna/refs/heads/main/Skript/diagram_utb_niva_senaste_ar.R")
+gg_utb_niva_senaste <- diag_utbniva_senaste(region_vekt = "20", 
+                                            output_mapp = output_mapp_figur,
+                                            spara_figur = spara_figurer,
+                                            returnera_data = TRUE)
+
+# Förvärvsarbetande från 1990 till senaste år. Både antal och förändring (från första till sista)
+source("https://raw.githubusercontent.com/Region-Dalarna/diagram/main/diagram_forvarvsarbetande_90_senastear_SCB.R")
+gg_forv_90 <- diagram_forvarvsarbetande_90(output_mapp_figur = output_mapp_figur,
+                                           spara_figur = spara_figurer,
+                                           diag_antal = TRUE,
+                                           diag_forandring = FALSE,
+                                           returnera_figur = TRUE,
+                                           returnera_data = TRUE,
+                                           vald_farg = diagramfarger("rus_sex"))
+
 save.image(file = "G:/skript/projekt/environments/uppfoljning_dalastrategin.RData")
 
 end_time <- Sys.time()
