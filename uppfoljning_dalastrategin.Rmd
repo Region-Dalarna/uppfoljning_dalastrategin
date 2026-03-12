@@ -151,8 +151,6 @@ gg_vatten$vattendrag_Dalarna
 gg_vatten$vattendrag_Sverige
 ```
 
-<hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
-
 
 ### Luft{-} 
 
@@ -165,8 +163,6 @@ Luftkvaliteten är generellt god i Dalarna men försämrad i tätorter på grund
 
 Diagram?
 
-
-<hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
 
 
 ### Skog och mark{-} 
@@ -869,6 +865,7 @@ Hypertoni – efter utbildningsnivå och kön (HLV)
 Övervikt/obesitas – efter utbildningsnivå och kön (HLV)
 
 Fallskador bland personer 65+, 3-årsm, antal/100 000 inv (SoS)
+
 
 
 ### Brott mot person{-}
