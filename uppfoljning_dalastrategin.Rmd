@@ -93,11 +93,9 @@ robusthet och resiliens vid klimatförändringar god.
 
 Den miljömässiga dimensionen för en hållbar regional utveckling handlar bland annat om att säkerställa att ekosystemen bibehålls och vårdas så att de fortsätter att leverera de tjänster som människor och samhällen är beroende av. 
 
-Dalarna är rikt på naturresurser och om de brukas rätt ger de mångfalt tillbaka, därför följs bland annat hur resurser som vatten och vind, skog och jordbruksmark används. I Dalarna utgörs samtidigt en stor del av näringslivet av tillverkande industri som förbrukar relativt sett stora mängder energi och driver därigenom upp mängden energi förbrukad per invånare. 
+För att nå ett klimatsmart Dalarna behöver vi skapa förutsättningar som gör det lätt att göra rätt – för invånare, företag och offentliga aktörer. Vi utgår från ett livscykelperspektiv där allt från råvara och produktion till användning och återbruk vägs in, och vi driver på cirkulära materialflöden och resurseffektivitet. Vi kombinerar teknisk omställning (elektrifiering, fossilfria bränslen, mer förnybar energi) med beteendeförändringar – särskilt i resor, transporter och konsumtion. Genom transportsnål planering och fler attraktiva alternativ till bilen blir det enklare att välja kollektivtrafik, cykel och gång. Offentlig sektor använder upphandling som hävstång och efterfrågar hållbara varor och tjänster så att marknaden ställer om snabbare. Tillsammans skapar vi nya vanor och normer som minskar utsläppen och stärker Dalarnas konkurrenskraft och livsmiljöer.
 
-Det är en viktig avvägning mellan nytta och miljöpåverkan, att bedöma huruvida Dalarnas företag har det produktionssätt som har den minsta miljöpåverkan i global jämförelse och därmed motiv till att just företagen i Dalarna ska bedriva denna produktion.
-
-För att nå ett klimatsmart Dalarna behöver vi skapa förutsättningar som gör det lätt att göra rätt – för invånare, företag och offentliga aktörer. Vi utgår från ett livscykelperspektiv där allt från råvara och produktion till användning och återbruk vägs in, och vi driver på cirkulära materialflöden och resurseffektivitet. Vi kombinerar teknisk omställning (elektrifiering, fossilfria bränslen, mer förnybar energi) med beteendeförändringar – särskilt i resor, transporter och konsumtion. Genom transportsnål planering och fler attraktiva alternativ till bilen blir det enklare att välja kollektivtrafik, cykel och gång. Offentlig sektor använder upphandling som hävstång och efterfrågar hållbara varor och tjänster så att marknaden ställer om snabbare. Vi bygger förändring genom samverkan, kunskap och analys, gemensamma pilotprojekt och lärande, och genom strategisk kommunikation som når rätt målgrupper. Tillsammans skapar vi nya vanor och normer som minskar utsläppen och stärker Dalarnas konkurrenskraft och livsmiljöer.
+Dalarna är rikt på naturresurser och om de brukas rätt ger de mångfalt tillbaka, därför följs här bland annat hur resurser som vatten och vind, skog och jordbruksmark används. 
 
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
 
@@ -402,6 +400,8 @@ Ett sätt att mäta den ekonomiska effektiviteten i energianvändningen är att 
 
 En viktig frågeställning för tillväxtarbetet är om det är möjligt att ha en fortsatt ökad ekonomisk tillväxt och samtidigt minska energiförbrukningen och utsläppen i samhället, så pass att ekonomisk aktivitet inte orsakar miljöpåverkan. Detta kallas frikoppling och är något som det forskas om. Hittills visar resultaten på exempel där det är möjligt att minska energiproduktionens miljöpåverkan, men ännu inte helt frikoppla den. I forskningen synliggörs även dilemmat med den traditionella tillväxtmodellen som innebär en konstant utvinning av värden från naturresurser utan att hänsyn tas förvaltandet och vårdandet av naturresurser och ekosystemtjänster för att de långsiktigt ska ge en god kontinuerlig avkastning.
 
+I Dalarna utgörs samtidigt en stor del av näringslivet av tillverkande industri som förbrukar relativt sett stora mängder energi och driver därigenom upp mängden energi förbrukad per invånare.
+
 Ett ökat förädlingsvärde per mängd förbrukad energi i länet kan betyda att länet har förbättrat energieffektiviteten i de fall industrier och näringar är ungefär desamma mellan mätningarna. En förklaring till en förbättrad energieffektivitet kan annars vara att näringslivets struktur har förändrats i en riktning där energikrävande industrier har lämnat regionen och mer kunskapsintensiv tjänsteproduktion har ökat (som generellt kräver mindre energi). Om energikrävande industrier har lämnat regionen och skapar utsläpp i andra delar av världen är det tyvärr inte självklart att nettoeffekten på de globala utsläppen minskat, då de flesta andra länder har en svagare miljölagstiftning än Sverige.
 
 Mellan `r energieffektivitet_min_ar` och `r energieffektivitet_max_ar` ökade energieffektiviteten i ekonomiska termer i Dalarna med ca `r energieffektivitet_forandring_procent` procent. Förändringen beror framförallt på att utsläppen av växthusgaser i länet har minskat under perioden men även på att BRP för Dalarna har stigit under samma tidsperiod.
@@ -454,6 +454,7 @@ I ett konkurrenskraftigt Dalarna är näringslivet livskraftigt och skapar tillv
 </p>
 
 Den ekonomiska dimensionen av hållbarhet i det regionala utvecklingsarbetet handlar om att använda och hushålla med resurser och förädla idéer på ett miljömässigt och socialt hållbart sätt och ta vara på möjligheterna att därigenom skapa konkurrenskraft och sysselsättning. Med ett cirkulärt system där resurser och värden kan återbrukas främjas en ekonomiskt hållbar utveckling.
+
 
 I Dalarna finns företag och människor med idéer som kan bidra till att lösa globala problem, och bana väg för goda livsmiljöer och levnadsvillkor för de boende.
 
@@ -793,7 +794,17 @@ delaktighet och tillsammans bidrar till en hållbar utveckling. Det är ett inkl
 där alla ges möjlighet att utvecklas.
 </p>
 
-Den sociala dimensionen av hållbarhet i det regionala utvecklingsarbetet handlar om att alla människor, utifrån sina behov och förutsättningar, ges likvärdiga möjligheter att delta i samhällsutvecklingen. Ju fler som känner sig delaktiga, desto mer utveckling kan åstadkommas.
+Den sociala dimensionen av hållbarhet i det regionala utvecklingsarbetet handlar om att alla människor, utifrån sina behov och förutsättningar, ges likvärdiga möjligheter att delta i samhällsutvecklingen. Ju fler som känner sig delaktiga, och bidrar efter egen förmåga desto mer utveckling kan åstadkommas, och samhällsekonomiska kostnader minimeras.
+
+I målområdet Ett sammanhållet Dalarna bygger vi ett län där goda livsmiljöer skapar en känsla av närhet – oavsett om man bor i stad, tätort eller landsbygd. Det handlar om ett Dalarna fyllt av engagemang och delaktighet, där människor tillsammans bidrar till hållbar utveckling och god beredskap. 
+
+Vi stärker den geografiska sammanhållningen genom samhällsplanering som knyter ihop bebyggelse, infrastruktur, kollektivtrafik och digital utveckling, så att människor och företag kan nå varandra på ett hållbart och resurseffektivt sätt. 
+
+I ett sammanhållet Dalarna är det också centralt att fler känner sammanhang och tillit – till varandra och till demokratiska institutioner – eftersom det stärker både demokrati, innovationskraft och krishanteringsförmåga. 
+
+Vi säkrar utvecklingskraft i hela länet genom att värna tillgång till service, vård, fritid och kultur, och genom att skapa platser där människor kan mötas.
+Tillsammans formar vi ett inkluderande, jämlikt och jämställt Dalarna där fler mår bra och ges möjlighet att utvecklas.
+
 
 <hr style="border: none; height: 5px; background-color: #ffec9f; margin-top: 40px; margin-bottom: 40px;">
 
