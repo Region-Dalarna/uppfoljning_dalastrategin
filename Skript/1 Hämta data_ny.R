@@ -511,6 +511,34 @@ gg_forv_90 <- diagram_forvarvsarbetande_90(output_mapp_figur = output_mapp_figur
                                            returnera_data = TRUE,
                                            vald_farg = diagramfarger("rus_sex"))
 
+# Nya diagram 2026-03-13
+# HLV - självskattad hälsa
+source(here("Skript","diagram_hlv_sjalvskattad_halsa.R"))
+gg_hlv_sjalvskattad <- diagram_hlv_sjalvskattad_halsa(output_mapp = output_mapp_figur,
+                                                      returnera_data = TRUE,
+                                                      spara_figur = spara_figurer)
+
+# Våldsbrott per 100 000 invånare C:/Users/frkjon/Projekt/uppfoljning_dalastrategin/Skript/diagram_valdsbrott_hundratusen.R
+source(here("Skript","diagram_valdsbrott_hundratusen.R"))
+gg_valdsbrott_hundratusen <- diagram_valdsbrott_hundratusen(output_mapp = output_mapp_figur,
+                                                            returnera_data = TRUE,
+                                                            spara_figur = spara_figurer)
+
+source(here("Skript","diagram_sjukdomar_hundratusen.R"))
+gg_sjukdomar_hundratusen <- diagram_sjukdomar_hundratusen(output_mapp = output_mapp_figur,
+                                                          returnera_data = TRUE,
+                                                          spara_figur = spara_figurer)
+
+source(here("Skript","diagram_sjukdomar_andel.R"))
+gg_sjukdomar_andel <- diagram_sjukdomar_andel(output_mapp = output_mapp_figur,
+                                              returnera_data = TRUE,
+                                              spara_figur = spara_figurer)
+
+source(here("Skript","diagram_radsla.R"))
+gg_radsla <- diagram_radsla(output_mapp = output_mapp_figur,
+                            returnera_data = TRUE,
+                            spara_figur = spara_figurer)
+
 save.image(file = "G:/skript/projekt/environments/uppfoljning_dalastrategin.RData")
 
 end_time <- Sys.time()

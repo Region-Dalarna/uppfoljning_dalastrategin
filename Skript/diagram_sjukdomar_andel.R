@@ -44,7 +44,9 @@ diagram_sjukdomar_andel <- function(region_vekt = "20",
     
     diagram_titel <- paste0(sub(",.*", "", unique(df$variabel)) ," år ",max(df$ar))
     diagramfilnamn = paste0(variabel_fil,"_ar_",max(df$ar),".png")
-    diagram_capt = "Källa: Socialstyrelsen (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna"
+
+    if(valt_brott == "U01760") diagram_capt = "Källa: Folkhälsomyndigheten, Hälsa på lika villkor (HLV) (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nAndelen räknas genom att ta antal enkätsvarande som beräknats ha ett BMI 25 eller högre dividerat\nmed det totala antalet som besvarat frågan. Extremvärden har exkluderats. 16 år och äldre, för 2020\noch tidigare omfattas 16-84 år, data avser år T-3 till T (flerårsmedelvärden)." 
+    if(valt_brott == "N01452") diagram_capt = "Källa: Folkhälsomyndigheten, Hälsa på lika villkor (HLV) (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nAndel personer 16–84 år som uppger psykiskt påfrestning. Data avser år T-3 till T (flerårsmedelvärden)" 
     
     gg_obj <- SkapaStapelDiagram(skickad_df = df %>% 
                                    filter(ar == max(ar)),
@@ -78,8 +80,7 @@ diagram_sjukdomar_andel <- function(region_vekt = "20",
 
     diagram_titel <- paste0(sub(",.*", "", unique(df$variabel)) ," i ",vald_region)
     diagramfilnamn = paste0(variabel_fil,"_",vald_region,"_ar_",first(df$ar),"_",last(df$ar),".png")
-    diagram_capt = "Källa: Socialstyrelsen (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna"
-    
+
     if(valt_brott == "U01760") df <- df %>% filter(ar %in% c(min(df$ar),max(df$ar),"2010","2015","2020")) # Finns inte för alla år, väljer första, sista och några emellan
 
     gg_obj <- SkapaStapelDiagram(skickad_df = df %>%

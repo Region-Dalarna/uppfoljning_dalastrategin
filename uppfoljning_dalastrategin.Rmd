@@ -847,7 +847,23 @@ gg_aterstaende_medellivslangd$`medellivslangd_aterstaende_vid_30 år_alder_Dalar
 ### Upplevd hälsa{-}
 Bra eller mycket bra allmänt hälsotillstånd efter utbildningsnivå och kön (HLV)
 
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_hlv_sjalvskattad$halsa_dalarna_tid
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_hlv_sjalvskattad$halsa_senaste_jmf
+```
+
 Allvarlig psykisk påfrestning efter utbildningsnivå och kön (HLV)
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_sjukdomar_andel$`invanare_16-84_ar_med_allvarlig_psykisk_pafrestning_Dalarna_ar_2022_2024`
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_sjukdomar_andel$`invanare_16-84_ar_med_allvarlig_psykisk_pafrestning_ar_2024`
+```
 
 Unga som skattar sin hälsa som mycket eller ganska bra  (LUPP)
 
@@ -860,21 +876,56 @@ Andel med lätta eller svåra sömnbesvär, efter utbildning och kön (HLV)
 
 Hjärtinfarkt – incidenta fall per 100 000 (SoS)
 
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_sjukdomar_hundratusen$incidens_av_hjartinfarkter_Dalarna
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_sjukdomar_hundratusen$incidens_av_hjartinfarkter
+```
+
 Hypertoni – efter utbildningsnivå och kön (HLV)
 
 Övervikt/obesitas – efter utbildningsnivå och kön (HLV)
 
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_sjukdomar_andel$invanare_med_overvikt_eller_fetma_Dalarna
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_sjukdomar_andel$invanare_med_overvikt_eller_fetma
+```
+
 Fallskador bland personer 65+, 3-årsm, antal/100 000 inv (SoS)
 
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_sjukdomar_hundratusen$`fallskador_bland_personer_65+_Dalarna`
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_sjukdomar_hundratusen$`fallskador_bland_personer_65+`
+```
 
 
 ### Brott mot person{-}
 
 Anmälda misshandelsbrott mot kvinna, inomhus, bekant med offret, antal/100 000 inv, per kommun (BRÅ/SCB)
 
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_valdsbrott_hundratusen$anmalda_misshandelsbrott_mot_kvinna_Dalarna
+```
+
 Anmälda sexualbrott, antal/100 000 inv, per kommun (BRÅ/SCB)
 
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_valdsbrott_hundratusen$anmalda_sexualbrott_Dalarna
+```
+
 Anmälda våldsbrott, antal/100 000 inv per kommun (BRÅ/SCB)
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_valdsbrott_hundratusen$anmalda_valdsbrott_Dalarna
+```
 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
@@ -885,6 +936,10 @@ gg_anmalda_brott$`anmalda_stold-_och_tillgreppsbrott_Dalarna`
 ### Upplevd trygghet{-}
 
 Avstår att gå ut ensam av rädsla för att bli överfallen, rånad eller på annat sätt ofredad, efter utbildningsnivå och kön (HLV)
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_radsla$radsla_Dalarna
+```
 
 Andel elever som alltid eller ofta känner sig trygga på sociala medier, efter kön (7:e klass och/eller Åk 1 gymnasiet) 
 

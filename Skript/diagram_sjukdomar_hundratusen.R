@@ -44,8 +44,9 @@ diagram_sjukdomar_hundratusen <- function(region_vekt = "20",
     
     diagram_titel <- paste0(sub(",.*", "", unique(df$variabel)) ," år ",max(df$ar))
     diagramfilnamn = paste0(variabel_fil,"_ar_",max(df$ar),".png")
-    diagram_capt = "Källa: Socialstyrelsen (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna"
-    
+
+    if(valt_brott == "N60920") diagram_capt = "Källa: Socialstyrelsen (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nAntal insjuknade i akut hjärtinfarkt eller annan ischemisk hjärtsjukdom som underliggande dödsorsak i befolkningen\ni åldrarna 20+ år (högst ett fall per individ) per 100 000 invånare, åldersstandardiserade värden,\når T-3 till år T (fyraårsmedelvärde)."
+    if(valt_brott == "U20462") diagram_capt = "Källa: Socialstyrelsen (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nGenomsnittligt antal slutenvårdstillfällen till följd av fallolyckor bland individer 65 år och äldre under perioden\når T till år T-2 (treårsmedelvärde). Beräknat per 100 000 invånare 65 år och äldre." 
     gg_obj <- SkapaStapelDiagram(skickad_df = df %>% 
                                    filter(ar == max(ar)),
                                  skickad_x_var = "region",
@@ -78,8 +79,7 @@ diagram_sjukdomar_hundratusen <- function(region_vekt = "20",
     
     diagram_titel <- paste0(sub(",.*", "", unique(df$variabel)) ," i ",vald_region)
     diagramfilnamn = paste0(variabel_fil,"_",vald_region,"_ar_",first(df$ar),"_",last(df$ar),".png")
-    diagram_capt = "Källa: Socialstyrelsen (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna"
-    
+
     gg_obj <- SkapaStapelDiagram(skickad_df = df %>% 
                                    filter(region == vald_region),
                                  skickad_x_var = "ar",

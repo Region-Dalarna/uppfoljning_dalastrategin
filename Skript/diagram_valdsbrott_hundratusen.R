@@ -46,8 +46,8 @@ diagram_valdsbrott_hundratusen <- function(region_vekt = "20",
     diagramfilnamn = paste0(variabel_fil,"_",vald_region,"_ar_",max(df$ar),".png")
     diagram_capt = "Källa: BRÅ och SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna"
     
-    if(valt_brott == "N07549") diagram_capt = "Källa: BRÅ och SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nAvser antal anmälda misshandelsbrott (inkl. grov) mot kvinna 18 år eller äldre, inomhus, bekant med offret i kommunen"
-    if(valt_brott == "N07403") diagram_capt = "Källa: BRÅ och SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nAvser summering av: Försök till mord eller dråp, misshandel inkl. grov, Våldtäkt inkl. grov, grov kvinnofridskränkning,\ngrov fridskränkning, våld mot tjänsteman och rån inkl. grovt. "
+    if(valt_brott == "N07549") diagram_capt = "Källa: BRÅ och SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nAvser antal anmälda misshandelsbrott (inkl. grov) mot kvinna 18 år eller äldre, inomhus, bekant med offret."
+    if(valt_brott == "N07403") diagram_capt = "Källa: BRÅ och SCB (via Kolada)\nBearbetning: Samhällsanalys, Region Dalarna\nAvser summering av: Försök till mord eller dråp, misshandel inkl. grov, våldtäkt inkl. grov, grov kvinnofridskränkning,\ngrov fridskränkning, våld mot tjänsteman och rån inkl. grovt. "
     
     gg_obj <- SkapaStapelDiagram(skickad_df = df %>% 
                                    filter(ar == max(ar)),

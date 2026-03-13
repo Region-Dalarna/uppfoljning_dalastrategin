@@ -36,7 +36,7 @@ diagram_radsla <- function(region_vekt = "20", # Riks eller region, ej kommun
   }
   
   diagram_titel <- paste0("Andel som avstått från att gå ut ensam på grund av rädsla i ",unique(avstatt_ga_ut_df%>%.$Region))
-  diagramfilnamn <- glue("radsla_{unique(deltagande%>% .$Region)}_ar_{substr(min(deltagande$År),1,4)}_{substr(max(deltagande$År),1,4)}.png")
+  diagramfilnamn <- glue("radsla_{unique(avstatt_ga_ut_df%>% .$Region)}_ar_{substr(min(avstatt_ga_ut_df$År),1,4)}_{substr(max(avstatt_ga_ut_df$År),1,4)}.png")
   diagram_capt = " Källa: Nationella folkhälsoenkäten - Hälsa på lika villkor (Folkhälsomyndigheten)\n Bearbetning: Samhällsanalys, Region Dalarna\nDiagramförklaring: Andel (%) invånare 16 år och äldre som avstått från att gå ut ensam på grund av rädsla.\nFör 2020 och tidigare omfattas 16-84 år."
 
   gg_obj <- SkapaStapelDiagram(skickad_df = avstatt_ga_ut_df %>% 
