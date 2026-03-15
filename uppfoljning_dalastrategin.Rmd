@@ -56,7 +56,16 @@ Senast uppdaterad: `r Sys.Date()`</i>
 
 # Introduktion {-}
 
-Dalarna står tillsammans med övriga Sverige, Europa och världen inför stora samhällsutmaningar. För att skapa en hållbar framtid för Dalarna antog Regionfullmäktige i juni 2021 en ny regional utvecklingsstrategi (reviderad och beslutad 2026-02-16), ["Dalastrategin - Tillsammans för ett hållbart Dalarna"](https://www.regiondalarna.se/globalassets/regional-utveckling/dalastrategin-2030-tillsammans-for-ett-hallbart-dalarna-dec.pdf){target="_blank"}. 
+Dalarna står tillsammans med övriga Sverige, Europa och världen inför stora samhällsutmaningar. För att skapa en hållbar framtid för Dalarna antog Regionfullmäktige i juni 2021 en ny regional utvecklingsstrategi ["Dalastrategin - Tillsammans för ett hållbart Dalarna"](https://www.regiondalarna.se/globalassets/regional-utveckling/dalastrategin-2030-tillsammans-for-ett-hallbart-dalarna-dec.pdf){target="_blank"} (reviderad 2026-02-16). 
+
+Strategin är ett stöd och en språngbräda i arbetet med att rusta Dalarna för att möta framtidens utmaningar och göra dem till möjligheter. Målsättningarna för Dalarna sammanfattas i tre målområden som kopplar an till de olika dimensionerna av hållbarhet - miljömässig, ekonomisk och social hållbarhet: 
+
+- ett klimatsmart Dalarna 
+- ett sammanhållet Dalarna
+- ett konkurrenskraftigt Dalarna 
+
+Att ställa om för att skapa en hållbar framtid är en utmaning som berör alla delar av samhället, från global till lokal nivå och inom alla sektorer. Omställningen innebär att flytta fokus från kortsiktiga resultat till arbetssätt som säkrar naturresurserna långsiktigt så att människor kan leva gott på dess avkastning också i många generationer. 
+
 
 <details>
 
@@ -67,14 +76,6 @@ Uppföljning, årlig rapportering till regeringen, länsstyrelsens uppföljning 
 </div>
  
 </details>
-
-Strategin är ett stöd och en språngbräda i arbetet med att rusta Dalarna för att möta framtidens utmaningar och göra dem till möjligheter. Målsättningarna för Dalarna sammanfattas i tre målområden som kopplar an till de olika dimensionerna av hållbarhet - miljömässig, ekonomisk och social hållbarhet: 
-
-- ett klimatsmart Dalarna 
-- ett sammanhållet Dalarna
-- ett konkurrenskraftigt Dalarna 
-
-Att ställa om för att skapa en hållbar framtid är en utmaning som berör alla delar av samhället, från global till lokal nivå och inom alla sektorer. Omställningen innebär att flytta fokus från kortsiktiga resultat till arbetssätt som säkrar naturresurserna långsiktigt så att människor kan leva gott på dess avkastning också i många generationer. Rent vatten, ren luft, biologisk mångfald och andra ekosystem är grundläggande värden för människor och samhällen, och att vårda människor och människors hälsa, kunskap och bildning är grunden till att skapa långsiktig ekonomisk nytta och ekonomisk trygghet.
 
 Den här rapporten är en del av den årliga uppföljningen av Dalarnas utveckling och beskriver läget i Dalarna på vägen till en hållbar framtid.
 
@@ -91,33 +92,40 @@ miljömässigt hållbart sätt. I ett klimatsmart Dalarna är samhällets
 robusthet och resiliens vid klimatförändringar god.
 </p>
 
-Den miljömässiga dimensionen för en hållbar regional utveckling handlar bland annat om att säkerställa att ekosystemen bibehålls och vårdas så att de fortsätter att leverera de tjänster som människor och samhällen är beroende av. 
-
-För att nå ett klimatsmart Dalarna behöver vi skapa förutsättningar som gör det lätt att göra rätt – för invånare, företag och offentliga aktörer. Vi utgår från ett livscykelperspektiv där allt från råvara och produktion till användning och återbruk vägs in, och vi driver på cirkulära materialflöden och resurseffektivitet. Vi kombinerar teknisk omställning (elektrifiering, fossilfria bränslen, mer förnybar energi) med beteendeförändringar – särskilt i resor, transporter och konsumtion. Genom transportsnål planering och fler attraktiva alternativ till bilen blir det enklare att välja kollektivtrafik, cykel och gång. Offentlig sektor använder upphandling som hävstång och efterfrågar hållbara varor och tjänster så att marknaden ställer om snabbare. Tillsammans skapar vi nya vanor och normer som minskar utsläppen och stärker Dalarnas konkurrenskraft och livsmiljöer.
+Rent vatten, ren luft, biologisk mångfald och andra ekosystem är grundläggande värden för människor och samhällen, och att vårda människor och människors hälsa, kunskap och bildning är grunden till att skapa långsiktig ekonomisk nytta och ekonomisk trygghet.
 
 Dalarna är rikt på naturresurser och om de brukas rätt ger de mångfalt tillbaka, därför följs här bland annat hur resurser som vatten och vind, skog och jordbruksmark används. 
+Den miljömässiga dimensionen för en hållbar regional utveckling handlar bland annat om att säkerställa att ekosystemen bibehålls och vårdas och att ett livscykelperspektiv tillämpas på allt från råvara och produktion till användning, återbruk och resurseffektivisering.
+
+<!--För att nå ett klimatsmart Dalarna behöver vi skapa förutsättningar som gör det lätt att göra rätt – för invånare, företag och offentliga aktörer. Vi utgår från ett livscykelperspektiv där allt från råvara och produktion till användning och återbruk vägs in, och vi driver på cirkulära materialflöden och resurseffektivitet. Vi kombinerar teknisk omställning (elektrifiering, fossilfria bränslen, mer förnybar energi) med beteendeförändringar – särskilt i resor, transporter och konsumtion. Genom transportsnål planering och fler attraktiva alternativ till bilen blir det enklare att välja kollektivtrafik, cykel och gång. Offentlig sektor använder upphandling som hävstång och efterfrågar hållbara varor och tjänster så att marknaden ställer om snabbare. Tillsammans skapar vi nya vanor och normer som minskar utsläppen och stärker Dalarnas konkurrenskraft och livsmiljöer.-->
+
 
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
 
 ## Tillståndet i Dalarnas miljö och natur{.tabset}
 
-Sammanfattande resultat...
+Länsstyrelsen gör årligen en uppföljning av miljökvalitetsmålen på regional nivå. Det här avsnittet är baserat på länsstyrelsens slutsatser och rapport. 
+
+Länsstyrelsen konstaterar att för flera av miljömålen är klimatförändring ett av de stora hoten. Negativa effekter av ett förändrat klimat så som värmeböljor, torka, extrema skyfall, översvämning, ras, skred och erosion och skogsbränder kommer 
+innebära en omfattande utmaning för samhället. Här följer fyra centrala mål för vår 
 
 
 <span class="big-indicator">
-Vatten <span style="color:black; font-size:1.5em; font-weight:900;">➡</span>
+Vatten 
+<span style="color:black; font-size:1.4em; font-weight:900;">➡</span>
+</span> Grundvattnet är till stor del av god kvalitet, men ett antal platser är negativt påverkade.
+
+<span class="big-indicator">
+Luft 
+<span style="color:green; font-size:1.4em; font-weight:900;">➡</span>
+</span> 
+
+<span class="big-indicator">
+Skog och mark <span style="color:red; font-size:1.4em; font-weight:900;">⬇</span>
 </span>
 
 <span class="big-indicator">
-Luft <span style="color:green; font-size:1.5em; font-weight:900;">⬆</span>
-</span>
-
-<span class="big-indicator">
-Skog och mark <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-
-<span class="big-indicator">
-Biologisk mångfald <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Biologisk mångfald <span style="color:red; font-size:1.4em; font-weight:900;">⬇</span>
 </span>
 
 Länsstyrelserna i Sverige har i uppdrag att följa upp tillståndet i miljön i respektive län. För Dalarna finns redovisningen ["här"](https://www.rus.se/regional-arlig-uppfoljning/dalarnas-lan/#generation){target="_blank"}, för den som vill fördjupa sig ytterligare.
@@ -739,7 +747,7 @@ gg_fortroende_rattsvasande$fortroende_rattsvasande__sverige
 Sammanfattning av avsnittet här.
 
 <span class="big-indicator">
-BRP, arbetsproduktivitet alt. förädlingsvärde <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Bruttoregionalprodukten <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
@@ -758,14 +766,10 @@ Regional export <span style="color:red; font-size:1.8em; font-weight:900;">⬇</
 </span>
 <br>
 
-### BRP, arbetsproduktivitet {-} 
+### Bruttoregionalprodukten {-} 
 
-Anna letar data.
+Använda BRP/sysselsatt resp. per BRP/capita, och diskutera utvecklingen..
 
-
-### Chefer? {-}
-
-Diagram hämtas från..
 
 
 ### Regional export {-}
