@@ -789,12 +789,10 @@ Sysselsatta som arbetar i utlandsägda företag, omsättning arbetsställe per u
 # Ett sammanhållet Dalarna
 
 <p class="intro" style = "background-color: #ffec9f">
-I ett sammanhållet Dalarna finns goda livsmiljöer som skapar en känsla av närhet. Det är ett Dalarna fyllt av engagemang, där människor upplever
-delaktighet och tillsammans bidrar till en hållbar utveckling. Det är ett inkluderande, jämställt, och jämlikt Dalarna där människor mår bra och
-där alla ges möjlighet att utvecklas.
+I ett sammanhållet Dalarna finns goda livsmiljöer som skapar en känsla av närhet. Det är ett Dalarna fyllt av engagemang, där människor upplever delaktighet och tillsammans bidrar till en hållbar utveckling. Det är ett inkluderande, jämställt, och jämlikt Dalarna där människor mår bra och där alla ges möjlighet att utvecklas.
 </p>
 
-Den sociala dimensionen av hållbarhet i det regionala utvecklingsarbetet handlar om att alla människor, utifrån sina behov och förutsättningar, ges likvärdiga möjligheter att delta i samhällsutvecklingen. Ju fler som känner sig delaktiga, och bidrar efter egen förmåga desto mer utveckling kan åstadkommas, och samhällsekonomiska kostnader minimeras.
+Den sociala dimensionen av hållbarhet i det regionala utvecklingsarbetet handlar om att alla människor, utifrån sina behov och förutsättningar, ges likvärdiga möjligheter att delta och bidra i samhällsutvecklingen. Ju fler som känner sig delaktiga desto mer utveckling kan åstadkommas, och samhällsekonomiska kostnader kan minimeras.
 
 I målområdet Ett sammanhållet Dalarna bygger vi ett län där goda livsmiljöer skapar en känsla av närhet – oavsett om man bor i stad, tätort eller landsbygd. Det handlar om ett Dalarna fyllt av engagemang och delaktighet, där människor tillsammans bidrar till hållbar utveckling och god beredskap. 
 
