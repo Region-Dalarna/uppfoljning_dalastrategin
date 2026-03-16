@@ -454,10 +454,8 @@ gg_sjalvforsorjning$teoretisk_sjalvforsorjning_el_Dalarna
 I ett konkurrenskraftigt Dalarna är näringslivet livskraftigt och skapar tillväxt inom de planetära gränserna. En väl utvecklad och hållbar infrastruktur skapar värden för näringsliv, boende och besökare. Det är ett Dalarna där allas kunskaper och kompetenser tas till vara och där individer, näringsliv, offentlig sektor och civilsamhälle utvecklas tillsammans och i samspel med omvärlden. Det är också ett nyskapande Dalarna där utmaningsdriven innovation bidrar till ett gott samhälle och hållbar tillväxt.
 </p>
 
-Den ekonomiska dimensionen av hållbarhet i det regionala utvecklingsarbetet handlar om att använda och hushålla med resurser och förädla idéer på ett miljömässigt och socialt hållbart sätt och ta vara på möjligheterna att därigenom skapa konkurrenskraft och sysselsättning. Med ett cirkulärt system där resurser och värden kan återbrukas främjas en ekonomiskt hållbar utveckling.
+Den ekonomiska dimensionen av hållbarhet i det regionala utvecklingsarbetet handlar om att ta vara på och hushålla med människor som resurs, att förädla idéer på ett miljömässigt och socialt hållbart sätt och ta vara på möjligheterna att därigenom skapa konkurrenskraft och sysselsättning.
 
-
-I Dalarna finns företag och människor med idéer som kan bidra till att lösa globala problem, och bana väg för goda livsmiljöer och levnadsvillkor för de boende.
 
 <hr style="border: none; height: 5px; background-color: #f8aab6; margin-top: 40px; margin-bottom: 40px;">
 
@@ -466,7 +464,7 @@ I Dalarna finns företag och människor med idéer som kan bidra till att lösa 
 Sammanfattning av avsnittet.
 
 <span class="big-indicator">
-Arbetskraften <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Arbetskraft och återväxt <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
@@ -490,44 +488,38 @@ Ohälsa <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
-<span class="big-indicator">
-Återväxt <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-<br>
 
 Läs mer om kompetensförsörjning i länet i SCB:s rapport ["Regionala Trender och Prognoser 2025 Med sikte på år 2040 Dalarnas län"](https://www.scb.se/contentassets/04cf1ee0f04b4c06a6e62d22d78e8d4c/dalarnas-lan-20251215.pdf){target="_blank"}
 
-### Arbetskraften {-}
+### Arbetskraft och återväxt {-}
 
-Ytdiagram med arbetsför ålder som visar fördelningen av sysselsatta, arbetslösa etc. Samtliga i åldern 20-64 år, och fördelning mellan vilka aktivitetsgrupper de tillhör.
+**Arbetskraften**
 
-
+Arbetskraften omfattar boende i Dalarna i åldern 20-64 år. Antalet inrikes födda invånare i arbetsför ålder har minskat från ungefär 145 000 personer år 2000 till cirka 124 000 år 2023. Samtidigt har en relativt stor invandring medfört att utrikes födda invånare i arbetsför ålder har ökat från ungefär 11 000 personer år 2000 till cirka 26 000 år 2023. De utrikes födda ökat har således inte ökat i samma omfattning som inrikes födda minskat, vilket leder till att befolkningen i arbetsför ålder som helhet krymper.
 
 Figur 2 i kompetensrapporten - befolkning i arbetsför ålder 2000 - 2023X
 
-
-Figur 12 i Kompetensrapporten - förvärvsarbetande 1990-2023..
+**Återväxt**
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_forv_90$forvarvsarbetande_90_totalt_Dalarna
+gg_befutv_per_komponent_ar_scb[[1]]
 ```
 
 
-Kommentera även UVAS och andra grupper som står långt ifrån arbetsmarknaden. 
-
-
-
 ### Utbildningsnivåer {-}
+De senaste decennierna har utbildningsnivån bland befolkningen i Dalarna ökat generellt och särskilt andelen med högre utbildning. I mitten av 1980-talet hade bara drygt sju procent av befolkningen en högre utbildning. År 2024 hade den andelen ökat till ungefär 31 procent för kvinnor och ca 16 procent för män. Anmärkningsvärt är att skillnaden i utbildningsnivå mellan könen har ökat avsevärt genom åren.
 
-2 diagram från Kvinnor och män:
-
-- Andel högutbildade inv. 1985-2024/5 K o M
+En strukturell faktor som kan bidra till könsskillnaden i utbildningsnivå är att många yrken inom kvinnodominerade sektorer så som utbildning och vård kräver högskoleutbildning, exempelvis läraryrket och sjuksköterskeyrket. Dessa yrken utgör också en stor andel av arbetstillfällena på arbetsmarknaden.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_utbniva_85[[1]]
 ```
 
-- Utbildningsnivåer som visar på eftergymnasial, gymnasial förgymnasial...
+Ser vi till alla typer av eftergymnasial utbildning är det totalt 46 procent av kvinnorna i Dalarna som har någon form av eftergymnasial utbildning och bland män i länet är motsvarande siffra cirka 29 procent.
+
+Bland män i Dalarna är i stället den vanligast förekommande utbildningskategorin “gymnasial utbildning, 3 år”. Ungefär 33 procent av männen i Dalarna återfinns inom denna kategori. Även inom utbildningsnivån gymnasieutbildning om högst 2 år är en större andel män än kvinnor, 24 procent av männen har en gymnasieutbildning om högst 2 år, medan 17 procent av kvinnorna har en gymnasieutbildning om högst 2 år.
+
+Sammantaget innebär detta att ungefär 56 procent av alla män i Dalarna har en gymnasieutbildning som högsta utbildning. Bland kvinnor är motsvarande andel i Dalarna 44 procent.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_utb_niva_senaste$utbildningsniva_Dalarna_senaste_ar
@@ -569,11 +561,11 @@ gg_etableringstid$etablering_vistelsetid_allalan
 
 ### Ohälsa{-}
 
-Ohälsotalet (ev källa) mäter i vilken utsträckning personer är borta från arbetet på grund av nedsatt arbetsförmåga, mätt under ett års tid. Ohälsotalet varierar över tid och var relativt högt under början av 2000-talet. Därefter syns en klart nedåtgående trend, även om ohälsotalet har ökat något de senaste åren. Under hela tidsperioden har ohälsotalet varit högre för kvinnor än för män, även om skillnaden mellan könen har minskat något över tid.
+Ohälsotalet (ev källa) mäter i vilken utsträckning personer är borta från arbetet på grund av nedsatt arbetsförmåga, mätt under ett års tid. 
 
-Sjukfrånvaro är kostsamt i form av produktionsbortfall för både arbetsgivare och samhälle, och inte minst för individen. 
+Sjukfrånvaro och ohälsa är kostsamt, inte bara för individen utan även i form av produktionsbortfall för både arbetsgivare och samhälle, och måttet signalerar hur väl arbetande människors förmåga tas till vara eller om humankapitalet istället XX slits ner. 
 
-med en mer ekonomisk term kan vi säga att det sliter på vårt humankapital...
+Ohälsotalet varierar över tid och var relativt högt under början av 2000-talet. Därefter syns en klart nedåtgående trend, även om ohälsotalet har ökat något de senaste åren. Under hela tidsperioden har ohälsotalet varit högre för kvinnor än för män, även om skillnaden mellan könen har minskat något över tid.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_ohalsotal_sjp$ohalsotal_dalarna
@@ -584,15 +576,6 @@ gg_ohalsotal_sjp$ohalsotal_kommun_dalarna
 ```
 
 
-### Återväxt av befolkningen {-}
-
-
-Byt ut mot: 
-source("https://raw.githubusercontent.com/Region-Dalarna/diagram/main/diag_befutv_per_komponent_ar_scb.R")
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_befutv_per_komponent_ar_scb[[1]]
-```
 
 ## {-}
 <hr style="border: none; height: 5px; background-color: #f8aab6; margin-top: 40px; margin-bottom: 40px;">
@@ -632,9 +615,17 @@ Förtroende för rättsväsendet <span style="color:red; font-size:1.8em; font-w
 
 Mer att läsa, tipsa här.
 
-### Företagande {-}
+### Arbete och företagande {-}
 
-Obs, hitta siffror och kommentera könsuppdelning.
+Figur 12 i Kompetensrapporten - förvärvsarbetande 1990-2023..
+Historiskt har tillverkning och utvinning varit den största branschen i Dalarna sett till antalet anställda, men vård och omsorg är idag störst. I diagrammet nedan är tillverkning och utvinning den tredje största branschen i Dalarna, men det beror på att branscherna handel och transport är sammanslagna baserat på branschgrupperingen 1990. Att tillverkning och utvinning minskat i antal anställda sedan 1990 är en förändring som återspeglar den allmänna trenden i många regioner där tjänstesektorn har fått ökad betydelse över tid. 
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_forv_90$forvarvsarbetande_90_totalt_Dalarna
+```
+
+ 
+**Företagande**
 
 Antalet nystartade företag per kommun i Dalarna visar att `r nystartade_kommun_hogst_max_ar` kommun har flest, med ungefär `r nystartade_kommun_hogst_max_ar_varde` nystartade företag per 1000 invånare `r nystartade_max_ar`, medan `r nystartade_kommun_lagst_min_ar` har minst med ca `r nystartade_kommun_lagst_min_ar_varde`.  Ungefär hälften av Dalarnas kommuner hade fler nystartade företag (per 1000 invånare) än Sverige `r nystartade_max_ar`.
 
@@ -648,6 +639,7 @@ Från TVV - företagens villkor och verklighet, alt. Entreprenörskapsforums rap
 
 
 **Branscher där 
+
 
 ### Infrastruktur{-}
 
@@ -710,14 +702,6 @@ Anmälda ekobrott...
 gg_anmalda_brott$anmalda_ekobrott_Dalarna
 ```
 
-**Bostadsinbrott**
-
-Anmälda bostadsinbrott..
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_anmalda_brott$anmalda_bostadsinbrott_Dalarna
-```
-
 
 ### Förtroende{-}
 
@@ -763,16 +747,20 @@ Regional export <span style="color:red; font-size:1.8em; font-weight:900;">⬇</
 
 Använda BRP/sysselsatt resp. per BRP/capita, och diskutera utvecklingen..
 
+Diagram, samma som i 
+
 
 
 ### Regional export {-}
 
-Varuexportvärdet över tid, 200X- 2024.
+Diagram: Varuexportvärdet över tid, 200X- 2024.
+
+Diagram: till vilka länder exporterar vi?
+
+Diagram: Utländska gästnätter, över tid.
 
 Besöksnäringen, 2025, besöksnätter.. Inkl. gästnätter från utlandet..? Danskar ca 40?? procent..
 
-
-till vilka länder exporterar vi?
 
 Anna/Peter tittar på denna.
 Diagram hämtas från..
@@ -781,7 +769,7 @@ Diagram hämtas från..
 
 ### Företagsägande {-}
 
-Företag med huvudsäte i Dalarna
+PAUS, Företag med huvudsäte i Dalarna
 Sysselsatta som arbetar i utlandsägda företag, omsättning arbetsställe per utlandsägt, inhemskt företag.
 
 
@@ -946,11 +934,21 @@ gg_anmalda_brott$`anmalda_stold-_och_tillgreppsbrott_Dalarna`
 
 ### Upplevd trygghet{-}
 
-Avstår att gå ut ensam av rädsla för att bli överfallen, rånad eller på annat sätt ofredad, efter utbildningsnivå och kön (HLV)
+Avstår från att gå ut ensam av rädsla för att bli överfallen, rånad eller på annat sätt ofredad, efter utbildningsnivå och kön (HLV)
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_radsla$radsla_Dalarna
 ```
+
+**Bostadsinbrott**
+
+Anmälda bostadsinbrott..
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_anmalda_brott$anmalda_bostadsinbrott_Dalarna
+```
+
+
 
 Andel elever som alltid eller ofta känner sig trygga på sociala medier, efter kön (7:e klass och/eller Åk 1 gymnasiet) 
 
@@ -1024,6 +1022,10 @@ gg_tillit$tillit_Dalarna
 ### Kultur/fritid{-}
 
 (LOK, kulturskola)
+
+RF statistik.
+Kolada elever i kulturskolan.
+
 
 Mer att läsa finns här.
 
@@ -1126,19 +1128,19 @@ gg_lag_ek_standard$andel_invånare_0_19_år_med_låg_ekonomisk_standard
 
 De som behöver stöd för att leva ett drägligt liv.
 
+Peter?
+
 Lägg till diagrammet som vi använt.. 
 
 
-### Sparande och kapital{-}
 
-**Privat sparande**
-Varje vuxen borde ha xx kr i sparkapital för att vara försäkrad mot motgångar och svåra tider.
-Kolada
+### Kapitalvinster/förluster {-}
 
 
 **Kapitalvinster/förluster**
 
-Kolada
+Diagram från Kolada.
+
 
 Påverkas av bostadsmarknaden etc.
 
