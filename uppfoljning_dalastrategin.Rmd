@@ -113,7 +113,7 @@ innebära en omfattande utmaning för samhället. Här följer fyra centrala må
 <span class="big-indicator">
 Vatten 
 <span style="color:black; font-size:1.4em; font-weight:900;">➡</span>
-</span> Grundvattnet är till stor del av god kvalitet, men ett antal platser är negativt påverkade.
+</span> Grundvattnen till stora delar av god kvalitet, ett antal platser negativt påverkade.
 
 <span class="big-indicator">
 Luft 
@@ -162,30 +162,26 @@ gg_vatten$vattendrag_Sverige
 
 **Luft**
 
-Luftkvaliteten är generellt god i Dalarna men försämrad i tätorter på grund av utsläpp från trafik, industri, uppvärmning av bostäder och småskalig vedeldning. Lokalt kan det periodvis finnas problem med föroreningar kopplat till veteranbilar.
-
-Åtgärdsarbetet sker främst genom trafik- och infrastrukturplanering. För att uppfylla Frisk luft behövs snabbare och kraftfullare åtgärder, vilket Världshälsoorganisationen (WHO) belyst genom att sänka sina riktvärden för luftföroreningar.
+Ren luft är en av grunderna för liv. Luften vi andas påverkas av utsläpp från många olika källor. I Länsstyrelsens uppföljning av miljökvalitetsmålen konstateras att luftkvaliteten generellt är god i Dalarna men försämrad i tätorter på grund av utsläpp från trafik, industri, uppvärmning av bostäder och småskalig vedeldning. För att uppfylla målet om Frisk luft behövs snabbare och kraftfullare åtgärder, vilket Världshälsoorganisationen (WHO) belyst genom att sänka sina riktvärden för luftföroreningar.
 
 
-Diagram?
-
+Ev. Diagram.
 
 
 ### Skog och mark{-} 
 
 **Skog och mark**
 
-I Dalarna genomförs många insatser för förbättrad miljöhänsyn och ökad kunskap om skogens natur- och kulturvärden. Viktiga strukturer, som död ved, ökar men saknas fortfararande i tillräcklig mängd. Bestånd med naturvärden och lång skoglig kontinuitet avverkas. Antalet hotade arter och skador på forn- och kulturlämningar är fortsatt på en hög nivå. För att nå miljömålet behöver sektorns ansvar förtydligas och insatser öka för inventering, skydd, naturvårdande skötsel och större variation i skogsbruket.
+Dalarnas yta utgörs till 79 procent av skog vilket gör Dalarna till det femte mest skogstäta länet i landet [(SCB)](https://www.scb.se/hitta-statistik/sverige-i-siffror/miljo/marken-i-sverige/){target="_blank"}. All skogsmark är inte produktiv (ex. myrar och bergsytor etc. som producerar mindre än en kubikmeter virke per hektar och år). Dessa områden utgör 11,3 procent av skogsmarken, varav ca 1,5 procentenheter är formellt skyddad. Skogsbruket i Dalarna brukas nästan enbart med konventionella metoder, ca 78 procent av skogsmarken brukas konventionellt [(SCB)](https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__MI__MI0605/SkyddSkogFrivillig/table/tableViewLayout1/){target="_blank"}.
 
-En förutsättning för bibehållen biologisk mångfald och bevarade kulturmiljövärden i odlingslandskapet är att det finns hållbara och bärkraftiga jordbruksföretag i länet och betande djur i landskapet. 
+För att nå miljömålet behöver sektorns ansvar förtydligas och insatser öka för inventering, skydd, naturvårdande skötsel och större variation i skogsbruket. I Dalarna genomförs många insatser för förbättrad miljöhänsyn och ökad kunskap om skogens natur- och kulturvärden. Viktiga strukturer, som död ved, ökar men saknas fortfararande i tillräcklig mängd. Bestånd med naturvärden och lång skoglig kontinuitet avverkas. Antalet hotade arter och skador på forn- och kulturlämningar är fortsatt på en hög nivå. 
+En förutsättning för bibehållen biologisk mångfald och bevarade kulturmiljövärden i odlingslandskapet är att det finns betande djur i landskapet och hållbara och bärkraftiga jordbruksföretag i länet. 
 
-Antal betesdjur har minskat stadigt i Dalarnas län sedan 1980-talet, liksom antalet jordbruksföretag och arealen brukad jordbruksmark. Med färre betande djur och marker som inte längre hävdas försämras förutsättningarna för att bibehålla ett rikt odlingslandskap i länet.
+Antal betesdjur har minskat stadigt i Dalarnas län sedan 1980-talet, liksom antalet jordbruksföretag och arealen brukad jordbruksmark. Med färre betande djur och marker som inte längre hävdas försämras förutsättningarna för att bibehålla ett rikt odlingslandskap i länet, och den regionala livsmedelsförsörjningen minskar.
 
 Klimatförändringar påverkar fjällen och dess ekosystemprocesser allt mer. Låglandsarter sprider sig in i fjällen och invasiva arter har spridit sig in i fjällområdet. Flera sjöar är försurade och kalkas för att gynna växt- och djurlivet. Inventering av fjällnära skogar har visat på höga biologiska värden, varför skydd av de fjällnära skogarna är av stor vikt. Fjällskogens kulturlämningar är däremot dåligt kända och sällan undersökta. Exploaterings- och besökstrycket ökar med markslitage, nedskräpning och störning av ren som följd.
 
-År 2018 beslutade dåvarande regering om Sveriges första nationella skogsprogram med fokus på skogsbrukets roll för en hållbar utveckling. I Dalastrategin omnämns skogsbruket som en av länets viktigare näringar. Skogsbruket påverkar och påverkas av klimatförändringarna, och därför behöver skötsel och brukande anpassas utifrån rådande kunskap om vad som har minst miljöpåverkan.
-
-Dalarnas yta utgörs till 79 procent av skog vilket gör Dalarna till det femte mest skogstäta länet i landet [(SCB)](https://www.scb.se/hitta-statistik/sverige-i-siffror/miljo/marken-i-sverige/){target="_blank"}. All skogsmark är inte produktiv (ex. myrar och bergsytor etc. som producerar mindre än en kubikmeter virke per hektar och år). Dessa områden utgör 11,3 procent av skogsmarken, varav ca 1,5 procentenheter är formellt skyddad. Skogsbruket i Dalarna brukas nästan enbart med konventionella metoder, ca 78 procent av skogsmarken brukas konventionellt [(SCB)](https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__MI__MI0605/SkyddSkogFrivillig/table/tableViewLayout1/){target="_blank"}.
+År 2018 beslutade dåvarande regering om Sveriges första nationella skogsprogram med fokus på skogsbrukets roll för en hållbar utveckling. I Dalastrategin omnämns skogsbruket som en av länets viktigare näringar, påverkar och påverkas av klimatförändringarna. Skötsel och brukande behöver därför anpassas utifrån rådande kunskap om vad som har minst miljöpåverkan.
 
 Skyddad produktiv skog, tillsammans med frivilliga avsättningar av produktiv skog utgör andelen som brukas på ett hållbart sätt. I diagrammen nedan redovisas hur andelen skyddad produktiv skogsmark i Dalarnas län utvecklats mellan `r ar_min_skogsmark` och `r ar_max_skogsmark`. Arealen skyddad skogsmark i länet har ökat med knappt `r areal_skogsmark_forandring_procent` procent över tidsperioden, från `r areal_skogsmark_min_ar` hektar år `r areal_skogsmark_max_ar` hektar år `r ar_max_skogsmark`.  
 
@@ -211,7 +207,6 @@ Betesmark tillsammans med åkermark utgör jordbruksmark. Åkermarken kan brukas
 
 Det bedrivs ett gediget arbete för att gynna arter, skapa livsmiljöer och förbättra grönstruktur i Dalarna. Trots det är 1 396 av länets arter rödlistade och vissa nära att dö ut på grund av markanvändning och global uppvärmning. Klimatförändring kan ha bidragit till lokala utdöenden av Dalarnas landskapsfjäril violett guldvinge de senaste årtiondena, 2025 fanns den bara på en lokal. Invasiva främmande arter ökar trots att många bekämpar dem. Havsörnen tycks ha haft sämre framgång 2023-2025 än 2021-2022.
 
-
 I diagrammet nedan redovisas hur arealen betesmark i Dalarnas län har utvecklats mellan `r ar_min_betesmark` och `r ar_max_betesmark`. I diagrammet är den totala arealen betesmark uppdelad på slåtteräng och alla annan betesmark, benämnd övrig betesmark. Den totala arealen betesmark har under denna period minskat med ungefär `r forandring_betsmark` procent, från `r betesmark_tot_min_ar` till `r betesmark_tot_max_ar` hektar. Efter en tydlig minskning mellan 2022 och 2023, ökade arealen betesmark återigen år 2024. 
 
 Slåtteräng är en delmängd av betesmarken som har särskilt höga biologiska värden och därmed särskilt stor betydelse för biologisk mångfald. I Dalarna har andelen slåtteräng ökat från `r andel_slatterang_min_ar` procent av betesmarken år `r ar_min_betesmark` till `r andel_slatterang_max_ar` procent av betesmarken år `r ar_max_betesmark`.
@@ -220,20 +215,19 @@ Slåtteräng är en delmängd av betesmarken som har särskilt höga biologiska 
 gg_betesmark$areal_betesmark_Dalarna
 ```
 
-Flera insatser görs i samhället som bedöms gynna tillståndet för den biologiska mångfalden. Genom våtmarkssatsningen restaureras och anläggs många våtmarker i länet. Takten i arbetet har goda förutsättningar att öka i och med klimatarbetet och ett ökande fokus på naturtypsrestaurering. Utvecklingen påverkas däremot negativt av den långsamma igenväxning som sker generellt på myrar samt exploatering i form av dikning vid vägar och järnvägar.
+<!--Flera insatser görs i samhället som bedöms gynna tillståndet för den biologiska mångfalden. Genom våtmarkssatsningen restaureras och anläggs många våtmarker i länet. Takten i arbetet har goda förutsättningar att öka i och med klimatarbetet och ett ökande fokus på naturtypsrestaurering. Utvecklingen påverkas däremot negativt av den långsamma igenväxning som sker generellt på myrar samt exploatering i form av dikning vid vägar och järnvägar.
 
 
 Renbetesmarker
-Klimatförändringar påverkar fjällen och dess ekosystemprocesser allt mer. Låglandsarter sprider sig in i fjällen och invasiva arter har spridit sig in i fjällområdet. Flera sjöar är försurade och kalkas för att gynna växt- och djurlivet. Inventering av fjällnära skogar har visat på höga biologiska värden, varför skydd av de fjällnära skogarna är av stor vikt. Fjällskogens kulturlämningar är däremot dåligt kända och sällan undersökta. Exploaterings- och besökstrycket ökar med markslitage, nedskräpning och störning av ren som följd.
+Klimatförändringar påverkar fjällen och dess ekosystemprocesser allt mer. Låglandsarter sprider sig in i fjällen och invasiva arter har spridit sig in i fjällområdet. Flera sjöar är försurade och kalkas för att gynna växt- och djurlivet. Inventering av fjällnära skogar har visat på höga biologiska värden, varför skydd av de fjällnära skogarna är av stor vikt. Fjällskogens kulturlämningar är däremot dåligt kända och sällan undersökta. Exploaterings- och besökstrycket ökar med markslitage, nedskräpning och störning av ren som följd.-->
+
 
 ## {-}
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
 
-## Beteenden som påverkar miljö och resursförbrukning i Dalarna{.tabset}
+## Val för minskad miljöpåverkan och resursförbrukning i Dalarna{.tabset}
 
-
-Förutsättningar för att ändra beteenden
-Utfall av förändrade beteenden
+För att minska miljöpåverkan och utsläppen av växthusgaser i Dalarna behöver vi kombinera teknisk omställning med förändrade beteenden i vardag och verksamheter. Dalastrategin pekar på att fossila bränslen ska fasas ut och ersättas av klimatneutrala lösningar, samtidigt som vi ökar takten i utsläppsminskningarna genom resurseffektiva val.
 
 
 <span class="big-indicator">
