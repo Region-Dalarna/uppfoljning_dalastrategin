@@ -309,21 +309,19 @@ Andelen personbilar som helt eller delvis drivs av el har ökat tydligt i Dalarn
 gg_elbilar$elbilar_Dalarna
 ```
 
-I ett nationellt perspektiv sticker framförallt Stockholms län ut, där mer än var 4:e personbil år `r elbilar_max_ar` var en ren elbil eller en laddhybrid. Bland övriga län är det framförallt storstadslän som Västra Götaland eller Skåne som har en relativt hög andel elbilar eller laddhybrider (mellan 10 och 15 procent). Lägst andel åtefinns i nordliga län som Norrbotten och Jämtland Härjedalen, men även Gotland har relativt få elbilar.
+I ett nationellt perspektiv sticker framförallt Stockholms län ut, där mer än var 4:e personbil år `r elbilar_max_ar` var en ren elbil eller en laddhybrid. Bland övriga län är det framförallt storstadslän som Västra Götaland och Skåne som har en relativt hög andel elbilar eller laddhybrider (mellan 10 och 15 procent). Lägst andel återfinns i nordliga län som Norrbotten och Jämtland Härjedalen, men även Gotland har relativt få elbilar.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_elbilar$elbilar_Sverige
 ```
 
--> Lägga till något om laddplatser och AGIR..
+Tillgång till publika laddplatser är även en del i förutsättningarna för att äga en elbil. På webbplatsen ["drivmedla.se"](https://drivmedla.se/){target="_blank"} finns information om utvecklingen av laddinfrastrukturen i länet och landet.
 
 
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
 
 
 ### Avfall{-}
-
-Invånarnas resursförbrukning är.. 
 
 En av prioriteringarna i Dalastrategin är att öka resurseffektiviteten i länet. Ett mått på resursförbrukning är mängden insamlat kommunalt avfall som kan antas motsvara invånarnas resursförbrukning. I det kommunala avfallet ingår det mesta avfall som ett hushåll producerar, så som mat- och restavfall, grov- och trädgårdsavfall och farligt avfall. Även förpackningar och batterier etc. som ingår i producentansvaret ingår i beräkningen. I sammanställningen nedan visas insamlat kommunalt avfall per person och år i Dalarna från `r avfall_min_ar` till `r avfall_max_ar`. År `r avfall_min_ar` samlades det in `r avfall_per_person_min_ar` kg avfall per person i Dalarna, att jämföra med ca `r avfall_per_person_max_ar` kg per person år `r avfall_max_ar`. En lägre mängd per person signalerar en lägre resursanvändning. I en nationell jämförelse ses att Stockholms län ligger bäst till med 384 kg per person och år, medan Kalmar ligger sämst till med över 517 kg per person och år - ej uppdaterat [(Kolada)](https://www.kolada.se/verktyg/fri-sokning/?kpis=61064&years=30200,30199,30198&municipals=27493,27494,27495,27496,27497,27498,27499,27500,27501,27502,27503,27504,27505,27506,27507,27508,27509,27510,27511,27512,27513&rows=municipal,kpi&visualization=bar-chart&focus=27508){target="_blank"}.
 
@@ -335,23 +333,28 @@ gg_avfall$avfall_Dalarna
 
 ### Klimatanpassning{-}
 
+Kommunala klimatanpassningsplaner utgör grunden för att utifrån geografin utforma en proaktiv motståndskraft mot de klimatförändringar som vi kan förutspå kommer men också förberedelse för det vi ännu inte kan förutspå.
+
+Svenska miljöinstitutet, IVL kartlägger kommunernas klimatanpassningsarbete genom en enkätundersökning. För Dalarna har 8 av 15 kommuner svarat med ett svarsspann på 5,5 till 26 poäng, och ett medelvärde på 16 poäng. Skalan går från 0-33 poäng där 33 är det mest positiva utfallet.
+
+
+Rapport och diagram:
+https://www.ivl.se/download/18.2e89e926197627f97b412441/1750166438874/Klimatanpassning-2025-lansvis-uppdelning.pdf
+
 Se https://www.klimatanalys.se/climate-stories
 
+På webbplatsen ["Klimatkalkylen"](https://klimatkalkylen.oawa.se/)
 
-Kommunala klimatanpassningsplaner utgör grunden för XX.
 
-IVL har 
 
 ## {-}
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
 
-## Förnybar elproduktion och ekonomiska värden av energi- och material och råvaror {.tabset}
+## Förnybar elproduktion och ekonomiska värden av material och råvaror {.tabset}
 
-
-De ekonomiska aspekterna av ett klimatsmart Dalarna handlar om hur vi tar tillvara naturresurserna och skapar återanvändning och självförsörjning inom planetära gränserna. 
+De ekonomiska aspekterna av ett klimatsmart Dalarna handlar om hur vi tar tillvara naturresurserna och skapar återanvändning och självförsörjning inom de planetära gränserna. 
 
 Sammanfatting.
-
 
 
 <span class="big-indicator">
@@ -373,9 +376,6 @@ Avfall / BRP <span style="color:red; font-size:1.8em; font-weight:900;">⬇</spa
 Självförsörjning av livsmedel och el <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
-
-
-
 
 
 Mer att läsa, tipsa här.
@@ -400,8 +400,6 @@ gg_energiproduktion$elproduktion_Dalarna
 
 Ett sätt att mäta den ekonomiska effektiviteten i energianvändningen är att sätta utsläppen som genereras i länet i relation till de ekonomiska värden som produceras med energin. En regions ekonomiska värdeproduktion mäts genom bruttoregionalprodukten (BRP). Energins ekonomiska effektivitet skattas sedan genom att beräkna förädlingsvärdet per ton koldioxidekvivalenter, vilket kopplar ihop utsläppen i länet med den ekonomiska aktiviteten. Att få ut ett större ekonomiskt värde av varje använd energienhet antas innebära en lägre miljöbelastning per producerad krona, och ses därför generellt som positivt. 
 
-En viktig frågeställning för tillväxtarbetet är om det är möjligt att ha en fortsatt ökad ekonomisk tillväxt och samtidigt minska energiförbrukningen och utsläppen i samhället, så pass att ekonomisk aktivitet inte orsakar miljöpåverkan. Detta kallas frikoppling och är något som det forskas om. Hittills visar resultaten på exempel där det är möjligt att minska energiproduktionens miljöpåverkan, men ännu inte helt frikoppla den. I forskningen synliggörs även dilemmat med den traditionella tillväxtmodellen som innebär en konstant utvinning av värden från naturresurser utan att hänsyn tas förvaltandet och vårdandet av naturresurser och ekosystemtjänster för att de långsiktigt ska ge en god kontinuerlig avkastning.
-
 I Dalarna utgörs samtidigt en stor del av näringslivet av tillverkande industri som förbrukar relativt sett stora mängder energi och driver därigenom upp mängden energi förbrukad per invånare.
 
 Ett ökat förädlingsvärde per mängd förbrukad energi i länet kan betyda att länet har förbättrat energieffektiviteten i de fall industrier och näringar är ungefär desamma mellan mätningarna. En förklaring till en förbättrad energieffektivitet kan annars vara att näringslivets struktur har förändrats i en riktning där energikrävande industrier har lämnat regionen och mer kunskapsintensiv tjänsteproduktion har ökat (som generellt kräver mindre energi). Om energikrävande industrier har lämnat regionen och skapar utsläpp i andra delar av världen är det tyvärr inte självklart att nettoeffekten på de globala utsläppen minskat, då de flesta andra länder har en svagare miljölagstiftning än Sverige.
@@ -412,12 +410,13 @@ Mellan `r energieffektivitet_min_ar` och `r energieffektivitet_max_ar` ökade en
 gg_energieffektivitet$energieffektivitet_Dalarna
 ```
 
-I en nationell jämförelse ligger Dalarnas energieffektivitet på den sämre halvan av intervallet tillsammans med regioner som också är mer glesbefolkade och har tunga industrier.
+I en nationell jämförelse ligger Dalarnas energieffektivitet på den sämre halvan av intervallet tillsammans med regioner som också är mer glest befolkade och har tunga industrier.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_energieffektivitet$energieffektivitet_alla_lan
 ```
 
+<!--En viktig frågeställning för tillväxtarbetet är om det är möjligt att ha en fortsatt ökad ekonomisk tillväxt och samtidigt minska energiförbrukningen och utsläppen i samhället, så pass att ekonomisk aktivitet inte orsakar miljöpåverkan. Detta kallas frikoppling och är något som det forskas om. Hittills visar resultaten på exempel där det är möjligt att minska energiproduktionens miljöpåverkan, men ännu inte helt frikoppla den. I forskningen synliggörs även dilemmat med den traditionella tillväxtmodellen som innebär en konstant utvinning av värden från naturresurser utan att hänsyn tas förvaltandet och vårdandet av naturresurser och ekosystemtjänster för att de långsiktigt ska ge en god kontinuerlig avkastning.-->
 
 ### Avfall/BRP{-}
 
@@ -462,7 +461,7 @@ I Dalarna finns företag och människor med idéer som kan bidra till att lösa 
 
 <hr style="border: none; height: 5px; background-color: #f8aab6; margin-top: 40px; margin-bottom: 40px;">
 
-## Arbetskraften, återväxt och kompetens {.tabset}
+## Arbetskraften, kompetens och återväxt {.tabset}
 
 Sammanfattning av avsnittet.
 
@@ -768,10 +767,15 @@ Använda BRP/sysselsatt resp. per BRP/capita, och diskutera utvecklingen..
 
 ### Regional export {-}
 
+Varuexportvärdet över tid, 200X- 2024.
+
+Besöksnäringen, 2025, besöksnätter.. Inkl. gästnätter från utlandet..? Danskar ca 40?? procent..
+
+
+till vilka länder exporterar vi?
+
 Anna/Peter tittar på denna.
 Diagram hämtas från..
-
-Inkl. gästnätter från utlandet..?
 
 
 
