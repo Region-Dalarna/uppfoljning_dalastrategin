@@ -491,11 +491,11 @@ Ohälsa <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 
 Läs mer om kompetensförsörjning i länet i SCB:s rapport ["Regionala Trender och Prognoser 2025 Med sikte på år 2040 Dalarnas län"](https://www.scb.se/contentassets/04cf1ee0f04b4c06a6e62d22d78e8d4c/dalarnas-lan-20251215.pdf){target="_blank"}
 
-### Arbetskraft och återväxt {-}
+### Arbetsför befolkning och återväxt {-}
 
-**Arbetskraften**
+**Arbetsför befolkning**
 
-Arbetskraften omfattar boende i Dalarna i åldern 20-64 år. Antalet inrikes födda invånare i arbetsför ålder har minskat från ungefär 145 000 personer år 2000 till cirka 124 000 år 2023. Samtidigt har en relativt stor invandring medfört att utrikes födda invånare i arbetsför ålder har ökat från ungefär 11 000 personer år 2000 till cirka 26 000 år 2023. De utrikes födda ökat har således inte ökat i samma omfattning som inrikes födda minskat, vilket leder till att befolkningen i arbetsför ålder som helhet krymper.
+Befolkning i arbetsför ålder omfattar boende i Dalarna i åldern 20-64 år (65 år från 2023 och 66 år från 2026). Antalet inrikes födda invånare i arbetsför ålder har minskat från ungefär 145 000 personer år 2000 till cirka 124 000 år 2023. Samtidigt har en relativt stor invandring medfört att utrikes födda invånare i arbetsför ålder har ökat från ungefär 11 000 personer år 2000 till cirka 26 000 år 2023. De utrikes födda ökat har således inte ökat i samma omfattning som inrikes födda minskat, vilket leder till att befolkningen i arbetsför ålder som helhet krymper. Den höjda pensionsåldern ökar antalet i arbetsför ålder.
 
 Figur 2 i kompetensrapporten - befolkning i arbetsför ålder 2000 - 2023X
 

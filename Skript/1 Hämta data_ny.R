@@ -539,6 +539,16 @@ gg_radsla <- diagram_radsla(output_mapp = output_mapp_figur,
                             returnera_data = TRUE,
                             spara_figur = spara_figurer)
 
+
+lupp_diagram_lista <- readRDS("G:/Samhällsanalys/Projekt och uppdrag/RUS/uppfoljning_webbrapport_data/ggobj_lupp_rusuppfoljning.rds")
+
+
+export_diagram_lista <- readRDS("G:/Samhällsanalys/Projekt och uppdrag/RUS/uppfoljning_webbrapport_data/ggobj_export_rusuppfoljning.rds")
+
+
+bidragsmottagare_diagram <- readRDS("G:/Samhällsanalys/Projekt och uppdrag/RUS/uppfoljning_webbrapport_data/ggobj_helarsekvivalenter_rusuppfoljning.rds")
+
+
 save.image(file = "G:/skript/projekt/environments/uppfoljning_dalastrategin.RData")
 
 end_time <- Sys.time()
