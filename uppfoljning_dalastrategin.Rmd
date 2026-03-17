@@ -536,6 +536,14 @@ Denna indikator mäter andelen elever i Dalarna som har fullföljt en gymnasieut
 gg_genomstromning_gym$genomstromning_gymnasiet_Dalarna
 ```
 
+Andel som vill läsa vidare..
+
+```{r, echo = FALSE}
+lupp_diagram_lista[["H_tror_läsa_vidare_gy_Kön_Hogstadiet_Gymnasiet_bo_Dalarna"]]
+```
+
+
+
 ### Invandrares arbetsetablering {-}
 
 Invandring är en del av lösningen för att möta en ökad efterfrågan på arbetskraft och rätt kompetens i Dalarna och Sverige. Dalarna har haft en relativt stor inflyttning av utomeuropeiskt födda under senare år. Många invandrade är i arbetsför ålder och blir därför ett viktigt tillskott till arbetskraften. Denna indikator är ett mått på i vilken takt och utsträckning som invandrade etablerar sig på arbetsmarknaden i Dalarna. Med etablering menas att personen är förvärvsarbetande helt utan stöd från a-kassa eller arbetsmarknadsåtgärd, eller dylikt.
@@ -755,9 +763,23 @@ Diagram, samma som i
 
 Diagram: Varuexportvärdet över tid, 200X- 2024.
 
+
+```r
+export_diagram_lista[["Varuexportvarde_lan_Dalarna"]]
+```
+
 Diagram: till vilka länder exporterar vi?
 
+
+```r
+export_diagram_lista[["Export_storsta_lander_Dalarna_ar"]]
+```
+
 Diagram: Utländska gästnätter, över tid.
+
+```r
+export_diagram_lista[["utl_gastnatter_Dalarna_2008_2025"]]
+```
 
 Besöksnäringen, 2025, besöksnätter.. Inkl. gästnätter från utlandet..? Danskar ca 40?? procent..
 
@@ -864,9 +886,15 @@ gg_sjukdomar_andel$`invanare_16-84_ar_med_allvarlig_psykisk_pafrestning_Dalarna_
 gg_sjukdomar_andel$`invanare_16-84_ar_med_allvarlig_psykisk_pafrestning_ar_2024`
 ```
 
-Unga som skattar sin hälsa som mycket eller ganska bra  (LUPP)
+Unga som skattar sin hälsa som mycket eller ganska bra (LUPP)
+
+```r
+lupp_diagram_lista[["F_mående_Kön_Hogstadiet_Gymnasiet_bo_Dalarna"]]
+```
+
 
 Andel unga som har svårt att somna i stort sett varje dag eller flera gånger i veckan efter kön, högstadiet och/eller gymnasiet (LUPP)
+
 
 Andel med lätta eller svåra sömnbesvär, efter utbildning och kön (HLV)
 
@@ -940,6 +968,12 @@ Avstår från att gå ut ensam av rädsla för att bli överfallen, rånad eller
 gg_radsla$radsla_Dalarna
 ```
 
+Andel elever som tycker att det stämmer helt eller till stor del att rasism förekommer på skolan, efter kön, högstadiet och/eller gymnasiet (LUPP)
+
+```r
+lupp_diagram_lista[["C_skola_rasism_Kön_Hogstadiet_Gymnasiet_skola_Dalarna"]]
+```
+
 **Bostadsinbrott**
 
 Anmälda bostadsinbrott..
@@ -1001,6 +1035,9 @@ Valdeltagande, gamla diagram.
 
 Ex. diagram över Unga som vill vara med och påverka i frågor som rör kommunen  (LUPP)
 
+```r 
+lupp_diagram_lista[["D_vill_påverka_Kön_Hogstadiet_Gymnasiet_bo_Dalarna"]]
+```
 
 ### Tillit{-}
 
@@ -1038,6 +1075,10 @@ Mer att läsa finns här.
 ### Skola och arbetsliv{-}
 
 Elever som tycker att det stämmer helt eller till stor del att de trivs med stämningen i skolan  (LUPP)
+
+```r
+lupp_diagram_lista[["C_skola_trivs_med_stämningen_Kön_Hogstadiet_Gymnasiet_skola_Dalarna"]]
+```
 
 Andel som alltid eller ofta känner sig trygg inför skoldagen efter kön (ELSA) Åk 4, åk 7 eller Åk 1 gymnasiet
 
@@ -1126,11 +1167,16 @@ gg_lag_ek_standard$andel_invånare_0_19_år_med_låg_ekonomisk_standard
 
 ### Bidragsmottagare{-}
 
+Helårsekvivalenter...
+
 De som behöver stöd för att leva ett drägligt liv.
 
 Peter?
 
-Lägg till diagrammet som vi använt.. 
+
+```r
+bidragsmottagare_diagram[["helarsekvivalenter_Dalarna_ar2014M01_2025M06"]]
+```
 
 
 
