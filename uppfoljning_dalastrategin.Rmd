@@ -538,8 +538,8 @@ gg_genomstromning_gym$genomstromning_gymnasiet_Dalarna
 
 Andel som vill läsa vidare..
 
-```{r, echo = FALSE}
-lupp_diagram_lista[["H_tror_läsa_vidare_gy_Kön_Hogstadiet_Gymnasiet_bo_Dalarna"]]
+```r,
+print(lupp_diagram_lista[["H_tror_läsa_vidare_gy_Kön_Hogstadiet_Gymnasiet_bo_Dalarna"]])
 ```
 
 
