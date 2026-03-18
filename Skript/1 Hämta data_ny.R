@@ -549,6 +549,7 @@ export_diagram_lista <- readRDS("G:/Samhällsanalys/Projekt och uppdrag/RUS/uppf
 bidragsmottagare_diagram <- readRDS("G:/Samhällsanalys/Projekt och uppdrag/RUS/uppfoljning_webbrapport_data/ggobj_helarsekvivalenter_rusuppfoljning.rds")
 
 
+
 save.image(file = "G:/skript/projekt/environments/uppfoljning_dalastrategin.RData")
 
 end_time <- Sys.time()
