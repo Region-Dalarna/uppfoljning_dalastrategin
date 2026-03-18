@@ -459,12 +459,12 @@ Den ekonomiska dimensionen av hållbarhet i det regionala utvecklingsarbetet han
 
 <hr style="border: none; height: 5px; background-color: #f8aab6; margin-top: 40px; margin-bottom: 40px;">
 
-## Arbetskraften, kompetens och återväxt {.tabset}
+## Befolkning och kompetens {.tabset}
 
 Sammanfattning av avsnittet.
 
 <span class="big-indicator">
-Arbetskraft och återväxt <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Arbetsför ålder och återväxt <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
@@ -498,6 +498,7 @@ Läs mer om kompetensförsörjning i länet i SCB:s rapport ["Regionala Trender 
 Befolkning i arbetsför ålder omfattar boende i Dalarna i åldern 20-64 år (65 år från 2023 och 66 år från 2026). Antalet inrikes födda invånare i arbetsför ålder har minskat från ungefär 145 000 personer år 2000 till cirka 124 000 år 2023. Samtidigt har en relativt stor invandring medfört att utrikes födda invånare i arbetsför ålder har ökat från ungefär 11 000 personer år 2000 till cirka 26 000 år 2023. De utrikes födda ökat har således inte ökat i samma omfattning som inrikes födda minskat, vilket leder till att befolkningen i arbetsför ålder som helhet krymper. Den höjda pensionsåldern ökar antalet i arbetsför ålder.
 
 Figur 2 i kompetensrapporten - befolkning i arbetsför ålder 2000 - 2023X
+
 
 **Återväxt**
 
@@ -538,10 +539,11 @@ gg_genomstromning_gym$genomstromning_gymnasiet_Dalarna
 
 Andel som vill läsa vidare..
 
+<!--
 ```r,
-print(lupp_diagram_lista[["H_tror_läsa_vidare_gy_Kön_Hogstadiet_Gymnasiet_bo_Dalarna"]])
+lupp_diagram_lista[["H_tror_läsa_vidare_gy_Kön_Hogstadiet_Gymnasiet_bo_Dalarna"]]
 ```
-
+-->
 
 
 ### Invandrares arbetsetablering {-}
@@ -567,7 +569,7 @@ En jämförelse mellan länen när det gäller möjligheten att ha etablerat sig
 gg_etableringstid$etablering_vistelsetid_allalan
 ```
 
-### Ohälsa{-}
+### Ohälsa/Frånvaro{-}
 
 Ohälsotalet (ev källa) mäter i vilken utsträckning personer är borta från arbetet på grund av nedsatt arbetsförmåga, mätt under ett års tid. 
 
@@ -582,7 +584,6 @@ gg_ohalsotal_sjp$ohalsotal_dalarna
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_ohalsotal_sjp$ohalsotal_kommun_dalarna
 ```
-
 
 
 ## {-}
@@ -625,6 +626,7 @@ Mer att läsa, tipsa här.
 
 ### Arbete och företagande {-}
 
+**Förvärsarbetande efter bransch**
 Figur 12 i Kompetensrapporten - förvärvsarbetande 1990-2023..
 Historiskt har tillverkning och utvinning varit den största branschen i Dalarna sett till antalet anställda, men vård och omsorg är idag störst. I diagrammet nedan är tillverkning och utvinning den tredje största branschen i Dalarna, men det beror på att branscherna handel och transport är sammanslagna baserat på branschgrupperingen 1990. Att tillverkning och utvinning minskat i antal anställda sedan 1990 är en förändring som återspeglar den allmänna trenden i många regioner där tjänstesektorn har fått ökad betydelse över tid. 
 
@@ -649,17 +651,8 @@ Från TVV - företagens villkor och verklighet, alt. Entreprenörskapsforums rap
 **Branscher där 
 
 
-### Infrastruktur{-}
+### Transportinfrastruktur{-}
 
-**Tillgång till bredband**
-
-Tillgång till en snabb och robust digital infrastruktur är för de flesta en grundförutsättning för att bo och verka i hela Dalarna. Fysiska och digitala mötesplatser gör att vi når både varandra och omvärlden. En av utmaningarna för Dalarna är en ojämnt fördelad digital infrastruktur. Att stärka och tillgängliggöra den digitala infrastrukturen för hela Dalarnas befolkning, oavsett plats, är avgörande för en lyckad digitalisering av samhället.
-
-I Dalarna har andelen av befolkningen med tillgång till, eller möjlighet att ansluta till, bredband om minst 1 Gbit/s ökat från ca `r andel_bredband_min` procent `r bredband_min_ar` till ca `r andel_bredband_max` procent `r bredband_max_ar`. Det kan jämföras med riksgenomsnittet som år `r bredband_max_ar` var `r andel_bredband_max_riket` procent. 
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_bredband$tillgang_bredband_Dalarna
-```
 
 **Tågens punktlighet**
 
@@ -697,13 +690,11 @@ gg_fp_vab$Foraldrapenning_andel_Dalarna
 
 ### Brottslighet{-} 
 
-Brottslighet drabbar företagandet på flera olika sätt. Ekonomisk brottslighet påverkar... 
-Bostadsinbrott...
-
 
 **Ekobrottslighet**
 
-Anmälda ekobrott...
+Brottslighet drabbar företagandet på flera olika sätt. Ekonomisk brottslighet påverkar... 
+Bostadsinbrott...Anmälda ekobrott...
 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
@@ -728,7 +719,7 @@ gg_fortroende_rattsvasande$fortroende_rattsvasande__sverige
 ## {-}
 <hr style="border: none; height: 5px; background-color: #f8aab6; margin-top: 40px; margin-bottom: 40px;">
 
-## Produktion, produktivitet och export {.tabset}
+## Produktivitet och export {.tabset}
 Sammanfattning av avsnittet här.
 
 <span class="big-indicator">
@@ -753,9 +744,10 @@ Regional export <span style="color:red; font-size:1.8em; font-weight:900;">⬇</
 
 ### Bruttoregionalprodukten {-} 
 
-Använda BRP/sysselsatt resp. per BRP/capita, och diskutera utvecklingen..
+BRP/sysselsatt och diskutera utvecklingen..
 
-Diagram, samma som i 
+
+Diagram
 
 
 
@@ -770,7 +762,7 @@ export_diagram_lista[["Varuexportvarde_lan_Dalarna"]]
 
 Diagram: till vilka länder exporterar vi?
 
-
+<!--
 ```r
 export_diagram_lista[["Export_storsta_lander_Dalarna_ar"]]
 ```
@@ -783,6 +775,7 @@ export_diagram_lista[["utl_gastnatter_Dalarna_2008_2025"]]
 
 Besöksnäringen, 2025, besöksnätter.. Inkl. gästnätter från utlandet..? Danskar ca 40?? procent..
 
+-->
 
 Anna/Peter tittar på denna.
 Diagram hämtas från..
@@ -888,16 +881,18 @@ gg_sjukdomar_andel$`invanare_16-84_ar_med_allvarlig_psykisk_pafrestning_ar_2024`
 
 Unga som skattar sin hälsa som mycket eller ganska bra (LUPP)
 
+<!--
 ```r
 lupp_diagram_lista[["F_mående_Kön_Hogstadiet_Gymnasiet_bo_Dalarna"]]
 ```
+-->
 
-
+<!--
 Andel unga som har svårt att somna i stort sett varje dag eller flera gånger i veckan efter kön, högstadiet och/eller gymnasiet (LUPP)
 
 
 Andel med lätta eller svåra sömnbesvär, efter utbildning och kön (HLV)
-
+-->
 
 ### Folksjukdomar{-}
 
@@ -960,8 +955,10 @@ gg_anmalda_brott$`anmalda_stold-_och_tillgreppsbrott_Dalarna`
 ```
 
 
-### Upplevd trygghet{-}
+### Trygghet{-}
 
+
+**Upplevd trygghet**
 Avstår från att gå ut ensam av rädsla för att bli överfallen, rånad eller på annat sätt ofredad, efter utbildningsnivå och kön (HLV)
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
@@ -970,9 +967,11 @@ gg_radsla$radsla_Dalarna
 
 Andel elever som tycker att det stämmer helt eller till stor del att rasism förekommer på skolan, efter kön, högstadiet och/eller gymnasiet (LUPP)
 
+<!--
 ```r
 lupp_diagram_lista[["C_skola_rasism_Kön_Hogstadiet_Gymnasiet_skola_Dalarna"]]
 ```
+-->
 
 **Bostadsinbrott**
 
@@ -983,8 +982,9 @@ gg_anmalda_brott$anmalda_bostadsinbrott_Dalarna
 ```
 
 
-
+<!--
 Andel elever som alltid eller ofta känner sig trygga på sociala medier, efter kön (7:e klass och/eller Åk 1 gymnasiet) 
+-->
 
 Andel elever som tycker att det stämmer helt eller till stor del att rasism förekommer på skolan, efter kön, högstadiet och/eller gymnasiet (LUPP)
 
@@ -1031,13 +1031,15 @@ Mer att läsa finns här:
 
 ### Valdeltagande och samhällsengagemang{-}
 
-Valdeltagande, gamla diagram.
+Valdeltagande, samma som i gamla rapporten.
+
 
 Ex. diagram över Unga som vill vara med och påverka i frågor som rör kommunen  (LUPP)
-
+<!--
 ```r 
 lupp_diagram_lista[["D_vill_påverka_Kön_Hogstadiet_Gymnasiet_bo_Dalarna"]]
 ```
+-->
 
 ### Tillit{-}
 
@@ -1061,24 +1063,44 @@ gg_tillit$tillit_Dalarna
 (LOK, kulturskola)
 
 RF statistik.
+
 Kolada elever i kulturskolan.
 
 
 Mer att läsa finns här.
 
 
-### Tillgång fysiskt: bibliotek, skola, service{-}
+### Tillgång fysiskt: bredband, skola, service, bibliotek {-}
 
 Mer att läsa finns här.
+
+**Tillgång till butik och grundskola**
+
+Samma diagram som i gamla rapporten.
+
+
+**Tillgång till bredband**
+
+Tillgång till en snabb och robust digital infrastruktur är för de flesta en grundförutsättning för att bo och verka i hela Dalarna. Fysiska och digitala mötesplatser gör att vi når både varandra och omvärlden. En av utmaningarna för Dalarna är en ojämnt fördelad digital infrastruktur. Att stärka och tillgängliggöra den digitala infrastrukturen för hela Dalarnas befolkning, oavsett plats, är avgörande för en lyckad digitalisering av samhället.
+
+I Dalarna har andelen av befolkningen med tillgång till, eller möjlighet att ansluta till, bredband om minst 1 Gbit/s ökat från ca `r andel_bredband_min` procent `r bredband_min_ar` till ca `r andel_bredband_max` procent `r bredband_max_ar`. Det kan jämföras med riksgenomsnittet som år `r bredband_max_ar` var `r andel_bredband_max_riket` procent. 
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_bredband$tillgang_bredband_Dalarna
+```
+
+Bibliotek?
 
 
 ### Skola och arbetsliv{-}
 
 Elever som tycker att det stämmer helt eller till stor del att de trivs med stämningen i skolan  (LUPP)
 
+<!--
 ```r
 lupp_diagram_lista[["C_skola_trivs_med_stämningen_Kön_Hogstadiet_Gymnasiet_skola_Dalarna"]]
 ```
+-->
 
 Andel som alltid eller ofta känner sig trygg inför skoldagen efter kön (ELSA) Åk 4, åk 7 eller Åk 1 gymnasiet
 
