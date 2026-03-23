@@ -129,11 +129,11 @@ gg_avfall <- diagram_avfall(region_vekt = "20",
                             ggobjektfilnamn_utan_tid = TRUE,
                             spara_figur = spara_figurer)
 
-avfall_min_ar <- min(avfall_df$ar)
-avfall_max_ar <- max(avfall_df$ar)
+avfall_min_ar <- min(avfall_df %>% filter(variabel_kort== "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$ar)
+avfall_max_ar <- max(avfall_df %>% filter(variabel_kort== "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$ar)
 
-avfall_per_person_min_ar <- avfall_df %>% filter(ar == min(ar),variabel_kort == "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$varde
-avfall_per_person_max_ar <- round(avfall_df %>% filter(ar == max(ar),variabel_kort == "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$varde,0)
+avfall_per_person_min_ar <- avfall_df %>% filter(ar == avfall_min_ar,variabel_kort == "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$varde
+avfall_per_person_max_ar <- round(avfall_df %>% filter(ar == avfall_max_ar,variabel_kort == "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$varde,0)
 
 avfall_brp_min_ar <- min(avfall_brp_df$ar)
 avfall_brp_max_ar <- max(avfall_brp_df$ar)
