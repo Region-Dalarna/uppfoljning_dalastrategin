@@ -540,14 +540,21 @@ gg_radsla <- diagram_radsla(output_mapp = output_mapp_figur,
                             spara_figur = spara_figurer)
 
 
-source("G:/skript/diagram/diagram_rus_uppfoljning_lupp.R")
+# G:\skript\projekt\uppfoljning_rus
+source("G:/skript/projekt/uppfoljning_rus/diagram_rus_uppfoljning_lupp.R")
 lupp_diagram_lista <- diag_rus_lupp()
 
 
-export_diagram_lista <- readRDS("G:/Samhällsanalys/Projekt och uppdrag/RUS/uppfoljning_webbrapport_data/ggobj_export_rusuppfoljning.rds")
+source("G:/skript/projekt/uppfoljning_rus/export_gastnatter.R")
+export_diagram_lista <- diag_export_gastnatter()
 
+#export_diagram_lista <- readRDS("G:/Samhällsanalys/Projekt och uppdrag/RUS/uppfoljning_webbrapport_data/ggobj_export_rusuppfoljning.rds")
 
-bidragsmottagare_diagram <- readRDS("G:/Samhällsanalys/Projekt och uppdrag/RUS/uppfoljning_webbrapport_data/ggobj_helarsekvivalenter_rusuppfoljning.rds")
+source("https://raw.githubusercontent.com/Region-Dalarna/diagram/main/diag_helarsekvivalenter_kon_scb.R")
+
+bidragsmottagare_diagram <- diag_helarsekvivalenter(region_vekt = "20",
+                                                    output_mapp = output_mapp_figur,
+                                                    skriv_diagramfil = spara_figurer)
 
 
 
