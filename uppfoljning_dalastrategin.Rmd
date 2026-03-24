@@ -537,13 +537,7 @@ Denna indikator mäter andelen elever i Dalarna som har fullföljt en gymnasieut
 gg_genomstromning_gym$genomstromning_gymnasiet_Dalarna
 ```
 
-Andel som vill läsa vidare..
 
-<!--
-```r,
-lupp_diagram_lista[["H_tror_läsa_vidare_gy_Kön_Hogstadiet_Gymnasiet_bo_Dalarna"]]
-```
--->
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 lupp_diagram_lista$H_tror_läsa_vidare_gy_Kön_Hogstadiet_Gymnasiet_bo_Dalarna
@@ -606,13 +600,9 @@ Företagande och arbete <span style="color:red; font-size:1.8em; font-weight:900
 </span>
 <br>
 
-<span class="big-indicator">
-Infrastrukturförutsättningar <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-<br>
 
 <span class="big-indicator">
-Jämställdhet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Könssegregering <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
@@ -623,6 +613,12 @@ Brottslighet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</spa
 
 <span class="big-indicator">
 Förtroende för rättsväsendet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+<br>
+
+
+<span class="big-indicator">
+Infrastrukturförutsättningar <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
@@ -646,6 +642,8 @@ Antalet nystartade företag per kommun i Dalarna visar att `r nystartade_kommun_
 gg_nyst_konk$nystartade
 ```
 
+### Infrastruktur{-}
+
 **Största hindren för tillväxt**
 
 Från TVV - företagens villkor och verklighet, alt. Entreprenörskapsforums rapport.
@@ -653,8 +651,6 @@ Från TVV - företagens villkor och verklighet, alt. Entreprenörskapsforums rap
 
 **Branscher där 
 
-
-### Transportinfrastruktur{-}
 
 
 **Tågens punktlighet**
@@ -668,7 +664,7 @@ Trafikanalys - Anna letar data.
 Status på vägar, restider, Anna letar data.
 
 
-### Jämställdhet {-}
+### Könssegregering {-}
 
 Sedan många år har kvinnor och män haft likvärdig tillgång till utbildning och möjlighet att fritt välja yrke. Trots detta består många av könsskillnaderna i arbetslivet. 
 
@@ -722,16 +718,17 @@ gg_fortroende_rattsvasande$fortroende_rattsvasande__sverige
 ## {-}
 <hr style="border: none; height: 5px; background-color: #f8aab6; margin-top: 40px; margin-bottom: 40px;">
 
-## Produktivitet och export {.tabset}
+## Ekonomiska värden, produktion och export {.tabset}
+
 Sammanfattning av avsnittet här.
 
 <span class="big-indicator">
-Bruttoregionalprodukten <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Regional produktion <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
 <span class="big-indicator">
-Löner/ inkomster kvinnor och män <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Inkomster kvinnor och män <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
@@ -740,18 +737,29 @@ Regional export <span style="color:red; font-size:1.8em; font-weight:900;">⬇</
 </span>
 <br>
 
+<!--
 <span class="big-indicator">
 Ägande, regionalt ägda ftg och utländskt <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
+-->
 
-### Bruttoregionalprodukten {-} 
+### Regional produktion {-} 
 
-BRP/sysselsatt och diskutera utvecklingen..
+Diagrammet visar utvecklingen av bruttoregionalprodukten (BRP) i Dalarna per sysselsatt i fasta priser (?). BRP är ett mått på det samlade värdet av alla varor och tjänster som produceras i länet under ett år. BRP ger en övergripande bild av ekonomins storlek och tillväxt och kan användas för att följa konjunkturförändringar och långsiktiga trender. Utvecklingen av värdet påverkas av både befolkningsutveckling och näringslivets struktur. Vid jmförelser över tid är även BRP per invånare viktigt då den samlade produktionen ska försörja samtliga i samhället...
 
 
-Diagram
+Diagram BRP/ sysselsatt
 
+
+
+### Inkomster kvinnor och män {-} 
+
+Ett centralt syfte med jämställdhetspolitiken är att motverka att arbetsinsatser värderas olika enbart på grund av vem som utför dem. 
+
+Hur värderas olika arbetsinsatser?
+
+Diagram från Kvinnor och män-rapporten.
 
 
 ### Regional export {-}
@@ -788,15 +796,13 @@ export_diagram_lista$Export_storsta_lander_Dalarna_ar
 export_diagram_lista$utl_gastnatter_Dalarna_2008_2025
 ```
 
-Anna/Peter tittar på denna.
-Diagram hämtas från..
 
-
-
+<!--
 ### Företagsägande {-}
 
 PAUS, Företag med huvudsäte i Dalarna
 Sysselsatta som arbetar i utlandsägda företag, omsättning arbetsställe per utlandsägt, inhemskt företag.
+-->
 
 
 ## {-}
