@@ -129,11 +129,11 @@ gg_avfall <- diagram_avfall(region_vekt = "20",
                             ggobjektfilnamn_utan_tid = TRUE,
                             spara_figur = spara_figurer)
 
-avfall_min_ar <- min(avfall_df$ar)
-avfall_max_ar <- max(avfall_df$ar)
+avfall_min_ar <- min(avfall_df %>% filter(variabel_kort== "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$ar)
+avfall_max_ar <- max(avfall_df %>% filter(variabel_kort== "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$ar)
 
-avfall_per_person_min_ar <- avfall_df %>% filter(ar == min(ar),variabel_kort == "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$varde
-avfall_per_person_max_ar <- round(avfall_df %>% filter(ar == max(ar),variabel_kort == "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$varde,0)
+avfall_per_person_min_ar <- avfall_df %>% filter(ar == avfall_min_ar,variabel_kort == "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$varde
+avfall_per_person_max_ar <- round(avfall_df %>% filter(ar == avfall_max_ar,variabel_kort == "Insamlat kommunalt avfall totalt, kg/invånare (justerat)") %>% .$varde,0)
 
 avfall_brp_min_ar <- min(avfall_brp_df$ar)
 avfall_brp_max_ar <- max(avfall_brp_df$ar)
@@ -540,14 +540,33 @@ gg_radsla <- diagram_radsla(output_mapp = output_mapp_figur,
                             spara_figur = spara_figurer)
 
 
+<<<<<<< HEAD
+=======
+# G:\skript\projekt\uppfoljning_rus
+>>>>>>> c6c8d31ab63193a1bfbe3cf6345eb3d0414b004c
 source("G:/skript/projekt/uppfoljning_rus/diagram_rus_uppfoljning_lupp.R")
 lupp_diagram_lista <- diag_rus_lupp()
 
 
+<<<<<<< HEAD
 export_diagram_lista <- readRDS("G:/skript/projekt/rus/ggobj_export_rusuppfoljning.rds")
+=======
+source("G:/skript/projekt/uppfoljning_rus/export_gastnatter.R")
+export_diagram_lista <- diag_export_gastnatter()
+>>>>>>> c6c8d31ab63193a1bfbe3cf6345eb3d0414b004c
 
+#export_diagram_lista <- readRDS("G:/Samhällsanalys/Projekt och uppdrag/RUS/uppfoljning_webbrapport_data/ggobj_export_rusuppfoljning.rds")
 
+<<<<<<< HEAD
 bidragsmottagare_diagram <- readRDS("G:/skript/projekt/rus/ggobj_helarsekvivalenter_rusuppfoljning.rds")
+=======
+source("https://raw.githubusercontent.com/Region-Dalarna/diagram/main/diag_helarsekvivalenter_kon_scb.R")
+
+bidragsmottagare_diagram <- diag_helarsekvivalenter(region_vekt = "20",
+                                                    output_mapp = output_mapp_figur,
+                                                    skriv_diagramfil = spara_figurer)
+
+>>>>>>> c6c8d31ab63193a1bfbe3cf6345eb3d0414b004c
 
 
 save.image(file = "G:/skript/projekt/environments/uppfoljning_dalastrategin.RData")
