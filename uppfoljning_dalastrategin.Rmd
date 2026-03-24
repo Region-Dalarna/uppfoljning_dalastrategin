@@ -183,7 +183,7 @@ Klimatförändringar påverkar fjällen och dess ekosystemprocesser allt mer. L�
 
 År 2018 beslutade dåvarande regering om Sveriges första nationella skogsprogram med fokus på skogsbrukets roll för en hållbar utveckling. I Dalastrategin omnämns skogsbruket som en av länets viktigare näringar, påverkar och påverkas av klimatförändringarna. Skötsel och brukande behöver därför anpassas utifrån rådande kunskap om vad som har minst miljöpåverkan.
 
-Skyddad produktiv skog, tillsammans med frivilliga avsättningar av produktiv skog utgör andelen som brukas på ett hållbart sätt. I diagrammen nedan redovisas hur andelen skyddad produktiv skogsmark i Dalarnas län utvecklats mellan `r ar_min_skogsmark` och `r ar_max_skogsmark`. Arealen skyddad skogsmark i länet har ökat med knappt `r areal_skogsmark_forandring_procent` procent över tidsperioden, från `r areal_skogsmark_min_ar` hektar år `r areal_skogsmark_max_ar` hektar år `r ar_max_skogsmark`.  
+Skyddad produktiv skog, tillsammans med frivilliga avsättningar av produktiv skog utgör andelen som brukas på ett hållbart sätt. I diagrammen nedan redovisas hur andelen skyddad produktiv skogsmark i Dalarnas län utvecklats mellan `r ar_min_skogsmark` och `r ar_max_skogsmark`. Arealen skyddad skogsmark i länet har ökat med knappt `r areal_skogsmark_forandring_procent` procent över tidsperioden, från `r areal_skogsmark_min_ar` hektar år `r ar_min_skogsmark` till `r areal_skogsmark_max_ar` hektar år `r ar_max_skogsmark`.  
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_skogsmark$areal_skyddad_skogsmark_Dalarna
@@ -267,7 +267,7 @@ Under flikarna hittar den som önskar fördjupad information om varje variabel.
 
 De klimatpåverkande växthusgaserna innefattar fler ämnen än koldioxid. Ett exempel är metangas som även är betydligt skadligare per enhet än koldioxid (1 ton metangas motsvarar utsläpp av ca 28 ton koldioxid). För att utsläppen som sker i Dalarna ska vara jämförbara med andra regioners utsläpp omsätts därför samtliga gasers utsläpp till så kallade koldioxidekvivalenter, det vill säga den mängd som varje ämne släpper ut omräknat i termer av koldioxid.
 
-I Dalarna har utvecklingen gått i positiv riktning med minskande utsläpp av växthusgaser under de senaste decennierna. Det är industri- och transportsektorerna som står för den volymmässigt största minskningen samtidigt som dessa sektorer, i likhet med övriga Sverige, står för den största andelen utsläpp av växthusgaser totalt sett i länet. Diagrammet visar även att utsläppen minskade tydligt under pandemiåret 2020, rimligtvis för att produktionstakten saktade in, men ökade år 2021. Under år 2022 minskade utsläppen återigen och var på den lägsta nivån sedan åtminstone 2005. Ska utsläppsmålen uppnås krävs dock en betydligt snabbare minskningstakt.  
+I Dalarna har utvecklingen gått i positiv riktning med minskande utsläpp av växthusgaser under de senaste decennierna. Det är industri- och transportsektorerna som står för den volymmässigt största minskningen samtidigt som dessa sektorer, i likhet med övriga Sverige, står för den största andelen utsläpp av växthusgaser totalt sett i länet. Diagrammet visar även att utsläppen minskade tydligt under pandemiåret 2020, rimligtvis för att produktionstakten saktade in, men ökade år 2021. Sedan år 2021 har utsläppen återigen minskat och var år 2023 på den lägsta nivån sedan åtminstone 2005. Minskningen mellan 2022 och 2023 var dock liten och ska utsläppsmålen uppnås krävs en betydligt snabbare minskningstakt.  
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_utslapp$utslapp_bransch_Dalarna
@@ -286,7 +286,7 @@ gg_utslapp$utslapp_per_capita_Dalarna
 
 Den utsträckta och relativt glesbefolkade geografin i Dalarna är utmaningar i arbetet med att skapa en hållbar transportinfrastruktur. För att transportsektorn ska nå klimat- och energimålen krävs kraftfull teknisk utveckling i kombination med beteendeförändringar så som minskad konsumtion av varor vars transporter orsakar höga utsläpp, ökad samåkning och minskat resande totalt sett. Kollektivt resande spelar en central roll för utvecklandet av en klimatsmart och resurseffektiv, men också mer jämlik, mobilitet. Kollektivtrafik bidrar både till miljönytta och samhällsekonomisk effektivitet men är också förenat med höga kostnader. För att klara omställningen krävs mod att ställa olika kostnader mot varandra. För att det kollektiva resandet ska öka behöver den traditionella kollektivtrafiken sannolikt kompletteras med nya mobilitetslösningar och tjänster, särskilt för länets mest glesbefolkade områden.
 
-Diagrammen redovisar indikatorer för kollektivt resande i Dalarna: Kollektivtrafiksresor per invånare samt marknadsandel för kollektivtrafik i länet. För antal resor per invånare syns att det kollektiva resandet har minskat avsevärt i Dalarna, från  `r resande_per_person_min_ar_varde ` resor per person och år `r resande_per_person_min_ar` till `r resande_per_person_max_ar_varde ` resor år `r resande_per_person_max_ar`. Nedgången kan delvis förklaras av pandemin - det sker en tydlig minskning mellan 2019 och 2020 - men även mellan 2012 och 2013 minskade antalet resor per invånare avsevärt i Dalarna. I en nationell jämförelse år 2024 framgår att det i glesbygdslänen i Sverige som mest görs runt 60 resor per person, medan det görs betydligt fler i storstadsregionerna, så som Skåne med i snitt 122 resor per person och år. I Stockholm där flest resor sker, görs 306 resor per person och år. I jämförelse med Sveriges övriga län görs näst minst antal resor med kollektivtrafik per invånare i Dalarna. Bara på Gotland görs färre resor ([Kolada](https://www.kolada.se/verktyg/fri-sokning/?kpis=40615&years=30201,30200,30199&municipals=27493,27494,27495,27496,27497,27498,27499,27500,27501,27502,27503,27504,27505,27506,27507,27508,27509,27510,27511,27512,27513&rows=municipal,kpi&visualization=bar-chart){target="_blank"}).
+Diagrammen redovisar indikatorer för kollektivt resande i Dalarna: Kollektivtrafiksresor per invånare samt marknadsandel för kollektivtrafik i länet. För antal resor per invånare syns att det kollektiva resandet har minskat avsevärt i Dalarna, från  48 resor per person och år 2010 till knappt `r resande_per_person_max_ar_varde ` resor år `r resande_per_person_max_ar`. Nedgången kan delvis förklaras av pandemin - det sker en tydlig minskning mellan 2019 och 2020 - men även mellan 2012 och 2013 minskade antalet resor per invånare avsevärt i Dalarna. I en nationell jämförelse år 2024 framgår att det i glesbygdslänen i Sverige som mest görs runt 60 resor per person, medan det görs betydligt fler i storstadsregionerna, så som Skåne med i snitt 122 resor per person och år. I Stockholm där flest resor sker, görs 306 resor per person och år. I jämförelse med Sveriges övriga län görs näst minst antal resor med kollektivtrafik per invånare i Dalarna. Bara på Gotland görs färre resor ([Kolada](https://www.kolada.se/verktyg/fri-sokning/?kpis=40615&years=30201,30200,30199&municipals=27493,27494,27495,27496,27497,27498,27499,27500,27501,27502,27503,27504,27505,27506,27507,27508,27509,27510,27511,27512,27513&rows=municipal,kpi&visualization=bar-chart){target="_blank"}).
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_kollektivt_resande$resor_per_invanare_Dalarna
@@ -303,7 +303,7 @@ gg_kollektivt_resande$marknadsandel_resande_Dalarna
 
 ### Elbilar{-}
 
-Andelen personbilar som helt eller delvis drivs av el har ökat tydligt i Dalarna på senare år. Fram till mitten av 2010-talet var andelen mer eller mindre obefintlig, men därefter har ökningen gått snabbt. Initialt ökade framförallt andelen laddhybrider, men på senare år har även andelen rena elbilar ökat kraftigt. Andelen är dock fortfarande relativt låg. År `r elbilar_max_ar` var ungefär `r elbilar_andel_max_ar_Dalarna` procent av personbilarna i Dalarna antingen rena elbilar eller laddhybrider.
+Andelen personbilar som helt eller delvis drivs av el har ökat tydligt i Dalarna på senare år. Fram till mitten av 2010-talet var andelen mer eller mindre obefintlig, men därefter har ökningen gått snabbt. Initialt ökade framförallt andelen laddhybrider, men på senare år har även andelen rena elbilar ökat kraftigt. Andelen är dock fortfarande relativt låg. År `r elbilar_max_ar` var knappt `r elbilar_andel_max_ar_Dalarna` procent av personbilarna i Dalarna antingen rena elbilar eller laddhybrider.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_elbilar$elbilar_Dalarna
@@ -323,7 +323,7 @@ Tillgång till publika laddplatser är även en del i förutsättningarna för a
 
 ### Avfall{-}
 
-En av prioriteringarna i Dalastrategin är att öka resurseffektiviteten i länet. Ett mått på resursförbrukning är mängden insamlat kommunalt avfall som kan antas motsvara invånarnas resursförbrukning. I det kommunala avfallet ingår det mesta avfall som ett hushåll producerar, så som mat- och restavfall, grov- och trädgårdsavfall och farligt avfall. Även förpackningar och batterier etc. som ingår i producentansvaret ingår i beräkningen. I sammanställningen nedan visas insamlat kommunalt avfall per person och år i Dalarna från `r avfall_min_ar` till `r avfall_max_ar`. År `r avfall_min_ar` samlades det in `r avfall_per_person_min_ar` kg avfall per person i Dalarna, att jämföra med ca `r avfall_per_person_max_ar` kg per person år `r avfall_max_ar`. En lägre mängd per person signalerar en lägre resursanvändning. I en nationell jämförelse ses att Stockholms län ligger bäst till med 384 kg per person och år, medan Kalmar ligger sämst till med över 517 kg per person och år - ej uppdaterat [(Kolada)](https://www.kolada.se/verktyg/fri-sokning/?kpis=61064&years=30200,30199,30198&municipals=27493,27494,27495,27496,27497,27498,27499,27500,27501,27502,27503,27504,27505,27506,27507,27508,27509,27510,27511,27512,27513&rows=municipal,kpi&visualization=bar-chart&focus=27508){target="_blank"}.
+En av prioriteringarna i Dalastrategin är att öka resurseffektiviteten i länet. Ett mått på resursförbrukning är mängden insamlat kommunalt avfall som kan antas motsvara invånarnas resursförbrukning. I det kommunala avfallet ingår det mesta avfall som ett hushåll producerar, så som mat- och restavfall, grov- och trädgårdsavfall och farligt avfall. Även förpackningar och batterier etc. som ingår i producentansvaret ingår i beräkningen. I sammanställningen nedan visas insamlat kommunalt avfall per person och år i Dalarna från `r avfall_min_ar` till `r avfall_max_ar`. År `r avfall_min_ar` samlades det in `r avfall_per_person_min_ar` kg avfall per person i Dalarna, att jämföra med ca `r avfall_per_person_max_ar` kg per person år `r avfall_max_ar`. En lägre mängd per person signalerar en lägre resursanvändning. I en nationell jämförelse ses att Stockholms län ligger bäst till med ungefär 388 kg per person och år, medan Värmland ligger sämst till med ca 511 kg per person och år.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_avfall$avfall_Dalarna
@@ -386,7 +386,7 @@ En god tillgång till hållbar energi är avgörande för näringslivets och hel
 
 Den regionalt producerade energin som omsätts till elektricitet i Dalarna omfattar vatten- och vindkraft samt övrigt, där vatten och vind är de huvudsakliga energikällorna. Det saknas dock statistik över vattenkraft enskilt för vissa år, varför kategorin vattenkraft och övrigt används i diagrammet nedan. I kategorin vattenkraft och övrigt ingår även solkraft som utgör en liten men växande andel över tid. Kategorin har beräknats som skillnaden mellan total elproduktion och elproduktion från vindkraft.
 
-Produktionen av el i Dalarna varierar mellan olika år, bland annat beroende på om det är torrår eller våtår (se exempelvis år 2018 som var ett ovanligt torrt år). I diagrammet visas mängden el producerad av vattenkraft och övrigt respektive vindkraft. Även om vattenkraft och övrigt står för merparten så är trenden tydlig att elproduktionen från vindkraft ökar, och har nästan tredubblats sedan första mätåret 2012. År `r elproduktion_min_ar` gav vindkraften ca `r elproduktion_vind_min_ar` MVh och år `r elproduktion_max_ar` gav den `r elproduktion_vind_max_ar` MVh. Betydelsen av vindkraft för den totala elproduktionen har därmed också ökat från att ha utgjort ca `r elproduktion_andel_min_ar` procent till att år `r elproduktion_max_ar` utgöra knappt `r elproduktion_andel_max_ar` procent av den totala produktionen. Efter att ha minskat under 2022, ökade elproduktionen tydligt i Dalarna under 2023, en ökning som helt kan tillskrivas en ökad produktion av vattenkraft och övrigt.
+Produktionen av el i Dalarna varierar mellan olika år, bland annat beroende på om det är torrår eller våtår (se exempelvis år 2018 som var ett ovanligt torrt år). I diagrammet visas mängden el producerad av vattenkraft och övrigt respektive vindkraft. Även om vattenkraft och övrigt står för merparten så är trenden tydlig att elproduktionen från vindkraft ökar, och har nästan tredubblats sedan första mätåret 2012. År `r elproduktion_min_ar` gav vindkraften ca `r elproduktion_vind_min_ar` MVh och år `r elproduktion_max_ar` gav den ungefär `r elproduktion_vind_max_ar` MVh. Betydelsen av vindkraft för den totala elproduktionen har därmed också ökat från att ha utgjort ca `r elproduktion_andel_min_ar` procent till att år `r elproduktion_max_ar` utgöra knappt `r elproduktion_andel_max_ar` procent av den totala produktionen. Efter att ha minskat under 2022, ökade elproduktionen tydligt i Dalarna under 2023 och var mer eller mindre oförändrad 2024. Den tydliga ökning 2023 kan helt tillskrivas en ökad produktion av vattenkraft och övrigt, medan produktionen från vindkraft ökade mellan 2023 och 2024.  
 
 Även elproduktionen från solkraft, som är en del av kategorin vattenkraft och övrigt i diagrammet nedan, har ökat tydligt i Dalarna på senare år, från ungefär `r elproduktion_sol_2021` MVh år 2021 till ca `r elproduktion_sol_max_ar` MVh år `r elproduktion_max_ar`. Trots ökningen stod solkraft bara för `r solkraft_andel_max_ar` procent av den totala elproduktionen i Dalarna år `r elproduktion_max_ar`.
 
@@ -439,7 +439,7 @@ Diagrammet nedan visar andelen livsmedel inom fem kategorier (fårkött, griskö
 gg_sjalvforsorjning$teoretisk_sjalvforsorjning_livsmedel_dalarna
 ```
 
-I diagrammet nedan visas en teoretisk beräkning av självförsörjning av elektricitet i Dalarna där den totala elproduktionen i länet visas som andel av den total elförbrukningen. Diagrammet visar en positiv trend för självförsörjningsgraden av elektricitet från `r sjalvforsorjning_el_min_ar_varde` procent år `r sjalvforsorjning_el_min_ar` till `r sjalvforsorjning_el_max_ar_varde` procent år `r sjalvforsorjning_el_max_ar`. Att självförsörjningsgraden ökade tydligt år 2023, då mer el producerades i länet än den som konsumerades, beror i första hand på en låg konsumtion av el, något som potentiellt delvis kan förklaras av Rysslands invasion av Ukraina och dess effekt på elpriserna. Konsumtionen av el var ovanligt låg även 2022, men då var även produktionen av el i länet ovanligt liten (se avsnitt 1.3 ovan).
+I diagrammet nedan visas en teoretisk beräkning av självförsörjning av elektricitet i Dalarna där den totala elproduktionen i länet visas som andel av den total elförbrukningen. Diagrammet visar en positiv trend för självförsörjningsgraden av elektricitet från `r sjalvforsorjning_el_min_ar_varde` procent år `r sjalvforsorjning_el_min_ar` till `r sjalvforsorjning_el_max_ar_varde` procent år `r sjalvforsorjning_el_max_ar`. Att självförsörjningsgraden har ökat tydlligt på senare år, mer el producerades i länet än den som konsumerades säväl 2023 som 2024, beror i första hand på att konsumtionen av el har minskat, något som potentiellt delvis kan förklaras av Rysslands invasion av Ukraina och dess effekt på elpriserna. Konsumtionen av el var ovanligt låg även 2022, men då var även produktionen av el i länet ovanligt liten (se fliken förnybar elproduktion).
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_sjalvforsorjning$teoretisk_sjalvforsorjning_el_Dalarna
@@ -531,7 +531,7 @@ gg_utb_niva_senaste$utbildningsniva_Dalarna_senaste_ar
 
 Kunskap ger människor möjlighet att växa och påverka sin livssituation. Tillgång till utbildning, kunskap och bildning är avgörande för såväl utvecklingen av samhället, som god välfärd och tillväxt i näringslivet. När arbetsgivare inte hittar rätt kompetens hämmas den ekonomiska utvecklingen. Samtidigt försvagas den sociala hållbarheten när människor ställs utanför arbetsmarknaden. Befolkningens relativt sett låga utbildningsnivåer är en utmaning i stora delar av Dalarna. Ambitionen i Dalastrategin är att fler ska klara en gymnasieexamen för att därmed få bättre förutsättningar att etablera sig på arbetsmarknaden.
 
-Denna indikator mäter andelen elever i Dalarna som har fullföljt en gymnasieutbildning inom fyra år efter att de påbörjat gymnasiet. Sett över hela tidsperioden `r gymnasiet_min_lasar` till `r gymnasiet_max_lasar` finns det en positiv trend, även om andelen fluktuerar mellan åren. Av eleverna som började läsa på gymnasiet i Dalarna läsåret `r gymnasiet_min_lasar` var det `r gymnasiet_min_lasar_andel` procent som inom fyra år fullföljde sin utbildning med examen. Den lägsta andelen avklarade examen om `r gymnasiet_lagst_avklarat_andel` procent uppmättes för dem som påbörjade gymnasiet läsåret `r gymnasiet_lagst_avklarat_lasar` (möjligen en pandemieffekt), samtidigt som den högsta andelen avklarade examen finns bland de elever som påbörjade gymnasiet läsåret `r gymnasiet_hogst_avklarat_lasar`, `r gymnasiet_hogst_avklarat_andel` procent av dem har tagit ut examen inom fyra år.
+Denna indikator mäter andelen elever i Dalarna som har fullföljt en gymnasieutbildning inom fyra år efter att de påbörjat gymnasiet. Sett över hela tidsperioden `r gymnasiet_min_lasar` till `r gymnasiet_max_lasar` är andelen oförändrad, även om den fluktuerar mellan åren. Av eleverna som började läsa på gymnasiet i Dalarna läsåret `r gymnasiet_min_lasar` var det `r gymnasiet_min_lasar_andel` procent som inom fyra år fullföljde sin utbildning med examen. Den lägsta andelen avklarade examen om `r gymnasiet_lagst_avklarat_andel` procent uppmättes för dem som påbörjade gymnasiet läsåret `r gymnasiet_lagst_avklarat_lasar` (möjligen en pandemieffekt), samtidigt som den högsta andelen avklarade examen finns bland de elever som påbörjade gymnasiet läsåret `r gymnasiet_hogst_avklarat_lasar`, `r gymnasiet_hogst_avklarat_andel` procent av dem har tagit ut examen inom fyra år.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_genomstromning_gym$genomstromning_gymnasiet_Dalarna
@@ -544,6 +544,10 @@ Andel som vill läsa vidare..
 lupp_diagram_lista[["H_tror_läsa_vidare_gy_Kön_Hogstadiet_Gymnasiet_bo_Dalarna"]]
 ```
 -->
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+lupp_diagram_lista$H_tror_läsa_vidare_gy_Kön_Hogstadiet_Gymnasiet_bo_Dalarna
+```
 
 
 ### Invandrares arbetsetablering {-}
@@ -627,7 +631,6 @@ Mer att läsa, tipsa här.
 ### Arbete och företagande {-}
 
 **Förvärsarbetande efter bransch**
-Figur 12 i Kompetensrapporten - förvärvsarbetande 1990-2023..
 Historiskt har tillverkning och utvinning varit den största branschen i Dalarna sett till antalet anställda, men vård och omsorg är idag störst. I diagrammet nedan är tillverkning och utvinning den tredje största branschen i Dalarna, men det beror på att branscherna handel och transport är sammanslagna baserat på branschgrupperingen 1990. Att tillverkning och utvinning minskat i antal anställda sedan 1990 är en förändring som återspeglar den allmänna trenden i många regioner där tjänstesektorn har fått ökad betydelse över tid. 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
@@ -682,7 +685,7 @@ gg_antal_forv$antal_per_bransch
 
 **Föräldrapenning**
 
-Fördelningen av dagar mellan vårdnadshavarna har jämnats ut något sedan slutet av 1990-talet då runt 85-90 procent av föräldrapenningdagarna togs ut av mammorna. Sedan dess har först en (1995), sedan två (2002) och även tre månader (2016) reserverats åt respektive vårdnadshavare (också kallade "pappamånader"). Detta har bidragit till ett jämnare uttag men utvecklingen får ändå sägas gå relativt trögt, då kvinnors andel endast har minskat till runt `r round(as.numeric(foraldrapenning_df %>% filter(Region == "Dalarnas län", Kön == "Kvinnor", År == max(År)) %>% .$Andel),0)` procent `r max(foraldrapenning_df$År)`. Svenska vårdnadshavare är således långt ifrån att ge sina barn en jämställd tillgång till sina föräldrar. Skillnaden i uttag påverkar också den disponibla inkomsten, som beskrivits under rubriken Ekonomisk jämställdhet. Skillnaden är som störst mellan sammanboende kvinnor och män när det yngsta barnet är 0–3 år [(Regeringen, 2022)](<https://www.regeringen.se/contentassets/46945970585240a4a5bfd9a0f75ecf3d/ekonomisk-jamstalldhet.pdf>){target="_blank"}.
+Fördelningen av dagar mellan vårdnadshavarna har jämnats ut något sedan slutet av 1990-talet då runt 85-90 procent av föräldrapenningdagarna togs ut av mammorna. Sedan dess har först en (1995), sedan två (2002) och även tre månader (2016) reserverats åt respektive vårdnadshavare (också kallade "pappamånader"). Detta har bidragit till ett jämnare uttag men utvecklingen får ändå sägas gå relativt trögt, då kvinnors andel endast har minskat till runt `r round(as.numeric(foraldrapenning_df %>% filter(Region == "Dalarnas län", Kön == "Kvinnor", År == max(År)) %>% .$Andel),0)` procent `r max(foraldrapenning_df$År)`. Svenska vårdnadshavare är således långt ifrån att ge sina barn en jämställd tillgång till sina föräldrar. Skillnaden i uttag påverkar också den disponibla inkomsten. Skillnaden är som störst mellan sammanboende kvinnor och män när det yngsta barnet är 0–3 år [(Regeringen, 2022)](<https://www.regeringen.se/contentassets/46945970585240a4a5bfd9a0f75ecf3d/ekonomisk-jamstalldhet.pdf>){target="_blank"}.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_fp_vab$Foraldrapenning_andel_Dalarna
@@ -756,9 +759,10 @@ Diagram
 Diagram: Varuexportvärdet över tid, 200X- 2024.
 
 
-```r
-export_diagram_lista[["Varuexportvarde_lan_Dalarna"]]
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+export_diagram_lista$Varuexportvarde_lan_Dalarna
 ```
+
 
 Diagram: till vilka länder exporterar vi?
 
@@ -776,6 +780,13 @@ export_diagram_lista[["utl_gastnatter_Dalarna_2008_2025"]]
 Besöksnäringen, 2025, besöksnätter.. Inkl. gästnätter från utlandet..? Danskar ca 40?? procent..
 
 -->
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+export_diagram_lista$Export_storsta_lander_Dalarna_ar
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+export_diagram_lista$utl_gastnatter_Dalarna_2008_2025
+```
 
 Anna/Peter tittar på denna.
 Diagram hämtas från..
@@ -887,6 +898,10 @@ lupp_diagram_lista[["F_mående_Kön_Hogstadiet_Gymnasiet_bo_Dalarna"]]
 ```
 -->
 
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+lupp_diagram_lista$F_mående_Kön_Hogstadiet_Gymnasiet_bo_Dalarna
+```
+
 <!--
 Andel unga som har svårt att somna i stort sett varje dag eller flera gånger i veckan efter kön, högstadiet och/eller gymnasiet (LUPP)
 
@@ -973,6 +988,10 @@ lupp_diagram_lista[["C_skola_rasism_Kön_Hogstadiet_Gymnasiet_skola_Dalarna"]]
 ```
 -->
 
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+lupp_diagram_lista$C_skola_rasism_Kön_Hogstadiet_Gymnasiet_skola_Dalarna
+```
+
 **Bostadsinbrott**
 
 Anmälda bostadsinbrott..
@@ -1041,6 +1060,10 @@ lupp_diagram_lista[["D_vill_påverka_Kön_Hogstadiet_Gymnasiet_bo_Dalarna"]]
 ```
 -->
 
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+lupp_diagram_lista$D_vill_påverka_Kön_Hogstadiet_Gymnasiet_bo_Dalarna
+```
+
 ### Tillit{-}
 
 Tillit till andra människor efter utbildningsnivå och kön (HLV)
@@ -1052,7 +1075,7 @@ Det är människorna i Dalarna som skapar regionen – alla enskilda individer b
 
 Indikatorn för tillit mäter andel (%) invånare 16-84 år som i en enkätundersökning har uppgett att de anser sig sakna tillit till andra. Värdet är beräknat som medelvärdet över en fyraårsperiod. Mellan tidsperioden `r tillit_min_period` och `r tillit_max_period` visar det sig att andelen som anser sig sakna tillit har ökat något, från `r tillit_min_period_varde` procent  till `r tillit_max_period_varde` procent. Under intervallet har däremot andelen under perioden 2007 till 2015 varit lägre mellan 23 och 25 procent. Andelen kvinnor som saknar tillit till andra har varit högre än andelen män som saknar tillit till andra fram till ungefär år 2015. Sedan år 2015 är mönstret inte längre entydigt, och det senaste året `r tillit_senaste_ar` uppgav en större andel män, än kvinnor, att de saknade tillit till andra.
 
-Andelen som säger sig sakna tillit utgör ungefär `r  tillit_senaste_ar` procent av invånarna, samtidigt som det framkommer i folkhälsoenkäten att ca 20 procent av invånarna aldrig eller väldigt sällan deltog i sociala sammankomster före pandemin, och att andelen har ökat till ca `r lagt_soc_deltagande_senaste_ar_varde` procent av invånarna efter pandemin år `r lagt_soc_deltagande_senaste_ar`. Att delta i olika typer av sociala sammankomster är en byggsten för att skapa sammanhang och i förlängningen tillit.
+Andelen som säger sig sakna tillit utgör ungefär `r  tillit_max_period_varde` procent av invånarna, samtidigt som det framkommer i folkhälsoenkäten att ca 20 procent av invånarna aldrig eller väldigt sällan deltog i sociala sammankomster före pandemin, och att andelen har ökat till ca `r lagt_soc_deltagande_senaste_ar_varde` procent av invånarna efter pandemin år `r lagt_soc_deltagande_senaste_ar`. Att delta i olika typer av sociala sammankomster är en byggsten för att skapa sammanhang och i förlängningen tillit.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_tillit$tillit_Dalarna
@@ -1101,6 +1124,10 @@ Elever som tycker att det stämmer helt eller till stor del att de trivs med st�
 lupp_diagram_lista[["C_skola_trivs_med_stämningen_Kön_Hogstadiet_Gymnasiet_skola_Dalarna"]]
 ```
 -->
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+lupp_diagram_lista$C_skola_trivs_med_stämningen_Kön_Hogstadiet_Gymnasiet_skola_Dalarna
+```
 
 Andel som alltid eller ofta känner sig trygg inför skoldagen efter kön (ELSA) Åk 4, åk 7 eller Åk 1 gymnasiet
 
@@ -1181,7 +1208,7 @@ I diagrammet nedan kan vi notera att andelen unga (0-19 år) som lever i hushål
 gg_lag_ek_standard$andel_invånare_0_19_år_med_låg_ekonomisk_standard_i_dalarna
 ```
 
-I ett nationellt perspektiv ser vi att endast fem andra län har en högre andel unga som lever i hushåll med låg ekonomisk standard än vad Dalarna har.
+I ett nationellt perspektiv ser vi att endast sex andra län har en högre andel unga som lever i hushåll med låg ekonomisk standard än vad Dalarna har.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_lag_ek_standard$andel_invånare_0_19_år_med_låg_ekonomisk_standard
@@ -1193,13 +1220,9 @@ Helårsekvivalenter...
 
 De som behöver stöd för att leva ett drägligt liv.
 
-Peter?
-
-
-```r
-bidragsmottagare_diagram[["helarsekvivalenter_Dalarna_ar2014M01_2025M06"]]
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+bidragsmottagare_diagram[[1]]
 ```
-
 
 
 ### Kapitalvinster/förluster {-}
