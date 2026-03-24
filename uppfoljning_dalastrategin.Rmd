@@ -762,6 +762,20 @@ Hur värderas olika arbetsinsatser?
 Diagram från Kvinnor och män-rapporten.
 
 
+**Inkomstskillnader mellan könen**
+
+En egen inkomst är en av förutsättningarna för ett ekonomiskt självständigt liv. Livsinkomsten påverkar även vilken pension personen kommer att få efter arbetslivet. 
+
+För kvinnor och män i Dalarna i arbetsför ålder (20-64 år) är inkomstskillnaderna relativt stora och skillnaderna har hållit i sig över tid. Medianinkomsten för en man i Dalarna var `r inkomst_max_ar` cirka `r medianinkomst_man_max_20_64` tusen kronor före skatt, medan en kvinna hade en medianinkomst på ungefär `r medianinkomst_kvinna_max_20_64` tusen kronor. I den andra figuren nedan syns även en positiv utveckling i form av att den relativa skillnaden i inkomst mellan könen har minskat sedan millennieskiftet. Diagrammet visar att kvinnors medianinkomst har ökat med `r medianinkomst_kvinna_forandring_20_64` procent sedan slutet millennieskiftet, medan mäns har ökat med ungefär `r medianinkomst_man_forandring_20_64` procent. Det är dock viktigt att notera att figurerna nedan endast redovisar kvinnors och mäns skilda ekonomiska förutsättningar, medan det kan finnas flera förklaringar till skillnaden. En faktor är att kvinnor i högre grad arbetar deltid, och därför kan ha en lägre årsinkomst. Men även yrke, bransch och utbildningsinriktning kan förklara en del av skillnaden. 
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_inkomst$Medianinkomst_20_64_Dalarna_tid
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_inkomst$Medianinkomst_20_64_Dalarna_tid_linje
+```
+
 ### Regional export {-}
 
 Diagram: Varuexportvärdet över tid, 200X- 2024.
@@ -1014,6 +1028,7 @@ Andel elever som alltid eller ofta känner sig trygga på sociala medier, efter 
 Andel elever som tycker att det stämmer helt eller till stor del att rasism förekommer på skolan, efter kön, högstadiet och/eller gymnasiet (LUPP)
 
 
+
 ## {-}
 <hr style="border: none; height: 5px; background-color: #ffec9f; margin-top: 40px; margin-bottom: 40px;">
 
@@ -1070,22 +1085,7 @@ lupp_diagram_lista[["D_vill_påverka_Kön_Hogstadiet_Gymnasiet_bo_Dalarna"]]
 lupp_diagram_lista$D_vill_påverka_Kön_Hogstadiet_Gymnasiet_bo_Dalarna
 ```
 
-### Tillit{-}
 
-Tillit till andra människor efter utbildningsnivå och kön (HLV)
-
-Tillit till samhällsfunktioner efter utbildningsnivå och kön (HLV, ny design från och med 2024)
-
-
-Det är människorna i Dalarna som skapar regionen – alla enskilda individer boende i länet, som också är del av familjer och av andra gemenskaper, organisationer och företag. Människors känsla av sammanhang och delaktighet är centralt för att skapa ett väl fungerande samhälle. För att skapa sammanhang och delaktighet behövs tillit mellan dem som ingår i gemenskapen, och det behövs sätt att hantera osäkerhet som kan uppstå när nya medlemmar inkluderas i en gemenskap. Socialt kapital beskriver det kitt som uppstår när en grupp människor enas kring gemensamma värden, normer och värderingar, det får människor att ha tillit till sina medmänniskor och till det gemensamma. Att den representativa demokratins institutioner, såsom kommuner, region och myndigheter, är väl fungerande och att invånarna har förtroende för dem är centralt för en levande demokrati. En stark tillit till andra underlättar samarbetet mellan människor och viljan och förmågan att bidra med nya idéer till samhällsutvecklingen. Ett samhälle med ett starkt socialt kapital är bättre rustat för att möta förändringar och eventuella kriser.
-
-Indikatorn för tillit mäter andel (%) invånare 16-84 år som i en enkätundersökning har uppgett att de anser sig sakna tillit till andra. Värdet är beräknat som medelvärdet över en fyraårsperiod. Mellan tidsperioden `r tillit_min_period` och `r tillit_max_period` visar det sig att andelen som anser sig sakna tillit har ökat något, från `r tillit_min_period_varde` procent  till `r tillit_max_period_varde` procent. Under intervallet har däremot andelen under perioden 2007 till 2015 varit lägre mellan 23 och 25 procent. Andelen kvinnor som saknar tillit till andra har varit högre än andelen män som saknar tillit till andra fram till ungefär år 2015. Sedan år 2015 är mönstret inte längre entydigt, och det senaste året `r tillit_senaste_ar` uppgav en större andel män, än kvinnor, att de saknade tillit till andra.
-
-Andelen som säger sig sakna tillit utgör ungefär `r  tillit_max_period_varde` procent av invånarna, samtidigt som det framkommer i folkhälsoenkäten att ca 20 procent av invånarna aldrig eller väldigt sällan deltog i sociala sammankomster före pandemin, och att andelen har ökat till ca `r lagt_soc_deltagande_senaste_ar_varde` procent av invånarna efter pandemin år `r lagt_soc_deltagande_senaste_ar`. Att delta i olika typer av sociala sammankomster är en byggsten för att skapa sammanhang och i förlängningen tillit.
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_tillit$tillit_Dalarna
-```
 
 ### Kultur/fritid{-}
 
@@ -1094,6 +1094,8 @@ gg_tillit$tillit_Dalarna
 RF statistik.
 
 Kolada elever i kulturskolan.
+
+Biblioteksstatistik: Genomsnitt per låntagare och andel befolkning som aldrig lånar böcker...
 
 
 Mer att läsa finns här.
@@ -1112,7 +1114,10 @@ Samma diagram som i gamla rapporten.
 
 Tillgång till en snabb och robust digital infrastruktur är för de flesta en grundförutsättning för att bo och verka i hela Dalarna. Fysiska och digitala mötesplatser gör att vi når både varandra och omvärlden. En av utmaningarna för Dalarna är en ojämnt fördelad digital infrastruktur. Att stärka och tillgängliggöra den digitala infrastrukturen för hela Dalarnas befolkning, oavsett plats, är avgörande för en lyckad digitalisering av samhället.
 
-I Dalarna har andelen av befolkningen med tillgång till, eller möjlighet att ansluta till, bredband om minst 1 Gbit/s ökat från ca `r andel_bredband_min` procent `r bredband_min_ar` till ca `r andel_bredband_max` procent `r bredband_max_ar`. Det kan jämföras med riksgenomsnittet som år `r bredband_max_ar` var `r andel_bredband_max_riket` procent. 
+I Dalarna har andelen hushåll med tillgång till, eller möjlighet att ansluta till, bredband om minst 1 Gbit/s ökat från ca `r andel_bredband_min` procent `r bredband_min_ar` till ca `r andel_bredband_max` procent `r bredband_max_ar`. Det kan jämföras med riksgenomsnittet som år `r bredband_max_ar` var `r andel_bredband_max_riket` procent. 
+
+Som synes så har andelen hushåll minskat något mellan åren 2023 och 2024. Det förklaras med att den data som statistiken bygger på blivit bättre. Post- och telestyrelsen har skärpt kraven på nätägarna att rapportera korrekta uppgifter om de hushåll som är kommersiellt möjliga att ansluta. Som synes har en del nätägare under 2023 överskattat antalet hushåll.
+
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_bredband$tillgang_bredband_Dalarna
@@ -1176,6 +1181,23 @@ Sparande och kapital <span style="color:red; font-size:1.8em; font-weight:900;">
 Mer att läsa finns här den som önskar.
 
 
+### Tillit{-}
+
+Tillit till andra människor efter utbildningsnivå och kön (HLV)
+
+Tillit till samhällsfunktioner efter utbildningsnivå och kön (HLV, ny design från och med 2024)
+
+
+Det är människorna i Dalarna som skapar regionen – alla enskilda individer boende i länet, som också är del av familjer och av andra gemenskaper, organisationer och företag. Människors känsla av sammanhang och delaktighet är centralt för att skapa ett väl fungerande samhälle. För att skapa sammanhang och delaktighet behövs tillit mellan dem som ingår i gemenskapen, och det behövs sätt att hantera osäkerhet som kan uppstå när nya medlemmar inkluderas i en gemenskap. Socialt kapital beskriver det kitt som uppstår när en grupp människor enas kring gemensamma värden, normer och värderingar, det får människor att ha tillit till sina medmänniskor och till det gemensamma. Att den representativa demokratins institutioner, såsom kommuner, region och myndigheter, är väl fungerande och att invånarna har förtroende för dem är centralt för en levande demokrati. En stark tillit till andra underlättar samarbetet mellan människor och viljan och förmågan att bidra med nya idéer till samhällsutvecklingen. Ett samhälle med ett starkt socialt kapital är bättre rustat för att möta förändringar och eventuella kriser.
+
+Indikatorn för tillit mäter andel (%) invånare 16-84 år som i en enkätundersökning har uppgett att de anser sig sakna tillit till andra. Värdet är beräknat som medelvärdet över en fyraårsperiod. Mellan tidsperioden `r tillit_min_period` och `r tillit_max_period` visar det sig att andelen som anser sig sakna tillit har ökat något, från `r tillit_min_period_varde` procent  till `r tillit_max_period_varde` procent. Under intervallet har däremot andelen under perioden 2007 till 2015 varit lägre mellan 23 och 25 procent. Andelen kvinnor som saknar tillit till andra har varit högre än andelen män som saknar tillit till andra fram till ungefär år 2015. Sedan år 2015 är mönstret inte längre entydigt, och det senaste året `r tillit_senaste_ar` uppgav en större andel män, än kvinnor, att de saknade tillit till andra.
+
+Andelen som säger sig sakna tillit utgör ungefär `r  tillit_max_period_varde` procent av invånarna, samtidigt som det framkommer i folkhälsoenkäten att ca 20 procent av invånarna aldrig eller väldigt sällan deltog i sociala sammankomster före pandemin, och att andelen har ökat till ca `r lagt_soc_deltagande_senaste_ar_varde` procent av invånarna efter pandemin år `r lagt_soc_deltagande_senaste_ar`. Att delta i olika typer av sociala sammankomster är en byggsten för att skapa sammanhang och i förlängningen tillit.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_tillit$tillit_Dalarna
+```
+
 ### Jämlikhet/ojämlikhet{-}
 
 I Dalastrategin lyfts ekonomiska klyftor som en framtidsutmaning för länet. För att redovisa ojämlikheten i inkomstfördelningen används gini-koefficienten. Ett högt värde på koefficienten visar på större inkomstskillnader och därmed större ojämlikhet. Här redovisas ginikoefficienten beräknad genom disponibel inkomst per "konsumtionsenhet" inklusive kapitalvinster. Med konsumtionsenhet menas att det i beräkningen av en individs tillgängliga ekonomiska resurser tas hänsyn till hur hushållet som individen bor i är sammansatt. Det betyder att beräkningen beaktar om personen är ensamboende eller sammanboende och om den har ansvar för minderåriga barn eller inte etc, faktorer som kan minska eller öka individens disponibla inkomst.
@@ -1188,19 +1210,6 @@ gg_gini$gini_tidsserie_00_20
 ```
 
 
-**Inkomstskillnader mellan könen**
-
-En egen inkomst är en av förutsättningarna för ett ekonomiskt självständigt liv. Livsinkomsten påverkar även vilken pension personen kommer att få efter arbetslivet. 
-
-För kvinnor och män i Dalarna i arbetsför ålder (20-64 år) är inkomstskillnaderna relativt stora och skillnaderna har hållit i sig över tid. Medianinkomsten för en man i Dalarna var `r inkomst_max_ar` cirka `r medianinkomst_man_max_20_64` tusen kronor före skatt, medan en kvinna hade en medianinkomst på ungefär `r medianinkomst_kvinna_max_20_64` tusen kronor. I den andra figuren nedan syns även en positiv utveckling i form av att den relativa skillnaden i inkomst mellan könen har minskat sedan millennieskiftet. Diagrammet visar att kvinnors medianinkomst har ökat med `r medianinkomst_kvinna_forandring_20_64` procent sedan slutet millennieskiftet, medan mäns har ökat med ungefär `r medianinkomst_man_forandring_20_64` procent. Det är dock viktigt att notera att figurerna nedan endast redovisar kvinnors och mäns skilda ekonomiska förutsättningar, medan det kan finnas flera förklaringar till skillnaden. En faktor är att kvinnor i högre grad arbetar deltid, och därför kan ha en lägre årsinkomst. Men även yrke, bransch och utbildningsinriktning kan förklara en del av skillnaden. 
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_inkomst$Medianinkomst_20_64_Dalarna_tid
-```
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_inkomst$Medianinkomst_20_64_Dalarna_tid_linje
-```
 
 ### Barn i ekonomisk utsatthet{-}
 
