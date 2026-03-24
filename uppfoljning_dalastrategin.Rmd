@@ -337,6 +337,9 @@ Kommunala klimatanpassningsplaner utgör grunden för att utifrån geografin utf
 
 Svenska miljöinstitutet, IVL kartlägger kommunernas klimatanpassningsarbete genom en enkätundersökning. För Dalarna har 8 av 15 kommuner svarat med ett svarsspann på 5,5 till 26 poäng, och ett medelvärde på 16 poäng. Skalan går från 0-33 poäng där 33 är det mest positiva utfallet.
 
+```{r, echo=FALSE, fig.cap="Kommuner med granskade klimatanpassningsplaner"}
+knitr::include_graphics("Bilder/Klimatanpassningsplaner.png")
+```
 
 Rapport och diagram:
 https://www.ivl.se/download/18.2e89e926197627f97b412441/1750166438874/Klimatanpassning-2025-lansvis-uppdelning.pdf
