@@ -333,9 +333,14 @@ gg_avfall$avfall_Dalarna
 
 ### Klimatanpassning{-}
 
-Kommunala klimatanpassningsplaner utgör grunden för att utifrån geografin utforma en proaktiv motståndskraft mot de klimatförändringar som vi kan förutspå kommer men också förberedelse för det vi ännu inte kan förutspå.
+Kommunala klimatanpassningsplaner utgör grunden för att åstadkomma en motståndskraft i geografin mot de klimatförändringar som vi kan förutspå kommer men också förberedelse för det vi ännu inte kan förutspå.
 
-Svenska miljöinstitutet, IVL kartlägger kommunernas klimatanpassningsarbete genom en enkätundersökning. För Dalarna har 8 av 15 kommuner svarat med ett svarsspann på 5,5 till 26 poäng, och ett medelvärde på 16 poäng. Skalan går från 0-33 poäng där 33 är det mest positiva utfallet.
+Klimatanpassningsarbete handlar om att integrera klimatperspektivet i översiktsplaner, detaljplaner och infrastruktursatsningar som säkrar att grönområden och våtmarker finns som kan absorbera regnvatten. Det handlar också om att förstärka avloppssystem och att bygga klimattåliga byggnader, så väl som att utforma socialt fungerande lösningar i samklang med de människor som bor på respektive plats.
+
+Svenska miljöinstitutet, IVL, kartlägger årligen (sedan 2015) kommunernas klimatanpassningsarbete genom en enkätundersökning. Av de 193 kommuner som besvarat enkäten uppgav 94 procent att de har påverkats av klimatförändringar och/eller extremväderhändelser. Framförallt genom ökad nederbörd, ökad temperatur och förändrade vattenflöden. https://www.ivl.se/download/18.2e89e926197627f97b42503b/1750678982179/Klimatanpassning-2025-l%C3%A5ng.pdf
+
+
+För Dalarna har 8 av 15 kommuner svarat med ett svarsspann på 5,5 till 26 poäng, och ett medelvärde på 16 poäng. Skalan går från 0-33 poäng där 33 är det mest positiva utfallet.
 
 ```{r, echo=FALSE, fig.cap="Kommuner med granskade klimatanpassningsplaner"}
 knitr::include_graphics("Bilder/Klimatanpassningsplaner.png")
