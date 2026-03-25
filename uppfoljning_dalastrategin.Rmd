@@ -746,8 +746,11 @@ Regional export <span style="color:red; font-size:1.8em; font-weight:900;">⬇</
 
 ### Regional produktion {-} 
 
-Diagrammet visar utvecklingen av bruttoregionalprodukten (BRP) i Dalarna per sysselsatt i löpande priser. BRP är ett mått på det samlade värdet av alla varor och tjänster som produceras i länet under ett år. BRP ger en övergripande bild av ekonomins storlek och tillväxt och kan användas för att följa konjunkturförändringar och långsiktiga trender. Utvecklingen av värdet påverkas av både befolkningsutveckling och näringslivets struktur. Vid jmförelser över tid är även BRP per invånare viktigt då den samlade produktionen ska försörja samtliga i samhället...
+Värdet av den samlade produktionen i länet mäts genom bruttoregionalprodukten. Ett sätt att fånga om ekonomin växer är att räkna om värdet per sysselsatt ökar över tid. BRP är ett mått på det samlade värdet av alla varor och tjänster som produceras i länet under ett år. BRP ger en övergripande bild av ekonomins storlek och tillväxt och kan användas för att följa konjunkturförändringar och långsiktiga trender. Utvecklingen av värdet påverkas av både befolkningsutveckling och näringslivets struktur. 
 
+Vid jämförelser över tid är även BRP per invånare viktigt att följa då den samlade produktionen ska försörja samtliga i samhället, och om arbetskåren krymper relativt unga och äldre ska färre försörja fler.
+
+Diagrammen nedan visar utvecklingen av bruttoregionalprodukten (BRP) i Dalarna per sysselsatt i löpande priser. Det är tydligt att värdet av produktionen på riksnivå ökar i större volym än i Dalarna, och att produktionen i Dalarna är bland de lägre i landet.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_brp_per_sysselsatt$brp_sysselsatt_tid_Dalarna
