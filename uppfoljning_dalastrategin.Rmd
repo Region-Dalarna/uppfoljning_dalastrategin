@@ -315,7 +315,7 @@ I ett nationellt perspektiv sticker framförallt Stockholms län ut, där mer ä
 gg_elbilar$elbilar_Sverige
 ```
 
-Tillgång till publika laddplatser är även en del i förutsättningarna för att äga en elbil. På webbplatsen ["drivmedla.se"](https://drivmedla.se/){target="_blank"} finns information om utvecklingen av laddinfrastrukturen i länet och landet.
+Tillgång till publika laddplatser är även en del i förutsättningarna för att äga en elbil. På webbplatsen ["drivmedla.se"](https://drivmedla.se/){target="_blank"} finns fördjupad information om utvecklingen av mängden bilar med olika drivmedelstyper och av laddinfrastruktur i länet och landet.
 
 
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
@@ -335,12 +335,11 @@ gg_avfall$avfall_Dalarna
 
 Kommunala klimatanpassningsplaner utgör grunden för att åstadkomma en motståndskraft i geografin mot de klimatförändringar som vi kan förutspå kommer men också förberedelse för det vi ännu inte kan förutspå.
 
-Klimatanpassningsarbete handlar om att integrera klimatperspektivet i översiktsplaner, detaljplaner och infrastruktursatsningar som säkrar att grönområden och våtmarker finns som kan absorbera regnvatten. Det handlar också om att förstärka avloppssystem och att bygga klimattåliga byggnader, så väl som att utforma socialt fungerande lösningar i samklang med de människor som bor på respektive plats.
+Klimatanpassningsarbete handlar framförallt om att integrera klimatperspektivet i översiktsplaner, detaljplaner och infrastruktursatsningar, så att exempelvis grönområden och våtmarker som kan absorbera regnvatten säkras. Det handlar också om att förstärka avloppssystem och att bygga klimattåliga byggnader, så väl som att utforma socialt fungerande lösningar i samklang med de människor som bor på respektive plats.
 
-Svenska miljöinstitutet, IVL, kartlägger årligen (sedan 2015) kommunernas klimatanpassningsarbete genom en enkätundersökning. Av de 193 kommuner som besvarat enkäten uppgav 94 procent att de har påverkats av klimatförändringar och/eller extremväderhändelser. Framförallt genom ökad nederbörd, ökad temperatur och förändrade vattenflöden. https://www.ivl.se/download/18.2e89e926197627f97b42503b/1750678982179/Klimatanpassning-2025-l%C3%A5ng.pdf
+Svenska miljöinstitutet, IVL, kartlägger årligen (sedan 2015) kommunernas klimatanpassningsarbete genom en enkätundersökning. Av de 193 kommuner som besvarat enkäten uppgav 94 procent att de har påverkats av klimatförändringar och/eller extremväderhändelser på något sätt, och framförallt genom ökad nederbörd, ökad temperatur och förändrade vattenflöden. https://www.ivl.se/download/18.2e89e926197627f97b42503b/1750678982179/Klimatanpassning-2025-l%C3%A5ng.pdf
 
-
-För Dalarna har 8 av 15 kommuner svarat med ett svarsspann på 5,5 till 26 poäng, och ett medelvärde på 16 poäng. Skalan går från 0-33 poäng där 33 är det mest positiva utfallet.
+IVL poängsätter och summerar kommunernas svar, utifrån en skala från 0-33 poäng.För Dalarna har 8 av 15 kommuner svarat med ett poängspann på 5,5 till 26 poäng, och ett medelvärde på 16 poäng, riksmedelvärdet var 17,7. Skalan går från 0-33 poäng där 33 är det mest positiva utfallet.
 
 ```{r, echo=FALSE, fig.cap="Kommuner med granskade klimatanpassningsplaner"}
 knitr::include_graphics("Bilder/Klimatanpassningsplaner.png")
@@ -358,9 +357,9 @@ På webbplatsen ["Klimatkalkylen"](https://klimatkalkylen.oawa.se/)
 ## {-}
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
 
-## Förnybar elproduktion och ekonomiska värden av material och råvaror {.tabset}
+## Elektricitets- och livsmedelsförsörjning {.tabset}
 
-De ekonomiska aspekterna av ett klimatsmart Dalarna handlar om hur vi tar tillvara naturresurserna och skapar återanvändning och självförsörjning inom de planetära gränserna. 
+De ekonomiska aspekterna av ett klimatsmart Dalarna handlar om hur vi tar tillvara naturresurserna och skapar värden och självförsörjning inom de planetära gränserna. 
 
 Sammanfatting.
 
@@ -386,13 +385,11 @@ Självförsörjning av livsmedel och el <span style="color:red; font-size:1.8em;
 <br>
 
 
-Mer att läsa, tipsa här.
-
 ### Förnybar elproduktion{-}
 
 En god tillgång till hållbar energi är avgörande för näringslivets och hela samhällets omställningsförmåga. En ökad regional produktion av förnybar energi bidrar till såväl minskade utsläpp som ökad självförsörjningsförmåga och resiliens för Dalarna. Sveriges samlade energisystem beskrivs utförligt på [Energimyndighetens webbplats](https://www.energimyndigheten.se/energisystemet/sveriges-energisystem/){target="_blank"}. 
 
-Den regionalt producerade energin som omsätts till elektricitet i Dalarna omfattar vatten- och vindkraft samt övrigt, där vatten och vind är de huvudsakliga energikällorna. Det saknas dock statistik över vattenkraft enskilt för vissa år, varför kategorin vattenkraft och övrigt används i diagrammet nedan. I kategorin vattenkraft och övrigt ingår även solkraft som utgör en liten men växande andel över tid. Kategorin har beräknats som skillnaden mellan total elproduktion och elproduktion från vindkraft.
+Den regionalt producerade energin som omsätts till elektricitet i Dalarna produceras av vatten- och vindkraft samt övrigt, där vatten och vind är de huvudsakliga energikällorna. Det saknas dock statistik över vattenkraft enskilt för vissa år, varför kategorin vattenkraft och övrigt används i diagrammet nedan. I kategorin vattenkraft och övrigt ingår även solkraft som utgör en liten men växande andel över tid. Kategorin har beräknats som skillnaden mellan total elproduktion och elproduktion från vindkraft.
 
 Produktionen av el i Dalarna varierar mellan olika år, bland annat beroende på om det är torrår eller våtår (se exempelvis år 2018 som var ett ovanligt torrt år). I diagrammet visas mängden el producerad av vattenkraft och övrigt respektive vindkraft. Även om vattenkraft och övrigt står för merparten så är trenden tydlig att elproduktionen från vindkraft ökar, och har nästan tredubblats sedan första mätåret 2012. År `r elproduktion_min_ar` gav vindkraften ca `r elproduktion_vind_min_ar` MVh och år `r elproduktion_max_ar` gav den ungefär `r elproduktion_vind_max_ar` MVh. Betydelsen av vindkraft för den totala elproduktionen har därmed också ökat från att ha utgjort ca `r elproduktion_andel_min_ar` procent till att år `r elproduktion_max_ar` utgöra knappt `r elproduktion_andel_max_ar` procent av den totala produktionen. Efter att ha minskat under 2022, ökade elproduktionen tydligt i Dalarna under 2023 och var mer eller mindre oförändrad 2024. Den tydliga ökning 2023 kan helt tillskrivas en ökad produktion av vattenkraft och övrigt, medan produktionen från vindkraft ökade mellan 2023 och 2024.  
 
@@ -469,7 +466,7 @@ Den ekonomiska dimensionen av hållbarhet i det regionala utvecklingsarbetet han
 
 ## Befolkning och kompetens {.tabset}
 
-Sammanfattning av avsnittet.
+Befolkningsutveckling och utbildningsnivå är två nycklar till Dalarnas konkurrenskraft. När fler kan bo, leva och arbeta i länet stärks arbetskraften, marknaden och möjligheterna för företag att växa och investera. Samtidigt påverkar utbildning både produktivitet och innovationsförmåga – och är avgörande för att matcha arbetsgivarnas behov i en ekonomi som ställer om med digitalisering och elektrifiering. I det här avsnittet tittar vi på hur befolkningens sammansättning, flyttmönster och utbildningsnivå formar kompetensförsörjningen och därmed Dalarnas långsiktiga utvecklingskraft.
 
 <span class="big-indicator">
 Arbetsför ålder och återväxt <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
@@ -501,7 +498,7 @@ Läs mer om kompetensförsörjning i länet i SCB:s rapport ["Regionala Trender 
 
 ### Arbetsför befolkning och återväxt {-}
 
-**Arbetsför befolkning**
+**Befolkning 20-64 år**
 
 Befolkning i arbetsför ålder omfattar boende i Dalarna i åldern 20-64 år (65 år från 2023 och 66 år från 2026). Antalet inrikes födda invånare i arbetsför ålder har minskat från ungefär 145 000 personer år 2000 till cirka 124 000 år 2023. Samtidigt har en relativt stor invandring medfört att utrikes födda invånare i arbetsför ålder har ökat från ungefär 11 000 personer år 2000 till cirka 26 000 år 2023. De utrikes födda ökat har således inte ökat i samma omfattning som inrikes födda minskat, vilket leder till att befolkningen i arbetsför ålder som helhet krymper. Den höjda pensionsåldern ökar antalet i arbetsför ålder.
 
