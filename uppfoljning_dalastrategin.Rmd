@@ -704,13 +704,13 @@ gg_anmalda_brott$anmalda_ekobrott_Dalarna
 
 ### Förtroende{-}
 
-Förtroendet för rättsväsendet i Dalarna är generellt sett högre för kvinnor än för män, år `r fortroende_max_ar` svarade ungefär `r fortroende_max_ar_varde_kvinnor` procent av de tillfrågade kvinnorna i Dalarna att de hade mycket stort eller ganska stort förtroende för rättsväsendet, medan motsvarande andel bland männen var ungefär `r fortroende_max_ar_varde_man` procent. Detta var något lägre än året innan för båda könen, men en ökning jämfört med `r fortroende_min_ar`
+Med ökande ekonomisk brottslighet är ett väl fungerande rättsväsende en viktig förutsättning för företagande. I diagrammet nedan ses resultat från Brottsförebyggande rådets nationella trygghetsenkät, som visar att förtroendet för rättsväsendet i Dalarna är generellt sett högre för kvinnor än för män, år `r fortroende_max_ar` svarade ungefär `r fortroende_max_ar_varde_kvinnor` procent av de tillfrågade kvinnorna i Dalarna att de hade mycket stort eller ganska stort förtroende för rättsväsendet, medan motsvarande andel bland männen var ungefär `r fortroende_max_ar_varde_man` procent. Detta var något lägre än året innan för båda könen, men en ökning jämfört med `r fortroende_min_ar`. I jämförelse med riket så är kvinnors värde i princip detsamma som riksgenomsnittet medan män i Dalarna uppger ett betydligt lägre förtroende för rättsväsendet i jämförelse med riket.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_fortroende_rattsvasande$fortroende_rattsvasande_Dalarna
 ```
 
-Andelen som svarade att de hade mycket stort eller ganska stort förtroende för rättsväsendet i Dalarna var år `r fortroende_max_ar` ungefär som genomsnittet bland Sveriges län. Högst förtroende för rättsväsendet har såväl kvinnor som män i Västerbotten (`r hogst_fortroende_lan_kvinnor_varde` procent respektive `r hogst_fortroende_lan_man_varde` procent), medan förtroendet är lägst för rättsväsendet i Blekinge (`r lagst_fortroende_lan_kvinnor_varde` procent bland kvinnor och `r lagst_fortroende_lan_man_varde` procent bland män)
+Andelen som svarade att de hade mycket stort eller ganska stort förtroende för rättsväsendet i Dalarna var sammantaget år `r fortroende_max_ar` vilket är strax under genomsnittet bland Sveriges län. Högst förtroende för rättsväsendet har såväl kvinnor som män i Västerbotten (`r hogst_fortroende_lan_kvinnor_varde` procent respektive `r hogst_fortroende_lan_man_varde` procent), medan förtroendet är lägst för rättsväsendet i Blekinge (`r lagst_fortroende_lan_kvinnor_varde` procent bland kvinnor och `r lagst_fortroende_lan_man_varde` procent bland män).
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_fortroende_rattsvasande$fortroende_rattsvasande__sverige
@@ -720,8 +720,7 @@ gg_fortroende_rattsvasande$fortroende_rattsvasande__sverige
 <hr style="border: none; height: 5px; background-color: #f8aab6; margin-top: 40px; margin-bottom: 40px;">
 
 ## Ekonomiska värden, produktion och export {.tabset}
-
-Sammanfattning av avsnittet här.
+Företagens produktion skapar ekonomiska värden som genererar löner och vinster och är centrala på Dalarnas konkurrenskraft. När företag kan producera effektivt och skapa högt värde på sina varor och tjänster stärks både lönsamhet och produktivitet, vilket ger utrymme för innovation och nya jobb. Exporten visar hur väl Dalarnas näringsliv står sig på nationella och internationella marknader och bidrar samtidigt till regionala inkomster och en starkare skattebas. I det här avsnittet belyser vi produktionens utveckling och exportens nivå, <mark>men även problematiserar även värderingar av kvinnors och mäns arbetsinsatser</mark>.
 
 <span class="big-indicator">
 Regional produktion <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
