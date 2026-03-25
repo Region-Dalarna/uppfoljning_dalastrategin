@@ -540,33 +540,48 @@ gg_radsla <- diagram_radsla(output_mapp = output_mapp_figur,
                             spara_figur = spara_figurer)
 
 
-<<<<<<< HEAD
-=======
+
 # G:\skript\projekt\uppfoljning_rus
->>>>>>> c6c8d31ab63193a1bfbe3cf6345eb3d0414b004c
 source("G:/skript/projekt/uppfoljning_rus/diagram_rus_uppfoljning_lupp.R")
 lupp_diagram_lista <- diag_rus_lupp()
 
 
-<<<<<<< HEAD
-export_diagram_lista <- readRDS("G:/skript/projekt/rus/ggobj_export_rusuppfoljning.rds")
-=======
+#export_diagram_lista <- readRDS("G:/skript/projekt/rus/ggobj_export_rusuppfoljning.rds")
 source("G:/skript/projekt/uppfoljning_rus/export_gastnatter.R")
 export_diagram_lista <- diag_export_gastnatter()
->>>>>>> c6c8d31ab63193a1bfbe3cf6345eb3d0414b004c
 
 #export_diagram_lista <- readRDS("G:/Samhällsanalys/Projekt och uppdrag/RUS/uppfoljning_webbrapport_data/ggobj_export_rusuppfoljning.rds")
 
-<<<<<<< HEAD
-bidragsmottagare_diagram <- readRDS("G:/skript/projekt/rus/ggobj_helarsekvivalenter_rusuppfoljning.rds")
-=======
+#bidragsmottagare_diagram <- readRDS("G:/skript/projekt/rus/ggobj_helarsekvivalenter_rusuppfoljning.rds")
 source("https://raw.githubusercontent.com/Region-Dalarna/diagram/main/diag_helarsekvivalenter_kon_scb.R")
-
 bidragsmottagare_diagram <- diag_helarsekvivalenter(region_vekt = "20",
                                                     output_mapp = output_mapp_figur,
                                                     skriv_diagramfil = spara_figurer)
 
->>>>>>> c6c8d31ab63193a1bfbe3cf6345eb3d0414b004c
+
+# Nya diagram 2026-03-25
+# Valdeltagande
+source(here("Skript","diagram_valdeltagande.R"))
+gg_valdeltagande <- diagram_valdeltagande(output_mapp = output_mapp_figur,
+                                          returnera_data = TRUE,
+                                          diag_EU = FALSE,
+                                          spara_figur = spara_figurer)
+
+# Jämförelse av andel elever i kulturskola, senaste år
+source(here("Skript","diagram_kulturskola.R"))
+gg_kulturskola <- diagram_kulturskola(region_vekt = "20",
+                                      output_mapp = output_mapp_figur,
+                                      returnera_data = TRUE,
+                                      ggobjektfilnamn_utan_tid = TRUE,
+                                      spara_figur = spara_figurer)
+
+# BRP per sysselsatt
+source(here("Skript","diagram_BRP.R"))
+gg_brp_per_sysselsatt <- diagram_brp_sysselsatt(region_vekt = "20",
+                                                output_mapp = output_mapp_figur,
+                                                returnera_data = TRUE,
+                                                ggobjektfilnamn_utan_tid = TRUE,
+                                                spara_figur = spara_figurer)
 
 
 save.image(file = "G:/skript/projekt/environments/uppfoljning_dalastrategin.RData")

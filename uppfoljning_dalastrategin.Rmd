@@ -751,10 +751,16 @@ Regional export <span style="color:red; font-size:1.8em; font-weight:900;">⬇</
 
 ### Regional produktion {-} 
 
-Diagrammet visar utvecklingen av bruttoregionalprodukten (BRP) i Dalarna per sysselsatt i fasta priser (?). BRP är ett mått på det samlade värdet av alla varor och tjänster som produceras i länet under ett år. BRP ger en övergripande bild av ekonomins storlek och tillväxt och kan användas för att följa konjunkturförändringar och långsiktiga trender. Utvecklingen av värdet påverkas av både befolkningsutveckling och näringslivets struktur. Vid jmförelser över tid är även BRP per invånare viktigt då den samlade produktionen ska försörja samtliga i samhället...
+Diagrammet visar utvecklingen av bruttoregionalprodukten (BRP) i Dalarna per sysselsatt i löpande priser. BRP är ett mått på det samlade värdet av alla varor och tjänster som produceras i länet under ett år. BRP ger en övergripande bild av ekonomins storlek och tillväxt och kan användas för att följa konjunkturförändringar och långsiktiga trender. Utvecklingen av värdet påverkas av både befolkningsutveckling och näringslivets struktur. Vid jmförelser över tid är även BRP per invånare viktigt då den samlade produktionen ska försörja samtliga i samhället...
 
 
-Diagram BRP/ sysselsatt
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_brp_per_sysselsatt$brp_sysselsatt_tid_Dalarna
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_brp_per_sysselsatt$brp_sysselsatt_Sverige
+```
 
 
 
@@ -1078,6 +1084,10 @@ Mer att läsa finns här:
 
 Valdeltagande, samma som i gamla rapporten.
 
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_valdeltagande$valdeltagande
+```
+
 
 Ex. diagram över Unga som vill vara med och påverka i frågor som rör kommunen  (LUPP)
 <!--
@@ -1099,6 +1109,10 @@ lupp_diagram_lista$D_vill_påverka_Kön_Hogstadiet_Gymnasiet_bo_Dalarna
 RF statistik.
 
 Kolada elever i kulturskolan.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_kulturskola$andel_kulturskola_Dalarna
+```
 
 Biblioteksstatistik: Genomsnitt per låntagare och andel befolkning som aldrig lånar böcker...
 
