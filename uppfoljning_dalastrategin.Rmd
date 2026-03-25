@@ -500,7 +500,7 @@ Läs mer om kompetensförsörjning i länet i SCB:s rapport ["Regionala Trender 
 
 **Befolkning 20-64 år**
 
-Befolkning i arbetsför ålder omfattar boende i Dalarna i åldern 20-64 år (65 år från 2023 och 66 år från 2026). Antalet inrikes födda invånare i arbetsför ålder har minskat från ungefär 145 000 personer år 2000 till cirka 124 000 år 2023. Samtidigt har en relativt stor invandring medfört att utrikes födda invånare i arbetsför ålder har ökat från ungefär 11 000 personer år 2000 till cirka 26 000 år 2023. De utrikes födda ökat har således inte ökat i samma omfattning som inrikes födda minskat, vilket leder till att befolkningen i arbetsför ålder som helhet krymper. Den höjda pensionsåldern ökar antalet i arbetsför ålder.
+Befolkning i arbetsför ålder boende i Dalarna omfattar åldern 20-64 år (65 år från 2023 och 66 år från 2026). Antalet inrikes födda invånare i arbetsför ålder har minskat från ungefär 145 000 personer år 2000 till cirka 124 000 år 2023. Samtidigt har en relativt stor invandring medfört att utrikes födda invånare i arbetsför ålder har ökat från ungefär 11 000 personer år 2000 till cirka 26 000 år 2023. De utrikes födda har mer än fördubblats men ökningen motsvarar inte samma omfattning som inrikes födda minskat, vilket leder till att befolkningen i arbetsför ålder som helhet krymper. Den höjda pensionsåldern ökar antalet i arbetsför ålder under övergången till en högre åldersnivå, men bidrar inte till en långsiktigt hållbar utveckling så länge gruppen som helhet krymper.
 
 Figur 2 i kompetensrapporten - befolkning i arbetsför ålder 2000 - 2023X
 
@@ -572,7 +572,7 @@ En jämförelse mellan länen när det gäller möjligheten att ha etablerat sig
 gg_etableringstid$etablering_vistelsetid_allalan
 ```
 
-### Ohälsa/Frånvaro{-}
+### Ohälsa hos arbetande{-}
 
 Ohälsotalet (ev källa) mäter i vilken utsträckning personer är borta från arbetet på grund av nedsatt arbetsförmåga, mätt under ett års tid. 
 
@@ -594,10 +594,7 @@ gg_ohalsotal_sjp$ohalsotal_kommun_dalarna
 
 ## Arbete, företagande och förutsättningar{.tabset}
 
-Sammanfattning.
-
-förutsättningar för arbete och företagande,
-utfall av företagandet
+En hög sysselsättning och ett gott företagsklimat är grundpelare för Dalarnas konkurrenskraft, för att stimulera dessa faktorer är ökad jämställdhet och låg ekonomisk brottslighet viktiga förutsättningar. Hög sysselsättning stärker hushållens ekonomi, skattebasen och företagens möjlighet att hitta kompetens, medan ett livskraftigt företagande driver innovation, investeringar och nya jobb. Jämställdhet bidrar till bättre kompetensförsörjning och högre produktivitet genom att fler kan delta fullt ut på arbetsmarknaden och i entreprenörskap. Samtidigt är låg ekonomisk brottslighet avgörande för ett tryggt företagsklimat – det minskar osund konkurrens, stärker tilliten och gör det mer attraktivt att etablera och utveckla verksamheter i Dalarna.
 
 
 <span class="big-indicator">
@@ -627,7 +624,6 @@ Infrastrukturförutsättningar <span style="color:red; font-size:1.8em; font-wei
 </span>
 <br>
 
-Mer att läsa, tipsa här.
 
 ### Arbete och företagande {-}
 
@@ -649,7 +645,7 @@ gg_nyst_konk$nystartade
 
 ### Infrastruktur{-}
 
-**Största hindren för tillväxt**
+**Företagsklimat**
 
 Från TVV - företagens villkor och verklighet, alt. Entreprenörskapsforums rapport.
 
@@ -663,7 +659,7 @@ Från TVV - företagens villkor och verklighet, alt. Entreprenörskapsforums rap
 Trafikanalys - Anna letar data.
 
 
-**Annat intressant infrastrukturmått**
+**Energitillgång?**
 
 
 Status på vägar, restider, Anna letar data.
@@ -671,7 +667,7 @@ Status på vägar, restider, Anna letar data.
 
 ### Könssegregering {-}
 
-Sedan många år har kvinnor och män haft likvärdig tillgång till utbildning och möjlighet att fritt välja yrke. Trots detta består många av könsskillnaderna i arbetslivet. 
+Sedan många år har kvinnor och män haft likvärdig tillgång till utbildning och möjlighet att fritt välja yrke. Trots detta består många av könsskillnaderna i arbetslivet, och står därmed i vägen för en mer hållbar utveckling där människor och kompetens tas tillvara på ett mer objektivt sätt. 
 
 **Könssegregering i olika branscher**
 
@@ -692,13 +688,13 @@ Fördelningen av dagar mellan vårdnadshavarna har jämnats ut något sedan slut
 gg_fp_vab$Foraldrapenning_andel_Dalarna
 ```
 
-### Brottslighet{-} 
+### Ekobrottslighet{-} 
 
+Ekonomisk brottslighet drabbar företag i Dalarna genom att den skapar osund konkurrens och förskjuter villkoren för dem som följer reglerna. När aktörer fuskar med skatter och avgifter, använder falska fakturor, utnyttjar arbetskraft eller missbrukar bolagsformer kan de pressa priserna på ett sätt som seriösa företag inte kan matcha. För enskilda företag innebär det risk för direkta ekonomiska förluster, mer administration och ökade kostnader för kontroll, samt att affärsrelationer och leverantörskedjor blir mer osäkra. På längre sikt undergräver brottsligheten tilliten i näringslivet, minskar viljan att investera och kan göra det svårare att rekrytera och växa. Ett starkt lokalt näringsliv gynnas därför av tydliga spelregler, samverkan och förebyggande arbete som minskar utrymmet för fusk och bedrägerier.
 
-**Ekobrottslighet**
+Ekonomisk brottslighet omfattar bokföringsbrott och bidragsbrott så som förskingring och bedrägerier. "Enligt Skatteverket har det totala skattefelet länge minskat, det vill säga summan av de skatter som inte redovisas till följd av bland annat brott. Samtidigt verkar utvecklingen gå mot en mer förslagen skattebrottslighet." ["Brå, 2026"](https://bra.se/amnen/ekonomisk-brottslighet){target="_blank"}
 
-Brottslighet drabbar företagandet på flera olika sätt. Ekonomisk brottslighet påverkar... 
-Bostadsinbrott...Anmälda ekobrott...
+På riksnivå har antalet anmälda brott per 100 000 invånare ökat från ca 2 200 till ca 3 000, mellan åren 2014 och 2024. I Dalarna ligger således antalet anmälda brott betydligt lägre än i riket som helhet, men det är enligt diagrammet nedan också betydande skillnader mellan kommunerna inom länet, med Avesta på cirka 1 400 anmälda brott och Vansbro på under 450 anmälda brott per 100 000 invånare år 2024.
 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
