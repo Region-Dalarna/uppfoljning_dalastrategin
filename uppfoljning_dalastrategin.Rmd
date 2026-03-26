@@ -785,9 +785,13 @@ gg_inkomst$Medianinkomst_20_64_Dalarna_tid
 gg_inkomst$Medianinkomst_20_64_Dalarna_tid_linje
 ```
 
-### Regional export {-}
+### Export från länet {-}
 
-Diagram: Varuexportvärdet över tid, 200X- 2024.
+Dalarnas export är en viktig motor för länets ekonomi och skapar värden långt utanför den lokala marknaden. När företag i Dalarna säljer varor och tjänster internationellt ökar intäkterna i länet och ger utrymme för investeringar, innovation och fler jobb. Dalarnas export handlar både om varor och tjänster som säljs utanför landsgränsen och utländska besökare som gästar Dalarna och konsumerar i länet. 
+
+Dalarnas omfattande industri är också en nyckel till möjligheter att bidra till den gröna omställningen både regionalt och globalt.
+
+I diagrammet nedan ses varuexportvärdet mellan åren 2000 och 2024, i löpande priser, nominella värden? 
 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
@@ -795,25 +799,14 @@ export_diagram_lista$Varuexportvarde_lan_Dalarna
 ```
 
 
-Diagram: till vilka länder exporterar vi?
+De största mottagarländerna för Dalarnas export år 2024 var Tyskland, USA och Norge som tillsammans stod för ungefär 30 procent av exportvärdet. 
 
-<!--
-```r
-export_diagram_lista[["Export_storsta_lander_Dalarna_ar"]]
-```
 
-Diagram: Utländska gästnätter, över tid.
-
-```r
-export_diagram_lista[["utl_gastnatter_Dalarna_2008_2025"]]
-```
-
-Besöksnäringen, 2025, besöksnätter.. Inkl. gästnätter från utlandet..? Danskar ca 40?? procent..
-
--->
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 export_diagram_lista$Export_storsta_lander_Dalarna_ar
 ```
+
+Antalet utländska gästnätter har under 2010-talet varit relativt konstant runt 700 000, under pandemin minskade avsevärt, för att efter pandemin öka kraftigt och under 2025 passera miljonstrecket i antal.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 export_diagram_lista$utl_gastnatter_Dalarna_2008_2025
@@ -837,7 +830,7 @@ Sysselsatta som arbetar i utlandsägda företag, omsättning arbetsställe per u
 I ett sammanhållet Dalarna finns goda livsmiljöer som skapar en känsla av närhet. Det är ett Dalarna fyllt av engagemang, där människor upplever delaktighet och tillsammans bidrar till en hållbar utveckling. Det är ett inkluderande, jämställt, och jämlikt Dalarna där människor mår bra och där alla ges möjlighet att utvecklas.
 </p>
 
-Den sociala dimensionen av hållbarhet i det regionala utvecklingsarbetet handlar om att alla människor, utifrån sina behov och förutsättningar, ges likvärdiga möjligheter att delta och bidra i samhällsutvecklingen. Ju fler som känner sig delaktiga desto mer utveckling kan åstadkommas, och samhällsekonomiska kostnader kan minimeras.
+Den sociala dimensionen av hållbarhet i det regionala utvecklingsarbetet handlar om att alla människor, utifrån sina behov och förutsättningar, ges likvärdiga möjligheter att delta och bidra i samhällsutvecklingen. Ju fler som känner sig delaktiga desto mer utveckling kan åstadkommas, och samhällsekonomiska kostnader minskas.
 
 I målområdet Ett sammanhållet Dalarna bygger vi ett län där goda livsmiljöer skapar en känsla av närhet – oavsett om man bor i stad, tätort eller landsbygd. Det handlar om ett Dalarna fyllt av engagemang och delaktighet, där människor tillsammans bidrar till hållbar utveckling och god beredskap. 
 
@@ -846,7 +839,6 @@ Vi stärker den geografiska sammanhållningen genom samhällsplanering som knyte
 I ett sammanhållet Dalarna är det också centralt att fler känner sammanhang och tillit – till varandra och till demokratiska institutioner – eftersom det stärker både demokrati, innovationskraft och krishanteringsförmåga. 
 
 Vi säkrar utvecklingskraft i hela länet genom att värna tillgång till service, vård, fritid och kultur, och genom att skapa platser där människor kan mötas.
-Tillsammans formar vi ett inkluderande, jämlikt och jämställt Dalarna där fler mår bra och ges möjlighet att utvecklas.
 
 
 <hr style="border: none; height: 5px; background-color: #ffec9f; margin-top: 40px; margin-bottom: 40px;">
@@ -885,20 +877,30 @@ Upplevd trygghet <span style="color:red; font-size:1.8em; font-weight:900;">⬇<
 
 Mer finns att läsa här, tipsa om ["folkhälsa på Region Dalarnas hemsida"] (https://www.regiondalarna.se/om-oss/hallbar-utveckling/social-hallbarhet/folkhalsa/)
 
-Även https://www.oecd.org/en/data/tools/well-being-data-monitor/future-well-being.html
 
+<!--
+Även https://www.oecd.org/en/data/tools/well-being-data-monitor/future-well-being.html
+-->
 
 
 ### Medellivslängd{-}
 
-Återstående medellivslängd vid 30 års ålder, efter utbildningsnivå och kön (SCB)
-Dödlighet i befolkningen i åldrarna 15-64 år efter kön, region och år. Antal per 100 000 inv. (SCB) 
+Medellivslängd är ett tydligt mått på samhällsutveckling och välfärd. Sverige har bland de högsta medellivslängderna i världen och Över tid syns fortfarande en svagt positiv utveckling i de flesta grupper, särskilt bland dem med gymnasial och eftergymnasial utbildning, och kvinnor har genomgående en högre återstående medellivslängd än män när man tittar på exempelvis utbildningsgrupper. Medellivslängd går att mäta på flera sätt, men ett vanligt mått är hur många år en 30-åring i genomsnitt förväntas leva ytterligare.
+
+För grupper med förgymnasial utbildning är utvecklingen mer ojämn, och bland män syns en mindre nedgång kring slutet av 2010-talet/början av 2020-talet följt av återhämtning, medan gruppen kvinnor det senaste året visar på en nedgång. Sammantaget illustrerar diagrammet att utbildning hänger tydligt samman med livslängd, och att skillnaderna är stabila över perioden.
+
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_aterstaende_medellivslangd$`medellivslangd_aterstaende_vid_30 år_alder_Dalarna`
 ```
 
+<!--
+Dödlighet i befolkningen i åldrarna 15-64 år efter kön, region och år. Antal per 100 000 inv. (SCB) 
+-->
+
 ### Upplevd hälsa{-}
+
+En god upplevd hälsa 
 Bra eller mycket bra allmänt hälsotillstånd efter utbildningsnivå och kön (HLV)
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
@@ -909,7 +911,9 @@ gg_hlv_sjalvskattad$halsa_dalarna_tid
 gg_hlv_sjalvskattad$halsa_senaste_jmf
 ```
 
+<!--
 Allvarlig psykisk påfrestning efter utbildningsnivå och kön (HLV)
+-->
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_sjukdomar_andel$`invanare_16-84_ar_med_allvarlig_psykisk_pafrestning_Dalarna_ar_2022_2024`
