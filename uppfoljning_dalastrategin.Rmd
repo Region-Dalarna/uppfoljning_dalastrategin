@@ -954,7 +954,9 @@ gg_sjukdomar_hundratusen$incidens_av_hjartinfarkter_Dalarna
 gg_sjukdomar_hundratusen$incidens_av_hjartinfarkter
 ```
 
+<!--
 Hypertoni – efter utbildningsnivå och kön (HLV)
+-->
 
 Övervikt/obesitas – efter utbildningsnivå och kön (HLV)
 
@@ -978,6 +980,7 @@ gg_sjukdomar_hundratusen$`fallskador_bland_personer_65+`
 
 
 ### Brott mot person{-}
+
 
 Anmälda misshandelsbrott mot kvinna, inomhus, bekant med offret, antal/100 000 inv, per kommun (BRÅ/SCB)
 
@@ -1015,11 +1018,6 @@ gg_radsla$radsla_Dalarna
 
 Andel elever som tycker att det stämmer helt eller till stor del att rasism förekommer på skolan, efter kön, högstadiet och/eller gymnasiet (LUPP)
 
-<!--
-```r
-lupp_diagram_lista[["C_skola_rasism_Kön_Hogstadiet_Gymnasiet_skola_Dalarna"]]
-```
--->
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 lupp_diagram_lista$C_skola_rasism_Kön_Hogstadiet_Gymnasiet_skola_Dalarna
@@ -1037,9 +1035,6 @@ gg_anmalda_brott$anmalda_bostadsinbrott_Dalarna
 <!--
 Andel elever som alltid eller ofta känner sig trygga på sociala medier, efter kön (7:e klass och/eller Åk 1 gymnasiet) 
 -->
-
-Andel elever som tycker att det stämmer helt eller till stor del att rasism förekommer på skolan, efter kön, högstadiet och/eller gymnasiet (LUPP)
-
 
 
 ## {-}
@@ -1061,7 +1056,7 @@ Kultur/fritid unga (LOK, kulturskola) <span style="color:red; font-size:1.8em; f
 <br>
 
 <span class="big-indicator">
-Tillgång fysiskt: bibliotek, skola, service <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Fysiskt och digitalt: bredband, bibliotek, skola, service <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
@@ -1070,21 +1065,20 @@ Skola och arbetsliv <span style="color:red; font-size:1.8em; font-weight:900;">�
 </span>
 <br>
 
-<span class="big-indicator">
-Digital uppkoppling geografi <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-<br>
-
+<!--
 <span class="big-indicator">
 Kulturarv <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
+-->
 
 Mer att läsa finns här: 
 
 ### Valdeltagande och samhällsengagemang{-}
 
-Valdeltagande, samma som i gamla rapporten.
+En levande demokrati grundar sig i människors tillit till att de demokratiskt valda representativa institutionerna fungerar, såsom kommuner, region och myndigheter. Valdeltagande är därmed en viktig indikator på invånarnas vilja och tro på de demokratiska institutionerna i länet.
+
+I Dalarna har valdeltagandet varierat över tid. I riksdagsvalet valde år 1973 drygt 90 procent att rösta, en andel som hade minskat avsevärt till valet 2002, då bara ungefär 78 procent valde att rösta i riksdagsvalet. Därefter ökade valdeltagandet stadigt i de nationella valen fram till 2018, då 88 procent av invånarna i Dalarna röstade i riksdagsvalet. I valet 2022 minskade valdeltagandet dock tydligt. Generellt är valdeltagandet ungefär lika högt i såväl riksdagsval, som val till region- och kommunfullmäktige, även om det på senare år har varit något högre i riksdagsvalet.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_valdeltagande$valdeltagande
