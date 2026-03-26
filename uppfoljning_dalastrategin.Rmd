@@ -1212,9 +1212,13 @@ Sparande och kapital <span style="color:red; font-size:1.8em; font-weight:900;">
 
 ### Jämlikhet/ojämlikhet{-}
 
-I Dalastrategin lyfts ekonomiska klyftor som en framtidsutmaning för länet. För att redovisa ojämlikheten i inkomstfördelningen används gini-koefficienten. Ett högt värde på koefficienten visar på större inkomstskillnader och därmed större ojämlikhet. Här redovisas ginikoefficienten beräknad genom disponibel inkomst per "konsumtionsenhet" inklusive kapitalvinster. Med konsumtionsenhet menas att det i beräkningen av en individs tillgängliga ekonomiska resurser tas hänsyn till hur hushållet som individen bor i är sammansatt. Det betyder att beräkningen beaktar om personen är ensamboende eller sammanboende och om den har ansvar för minderåriga barn eller inte etc, faktorer som kan minska eller öka individens disponibla inkomst.
+I Dalastrategin lyfts ekonomiska klyftor som en framtidsutmaning för länet. 
+
+Ekonomiska klyftor mellan olika grupper i samhället är en utmaning för både Sverige och Dalarna. Om de socioekonomiska klyftorna blir alltför stora riskerar de att motverka sammanhållning, tillit och trygghet. Det riskerar i sin tur att försvaga demokratin, exempelvis genom systematiska skillnader i valdeltagande, faktiskt eller upplevt inflytande samt delaktighet och engagemang.
 
 **Gini-koefficienten**
+För att redovisa ojämlikheten i inkomstfördelningen används gini-koefficienten. Ett högt värde på koefficienten visar på större inkomstskillnader och därmed större ojämlikhet. Här redovisas ginikoefficienten beräknad genom disponibel inkomst och hänsyn tagen till hur hushållet som individen bor i är sammansatt. Det betyder att beräkningen beaktar om personen är ensamboende eller sammanboende och om den har ansvar för minderåriga barn eller inte etc, faktorer som kan minska eller öka individens disponibla inkomst.
+
 I Dalarna har ginikoefficienten ökat något från  `r gini_min_ar` till `r gini_max_ar`, vilket således visar på en ökad ekonomisk ojämlikhet i länet, med en toppnotering 2019. Värt att notera är dock att trenden verkar bruten då ginikoeffiecienten minskade såväl 2023 som  `r gini_max_ar`, jämfört med åren innan. Ginikoefficienten för länet ligger även under koefficienten för riket för samtliga år förutom 2019, det vill säga i Dalarna är inkomsterna mindre ojämlika än i Sverige som helhet. År 2019 avviker så skarpt från den generella trenden att det årets notering bör betraktas med försiktighet. 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
@@ -1222,12 +1226,8 @@ gg_gini$gini_tidsserie_00_20
 ```
 
 
-
-### Barn i ekonomisk utsatthet{-}
-
-Ekonomiska klyftor mellan olika grupper i samhället är en utmaning för både Sverige och Dalarna. Om de socioekonomiska klyftorna blir alltför stora riskerar de att motverka sammanhållning, tillit och trygghet. Det riskerar i sin tur att försvaga demokratin, exempelvis genom systematiska skillnader i valdeltagande, faktiskt eller upplevt inflytande samt delaktighet och engagemang.
-
-Med låg ekonomisk standard menas de hushåll som har en årsinkomst under 60 procent av medianvärdet för hushållens årliga inkomster i Sverige. Andel barn som lever i hushåll med låg ekonomisk standard blir därför ett mått på barns ekonomiska utsatthet i samhället. 
+**Barn i ekonomisk utsatthet**
+Barn är särskilt utsatta då de inte kan påverka sin livssituation utan är beroende av sina omsorgspersoner och vårdnadshavare. Som låg ekonomisk standard klassas hushåll som har en årsinkomst under 60 procent av medianvärdet för hushållens årliga inkomster i Sverige. Andel barn som lever i hushåll med låg ekonomisk standard blir därför ett mått på barns ekonomiska utsatthet i samhället. 
 
 I diagrammet nedan kan vi notera att andelen unga (0-19 år) som lever i hushåll med låg ekonomisk standard i Dalarnas län har ökat över mätperioden, vilket är negativt, från `r lag_ek_standard_df_dalarna_min_ar` procent år `r min_ar_lag_ek` till drygt `r lag_ek_standard_df_dalarna_max_ar` procent `r max_ar_lag_ek`. Viktigt att notera är dock att andelen har minskat tydligt mellan 2019 och `r max_ar_lag_ek`, från `r lag_ek_standard_df_dalarna_2019` procent till `r lag_ek_standard_df_dalarna_max_ar` procent.
 
@@ -1243,7 +1243,7 @@ gg_lag_ek_standard$andel_invånare_0_19_år_med_låg_ekonomisk_standard
 
 ### Bidragsmottagare{-}
 
-Helårsekvivalenter...
+Ett annat mått att följa för att utröna hur jämlikheten utvecklas är andelen av befolkningen som mottar någon form av bidrag för att försörja sig.  kan  välfärdssystemet och på helårsekvivalenter...
 
 De som behöver stöd för att leva ett drägligt liv.
 
