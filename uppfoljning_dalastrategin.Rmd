@@ -979,7 +979,30 @@ gg_sjukdomar_hundratusen$`fallskador_bland_personer_65+`
 ```
 
 
-### Brott mot person{-}
+### Trygghet och brott{-}
+
+
+**Upplevd trygghet**
+Avstår från att gå ut ensam av rädsla för att bli överfallen, rånad eller på annat sätt ofredad, efter utbildningsnivå och kön (HLV)
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_radsla$radsla_Dalarna
+```
+
+Andel elever som tycker att det stämmer helt eller till stor del att rasism förekommer på skolan, efter kön, högstadiet och/eller gymnasiet (LUPP)
+
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+lupp_diagram_lista$C_skola_rasism_Kön_Hogstadiet_Gymnasiet_skola_Dalarna
+```
+
+**Bostadsinbrott**
+
+Anmälda bostadsinbrott..
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_anmalda_brott$anmalda_bostadsinbrott_Dalarna
+```
 
 
 Anmälda misshandelsbrott mot kvinna, inomhus, bekant med offret, antal/100 000 inv, per kommun (BRÅ/SCB)
@@ -1006,36 +1029,27 @@ gg_anmalda_brott$`anmalda_stold-_och_tillgreppsbrott_Dalarna`
 ```
 
 
-### Trygghet{-}
-
-
-**Upplevd trygghet**
-Avstår från att gå ut ensam av rädsla för att bli överfallen, rånad eller på annat sätt ofredad, efter utbildningsnivå och kön (HLV)
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_radsla$radsla_Dalarna
-```
-
-Andel elever som tycker att det stämmer helt eller till stor del att rasism förekommer på skolan, efter kön, högstadiet och/eller gymnasiet (LUPP)
-
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-lupp_diagram_lista$C_skola_rasism_Kön_Hogstadiet_Gymnasiet_skola_Dalarna
-```
-
-**Bostadsinbrott**
-
-Anmälda bostadsinbrott..
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_anmalda_brott$anmalda_bostadsinbrott_Dalarna
-```
-
-
 <!--
 Andel elever som alltid eller ofta känner sig trygga på sociala medier, efter kön (7:e klass och/eller Åk 1 gymnasiet) 
 -->
 
+
+### Tillit{-}
+
+Det är människorna i Dalarna som skapar regionen – alla enskilda individer boende i länet, som också är del av familjer, organisationer, företag och andra gemenskaper. Människors känsla av sammanhang och delaktighet är centralt för att skapa ett väl fungerande samhälle. För att skapa sammanhang och delaktighet behövs tillit mellan dem som ingår i gemenskapen, och det behövs sätt att hantera osäkerhet som kan uppstå när nya medlemmar inkluderas i en gemenskap. Socialt kapital beskriver det kitt som uppstår när en grupp människor enas kring gemensamma värden, normer och värderingar, det får människor att ha tillit till sina medmänniskor och till det gemensamma. Att den representativa demokratins institutioner, såsom kommuner, region och myndigheter, är väl fungerande och att invånarna har förtroende för dem är centralt för en levande demokrati. En stark tillit till andra underlättar samarbetet mellan människor och viljan och förmågan att bidra med nya idéer till samhällsutvecklingen. Ett samhälle med ett starkt socialt kapital är bättre rustat för att möta förändringar och eventuella kriser.
+
+Tillit är i stort en fråga om människors upplevelse och mäts bland annat genom enkätundersökningar. Folkhälsomyndigheten gör regelbundet enkätundersökningar med sådana frågor och i diagrammet nedan ses resultatet för hur stor andel av invånare 16-84 år som svarat att de anser sig sakna tillit till andra. Värdet är beräknat som medelvärdet över en fyraårsperiod. Mellan tidsperioden `r tillit_min_period` och `r tillit_max_period` visar det sig att andelen som anser sig sakna tillit har ökat något, från `r tillit_min_period_varde` procent  till `r tillit_max_period_varde` procent. Under tidsperioden har andelen gått från att andelen kvinnor som saknar tillit till andra har varit högre än andelen män som saknar tillit till andra, fram till ungefär år 2015. Sedan år 2015 är mönstret inte längre entydigt, och det senaste året `r tillit_senaste_ar` uppgav en större andel män, än kvinnor, att de saknade tillit till andra.
+
+Andelen som säger sig sakna tillit utgör ungefär `r  tillit_max_period_varde` procent av invånarna, samtidigt som det framkommer i folkhälsoenkäten att ca 20 procent av invånarna aldrig eller väldigt sällan deltagit i sociala sammankomster före pandemin, och att andelen har ökat till ca `r lagt_soc_deltagande_senaste_ar_varde` procent av invånarna efter pandemin år `r lagt_soc_deltagande_senaste_ar`. Att delta i olika typer av sociala sammankomster är en byggsten för att skapa sammanhang och i förlängningen tillit.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_tillit$tillit_Dalarna
+```
+<!--
+Tillit till andra människor efter utbildningsnivå och kön (HLV)
+
+Tillit till samhällsfunktioner efter utbildningsnivå och kön (HLV, ny design från och med 2024)
+-->
 
 ## {-}
 <hr style="border: none; height: 5px; background-color: #ffec9f; margin-top: 40px; margin-bottom: 40px;">
@@ -1051,46 +1065,44 @@ Valdeltagande/ samhällsengagemang <span style="color:red; font-size:1.8em; font
 <br>
 
 <span class="big-indicator">
-Kultur/fritid unga (LOK, kulturskola) <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Kultur/fritid <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
 <span class="big-indicator">
-Fysiskt och digitalt: bredband, bibliotek, skola, service <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Butik, skola och bredband <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
+
+<!--
 <span class="big-indicator">
 Skola och arbetsliv <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
-<!--
 <span class="big-indicator">
 Kulturarv <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 -->
 
-Mer att läsa finns här: 
 
-### Valdeltagande och samhällsengagemang{-}
+### Valdeltagande/samhällsengagemang{-}
 
-En levande demokrati grundar sig i människors tillit till att de demokratiskt valda representativa institutionerna fungerar, såsom kommuner, region och myndigheter. Valdeltagande är därmed en viktig indikator på invånarnas vilja och tro på de demokratiska institutionerna i länet.
+En levande demokrati grundar sig i människors tillit till att de demokratiskt valda representativa institutionerna fungerar, såsom kommuner, region och myndigheter. Valdeltagande och viljan att vara med och påverka i sin hemkommun är därmed en viktiga indikator på invånarnas vilja och tro på de demokratiska institutionerna i länet.
 
+**Valdeltagande**
 I Dalarna har valdeltagandet varierat över tid. I riksdagsvalet valde år 1973 drygt 90 procent att rösta, en andel som hade minskat avsevärt till valet 2002, då bara ungefär 78 procent valde att rösta i riksdagsvalet. Därefter ökade valdeltagandet stadigt i de nationella valen fram till 2018, då 88 procent av invånarna i Dalarna röstade i riksdagsvalet. I valet 2022 minskade valdeltagandet dock tydligt. Generellt är valdeltagandet ungefär lika högt i såväl riksdagsval, som val till region- och kommunfullmäktige, även om det på senare år har varit något högre i riksdagsvalet.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_valdeltagande$valdeltagande
 ```
 
+**Ungas vilja att påverka**
 
-Ex. diagram över Unga som vill vara med och påverka i frågor som rör kommunen  (LUPP)
-<!--
-```r 
-lupp_diagram_lista[["D_vill_påverka_Kön_Hogstadiet_Gymnasiet_bo_Dalarna"]]
-```
--->
+I diagrammet nedan ses andelen unga som i en enkät som genomförs regelbundet via skolan svarat att de vill vara med och påverka. Trenden mellan 2015 och 2024 visar tydligt på att både killar och tjejer i allt lägre grad vill vara med och påverka i frågor som rör deras kommun.
+
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 lupp_diagram_lista$D_vill_påverka_Kön_Hogstadiet_Gymnasiet_bo_Dalarna
@@ -1100,29 +1112,39 @@ lupp_diagram_lista$D_vill_påverka_Kön_Hogstadiet_Gymnasiet_bo_Dalarna
 
 ### Kultur/fritid{-}
 
-(LOK, kulturskola)
+Kultur- och fritidsaktiviteter är viktiga för samhällsutvecklingen och särskilt för ungdomars utveckling. Mer statistik om civilsamhället och befolkningens engagemang skulle vara önskvärt men här redovisar vi några av de uppgifter som finns tillgängliga.
 
-RF statistik.
-
-Kolada elever i kulturskolan.
+**Elever i kulturskolan**
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_kulturskola$andel_kulturskola_Dalarna
 ```
 
-Biblioteksstatistik: Genomsnitt per låntagare och andel befolkning som aldrig lånar böcker...
+**Idrottande ungdomar**
+
+Ungdomar som deltar i idrott via Riksidrottsförbundet, är under konstruktion.
 
 
-Mer att läsa finns här.
+**Bibliotekslån**
+
+Utlån från biblioteken i Dalarna, är under konstruktion.
 
 
-### Tillgång fysiskt: bredband, skola, service, bibliotek {-}
+**Studiecirkeltimmar**
 
-Mer att läsa finns här.
+Antal studiecirkeltimmar i Dalarna är under konstruktion.
+
+
+### Butik, skola och bredband {-}
+
 
 **Tillgång till butik och grundskola**
 
-Samma diagram som i gamla rapporten.
+Olika platser i Dalarna har olika utmaningar och möjligheter att möta de förändrade behoven. En princip för genomförandet av Dalastrategin är att allt utvecklingsarbete ska vara platsbaserat med målsättningen att sammanhållningen ska stärkas och olika platsers förutsättningar och resurser ska tas till vara på ett bra sätt. För utvecklingskraft i hela länet är det viktigt att säkra tillgången till service, vård, fritidsaktiviteter och kultur i alla delar av länet. Tillgången till service påverkar människors levnadsvillkor och är viktig för platsens attraktivitet och för möjligheten att skapa arbetstillfällen lokalt.
+
+Den här indikatorn presenterar två olika mått på tillgång till service; tillgång till grundskola samt tillgång till dagligvarubutik. Resultatet visar att tillgång till grundskola har minskat något under perioden från 2017 till 202X. I början på perioden hade drygt ??72,9 procent av alla invånare mellan 0-16 år en grundskola inom 2 km från bostaden. 202X hade motsvarande siffra minskat till ??72,3 procent. Samma trend ses även för tillgång till dagligvarubutiker. Under samma period har andelen med en dagligvarubutik inom 2 km från bostaden minskat från ??64,4 procent till ??63,7 procent.
+
+Kod in här..
 
 
 **Tillgång till bredband**
@@ -1138,18 +1160,12 @@ Som synes så har andelen hushåll minskat något mellan åren 2023 och 2024. De
 gg_bredband$tillgang_bredband_Dalarna
 ```
 
-Bibliotek?
-
+<!--
 
 ### Skola och arbetsliv{-}
 
 Elever som tycker att det stämmer helt eller till stor del att de trivs med stämningen i skolan  (LUPP)
 
-<!--
-```r
-lupp_diagram_lista[["C_skola_trivs_med_stämningen_Kön_Hogstadiet_Gymnasiet_skola_Dalarna"]]
-```
--->
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 lupp_diagram_lista$C_skola_trivs_med_stämningen_Kön_Hogstadiet_Gymnasiet_skola_Dalarna
@@ -1160,13 +1176,13 @@ Andel som alltid eller ofta känner sig trygg inför skoldagen efter kön (ELSA)
 
 ### Kulturarv{-}
 
-*Ev hinner vi inte denna till 20 mars*
-Mer att läsa finns här.
+-->
+
 
 ## {-}
 <hr style="border: none; height: 5px; background-color: #ffec9f; margin-top: 40px; margin-bottom: 40px;">
 
-## Fördelning av inkomster och ekonomiska värden{.tabset}
+## Fördelning av inkomster och värden{.tabset}
 
 Sammanfattning.
 
@@ -1193,25 +1209,6 @@ Sparande och kapital <span style="color:red; font-size:1.8em; font-weight:900;">
 </span>
 <br>
 
-Mer att läsa finns här den som önskar.
-
-
-### Tillit{-}
-
-Tillit till andra människor efter utbildningsnivå och kön (HLV)
-
-Tillit till samhällsfunktioner efter utbildningsnivå och kön (HLV, ny design från och med 2024)
-
-
-Det är människorna i Dalarna som skapar regionen – alla enskilda individer boende i länet, som också är del av familjer och av andra gemenskaper, organisationer och företag. Människors känsla av sammanhang och delaktighet är centralt för att skapa ett väl fungerande samhälle. För att skapa sammanhang och delaktighet behövs tillit mellan dem som ingår i gemenskapen, och det behövs sätt att hantera osäkerhet som kan uppstå när nya medlemmar inkluderas i en gemenskap. Socialt kapital beskriver det kitt som uppstår när en grupp människor enas kring gemensamma värden, normer och värderingar, det får människor att ha tillit till sina medmänniskor och till det gemensamma. Att den representativa demokratins institutioner, såsom kommuner, region och myndigheter, är väl fungerande och att invånarna har förtroende för dem är centralt för en levande demokrati. En stark tillit till andra underlättar samarbetet mellan människor och viljan och förmågan att bidra med nya idéer till samhällsutvecklingen. Ett samhälle med ett starkt socialt kapital är bättre rustat för att möta förändringar och eventuella kriser.
-
-Indikatorn för tillit mäter andel (%) invånare 16-84 år som i en enkätundersökning har uppgett att de anser sig sakna tillit till andra. Värdet är beräknat som medelvärdet över en fyraårsperiod. Mellan tidsperioden `r tillit_min_period` och `r tillit_max_period` visar det sig att andelen som anser sig sakna tillit har ökat något, från `r tillit_min_period_varde` procent  till `r tillit_max_period_varde` procent. Under intervallet har däremot andelen under perioden 2007 till 2015 varit lägre mellan 23 och 25 procent. Andelen kvinnor som saknar tillit till andra har varit högre än andelen män som saknar tillit till andra fram till ungefär år 2015. Sedan år 2015 är mönstret inte längre entydigt, och det senaste året `r tillit_senaste_ar` uppgav en större andel män, än kvinnor, att de saknade tillit till andra.
-
-Andelen som säger sig sakna tillit utgör ungefär `r  tillit_max_period_varde` procent av invånarna, samtidigt som det framkommer i folkhälsoenkäten att ca 20 procent av invånarna aldrig eller väldigt sällan deltog i sociala sammankomster före pandemin, och att andelen har ökat till ca `r lagt_soc_deltagande_senaste_ar_varde` procent av invånarna efter pandemin år `r lagt_soc_deltagande_senaste_ar`. Att delta i olika typer av sociala sammankomster är en byggsten för att skapa sammanhang och i förlängningen tillit.
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_tillit$tillit_Dalarna
-```
 
 ### Jämlikhet/ojämlikhet{-}
 
