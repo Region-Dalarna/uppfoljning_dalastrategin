@@ -583,6 +583,14 @@ gg_brp_per_sysselsatt <- diagram_brp_sysselsatt(region_vekt = "20",
                                                 ggobjektfilnamn_utan_tid = TRUE,
                                                 spara_figur = spara_figurer)
 
+# BRP service/vård
+source(here("Skript","diagram_service_vard.R"))
+gg_service_vard <- diagram_service_vard(region_vekt = "20",
+                                        output_mapp = output_mapp_figur,
+                                        returnera_data = TRUE,
+                                        ggobjektfilnamn_utan_tid = TRUE,
+                                        spara_figur = spara_figurer)
+
 
 save.image(file = "G:/skript/projekt/environments/uppfoljning_dalastrategin.RData")
 

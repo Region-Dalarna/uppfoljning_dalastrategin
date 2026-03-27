@@ -1134,8 +1134,13 @@ Olika platser i Dalarna har olika utmaningar och möjligheter att möta de för�
 
 Den här indikatorn presenterar två olika mått på tillgång till service; tillgång till grundskola samt tillgång till dagligvarubutik. Resultatet visar att tillgång till grundskola har minskat något under perioden från 2017 till 202X. I början på perioden hade drygt ??72,9 procent av alla invånare mellan 0-16 år en grundskola inom 2 km från bostaden. 202X hade motsvarande siffra minskat till ??72,3 procent. Samma trend ses även för tillgång till dagligvarubutiker. Under samma period har andelen med en dagligvarubutik inom 2 km från bostaden minskat från ??64,4 procent till ??63,7 procent.
 
-Kod in här..
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_service_vard$service_Dalarna
+```
 
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_service_vard$vard_Dalarna
+```
 
 **Tillgång till bredband**
 
