@@ -104,10 +104,10 @@ Den miljömässiga dimensionen för en hållbar regional utveckling handlar blan
 
 ## Tillståndet i Dalarnas miljö och natur{.tabset}
 
-Länsstyrelsen gör årligen en uppföljning av miljökvalitetsmålen på regional nivå. Det här avsnittet är baserat på länsstyrelsens slutsatser och rapport. 
+Tillståndet i Dalarnas miljö och natur är en grund för både livskvalitet, folkhälsa och långsiktig utvecklingskraft. Rent vatten och ren luft är avgörande för människors hälsa och för robusta samhällsfunktioner, samtidigt som våra sjöar, vattendrag och skogar är viktiga resurser för friluftsliv, näringar och klimatnytta. I det här avsnittet belyser vi att vi behöver förena brukande med ansvar – att skapa hållbara sätt att använda skog och mark, minska påverkan från utsläpp och näringsläckage, och stärka ekosystemens motståndskraft. Vi lyfter också behovet av att skydda och utveckla den biologiska mångfalden, eftersom den är en förutsättning för fungerande ekosystemtjänster som pollinering, vattenrening och klimatanpassning. Tillsammans ger detta en bild av hur Dalarna kan värna naturkapitalet och samtidigt skapa goda livsmiljöer för nuvarande och kommande generationer.
 
-Länsstyrelsen konstaterar att för flera av miljömålen är klimatförändring ett av de stora hoten. Negativa effekter av ett förändrat klimat så som värmeböljor, torka, extrema skyfall, översvämning, ras, skred och erosion och skogsbränder kommer 
-innebära en omfattande utmaning för samhället. Här följer fyra centrala mål för vår 
+Länsstyrelsen gör årligen en uppföljning av miljökvalitetsmålen på regional nivå. Det här avsnittet är baserat på länsstyrelsens slutsatser och rapport. 
+Av rapporten framgår att för flera av miljömålen är klimatförändring ett av de stora hoten. Negativa effekter av ett förändrat klimat så som värmeböljor, torka, extrema skyfall, översvämning, ras, skred och erosion och skogsbränder kommer att innebära en omfattande utmaning för samhället.
 
 
 <span class="big-indicator">
@@ -165,7 +165,7 @@ gg_vatten$vattendrag_Sverige
 Ren luft är en av grunderna för liv. Luften vi andas påverkas av utsläpp från många olika källor. I Länsstyrelsens uppföljning av miljökvalitetsmålen konstateras att luftkvaliteten generellt är god i Dalarna men försämrad i tätorter på grund av utsläpp från trafik, industri, uppvärmning av bostäder och småskalig vedeldning. För att uppfylla målet om Frisk luft behövs snabbare och kraftfullare åtgärder, vilket Världshälsoorganisationen (WHO) belyst genom att sänka sina riktvärden för luftföroreningar.
 
 
-Ev. Diagram.
+Ev. Diagram?
 
 
 ### Skog och mark{-} 
@@ -225,9 +225,9 @@ Klimatförändringar påverkar fjällen och dess ekosystemprocesser allt mer. L�
 ## {-}
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
 
-## Val för minskad miljöpåverkan och resursförbrukning i Dalarna{.tabset}
+## Omställning för minskad miljöpåverkan och resursförbrukning i Dalarna{.tabset}
 
-För att minska miljöpåverkan och utsläppen av växthusgaser i Dalarna behöver vi kombinera teknisk omställning med förändrade beteenden i vardag och verksamheter. Dalastrategin pekar på att fossila bränslen ska fasas ut och ersättas av klimatneutrala lösningar, samtidigt som vi ökar takten i utsläppsminskningarna genom resurseffektiva val.
+Omställningen till minskad miljöpåverkan och resursförbrukning är avgörande för ett hållbart Dalarna och för att möta både klimatutmaningen och ökade krav på robusthet i samhälle och näringsliv. I det här avsnittet följer vi utvecklingen genom indikatorer som visar både minskade utsläpp och förändrade system: växthusgasutsläpp ger en samlad bild av klimatpåverkan, medan kollektivt resande och andel elbilar speglar hur transportsektorn ställer om. Vi belyser också resurseffektiviteten genom återvunnet avfall, som visar hur väl material cirkulerar i stället för att bli avfall, och hur kommunerna stärker sin motståndskraft genom klimatanpassningsplaner. Tillsammans ger indikatorerna en helhetsbild av hur Dalarna kan minska sin miljöpåverkan genom både beteendeförändringar, teknisk omställning och långsiktig planering.
 
 
 <span class="big-indicator">
@@ -359,9 +359,7 @@ På webbplatsen ["Klimatkalkylen"](https://klimatkalkylen.oawa.se/)
 
 ## Elektricitets- och livsmedelsförsörjning {.tabset}
 
-De ekonomiska aspekterna av ett klimatsmart Dalarna handlar om hur vi tar tillvara naturresurserna och skapar värden och självförsörjning inom de planetära gränserna. 
-
-Sammanfatting.
+Dalarnas elektricitets- och livsmedelsförsörjning är grundläggande för både vardagsliv, näringslivets utveckling och länets beredskap. I det här avsnittet följer vi hur den förnybara elproduktionen bidrar till en robust och klimatsmart energibas, och hur energin omsätts i ekonomiskt värde. Samtidigt belyser vi livsmedelsförsörjningen, där lokal produktion, logistik och tillgång till förädling påverkar både självförsörjningsgrad och motståndskraft vid kris. Tillsammans ger indikatorerna en bild av hur Dalarna kan stärka sin försörjningsförmåga genom både ökad förnybar elproduktion, smartare användning och en mer robust livsmedelskedja.
 
 
 <span class="big-indicator">
@@ -434,7 +432,7 @@ gg_avfall$avfall_BRP_Dalarna
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
 
 
-### Självförsörjning mat och el{-}
+### Självförsörjning {-}
 
 Klimatförändringarna medför lokalt förändrade mönster för nederbörd, torka och vind men även insekts- och svampangrepp på grödor och skog, höga temperaturer, med mera. Här spelar god samhällsplanering på regional och kommunal nivå en viktig roll. Ett sätt att förbättra beredskapen i Dalarna är att ha en tillräckligt omfattande lokal och hållbar energi- och livsmedelsproduktion. En ökad självförsörjningsgrad är en trygghet på flera sätt och gynnar även miljöns motståndskraft genom en ökad biologisk mångfald.
 
@@ -489,7 +487,7 @@ Invandrares arbetsetablering <span style="color:red; font-size:1.8em; font-weigh
 <br>
 
 <span class="big-indicator">
-Ohälsa <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Ohälsa hos arbetande <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
@@ -542,7 +540,7 @@ Denna indikator mäter andelen elever i Dalarna som har fullföljt en gymnasieut
 gg_genomstromning_gym$genomstromning_gymnasiet_Dalarna
 ```
 
-
+Kommentera individuella programmet?
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 lupp_diagram_lista$H_tror_läsa_vidare_gy_Kön_Hogstadiet_Gymnasiet_bo_Dalarna
@@ -598,7 +596,7 @@ En hög sysselsättning och ett gott företagsklimat är grundpelare för Dalarn
 
 
 <span class="big-indicator">
-Företagande och arbete <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Arbete och företagande <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
@@ -608,8 +606,14 @@ Könssegregering <span style="color:red; font-size:1.8em; font-weight:900;">⬇<
 </span>
 <br>
 
+
 <span class="big-indicator">
-Brottslighet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Förutsättningar <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+<br>
+
+<span class="big-indicator">
+Ekobrottslighet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
@@ -619,10 +623,6 @@ Förtroende för rättsväsendet <span style="color:red; font-size:1.8em; font-w
 <br>
 
 
-<span class="big-indicator">
-Infrastrukturförutsättningar <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-<br>
 
 
 ### Arbete och företagande {-}
@@ -643,26 +643,25 @@ Antalet nystartade företag per kommun i Dalarna visar att `r nystartade_kommun_
 gg_nyst_konk$nystartade
 ```
 
-### Infrastruktur{-}
+### Förutsättningar {-}
 
 **Företagsklimat**
 
-Från TVV - företagens villkor och verklighet, alt. Entreprenörskapsforums rapport.
-
-
-**Branscher där 
-
+Från TVV - företagens villkor och verklighet och Entreprenörskapsforums rapport.
 
 
 **Tågens punktlighet**
 
 Trafikanalys - Anna letar data.
 
+https://www.trafa.se/globalassets/statistik/bantrafik/punktlighet-pa-jarnvag/2026/punktlighet-pa-jarnvag-2025-statistikblad.html
 
+<!--
 **Energitillgång?**
 
+Tillförlitligheten i energi-systemet, har frågat Jessica men hittar inget bra sätt att mäta det, får undersöka vidare.
 
-Status på vägar, restider, Anna letar data.
+-->
 
 
 ### Könssegregering {-}
@@ -702,7 +701,7 @@ gg_anmalda_brott$anmalda_ekobrott_Dalarna
 ```
 
 
-### Förtroende{-}
+### Förtroende för rättsväsendet{-}
 
 Med ökande ekonomisk brottslighet är ett väl fungerande rättsväsende en viktig förutsättning för företagande. I diagrammet nedan ses resultat från Brottsförebyggande rådets nationella trygghetsenkät, som visar att förtroendet för rättsväsendet i Dalarna är generellt sett högre för kvinnor än för män, år `r fortroende_max_ar` svarade ungefär `r fortroende_max_ar_varde_kvinnor` procent av de tillfrågade kvinnorna i Dalarna att de hade mycket stort eller ganska stort förtroende för rättsväsendet, medan motsvarande andel bland männen var ungefär `r fortroende_max_ar_varde_man` procent. Detta var något lägre än året innan för båda könen, men en ökning jämfört med `r fortroende_min_ar`. I jämförelse med riket så är kvinnors värde i princip detsamma som riksgenomsnittet medan män i Dalarna uppger ett betydligt lägre förtroende för rättsväsendet i jämförelse med riket.
 
@@ -720,7 +719,8 @@ gg_fortroende_rattsvasande$fortroende_rattsvasande__sverige
 <hr style="border: none; height: 5px; background-color: #f8aab6; margin-top: 40px; margin-bottom: 40px;">
 
 ## Ekonomiska värden, produktion och export {.tabset}
-Företagens produktion skapar ekonomiska värden som genererar löner och vinster och är centrala på Dalarnas konkurrenskraft. När företag kan producera effektivt och skapa högt värde på sina varor och tjänster stärks både lönsamhet och produktivitet, vilket ger utrymme för innovation och nya jobb. Exporten visar hur väl Dalarnas näringsliv står sig på nationella och internationella marknader och bidrar samtidigt till regionala inkomster och en starkare skattebas. I det här avsnittet belyser vi produktionens utveckling och exportens nivå, <mark>men även problematiserar även värderingar av kvinnors och mäns arbetsinsatser</mark>.
+
+Företagens produktion skapar ekonomiska värden som genererar löner och vinster och är centrala på Dalarnas konkurrenskraft. När företag kan producera effektivt och skapa högt värde på sina varor och tjänster stärks både lönsamhet och produktivitet, vilket ger utrymme för innovation och nya jobb. Exporten visar hur väl Dalarnas näringsliv står sig på nationella och internationella marknader och bidrar samtidigt till regionala inkomster och en starkare skattebas. I det här avsnittet belyser vi produktionens utveckling och exportens nivå, <mark>men även hur kvinnors och mäns inkomster, som handlar om förutsättningar för ekonomisk självständighet </mark>.
 
 <span class="big-indicator">
 Regional produktion <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
@@ -728,7 +728,7 @@ Regional produktion <span style="color:red; font-size:1.8em; font-weight:900;">�
 <br>
 
 <span class="big-indicator">
-Inkomster kvinnor och män <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Regionala inkomster <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
@@ -762,18 +762,9 @@ gg_brp_per_sysselsatt$brp_sysselsatt_Sverige
 
 
 
-### Inkomster kvinnor och män {-} 
+### Regionala inkomster {-} 
 
-Ett centralt syfte med jämställdhetspolitiken är att motverka att arbetsinsatser värderas olika enbart på grund av vem som utför dem. 
-
-Hur värderas olika arbetsinsatser?
-
-Diagram från Kvinnor och män-rapporten.
-
-
-**Inkomstskillnader mellan könen**
-
-En egen inkomst är en av förutsättningarna för ett ekonomiskt självständigt liv. Livsinkomsten påverkar även vilken pension personen kommer att få efter arbetslivet. 
+En egen inkomst är en av förutsättningarna för ett ekonomiskt självständigt liv. Livsinkomsten påverkar även vilken pension personen kommer att få efter arbetslivet. Ett centralt syfte med jämställdhetspolitiken är att motverka att arbetsinsatser värderas olika enbart på grund av vem som utför dem.
 
 För kvinnor och män i Dalarna i arbetsför ålder (20-64 år) är inkomstskillnaderna relativt stora och skillnaderna har hållit i sig över tid. Medianinkomsten för en man i Dalarna var `r inkomst_max_ar` cirka `r medianinkomst_man_max_20_64` tusen kronor före skatt, medan en kvinna hade en medianinkomst på ungefär `r medianinkomst_kvinna_max_20_64` tusen kronor. I den andra figuren nedan syns även en positiv utveckling i form av att den relativa skillnaden i inkomst mellan könen har minskat sedan millennieskiftet. Diagrammet visar att kvinnors medianinkomst har ökat med `r medianinkomst_kvinna_forandring_20_64` procent sedan slutet millennieskiftet, medan mäns har ökat med ungefär `r medianinkomst_man_forandring_20_64` procent. Det är dock viktigt att notera att figurerna nedan endast redovisar kvinnors och mäns skilda ekonomiska förutsättningar, medan det kan finnas flera förklaringar till skillnaden. En faktor är att kvinnor i högre grad arbetar deltid, och därför kan ha en lägre årsinkomst. Men även yrke, bransch och utbildningsinriktning kan förklara en del av skillnaden. 
 
@@ -785,7 +776,7 @@ gg_inkomst$Medianinkomst_20_64_Dalarna_tid
 gg_inkomst$Medianinkomst_20_64_Dalarna_tid_linje
 ```
 
-### Export från länet {-}
+### Regional export {-}
 
 Dalarnas export är en viktig motor för länets ekonomi och skapar värden långt utanför den lokala marknaden. När företag i Dalarna säljer varor och tjänster internationellt ökar intäkterna i länet och ger utrymme för investeringar, innovation och fler jobb. Dalarnas export handlar både om varor och tjänster som säljs utanför landsgränsen och utländska besökare som gästar Dalarna och konsumerar i länet. 
 
@@ -843,10 +834,9 @@ Vi säkrar utvecklingskraft i hela länet genom att värna tillgång till servic
 
 <hr style="border: none; height: 5px; background-color: #ffec9f; margin-top: 40px; margin-bottom: 40px;">
 
-## Dalfolkets hälsa och trygghet{.tabset}
+## Dalfolkets hälsa, trygghet och tillit {.tabset}
 
-Friska och trygga människor.... 
-
+Dalfolkets hälsa, trygghet och tillit är centrala för ett hållbart och sammanhållet Dalarna – och påverkar både livskvalitet, arbetskraftens förutsättningar och samhällsgemenskap. I det här avsnittet beskriver vi utvecklingen med hjälp av indikatorer som fångar både långsiktiga och mer vardagsnära villkor: medellivslängd och upplevd hälsa ger en övergripande bild av hur människor mår, medan folksjukdomar belyser de stora, långvariga hälsoutmaningarna och hur de fördelar sig i befolkningen. Vi kopplar detta till trygghet och brott mot person, som påverkar hur människor rör sig och deltar i samhället, samt till tillit – förtroendet för andra människor och för samhällsinstitutioner – som är en nyckel till gemensam handlingskraft och motståndskraft vid förändring och kris.
 
 
 <span class="big-indicator">
@@ -855,22 +845,18 @@ Medellivslängd <span style="color:red; font-size:1.8em; font-weight:900;">⬇</
 <br>
 
 <span class="big-indicator">
-Upplevd hälsa <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Hälsa och folksjukdomar <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+</span>
+<br>
+
+
+<span class="big-indicator">
+Trygghet och brott <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
 <span class="big-indicator">
-Folksjukdomar <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-<br>
-
-<span class="big-indicator">
-Brott mot person <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-<br>
-
-<span class="big-indicator">
-Upplevd trygghet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Tillit <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
@@ -898,9 +884,10 @@ gg_aterstaende_medellivslangd$`medellivslangd_aterstaende_vid_30 år_alder_Dalar
 Dödlighet i befolkningen i åldrarna 15-64 år efter kön, region och år. Antal per 100 000 inv. (SCB) 
 -->
 
-### Upplevd hälsa{-}
+### Hälsa och folksjukdomar{-}
 
-En god upplevd hälsa 
+**En god upplevd hälsa**
+
 Bra eller mycket bra allmänt hälsotillstånd efter utbildningsnivå och kön (HLV)
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
@@ -942,7 +929,7 @@ Andel unga som har svårt att somna i stort sett varje dag eller flera gånger i
 Andel med lätta eller svåra sömnbesvär, efter utbildning och kön (HLV)
 -->
 
-### Folksjukdomar{-}
+**Folksjukdomar**
 
 Hjärtinfarkt – incidenta fall per 100 000 (SoS)
 
@@ -996,7 +983,7 @@ Andel elever som tycker att det stämmer helt eller till stor del att rasism fö
 lupp_diagram_lista$C_skola_rasism_Kön_Hogstadiet_Gymnasiet_skola_Dalarna
 ```
 
-**Bostadsinbrott**
+**Brott mot enskilda**
 
 Anmälda bostadsinbrott..
 
@@ -1054,9 +1041,9 @@ Tillit till samhällsfunktioner efter utbildningsnivå och kön (HLV, ny design 
 ## {-}
 <hr style="border: none; height: 5px; background-color: #ffec9f; margin-top: 40px; margin-bottom: 40px;">
 
-## Dalfolkets delaktighet, samhällsengagemang och tillit{.tabset}
+## Dalfolkets delaktighet och samhällsengagemang {.tabset}
 
-Sammanfattning här. 
+Dalfolkets delaktighet och samhällsengagemang är en grund för både demokrati och hållbar samhällsutveckling. I det här avsnittet följer vi hur förutsättningarna ser ut för att kunna vara med och påverka – och för att vilja engagera sig. Valdeltagande och upplevelsen av att kunna påverka samhället visar hur stark den demokratiska delaktigheten är, medan deltagande i kultur- och fritidsaktiviteter speglar social gemenskap, folkhälsa och sammanhållning i vardagen. Samtidigt hänger engagemang nära ihop med tillgänglighet: bredband möjliggör delaktighet i digitala tjänster och samhällsinformation, och närhet till skola och matbutik påverkar både livskvalitet och möjligheten att bo och verka i hela länet. Tillsammans ger indikatorerna en bild av hur Dalarna kan stärka delaktigheten genom både demokratiska arenor och jämlika livsvillkor.
 
 
 <span class="big-indicator">
@@ -1120,6 +1107,7 @@ För Dalarna finns statistik över elevantalet i åtta av länets 15 kommuner. S
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_kulturskola$andel_kulturskola_Dalarna
 ```
+Här kommer fler variabler om deltagande att läggas till.
 <!--
 
 **Idrottande ungdomar**
@@ -1186,7 +1174,7 @@ Andel som alltid eller ofta känner sig trygg inför skoldagen efter kön (ELSA)
 
 ## Ekonomisk jämlikhet och ojämlikhet {.tabset}
 
-Sammanfattning.
+Ekonomisk jämlikhet är en viktig grund för både social hållbarhet och ekonomisk utvecklingskraft. I det här avsnittet belyser vi hur resurser och livsvillkor fördelas i Dalarna genom tre centrala mått: gini-koefficienten, som visar graden av inkomstojämlikhet i befolkningen, andel barn i ekonomisk utsatthet, som fångar hur många barn som växer upp med begränsade ekonomiska förutsättningar, samt mottagare av sociala ersättningar, som speglar behovet av ekonomiskt stöd och försörjningsstöd i olika grupper. Tillsammans ger indikatorerna en samlad bild av både skillnader i inkomster och var ekonomisk sårbarhet är som störst – och kan användas för att följa utvecklingen över tid och rikta insatser dit de gör mest nytta.
 
 
 <span class="big-indicator">
