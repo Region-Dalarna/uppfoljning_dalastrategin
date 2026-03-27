@@ -53,6 +53,8 @@ Senast uppdaterad: `r Sys.Date()`</i>
 
 # Sammanfattning {-}
 
+Text in här.
+
 
 # Introduktion {-}
 
@@ -64,22 +66,21 @@ Strategin är ett stöd och en språngbräda i arbetet med att rusta Dalarna fö
 - ett sammanhållet Dalarna
 - ett konkurrenskraftigt Dalarna 
 
-Att ställa om för att skapa en hållbar framtid är en utmaning som berör alla delar av samhället, från global till lokal nivå och inom alla sektorer. Omställningen innebär att flytta fokus från kortsiktiga resultat till arbetssätt som säkrar naturresurserna långsiktigt så att människor kan leva gott på dess avkastning också i många generationer. 
+Att ställa om för att skapa en hållbar framtid är en utmaning som berör alla delar av samhället, från global till lokal nivå och inom alla sektorer. Omställningen innebär att flytta fokus från kortsiktiga resultat till arbetssätt som säkrar naturen och människorna långsiktigt så att människor kan leva ett gott liv också i många generationer framåt. 
 
 
 <details>
 
   <summary>Mer information om regional utveckling</summary>
 
-<div>Dalastrategin är en regional utvecklingsstrategi som är en central del av styrningen av den regionala utvecklingen i Dalarna. Varje region ges även ett uppdrag från riksdagen, formulerat genom den nationella strategin för hållbar regional utveckling ["Dalastrategin - Tillsammans för ett hållbart Dalarna"](https://www.regiondalarna.se/globalassets/regional-utveckling/dalastrategin-2030-tillsammans-for-ett-hallbart-dalarna-dec.pdf){target="_blank"}). Regionerna ges också en summa pengar årligen att använda för att koordinera och främja regional utveckling.... Budgetpropostionen område 19... Länsstyrelsens arbete är också en del av ... 
-Uppföljning, årlig rapportering till regeringen, länsstyrelsens uppföljning av miljömålen och av hur de bidrar till regional utveckling.. [Namn](hemsida){target="_blank"}
+<div>Dalastrategin är Dalarnas regionala utvecklingsstrategi som är central för styrning och samordning av utvecklingen på regional nivå i Dalarna. Varje region tar fram en egen regional utvecklingsstrategi och har även ett uppdrag från riksdagen, formulerat genom den ["nationella strategin för hållbar regional utveckling"](https://www.regeringen.se/contentassets/53af87d3b16b4f5087965691ee5fb922/nationell-strategi-for-hallbar-regional-utveckling-i-hela-landet-20212030/){target="_blank"}). Med det nationella uppdraget följer även en summa pengar att årligen besluta om i syfte att stimulera regional utveckling. Regionen följer regelbundet upp utvecklingen in länet och rapporteräven länsstyrelsen har regionalt uppdrag att arbete för utveckling och ansvarar för uppföljning, årlig rapportering till regeringen, länsstyrelsens uppföljning av miljömålen och av hur de bidrar till regional utveckling. [Namn](hemsida){target="_blank"}
 </div>
  
 </details>
 
 Den här rapporten är en del av den årliga uppföljningen av Dalarnas utveckling och beskriver läget i Dalarna på vägen till en hållbar framtid.
 
-Rapporten är uppdelad efter strategins målområde; klimatsmart, konkurrenskraftigt och sammanhållet. Varje målområde är sedan uppdelat i tre avsnitt, som vart och ett är tänkta att fånga naturresurserna, samspel och beteendemönster samt ekonomiska värden. För klimatsmart Dalarna är exempelvis vind och vatten naturresurser, byten från bensinbilar till elbilar en del av beteendet och mängden regional produktion av miljövänlig electricitet ekonomiska värden. Inom konkurrenskraftigt är arbetskraft och kompetens naturresurser, ett gott företagsklimat beteeendet, och företagens produktion ekonomiska värden, och i sammanhållet är befolkningens hälsa och trygghet naturresurser, befolkningens görande, samhällsengagemang beteenden samt fördelningen av ekonomiska värden mellan människor en del av den ekonomiska delen av sammanhållet.
+Rapporten är uppdelad efter strategins målområden om ett klimatsmart, konkurrenskraftigt och sammanhållet Dalarna. Varje målområde är sedan uppdelat i tre avsnitt, som vart och ett är tänkta att fånga läget för naturresurser, samspel, omställning och beteendemönster samt ekonomiska värden. För klimatsmart Dalarna är exempelvis vind och vatten viktiga naturresurser, medan byte från bensinbilar till elbilar en del av beteendet och omställningen, och den regionala produktionen av electricitet från förnybara källor är ekonomiska värden. Inom ett konkurrenskraftigt Dalarna är arbetskraft och kompetens naturresurser, ett gott företagsklimat en del av beteendemönstren, och företagens produktion är ekonomiska värden. Inom ett sammanhållet Dalarna är befolkningens hälsa och trygghet naturresurser, medan befolkningens aktiviteter och samhällsengagemang är beteenden, samt fördelningen av ekonomiska värden mellan människor en del av det ekonomiska perspektivet på ett sammanhållet Dalarna.
 
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
 
@@ -94,7 +95,8 @@ robusthet och resiliens vid klimatförändringar god.
 
 Rent vatten, ren luft, biologisk mångfald och andra ekosystem är grundläggande värden för människor och samhällen, och att vårda människor och människors hälsa, kunskap och bildning är grunden till att skapa långsiktig ekonomisk nytta och ekonomisk trygghet.
 
-Dalarna är rikt på naturresurser och om de brukas rätt ger de mångfalt tillbaka, därför följs här bland annat hur resurser som vatten och vind, skog och jordbruksmark används. 
+Dalarna är rikt på naturresurser och om de brukas rätt ger de mångfalt tillbaka, därför följs här bland annat hur resurser som vatten och vind, skog och jordbruksmark används.
+
 Den miljömässiga dimensionen för en hållbar regional utveckling handlar bland annat om att säkerställa att ekosystemen bibehålls och vårdas och att ett livscykelperspektiv tillämpas på allt från råvara och produktion till användning, återbruk och resurseffektivisering.
 
 <!--För att nå ett klimatsmart Dalarna behöver vi skapa förutsättningar som gör det lätt att göra rätt – för invånare, företag och offentliga aktörer. Vi utgår från ett livscykelperspektiv där allt från råvara och produktion till användning och återbruk vägs in, och vi driver på cirkulära materialflöden och resurseffektivitet. Vi kombinerar teknisk omställning (elektrifiering, fossilfria bränslen, mer förnybar energi) med beteendeförändringar – särskilt i resor, transporter och konsumtion. Genom transportsnål planering och fler attraktiva alternativ till bilen blir det enklare att välja kollektivtrafik, cykel och gång. Offentlig sektor använder upphandling som hävstång och efterfrågar hållbara varor och tjänster så att marknaden ställer om snabbare. Tillsammans skapar vi nya vanor och normer som minskar utsläppen och stärker Dalarnas konkurrenskraft och livsmiljöer.-->
@@ -106,27 +108,30 @@ Den miljömässiga dimensionen för en hållbar regional utveckling handlar blan
 
 Tillståndet i Dalarnas miljö och natur är en grund för både livskvalitet, folkhälsa och långsiktig utvecklingskraft. Rent vatten och ren luft är avgörande för människors hälsa och för robusta samhällsfunktioner, samtidigt som våra sjöar, vattendrag och skogar är viktiga resurser för friluftsliv, näringar och klimatnytta. I det här avsnittet belyser vi att vi behöver förena brukande med ansvar – att skapa hållbara sätt att använda skog och mark, minska påverkan från utsläpp och näringsläckage, och stärka ekosystemens motståndskraft. Vi lyfter också behovet av att skydda och utveckla den biologiska mångfalden, eftersom den är en förutsättning för fungerande ekosystemtjänster som pollinering, vattenrening och klimatanpassning. Tillsammans ger detta en bild av hur Dalarna kan värna naturkapitalet och samtidigt skapa goda livsmiljöer för nuvarande och kommande generationer.
 
-Länsstyrelsen gör årligen en uppföljning av miljökvalitetsmålen på regional nivå. Det här avsnittet är baserat på länsstyrelsens slutsatser och rapport. 
-Av rapporten framgår att för flera av miljömålen är klimatförändring ett av de stora hoten. Negativa effekter av ett förändrat klimat så som värmeböljor, torka, extrema skyfall, översvämning, ras, skred och erosion och skogsbränder kommer att innebära en omfattande utmaning för samhället.
+Länsstyrelsen gör årligen en uppföljning av miljökvalitetsmålen på regional nivå. Det här avsnittet är främst baserat på länsstyrelsens slutsatser och rapport. Av rapporten framgår att för flera av miljömålen är klimatförändring ett av de stora hoten. Negativa effekter av ett förändrat klimat så som värmeböljor, torka, extrema skyfall, översvämning, ras, skred och erosion och skogsbränder kommer att innebära en omfattande utmaning för samhället.
 
-
-<span class="big-indicator">
-Vatten 
-<span style="color:black; font-size:1.4em; font-weight:900;">➡</span>
-</span> Grundvattnen till stora delar av god kvalitet, ett antal platser negativt påverkade.
+<span style="font-size: 20px;">↗</span>
 
 <span class="big-indicator">
-Luft 
-<span style="color:green; font-size:1.4em; font-weight:900;">➡</span>
-</span> 
+Vatten <span style="color:black; font-size:1.4em; font-weight:900;">↗ ➡</span>
+</span> <br> 
+Grundvattnen till stora delar av god kvalitet, ett antal platser negativt påverkade.
+
+<span class="big-indicator">
+Luft <span style="color:green; font-size:1.4em; font-weight:900;">➡</span>
+</span> <br>
+Luft av god kvalitet...
 
 <span class="big-indicator">
 Skog och mark <span style="color:red; font-size:1.4em; font-weight:900;">⬇</span>
-</span>
+</span><br> 
+Brukandet av skog och mark 
 
 <span class="big-indicator">
 Biologisk mångfald <span style="color:red; font-size:1.4em; font-weight:900;">⬇</span>
-</span>
+</span><br> 
+Utvecklingen av den biologiska mångfalden...
+
 
 Länsstyrelserna i Sverige har i uppdrag att följa upp tillståndet i miljön i respektive län. För Dalarna finns redovisningen ["här"](https://www.rus.se/regional-arlig-uppfoljning/dalarnas-lan/#generation){target="_blank"}, för den som vill fördjupa sig ytterligare.
 
