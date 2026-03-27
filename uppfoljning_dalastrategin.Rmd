@@ -1115,10 +1115,12 @@ lupp_diagram_lista$D_vill_påverka_Kön_Hogstadiet_Gymnasiet_bo_Dalarna
 Kultur- och fritidsaktiviteter är viktiga för samhällsutvecklingen och särskilt för ungdomars utveckling. Mer statistik om civilsamhället och befolkningens engagemang skulle vara önskvärt men här redovisar vi några av de uppgifter som finns tillgängliga.
 
 **Elever i kulturskolan**
+För Dalarna finns statistik över elevantalet i åtta av länets 15 kommuner. Störst andel elever utgörs av flickor i Malung-Sälen, där cirka 30 procent av flickorna går i musik- eller kulturskolan, och 10 procent av pojkarna. Falun och Avesta har lägst andel av de rapporterade kommunerna, där ungefär 13 procent av flickorna och ungefär 7 procent av pojkarna går i musik- eller kulturskola.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_kulturskola$andel_kulturskola_Dalarna
 ```
+<!--
 
 **Idrottande ungdomar**
 
@@ -1133,7 +1135,7 @@ Utlån från biblioteken i Dalarna, är under konstruktion.
 **Studiecirkeltimmar**
 
 Antal studiecirkeltimmar i Dalarna är under konstruktion.
-
+-->
 
 ### Butik, skola och bredband {-}
 
@@ -1182,15 +1184,13 @@ Andel som alltid eller ofta känner sig trygg inför skoldagen efter kön (ELSA)
 ## {-}
 <hr style="border: none; height: 5px; background-color: #ffec9f; margin-top: 40px; margin-bottom: 40px;">
 
-## Fördelning av inkomster och värden{.tabset}
+## Ekonomisk jämlikhet och ojämlikhet {.tabset}
 
 Sammanfattning.
 
-Ett mönster vi behöver kommentera: ekonomisk situation handlar ju inte bara om lönenivån utan också om kostnader, ex. om boendekostnaderna är lägre så får man ju mer kvar i plånboken, vilket ger förutsättningar för fritid och konsumtion. Hur synliggör vi det?
-
 
 <span class="big-indicator">
-Jämlikhet/ojämlikhet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Inkomstfördelning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
@@ -1204,19 +1204,19 @@ Bidragsmottagare <span style="color:red; font-size:1.8em; font-weight:900;">⬇<
 </span>
 <br>
 
+<!--
 <span class="big-indicator">
 Sparande och kapital <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
+-->
 
-
-### Jämlikhet/ojämlikhet{-}
+### Inkomstfördelning{-}
 
 I Dalastrategin lyfts ekonomiska klyftor som en framtidsutmaning för länet. 
 
 Ekonomiska klyftor mellan olika grupper i samhället är en utmaning för både Sverige och Dalarna. Om de socioekonomiska klyftorna blir alltför stora riskerar de att motverka sammanhållning, tillit och trygghet. Det riskerar i sin tur att försvaga demokratin, exempelvis genom systematiska skillnader i valdeltagande, faktiskt eller upplevt inflytande samt delaktighet och engagemang.
 
-**Gini-koefficienten**
 För att redovisa ojämlikheten i inkomstfördelningen används gini-koefficienten. Ett högt värde på koefficienten visar på större inkomstskillnader och därmed större ojämlikhet. Här redovisas ginikoefficienten beräknad genom disponibel inkomst och hänsyn tagen till hur hushållet som individen bor i är sammansatt. Det betyder att beräkningen beaktar om personen är ensamboende eller sammanboende och om den har ansvar för minderåriga barn eller inte etc, faktorer som kan minska eller öka individens disponibla inkomst.
 
 I Dalarna har ginikoefficienten ökat något från  `r gini_min_ar` till `r gini_max_ar`, vilket således visar på en ökad ekonomisk ojämlikhet i länet, med en toppnotering 2019. Värt att notera är dock att trenden verkar bruten då ginikoeffiecienten minskade såväl 2023 som  `r gini_max_ar`, jämfört med åren innan. Ginikoefficienten för länet ligger även under koefficienten för riket för samtliga år förutom 2019, det vill säga i Dalarna är inkomsterna mindre ojämlika än i Sverige som helhet. År 2019 avviker så skarpt från den generella trenden att det årets notering bör betraktas med försiktighet. 
@@ -1225,8 +1225,8 @@ I Dalarna har ginikoefficienten ökat något från  `r gini_min_ar` till `r gini
 gg_gini$gini_tidsserie_00_20
 ```
 
+### Barn i ekonomisk utsatthet{-}
 
-**Barn i ekonomisk utsatthet**
 Barn är särskilt utsatta då de inte kan påverka sin livssituation utan är beroende av sina omsorgspersoner och vårdnadshavare. Som låg ekonomisk standard klassas hushåll som har en årsinkomst under 60 procent av medianvärdet för hushållens årliga inkomster i Sverige. Andel barn som lever i hushåll med låg ekonomisk standard blir därför ett mått på barns ekonomiska utsatthet i samhället. 
 
 I diagrammet nedan kan vi notera att andelen unga (0-19 år) som lever i hushåll med låg ekonomisk standard i Dalarnas län har ökat över mätperioden, vilket är negativt, från `r lag_ek_standard_df_dalarna_min_ar` procent år `r min_ar_lag_ek` till drygt `r lag_ek_standard_df_dalarna_max_ar` procent `r max_ar_lag_ek`. Viktigt att notera är dock att andelen har minskat tydligt mellan 2019 och `r max_ar_lag_ek`, från `r lag_ek_standard_df_dalarna_2019` procent till `r lag_ek_standard_df_dalarna_max_ar` procent.
@@ -1243,15 +1243,14 @@ gg_lag_ek_standard$andel_invånare_0_19_år_med_låg_ekonomisk_standard
 
 ### Bidragsmottagare{-}
 
-Ett annat mått att följa för att utröna hur jämlikheten utvecklas är andelen av befolkningen som mottar någon form av bidrag för att försörja sig.  kan  välfärdssystemet och på helårsekvivalenter...
+Ett annat mått att följa för att utröna hur den ekonomiska jämlikheten utvecklas är andelen av befolkningen som mottar någon form av sociala ersättningar eller bidrag för att försörja sig. Det handlar om ersättningar som sjukpenning, sjuk- och aktivitetsersättning, a-kassa, ekonomiskt bistånd, etableringsersättning och arbetsmarknadsåtgärder och för att få ett jämförbart värde har ersättningarna räknats om till helårsbidrag (helårsekvivalenter). Sedan 2014 har antalet helårsekvivalenter sammanlagt minskat från cirka 25 000 till cirka 17 500. Således är de som försörjer sig genom bidrag i Dalarna allt färre till antalet och signalerar att fler har andra inkomster.
 
-De som behöver stöd för att leva ett drägligt liv.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 bidragsmottagare_diagram[[1]]
 ```
 
-
+<!--
 ### Kapitalvinster/förluster {-}
 
 
@@ -1259,8 +1258,9 @@ bidragsmottagare_diagram[[1]]
 
 Diagram från Kolada.
 
+Svårt att tyda utvecklingen, undrar om variabeln verkligen fångar verkligheten, fråga skickad till SCB.
 
-Påverkas av bostadsmarknaden etc.
+-->
 
 ## {-}
 <hr style="border: none; height: 5px; background-color: #ffec9f; margin-top: 40px; margin-bottom: 40px;">
