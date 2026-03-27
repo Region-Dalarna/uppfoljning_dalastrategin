@@ -1102,7 +1102,7 @@ lupp_diagram_lista$D_vill_påverka_Kön_Hogstadiet_Gymnasiet_bo_Dalarna
 
 
 
-in### Kultur/fritid{-}
+### Kultur/fritid{-}
 
 Kultur- och fritidsaktiviteter är viktiga för samhällsutvecklingen och särskilt för ungdomars utveckling. Mer statistik om civilsamhället och befolkningens engagemang skulle vara önskvärt men här redovisar vi några av de uppgifter som finns tillgängliga.
 
