@@ -1113,6 +1113,11 @@ För Dalarna finns statistik över elevantalet i åtta av länets 15 kommuner. S
 gg_kulturskola$andel_kulturskola_Dalarna
 ```
 Här kommer fler variabler om deltagande att läggas till.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_lantagare_bibl$andel_lantagare_bibliotek_Dalarna
+```
+
 <!--
 
 **Idrottande ungdomar**

@@ -591,6 +591,14 @@ gg_service_vard <- diagram_service_vard(region_vekt = "20",
                                         ggobjektfilnamn_utan_tid = TRUE,
                                         spara_figur = spara_figurer)
 
+# Andel låntagare bibliotek
+source(here("Skript","diagram_andel_lantagare_bibl.R"))
+gg_lantagare_bibl <- diagram_bibliotek_lantagare(region_vekt = "20",
+                                                 output_mapp = output_mapp_figur,
+                                                 returnera_data = TRUE,
+                                                 ggobjektfilnamn_utan_tid = TRUE,
+                                                 spara_figur = spara_figurer)
+
 
 save.image(file = "G:/skript/projekt/environments/uppfoljning_dalastrategin.RData")
 
