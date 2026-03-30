@@ -110,11 +110,12 @@ Tillståndet i Dalarnas miljö och natur är en grund för både livskvalitet, f
 
 Länsstyrelsen gör årligen en uppföljning av miljökvalitetsmålen på regional nivå. Det här avsnittet är främst baserat på länsstyrelsens slutsatser och rapport. Av rapporten framgår att för flera av miljömålen är klimatförändring ett av de stora hoten. Negativa effekter av ett förändrat klimat så som värmeböljor, torka, extrema skyfall, översvämning, ras, skred och erosion och skogsbränder kommer att innebära en omfattande utmaning för samhället.
 
-<span style="font-size: 20px;">↗</span>
+<span style="font-size: 120px;">↗</span>
 
+↘
 
 <span class="big-indicator">
-Vatten <span style="color:gray; font-size:24 px; font-weight:900;">↗</span>
+Vatten <span style="color:green; font-size:120 px; font-weight:900;">↗</span>
 </span> <br> 
 Grundvatten till stora delar av god kvalitet, ett antal platser negativt påverkade.
 
