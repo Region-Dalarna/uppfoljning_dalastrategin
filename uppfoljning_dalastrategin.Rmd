@@ -112,8 +112,9 @@ Länsstyrelsen gör årligen en uppföljning av miljökvalitetsmålen på region
 
 <span style="font-size: 20px;">↗</span>
 
+
 <span class="big-indicator">
-Vatten <span style="color:black; font-size:1.4em; font-weight:900;">↗ ➡</span>
+Vatten <span style="color:gray; font-size:24 px; font-weight:900;">↗</span>
 </span> <br> 
 Grundvatten till stora delar av god kvalitet, ett antal platser negativt påverkade.
 
@@ -283,8 +284,6 @@ Sett till utsläpp per person ligger Dalarna högre än riksgenomsnittet, trots 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_utslapp$utslapp_per_capita_Dalarna
 ```
-
-<hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
 
 
 ### Kollektivt resande{-}
@@ -794,15 +793,14 @@ I diagrammet nedan ses varuexportvärdet mellan åren 2000 och 2024, i löpande 
 export_diagram_lista$Varuexportvarde_lan_Dalarna
 ```
 
-
-De största mottagarländerna för Dalarnas export år 2024 var Tyskland, USA och Norge som tillsammans stod för ungefär 30 procent av exportvärdet. 
+I diagrammet nedan redovisas mottagarländer för export från Dalarna i storleksordning. De största mottagarländerna för Dalarnas export år 2024 var Tyskland, USA och Norge som tillsammans stod för ungefär 30 procent av exportvärdet. 
 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 export_diagram_lista$Export_storsta_lander_Dalarna_ar
 ```
 
-Antalet utländska gästnätter har under 2010-talet varit relativt konstant runt 700 000, under pandemin minskade avsevärt, för att efter pandemin öka kraftigt och under 2025 passera miljonstrecket i antal.
+Antalet utländska besökares gästnätter är en del av det samlade exportvärdet då det för in pengar utomlands ifrån till Sverige och Dalarna. Under 2010-talet har antalet gästnätter varit relativt konstant runt 700 000, för att under pandemin minska avsevärt av naturliga skäl. Efter pandemin ses en kraftig ökning och under 2025 passerades miljonstrecket i antal gästnätter av utländska besökare.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 export_diagram_lista$utl_gastnatter_Dalarna_2008_2025
@@ -949,17 +947,19 @@ lupp_diagram_lista$F_mående_Kön_Hogstadiet_Gymnasiet_bo_Dalarna
 <!--
 Andel unga som har svårt att somna i stort sett varje dag eller flera gånger i veckan efter kön, högstadiet och/eller gymnasiet (LUPP)
 
-
 Andel med lätta eller svåra sömnbesvär, efter utbildning och kön (HLV)
 -->
 
 **Folksjukdomar**
 
-Hjärtinfarkt – incidenta fall per 100 000 (SoS)
+Några vanliga folksjukdomar och hälsorisker i befolkningen är hjärtinfarkt, övervikt och fallskador bland äldre. Tillsammans ger indikatorerna en bild av både livsstilsrelaterade risker och skador som påverkar hälsa, livskvalitet och behovet av vård och omsorg. Genom att följa utvecklingen över tid och skillnader mellan grupper och geografier kan vi se var förebyggande insatser behövs mest – till exempel kring levnadsvanor, tryggare boendemiljöer och fallförebyggande arbete för äldre.
+
+I diagrammen nedan visas förekomst av hjärtinfarkter uppdelat efter kön i Dalarna mellan åren 2004 - 2023. Över tid minskar förekomsten per 100 000 invånare i båda grupperna, i båda grupperna har förekomsten nästan halverats. Men könsskillnaderna är markanta, förekomsten bland män är nästan dubbelt så hög som bland kvinnor. 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_sjukdomar_hundratusen$incidens_av_hjartinfarkter_Dalarna
 ```
+En jämförelse med övriga regioner i riket visar att könsmönstret är detsamma i samtliga regioner, och att Dalarna ligger lite över riksgenomsnittet för både kvinnor och män när det gäller förekomst per 100 000 invånare.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_sjukdomar_hundratusen$incidens_av_hjartinfarkter
@@ -967,9 +967,9 @@ gg_sjukdomar_hundratusen$incidens_av_hjartinfarkter
 
 <!--
 Hypertoni – efter utbildningsnivå och kön (HLV)
--->
 
 Övervikt/obesitas – efter utbildningsnivå och kön (HLV)
+-->
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_sjukdomar_andel$invanare_med_overvikt_eller_fetma_Dalarna
