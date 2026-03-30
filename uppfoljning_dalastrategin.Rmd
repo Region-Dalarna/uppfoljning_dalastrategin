@@ -73,7 +73,7 @@ Att ställa om för att skapa en hållbar framtid är en utmaning som berör all
 
   <summary>Mer information om regional utveckling</summary>
 
-<div>Dalastrategin är Dalarnas regionala utvecklingsstrategi som är central för styrning och samordning av utvecklingen på regional nivå i Dalarna. Varje region tar fram en egen regional utvecklingsstrategi och har även ett uppdrag från riksdagen, formulerat genom den ["nationella strategin för hållbar regional utveckling"](https://www.regeringen.se/contentassets/53af87d3b16b4f5087965691ee5fb922/nationell-strategi-for-hallbar-regional-utveckling-i-hela-landet-20212030/){target="_blank"}). Med det nationella uppdraget följer även en summa pengar att årligen besluta om i syfte att stimulera regional utveckling. Regionen följer regelbundet upp utvecklingen in länet och rapporteräven länsstyrelsen har regionalt uppdrag att arbete för utveckling och ansvarar för uppföljning, årlig rapportering till regeringen, länsstyrelsens uppföljning av miljömålen och av hur de bidrar till regional utveckling. [Namn](hemsida){target="_blank"}
+<div>Dalastrategin är Dalarnas regionala utvecklingsstrategi som är central för styrning och samordning av utvecklingen på regional nivå i Dalarna. Varje region tar fram en egen regional utvecklingsstrategi och har även ett uppdrag från riksdagen, formulerat genom den ["nationella strategin för hållbar regional utveckling"](https://www.regeringen.se/contentassets/53af87d3b16b4f5087965691ee5fb922/nationell-strategi-for-hallbar-regional-utveckling-i-hela-landet-20212030/){target="_blank"}). Med det nationella uppdraget följer även en summa pengar att årligen besluta om i syfte att stimulera regional utveckling. Regionen följer regelbundet upp utvecklingen in länet och rapporteräven länsstyrelsen har regionalt uppdrag att arbete för utveckling och ansvarar för uppföljning, årlig rapportering till regeringen, länsstyrelsens uppföljning av miljömålen och av hur de bidrar till regional utveckling. ["Namn"](hemsida){target="_blank"}
 </div>
  
 </details>
@@ -115,7 +115,7 @@ Länsstyrelsen gör årligen en uppföljning av miljökvalitetsmålen på region
 <span class="big-indicator">
 Vatten <span style="color:black; font-size:1.4em; font-weight:900;">↗ ➡</span>
 </span> <br> 
-Grundvattnen till stora delar av god kvalitet, ett antal platser negativt påverkade.
+Grundvatten till stora delar av god kvalitet, ett antal platser negativt påverkade.
 
 <span class="big-indicator">
 Luft <span style="color:green; font-size:1.4em; font-weight:900;">➡</span>
@@ -880,10 +880,13 @@ Medellivslängd är ett tydligt mått på samhällsutveckling och välfärd. Sve
 
 För grupper med förgymnasial utbildning är utvecklingen mer ojämn, och bland män syns en mindre nedgång kring slutet av 2010-talet/början av 2020-talet följt av återhämtning, medan gruppen kvinnor det senaste året visar på en nedgång. Sammantaget illustrerar diagrammet att utbildning hänger tydligt samman med livslängd, och att skillnaderna är stabila över perioden.
 
-
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_aterstaende_medellivslangd$`medellivslangd_aterstaende_vid_30 år_alder_Dalarna`
 ```
+
+
+En fördjupning av analysen om vad som bidrar till en högre medellivslängd som gjorts på nationell nivå av SCB visar att även boenderelation har stor betydelse ["SCB"](https://www.scb.se/hitta-statistik/statistik-efter-amne/befolkning-och-levnadsforhallanden/befolkningens-sammansattning-och-utveckling/demografisk-analys/pong/statistiknyhet/livslangd-efter-utbildningsniva/){target="_blank"}. Sammanboende män och kvinnor lever längre än ensamstående män och kvinnor i respektive utbildningsgrupp. För gruppen män är skillnaden så pass stor att sammanboende män med förgymnasial utbildning lever i genomsnitt längre än ensamstående män med eftergymnasial utbildning.
+
 
 <!--
 Dödlighet i befolkningen i åldrarna 15-64 år efter kön, region och år. Antal per 100 000 inv. (SCB) 
@@ -893,11 +896,23 @@ Dödlighet i befolkningen i åldrarna 15-64 år efter kön, region och år. Anta
 
 **En god upplevd hälsa**
 
+En god hälsa är en viktig förutsättning för att utvecklas och vara en aktiv samhällsmedborgare. I Dalastrategin lyfts att jämlika livsvillkor och god hälsa är viktiga för att ge alla människor i Dalarna möjlighet att utvecklas.
+
+Folkhälsan mäts genom enkätundersökningar där ett urval av befolkningen (16-84 år) får besvara frågor bland annat om hur de upplever sin hälsostatus. Det är Folkhälsomyndigheten som undersöker folkhälsan och dess förutsättningar. Då materialet baseras på enkätsvar ska mindre förändringar och skillnader mellan grupper bedömas med försiktighet.
+
+Av svaren framgår att hälsan varierar både i riket och mellan platser i Dalarnas län. Personer med lägre utbildningsnivå uppger generellt sett en sämre hälsa och sämre förutsättningar för en god hälsa än de med högre utbildningsnivå.
+
+År 2024 var det ungefär 65 procent av respondenterna i Dalarnas län som uppgav ett bra eller mycket bra allmänt hälsotillstånd, vilket var en tydlig försämring jämfört med åren innan. Under tidsperioden 2014-2021 var det allmänna hälsotillståndet i länet stabilt runt 68-69 procent utan några större förändringar. Under samtliga fyra uppmätta år har en något större andel av männen svarat att de upplever ett allmänt gott hälsotillstånd i jämförelse med andelen kvinnor, en skillnad som ökade 2024.
+
+<!--
 Bra eller mycket bra allmänt hälsotillstånd efter utbildningsnivå och kön (HLV)
+-->
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_hlv_sjalvskattad$halsa_dalarna_tid
 ```
+
+I ett nationellt perspektiv ligger alla kommuner i Dalarnas län i nivå med, eller under riksgenomsnittet. I 2024 års undersökning uppgav ca 68 procent av befolkningen i riket att de har ett bra eller mycket bra allmänt hälsotillstånd, samma andel som Leksands invånare rapporterade, medan genomsnittet för Dalarnas befolkning var 65 procent, det vill säga 4 procentenheter under riksgenomsnittet. Lägst nivå på andelen med självrapporterad god hälsa finns i Säter där ungefär 60 procent av invånarna ansåg sig ha en allmänt god hälsa.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_hlv_sjalvskattad$halsa_senaste_jmf
@@ -907,21 +922,25 @@ gg_hlv_sjalvskattad$halsa_senaste_jmf
 Allvarlig psykisk påfrestning efter utbildningsnivå och kön (HLV)
 -->
 
+I Folkhälsomyndighetens enkätundersökning finns även frågor om upplevd psykisk påfrestning. I Dalarna svarar en ungefär lika stor andel kvinnor och män, cirka 10 procent, att de har erfarit allvarlig psykisk påfrestning det senaste året. Andelen har minskat något mellan mätåren 2022 och 2024.  
+
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_sjukdomar_andel$`invanare_16-84_ar_med_allvarlig_psykisk_pafrestning_Dalarna_ar_2022_2024`
 ```
+I en nationell jämförelse ses att skillnaderna är större mellan kvinnor och män för de flesta län och för riket. Kvinnor i Dalarna har till lägre grad uppgett att de erfarit allvarlig psyisk påfrestning, medan män i Dalarna i högre grad än riksgenomsnittet uppgett att de erfarit detsamma.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_sjukdomar_andel$`invanare_16-84_ar_med_allvarlig_psykisk_pafrestning_ar_2024`
 ```
 
-Unga som skattar sin hälsa som mycket eller ganska bra (LUPP)
-
 <!--
+Unga som skattar sin hälsa som mycket eller ganska bra (LUPP)
 ```r
 lupp_diagram_lista[["F_mående_Kön_Hogstadiet_Gymnasiet_bo_Dalarna"]]
 ```
 -->
+
+I Folkhälsomyndighetens undersökning ingår inte ungdomar. Däremot frågas om ungdomars mående genom enkätundersökningen LUPP (lokal uppföljning av ungdomspolitiken), som genomförs på både högstadiet och gymnasiet vart tredje år. I diagrammet nedan ses en försämring i skattad hälsa bland både tjejer och killar över tid.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 lupp_diagram_lista$F_mående_Kön_Hogstadiet_Gymnasiet_bo_Dalarna
@@ -1112,7 +1131,8 @@ För Dalarna finns statistik över elevantalet i åtta av länets 15 kommuner. S
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_kulturskola$andel_kulturskola_Dalarna
 ```
-Här kommer fler variabler om deltagande att läggas till.
+
+
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_lantagare_bibl$andel_lantagare_bibliotek_Dalarna
@@ -1123,11 +1143,6 @@ gg_lantagare_bibl$andel_lantagare_bibliotek_Dalarna
 **Idrottande ungdomar**
 
 Ungdomar som deltar i idrott via Riksidrottsförbundet, är under konstruktion.
-
-
-**Bibliotekslån**
-
-Utlån från biblioteken i Dalarna, är under konstruktion.
 
 
 **Studiecirkeltimmar**
