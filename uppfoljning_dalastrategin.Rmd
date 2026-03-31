@@ -117,25 +117,25 @@ Det här avsnittet är främst baserat på länsstyrelsens slutsatser och rappor
 Vatten <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(90deg);">➡</span> 
 </span> <br> 
 Miljökvalitetsmålet 2030 nås ej. Flera vatten har återhämtat sig från försurning, men takten är avtagande.
-Neutral
+
 
 <span class="big-indicator">
-Luft <span style="color:grey; font-size:1.4em; font-weight:900;">➡</span>
+Luft <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(45deg);">➡</span> 
 </span> <br>
 Miljökvalitetsmålet 2030 nås ej. Generellt god luftkvalitet men försämrad i tätorter. 
 Positiv.
 
 <span class="big-indicator">
-Skog och mark <span style="color:red; font-size:1.4em; font-weight:900;">⬇</span>
+Skog och mark <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(135deg);">➡</span> 
 </span><br> 
 Miljökvalitetsmålen 2030 nås ej. Bestånd med naturvärden och lång skoglig kontinuitet avverkas, och antalet hotade arter är på en hög nivå.
-Negativ.
+
 
 <span class="big-indicator">
-Biologisk mångfald <span style="color:red; font-size:1.4em; font-weight:900;">⬇</span>
+Biologisk mångfald <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(135deg);">➡</span> 
 </span><br> 
 Miljökvalitetsmålen 2030 nås ej. Antal betesdjur minskar, liksom antalet jordbruksföretag och arealen brukad jordbruksmark. 1396 av länets arter är rödlistade medan invasiva arter ökar.
-Negativ.
+
 
 
 ### Vatten{-} 
