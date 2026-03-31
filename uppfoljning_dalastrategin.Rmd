@@ -116,23 +116,26 @@ Det här avsnittet är främst baserat på länsstyrelsens slutsatser och rappor
 <span class="big-indicator">
 Vatten <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(90deg);">➡</span> 
 </span> <br> 
-
-Grundvatten till stora delar av god kvalitet, ett antal platser negativt påverkade.
+Miljökvalitetsmålet 2030 nås ej. Flera vatten har återhämtat sig från försurning, men takten är avtagande.
+Neutral
 
 <span class="big-indicator">
 Luft <span style="color:grey; font-size:1.4em; font-weight:900;">➡</span>
 </span> <br>
-Luft av god kvalitet...
+Miljökvalitetsmålet 2030 nås ej. Generellt god luftkvalitet men försämrad i tätorter. 
+Positiv.
 
 <span class="big-indicator">
 Skog och mark <span style="color:red; font-size:1.4em; font-weight:900;">⬇</span>
 </span><br> 
-Brukandet av skog och mark 
+Miljökvalitetsmålen 2030 nås ej. Bestånd med naturvärden och lång skoglig kontinuitet avverkas, och antalet hotade arter är på en hög nivå.
+Negativ.
 
 <span class="big-indicator">
 Biologisk mångfald <span style="color:red; font-size:1.4em; font-weight:900;">⬇</span>
 </span><br> 
-Utvecklingen av den biologiska mångfalden...
+Miljökvalitetsmålen 2030 nås ej. Antal betesdjur minskar, liksom antalet jordbruksföretag och arealen brukad jordbruksmark. 1396 av länets arter är rödlistade medan invasiva arter ökar.
+Negativ.
 
 
 ### Vatten{-} 
@@ -238,26 +241,36 @@ Tips på mer läsning: https://www.klimatanalys.se/climate-stories
 <span class="big-indicator">
 Utsläpp av växthusgaser <span style="color:red; font-size:1.8em; font-weight:900;">➡</span>
 </span>
+Utsläppen minskar inte längre när de borde minska minst sex procent per år.
+Negativ.
 <br>
 
 <span class="big-indicator">
 Kollektivt resande <span style="color:red; font-size:1.8em; font-weight:900;">➡</span>
 </span>
+Antalet resor per invånare i Dalarna ökar något, men inte andelen av samtliga resor.
+Neutral.
 <br>
 
 <span class="big-indicator">
 Övergång till elbilar <span style="color:black; font-size:1.8em; font-weight:900;">⬆</span>
 </span>
+Andelen el- och hybridbilar i Dalarna ökar, men från låga nivåer.
+Positiv.
 <br>
 
 <span class="big-indicator">
 Insamlat avfall <span style="color:green; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+Mängden insamlat avfall per person minskar något.
+Neutral.
 <br>
 
 <span class="big-indicator">
 Kommunala klimatanpassningsplaner <span style="color:green; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+Oklar sitution. 8 av 15 kommuner ingår i granskning, medelvärdet för Dalarna är lägre än riksgenomsnittet.
+Oklart.
 <br>
 
 
@@ -367,21 +380,29 @@ Dalarnas elektricitets- och livsmedelsförsörjning är grundläggande för båd
 <span class="big-indicator">
 Förnybar elproduktion <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+Ökande regional produktion.
+Positiv.
 <br>
 
 <span class="big-indicator">
 Energieffektivitet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+Varje använd energienhet ger ett ökande ekonomiskt värde.
+Positivt.
 <br>
 
 <span class="big-indicator">
 Avfall / BRP <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+Andelen avfall per producerat ekonomiskt värde minskar.
+Positivt.
 <br>
 
 <span class="big-indicator">
 Självförsörjning av livsmedel och el <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+Självförsörjning av livsmedel minskar medan elektricitet ger en överproduktion.
+Neutral.
 <br>
 
 
@@ -485,11 +506,14 @@ Befolkningsutveckling och utbildningsnivå är två nycklar till Dalarnas konkur
 <span class="big-indicator">
 Arbetsför ålder och återväxt <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+Befolkningen i arbetsför ålder ökar inte, och återväxten är skral.
+Negativ.
 <br>
 
 <span class="big-indicator">
 Utbildningsnivåer <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+Könsskillnaderna i utbildningsnivåer är oroande, 
 <br>
 
 <span class="big-indicator">
@@ -505,6 +529,8 @@ Invandrares arbetsetablering <span style="color:red; font-size:1.8em; font-weigh
 <span class="big-indicator">
 Ohälsa hos arbetande <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
+Ohälsotalen har stabiliserats, men är tecken på osunda arbetsvillkor som orsakar samhället kostnader.
+Neutral.
 <br>
 
 
