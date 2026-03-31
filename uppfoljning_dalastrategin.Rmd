@@ -114,25 +114,25 @@ Det här avsnittet är främst baserat på länsstyrelsens slutsatser och rappor
 
 
 <span class="big-indicator">
-Vatten <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(90deg);">➡</span> 
+Vatten <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(0deg);">➡</span> 
 </span> <br> 
 Miljökvalitetsmålet 2030 nås ej. Flera vatten har återhämtat sig från försurning, men takten är avtagande.
 
 
 <span class="big-indicator">
-Luft <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(45deg);">➡</span> 
+Luft <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(315deg);">➡</span> 
 </span> <br>
 Miljökvalitetsmålet 2030 nås ej. Generellt god luftkvalitet men försämrad i tätorter. 
 Positiv.
 
 <span class="big-indicator">
-Skog och mark <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(135deg);">➡</span> 
+Skog och mark <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(45deg);">➡</span> 
 </span><br> 
 Miljökvalitetsmålen 2030 nås ej. Bestånd med naturvärden och lång skoglig kontinuitet avverkas, och antalet hotade arter är på en hög nivå.
 
 
 <span class="big-indicator">
-Biologisk mångfald <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(135deg);">➡</span> 
+Biologisk mångfald <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(45deg);">➡</span> 
 </span><br> 
 Miljökvalitetsmålen 2030 nås ej. Antal betesdjur minskar, liksom antalet jordbruksföretag och arealen brukad jordbruksmark. 1396 av länets arter är rödlistade medan invasiva arter ökar.
 
@@ -239,38 +239,34 @@ Tips på mer läsning: https://www.klimatanalys.se/climate-stories
 
 
 <span class="big-indicator">
-Utsläpp av växthusgaser <span style="color:red; font-size:1.8em; font-weight:900;">➡</span>
-</span>
+Utsläpp av växthusgaser <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(45deg);">➡</span> 
+</span><br> 
 Utsläppen minskar inte längre när de borde minska minst sex procent per år.
 Negativ.
 <br>
 
 <span class="big-indicator">
-Kollektivt resande <span style="color:red; font-size:1.8em; font-weight:900;">➡</span>
-</span>
+Kollektivt resande <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(0deg);">➡</span> 
+</span><br>
 Antalet resor per invånare i Dalarna ökar något, men inte andelen av samtliga resor.
-Neutral.
 <br>
 
 <span class="big-indicator">
-Övergång till elbilar <span style="color:black; font-size:1.8em; font-weight:900;">⬆</span>
-</span>
+Övergång till elbilar <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(315deg);">➡</span> 
+</span><br> 
 Andelen el- och hybridbilar i Dalarna ökar, men från låga nivåer.
-Positiv.
 <br>
 
 <span class="big-indicator">
-Insamlat avfall <span style="color:green; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-Mängden insamlat avfall per person minskar något.
-Neutral.
+Insamlat avfall <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(0deg);">➡</span> 
+</span><br> 
+Mängden insamlat avfall per person är oförändrat från föregående år.
 <br>
 
 <span class="big-indicator">
-Kommunala klimatanpassningsplaner <span style="color:green; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-Oklar sitution. 8 av 15 kommuner ingår i granskning, medelvärdet för Dalarna är lägre än riksgenomsnittet.
-Oklart.
+Kommunala klimatanpassningsplaner <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(0deg);">➡</span> 
+</span><br> 
+Oklar utveckling. 8 av 15 kommuner ingår i granskning, medelvärdet för Dalarna är lägre än riksgenomsnittet.
 <br>
 
 
@@ -378,31 +374,27 @@ Dalarnas elektricitets- och livsmedelsförsörjning är grundläggande för båd
 
 
 <span class="big-indicator">
-Förnybar elproduktion <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+Förnybar elproduktion <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(315deg);">➡</span> 
+</span><br> 
 Ökande regional produktion.
-Positiv.
 <br>
 
 <span class="big-indicator">
-Energieffektivitet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+Energieffektivitet <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(315deg);">➡</span> 
+</span><br> 
 Varje använd energienhet ger ett ökande ekonomiskt värde.
-Positivt.
 <br>
 
 <span class="big-indicator">
-Avfall / BRP <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+Avfall / BRP <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(315deg);">➡</span> 
+</span><br> 
 Andelen avfall per producerat ekonomiskt värde minskar.
-Positivt.
 <br>
 
 <span class="big-indicator">
-Självförsörjning av livsmedel och el <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+Självförsörjning av livsmedel och el <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(0deg);">➡</span> 
+</span><br>
 Självförsörjning av livsmedel minskar medan elektricitet ger en överproduktion.
-Neutral.
 <br>
 
 
