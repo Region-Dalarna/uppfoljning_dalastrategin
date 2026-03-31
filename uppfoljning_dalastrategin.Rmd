@@ -496,33 +496,27 @@ I det här avsnittet visas bland annat befolkningens sammansättning, utbildning
 Befolkningsutveckling och utbildningsnivå är två nycklar till Dalarnas konkurrenskraft. När fler kan bo, leva och arbeta i länet stärks arbetskraften, marknaden och möjligheterna för företag att växa och investera. Samtidigt påverkar utbildning både produktivitet och innovationsförmåga – och är avgörande för att matcha arbetsgivarnas behov i en ekonomi som ställer om med digitalisering och elektrifiering. I det här avsnittet tittar vi på hur befolkningens sammansättning, flyttmönster och utbildningsnivå formar kompetensförsörjningen och därmed Dalarnas långsiktiga utvecklingskraft.
 
 <span class="big-indicator">
-Arbetsför ålder och återväxt <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-Befolkningen i arbetsför ålder ökar inte, och återväxten är skral.
-Negativ.
+Arbetsför ålder och återväxt <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(45deg);">➡</span> 
+</span><br> 
+Befolkningen i arbetsför ålder ökar inte, och återväxten är avtagande.
 <br>
 
 <span class="big-indicator">
-Utbildningsnivåer <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-Könsskillnaderna i utbildningsnivåer är oroande, 
+Utbildningsnivåer <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(0deg);">➡</span> 
+</span><br> 
+Utbildningsnivåerna ökar, men könsskillnaderna i utbildningsnivåer ökar ännu mer. 
 <br>
 
 <span class="big-indicator">
-Gymnasieutbildning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+Gymnasieutbildning <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(0deg);">➡</span> 
+</span><br>
+Andelen som inte klarar gymnasiet inom 4 år är oförändrat, andelen ungdomar som tror att de ska läsa vidare efter gymnasiet minskar något.
 <br>
 
 <span class="big-indicator">
-Invandrares arbetsetablering <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
-<br>
-
-<span class="big-indicator">
-Ohälsa hos arbetande <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+Ohälsa hos arbetande <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(0deg);">➡</span> 
+</span><br> 
 Ohälsotalen har stabiliserats, men är tecken på osunda arbetsvillkor som orsakar samhället kostnader.
-Neutral.
 <br>
 
 
@@ -592,31 +586,6 @@ lupp_diagram_lista$H_tror_läsa_vidare_gy_Kön_Hogstadiet_Gymnasiet_bo_Dalarna
 ```
 
 
-### Invandrares arbetsetablering {-}
-
-**Tid för invandrade att etableras på arbetsmarknaden**
-
-Invandring är en del av lösningen för att möta en ökad efterfrågan på arbetskraft och rätt kompetens i Dalarna och Sverige. Dalarna har haft en relativt stor inflyttning av utomeuropeiskt födda under senare år. Många invandrade är i arbetsför ålder och blir därför ett viktigt tillskott till arbetskraften. Denna indikator är ett mått på i vilken takt och utsträckning som invandrade etablerar sig på arbetsmarknaden i Dalarna. Med etablering menas att personen är förvärvsarbetande helt utan stöd från a-kassa eller arbetsmarknadsåtgärd, eller dylikt.
-
-Diagrammet visar tydligt hur andelen etablerade på arbetsmarknaden i arbetsför ålder ökar efter vistelsetid i landet. För det senaste året i perioden, `r etablering_max_ar`, hade ungefär `r etablering_0_1_max_ar_alla` procent av invandrade med vistelsetid under ett år etablerat sig på arbetsmarknaden. Andelen etablerade på arbetsmarknaden ökar sedan gradvis efter vistelsetid och för samma år var det ca `r etablering_10_max_ar_alla` procent i gruppen som vistats i Sverige i tio år eller mer som var etablerade på arbetsmarknaden.
-
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_etableringstid$etablering_vistelsetid_Dalarna
-```
-
-Ytterligare en positiv trend är att det över tid verkar gå snabbare för nyligen invandrade att etablera sig på arbetsmarknaden. Från `r etablering_min_ar` till `r etablering_max_ar` har andelen etablerade på arbetsmarknaden i gruppen med vistelsetid under ett år, ökat från ca `r etablering_0_1_min_ar_alla` procent till ungefär `r etablering_0_1_max_ar_alla` procent, vilket är mer än en fördubbling. Det finns dessvärre tydliga skillnader mellan mäns och kvinnors etableringsmöjligheter de första åren. En betydligt högre andel män har lyckats etablera sig på arbetsmarknaden inom nio år i jämförelse med andelen kvinnor. Efter minst 10 år i landet är dock kvinnorna ikapp och förbi männen, då `r etablering_10_max_ar_kvinnor` procent av kvinnorna och `r etablering_10_max_ar_man` procent av männen är etablerade på arbetsmarknaden.
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_etableringstid$etablering_vistelsetid_kon_Dalarna
-```
-
-En jämförelse mellan länen när det gäller möjligheten att ha etablerat sig på arbetsmarknaden efter minst 10 år i Sverige visar att Dalarna återfinns i mittensegmentet. `r etablering_lan_10_hogst_andel_lan` har den högsta andelen etablerade med ca `r etablering_lan_10_hogst_andel_varde` procent, och i `r etablering_lan_10_lagst_andel_lan` är andelen etablerade efter minst 10 år i landet lägst, med ungefär `r etablering_lan_10_lagst_andel_varde` procent. 
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_etableringstid$etablering_vistelsetid_allalan
-```
-
 ### Ohälsa{-}
 
 **Längre ohälsa bland arbetskraften**
@@ -645,13 +614,21 @@ En hög sysselsättning och ett gott företagsklimat är grundpelare för Dalarn
 
 
 <span class="big-indicator">
-Sysselsatta och företagande <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+Sysselsatta och företagande <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(315deg);">➡</span> 
+</span><br> 
+Det pågår en växling på arbetsmarknaden från industriarbeten till tjänsteproduktion. Invandrade kommer i arbete allt snabbare. Dalarna ligger bra till när det gäller nystartade företag.
 <br>
-
+<!--
 <span class="big-indicator">
-Könssegregering <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+Invandrares arbetsetablering <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(315deg);">➡</span> 
+</span><br> 
+Invandrades etableringstid på arbetsmarknaden minskar.
+<br>
+-->
+<span class="big-indicator">
+Könssegregering <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(0deg);">➡</span> 
+</span><br> 
+Sysselsättningen är hög men yrken och branscher är könssegregerade, och fördelningen av föräldrapenningdagar mellan kvinnor och män har stagnerat på fördelningen 70 procent / 30 procent.
 <br>
 
 <!--
@@ -661,19 +638,45 @@ Förutsättningar <span style="color:red; font-size:1.8em; font-weight:900;">⬇
 <br>
 -->
 <span class="big-indicator">
-Ekobrottslighet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+Ekobrottslighet <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(45deg);">➡</span> 
+</span><br> 
+Anmälda ekonomiska brott ökar totalt sett, men skiljer sig avsevärt mellan länets kommuner.
 <br>
 
+<!--
 <span class="big-indicator">
-Förtroende för rättsväsendet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+Förtroende för rättsväsendet <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(315deg);">➡</span> 
+</span><br>
 <br>
-
+-->
 
 ### Sysselsatta och företagande {-}
 
 **Förvärvsarbetande och nystartade företag**
+
+
+*Tid för invandrade att etableras på arbetsmarknaden*
+
+Invandring är en del av lösningen för att möta en ökad efterfrågan på arbetskraft och rätt kompetens i Dalarna och Sverige. Dalarna har haft en relativt stor inflyttning av utomeuropeiskt födda under senare år. Många invandrade är i arbetsför ålder och blir därför ett viktigt tillskott till arbetskraften. Denna indikator är ett mått på i vilken takt och utsträckning som invandrade etablerar sig på arbetsmarknaden i Dalarna. Med etablering menas att personen är förvärvsarbetande helt utan stöd från a-kassa eller arbetsmarknadsåtgärd, eller dylikt.
+
+Diagrammet visar tydligt hur andelen etablerade på arbetsmarknaden i arbetsför ålder ökar efter vistelsetid i landet. För det senaste året i perioden, `r etablering_max_ar`, hade ungefär `r etablering_0_1_max_ar_alla` procent av invandrade med vistelsetid under ett år etablerat sig på arbetsmarknaden. Andelen etablerade på arbetsmarknaden ökar sedan gradvis efter vistelsetid och för samma år var det ca `r etablering_10_max_ar_alla` procent i gruppen som vistats i Sverige i tio år eller mer som var etablerade på arbetsmarknaden.
+
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_etableringstid$etablering_vistelsetid_Dalarna
+```
+
+Ytterligare en positiv trend är att det över tid verkar gå snabbare för nyligen invandrade att etablera sig på arbetsmarknaden. Från `r etablering_min_ar` till `r etablering_max_ar` har andelen etablerade på arbetsmarknaden i gruppen med vistelsetid under ett år, ökat från ca `r etablering_0_1_min_ar_alla` procent till ungefär `r etablering_0_1_max_ar_alla` procent, vilket är mer än en fördubbling. Det finns dessvärre tydliga skillnader mellan mäns och kvinnors etableringsmöjligheter de första åren. En betydligt högre andel män har lyckats etablera sig på arbetsmarknaden inom nio år i jämförelse med andelen kvinnor. Efter minst 10 år i landet är dock kvinnorna ikapp och förbi männen, då `r etablering_10_max_ar_kvinnor` procent av kvinnorna och `r etablering_10_max_ar_man` procent av männen är etablerade på arbetsmarknaden.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_etableringstid$etablering_vistelsetid_kon_Dalarna
+```
+
+En jämförelse mellan länen när det gäller möjligheten att ha etablerat sig på arbetsmarknaden efter minst 10 år i Sverige visar att Dalarna återfinns i mittensegmentet. `r etablering_lan_10_hogst_andel_lan` har den högsta andelen etablerade med ca `r etablering_lan_10_hogst_andel_varde` procent, och i `r etablering_lan_10_lagst_andel_lan` är andelen etablerade efter minst 10 år i landet lägst, med ungefär `r etablering_lan_10_lagst_andel_varde` procent. 
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_etableringstid$etablering_vistelsetid_allalan
+```
 
 *Förvärsarbetande efter bransch*
 
@@ -779,18 +782,21 @@ gg_fortroende_rattsvasande$fortroende_rattsvasande__sverige
 Företagens produktion skapar ekonomiska värden som genererar löner och vinster och är centrala på Dalarnas konkurrenskraft. När företag kan producera effektivt och skapa högt värde på sina varor och tjänster stärks både lönsamhet och produktivitet, vilket ger utrymme för innovation och nya jobb. Exporten visar hur väl Dalarnas näringsliv står sig på nationella och internationella marknader och bidrar samtidigt till regionala inkomster och en starkare skattebas. I det här avsnittet belyser vi produktionens utveckling och exportens nivå, <mark>men även hur kvinnors och mäns inkomster, som handlar om förutsättningar för ekonomisk självständighet </mark>.
 
 <span class="big-indicator">
-Regional produktivitet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+Regional produktivitet <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(45deg);">➡</span> 
+</span><br>
+Produktiviteten i länet avtar, medan den ökar i riket totalt sett.
 <br>
 
 <span class="big-indicator">
-Regionala inkomster <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+Regionala inkomster <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(315deg);">➡</span> 
+</span><br>
+Medianinkomsterna ökar, och lite mer för kvinnor, men män tjänar fortfarande betydligt mer. 
 <br>
 
 <span class="big-indicator">
-Regional export <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+Regional export <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(315deg);">➡</span> 
+</span><br>
+Både den regionala varuexporten och exportintäkter från utländska turister ökar.
 <br>
 
 <!--
@@ -910,24 +916,28 @@ Mer finns att läsa här ["folkhälsa på Region Dalarnas hemsida"] (https://www
 
 
 <span class="big-indicator">
-Medellivslängd <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+Medellivslängd <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(315deg);">➡</span> 
+</span><br>
+Medellivslängden ökar, men inte för lågutbildade kvinnor. Ensamboende har en lägre medellivslängd än sammanboende.
 <br>
 
 <span class="big-indicator">
-Hälsa och folksjukdomar <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+Hälsa och folksjukdomar<span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(45deg);">➡</span> 
+</span><br> 
+Vuxna skattar sin hälsa något sämre, medan ungdomar skattar hälsan tydligt sämre jämfört med tidigare år. Incidens av hjärtinfarkter minskar men andelen överviktiga ökar.
 <br>
 
 
 <span class="big-indicator">
-Trygghet och brott <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+Trygghet och brott <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(0deg);">➡</span> 
+</span><br>
+
 <br>
 
 <span class="big-indicator">
-Tillit <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+Tillit <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(0deg);">➡</span> 
+</span><br> 
+
 <br>
 
 
@@ -1153,18 +1163,21 @@ Dalfolkets delaktighet och samhällsengagemang är en grund för både demokrati
 
 
 <span class="big-indicator">
-Valdeltagande/ samhällsengagemang <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+Valdeltagande/ samhällsengagemang <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(0deg);">➡</span> 
+</span><br>
+
 <br>
 
 <span class="big-indicator">
-Kultur/fritid <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+Kultur/fritid <<span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(0deg);">➡</span> 
+</span><br>
+
 <br>
 
 <span class="big-indicator">
-Butik, skola och bredband <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+Butik, skola och bredband <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(0deg);">➡</span> 
+</span><br>
+
 <br>
 
 
@@ -1301,18 +1314,21 @@ Ekonomisk jämlikhet är en viktig grund för både social hållbarhet och ekono
 
 
 <span class="big-indicator">
-Inkomstfördelning <span style="color:grey; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+Inkomstfördelning <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(0deg);">➡</span> 
+</span><br>
+Inkomstfördelningen är oförändrad, i Dalarna är den mer jämlik än i riket.
 <br>
 
 <span class="big-indicator">
-Barn i ekonomisk utsatthet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+Barn i ekonomisk utsatthet <<span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(0deg);">➡</span> 
+</span><br> 
+Andel invånare 0-19 år som bor i hushåll med låg ekonomisk standard är oförändrad.
 <br>
 
 <span class="big-indicator">
-Bidragsmottagare <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
-</span>
+Bidragsmottagare <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(315deg);">➡</span> 
+</span><br>
+Det totala antalet utbetalade bidragsår minskar.
 <br>
 
 <!--
