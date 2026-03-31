@@ -386,9 +386,10 @@ Självförsörjning av livsmedel och el <span style="color:red; font-size:1.8em;
 <br>
 
 
-### Förnybar elproduktion{-}
+### Elproduktion{-}
 
 **Förnybar elproduktion**
+
 En god tillgång till hållbar energi är avgörande för näringslivets och hela samhällets omställningsförmåga. En ökad regional produktion av förnybar energi bidrar till såväl minskade utsläpp som ökad självförsörjningsförmåga och resiliens för Dalarna. Sveriges samlade energisystem beskrivs utförligt på [Energimyndighetens webbplats](https://www.energimyndigheten.se/energisystemet/sveriges-energisystem/){target="_blank"}. 
 
 Den regionalt producerade energin som omsätts till elektricitet i Dalarna produceras av vatten- och vindkraft samt övrigt, där vatten och vind är de huvudsakliga energikällorna. Det saknas dock statistik över vattenkraft enskilt för vissa år, varför kategorin vattenkraft och övrigt används i diagrammet nedan. I kategorin vattenkraft och övrigt ingår även solkraft som utgör en liten men växande andel över tid. Kategorin har beräknats som skillnaden mellan total elproduktion och elproduktion från vindkraft.
@@ -430,6 +431,7 @@ gg_energieffektivitet$energieffektivitet_alla_lan
 ### Avfall/BRP{-}
 
 **Avfall i relation till ekonomiskt värde**
+
 Ytterligare en indikator på ekonomisk resurseffektivitet är kopplingen mellan mängden insamlat avfall (förbrukade resurser) och den ekonomiska aktiviteten i regionen, mätt genom bruttoregionalprodukten (BRP). Indikatorns värde visar på en positiv trend av att mängden avfall minskar per producerat ekonomiskt värde över perioden från `r  avfall_brp_min_ar` till `r avfall_brp_max_ar`. `r avfall_brp_min_ar` samlades det in knappt `r avfall_brp_min_ar_varde` kg avfall för varje miljon kronor av Dalarnas BRP under samma år. `r avfall_brp_max_ar` hade motsvarande mängd avfall sjunkit till drygt `r avfall_brp_max_ar_varde` kg avfall. Det kan främst förklaras med att BRP har ökat under perioden.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
@@ -441,7 +443,9 @@ gg_avfall$avfall_BRP_Dalarna
 
 ### Självförsörjning {-}
 
-**Teoretisk självförsörjning av livsmedel**
+**Teoretisk självförsörjning av livsmedel och elektricitet**
+
+*Livsmedel*
 
 Klimatförändringarna medför lokalt förändrade mönster för nederbörd, torka och vind men även insekts- och svampangrepp på grödor och skog, höga temperaturer, med mera. Här spelar god samhällsplanering på regional och kommunal nivå en viktig roll. Ett sätt att förbättra beredskapen i Dalarna är att ha en tillräckligt omfattande lokal och hållbar energi- och livsmedelsproduktion. En ökad självförsörjningsgrad är en trygghet på flera sätt och gynnar även miljöns motståndskraft genom en ökad biologisk mångfald.
 
@@ -451,7 +455,7 @@ Diagrammet nedan visar andelen livsmedel inom fem kategorier (fårkött, griskö
 gg_sjalvforsorjning$teoretisk_sjalvforsorjning_livsmedel_dalarna
 ```
 
-**Teoretisk självförsörjning av elektricitet**
+*Teoretisk självförsörjning av elektricitet*
 
 I diagrammet nedan visas en teoretisk beräkning av självförsörjning av elektricitet i Dalarna där den totala elproduktionen i länet visas som andel av den total elförbrukningen. Diagrammet visar en positiv trend för självförsörjningsgraden av elektricitet från `r sjalvforsorjning_el_min_ar_varde` procent år `r sjalvforsorjning_el_min_ar` till `r sjalvforsorjning_el_max_ar_varde` procent år `r sjalvforsorjning_el_max_ar`. Att självförsörjningsgraden har ökat tydlligt på senare år, mer el producerades i länet än den som konsumerades säväl 2023 som 2024, beror i första hand på att konsumtionen av el har minskat, något som potentiellt delvis kan förklaras av Rysslands invasion av Ukraina och dess effekt på elpriserna. Konsumtionen av el var ovanligt låg även 2022, men då var även produktionen av el i länet ovanligt liten (se fliken förnybar elproduktion).
 
@@ -503,19 +507,22 @@ Ohälsa hos arbetande <span style="color:red; font-size:1.8em; font-weight:900;"
 <br>
 
 
-### Arbetsför befolkning och återväxt {-}
+### Arbetsför ålder och återväxt {-}
 
-**Befolkning 20-64 år**
+**Befolkning i arbetsför ålder 20-65 år och återväxten**
 
-Befolkning i arbetsför ålder boende i Dalarna omfattar åldern 20-64 år (65 år från 2023 och 66 år från 2026). Antalet inrikes födda invånare i arbetsför ålder har minskat från ungefär 145 000 personer år 2000 till cirka 124 000 år 2023. Samtidigt har en relativt stor invandring medfört att utrikes födda invånare i arbetsför ålder har ökat från ungefär 11 000 personer år 2000 till cirka 26 000 år 2023. De utrikes födda har mer än fördubblats men ökningen motsvarar inte samma omfattning som inrikes födda minskat, vilket leder till att befolkningen i arbetsför ålder som helhet krymper. Den höjda pensionsåldern ökar antalet i arbetsför ålder under övergången till en högre åldersnivå, men bidrar inte till en långsiktigt hållbar utveckling så länge gruppen som helhet krymper.
+*20 - 65 år*
+Befolkning i arbetsför ålder boende i Dalarna omfattar åldern 20-65 år (tidigare 20-64 år). Antalet inrikes födda invånare i arbetsför ålder har minskat från ungefär 147 000 personer år 2000 till cirka 126 000 år 2024. Samtidigt har en relativt stor invandring medfört att utrikes födda invånare i arbetsför ålder har ökat från ungefär 11 000 personer år 2000 till cirka 26 000 år 2024. De utrikes födda har mer än fördubblats men ökningen motsvarar inte samma omfattning som inrikes födda minskat, vilket leder till att befolkningen i arbetsför ålder som helhet krymper. Den höjda pensionsåldern ökar antalet i arbetsför ålder under övergången till en högre åldersnivå, men bidrar inte till en långsiktigt hållbar utveckling så länge gruppen som helhet krymper.
 
 <!--
 Figur 2 i kompetensrapporten - befolkning i arbetsför ålder 2000 - 2023X
 -->
 
-**Återväxt**
+*Återväxten i form av födda och inflyttade*
 
+286 000 boende i Dalarna, utgången av 2025.
 
+.
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_befutv_per_komponent_ar_scb[[1]]
 ```
@@ -543,7 +550,7 @@ Sammantaget innebär detta att ungefär 56 procent av alla män i Dalarna har en
 gg_utb_niva_senaste$utbildningsniva_Dalarna_senaste_ar
 ```
 
-Läs mer om kompetensförsörjning i länet i SCB:s rapport ["Regionala Trender och Prognoser 2025 Med sikte på år 2040 Dalarnas län"](https://www.scb.se/contentassets/04cf1ee0f04b4c06a6e62d22d78e8d4c/dalarnas-lan-20251215.pdf){target="_blank"}
+Läs mer om kompetensförsörjning i länet i SCB:s rapport ["Regionala Trender och Prognoser 2025 Med sikte på år 2040 Dalarnas län"](https://www.scb.se/contentassets/04cf1ee0f04b4c06a6e62d22d78e8d4c/dalarnas-lan-20251215.pdf){target="_blank"}.
 
 ### Gymnasieutbildning {-}
 
@@ -557,7 +564,9 @@ Denna indikator mäter andelen elever i Dalarna som har fullföljt en gymnasieut
 gg_genomstromning_gym$genomstromning_gymnasiet_Dalarna
 ```
 
+<!--
 Kommentera individuella programmet?
+-->
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 lupp_diagram_lista$H_tror_läsa_vidare_gy_Kön_Hogstadiet_Gymnasiet_bo_Dalarna
@@ -565,6 +574,8 @@ lupp_diagram_lista$H_tror_läsa_vidare_gy_Kön_Hogstadiet_Gymnasiet_bo_Dalarna
 
 
 ### Invandrares arbetsetablering {-}
+
+**Tid för invandrade att etableras på arbetsmarknaden**
 
 Invandring är en del av lösningen för att möta en ökad efterfrågan på arbetskraft och rätt kompetens i Dalarna och Sverige. Dalarna har haft en relativt stor inflyttning av utomeuropeiskt födda under senare år. Många invandrade är i arbetsför ålder och blir därför ett viktigt tillskott till arbetskraften. Denna indikator är ett mått på i vilken takt och utsträckning som invandrade etablerar sig på arbetsmarknaden i Dalarna. Med etablering menas att personen är förvärvsarbetande helt utan stöd från a-kassa eller arbetsmarknadsåtgärd, eller dylikt.
 
@@ -587,7 +598,9 @@ En jämförelse mellan länen när det gäller möjligheten att ha etablerat sig
 gg_etableringstid$etablering_vistelsetid_allalan
 ```
 
-### Ohälsa hos arbetande{-}
+### Ohälsa{-}
+
+**Längre ohälsa bland arbetskraften**
 
 Ohälsotalet (ev källa) mäter i vilken utsträckning personer är borta från arbetet på grund av nedsatt arbetsförmåga, mätt under ett års tid. 
 
@@ -623,12 +636,12 @@ Könssegregering <span style="color:red; font-size:1.8em; font-weight:900;">⬇<
 </span>
 <br>
 
-
+<!--
 <span class="big-indicator">
 Förutsättningar <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
-
+-->
 <span class="big-indicator">
 Ekobrottslighet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
@@ -640,19 +653,20 @@ Förtroende för rättsväsendet <span style="color:red; font-size:1.8em; font-w
 <br>
 
 
-
-
 ### Arbete och företagande {-}
 
-**Förvärsarbetande efter bransch**
+**Förvärvsarbetande och nystartade företag**
+
+*Förvärsarbetande efter bransch*
+
 Historiskt har tillverkning och utvinning varit den största branschen i Dalarna sett till antalet anställda, men vård och omsorg är idag störst. I diagrammet nedan är tillverkning och utvinning den tredje största branschen i Dalarna, men det beror på att branscherna handel och transport är sammanslagna baserat på branschgrupperingen 1990. Att tillverkning och utvinning minskat i antal anställda sedan 1990 är en förändring som återspeglar den allmänna trenden i många regioner där tjänstesektorn har fått ökad betydelse över tid. 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_forv_90$forvarvsarbetande_90_totalt_Dalarna
 ```
 
- 
-**Företagande**
+
+*Nystartade företag*
 
 Antalet nystartade företag per kommun i Dalarna visar att `r nystartade_kommun_hogst_max_ar` kommun har flest, med ungefär `r nystartade_kommun_hogst_max_ar_varde` nystartade företag per 1000 invånare `r nystartade_max_ar`, medan `r nystartade_kommun_lagst_min_ar` har minst med ca `r nystartade_kommun_lagst_min_ar_varde`.  Ungefär hälften av Dalarnas kommuner hade fler nystartade företag (per 1000 invånare) än Sverige `r nystartade_max_ar`.
 
@@ -660,6 +674,32 @@ Antalet nystartade företag per kommun i Dalarna visar att `r nystartade_kommun_
 gg_nyst_konk$nystartade
 ```
 
+### Könssegregering {-}
+
+**Könssegrering i olika branscher och uttag av föräldrapenning**
+
+Sedan många år har kvinnor och män haft likvärdig tillgång till utbildning och möjlighet att fritt välja yrke. Trots detta består många av könsskillnaderna i arbetslivet, och står därmed i vägen för en mer hållbar utveckling där människor och kompetens tas tillvara på ett mer objektivt sätt. 
+
+*Könssegregering i olika branscher*
+
+Många branscher i länet har idag en tydlig övervikt av det ena eller det andra könet, exempelvis byggbranschen som omfattar yrken inom bland annat el och VVS, och där kvinnor bara utgör ungefär `r forvarvsarbetande_bygg_andel` procent av de förvärvsarbetande. Även om det har skett en ökning av andelen kvinnor inom byggbranschen är denna ökning ännu liten i sammanhanget. Inom vård och omsorg är bilden densamma men med motsatt könsfördelning. Här utgör kvinnor cirka `r forvarvsarbetande_vard_andel` procent av de förvärvsarbetande.
+
+Att åstadkomma en förändring i närtid av balansen mellan män och kvinnor inom de könssegregerade branscherna förefaller inte vara inom räckhåll då ungdomars studieval fortsätter att vara könsstereotypa.
+
+<br>
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_antal_forv$antal_per_bransch
+```
+
+*Föräldrapenning*
+
+Fördelningen av dagar mellan vårdnadshavarna har jämnats ut något sedan slutet av 1990-talet då runt 85-90 procent av föräldrapenningdagarna togs ut av mammorna. Sedan dess har först en (1995), sedan två (2002) och även tre månader (2016) reserverats åt respektive vårdnadshavare (också kallade "pappamånader"). Detta har bidragit till ett jämnare uttag men utvecklingen får ändå sägas gå relativt trögt, då kvinnors andel endast har minskat till runt `r round(as.numeric(foraldrapenning_df %>% filter(Region == "Dalarnas län", Kön == "Kvinnor", År == max(År)) %>% .$Andel),0)` procent `r max(foraldrapenning_df$År)`. Svenska vårdnadshavare är således långt ifrån att ge sina barn en jämställd tillgång till sina föräldrar. Skillnaden i uttag påverkar också den disponibla inkomsten. Skillnaden är som störst mellan sammanboende kvinnor och män när det yngsta barnet är 0–3 år [(Regeringen, 2022)](<https://www.regeringen.se/contentassets/46945970585240a4a5bfd9a0f75ecf3d/ekonomisk-jamstalldhet.pdf>){target="_blank"}.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_fp_vab$Foraldrapenning_andel_Dalarna
+```
+
+<!--
 ### Förutsättningar {-}
 
 **Företagsklimat**
@@ -673,7 +713,7 @@ Trafikanalys - Anna letar data.
 
 https://www.trafa.se/globalassets/statistik/bantrafik/punktlighet-pa-jarnvag/2026/punktlighet-pa-jarnvag-2025-statistikblad.html
 
-<!--
+
 **Energitillgång?**
 
 Tillförlitligheten i energi-systemet, har frågat Jessica men hittar inget bra sätt att mäta det, får undersöka vidare.
@@ -681,30 +721,9 @@ Tillförlitligheten i energi-systemet, har frågat Jessica men hittar inget bra 
 -->
 
 
-### Könssegregering {-}
-
-Sedan många år har kvinnor och män haft likvärdig tillgång till utbildning och möjlighet att fritt välja yrke. Trots detta består många av könsskillnaderna i arbetslivet, och står därmed i vägen för en mer hållbar utveckling där människor och kompetens tas tillvara på ett mer objektivt sätt. 
-
-**Könssegregering i olika branscher**
-
-Många branscher i länet har idag en tydlig övervikt av det ena eller det andra könet, exempelvis byggbranschen som omfattar yrken inom bland annat el och VVS, och där kvinnor bara utgör ungefär `r forvarvsarbetande_bygg_andel` procent av de förvärvsarbetande. Även om det har skett en ökning av andelen kvinnor inom byggbranschen är denna ökning ännu liten i sammanhanget. Inom vård och omsorg är bilden densamma men med motsatt könsfördelning. Här utgör kvinnor cirka `r forvarvsarbetande_vard_andel` procent av de förvärvsarbetande.
-
-Att åstadkomma en förändring i närtid av balansen mellan män och kvinnor inom de könssegregerade branscherna förefaller inte vara inom räckhåll då ungdomars studieval fortsätter att vara könsstereotypa.
-
-<br>
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_antal_forv$antal_per_bransch
-```
-
-**Föräldrapenning**
-
-Fördelningen av dagar mellan vårdnadshavarna har jämnats ut något sedan slutet av 1990-talet då runt 85-90 procent av föräldrapenningdagarna togs ut av mammorna. Sedan dess har först en (1995), sedan två (2002) och även tre månader (2016) reserverats åt respektive vårdnadshavare (också kallade "pappamånader"). Detta har bidragit till ett jämnare uttag men utvecklingen får ändå sägas gå relativt trögt, då kvinnors andel endast har minskat till runt `r round(as.numeric(foraldrapenning_df %>% filter(Region == "Dalarnas län", Kön == "Kvinnor", År == max(År)) %>% .$Andel),0)` procent `r max(foraldrapenning_df$År)`. Svenska vårdnadshavare är således långt ifrån att ge sina barn en jämställd tillgång till sina föräldrar. Skillnaden i uttag påverkar också den disponibla inkomsten. Skillnaden är som störst mellan sammanboende kvinnor och män när det yngsta barnet är 0–3 år [(Regeringen, 2022)](<https://www.regeringen.se/contentassets/46945970585240a4a5bfd9a0f75ecf3d/ekonomisk-jamstalldhet.pdf>){target="_blank"}.
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_fp_vab$Foraldrapenning_andel_Dalarna
-```
-
 ### Ekobrottslighet{-} 
+
+**Ekonomisk brottslighet**
 
 Ekonomisk brottslighet drabbar företag i Dalarna genom att den skapar osund konkurrens och förskjuter villkoren för dem som följer reglerna. När aktörer fuskar med skatter och avgifter, använder falska fakturor, utnyttjar arbetskraft eller missbrukar bolagsformer kan de pressa priserna på ett sätt som seriösa företag inte kan matcha. För enskilda företag innebär det risk för direkta ekonomiska förluster, mer administration och ökade kostnader för kontroll, samt att affärsrelationer och leverantörskedjor blir mer osäkra. På längre sikt undergräver brottsligheten tilliten i näringslivet, minskar viljan att investera och kan göra det svårare att rekrytera och växa. Ett starkt lokalt näringsliv gynnas därför av tydliga spelregler, samverkan och förebyggande arbete som minskar utrymmet för fusk och bedrägerier.
 
@@ -717,6 +736,7 @@ På riksnivå har antalet anmälda brott per 100 000 invånare ökat från ca 2 
 gg_anmalda_brott$anmalda_ekobrott_Dalarna
 ```
 
+<!--
 
 ### Förtroende för rättsväsendet{-}
 
@@ -731,6 +751,7 @@ Andelen som svarade att de hade mycket stort eller ganska stort förtroende för
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_fortroende_rattsvasande$fortroende_rattsvasande__sverige
 ```
+-->
 
 ## {-}
 <hr style="border: none; height: 5px; background-color: #f8aab6; margin-top: 40px; margin-bottom: 40px;">
@@ -740,7 +761,7 @@ gg_fortroende_rattsvasande$fortroende_rattsvasande__sverige
 Företagens produktion skapar ekonomiska värden som genererar löner och vinster och är centrala på Dalarnas konkurrenskraft. När företag kan producera effektivt och skapa högt värde på sina varor och tjänster stärks både lönsamhet och produktivitet, vilket ger utrymme för innovation och nya jobb. Exporten visar hur väl Dalarnas näringsliv står sig på nationella och internationella marknader och bidrar samtidigt till regionala inkomster och en starkare skattebas. I det här avsnittet belyser vi produktionens utveckling och exportens nivå, <mark>men även hur kvinnors och mäns inkomster, som handlar om förutsättningar för ekonomisk självständighet </mark>.
 
 <span class="big-indicator">
-Regional produktion <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Regional produktivitet <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
@@ -761,13 +782,17 @@ Regional export <span style="color:red; font-size:1.8em; font-weight:900;">⬇</
 <br>
 -->
 
-### Regional produktion {-} 
+### Regional produktivitet {-} 
 
-Värdet av den samlade produktionen i länet mäts genom bruttoregionalprodukten. Ett sätt att fånga om ekonomin växer är att räkna om värdet per sysselsatt ökar över tid. BRP är ett mått på det samlade värdet av alla varor och tjänster som produceras i länet under ett år. BRP ger en övergripande bild av ekonomins storlek och tillväxt och kan användas för att följa konjunkturförändringar och långsiktiga trender. Utvecklingen av värdet påverkas av både befolkningsutveckling och näringslivets struktur. 
+**Regional arbetsproduktivitet**
 
-Vid jämförelser över tid är även BRP per invånare viktigt att följa då den samlade produktionen ska försörja samtliga i samhället, och om arbetskåren krymper relativt unga och äldre ska färre försörja fler.
+Värdet av den samlade produktionen i länet mäts genom bruttoregionalprodukten. Ett sätt att fånga om ekonomin växer är att räkna om värdet per sysselsatt, också kallat arbetsproduktivitet, ökar över tid. 
 
-Diagrammen nedan visar utvecklingen av bruttoregionalprodukten (BRP) i Dalarna per sysselsatt i löpande priser. Det är tydligt att värdet av produktionen på riksnivå ökar i större volym än i Dalarna, och att produktionen i Dalarna är bland de lägre i landet.
+BRP är ett mått på det samlade värdet av alla varor och tjänster som produceras i länet under ett år. BRP ger en övergripande bild av ekonomins storlek och tillväxt och kan användas för att följa konjunkturförändringar och långsiktiga trender. Utvecklingen av värdet påverkas av både befolkningsutveckling och näringslivets struktur. 
+
+Vid jämförelser över tid är även BRP per invånare viktigt att följa då den samlade produktionen ska försörja samtliga i samhället, och om arbetskåren krymper relativt unga och äldre, ska färre försörja fler.
+
+Diagrammen nedan visar utvecklingen av bruttoregionalprodukten (BRP) i Dalarna per sysselsatt i löpande priser. Värdet används för att bedöma arbetsproduktiviteten, det vill säga om varje anställd producerar lika mycket, mer eller mindre i jämförelse med föregående år. Tillväxt skapas när arbetet genererar ökande värden. Det är tydligt att värdet av produktionen på riksnivå ökar i större volym än i Dalarna, och att arbetsproduktiviteten i Dalarna är bland de lägre i landet.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_brp_per_sysselsatt$brp_sysselsatt_tid_Dalarna
@@ -780,6 +805,8 @@ gg_brp_per_sysselsatt$brp_sysselsatt_Sverige
 
 
 ### Regionala inkomster {-} 
+
+**Kvinnors och mäns inkomster**
 
 En egen inkomst är en av förutsättningarna för ett ekonomiskt självständigt liv. Livsinkomsten påverkar även vilken pension personen kommer att få efter arbetslivet. Ett centralt syfte med jämställdhetspolitiken är att motverka att arbetsinsatser värderas olika enbart på grund av vem som utför dem.
 
@@ -794,6 +821,10 @@ gg_inkomst$Medianinkomst_20_64_Dalarna_tid_linje
 ```
 
 ### Regional export {-}
+
+**Regional varuexport och utländska besökare som bidrar till exportenr**
+
+*Varuexport*
 
 Dalarnas export är en viktig motor för länets ekonomi och skapar värden långt utanför den lokala marknaden. När företag i Dalarna säljer varor och tjänster internationellt ökar intäkterna i länet och ger utrymme för investeringar, innovation och fler jobb. Dalarnas export handlar både om varor och tjänster som säljs utanför landsgränsen och utländska besökare som gästar Dalarna och konsumerar i länet. 
 
@@ -812,6 +843,8 @@ I diagrammet nedan redovisas mottagarländer för export från Dalarna i storlek
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 export_diagram_lista$Export_storsta_lander_Dalarna_ar
 ```
+
+*Utländska besökare bidrar till export*
 
 Antalet utländska besökares gästnätter är en del av det samlade exportvärdet då det för in pengar utomlands ifrån till Sverige och Dalarna. Under 2010-talet har antalet gästnätter varit relativt konstant runt 700 000, för att under pandemin minska avsevärt av naturliga skäl. Efter pandemin ses en kraftig ökning och under 2025 passerades miljonstrecket i antal gästnätter av utländska besökare.
 
@@ -841,18 +874,21 @@ Den sociala dimensionen av hållbarhet i det regionala utvecklingsarbetet handla
 
 I målområdet Ett sammanhållet Dalarna bygger vi ett län där goda livsmiljöer skapar en känsla av närhet – oavsett om man bor i stad, tätort eller landsbygd. Det handlar om ett Dalarna fyllt av engagemang och delaktighet, där människor tillsammans bidrar till hållbar utveckling och god beredskap. 
 
+<!--
 Vi stärker den geografiska sammanhållningen genom samhällsplanering som knyter ihop bebyggelse, infrastruktur, kollektivtrafik och digital utveckling, så att människor och företag kan nå varandra på ett hållbart och resurseffektivt sätt. 
 
 I ett sammanhållet Dalarna är det också centralt att fler känner sammanhang och tillit – till varandra och till demokratiska institutioner – eftersom det stärker både demokrati, innovationskraft och krishanteringsförmåga. 
 
 Vi säkrar utvecklingskraft i hela länet genom att värna tillgång till service, vård, fritid och kultur, och genom att skapa platser där människor kan mötas.
-
+-->
 
 <hr style="border: none; height: 5px; background-color: #ffec9f; margin-top: 40px; margin-bottom: 40px;">
 
 ## Dalfolkets hälsa, trygghet och tillit {.tabset}
 
 Dalfolkets hälsa, trygghet och tillit är centrala för ett hållbart och sammanhållet Dalarna – och påverkar både livskvalitet, arbetskraftens förutsättningar och samhällsgemenskap. I det här avsnittet beskriver vi utvecklingen med hjälp av indikatorer som fångar både långsiktiga och mer vardagsnära villkor: medellivslängd och upplevd hälsa ger en övergripande bild av hur människor mår, medan folksjukdomar belyser de stora, långvariga hälsoutmaningarna och hur de fördelar sig i befolkningen. Vi kopplar detta till trygghet och brott mot person, som påverkar hur människor rör sig och deltar i samhället, samt till tillit – förtroendet för andra människor och för samhällsinstitutioner – som är en nyckel till gemensam handlingskraft och motståndskraft vid förändring och kris.
+
+Mer finns att läsa här ["folkhälsa på Region Dalarnas hemsida"] (https://www.regiondalarna.se/om-oss/hallbar-utveckling/social-hallbarhet/folkhalsa/)
 
 
 <span class="big-indicator">
@@ -877,8 +913,6 @@ Tillit <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 <br>
 
 
-Mer finns att läsa här, tipsa om ["folkhälsa på Region Dalarnas hemsida"] (https://www.regiondalarna.se/om-oss/hallbar-utveckling/social-hallbarhet/folkhalsa/)
-
 
 <!--
 Även https://www.oecd.org/en/data/tools/well-being-data-monitor/future-well-being.html
@@ -886,6 +920,8 @@ Mer finns att läsa här, tipsa om ["folkhälsa på Region Dalarnas hemsida"] (h
 
 
 ### Medellivslängd{-}
+
+**Medellivslängd i relation till utbildning**
 
 Medellivslängd är ett tydligt mått på samhällsutveckling och välfärd. Sverige har bland de högsta medellivslängderna i världen och Över tid syns fortfarande en svagt positiv utveckling i de flesta grupper, särskilt bland dem med gymnasial och eftergymnasial utbildning, och kvinnor har genomgående en högre återstående medellivslängd än män när man tittar på exempelvis utbildningsgrupper. Medellivslängd går att mäta på flera sätt, men ett vanligt mått är hur många år en 30-åring i genomsnitt förväntas leva ytterligare.
 
@@ -905,7 +941,9 @@ Dödlighet i befolkningen i åldrarna 15-64 år efter kön, region och år. Anta
 
 ### Hälsa och folksjukdomar{-}
 
-**En god upplevd hälsa**
+**En god upplevd hälsa och folksjukdomar**
+
+*En god upplevd hälsa*
 
 En god hälsa är en viktig förutsättning för att utvecklas och vara en aktiv samhällsmedborgare. I Dalastrategin lyfts att jämlika livsvillkor och god hälsa är viktiga för att ge alla människor i Dalarna möjlighet att utvecklas.
 
@@ -963,7 +1001,7 @@ Andel unga som har svårt att somna i stort sett varje dag eller flera gånger i
 Andel med lätta eller svåra sömnbesvär, efter utbildning och kön (HLV)
 -->
 
-**Folksjukdomar**
+*Folksjukdomar*
 
 Några vanliga folksjukdomar och hälsorisker i befolkningen är hjärtinfarkt, övervikt och fallskador bland äldre. Tillsammans ger indikatorerna en bild av både livsstilsrelaterade risker och skador som påverkar hälsa, livskvalitet och behovet av vård och omsorg. Genom att följa utvecklingen över tid och skillnader mellan grupper och geografier kan vi se var förebyggande insatser behövs mest – till exempel kring levnadsvanor, tryggare boendemiljöer och fallförebyggande arbete för äldre.
 
@@ -992,7 +1030,11 @@ gg_sjukdomar_andel$invanare_med_overvikt_eller_fetma_Dalarna
 gg_sjukdomar_andel$invanare_med_overvikt_eller_fetma
 ```
 
+<!--
 Fallskador bland personer 65+, 3-årsm, antal/100 000 inv (SoS)
+-->
+I diagrammet visas fallskador bland personer 65 år och äldre med ett 3-års medelvärde i antal per 100 000 invånare i Dalarna.
+
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_sjukdomar_hundratusen$`fallskador_bland_personer_65+_Dalarna`
@@ -1005,43 +1047,50 @@ gg_sjukdomar_hundratusen$`fallskador_bland_personer_65+`
 
 ### Trygghet och brott{-}
 
+**Upplevd trygghet och brott mot enskilda**
 
-**Upplevd trygghet**
-Avstår från att gå ut ensam av rädsla för att bli överfallen, rånad eller på annat sätt ofredad, efter utbildningsnivå och kön (HLV)
+*Upplevd trygghet*
+
+I diagrammet nedan visas andelen som i Folkhälsomyndighetens enkätundersökning svar att de avstår från att gå ut ensam av rädsla för att bli överfallen, rånad eller på annat sätt ofredad.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_radsla$radsla_Dalarna
 ```
 
-Andel elever som tycker att det stämmer helt eller till stor del att rasism förekommer på skolan, efter kön, högstadiet och/eller gymnasiet (LUPP)
+I ungdomsenkäten LUPP, ställs frågor till eleverna om de tycker att det stämmer helt eller till stor del att rasism förekommer på skolan, på högstadiet respektive gymnasiet, i diagrammet nedan visas resultatet.
 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 lupp_diagram_lista$C_skola_rasism_Kön_Hogstadiet_Gymnasiet_skola_Dalarna
 ```
 
-**Brott mot enskilda**
+*Brott mot enskilda*
 
-Anmälda bostadsinbrott..
+Här följer digram över anmälda brott mot enskilda så sombostadsinbrott, misshandel, sexualbrott och våldsbrott.
+
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_anmalda_brott$anmalda_bostadsinbrott_Dalarna
 ```
 
-
+<!--
 Anmälda misshandelsbrott mot kvinna, inomhus, bekant med offret, antal/100 000 inv, per kommun (BRÅ/SCB)
+-->
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_valdsbrott_hundratusen$anmalda_misshandelsbrott_mot_kvinna_Dalarna
 ```
-
+<!--
 Anmälda sexualbrott, antal/100 000 inv, per kommun (BRÅ/SCB)
+-->
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_valdsbrott_hundratusen$anmalda_sexualbrott_Dalarna
 ```
 
+<!--
 Anmälda våldsbrott, antal/100 000 inv per kommun (BRÅ/SCB)
+-->
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_valdsbrott_hundratusen$anmalda_valdsbrott_Dalarna
@@ -1059,6 +1108,8 @@ Andel elever som alltid eller ofta känner sig trygga på sociala medier, efter 
 
 
 ### Tillit{-}
+
+**Tillit till varandra**
 
 Det är människorna i Dalarna som skapar regionen – alla enskilda individer boende i länet, som också är del av familjer, organisationer, företag och andra gemenskaper. Människors känsla av sammanhang och delaktighet är centralt för att skapa ett väl fungerande samhälle. För att skapa sammanhang och delaktighet behövs tillit mellan dem som ingår i gemenskapen, och det behövs sätt att hantera osäkerhet som kan uppstå när nya medlemmar inkluderas i en gemenskap. Socialt kapital beskriver det kitt som uppstår när en grupp människor enas kring gemensamma värden, normer och värderingar, det får människor att ha tillit till sina medmänniskor och till det gemensamma. Att den representativa demokratins institutioner, såsom kommuner, region och myndigheter, är väl fungerande och att invånarna har förtroende för dem är centralt för en levande demokrati. En stark tillit till andra underlättar samarbetet mellan människor och viljan och förmågan att bidra med nya idéer till samhällsutvecklingen. Ett samhälle med ett starkt socialt kapital är bättre rustat för att möta förändringar och eventuella kriser.
 
@@ -1114,9 +1165,12 @@ Kulturarv <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 
 ### Valdeltagande/samhällsengagemang{-}
 
+**Valdeltagande och ungas vilja att påverka**
+
 En levande demokrati grundar sig i människors tillit till att de demokratiskt valda representativa institutionerna fungerar, såsom kommuner, region och myndigheter. Valdeltagande och viljan att vara med och påverka i sin hemkommun är därmed en viktiga indikator på invånarnas vilja och tro på de demokratiska institutionerna i länet.
 
 **Valdeltagande**
+
 I Dalarna har valdeltagandet varierat över tid. I riksdagsvalet valde år 1973 drygt 90 procent att rösta, en andel som hade minskat avsevärt till valet 2002, då bara ungefär 78 procent valde att rösta i riksdagsvalet. Därefter ökade valdeltagandet stadigt i de nationella valen fram till 2018, då 88 procent av invånarna i Dalarna röstade i riksdagsvalet. I valet 2022 minskade valdeltagandet dock tydligt. Generellt är valdeltagandet ungefär lika högt i såväl riksdagsval, som val till region- och kommunfullmäktige, även om det på senare år har varit något högre i riksdagsvalet.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
@@ -1136,15 +1190,22 @@ lupp_diagram_lista$D_vill_påverka_Kön_Hogstadiet_Gymnasiet_bo_Dalarna
 
 ### Kultur/fritid{-}
 
+**Kulturskola och bibliotekslån**
+
+*Elever i kulturskolan*
+
 Kultur- och fritidsaktiviteter är viktiga för samhällsutvecklingen och särskilt för ungdomars utveckling. Mer statistik om civilsamhället och befolkningens engagemang skulle vara önskvärt men här redovisar vi några av de uppgifter som finns tillgängliga.
 
-**Elever i kulturskolan**
 För Dalarna finns statistik över elevantalet i åtta av länets 15 kommuner. Störst andel elever utgörs av flickor i Malung-Sälen, där cirka 30 procent av flickorna går i musik- eller kulturskolan, och 10 procent av pojkarna. Falun och Avesta har lägst andel av de rapporterade kommunerna, där ungefär 13 procent av flickorna och ungefär 7 procent av pojkarna går i musik- eller kulturskola.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_kulturskola$andel_kulturskola_Dalarna
 ```
 
+
+*Aktiva låntagare på Dalarnas bibliotek*
+
+I diagrammet nedan ses andelen låntagare på kommunernas bibliotek. Andelen låntagare är de som gjort åtminstone ett lån eller transaktion under året, 2024. Bland kvinnor är mellan 25-30 procent aktiva låntagare, medan bland män är mellan 10-22 procent aktiva låntagare i Dalarnas kommuner. Nationellt visar trenden att andelen låntagare är nedåtgående, med en dipp under pandemin. För cirka 15 år sedan var andelen i ett ovägt riksgenomsnitt cirka 50 procent högre än andelen låntagare år 2024.
 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
@@ -1165,8 +1226,9 @@ Antal studiecirkeltimmar i Dalarna är under konstruktion.
 
 ### Butik, skola och bredband {-}
 
+**Tillgång till butik, grundskola och bredband**
 
-**Tillgång till butik och grundskola**
+*Tillgång till butik och grundskola*
 
 Olika platser i Dalarna har olika utmaningar och möjligheter att möta de förändrade behoven. En princip för genomförandet av Dalastrategin är att allt utvecklingsarbete ska vara platsbaserat med målsättningen att sammanhållningen ska stärkas och olika platsers förutsättningar och resurser ska tas till vara på ett bra sätt. För utvecklingskraft i hela länet är det viktigt att säkra tillgången till service, vård, fritidsaktiviteter och kultur i alla delar av länet. Tillgången till service påverkar människors levnadsvillkor och är viktig för platsens attraktivitet och för möjligheten att skapa arbetstillfällen lokalt.
 
@@ -1180,7 +1242,7 @@ gg_service_vard$service_Dalarna
 gg_service_vard$vard_Dalarna
 ```
 
-**Tillgång till bredband**
+*Tillgång till bredband*
 
 Tillgång till en snabb och robust digital infrastruktur är för de flesta en grundförutsättning för att bo och verka i hela Dalarna. Fysiska och digitala mötesplatser gör att vi når både varandra och omvärlden. En av utmaningarna för Dalarna är en ojämnt fördelad digital infrastruktur. Att stärka och tillgängliggöra den digitala infrastrukturen för hela Dalarnas befolkning, oavsett plats, är avgörande för en lyckad digitalisering av samhället.
 
@@ -1221,7 +1283,7 @@ Ekonomisk jämlikhet är en viktig grund för både social hållbarhet och ekono
 
 
 <span class="big-indicator">
-Inkomstfördelning <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
+Inkomstfördelning <span style="color:grey; font-size:1.8em; font-weight:900;">⬇</span>
 </span>
 <br>
 
@@ -1308,7 +1370,7 @@ window.addEventListener('load', function () {
       ph.className = 'tabset-placeholder';
       ph.style.margin = '0.75rem 0';
       ph.style.fontStyle = 'italic';
-      ph.textContent = 'Klicka på en flik för att visa innehåll.';
+      ph.textContent = 'Klicka på en flik för att visa innehåll, klicka igen för att stänga fliken.';
       const tabContent = tabset.querySelector('.tab-content');
       if (tabContent) tabContent.parentNode.insertBefore(ph, tabContent);
     }
