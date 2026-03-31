@@ -108,14 +108,16 @@ Den miljömässiga dimensionen för en hållbar regional utveckling handlar blan
 
 Tillståndet i Dalarnas miljö och natur är en grund för både livskvalitet, folkhälsa och långsiktig utvecklingskraft. Rent vatten och ren luft är avgörande för människors hälsa och för robusta samhällsfunktioner, samtidigt som våra sjöar, vattendrag och skogar är viktiga resurser för friluftsliv, näringar och klimatnytta. I det här avsnittet belyser vi att vi behöver förena brukande med ansvar – att skapa hållbara sätt att använda skog och mark, minska påverkan från utsläpp och näringsläckage, och stärka ekosystemens motståndskraft. Vi lyfter också behovet av att skydda och utveckla den biologiska mångfalden, eftersom den är en förutsättning för fungerande ekosystemtjänster som pollinering, vattenrening och klimatanpassning. Tillsammans ger detta en bild av hur Dalarna kan värna naturkapitalet och samtidigt skapa goda livsmiljöer för nuvarande och kommande generationer.
 
-Länsstyrelsen gör årligen en uppföljning av miljökvalitetsmålen på regional nivå. Det här avsnittet är främst baserat på länsstyrelsens slutsatser och rapport. Av rapporten framgår att för flera av miljömålen är klimatförändring ett av de stora hoten. Negativa effekter av ett förändrat klimat så som värmeböljor, torka, extrema skyfall, översvämning, ras, skred och erosion och skogsbränder kommer att innebära en omfattande utmaning för samhället.
+Länsstyrelsen gör årligen en uppföljning av miljökvalitetsmålen på regional nivå. För Dalarna finns redovisningen ["här"](https://www.rus.se/regional-arlig-uppfoljning/dalarnas-lan/#generation){target="_blank"}, för den som vill fördjupa sig ytterligare.
 
-<span style="font-size: 120px;">↗</span>
+Det här avsnittet är främst baserat på länsstyrelsens slutsatser och rapport. Av rapporten framgår att för flera av miljömålen är klimatförändring ett av de stora hoten. Negativa effekter av ett förändrat klimat så som värmeböljor, torka, extrema skyfall, översvämning, ras, skred och erosion och skogsbränder kommer att innebära en omfattande utmaning för samhället.
 
-↘
+<span style="display:inline-block; transform: rotate(135deg);">➡</span>
+
+<span style="display:inline-block; transform: rotate(45deg);">➡</span>
 
 <span class="big-indicator">
-Vatten <span style="color:green; font-size:120 px; font-weight:900;">↗</span>
+Vatten <span style="color:grey; font-size: 1.4em; font-weight:900;">➡ ↗ </span>
 </span> <br> 
 Grundvatten till stora delar av god kvalitet, ett antal platser negativt påverkade.
 
@@ -135,9 +137,6 @@ Biologisk mångfald <span style="color:red; font-size:1.4em; font-weight:900;">�
 Utvecklingen av den biologiska mångfalden...
 
 
-Länsstyrelserna i Sverige har i uppdrag att följa upp tillståndet i miljön i respektive län. För Dalarna finns redovisningen ["här"](https://www.rus.se/regional-arlig-uppfoljning/dalarnas-lan/#generation){target="_blank"}, för den som vill fördjupa sig ytterligare.
-
-
 ### Vatten{-} 
 
 **Vatten**
@@ -148,6 +147,7 @@ Dalarna har god tillgång till grundvatten av god kvalitet ur ett regionalt pers
 
 Det atmosfäriska nedfallet har avtagit och flera vatten som tidigare varit försurade har återhämtat sig. Kalkningen har kunnat minskas i delar av Dalarnas län. 
 Hundratals ämnen påträffas i Dalarnas ytvatten vilket återspeglar den stora kemikalieanvändningen i samhället och industrin. Halter av förbjudna ämnen i miljön sjunker, samtidigt släpps tillåtna miljöfarliga ämnen och nya ämnen med okända effekter ut i miljön.
+
 Övergödningsproblemen är störst i jordbruksområden i de sydöstra delarna av länet. Åtgärdsarbetet har ökat på senare år, men det är inte tillräckligt för att målet ska kunna nås. Det tar också tid innan minskade utsläpp ger effekt i de vatten som är övergödda, bland annat eftersom den naturliga återhämtningen är långsam. Ännu märks inga tydliga förbättringar i miljön på regional nivå.
 
 Vattendragen i länet är kraftigt påverkade av fysiska ingrepp som rätning och rensningar, samt av vandringshinder och flödesreglering. Med dagens åtgärdstakt nås målet Levande sjöar och vattendrag om ungefär 200 år. Kunskapsbristen för kulturmiljövärden är stor även om förbättringar skett under senare år. Fler sjöar och vattendrag behöver skyddas genom inrättande av områdesskydd.
@@ -172,9 +172,6 @@ gg_vatten$vattendrag_Sverige
 Ren luft är en av grunderna för liv. Luften vi andas påverkas av utsläpp från många olika källor. I Länsstyrelsens uppföljning av miljökvalitetsmålen konstateras att luftkvaliteten generellt är god i Dalarna men försämrad i tätorter på grund av utsläpp från trafik, industri, uppvärmning av bostäder och småskalig vedeldning. För att uppfylla målet om Frisk luft behövs snabbare och kraftfullare åtgärder, vilket Världshälsoorganisationen (WHO) belyst genom att sänka sina riktvärden för luftföroreningar.
 
 
-Ev. Diagram?
-
-
 ### Skog och mark{-} 
 
 **Skog och mark**
@@ -182,6 +179,7 @@ Ev. Diagram?
 Dalarnas yta utgörs till 79 procent av skog vilket gör Dalarna till det femte mest skogstäta länet i landet [(SCB)](https://www.scb.se/hitta-statistik/sverige-i-siffror/miljo/marken-i-sverige/){target="_blank"}. All skogsmark är inte produktiv (ex. myrar och bergsytor etc. som producerar mindre än en kubikmeter virke per hektar och år). Dessa områden utgör 11,3 procent av skogsmarken, varav ca 1,5 procentenheter är formellt skyddad. Skogsbruket i Dalarna brukas nästan enbart med konventionella metoder, ca 78 procent av skogsmarken brukas konventionellt [(SCB)](https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__MI__MI0605/SkyddSkogFrivillig/table/tableViewLayout1/){target="_blank"}.
 
 För att nå miljömålet behöver sektorns ansvar förtydligas och insatser öka för inventering, skydd, naturvårdande skötsel och större variation i skogsbruket. I Dalarna genomförs många insatser för förbättrad miljöhänsyn och ökad kunskap om skogens natur- och kulturvärden. Viktiga strukturer, som död ved, ökar men saknas fortfararande i tillräcklig mängd. Bestånd med naturvärden och lång skoglig kontinuitet avverkas. Antalet hotade arter och skador på forn- och kulturlämningar är fortsatt på en hög nivå. 
+
 En förutsättning för bibehållen biologisk mångfald och bevarade kulturmiljövärden i odlingslandskapet är att det finns betande djur i landskapet och hållbara och bärkraftiga jordbruksföretag i länet. 
 
 Antal betesdjur har minskat stadigt i Dalarnas län sedan 1980-talet, liksom antalet jordbruksföretag och arealen brukad jordbruksmark. Med färre betande djur och marker som inte längre hävdas försämras förutsättningarna för att bibehålla ett rikt odlingslandskap i länet, och den regionala livsmedelsförsörjningen minskar.
@@ -234,7 +232,8 @@ Klimatförändringar påverkar fjällen och dess ekosystemprocesser allt mer. L�
 
 ## Omställning för minskad miljöpåverkan och resursförbrukning i Dalarna{.tabset}
 
-Omställningen till minskad miljöpåverkan och resursförbrukning är avgörande för ett hållbart Dalarna och för att möta både klimatutmaningen och ökade krav på robusthet i samhälle och näringsliv. I det här avsnittet följer vi utvecklingen genom indikatorer som visar både minskade utsläpp och förändrade system: växthusgasutsläpp ger en samlad bild av klimatpåverkan, medan kollektivt resande och andel elbilar speglar hur transportsektorn ställer om. Vi belyser också resurseffektiviteten genom återvunnet avfall, som visar hur väl material cirkulerar i stället för att bli avfall, och hur kommunerna stärker sin motståndskraft genom klimatanpassningsplaner. Tillsammans ger indikatorerna en helhetsbild av hur Dalarna kan minska sin miljöpåverkan genom både beteendeförändringar, teknisk omställning och långsiktig planering.
+Omställningen till minskad miljöpåverkan och resursförbrukning är avgörande för ett hållbart Dalarna och för att möta både klimatutmaningen och ökade krav på robusthet i samhälle och näringsliv. I det här avsnittet följer vi utvecklingen genom indikatorer som visar både minskade utsläpp och förändrade system: växthusgasutsläpp ger en samlad bild av klimatpåverkan, medan kollektivt resande och andel elbilar speglar hur transportsektorn ställer om. Vi belyser också resurseffektiviteten genom återvunnet avfall, som visar hur väl material cirkulerar i stället för att bli avfall, och hur kommunerna stärker sin motståndskraft genom klimatanpassningsplaner. Tillsammans ger indikatorerna en bild av hur Dalarna kan minska sin miljöpåverkan genom både beteendeförändringar, teknisk omställning och långsiktig planering. Tips på mer läsning: https://www.klimatanalys.se/climate-stories
+
 
 
 <span class="big-indicator">
@@ -263,12 +262,9 @@ Kommunala klimatanpassningsplaner <span style="color:green; font-size:1.8em; fon
 <br>
 
 
-Tips på mer läsning: https://www.klimatanalys.se/climate-stories
-
-Under flikarna hittar den som önskar fördjupad information om varje variabel.
-
-
 ### Utsläpp{-}
+
+**Utsläpp av växthusgaser**
 
 År 2017 antog Sverige ett långsiktigt nationellt mål om att landet ska vara klimatneutralt år 2045. Detta innebär en minskning av växthusgasutsläpp med minst 85 procent inom landets gränser i jämförelse med utsläppen år 1990. Målet innebär i princip att alla sektorer och verksamheter behöver vara fossilfria år 2045. Sveriges nationella mål är i linje med det europeiska målet om ett klimatneutralt EU till år 2050 och det internationella Parisavtalet som innebär att jordens länder strävar efter att ökningen av den globala genomsnittstemperaturen inte blir mer än 1,5°C till år 2050 i förhållande till den förindustriella nivån, samt att den i vilket fall inte överstiger 2°C.
 
@@ -287,7 +283,9 @@ gg_utslapp$utslapp_per_capita_Dalarna
 ```
 
 
-### Kollektivt resande{-}
+### Resa kollektivt{-}
+
+**Resor med kollektivtrafiken i Dalarna**
 
 Den utsträckta och relativt glesbefolkade geografin i Dalarna är utmaningar i arbetet med att skapa en hållbar transportinfrastruktur. För att transportsektorn ska nå klimat- och energimålen krävs kraftfull teknisk utveckling i kombination med beteendeförändringar så som minskad konsumtion av varor vars transporter orsakar höga utsläpp, ökad samåkning och minskat resande totalt sett. Kollektivt resande spelar en central roll för utvecklandet av en klimatsmart och resurseffektiv, men också mer jämlik, mobilitet. Kollektivtrafik bidrar både till miljönytta och samhällsekonomisk effektivitet men är också förenat med höga kostnader. För att klara omställningen krävs mod att ställa olika kostnader mot varandra. För att det kollektiva resandet ska öka behöver den traditionella kollektivtrafiken sannolikt kompletteras med nya mobilitetslösningar och tjänster, särskilt för länets mest glesbefolkade områden.
 
@@ -307,6 +305,8 @@ gg_kollektivt_resande$marknadsandel_resande_Dalarna
 
 
 ### Elbilar{-}
+
+**Andelen elbilar i Dalarna**
 
 Andelen personbilar som helt eller delvis drivs av el har ökat tydligt i Dalarna på senare år. Fram till mitten av 2010-talet var andelen mer eller mindre obefintlig, men därefter har ökningen gått snabbt. Initialt ökade framförallt andelen laddhybrider, men på senare år har även andelen rena elbilar ökat kraftigt. Andelen är dock fortfarande relativt låg. År `r elbilar_max_ar` var knappt `r elbilar_andel_max_ar_Dalarna` procent av personbilarna i Dalarna antingen rena elbilar eller laddhybrider.
 
@@ -328,6 +328,8 @@ Tillgång till publika laddplatser är även en del i förutsättningarna för a
 
 ### Avfall{-}
 
+**Mängden insamlat avfall**
+
 En av prioriteringarna i Dalastrategin är att öka resurseffektiviteten i länet. Ett mått på resursförbrukning är mängden insamlat kommunalt avfall som kan antas motsvara invånarnas resursförbrukning. I det kommunala avfallet ingår det mesta avfall som ett hushåll producerar, så som mat- och restavfall, grov- och trädgårdsavfall och farligt avfall. Även förpackningar och batterier etc. som ingår i producentansvaret ingår i beräkningen. I sammanställningen nedan visas insamlat kommunalt avfall per person och år i Dalarna från `r avfall_min_ar` till `r avfall_max_ar`. År `r avfall_min_ar` samlades det in `r avfall_per_person_min_ar` kg avfall per person i Dalarna, att jämföra med ca `r avfall_per_person_max_ar` kg per person år `r avfall_max_ar`. En lägre mängd per person signalerar en lägre resursanvändning. I en nationell jämförelse ses att Stockholms län ligger bäst till med ungefär 388 kg per person och år, medan Värmland ligger sämst till med ca 511 kg per person och år.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
@@ -338,15 +340,17 @@ gg_avfall$avfall_Dalarna
 
 ### Klimatanpassning{-}
 
+**Kommunernas arbete för klimatanpassning**
+
 Kommunala klimatanpassningsplaner utgör grunden för att åstadkomma en motståndskraft i geografin mot de klimatförändringar som vi kan förutspå kommer men också förberedelse för det vi ännu inte kan förutspå.
 
 Klimatanpassningsarbete handlar framförallt om att integrera klimatperspektivet i översiktsplaner, detaljplaner och infrastruktursatsningar, så att exempelvis grönområden och våtmarker som kan absorbera regnvatten säkras. Det handlar också om att förstärka avloppssystem och att bygga klimattåliga byggnader, så väl som att utforma socialt fungerande lösningar i samklang med de människor som bor på respektive plats.
 
-Svenska miljöinstitutet, IVL, kartlägger årligen (sedan 2015) kommunernas klimatanpassningsarbete genom en enkätundersökning. Av de 193 kommuner som besvarat enkäten uppgav 94 procent att de har påverkats av klimatförändringar och/eller extremväderhändelser på något sätt, och framförallt genom ökad nederbörd, ökad temperatur och förändrade vattenflöden. https://www.ivl.se/download/18.2e89e926197627f97b42503b/1750678982179/Klimatanpassning-2025-l%C3%A5ng.pdf
+Svenska miljöinstitutet, IVL, kartlägger årligen (sedan 2015) kommunernas klimatanpassningsarbete genom en ["enkätundersökning"](https://www.ivl.se/download/18.2e89e926197627f97b42503b/1750678982179/Klimatanpassning-2025-l%C3%A5ng.pdf){target="_blank"}. Av de 193 kommuner som besvarat enkäten uppgav 94 procent att de har påverkats av klimatförändringar och/eller extremväderhändelser på något sätt under senaste året, framförallt genom ökad nederbörd, ökad temperatur och förändrade vattenflöden. 
 
 IVL poängsätter och summerar kommunernas svar, utifrån en skala från 0-33 poäng.För Dalarna har 8 av 15 kommuner svarat med ett poängspann på 5,5 till 26 poäng, och ett medelvärde på 16 poäng, riksmedelvärdet var 17,7. Skalan går från 0-33 poäng där 33 är det mest positiva utfallet.
 
-```{r, echo=FALSE, fig.cap="Kommuner med granskade klimatanpassningsplaner"}
+```{r, echo=FALSE, fig.cap="Kommuner med granskade klimatanpassningsplaner", out.width="80%", fig.align="center"}
 knitr::include_graphics("Bilder/Klimatanpassningsplaner.png")
 ```
 
