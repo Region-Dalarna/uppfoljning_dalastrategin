@@ -590,9 +590,9 @@ lupp_diagram_lista$H_tror_läsa_vidare_gy_Kön_Hogstadiet_Gymnasiet_bo_Dalarna
 
 **Längre ohälsa bland arbetskraften**
 
-Ohälsotalet (ev källa) mäter i vilken utsträckning personer är borta från arbetet på grund av nedsatt arbetsförmåga, mätt under ett års tid. 
+["Ohälsotalet"](https://www.forsakringskassan.se/statistik-och-analys/statistikdatabas#!/sjuk/ohm-ohalsotal){target="_blank"} mäter i vilken utsträckning personer är borta från arbetet på grund av nedsatt arbetsförmåga, mätt under ett års tid. 
 
-Sjukfrånvaro och ohälsa är kostsamt, inte bara för individen utan även i form av produktionsbortfall för både arbetsgivare och samhälle, och måttet signalerar hur väl arbetande människors förmåga tas till vara eller om humankapitalet istället XX slits ner. 
+Sjukfrånvaro och ohälsa är kostsamt, inte bara för individen utan även i form av produktionsbortfall och ersättningssystemet för både arbetsgivare och samhälle. Måttet signalerar även hur väl arbetande människors förmåga tas till vara respektive om arbetet orsakar förslitning på de arbetande. 
 
 Ohälsotalet varierar över tid och var relativt högt under början av 2000-talet. Därefter syns en klart nedåtgående trend, även om ohälsotalet har ökat något de senaste åren. Under hela tidsperioden har ohälsotalet varit högre för kvinnor än för män, även om skillnaden mellan könen har minskat något över tid.
 
@@ -652,8 +652,15 @@ Förtroende för rättsväsendet <span style="color:grey; font-size: 1.4em; font
 
 ### Sysselsatta och företagande {-}
 
-**Förvärvsarbetande och nystartade företag**
+**Sysselsatta och nystartade företag**
 
+*Förvärsarbetande efter bransch*
+
+Historiskt har tillverkning och utvinning varit den största branschen i Dalarna sett till antalet anställda, men vård och omsorg är idag störst. I diagrammet nedan är tillverkning och utvinning den tredje största branschen i Dalarna, men det beror på att branscherna handel och transport är sammanslagna baserat på branschgrupperingen 1990. Att tillverkning och utvinning minskat i antal anställda sedan 1990 är en förändring som återspeglar den allmänna trenden i många regioner där tjänstesektorn har fått ökad betydelse över tid. 
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
+gg_forv_90$forvarvsarbetande_90_totalt_Dalarna
+```
 
 *Tid för invandrade att etableras på arbetsmarknaden*
 
@@ -676,14 +683,6 @@ En jämförelse mellan länen när det gäller möjligheten att ha etablerat sig
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_etableringstid$etablering_vistelsetid_allalan
-```
-
-*Förvärsarbetande efter bransch*
-
-Historiskt har tillverkning och utvinning varit den största branschen i Dalarna sett till antalet anställda, men vård och omsorg är idag störst. I diagrammet nedan är tillverkning och utvinning den tredje största branschen i Dalarna, men det beror på att branscherna handel och transport är sammanslagna baserat på branschgrupperingen 1990. Att tillverkning och utvinning minskat i antal anställda sedan 1990 är en förändring som återspeglar den allmänna trenden i många regioner där tjänstesektorn har fått ökad betydelse över tid. 
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
-gg_forv_90$forvarvsarbetande_90_totalt_Dalarna
 ```
 
 
@@ -720,20 +719,23 @@ Fördelningen av dagar mellan vårdnadshavarna har jämnats ut något sedan slut
 gg_fp_vab$Foraldrapenning_andel_Dalarna
 ```
 
-<!--
-### Förutsättningar {-}
 
-**Företagsklimat**
+### Företagsklimat och infrastruktur {-}
+
+**Företagsklimat och infrastruktur**
+
+*Företagsklimat*
 
 Från TVV - företagens villkor och verklighet och Entreprenörskapsforums rapport.
 
 
-**Tågens punktlighet**
+*Tågens punktlighet*
 
-Trafikanalys - Anna letar data.
 
-https://www.trafa.se/globalassets/statistik/bantrafik/punktlighet-pa-jarnvag/2026/punktlighet-pa-jarnvag-2025-statistikblad.html
 
+Diagram är under konstruktion.
+
+<!--
 
 **Energitillgång?**
 
@@ -779,10 +781,10 @@ gg_fortroende_rattsvasande$fortroende_rattsvasande__sverige
 
 ## Ekonomiska värden, produktion och export {.tabset}
 
-Företagens produktion skapar ekonomiska värden som genererar löner och vinster och är centrala på Dalarnas konkurrenskraft. När företag kan producera effektivt och skapa högt värde på sina varor och tjänster stärks både lönsamhet och produktivitet, vilket ger utrymme för innovation och nya jobb. Exporten visar hur väl Dalarnas näringsliv står sig på nationella och internationella marknader och bidrar samtidigt till regionala inkomster och en starkare skattebas. I det här avsnittet belyser vi produktionens utveckling och exportens nivå, <mark>men även hur kvinnors och mäns inkomster, som handlar om förutsättningar för ekonomisk självständighet </mark>.
+Företagens produktion skapar ekonomiska värden som genererar löner och vinster och är centrala på Dalarnas konkurrenskraft. När företag kan producera effektivt och skapa högt värde på sina varor och tjänster stärks både lönsamhet och produktivitet, vilket ger utrymme för innovation och nya jobb. Exporten visar hur väl Dalarnas näringsliv står sig på nationella och internationella marknader och bidrar samtidigt till regionala inkomster och en starkare skattebas. I det här avsnittet belyser vi produktionens utveckling och exportens omfattning, men även hur kvinnors och mäns inkomster utvecklas, då inkomster är en viktig förutsättning för ekonomisk självständighet och grunden för skatteintäkter.
 
 <span class="big-indicator">
-Regional produktivitet <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(45deg);">➡</span> 
+Regional arbetsproduktivitet <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(45deg);">➡</span> 
 </span><br>
 Produktiviteten i länet avtar, medan den ökar i riket totalt sett.
 <br>
@@ -806,7 +808,7 @@ Både den regionala varuexporten och exportintäkter från utländska turister �
 <br>
 -->
 
-### Regional produktivitet {-} 
+### Arbetsproduktivitet {-} 
 
 **Regional arbetsproduktivitet**
 
@@ -828,7 +830,7 @@ gg_brp_per_sysselsatt$brp_sysselsatt_Sverige
 
 
 
-### Regionala inkomster {-} 
+### Inkomster {-} 
 
 **Kvinnors och mäns inkomster**
 
@@ -844,9 +846,9 @@ gg_inkomst$Medianinkomst_20_64_Dalarna_tid
 gg_inkomst$Medianinkomst_20_64_Dalarna_tid_linje
 ```
 
-### Regional export {-}
+### Export {-}
 
-**Regional varuexport och utländska besökare som bidrar till exportenr**
+**Regional varuexport och utländska besökare skapar regional export**
 
 *Varuexport*
 
@@ -868,7 +870,7 @@ I diagrammet nedan redovisas mottagarländer för export från Dalarna i storlek
 export_diagram_lista$Export_storsta_lander_Dalarna_ar
 ```
 
-*Utländska besökare bidrar till export*
+*Utländska besökare*
 
 Antalet utländska besökares gästnätter är en del av det samlade exportvärdet då det för in pengar utomlands ifrån till Sverige och Dalarna. Under 2010-talet har antalet gästnätter varit relativt konstant runt 700 000, för att under pandemin minska avsevärt av naturliga skäl. Efter pandemin ses en kraftig ökning och under 2025 passerades miljonstrecket i antal gästnätter av utländska besökare.
 
@@ -924,23 +926,21 @@ Medellivslängden ökar, men inte för lågutbildade kvinnor. Ensamboende har en
 <span class="big-indicator">
 Hälsa och folksjukdomar<span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(45deg);">➡</span> 
 </span><br> 
-Vuxna skattar sin hälsa något sämre, medan ungdomar skattar hälsan tydligt sämre jämfört med tidigare år. Incidens av hjärtinfarkter minskar men andelen överviktiga ökar.
+Vuxna skattar sin hälsa något sämre och ungdomar skattar hälsan tydligt sämre jämfört med tidigare år. Incidens av hjärtinfarkter minskar men andelen överviktiga ökar. Fallskador bland äldre ökar något.
 <br>
 
 
 <span class="big-indicator">
-Trygghet och brott <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(0deg);">➡</span> 
+Trygghet och brott <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(45deg);">➡</span> 
 </span><br>
-
+Andelen som avstår från att gå ut ensam är oförändrad, ungdomars upplevelse av rasism i skolan ökar. Stora skillnader i anmälda brott mellan kommunerna.
 <br>
 
 <span class="big-indicator">
-Tillit <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(0deg);">➡</span> 
+Tillit <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(45deg);">➡</span> 
 </span><br> 
-
+Andelen som uppger att de saknar tillit andra ökar något.
 <br>
-
-
 
 <!--
 Även https://www.oecd.org/en/data/tools/well-being-data-monitor/future-well-being.html
@@ -961,7 +961,6 @@ gg_aterstaende_medellivslangd$`medellivslangd_aterstaende_vid_30 år_alder_Dalar
 
 
 En fördjupning av analysen om vad som bidrar till en högre medellivslängd som gjorts på nationell nivå av SCB visar att även boenderelation har stor betydelse ["SCB"](https://www.scb.se/hitta-statistik/statistik-efter-amne/befolkning-och-levnadsforhallanden/befolkningens-sammansattning-och-utveckling/demografisk-analys/pong/statistiknyhet/livslangd-efter-utbildningsniva/){target="_blank"}. Sammanboende män och kvinnor lever längre än ensamstående män och kvinnor i respektive utbildningsgrupp. För gruppen män är skillnaden så pass stor att sammanboende män med förgymnasial utbildning lever i genomsnitt längre än ensamstående män med eftergymnasial utbildning.
-
 
 <!--
 Dödlighet i befolkningen i åldrarna 15-64 år efter kön, region och år. Antal per 100 000 inv. (SCB) 
@@ -1163,21 +1162,21 @@ Dalfolkets delaktighet och samhällsengagemang är en grund för både demokrati
 
 
 <span class="big-indicator">
-Valdeltagande/ samhällsengagemang <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(0deg);">➡</span> 
+Valdeltagande/ samhällsengagemang <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(45deg);">➡</span> 
 </span><br>
-
+Valdeltagandet sjunker något, ungdomars vilja att påverka i sin kommun sjunker markant.
 <br>
 
 <span class="big-indicator">
 Kultur/fritid <<span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(0deg);">➡</span> 
 </span><br>
-
+Andel elever i kulturskolan skiljer sig mellan kommunerna, som mest var 5:e ung till var 10:e ung. Aktiva låntagare vid biblioteken skiljer sig också, den nationella trenden är nedåtgående. 
 <br>
 
 <span class="big-indicator">
 Butik, skola och bredband <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(0deg);">➡</span> 
 </span><br>
-
+Tillgången till butik, skola och bredband är oförändrad.
 <br>
 
 
@@ -1200,7 +1199,7 @@ Kulturarv <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 
 En levande demokrati grundar sig i människors tillit till att de demokratiskt valda representativa institutionerna fungerar, såsom kommuner, region och myndigheter. Valdeltagande och viljan att vara med och påverka i sin hemkommun är därmed en viktiga indikator på invånarnas vilja och tro på de demokratiska institutionerna i länet.
 
-**Valdeltagande**
+*Valdeltagande*
 
 I Dalarna har valdeltagandet varierat över tid. I riksdagsvalet valde år 1973 drygt 90 procent att rösta, en andel som hade minskat avsevärt till valet 2002, då bara ungefär 78 procent valde att rösta i riksdagsvalet. Därefter ökade valdeltagandet stadigt i de nationella valen fram till 2018, då 88 procent av invånarna i Dalarna röstade i riksdagsvalet. I valet 2022 minskade valdeltagandet dock tydligt. Generellt är valdeltagandet ungefär lika högt i såväl riksdagsval, som val till region- och kommunfullmäktige, även om det på senare år har varit något högre i riksdagsvalet.
 
@@ -1208,7 +1207,8 @@ I Dalarna har valdeltagandet varierat över tid. I riksdagsvalet valde år 1973 
 gg_valdeltagande$valdeltagande
 ```
 
-**Ungas vilja att påverka**
+
+*Ungas vilja att påverka*
 
 I diagrammet nedan ses andelen unga som i en enkät som genomförs regelbundet via skolan svarat att de vill vara med och påverka. Trenden mellan 2015 och 2024 visar tydligt på att både killar och tjejer i allt lägre grad vill vara med och påverka i frågor som rör deras kommun.
 
@@ -1232,6 +1232,7 @@ För Dalarna finns statistik över elevantalet i åtta av länets 15 kommuner. S
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_kulturskola$andel_kulturskola_Dalarna
 ```
+
 
 
 *Aktiva låntagare på Dalarnas bibliotek*
@@ -1259,6 +1260,7 @@ Antal studiecirkeltimmar i Dalarna är under konstruktion.
 
 **Tillgång till butik, grundskola och bredband**
 
+
 *Tillgång till butik och grundskola*
 
 Olika platser i Dalarna har olika utmaningar och möjligheter att möta de förändrade behoven. En princip för genomförandet av Dalastrategin är att allt utvecklingsarbete ska vara platsbaserat med målsättningen att sammanhållningen ska stärkas och olika platsers förutsättningar och resurser ska tas till vara på ett bra sätt. För utvecklingskraft i hela länet är det viktigt att säkra tillgången till service, vård, fritidsaktiviteter och kultur i alla delar av länet. Tillgången till service påverkar människors levnadsvillkor och är viktig för platsens attraktivitet och för möjligheten att skapa arbetstillfällen lokalt.
@@ -1272,6 +1274,7 @@ gg_service_vard$service_Dalarna
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_service_vard$vard_Dalarna
 ```
+
 
 *Tillgång till bredband*
 
@@ -1326,7 +1329,7 @@ Andel invånare 0-19 år som bor i hushåll med låg ekonomisk standard är ofö
 <br>
 
 <span class="big-indicator">
-Bidragsmottagare <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(315deg);">➡</span> 
+Bidragsmottagare <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(0deg);">➡</span> 
 </span><br>
 Det totala antalet utbetalade bidragsår minskar.
 <br>
