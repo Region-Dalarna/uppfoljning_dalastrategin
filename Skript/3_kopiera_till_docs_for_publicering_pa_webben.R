@@ -20,10 +20,11 @@ publicera_rapport <- function(sokvag_lokal_repo = "c:/gh/"){
   #                    repo = "publicera_rapporter")
 }
 
-if(Sys.getenv("USERNAME") == "frkjon"){
-  sokvag_lokal <- "C:/Users/frkjon/Projekt/"
-}else{
-  sokvag_lokal = "c:/gh/"
-}
+# if(Sys.getenv("USERNAME") == "frkjon"){
+#   sokvag_lokal <- "C:/Users/frkjon/Projekt/"
+# }else{
+#   sokvag_lokal = "c:/gh/"
+# }
 
-publicera_rapport(sokvag_lokal_repo = sokvag_lokal)
+#publicera_rapport(sokvag_lokal_repo = sokvag_lokal)
+publicera_rapport()

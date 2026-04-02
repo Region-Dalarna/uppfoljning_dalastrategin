@@ -372,7 +372,7 @@ IVL poängsätter och summerar kommunernas svar, utifrån en skala från 0-33 po
 knitr::include_graphics("Bilder/Klimatanpassningsplaner.png")
 ```
 
-Källa: https://www.ivl.se/download/18.2e89e926197627f97b412441/1750166438874/Klimatanpassning-2025-lansvis-uppdelning.pdf
+Diagrammet ovan samt diagram för Sveriges övriga län kan du hitta [här](https://www.ivl.se/download/18.2e89e926197627f97b412441/1750166438874/Klimatanpassning-2025-lansvis-uppdelning.pdf){target="_blank"}.
 
 
 ## {-}
