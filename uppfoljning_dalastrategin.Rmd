@@ -50,12 +50,11 @@ storeScroll();
 <i>Rapporten är skapad av Samhällsanalys, Region Dalarna<br>
 Senast uppdaterad: `r Sys.Date()`</i>
 </p>
-
+<!--
 # Sammanfattning {-}
 
 Text in här.
-
-
+-->
 # Introduktion {-}
 
 Dalarna står tillsammans med övriga Sverige, Europa och världen inför stora samhällsutmaningar. För att skapa en hållbar framtid för Dalarna antog Regionfullmäktige i juni 2021 en ny regional utvecklingsstrategi ["Dalastrategin - Tillsammans för ett hållbart Dalarna"](https://www.regiondalarna.se/globalassets/regional-utveckling/dalastrategin-2030-tillsammans-for-ett-hallbart-dalarna-dec.pdf){target="_blank"} (reviderad 2026-02-16). 
@@ -81,6 +80,15 @@ Att ställa om för att skapa en hållbar framtid är en utmaning som berör all
 Den här rapporten är en del av den årliga uppföljningen av Dalarnas utveckling och beskriver läget i Dalarna på vägen till en hållbar framtid.
 
 Rapporten är uppdelad efter strategins målområden om ett klimatsmart, konkurrenskraftigt och sammanhållet Dalarna. Varje målområde är sedan uppdelat i tre avsnitt, som vart och ett är tänkta att fånga läget för naturresurser, samspel, omställning och beteendemönster samt ekonomiska värden. För klimatsmart Dalarna är exempelvis vind och vatten viktiga naturresurser, medan byte från bensinbilar till elbilar en del av beteendet och omställningen, och den regionala produktionen av electricitet från förnybara källor är ekonomiska värden. Inom ett konkurrenskraftigt Dalarna är arbetskraft och kompetens naturresurser, ett gott företagsklimat en del av beteendemönstren, och företagens produktion är ekonomiska värden. Inom ett sammanhållet Dalarna är befolkningens hälsa och trygghet naturresurser, medan befolkningens aktiviteter och samhällsengagemang är beteenden, samt fördelningen av ekonomiska värden mellan människor en del av det ekonomiska perspektivet på ett sammanhållet Dalarna.
+
+Pilarnas betydelse:
+<br>
+**Utveckling i positiv riktning** <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(315deg);">➡</span> 
+</span> <br> 
+**Utveckling oförändrad** <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(0deg);">➡</span> 
+</span> <br> 
+**Utveckling i negativ riktning** <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(45deg);">➡</span> 
+</span> <br>
 
 <hr style="border: none; height: 5px; background-color: #93CEC1; margin-top: 40px; margin-bottom: 40px;">
 
@@ -112,7 +120,7 @@ Länsstyrelsen gör årligen en uppföljning av miljökvalitetsmålen på region
 
 Det här avsnittet är främst baserat på länsstyrelsens slutsatser och rapport. Av rapporten framgår att för flera av miljömålen är klimatförändring ett av de stora hoten. Negativa effekter av ett förändrat klimat så som värmeböljor, torka, extrema skyfall, översvämning, ras, skred och erosion och skogsbränder kommer att innebära en omfattande utmaning för samhället.
 <br>
-
+<br>
 
 <span class="big-indicator">
 Vatten <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(0deg);">➡</span> 
@@ -236,8 +244,8 @@ Klimatförändringar påverkar fjällen och dess ekosystemprocesser allt mer. L�
 
 Omställningen till minskad miljöpåverkan och resursförbrukning är avgörande för ett hållbart Dalarna och för att möta både klimatutmaningen och ökade krav på robusthet i samhälle och näringsliv. I det här avsnittet följer vi utvecklingen genom indikatorer som visar både minskade utsläpp och förändrade system: växthusgasutsläpp ger en samlad bild av klimatpåverkan, medan kollektivt resande och andel elbilar speglar hur transportsektorn ställer om. Vi belyser också resurseffektiviteten genom återvunnet avfall, som visar hur väl material cirkulerar i stället för att bli avfall, och hur kommunerna stärker sin motståndskraft genom klimatanpassningsplaner. Tillsammans ger indikatorerna en bild av hur Dalarna kan minska sin miljöpåverkan genom både beteendeförändringar, teknisk omställning och långsiktig planering. 
 
-Tips på mer läsning: ["Klimatanalys"] (https://www.klimatanalys.se/climate-stories){target="_blank"}
-
+Tips på mer läsning: ["Klimatanalys"](https://www.klimatanalys.se/climate-stories){target="_blank"}
+<br>
 <br>
 
 <span class="big-indicator">
@@ -633,9 +641,9 @@ Sysselsättningen är hög men yrken och branscher är könssegregerade, och fö
 
 
 <span class="big-indicator">
-Företagsklimat och infrastruktur <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(135deg);">➡</span> 
+Företagsklimat och infrastruktur <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(315deg);">➡</span> 
 </span><br> 
-Företagsklimatet förbättras, och tågens punktlighet har återhämtat sig något.
+Företagsklimatet har förbättrats, och tågens punktlighet har återhämtat sig något.
 <br>
 
 
@@ -918,7 +926,7 @@ Vi säkrar utvecklingskraft i hela länet genom att värna tillgång till servic
 
 Dalfolkets hälsa, trygghet och tillit är centrala för ett hållbart och sammanhållet Dalarna – och påverkar både livskvalitet, arbetskraftens förutsättningar och samhällsgemenskap. I det här avsnittet beskriver vi utvecklingen med hjälp av indikatorer som fångar både långsiktiga och mer vardagsnära villkor: medellivslängd och upplevd hälsa ger en övergripande bild av hur människor mår, medan folksjukdomar belyser de stora, långvariga hälsoutmaningarna och hur de fördelar sig i befolkningen. Vi kopplar detta till trygghet och brott mot person, som påverkar hur människor rör sig och deltar i samhället, samt till tillit – förtroendet för andra människor och för samhällsinstitutioner – som är en nyckel till gemensam handlingskraft och motståndskraft vid förändring och kris.
 
-Mer finns att läsa här ["folkhälsa på Region Dalarnas hemsida"] (https://www.regiondalarna.se/om-oss/hallbar-utveckling/social-hallbarhet/folkhalsa/)
+Mer finns att läsa här, ["folkhälsa på Region Dalarnas hemsida"](https://www.regiondalarna.se/om-oss/hallbar-utveckling/social-hallbarhet/folkhalsa/){target="_blank"}.
 
 <br>
 
@@ -1174,7 +1182,7 @@ Valdeltagandet sjunker något, ungdomars vilja att påverka i sin kommun sjunker
 <br>
 
 <span class="big-indicator">
-Kultur och fritid <<span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(0deg);">➡</span> 
+Kultur och fritid <span style="color:grey; font-size: 1.4em; font-weight:900; display:inline-block; transform: rotate(0deg);">➡</span> 
 </span><br>
 Andel elever i kulturskolan skiljer sig mellan kommunerna, som mest var 5:e ung till var 10:e ung. Aktiva låntagare vid biblioteken skiljer sig också, den nationella trenden är nedåtgående. 
 <br>
@@ -1199,7 +1207,7 @@ Kulturarv <span style="color:red; font-size:1.8em; font-weight:900;">⬇</span>
 -->
 
 
-### Valdeltagande & samhällsengagemang{-}
+### Valdeltagande och samhällsengagemang{-}
 
 **Valdeltagande och ungas vilja att påverka**
 
@@ -1225,7 +1233,7 @@ lupp_diagram_lista$D_vill_påverka_Kön_Hogstadiet_Gymnasiet_bo_Dalarna
 
 
 
-### Kultur & fritid{-}
+### Kultur och fritid{-}
 
 **Kulturskola och bibliotekslån**
 
