@@ -738,7 +738,9 @@ gg_fp_vab$Foraldrapenning_andel_Dalarna
 
 Under konstruktion.
 <!--
-Från TVV - företagens villkor och verklighet och Entreprenörskapsforums rapport.
+
+Från TVV - företagens villkor och verklighet och Entreprenörskapsforums rapport. 
+["Entreprenörskapsforum, 2025"](https://entreprenorskapsforum.se/wp-content/uploads/2024/12/Regional_GEMRapport_Web.pdf){target="_blank"}
 -->
 
 *Tågens punktlighet*
