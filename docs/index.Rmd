@@ -738,7 +738,10 @@ gg_fp_vab$Foraldrapenning_andel_Dalarna
 
 Under konstruktion.
 <!--
-Från TVV - företagens villkor och verklighet och Entreprenörskapsforums rapport.
+Anna ska skapa det här avsnittet.
+
+Från TVV - företagens villkor och verklighet och Entreprenörskapsforums rapport. 
+["Entreprenörskapsforum, 2025"](https://entreprenorskapsforum.se/wp-content/uploads/2024/12/Regional_GEMRapport_Web.pdf){target="_blank"}
 -->
 
 *Tågens punktlighet*
@@ -746,6 +749,7 @@ Från TVV - företagens villkor och verklighet och Entreprenörskapsforums rappo
 Under konstruktion.
 
 <!--
+Kan Peter skapa detta?
 
 **Energitillgång?**
 
@@ -1277,13 +1281,16 @@ Antal studiecirkeltimmar i Dalarna är under konstruktion.
 
 *Tillgång till butik och grundskola*
 
-Olika platser i Dalarna har olika utmaningar och möjligheter att möta de förändrade behoven. En princip för genomförandet av Dalastrategin är att allt utvecklingsarbete ska vara platsbaserat med målsättningen att sammanhållningen ska stärkas och olika platsers förutsättningar och resurser ska tas till vara på ett bra sätt. För utvecklingskraft i hela länet är det viktigt att säkra tillgången till service, vård, fritidsaktiviteter och kultur i alla delar av länet. Tillgången till service påverkar människors levnadsvillkor och är viktig för platsens attraktivitet och för möjligheten att skapa arbetstillfällen lokalt.
+Olika platser i Dalarna har olika utmaningar och möjligheter att möta de förändrade behoven. En princip för genomförandet av Dalastrategin är att allt utvecklingsarbete ska vara platsbaserat med målsättningen att sammanhållningen ska stärkas och olika platsers förutsättningar och resurser ska tas till vara på ett bra sätt. För utvecklingskraft i hela länet är det viktigt att säkra tillgången till service, vård, fritidsaktiviteter och kultur i alla delar av länet. Tillgången till service påverkar människors levnadsvillkor och är viktig för platsens attraktivitet och för möjligheten att skapa arbetstillfällen lokalt. Den här indikatorn presenterar flera olika mått på tillgång till service; tillgång till grundskola och tillgång till dagligvarubutik samt upplevd tillgång till vård. 
 
-Den här indikatorn presenterar två olika mått på tillgång till service; tillgång till grundskola samt tillgång till dagligvarubutik. Resultatet visar att tillgång till grundskola har minskat något under perioden från 2017 till 202X. I början på perioden hade drygt ??72,9 procent av alla invånare mellan 0-16 år en grundskola inom 2 km från bostaden. 202X hade motsvarande siffra minskat till ??72,3 procent. Samma trend ses även för tillgång till dagligvarubutiker. Under samma period har andelen med en dagligvarubutik inom 2 km från bostaden minskat från ??64,4 procent till ??63,7 procent.
+Resultatet visar att tillgång till grundskola har minskat något under perioden från 2017 till 2024. I början på perioden hade drygt 72,9 procent av alla invånare mellan 0-16 år en grundskola inom 2 km från bostaden. 2024 hade motsvarande siffra ökat till 74,0 procent. För tillgång till dagligvarubutiker har under samma period andelen minskat något, från 64,4 procent till 64,0 procent.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_service_vard$service_Dalarna
 ```
+
+Tillgång till vård mäts genom en enkätundersökning, där invånarna tillfrågas om deras upplevda tillgång till vård. Som ses i diagrammet nedan så har andelen som säger sig ha tillgång till den vård de behöver ökat över tid, och både 2024 och 2025 har cirka 90 procent av både kvinnor och män svarat att de instämmer i att de har tillgång till den vård de behöver.
+
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, fig.width=8, fig.align='center'}
 gg_service_vard$vard_Dalarna
