@@ -21,6 +21,8 @@ diagram_sjalvforsorjning <- function(region_vekt = "20",
   source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_SkapaDiagram.R")
   
   
+  gg_list <- list()
+  
   if(diag_livsmedel == TRUE){
 
     source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_SkapaDiagram.R")
@@ -31,8 +33,7 @@ diagram_sjalvforsorjning <- function(region_vekt = "20",
     source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/main/hamta_skordar_lan_sjv.R")
     source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/main/hamta_slakt_sjv.R")
     source("https://raw.githubusercontent.com/Region-Dalarna/hamta_data/main/hamta_bef_folkmangd_alder_kon_ar_scb.R")
-    
-    gg_list <- list()
+
     
     # ================================================== köttproduktion ==================================================
     
